@@ -55,7 +55,7 @@ There is no postulated gravitational field, no graviton, and no separate gravita
 
 $$S_{\rm matter} = \int_{M_\infty} \bar\Psi_\infty \left(i\Gamma^\mu\nabla_\mu + i\Gamma^a\partial_a\right)\Psi_\infty\,d\mu_{M_\infty}$$
 
-The gravitational term on $M_\infty$ — the $\infty$D analogue of the Einstein-Hilbert action — is the spectral action $\mathrm{Tr}(f(D/\Lambda))$, whose leading coefficient $f_2\Lambda^2$ encodes $G_N^{-1}$. This term is open (Part 6, §3.12.2); fixing it requires computing the spectral action on $M_\infty$.
+The gravitational coupling on $M_\infty$ is $G_\infty$, the curvature-per-unit-mass of the manifold; a 3D observer measures $G_N = G_\infty/(4\pi)$ (§3.12.2). The absolute value of $G_\infty$ is not derived from the combinatorics — it is a second dimensional input alongside $m_e$ (§3.12.4).
 
 The sector-space geometry $h_{ab}(\xi)$ is a fixed background — not a dynamical field. There is nothing gravitational to vary in $\Xi$, so no wave equation exists in the sector directions and no KK graviton tower appears.
 
@@ -129,7 +129,7 @@ This holds for all modes with the same (n,d) regardless of $\xi^0$. The sector m
 | $\lambda_d$ from kernel self-consistency | ✅ derived: $\lambda_d = (g_{dd}/2)^{2/3}$ | §3.10 |
 | $L_d = \lambda_d^{-1/4}$ as sector length scale (harmonic oscillator length) | ✅ defined and computed | §3.9, §3.10.4 |
 | $G_N$ sector-independent; no sector correction | ✅ | §3.11–3.12.2 |
-| $G_N = G_\infty/(4\pi)$: the $4\pi$ is the 3D Green's-function constant, sector-independent (§3.12.2); $G_\infty$ via spectral action scale $\Lambda$ (open) | ✅/🔶 | §3.12.2 |
+| $G_N = G_\infty/(4\pi)$: the $4\pi$ is the 3D Green's-function constant, sector-independent (§3.12.2); $G_\infty$ is a second dimensional input, absolute scale not derived (open) | ✅/🔶 | §3.12.2 |
 | Bound within, gradient-free without: the gravitational gradient lives only in a source's bound dimensions | ✅ (linearized; nonlinear boundary step open) | §3.8 |
 
 In the static strong-field regime, the $d=3$-coordinate metric develops an apparent horizon while the full $M_\infty$ geometry stays regular. The apparent singularity becomes a finite-energy high-amplitude region in the sector-space coordinates. Information is preserved globally.
@@ -354,7 +354,7 @@ $$G_{\mu\nu}(x) = 8\pi G_N\,T_{\mu\nu}^{\rm obs}[\psi](x)$$
 
 $G_N$ is the same for all sectors — sector-independent by the $L^2$ normalisation argument. All particles, regardless of which sector they inhabit, source the observer's effective curvature with the same $G_N$. This is the equivalence principle (§3.6) as a theorem.
 
-**Status of $G_N$.** $G_N$ is not a coupling constant in a fundamental gravitational action — there is no such action written by hand in IDWT. $G_N$ is what a 3D observer measures of $\infty$D curvature: $G_N = G_\infty/(4\pi)$, with $G_\infty$ the curvature-per-unit-mass of $M_\infty$ and the $4\pi$ the ordinary three-dimensional Green's-function constant, sector-independent (§3.12.2). Gravity is not quantized; there are no gravitons; there is no quantum gravitational threshold in this framework. The $d>10$ vacuum dimensions do not enter $G_N$ — confirmed by Ricci-flat vacuum in $d > 10$ (no particle sources, so $R_{ab}=0$) and by T5 (scattering states are not $L^2$-normalizable and do not appear in $\mathrm{Tr}(f(D/\Lambda))$). $G_\infty$ requires the spectral action scale $\Lambda$ on $M_\infty$ (open, §3.12.2).
+**Status of $G_N$.** $G_N$ is not a coupling constant in a fundamental gravitational action — there is no such action written by hand in IDWT. $G_N$ is what a 3D observer measures of $\infty$D curvature: $G_N = G_\infty/(4\pi)$, with $G_\infty$ the curvature-per-unit-mass of $M_\infty$ and the $4\pi$ the ordinary three-dimensional Green's-function constant, sector-independent (§3.12.2). Gravity is not quantized; there are no gravitons; there is no quantum gravitational threshold in this framework. The $d>10$ vacuum dimensions do not enter $G_N$ — confirmed by Ricci-flat vacuum in $d > 10$ (no particle sources, so $R_{ab}=0$) and by T5. The absolute value of $G_\infty$ is a second dimensional input, not derived (open, §3.12.4).
 
 ---
 
@@ -376,7 +376,7 @@ Via the Seeley-DeWitt heat kernel expansion, this yields terms of the form:
 
 $$\Gamma_\Xi \sim \int_\Xi\!\left[a_0 + a_2 R_\Xi + a_4 R_\Xi^2 + \cdots\right]d\mu_\xi$$
 
-**Note (non-compact caveat).** The standard Seeley-DeWitt expansion and the coefficient formulas $a_0, a_2, a_4$ are derived for compact Riemannian manifolds. IDWT's sector spaces $\Xi_d$ are non-compact (confinement is from $V_d(r)$, not compactness). The no-correction argument below relies only on the decoupling $\delta\Gamma_\Xi/\delta g_{\mu\nu}=0$, which follows from the product metric structure and is independent of whether the Seeley-DeWitt coefficients retain their standard compact-manifold form. The argument is therefore valid as stated. However, the computation of $a_2(M_\infty)$ for the prediction of $G_\infty$ (§3.12.4) does require the Seeley-DeWitt expansion on the non-compact $\Xi_d$; verifying that the coefficient formulas hold for $L^2$-normalizable modes with confining potential $V_d(r)$ is an open item (Part 6, MC-8).
+**Note (non-compact caveat).** The standard Seeley-DeWitt expansion and the coefficient formulas $a_0, a_2, a_4$ are derived for compact Riemannian manifolds. IDWT's sector spaces $\Xi_d$ are non-compact (confinement is from $V_d(r)$, not compactness). The no-correction argument below relies only on the decoupling $\delta\Gamma_\Xi/\delta g_{\mu\nu}=0$, which follows from the product metric structure and is independent of whether the Seeley-DeWitt coefficients retain their standard compact-manifold form. The argument is therefore valid as stated.
 
 The $a_2$ term, proportional to the Ricci scalar $R_\Xi$ of the sector manifold, is the one that would correct the observed Planck mass in a KK theory.
 
@@ -424,9 +424,9 @@ $$\Phi_{3D}(r) = \frac{G_\infty\,m}{4\pi\,r}, \qquad G_N = \frac{G_\infty}{4\pi}
 
 The $4\pi$ is the area of the observer's own unit 2-sphere — the ordinary 3D Green's-function constant. It is the signature of the observer's three dimensions, not the source's $d$: the source's extra dimensions integrate away, and a 3D observer always lands on $S_2 = 4\pi$. The gravitational coupling is the scalar mass $m$, $G_N$ is sector-independent (§3.11), and no volume factor appears. The source's hidden structure — set by its localization lengths $L_d$ (§3.9) — fixes the shape of the source in the hidden coordinates, but integrates out to the full mass by Gauss's law, leaving only the universal $4\pi$. A $d=6$ electron and a $d=10$ tau each pull on a 3D observer as a plain Newtonian mass. ✅
 
-**The $d>10$ vacuum dimensions do not enter.** Every particle is uniform beyond its own sector, and all sectors satisfy $d\le 10$, so nothing sources a curvature gradient in the $d>10$ vacuum dimensions: a uniform source is translation-invariant and exerts no pull along the directions it is uniform in (§3.8) — the same translation symmetry that closes the $d>10$ bath (Part 7 §1.2). The observed $G_N$ is finite not because curved space is truncated but because the gravitating sources are finite-dimensional in their binding. For the spectral-action route to the absolute scale (§3.12.4) the same fact appears twice over: $d>10$ modes are scattering states in the essential spectrum (T5), not $L^2$ eigenvalues, so they never enter the discrete trace $\mathrm{Tr}(f(D/\Lambda))$; and any vacuum curvature reaching $d>10$ is trace-free (Weyl), contributing nothing to the Einstein-Hilbert coefficient $a_2 = \int_{M_\infty} R\,\mathrm{dvol}$, which receives contributions only from $d\le 10$ where $R\neq 0$.
+**The $d>10$ vacuum dimensions do not enter.** Every particle is uniform beyond its own sector, and all sectors satisfy $d\le 10$, so nothing sources a curvature gradient in the $d>10$ vacuum dimensions: a uniform source is translation-invariant and exerts no pull along the directions it is uniform in (§3.8) — the same translation symmetry that closes the $d>10$ bath (Part 7 §1.2). The observed $G_N$ is finite not because curved space is truncated but because the gravitating sources are finite-dimensional in their binding: a vacuum dimension carries no mass and is Ricci-flat ($R_{ab}=0$), so it sources no curvature.
 
-**Status.** The $d>10$ vacuum dimensions do not enter — confirmed by both the Ricci-flat vacuum argument and T5. The spectral-action coefficients are now computed (§3.12.4): the Einstein-Hilbert coefficient $a_2$ has exponent $51/10$ (fixed by $N_c=3$) and the curvature-squared coefficient $a_4^{\rm grav}=0.482$, with the product spectral dimension $D_{\rm tot}=71/10$ giving $a_2/a_4\propto\Lambda^2$. Within the product approximation no ratio of coefficients fixes $\Lambda$, so $G_\infty$ (equivalently $\Lambda$, equivalently $G_N$) is a **second dimensional input** alongside $m_e$; reducing this to one input would require beyond-product cross-sector metric mixing or an independent geometric determination of $\Lambda$.
+**Status.** The $d>10$ vacuum dimensions do not enter — confirmed by both the Ricci-flat vacuum argument and T5. Gravity is structurally complete: it is curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent. The one quantity not derived is the absolute scale $G_\infty$ (equivalently $G_N$), which is a **second dimensional input** alongside $m_e$ (§3.12.4); reducing this to one input would require an independent geometric determination of $G_\infty$, not available in the present construction.
 
 ---
 
@@ -450,53 +450,19 @@ Once $G$ is fixed by one measurement, all gravitational forces $F = G m_1 m_2/r^
 | Sector length $L_d$ = sector localization | ✅ §3.9 |
 | $\lambda_d = (g_{dd}/2)^{2/3}$ from kernel | ✅ §3.10 |
 | $G_N$ sector-independent; no sector correction | ✅ §3.11–3.12.1 |
-| $G_N = G_\infty/(4\pi)$; sector-independent (the $4\pi$ is the 3D Green's-function constant, §3.12.2); $G_\infty$ via spectral action $\Lambda$ (open) | ✅/🔶 §3.12.2 |
+| $G_N = G_\infty/(4\pi)$; sector-independent (the $4\pi$ is the 3D Green's-function constant, §3.12.2); $G_\infty$ a second dimensional input, absolute scale not derived (open) | ✅/🔶 §3.12.2 |
 
 ---
 
-### 3.12.4 $G_\infty$ Numerically and the Spectral Action Closure Condition
+### 3.12.4 $G_\infty$ Numerically and the Second Dimensional Input
 
-**Note on the spectral action formalism.** The Connes-Marcolli spectral action $\mathrm{Tr}(f(D/\Lambda))$ is used here as a mathematical tool to connect the IDWT Dirac operator to the Einstein-Hilbert term. IDWT is not a noncommutative geometry (NCG) model in the Connes-Marcolli sense — the sector geometry, Dirac operator on $M_\infty$, and mode-index structure of IDWT are distinct from the NCG Standard Model. The spectral action provides a convenient expression for how the gravitational coefficient $G_\infty$ relates to the spectrum of $D$; the mechanism producing that spectrum (sector geometry, mode index selection, kernel coupling) is entirely native to IDWT.
+**The numerical value of $G_\infty$.** The relation $G_N = G_\infty/(4\pi)$ (§3.12.2) immediately gives $G_\infty$ once $G_N$ is known. Using the measured Newton's constant $G_N = 6.674 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$:
 
-**The numerical value of $G_\infty$.** The relation $G_N = G_\infty/(4\pi)$ immediately gives $G_\infty$ once $G_N$ is known. Using the measured Newton's constant $G_N = 6.674 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$:
+$$G_\infty = G_N \times 4\pi = 8.43 \times 10^{-44}\ \mathrm{MeV}^{-2}.$$
 
-$$G_\infty = G_N \times 4\pi = 8.43 \times 10^{-44}\ \mathrm{MeV}^{-2}$$
+This is not a prediction — it is what $G_\infty$ must equal, given the current input of one measured gravitational coupling. It becomes a prediction only if $G_\infty$ is derived independently from the geometry.
 
-This is not a prediction — it is what $G_\infty$ must equal, given the current input of one measured gravitational coupling. It becomes a prediction when $G_\infty$ is derived independently.
-
-**The spectral action condition — and why it is currently circular.** In the Connes-Marcolli spectral action, the Einstein-Hilbert term arises from the Seeley-DeWitt coefficient $a_2$:
-
-$$G_N^{-1} \sim \frac{f_2 \Lambda^2 N_{\rm eff}}{12\pi^2}$$
-
-where $\Lambda$ is the spectral cutoff, $f_2$ is a moment of the cutoff function, and $N_{\rm eff}$ is the number of Dirac degrees of freedom in the spectral triple. Setting $\Lambda$ from the spectral action condition and then predicting $G_N$ reproduces the input — the condition is circular until $\Lambda$ is fixed from the sector geometry independently. No sector mass scale provides a natural cutoff: the top quark at $\sim 173$ GeV is many orders of magnitude below the gravitational scale set by $G_N^{-1/2}$.
-
-**The $a_2$ (Einstein-Hilbert) coefficient — computed structurally. 🔶** The product heat kernel $K_\Xi(t) = \prod_{d\in D} K_d(t)$ has leading small-$t$ behaviour $t^{-\sigma}$ with
-
-$$\sigma = \sum_{d\in D}\frac{1}{d} = \tfrac12+\tfrac13+\tfrac14+\tfrac15+\tfrac16+\tfrac1{10} = \frac{31}{20}\ \text{(exact)}.$$
-
-Each sector contributes its Weyl coefficient $a_0^{(d)} = \Gamma(1+1/d)(d!)^{1/d}$ (T14), with $\prod_{d\in D} a_0^{(d)} = 116.781$. Combining the product kernel with the spacetime heat kernel's $R/6$ term and the exponential-cutoff moment $\Gamma(1+\sigma)$ gives the Einstein-Hilbert coefficient
-
-$$G_N^{-1} = \frac{\prod_{d\in D} a_0^{(d)}\,\Gamma(1+\sigma)}{6\pi}\,\Lambda^{2+2\sigma}, \qquad 2+2\sigma = \frac{51}{10}.$$
-
-The **exponent $51/10$ is exact and fixed by $N_c=3$** (it is determined by the sector set $D$, which T3–T5 fix from $N_c$); the prefactor is $\approx 8.5$ for the exponential cutoff and is cutoff-dependent. The $d=2$ sector contributes $R_2\cdot\mathrm{Vol}_2 = \pi$ exactly — a topological term independent of $g_{22}$.
-
-**The $a_4$ coefficient and the sector breakdown. ✅/🔶** Carrying the heat-kernel expansion to curvature-squared order gives $a_4$. For constant-curvature sectors the gravitational channel carries the factor $\beta_d = \tfrac1{20} - \tfrac1{2d} + \tfrac1{d(d-1)}$, and $\beta_5 = \beta_6 = 0$ **exactly** ✅ — the neutrino ($d=5$) and charged-lepton ($d=6$) sectors contribute nothing to the gravitational $a_4$. Evaluated on the canonical sector lengths $L_d$ (§3.10):
-
-$$a_4^{\rm grav} = \frac{1}{16\pi^2}\sum_{d\in D} R_d^2\,\mathrm{Vol}_d\,\beta_d = 0.482,$$
-
-dominated by $d=10$ (75%), just as the Einstein-Hilbert sector sum $\sum_{d\in D} R_d\,\mathrm{Vol}_d = 284.6$ is dominated by $d=10$ (40%), the $d=2$ term being the topological $\pi$. (Per-sector $R_d\cdot\mathrm{Vol}_d$: $d=2{:}\,3.142$, $3{:}\,5.998$, $4{:}\,11.257$, $5{:}\,72.16$, $6{:}\,77.47$, $10{:}\,114.62$.)
-
-**The spectral dimension closes the $\Lambda$ question. ✅** With $K_\Xi(t)\sim t^{-\sigma}$ the total heat trace scales as $t^{-(2+\sigma)}$, fixing the spectral dimension of $M_\infty$:
-
-$$D_{\rm tot} = 4 + 2\sigma = \frac{71}{10}.$$
-
-Every Seeley-DeWitt coefficient $a_{2k}$ enters the spectral action at order $\Lambda^{D_{\rm tot}-2k}$: $a_0$ at $\Lambda^{7.1}$, $a_2$ at $\Lambda^{5.1}=\Lambda^{51/10}$, $a_4$ at $\Lambda^{3.1}=\Lambda^{31/10}$. Therefore
-
-$$\frac{a_2}{a_4}\propto \Lambda^{(2+2\sigma)-2\sigma} = \Lambda^{2},$$
-
-so — exactly as in standard NCG — the ratio retains a residual $\Lambda^2$ and **cannot eliminate the cutoff**. (This corrects an earlier draft that treated $a_4$ as $\Lambda$-independent; the product spectral dimension makes $a_4\propto\Lambda^{31/10}$, and the conclusion that $\Lambda$ survives is unchanged.)
-
-**Conclusion: $G_N$ is a second dimensional input. ✅** Within the product approximation no ratio of spectral-action coefficients fixes $\Lambda$, because the spectral dimension $71/10$ makes $a_2/a_4\propto\Lambda^2$. The framework's dimensional inputs are therefore exactly **two** — $m_e$ (setting all particle masses) and $G_N$, equivalently $\Lambda$ (setting the gravitational scale) — with all dimensionless structure following from $N_c=3$. Matching the measured $G_N$ requires $\Lambda \approx 3\times10^8$ MeV ($\sim 3\times10^5$ GeV), far above every sector mass scale and with no geometric interpretation in the current construction. Reducing the count to one input would require $\Lambda$-dependence from beyond-product cross-sector metric mixing ($G_{\mu a}\neq 0$) or an independent geometric determination of $\Lambda$; neither is available here. The Einstein-Hilbert coefficient ($a_2$: form, exponent $51/10$, prefactor) and the curvature-squared coefficient ($a_4^{\rm grav}$, spectral dimension $71/10$, $a_2/a_4\propto\Lambda^2$) are now computed; the gravitational sector is complete up to this two-input count.
+**$G_\infty$ is a second dimensional input. ✅** What §3.12.1–3 establish is the *structure* of gravity: it is curvature of $M_\infty$ sourced by mass; a 3D observer measures the sector-independent Newtonian law $\Phi_{3D} = G_\infty m/(4\pi r)$; the sector functional determinant does not correct it; and no sector volume enters. What they do **not** provide is the absolute value of $G_\infty$. The framework's dimensional inputs are therefore exactly **two** — $m_e$, which sets every particle mass through the sector scales, and $G_\infty$ (equivalently $G_N$), which sets the gravitational scale — with all dimensionless structure following from $N_c=3$. The two scales are different kinds of quantity and are never compared: there is no hierarchy to explain between them, and IDWT does not derive the magnitude of $G_\infty$ from the combinatorics. Reducing the count to one input would require an independent geometric determination of $G_\infty$ — for instance from beyond-product cross-sector metric mixing ($G_{\mu a}\neq 0$) — which is not available in the present construction.
 
 **What does not belong here.** The Kaluza-Klein formula $M_{\rm Pl}^2 = M_*^9 V_7^{\rm phys}$ (which would define an "11D fundamental scale" $M_*$) is not IDWT. It requires compact extra dimensions, graviton propagation through those dimensions, and a Kaluza-Klein tower of massive graviton modes — all of which are explicitly excluded by Part 4 §1b. IDWT has no compact dimensions ($\Xi$ is non-compact), no graviton quanta (gravity is geometry, not a field), and no KK tower. The formula does not apply, and $M_*$ is not a quantity that appears in this framework.
 
@@ -520,7 +486,7 @@ $$\sigma_{\rm ess}(H_d^{\rm harm}) = \emptyset$$
 
 The spectrum is purely discrete: $\sigma(H_d^{\rm harm}) = \{(2N + d)\sqrt{\lambda_d} : N = 0, 1, 2, \ldots\}$ with finite multiplicity $C(N+d-1, d-1)$ at each level $N$.
 
-**Proof.** The potential $\lambda_d r^2 \to \infty$ as r → ∞. By Rellich's criterion, the resolvent $(H_d^{\rm harm} - z)^{-1}$ is compact for all $z \notin \sigma(H_d^{\rm harm})$, which implies σ_ess = ∅. The eigenvalues follow from separation into radial and angular parts: the radial equation reduces to the d-dimensional isotropic harmonic oscillator, whose eigenvalues are (2n_r + l + d/2)·2√λ_d with n_r = 0,1,… and l = 0,1,…; the principal level N = 2n_r + l has cumulative degeneracy C(N+d−1,d−1), giving infinitely many discrete eigenvalues. □
+**Proof.** The potential $\lambda_d r^2 \to \infty$ as $r \to \infty$. By Rellich's criterion, the resolvent $(H_d^{\rm harm} - z)^{-1}$ is compact for all $z \notin \sigma(H_d^{\rm harm})$, which implies $\sigma_{\rm ess} = \emptyset$. The eigenvalues follow from separation into radial and angular parts: the radial equation reduces to the $d$-dimensional isotropic harmonic oscillator, whose eigenvalues are $(2n_r + l + d/2)\cdot 2\sqrt{\lambda_d}$ with $n_r = 0,1,\ldots$ and $l = 0,1,\ldots$; the principal level $N = 2n_r + l$ has cumulative degeneracy $C(N+d-1,d-1)$, giving infinitely many discrete eigenvalues. □
 
 **Theorem (sector mode Gaussian decay).** Every eigenfunction $\chi_{n,d}$ of $H_d^{\rm harm}$ satisfies:
 

@@ -567,7 +567,7 @@ $$H_{\rm eff} = -\frac{\hbar^2}{2m_e}\nabla_r^2 - \frac{\alpha}{|r|} + m_e$$
 
 $$E_{n_H} = m_e - \frac{\alpha^2 m_e}{2n_H^2}, \qquad n_H = 1,2,3,\ldots$$
 
-Both $\alpha$ and $m_e$ are IDWT structural outputs. This is the Bohr spectrum with electron rest mass included — derived exactly from the sector structure, with no free parameters.
+Both $\alpha$ and $m_e$ are IDWT structural outputs. This is the Bohr spectrum with electron rest mass included — derived exactly from the sector structure, with the IDWT-derived $\alpha$ and $m_e$ as the only inputs.
 
 **Orbit states. ⭐** At angular momentum $L$, the orbit states of the electron in $\mathbb{CP}^3$ form the holomorphic symmetric representation of $\mathrm{SU}(4)$:
 

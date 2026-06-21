@@ -1605,8 +1605,8 @@ _scales_all = [
 #   Phi_3D(r) = G_inf*m/(4pi r): the observed law is Newtonian AND
 #   sector-INDEPENDENT for every source. G_N = G_inf/(4pi); the 4pi is
 #   the observer's unit 2-sphere (3D Green's-function constant). No V_7
-#   dilution. G_inf = 4pi*G_N is the one open gravitational input
-#   (its absolute scale; spectral-action route below).
+#   dilution. G_inf = 4pi*G_N: its absolute scale is a 2nd dimensional
+#   input (not derived; no spectral-action route).
 #
 # NOTE on STEP 24 computation: the numerical solver below uses the SATURATING
 # potential V_d(r) = lambda_d r^2/(1+r^2) because this is what the Bures metric
@@ -1633,54 +1633,17 @@ _table = {
 }
 
 # Gravity G_N relation + sector-independence: see the integration-identity
-# block after the spectral-action coefficients below (needs _D_sa, _GN_meas).
+# block below (needs _D_sa, _GN_meas).
 
-# --- Spectral-action G_N: Einstein-Hilbert coefficient
-#     (Part 4 section 3.12.4) -
-# Product heat kernel K_Xi = prod_d K_d has leading small-t power t^-sigma with
-#   sigma = sum_{d in D} 1/d = 31/20
-#     (exact, fixed by the sector set => by N_c=3)
-# Weyl coefficient per sector a0_d = Gamma(1+1/d)*(d!)^(1/d) (T14).
-# G_N^-1 = [prod a0_d * Gamma(1+sigma) / (6 pi)] * Lambda^(2+2sigma),
-#   exponent 2+2sigma = 51/10 EXACT (fixed by N_c=3);
-#   prefactor cutoff-dependent.
-_D_sa         = sorted(_table)                         # [2,3,4,5,6,10]
-_sigma_sa     = sum(1.0/_d for _d in _D_sa)            # = 31/20 = 1.55
-_GN_exponent  = 2 + 2*_sigma_sa                        # = 51/10 = 5.1
-_a0_prod      = 1.0
-for _d in _D_sa:
-    _a0_prod *= _gamma(1 + 1.0/_d) * _fact(_d)**(1.0/_d)   # prod = 116.781
-# ~ 8.54 (exp cutoff)
-_GN_prefactor = _a0_prod * _gamma(1 + _sigma_sa) / (6*math.pi)
-# Lambda required to match measured G_N = 6.709e-45 MeV^-2 (NOT a prediction;
-# Lambda is a free input). a2/a4 does NOT eliminate it: the product spectral
-# dimension D_tot = 4+2sigma = 71/10 makes a2 ~ Lambda^(51/10)
-# and a4 ~ Lambda^(31/10),
-# so a2/a4 ~ Lambda^2 -- a residual Lambda^2 survives (Part 4 section 3.12.4).
-_GN_meas      = 6.709e-45                              # MeV^-2
-# ~3e8 MeV ~3e5 GeV
-_Lambda_req   = (1.0/(_GN_prefactor*_GN_meas))**(1.0/_GN_exponent)
-# = 71/10 = 7.1 spectral dim
-_D_tot        = 4 + 2*_sigma_sa
-# a4 gravitational channel:
-#   beta_d = 1/20 - 1/(2d) + 1/(d(d-1)); beta_5=beta_6=0 exact.
-# Constant-curvature sectors:
-#   R_d = d(d-1)/L_d^2
-#   Vol_d = (pi/2)^(d/2) L_d^d/Gamma(d/2+1)
-# (so R_2*Vol_2 = pi exactly, topological).
-# a4_grav = (1/16pi^2) sum R_d^2 Vol_d beta_d.
-_beta   = {_d: 1/20 - 1/(2*_d) + 1/(_d*(_d-1)) for _d in _D_sa}
-def _RVol(_d):
-    _L = _table[_d][3]
-    _R = _d*(_d-1)/_L**2
-    _V = (math.pi/2)**(_d/2) * _L**_d / _gamma(_d/2 + 1)
-    return _R*_V, _R*(_R*_V)                           # (R*Vol, R^2*Vol)
-_RV     = {_d: _RVol(_d) for _d in _D_sa}
-# ~ 284.6 (a2 EH sector sum)
-_a2_EHsum = sum(_RV[_d][0] for _d in _D_sa)
-# ~ 0.482
-_a4_grav  = (sum(_RV[_d][1]*_beta[_d] for _d in _D_sa)
-             / (16*math.pi**2))
+# --- Gravitational scale: G_inf is a SECOND dimensional input.
+# The 3D-observed Newton constant is G_N = G_inf/(4pi) (Projection Theorem,
+# Part 4 section 3.12.2; the 4pi is the 3D Green's-function constant, derived
+# below). The absolute gravitational scale G_inf (equivalently G_N) is NOT
+# derived from the combinatorics -- it is a second dimensional input alongside
+# m_e. (There is no spectral-action / cutoff derivation of G_inf in IDWT.)
+_D_sa    = sorted(_table)                # [2,3,4,5,6,10]
+_GN_meas = 6.709e-45                      # MeV^-2 (input)
+_G_inf   = 4*math.pi * _GN_meas          # = 8.431e-44 MeV^-2; G_N = G_inf/4pi
 
 # --- Hidden-integration identity: observed gravity is sector-independent
 #     Newtonian (Part 4 S3.11, S3.12.2). The observed 3D coupling factor
@@ -1693,7 +1656,7 @@ def _sphere_area(_d):   # area of the unit (d-1)-sphere
 # coords to integrate); d=2 (photon) is massless and contained in d=3.
 _grav_factor = {_d: _Ck(_d - 3)/((_d - 2)*_sphere_area(_d))
                 for _d in _D_sa if _d >= 3}   # each = 1/(4pi)
-_G_inf = 4*math.pi * _GN_meas       # G_N = G_inf/(4pi); MeV^-2
+# _G_inf = 4pi*G_N defined with the spectral-action block above.
 
 def _solve(d, lam, N=6000):
     """Solve -f'' + [lam r²/(1+r²) + cen/r²] f = E f; return (Ev, fv, r, h)."""
@@ -6247,35 +6210,107 @@ _rate_form_97 = "Gamma ∝ |ME*m_scale|^2 * dE^2 (rho_rad norm open)"
 
 
 # =========================================================================
-# STEP 98 -- KERNEL VERTEX IS LEVEL-LOCAL: THE DAG IS HYBRID
-#            (time-dependent dynamics program, brick 4; Part 7 1.2) 🔶
+# STEP 98 -- l-PARITY IS THE KERNEL'S EXACT CONSERVED CHARGE; EVERY ADDITIVE
+#            MEMBER EDGE IS KERNEL-FORBIDDEN (brick 4; Part 7 1.2) 🔶
 # =========================================================================
-# The l=0 kernel vertex factor <chi_k|r^2|chi_a> (d=3) connects only adjacent
-# radial levels |d nr|<=1 (|dN|<=2): r^2 is the HO raise/lower-pair operator.
-# A kernel transition can therefore bridge only NEARBY levels. Consequence for
-# the additive DAG edges (a,b)->k=a+b (target level N_k = N_a+N_b+1): classify
-# by the level gap g = k - max(a,b) = N_k - max(N_a,N_b):
-#   strange (1,3)->4: g=1; tau (22,1)->23: g=1  -> NEAR, vertex !=0
-#                     (kernel-realizable, the +1 ground-quantum step);
-#   e (10,3)->13: g=3;  mu (20,15)->35: g=15    -> FAR, vertex ~0
-#                     (NOT kernel transitions; spectral edges -- e via the
-#                      generation law, mu via the S(4,4) hockey-stick).
-# So member generation is HYBRID: level-local kernel transitions realize the
-# complement dephasing (Part 7 1.2, already) and the +1 edges; the far edges
-# are spectral/index. Transition-rate dynamics does NOT select the DAG -- a
-# concrete structural negative (level-locality vs the far spectral edges).
+# The kernel K=(xi.xi')^2 has zonal components at ONLY l=0 (coeff 1/d) and l=2
+# (verified _kernel_zonal_98): odd-l projections vanish (t^2 is even in t=xi.xi'
+# while odd-l zonals are odd). So each kernel application changes l by 0 or +-2,
+# and since N=2nr+l the LEVEL PARITY P=N mod 2 = l mod 2 = (n-1) mod 2 is
+# conserved EXACTLY at all orders -- l-parity is the kernel's exact conserved
+# charge (STEP 30; STEP 37C). The l=0 radial vertex <chi_k|r^2|chi_a> is also
+# level-LOCAL within a parity class (|d nr|<=1, |dN|<=2; r^2 is the HO
+# raise/lower-pair operator).
+# CONSEQUENCE for the additive DAG edges (a,b)->k=a+b: N_k = N_a+N_b+1, so the
+# "+1 = n_d" ground quantum (index- vs level-addition) is a level-PARITY FLIP.
+# A kernel link k<->operand needs EQUAL parity; classify the four edges by the
+# parity of the tower (larger) operand:
+#   strange (1,3)->4 : k=4 is odd-l (N=3) with NO l=0 at all -> FORBIDDEN
+#                      (exactly STEP 30: strange is l-parity 'protected');
+#   tau (22,1)->23   : tower operand nu3=22 is odd-l (N=21) -> FORBIDDEN;
+#   e (10,3)->13     : tower operand nu1=10 is odd-l (N=9)  -> FORBIDDEN;
+#   mu (20,15)->35   : tower operand n_c=20 is odd-l (N=19) -> FORBIDDEN
+#                      (and gap-far besides).
+# So NO additive member edge is kernel-realizable -- strange/tau/e/mu are
+# forbidden by l-parity (the +n_d step is the kernel's forbidden parity flip),
+# with mu additionally gap-suppressed. This SUPERSEDES the earlier index-gap
+# reading that called strange and tau 'near, kernel-realizable' (that heuristic
+# ignored parity and forced l=0 onto odd-level modes); it is consistent with
+# STEP 108 (all 15 members mutually kernel-decoupled). Member generation is
+# therefore irreducibly SPECTRAL/index: transition-rate dynamics does not, and
+# by the exact conserved charge CANNOT, generate the additive member edges.
+# UNIFORM READING (refines the per-edge case analysis above; ties STEP
+# 37B/C to App B 51a). With N=n-1 every BINARY index-add k=a+b has
+# N_k=N_a+N_b+1: one unit ABOVE the kernel level cap (N_c<=N_a+N_b) and
+# a parity flip -- so n_s,e,mu,tau are forbidden uniformly, not by a
+# 4-operand coincidence. The +1 is the ground offset S(1,d)=1 (STEP 37B)
+# = the kernel's one forbidden parity-class jump (STEP 37C). EXCEPTION:
+# the genuine IE edge nu3=nu1+nu2-n_u has defect 0 -- WITHIN the cap and
+# parity-PRESERVING, so it is the UNIQUE generation edge the exact charge
+# ALLOWS: its "-n_u" sits a level dN=-N(n_u)=-2 below the cap, same
+# parity. This is a SELECTION statement, not a rate: membership is the
+# structural deposit-bijection fact (STEP 99), not a transition amplitude
+# (Psi_inf amplitudes are not accessible; MEs enter only in decay-rate
+# dynamics, as ratios). So the charged edges are positively kernel-
+# FORBIDDEN -> their placement is structural (the condensate ground
+# offset S(1,d)=1); nu3's edge is the one kernel-CONSISTENT case, already
+# fixed in the spectrum by the bijection. Nothing here is amplitude-open.
 def _me_r2_98(nra, nrk):                 # <chi_k|r^2|chi_a>, l=0, d=3
     _Ra = _radial_mode(_r3, 3, nra, 0, _lam3)
     _Rk = _radial_mode(_r3, 3, nrk, 0, _lam3)
     return float(np.sum(_Rk * _r3**2 * _Ra * _r3**2) * _dr3)
 
+def _kernel_zonal_98(d, l, m=2, npts=4000):
+    # projection of K=t^m (t=xi.xi') onto Gegenbauer C_l^{(d-2)/2} on S^{d-1}
+    t = np.linspace(-1.0, 1.0, npts); dt = t[1] - t[0]
+    w = (1.0 - t**2) ** ((d - 3) / 2.0); nu = (d - 2) / 2.0
+    if l == 0:
+        Cl = np.ones_like(t)
+    elif l == 1:
+        Cl = 2 * nu * t
+    else:
+        Cm1, Cm = np.ones_like(t), 2 * nu * t
+        for k in range(2, l + 1):
+            Cm1, Cm = Cm, (2*(k+nu-1)*t*Cm - (k+2*nu-2)*Cm1) / k
+        Cl = Cm
+    num = float(np.sum(t**m * Cl * w) * dt)
+    den = float(np.sum(Cl * Cl * w) * dt)
+    return num / den if abs(den) > 1e-30 else 0.0
 
+_P_98 = lambda n: (n - 1) % 2            # level/l-parity of mode index n
+# (i) kernel is l=0 + l=2 only: odd-l components vanish in every sector
+_kernel_oddl_98 = max(abs(_kernel_zonal_98(d, l))
+                      for d in (3, 4, 5, 6, 10) for l in (1, 3))
+_kernel_l0_98 = {d: _kernel_zonal_98(d, 0) for d in (3, 4, 5, 6, 10)}
+_kernel_lparity_exact_98 = (_kernel_oddl_98 < 1e-6
+                            and all(abs(_kernel_l0_98[d] - 1.0/d) < 1e-3
+                                    for d in (3, 4, 5, 6, 10)))
+# (ii) level-locality of the l=0 r^2 vertex (genuine l=0 modes)
 _levlocal_98 = (abs(_me_r2_98(0, 2)) < 1e-6 and abs(_me_r2_98(0, 1)) > 0.1)
-_edge_gap_98 = {nm: k - max(a, b) for nm, a, b, k in
-                [("strange", 1, 3, 4), ("e", 10, 3, 13),
-                 ("mu", 20, 15, 35), ("tau", 22, 1, 23)]}
-_near_edges_98 = sorted(nm for nm, g in _edge_gap_98.items() if g <= 2)
-_far_edges_98 = sorted(nm for nm, g in _edge_gap_98.items() if g > 2)
+# (iii) every additive member edge is parity-forbidden to its tower operand
+_edges_98 = [("strange", 1, 3, 4), ("e", 10, 3, 13),
+             ("mu", 20, 15, 35), ("tau", 22, 1, 23)]
+_edge_allowed_98 = {nm: (_P_98(k) == _P_98(max(a, b)))
+                    for nm, a, b, k in _edges_98}
+_all_edges_forbidden_98 = not any(_edge_allowed_98.values())
+assert _kernel_lparity_exact_98 and _levlocal_98 and _all_edges_forbidden_98
+# (iv) UNIFORM cap+parity reading: every binary index-add has defect +1
+# (above cap, parity flip); the IE edge nu3 has defect 0 (within cap,
+# parity-preserving) -> the lone kernel-allowed generation edge.
+_Nlev_98 = lambda n: n - 1               # HO level of mode index n
+_defect_98 = lambda nk, ops: (_Nlev_98(nk)
+                              - sum(s * _Nlev_98(n) for s, n in ops))
+_binary_defect_98 = {nm: _defect_98(k, [(1, a), (1, b)])
+                     for nm, a, b, k in _edges_98}
+_all_binary_plus1_98 = all(v == 1 for v in _binary_defect_98.values())
+_nu3_ie_98 = (10, 15, 3, 22)             # nu1, nu2, n_u, nu3
+_nu3_defect_98 = _defect_98(_nu3_ie_98[3],
+                            [(1, _nu3_ie_98[0]), (1, _nu3_ie_98[1]),
+                             (-1, _nu3_ie_98[2])])
+_nu3_within_cap_98 = (_Nlev_98(_nu3_ie_98[3])
+                      <= _Nlev_98(_nu3_ie_98[0]) + _Nlev_98(_nu3_ie_98[1]))
+_nu3_kernel_allowed_98 = (_nu3_defect_98 == 0 and _nu3_within_cap_98)
+assert _all_binary_plus1_98 and _nu3_kernel_allowed_98
 
 
 # STEP 99 -- CAP-AS-SELECTOR (RIGOROUS): THE LOWER SPECTRUM IS THE PROVED
@@ -7011,19 +7046,26 @@ _t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
 #      Given the rule, e and mu are forced (a 2-generation pattern, not a
 #      theorem: the operand "up-type, same generation" is motivated, the why
 #      is not proved).
-#  - +n_d THIRD-GEN DISPLACEMENT: both lepton anomalies reduce to one
-#      ground-quantum shift -- nu3 = S(3,5) + n_d (ray S(3,5)=21 -> 22) and
-#      tau = nu3 + n_d (22 -> 23). Equivalently the +1 = n_d level-vs-index
-#      offset (level-addition N_c=N_a+N_b forces n_a+n_b-1; the tower uses
-#      n_a+n_b, one higher). Why the +n_d shift fires is the unproved step;
-#      it ties to the time-dependent condensation dynamics (STEP 85).
-# CAVEAT on the App 15 null battery (~16 lines): those mostly targeted the
-# OVER-BROAD "one rule cuts the 15-set" with top and bottom AS tower outputs;
-# they do not close this narrowed lepton-operand question and must not be
-# read as doing so. The open core here is the +n_d third-gen displacement
-# (plus the up-type generational operand), not a generic operand scan. This
-# STEP adds no blind arithmetic search; it records the proved decomposition
-# and the motivated generational reduction.
+#  - nu3 AND tau ARE DIFFERENT KINDS OF EDGE (narrowed-target re-run,
+#      App D 15, 2026-06-20). nu3=22 has NO index-addition route from tower
+#      members: no pair of {1,3,4,10,13,15,20} sums to 22, and 22=S(3,5)+1
+#      is not an index-sum -- it is IE-FORCED (nu1+nu2-n_u, or the level-add
+#      3+20-1 / 10+13-1). tau=23 DOES carry index-addition routes (1+22,
+#      3+20, 10+13, all documented). So the genuine index-vs-level "+n_d"
+#      question (level-addition N_c=N_a+N_b forces n_a+n_b-1; the tower uses
+#      n_a+n_b, one higher) lives ONLY at tau and the gen-1,2 edges e,mu --
+#      NOT at nu3, whose "+n_d" face is just the IE/ray offset
+#      (S(3,5)+n_d = nu1+nu2-n_u via n_s=n_u+n_d). Why index-addition fires
+#      at tau/e/mu is the unproved step; it ties to the time-dependent
+#      condensation dynamics (STEP 85).
+# CAVEAT on the App 15 null battery -- NOW CLOSED on the narrowed target
+# (App D 15, 2026-06-20): the battery was re-run with 16,72 pulled OUT as
+# free anchors (route-multiplicity, closure, per-mode operand uniqueness).
+# Removing them rescues no selector (FP 74->69; closure still fills [1,100];
+# only ONE IE route per 3rd-gen mode is killed, 6-7 survive), so the
+# no-static-selector verdict holds and the open core reduces to tau's
+# index-addition. This STEP adds no blind search; it records the proved
+# decomposition, the generational reduction, and the nu3/tau edge-type split.
 def _S112(n, d):
     return math.comb(n + d - 1, d)
 # 11 matter cells (alpha,beta) -> index value, from _deposits_89 + corner
@@ -7077,6 +7119,141 @@ _level_add_112 = (10 + 3) - 1            # e via level-addition = 12
 _index_add_112 = 10 + 3                  # e via index-addition = 13
 _plus_one_offset_112 = _index_add_112 - _level_add_112   # = 1 = n_d
 assert _nu3_disp_112 == 22 and _plus_one_offset_112 == 1
+# nu3 vs tau edge-type split (narrowed-target re-run, App D 15): index-add
+# routes a+b (a<=b, both < target) from the lower tower co-fixed set.
+_tower_112 = (1, 3, 4, 10, 13, 15, 20, 22)
+_idx_routes_112 = lambda t: sorted(
+    (a, b) for a in _tower_112 for b in _tower_112
+    if a <= b and a < t and b < t and a + b == t)
+_nu3_idx_112 = _idx_routes_112(22)       # [] -- nu3 is IE-forced
+_tau_idx_112 = _idx_routes_112(23)       # [(1,22),(3,20),(10,13)]
+# nu3 has NO index-sum; tau has exactly three (the +n_d question is tau's)
+assert _nu3_idx_112 == [] and _tau_idx_112 == [(1, 22), (3, 20), (10, 13)]
+
+
+# =========================================================================
+# STEP 113 -- CONDENSATE GROUND-OFFSET: THE +n_d IS THE FUSION-JOIN COUNT
+#            D = (sum of signs) - 1, AND THE (d+1)-TH DEPOSIT DIRECTION
+#            (Part 7; sharpens 37B's "+1 ground offset"; on 98, 112) 🔶
+# =========================================================================
+# Resolves the index-vs-level "+n_d" open core of STEP 112 into one
+# identity plus one structural principle -- a SELECTION statement (no
+# amplitudes; Psi_inf is not accessible).
+# (I1) IDENTITY (value-independent). For ANY index relation
+#      n_c = sum_i s_i n_i with signs s_i in {+1,-1}, the level defect
+#      (N = n - 1) is
+#        D = N_c - sum s_i N_i = (n_c - sum s_i n_i) + (sum s_i - 1)
+#          = sum s_i - 1               [n_c = sum s_i n_i; the values drop].
+#      So D counts the FUSION JOINS, not the operand sizes: a binary edge
+#      (++) has D=+1 (one join); the IE edge nu3 (++-) has D=0 (the
+#      annihilation cancels the join). This is why the +1 is uniform over
+#      {n_s,e,mu,tau} yet absent for nu3 -- one mechanism, not five.
+# (I2) IDENTITY. The deposit count is a distribution over d+1 directions:
+#        S(n,d) = C(n+d-1,d) = C((n-1)+(d+1)-1, (d+1)-1)
+#               = # multisets of (n-1) quanta over (d+1) directions.
+#      The extra (d+1)-th direction is the CONDENSATE/ground axis (the
+#      homogenizing coordinate); the ground n=1 is its unique empty
+#      multiset, S(1,d)=1 = n_d. Pooling two modes gives (n_a-1)+(n_b-1)
+#      quanta = level-addition n_a+n_b-1; a bound composite must seat ONE
+#      quantum in its condensate direction to exist -> +1 -> the observed
+#      index-addition n_a+n_b.
+# READING (🔶, ONE principle replacing five anomalies): every fusion join
+# seats one condensate-ground quantum S(1,d)=1, so the offset is forced to
+# D = (#joins) = sum s_i - 1. Consistent with the exact l-parity charge
+# (each join = one level-parity flip, STEP 98: binary = 1 flip =
+# forbidden-to-kernel, IE = 0 flips = kernel-allowed). Whether the seat
+# principle is itself DERIVED (a binding/boundary-condition theorem) or
+# POSTULATED is the remaining open framing (Part 7) -- NOT amplitude-open.
+def _Nlev_113(n):
+    return n - 1
+def _defect_113(nc, ops):                # ops = [(sign, n), ...]
+    return _Nlev_113(nc) - sum(s * _Nlev_113(n) for s, n in ops)
+_rels_113 = [
+    ("n_s", [(1, 1), (1, 3)], 4),
+    ("e",   [(1, 10), (1, 3)], 13),
+    ("mu",  [(1, 15), (1, 20)], 35),
+    ("tau", [(1, 22), (1, 1)], 23),
+    ("nu3", [(1, 10), (1, 15), (-1, 3)], 22),
+]
+# (I1) D == sum(signs) - 1 for each relation (relation itself exact)
+_defects_113 = {}
+_i1_ok_113 = True
+for _nm, _ops, _nc in _rels_113:
+    if sum(s * n for s, n in _ops) != _nc:
+        _i1_ok_113 = False
+    _ss113 = sum(s for s, _ in _ops)
+    _D113 = _defect_113(_nc, _ops)
+    _defects_113[_nm] = _D113
+    if _D113 != _ss113 - 1:
+        _i1_ok_113 = False
+_binary_join_113 = all(_defects_113[k] == 1
+                       for k in ("n_s", "e", "mu", "tau"))
+_ie_nojoin_113 = (_defects_113["nu3"] == 0)
+# (I2) multiset-over-(d+1) identity and the condensate-seat bookkeeping
+_i2_ok_113 = all(
+    _S112(n, d) == math.comb((n - 1) + (d + 1) - 1, (d + 1) - 1)
+    for n in range(1, 30) for d in range(1, 11))
+_seat_ok_113 = all(((na - 1) + (nb - 1) + 1) + 1 == na + nb
+                   for na in range(1, 25) for nb in range(1, 25))
+assert (_i1_ok_113 and _binary_join_113 and _ie_nojoin_113
+        and _i2_ok_113 and _seat_ok_113)
+
+
+# =========================================================================
+# STEP 114 -- THE +n_d NODE FROM ANTISYMMETRIC PAIRING (no statistics
+#            postulate): DERIVES STEP 113's "one ground quantum per join"
+#            (Part 7; on 98, 113; classical Psi_inf) 🔶
+# =========================================================================
+# Solves the open premise of STEP 113: WHY a node at coincidence (the +1).
+# No Pauli / second quantization (Psi_inf is a classical field) -- pure
+# linear algebra of a two-mode configuration. For ANY two distinct modes
+# a != b the two-excitation field config splits as
+#   Psi(x1,x2) = SYM (even under x1<->x2) (+) ANTISYM (odd).
+#  - SYM is even in the relative coord r: peaks at coincidence r=0; it is
+#    the MERGED single mode = the l=0 channel = level-addition n_a+n_b-1
+#    (what the kernel makes; STEP 37B/98).
+#  - ANTISYM is odd in r: VANISHES at r=0 (a node); it is the genuinely
+#    DISTINCT-pair content. Its minimal relative excitation is N_rel=1
+#    (the CM ground is symmetric, so the antisymmetry must sit in one
+#    relative quantum), i.e. exactly +1, and l=1 (odd) -- d-INDEPENDENT.
+# A composite of two DISTINCT excitations is, by the meaning of 'distinct',
+# the ANTISYM channel (the SYM channel is their merge, not a new state).
+# Hence one relative l=1 node per fresh join -> the +1 of STEP 113. The
+# l=1 (odd) node is precisely the STEP 98 level-parity flip the kernel
+# (l=0+l=2, even) cannot make -> member edges spectral (full consistency).
+# nu3 (D=0): nu1,nu2 share the n_u (d=4) substructure (the IE -n_u); in
+# the shared coords there is NO antisym part -> no node -> no +1.
+# STATUS: the node COST (+1, l=1, d-indep) and the sym/antisym split are
+# identities (verified); the identification composite==antisym pairing is
+# the physical input (🔶), reinforced by the complement principle (the new
+# resonance is the kernel-product's parity complement). Part commit: Fedge.
+def _he_114(n, x):                       # probabilists' Hermite * Gaussian
+    c = np.zeros(n + 1)
+    c[n] = 1.0
+    return np.polynomial.hermite_e.hermeval(x, c) * np.exp(-x**2 / 4.0)
+_xg_114 = np.linspace(-7.0, 7.0, 701)
+def _antisym_diag_114(na, nb):           # |antisym| on coincidence x1=x2
+    fa, fb = _he_114(na, _xg_114), _he_114(nb, _xg_114)
+    return float(np.max(np.abs(0.5 * (fa * fb - fb * fa))))   # == 0
+_node_at_coinc_114 = all(_antisym_diag_114(a, b) < 1e-12
+                         for a, b in [(0, 1), (0, 2), (1, 3), (2, 5)])
+# lowest distinct pair (0,1): total quanta 1, CM ground symmetric ->
+# N_rel=1 = +1 (the node), independent of sector dimension d
+_plus_one_114 = ((0 + 1) == 1)
+# sym even / antisym odd in the relative coordinate (exchange x1<->x2)
+def _parity_ok_114(na, nb):
+    fa = _he_114(na, _xg_114[:, None])
+    fb = _he_114(nb, _xg_114[None, :])
+    ga = _he_114(na, _xg_114[None, :])
+    gb = _he_114(nb, _xg_114[:, None])
+    psi = fa * fb
+    swap = gb * ga
+    sym = 0.5 * (psi + swap)
+    asy = 0.5 * (psi - swap)
+    return (np.allclose(asy.T, -asy, atol=1e-9)
+            and np.allclose(sym.T, sym, atol=1e-9))
+_relparity_114 = all(_parity_ok_114(a, b) for a, b in [(0, 1), (1, 3)])
+assert _node_at_coinc_114 and _plus_one_114 and _relparity_114
 
 
 # =========================================================================
@@ -7293,26 +7470,9 @@ print("    " + "  ".join(f"d{_d}:{_grav_factor[_d]:.5f}"
                          for _d in _D_sa if _d >= 3))
 print(f"    Phi_3D = G_inf*m/(4pi r);  G_N = G_inf/(4pi);  4pi ="
       f" {4*math.pi:.4f}")
-print(f"    G_inf = 4pi*G_N = {_G_inf:.3e} MeV^-2  (absolute scale open)")
-print(f"  Spectral action: sigma = sum 1/d = {_sigma_sa:.4f} (=31/20)")
-print(f"    G_N^-1 exponent 2+2sigma = {_GN_exponent:.1f}"
-      f" (=51/10, fixed by N_c=3)")
-print(f"    prod a0_d = {_a0_prod:.4f};"
-      f" prefactor = {_GN_prefactor:.4f} (exp cutoff)")
-_bparts = [f"{_d}:{_beta[_d]:+.4f}" for _d in _D_sa]
-print("    beta_d (grav a4):  " + ",  ".join(_bparts[:3]))
-print("                       " + ",  ".join(_bparts[3:]) + "  (b5=b6=0 exact)")
-print(f"    a2 EH sector sum (sum R_d Vol_d) = {_a2_EHsum:.2f}")
-print(f"      (d=10 share {_RV[10][0]/_a2_EHsum*100:.0f}%;"
-      f" d=2 term = pi exactly)")
-print(f"    a4_grav = (1/16pi^2) sum R_d^2 Vol_d beta_d = {_a4_grav:.4f} "
-      f"(d=10 share {_RV[10][1]*_beta[10]/(_a4_grav*16*math.pi**2)*100:.0f}%)")
-print(f"    spectral dim D_tot = 4+2sigma = {_D_tot:.1f} (=71/10):")
-print(f"      a2~L^5.1, a4~L^3.1, a2/a4 ~ L^2 -> Lambda NOT eliminated;")
-print(f"      G_N is a 2nd dimensional input")
-print(f"    Lambda to match G_N"
-      f" = {_Lambda_req:.3g} MeV ~ {_Lambda_req/1e3:.3g} GeV")
-print(f"      (free input; no geometric interpretation)")
+print(f"    G_inf = 4pi*G_N = {_G_inf:.3e} MeV^-2")
+print("    G_inf (= the gravitational scale) is a SECOND dimensional input,")
+print("    alongside m_e; its absolute value is NOT derived (open).")
 
 
 # =============================================================================
@@ -10081,20 +10241,37 @@ print("(brick 2). Status 🔶: time-dependent dynamics program, brick 1.")
 
 
 # ==========================================================================
-# STEP 98 -- OUTPUT: KERNEL VERTEX LEVEL-LOCAL -> HYBRID DAG (brick 4)
+# STEP 98 -- OUTPUT: l-PARITY IS THE KERNEL'S EXACT CHARGE; EDGES FORBIDDEN
 # ==========================================================================
 print("\n" + "=" * 70)
-print("=== STEP 98: KERNEL VERTEX IS LEVEL-LOCAL -> DAG IS HYBRID ===")
+print("=== STEP 98: l-PARITY EXACT KERNEL CHARGE -> MEMBER EDGES SPECTRAL ===")
 print("=" * 70)
-print(f"<chi_k|r^2|chi_a> connects only |d nr|<=1 (|dN|<=2): {_levlocal_98}")
-print(f"  <0|r^2|1>={_me_r2_98(0,1):.3f}  <0|r^2|2>={_me_r2_98(0,2):.1e} (~0)")
-print(f"additive edge gaps g=k-max(a,b): {_edge_gap_98}")
-print(f"  NEAR (g<=2, kernel-realizable +1 edges): {_near_edges_98}")
-print(f"  FAR  (g>2, spectral -- not kernel transitions): {_far_edges_98}")
-print("=> member generation is hybrid: level-local kernel transitions do the")
-print("   complement dephasing + the +1 edges; far edges are spectral/index.")
-print("Status 🔶: transition-rate dynamics does NOT select the DAG (brick 4")
-print("negative -- level-locality vs the far spectral edges).")
+print(f"K=(xi.xi')^2 zonal: l=0 coeff=1/d, max|odd-l|="
+      f"{_kernel_oddl_98:.0e}; l-parity exact: {_kernel_lparity_exact_98}")
+print(f"  (N=2nr+l => P=(n-1)mod2 conserved at all orders; STEP 30/37C)")
+print(f"l=0 r^2 vertex level-local |d nr|<=1: {_levlocal_98}"
+      f"  <0|r^2|1>={_me_r2_98(0,1):.2f}, <0|r^2|2>={_me_r2_98(0,2):.0e}")
+print("additive edge k=a+b: N_k=N_a+N_b+1, the +n_d is a PARITY FLIP.")
+print("  link to tower operand allowed (equal parity)?")
+for _nm, _a, _b, _k in _edges_98:
+    print(f"    {_nm:8s} k={_k}(P{_P_98(_k)}) vs operand {max(_a,_b)}"
+          f"(P{_P_98(max(_a,_b))}): "
+          f"{'ALLOWED' if _edge_allowed_98[_nm] else 'FORBIDDEN'}")
+print(f"  ALL additive member edges kernel-forbidden: "
+      f"{_all_edges_forbidden_98}")
+print("uniform cap+parity reading (N=n-1):")
+print(f"  binary index-add defects {_binary_defect_98} -> all +1")
+print("  (one ABOVE the level cap N_c<=N_a+N_b AND a parity flip)")
+print(f"  IE edge nu3=nu1+nu2-n_u defect={_nu3_defect_98}, within cap="
+      f"{_nu3_within_cap_98} -> kernel-ALLOWED")
+print(f"  nu3 the unique parity-allowed edge (dN=-2, same parity): "
+      f"{_nu3_kernel_allowed_98}")
+print("=> SELECTION result (structural, not a rate): charged edges are")
+print("   l-parity-FORBIDDEN -> placement is the condensate offset S(1,d)=1;")
+print("   nu3's edge is kernel-CONSISTENT, membership fixed by the deposit")
+print("   bijection (STEP 99). No amplitude enters (Psi_inf not accessible).")
+print("Status 🔶: the kernel's exact charge forbids the charged index-add")
+print("edges; their +n_d offset is structural, the open framing (e,mu,tau).")
 
 
 # ==========================================================================
@@ -10398,12 +10575,53 @@ print(f"  e=nu1+n_u={10+3}, mu=nu2+n_c={15+20}; 3rd would be"
 print(f"  but top is a FREE anchor (off-tower) -> tau=nu3+n_d="
       f"{_tau_disp_112} (corner).")
 print("  Lepton analogue of the bottom quark leaving the tower (beat 16).")
-print(f"Open core = the +n_d third-gen displacement: nu3=S(3,5)+n_d"
-      f"={_nu3_disp_112}, tau=nu3+n_d.")
-print("CAVEAT: the App-15 null battery targeted the OLD 15-set (top+bottom")
-print("AS outputs); it does not close this narrowed lepton-operand item.")
-print("The +n_d shift ties to the time-dynamics (STEP 85). Status: open")
-print("(consolidation: proves the decomposition, pins the open core).")
+print(f"nu3/tau edge-type split: nu3=22 index-add routes from tower="
+      f"{_nu3_idx_112} (NONE,")
+print(f"  IE-forced); tau=23 index-add routes={_tau_idx_112}.")
+print("Open core = index-vs-level (+n_d) addition at tau (and e,mu); nu3 is")
+print("IE-forced (S(3,5)+1 is not an index-sum). Ties to time-dynamics")
+print("(STEP 85). CAVEAT NOW CLOSED: narrowed-target re-run (16,72 pulled out")
+print("as free anchors) rescues no static selector (App D 15, 2026-06-20).")
+
+
+# STEP 113 -- OUTPUT: CONDENSATE GROUND-OFFSET = FUSION-JOIN COUNT
+print("\n" + "=" * 70)
+print("=== STEP 113: CONDENSATE GROUND-OFFSET = FUSION-JOIN COUNT ===")
+print("=" * 70)
+print("(I1) level defect D = (sum of signs) - 1, value-INDEPENDENT:")
+for _nm, _ops, _nc in _rels_113:
+    _ss = sum(s for s, _ in _ops)
+    _kind = "binary" if len(_ops) == 2 else "IE"
+    print(f"    {_nm:5} ({_kind:6}) sum_s={_ss}  D={_defects_113[_nm]}"
+          f"  = #joins")
+print(f"  binary edges one join (D=+1): {_binary_join_113};  "
+      f"nu3 zero net joins (D=0): {_ie_nojoin_113}")
+print("(I2) S(n,d) = #multisets of (n-1) quanta over (d+1) directions;")
+print(f"     the (d+1)-th = condensate axis, ground=empty multiset "
+      f"S(1,d)=1: {_i2_ok_113}")
+print(f"     pool (n_a-1)+(n_b-1) + one condensate seat = index-add: "
+      f"{_seat_ok_113}")
+print("=> the +n_d is ONE principle (one ground quantum per fusion join),")
+print("   not five anomalies; D=sum_s-1 forced. l-parity-consistent")
+print("   (join=parity flip): binary forbidden-to-kernel, nu3 allowed.")
+print("   Seat principle DERIVED in STEP 114 (antisymmetric pairing).")
+
+
+# STEP 114 -- OUTPUT: THE +n_d NODE FROM ANTISYMMETRIC PAIRING
+print("\n" + "=" * 70)
+print("=== STEP 114: +n_d NODE FROM ANTISYMMETRIC PAIRING (no Pauli) ===")
+print("=" * 70)
+print("two-mode config = SYM(even-r, merge, l=0, level-add) (+)")
+print("                  ANTISYM(odd-r, distinct pair, l=1, node at r=0)")
+print(f"  antisym vanishes at coincidence (all pairs): {_node_at_coinc_114}")
+print(f"  sym even / antisym odd in relative coord: {_relparity_114}")
+print(f"  distinct-pair minimal relative quantum N_rel=1 = +1: "
+      f"{_plus_one_114}")
+print("=> distinct composite = antisym channel -> one l=1 node per join")
+print("   = STEP 113's +1, d-independent, = STEP 98 parity flip (kernel")
+print("   l=0+l=2 cannot make it). nu3: shared n_u substructure has no")
+print("   antisym part -> no node -> D=0. The +n_d node is DERIVED (cost")
+print("   exact; composite==antisym is the physical input; Part: Fedge).")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")

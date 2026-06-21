@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read the full IDWT Python proof script in your browser with syntax highlighting. The 10,000+ line file is rendered with a virtualized viewer, so only the visible lines are drawn as you scroll.">
+<meta name="keywords" content="IDWT script, idwt.py, Python proof script, source viewer, syntax highlighting, Infinite-Dimensional Wave Theory">
+<meta name="author" content="Fedge No">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fedgeno.github.io/notes/script.html">
+<meta property="og:title" content="idwt.py — Source Viewer — IDWT">
+<meta property="og:description" content="Read the full IDWT Python proof script in your browser with syntax highlighting.">
+<meta property="og:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
+<meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
+<title>idwt.py — Source Viewer — IDWT</title>
+<link rel="stylesheet" href="/styles/main.css">
+<style>
+  /* ── Source viewer ─────────────────────────────────── */
+  body { overflow: hidden; }            /* the viewer owns scrolling */
+
+  .sv-toolbar {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    min-height: 52px;
+    background: rgba(5,7,14,0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(139,156,255,0.10);
+  }
+  .sv-title {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: #c9d4ff;
+    letter-spacing: -0.01em;
+  }
+  .sv-stats { font-size: 0.8rem; color: var(--muted-2); white-space: nowrap; }
+  .sv-spacer { flex: 1 1 24px; }
+
+  .sv-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px 6px 4px 10px;
+  }
+  .sv-field:focus-within { border-color: var(--border-hover); }
+  .sv-field input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .sv-field input::placeholder { color: var(--muted-2); }
+  #sv-find { width: 150px; }
+  #sv-goto { width: 56px; font-family: "JetBrains Mono", monospace; }
+  .sv-count {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.74rem;
+    color: var(--muted-2);
+    min-width: 44px;
+    text-align: right;
+  }
+  .sv-iconbtn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .sv-iconbtn:hover { color: var(--text); border-color: var(--border-hover); background: rgba(255,255,255,0.06); }
+
+  /* viewer */
+  #sv-viewer {
+    position: fixed;
+    left: 0; right: 0;
+    top: calc(var(--nav-h) + 52px);
+    bottom: 0;
+    overflow: auto;
+    background: rgba(6,9,18,0.72);
+    border-top: 1px solid rgba(139,156,255,0.06);
+    outline: none;
+    contain: layout paint;
+  }
+  #sv-scroll { position: relative; }       /* sized in JS: width + height */
+
+  .code-row {
+    position: absolute;
+    left: 0;
+    height: 21px;
+    line-height: 21px;
+    white-space: pre;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    color: #d4d9ec;
+    tab-size: 4;
+  }
+  .code-row[data-cur="1"] { background: rgba(139,156,255,0.16); }
+  .code-row[data-cur="1"] .ln { background: rgba(40,46,74,0.96); color: #c7d2ff; }
+
+  .ln {
+    position: sticky;
+    left: 0;
+    display: inline-block;
+    width: 58px;
+    padding-right: 14px;
+    text-align: right;
+    color: #565f7a;
+    background: rgba(6,9,18,0.97);
+    border-right: 1px solid rgba(139,156,255,0.10);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .lc { padding-left: 12px; }
+
+  /* loading / error states */
+  #sv-state {
+    position: fixed;
+    inset: calc(var(--nav-h) + 52px) 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    z-index: 120;
+    pointer-events: none;
+  }
+  #sv-state .spin {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 2px solid rgba(139,156,255,0.25);
+    border-top-color: var(--accent-1);
+    animation: sv-spin 0.8s linear infinite;
+  }
+  @keyframes sv-spin { to { transform: rotate(360deg); } }
+
+  /* ── highlight.js token theme (on-brand, dark) ─────── */
+  .hljs-comment, .hljs-quote        { color: #6b7390; font-style: italic; }
+  .hljs-keyword, .hljs-selector-tag { color: #b79cff; }
+  .hljs-built_in                    { color: #7fb0ff; }
+  .hljs-type, .hljs-literal         { color: #5cc8ff; }
+  .hljs-number                      { color: #f0a36b; }
+  .hljs-string, .hljs-doctag        { color: #a8d96b; }
+  .hljs-meta .hljs-string           { color: #a8d96b; }
+  .hljs-title                       { color: #8b9cff; }
+  .hljs-title.function_             { color: #8b9cff; }
+  .hljs-title.class_                { color: #c7d2ff; }
+  .hljs-params                      { color: #cdd3ea; }
+  .hljs-meta                        { color: #60a5fa; }
+  .hljs-attr, .hljs-attribute       { color: #7fb0ff; }
+  .hljs-symbol, .hljs-bullet        { color: #a78bfa; }
+  .hljs-operator, .hljs-punctuation { color: #9aa3b8; }
+  .hljs-variable, .hljs-template-variable, .hljs-subst { color: #e6e8f0; }
+  .hljs-emphasis { font-style: italic; }
+  .hljs-strong   { font-weight: 600; }
+
+  @media (max-width: 720px) {
+    .sv-stats { display: none; }
+    #sv-find { width: 110px; }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/">IDWT</a>
+  <div class="nav-links">
+    <a href="/articles/">Articles</a>
+    <a href="/visualizations/">Visualizations</a>
+    <a href="/notebook/">Notebook</a>
+    <a href="/notes/" aria-current="page">Notes</a>
+    <a href="/published/">Published</a>
+  </div>
+</nav>
+
+<div class="sv-toolbar">
+  <span class="sv-title">idwt.py</span>
+  <span class="sv-stats" id="sv-stats">loading…</span>
+  <span class="sv-spacer"></span>
+
+  <span class="sv-field">
+    <input id="sv-find" type="text" placeholder="Find in file…" autocomplete="off" spellcheck="false" aria-label="Find in file">
+    <span class="sv-count" id="sv-find-count"></span>
+    <button class="sv-iconbtn" id="sv-prev" title="Previous match (Shift+Enter)" aria-label="Previous match">&#8249;</button>
+    <button class="sv-iconbtn" id="sv-next" title="Next match (Enter)" aria-label="Next match">&#8250;</button>
+  </span>
+
+  <span class="sv-field">
+    <input id="sv-goto" type="text" inputmode="numeric" placeholder="Line" autocomplete="off" aria-label="Go to line">
+  </span>
+
+  <a class="dl" href="/files/idwt.py" download>Download</a>
+  <a class="dl" href="/notes/">&#8592; Notes</a>
+</div>
+
+<div id="sv-viewer" tabindex="0">
+  <div id="sv-scroll"></div>
+</div>
+
+<div id="sv-state"><div class="spin"></div><div id="sv-state-text">Loading idwt.py…</div></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var SRC = "/files/idwt.py";
+  var HLJS = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js";
+  var LH = 21;          // row height, must match .code-row CSS
+  var OVERSCAN = 14;    // extra rows above/below the viewport
+
+  var viewer  = document.getElementById("sv-viewer");
+  var scroller= document.getElementById("sv-scroll");
+  var stateEl = document.getElementById("sv-state");
+  var stateTx = document.getElementById("sv-state-text");
+  var statsEl = document.getElementById("sv-stats");
+
+  var rawLines = [];    // plain text, per line
+  var lineHTML = [];    // highlighted (or escaped) HTML, per line
+  var lastStart = -1, lastEnd = -1;
+  var curLine = -1;     // 0-based line to highlight (find / goto)
+
+  // ── helpers ────────────────────────────────────────
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function (c) {
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
+    });
+  }
+  function setState(msg) {
+    if (msg === null) { stateEl.style.display = "none"; return; }
+    stateEl.style.display = "flex";
+    stateTx.textContent = msg;
+  }
+
+  // Split highlight.js output into independently-valid per-line HTML.
+  // At each newline we close every open <span> and reopen them on the next
+  // line, so a virtual row can be inserted on its own without broken markup.
+  function splitToLines(html) {
+    var lines = [], stack = [], cur = "", i = 0, n = html.length;
+    function closeAll() { var s = ""; for (var k = 0; k < stack.length; k++) s += "</span>"; return s; }
+    function openAll()  { return stack.join(""); }
+    while (i < n) {
+      var ch = html[i];
+      if (ch === "<") {
+        var end = html.indexOf(">", i);
+        if (end === -1) { cur += html.slice(i); break; }
+        var tag = html.slice(i, end + 1);
+        if (tag.charAt(1) === "/") { stack.pop(); }
+        else { stack.push(tag); }
+        cur += tag;
+        i = end + 1;
+      } else if (ch === "\n") {
+        cur += closeAll();
+        lines.push(cur);
+        cur = openAll();
+        i++;
+      } else {
+        var j = i;
+        while (j < n && html[j] !== "<" && html[j] !== "\n") j++;
+        cur += html.slice(i, j);
+        i = j;
+      }
+    }
+    lines.push(cur);
+    return lines;
+  }
+
+  // ── highlighting: worker first, main-thread fallback ─
+  function highlightInWorker(code) {
+    return new Promise(function (resolve, reject) {
+      var workerSrc =
+        'importScripts(' + JSON.stringify(HLJS) + ');' +
+        'self.onmessage=function(e){' +
+        '  try{var r=self.hljs.highlight(e.data,{language:"python"});' +
+        '      self.postMessage({ok:true,html:r.value});}' +
+        '  catch(err){self.postMessage({ok:false,err:String(err)});}' +
+        '};';
+      var url, w;
+      try {
+        url = URL.createObjectURL(new Blob([workerSrc], { type: "text/javascript" }));
+        w = new Worker(url);
+      } catch (e) { reject(e); return; }
+      var done = false;
+      var to = setTimeout(function () { if (!done) { done = true; cleanup(); reject(new Error("timeout")); } }, 20000);
+      function cleanup() { clearTimeout(to); try { w.terminate(); } catch (e) {} try { URL.revokeObjectURL(url); } catch (e) {} }
+      w.onmessage = function (ev) {
+        if (done) return; done = true; cleanup();
+        if (ev.data && ev.data.ok) resolve(ev.data.html);
+        else reject(new Error(ev.data && ev.data.err || "worker error"));
+      };
+      w.onerror = function (ev) { if (done) return; done = true; cleanup(); reject(new Error(ev.message || "worker failed")); };
+      w.postMessage(code);
+    });
+  }
+
+  function loadScriptTag(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src; s.onload = resolve; s.onerror = function () { reject(new Error("script load failed")); };
+      document.head.appendChild(s);
+    });
+  }
+
+  function highlightMain(code) {
+    return loadScriptTag(HLJS).then(function () {
+      return window.hljs.highlight(code, { language: "python" }).value;
+    });
+  }
+
+  // ── virtualization ─────────────────────────────────
+  function measureCharWidth() {
+    var probe = document.createElement("span");
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:pre;" +
+      'font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;';
+    probe.textContent = "0000000000000000000000000000000000000000"; // 40 chars
+    document.body.appendChild(probe);
+    var w = probe.getBoundingClientRect().width / 40;
+    document.body.removeChild(probe);
+    return w || 7.8;
+  }
+
+  function initVirtual() {
+    var maxLen = 0;
+    for (var i = 0; i < rawLines.length; i++) if (rawLines[i].length > maxLen) maxLen = rawLines[i].length;
+    var chW = measureCharWidth();
+    var gutter = 58 + 12;                       // .ln width + .lc padding-left
+    var contentW = Math.ceil(gutter + maxLen * chW + 24);
+    scroller.style.height = (rawLines.length * LH) + "px";
+    scroller.style.width  = contentW + "px";
+    viewer.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", function () { lastStart = -1; render(); });
+    render();
+  }
+
+  function render() {
+    var scrollTop = viewer.scrollTop;
+    var vh = viewer.clientHeight;
+    var start = Math.floor(scrollTop / LH) - OVERSCAN;
+    if (start < 0) start = 0;
+    var end = Math.ceil((scrollTop + vh) / LH) + OVERSCAN;
+    if (end > lineHTML.length) end = lineHTML.length;
+    if (start === lastStart && end === lastEnd) return;
+    lastStart = start; lastEnd = end;
+    var html = "";
+    for (var i = start; i < end; i++) {
+      html += '<div class="code-row" style="top:' + (i * LH) + 'px"' +
+              (i === curLine ? ' data-cur="1"' : "") +
+              '><span class="ln">' + (i + 1) + '</span><span class="lc">' +
+              lineHTML[i] + '</span></div>';
+    }
+    scroller.innerHTML = html;
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { render(); ticking = false; }); }
+  }
+
+  function scrollToLine(idx, center) {
+    if (idx < 0) idx = 0;
+    if (idx > rawLines.length - 1) idx = rawLines.length - 1;
+    curLine = idx;
+    var target = center
+      ? idx * LH - viewer.clientHeight / 2 + LH / 2
+      : idx * LH - 60;
+    var max = scroller.offsetHeight - viewer.clientHeight;
+    if (target < 0) target = 0;
+    if (target > max) target = max;
+    viewer.scrollTop = target;
+    lastStart = -1;        // force re-render so data-cur applies
+    render();
+  }
+
+  // ── find ───────────────────────────────────────────
+  var matches = [], matchPos = -1;
+  var findInput = document.getElementById("sv-find");
+  var findCount = document.getElementById("sv-find-count");
+
+  function runFind() {
+    var q = findInput.value;
+    matches = []; matchPos = -1;
+    if (q) {
+      var ql = q.toLowerCase();
+      for (var i = 0; i < rawLines.length; i++) {
+        if (rawLines[i].toLowerCase().indexOf(ql) !== -1) matches.push(i);
+      }
+    }
+    if (matches.length) { matchPos = 0; updateFindCount(); scrollToLine(matches[0], true); }
+    else { curLine = -1; updateFindCount(); lastStart = -1; render(); }
+  }
+  function updateFindCount() {
+    if (!findInput.value) { findCount.textContent = ""; }
+    else if (!matches.length) { findCount.textContent = "0/0"; }
+    else { findCount.textContent = (matchPos + 1) + "/" + matches.length; }
+  }
+  function step(dir) {
+    if (!matches.length) return;
+    matchPos = (matchPos + dir + matches.length) % matches.length;
+    updateFindCount();
+    scrollToLine(matches[matchPos], true);
+  }
+
+  var findTimer = null;
+  findInput.addEventListener("input", function () {
+    clearTimeout(findTimer); findTimer = setTimeout(runFind, 160);
+  });
+  findInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); if (matches.length) step(e.shiftKey ? -1 : 1); else runFind(); }
+  });
+  document.getElementById("sv-next").addEventListener("click", function () { step(1); });
+  document.getElementById("sv-prev").addEventListener("click", function () { step(-1); });
+
+  // ── go to line ─────────────────────────────────────
+  var gotoInput = document.getElementById("sv-goto");
+  gotoInput.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    var n = parseInt(gotoInput.value, 10);
+    if (!isNaN(n)) scrollToLine(n - 1, true);
+  });
+
+  // ── boot ───────────────────────────────────────────
+  function boot() {
+    fetch(SRC).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.text();
+    }).then(function (text) {
+      var bytes = new Blob([text]).size;        // true file size, before trim
+      if (text.charAt(text.length - 1) === "\n") text = text.slice(0, -1); // ignore trailing newline
+      rawLines = text.split("\n");
+      statsEl.textContent = rawLines.length.toLocaleString() + " lines · " +
+                            Math.round(bytes / 1024) + " KB";
+      setState("Highlighting…");
+      return highlightInWorker(text)["catch"](function () { return highlightMain(text); })
+        ["catch"](function () { return null; })
+        .then(function (html) {
+          if (html != null) {
+            var split = splitToLines(html);
+            if (split.length === rawLines.length) { lineHTML = split; return; }
+          }
+          // any failure / mismatch → plain escaped lines (still virtualized)
+          lineHTML = rawLines.map(escapeHtml);
+        });
+    }).then(function () {
+      setState(null);
+      initVirtual();
+    })["catch"](function (err) {
+      setState("Could not load idwt.py (" + err.message + "). Try the Download button.");
+    });
+  }
+
+  boot();
+})();
+</script>
+</body>
+</html>

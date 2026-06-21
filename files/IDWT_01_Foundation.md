@@ -19,7 +19,7 @@ The mass tables in this document invite an immediate reaction: this must be curv
 
 **The sector scales are not calibrated to mass data.** $m_{\text{scale},3} = m_e \times \sqrt{g_{33}/g_{66}}$ uses coupling constants derived from seed pair $\{n_d=1,\,n_u=3\}$ and composite $n_s=4$ ($g_{33} = 8\sqrt{7}$) and from the complex geometry of $\mathbb{CP}^3$ ($g_{66} = 1/4$; see Part 2 §9c). No quark mass enters the derivation. The down quark prediction (+0.04% from PDG 2024) is an output, not an input. All sector scales derive from the seed coupling constants and $m_e$ as the sole unit reference (Part 2 §10).
 
-The particle physics sector of the framework has one unit of mass ($m_e = 0.511$ MeV), two seed integers ($n_d = 1$, $n_u = 3$) with composite $n_s = 4$, and one product-form seed site $n_{\rm top} = N_c \times n_s \times N_f = 72$ (⭐; §3a). Everything else in the particle sector — the sector set, all other mode indices, all coupling constants, all sector scales, all particle masses, the Cabibbo angle, and the three PMNS magnitudes — is derived from these. The CP-violating phase $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$ is derived via APS spectral flow of the one-parameter Dirac family across the $\mathbb{CP}^3\to\mathbb{CP}^5$ Chern class mismatch $\Delta c_1 = -2$ (T8 🔶, Part 10 §4). The derivation carries three technical gaps before reaching 🔵 (see Part 10 §4 status note). The one current exception is gravity: $G_N$ is a measured external input pending derivation from the spectral action scale $\Lambda$ (P5, Part 4 §3.12.4). When $G_\infty$ is derived, $G_N = G_\infty/(4\pi)$ will follow from the same geometry with no additional input. The structural evidence against numerology is the cross-referencing: the same numbers arriving independently from different directions. The quantity $q = S(n_u-1, 4) = 5$ appears in both the EW coupling derivation $g_{22} = p^2 q/2$ and the boson mass gap $n_Z - n_W = 5$. The resonance site $k_0 = 16$ satisfies three independent conditions simultaneously. The Higgs mode index $n_H = 95$ is reached by two separate cross-sector routes. Numerological schemes are flexible enough to always find a match. This framework is rigid enough that these convergences are non-trivial.
+The particle physics sector of the framework has one unit of mass ($m_e = 0.511$ MeV), two seed integers ($n_d = 1$, $n_u = 3$) with composite $n_s = 4$, and one product-form seed site $n_{\rm top} = N_c \times n_s \times N_f = 72$ (⭐; §3a). Everything else in the particle sector — the sector set, all other mode indices, all coupling constants, all sector scales, all particle masses, the Cabibbo angle, and the three PMNS magnitudes — is derived from these. The CP-violating phase $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$ is derived via APS spectral flow of the one-parameter Dirac family across the $\mathbb{CP}^3\to\mathbb{CP}^5$ Chern class mismatch $\Delta c_1 = -2$ (T8 🔶, Part 10 §4). The derivation carries three technical gaps before reaching 🔵 (see Part 10 §4 status note). The one current exception is gravity: the absolute scale $G_\infty$ (equivalently $G_N = G_\infty/(4\pi)$) is a second dimensional input, not derived from the combinatorics (P5, Part 4 §3.12.4). IDWT fixes the structure of gravity but not its magnitude. The structural evidence against numerology is the cross-referencing: the same numbers arriving independently from different directions. The quantity $q = S(n_u-1, 4) = 5$ appears in both the EW coupling derivation $g_{22} = p^2 q/2$ and the boson mass gap $n_Z - n_W = 5$. The resonance site $k_0 = 16$ satisfies three independent conditions simultaneously. The Higgs mode index $n_H = 95$ is reached by two separate cross-sector routes. Numerological schemes are flexible enough to always find a match. This framework is rigid enough that these convergences are non-trivial.
 
 ---
 
@@ -28,7 +28,7 @@ The particle physics sector of the framework has one unit of mass ($m_e = 0.511$
 ## 1. Core Postulates
 
 **P1 — The Master Field**
-$\Psi_\infty$ is a **Dirac spinor field** on the infinite-dimensional manifold $M_\infty$ = $\mathbb{R}_t$ × $\Xi_\infty$. It is the only fundamental object. Everything observable — particles, fields, forces, quantum numbers — is a derived consequence of its geometry. The mass spectrum follows from the mode counting function $S(n,d) = C(n+d-1, d)$. The coupling structure of each particle — what interactions are available to it and what is geometrically forbidden — follows from the Riemannian and spinor geometry of its sector manifold. Quantum number labels are not inputs; they are outputs of the geometry.
+$\Psi_\infty$ is a **Dirac spinor field** on the infinite-dimensional manifold $M_\infty = \mathbb{R}_t \times \Xi_\infty$. It is the only fundamental object. Everything observable — particles, fields, forces, quantum numbers — is a derived consequence of its geometry. The mass spectrum follows from the mode counting function $S(n,d) = C(n+d-1, d)$. The coupling structure of each particle — what interactions are available to it and what is geometrically forbidden — follows from the Riemannian and spinor geometry of its sector manifold. Quantum number labels are not inputs; they are outputs of the geometry.
 
 The sector space $\Xi_\infty$ contains all dimensions $d \geq 1$. The active sectors — those whose geometry supports stable bound-state eigenmodes — are $D = \{2,3,4,5,6,10\}$. Sectors $d=7$,8,9 exist as coordinates of $M_\infty$ but their geometry does not support stable eigenmodes (Rule A, §3a); sectors $d \geq 11$ are subcritical and cannot localize modes at all (Rule B, §3a). The label $\Xi_{10}$ used in earlier versions of this document referred to the highest active sector, not to a truncation of $M_\infty$.
 
@@ -38,7 +38,7 @@ This one-directionality is a property of the current mean-field $V_d$ formulatio
 
 ### 1.1 The temporal structure of $M_\infty$
 
-P1 writes $M_\infty$ = $\mathbb{R}_t$ × $\Xi_\infty$. This factorization is load-bearing and deserves an explicit statement of what it commits to.
+P1 writes $M_\infty = \mathbb{R}_t \times \Xi_\infty$. This factorization is load-bearing and deserves an explicit statement of what it commits to.
 
 ⭐ **One timelike direction.** $\mathbb{R}_t$ is the unique timelike direction in $M_\infty$. $\Xi_\infty$ is a purely Riemannian (all-spatial) manifold. $M_\infty$ therefore has Lorentzian signature (1, ∞): one negative metric eigenvalue from $\mathbb{R}_t$ and countably many positive ones from $\Xi_\infty$. The Dirac operator on $M_\infty$ is $D = \gamma^0 \partial_t + \Sigma_i \gamma^i \partial_{\xi^i}$, where $\gamma^0$ is the single timelike Clifford generator and the $\gamma^i$ are spatial. Every particle in every sector shares this one time coordinate. There is no sector-specific time; a $d=10$ mode and a $d=3$ mode age at the same rate, governed by the same $\mathbb{R}_t$.
 
@@ -56,19 +56,19 @@ $$\psi_{\rm obs}(r, t) = \Psi_\infty(r, \xi^0, t)$$
 The observer's position determines which modes are easy to resolve but not which modes exist. The physical spectrum is closed at exactly 15 states: those mode-sector pairs $(n,d)$ satisfying the co-fixed-point condition — the pair $(n,d)$ is an element of $\Sigma_{\rm pairs}$, the closed set produced by the generation tower (the sector comb filtration from $n_s = 4$). All observers at any $\xi^0$ see the same 15-particle spectrum.
 
 **P3 — Non-Compact Sector Spaces**
-The sector spaces $\Xi_d$ are infinite Riemannian spaces — not rolled up or compactified. Each sector carries a potential well $V_d(r) = \lambda_d r^2$ — the kernel self-binding potential (Part 4 §3.10) — whose eigenmodes are Gaussian-localized bound states (sector mode localization theorem, Part 4 §3.13 Part I). The particles are these bound states. The geometry labels (CP^n, S^n) describe the local symmetry of the potential minimum — the symmetry of sector mode amplitudes near r=0 — not the global topology of $\Xi_d$. This is analogous to a hydrogen atom: the electron occupies infinite $\mathbb{R}^3$ but the ground state has $S^2$ symmetry from the spherically symmetric potential. No sector is curled up. The sector spectrum is purely discrete (σ_ess = ∅, Part 4 §3.13 Part I): no freely propagating sector modes exist, and every physical mode is a normalizable bound state. The standard KK exclusions presuppose graviton propagation into compact dimensions and do not apply here (Part 4 §1b, §3.9).
+The sector spaces $\Xi_d$ are infinite Riemannian spaces — not rolled up or compactified. Each sector carries a potential well $V_d(r) = \lambda_d r^2$ — the kernel self-binding potential (Part 4 §3.10) — whose eigenmodes are Gaussian-localized bound states (sector mode localization theorem, Part 4 §3.13 Part I). The particles are these bound states. The geometry labels ($\mathbb{CP}^n$, $S^n$) describe the local symmetry of the potential minimum — the symmetry of sector mode amplitudes near $r=0$ — not the global topology of $\Xi_d$. This is analogous to a hydrogen atom: the electron occupies infinite $\mathbb{R}^3$ but the ground state has $S^2$ symmetry from the spherically symmetric potential. No sector is curled up. The sector spectrum is purely discrete ($\sigma_{\rm ess} = \emptyset$, Part 4 §3.13 Part I): no freely propagating sector modes exist, and every physical mode is a normalizable bound state. The standard KK exclusions presuppose graviton propagation into compact dimensions and do not apply here (Part 4 §1b, §3.9).
 
 **P4 — Two Force Principles**
 Forces couple through two complementary geometric principles. Both are required; neither alone is sufficient.
 
-*(a) Coordinate containment — necessary condition.* A particle couples to a force only if the force's sector coordinates are contained in the particle's sector. The active sectors nest as $\Xi_2$ ⊂ $\Xi_3$ ⊂ $\Xi_4$ ⊂ $\Xi_5$ ⊂ $\Xi_6$ ⊂ Ξ_{10} ⊂ $\Xi_\infty$. Coupling is possible only when the force's sector is contained in the particle's sector. The coordinates of $d=7$,8,9 exist in $\Xi_\infty$ but host no stable eigenmodes (§3a Rule A), so no particle occupies those directions; they are inert coordinates of $M_\infty$, traversed by the nesting chain but not occupied.
+*(a) Coordinate containment — necessary condition.* A particle couples to a force only if the force's sector coordinates are contained in the particle's sector. The active sectors nest as $\Xi_2 \subset \Xi_3 \subset \Xi_4 \subset \Xi_5 \subset \Xi_6 \subset \Xi_{10} \subset \Xi_\infty$. Coupling is possible only when the force's sector is contained in the particle's sector. The coordinates of $d=7$,8,9 exist in $\Xi_\infty$ but host no stable eigenmodes (§3a Rule A), so no particle occupies those directions; they are inert coordinates of $M_\infty$, traversed by the nesting chain but not occupied.
 
 *(b) Coupling filter — structural condition.* The particle's own sector geometry determines the structure of whatever coupling it has. The sector quantum number is not a label — it is the geometry expressing itself as a coupling structure: polarization ($U(1)$ of $\mathbb{CP}^1$), color ($SU(3)$ isometry of $\mathbb{CP}^2$), the Dirac condition (Clifford algebra of $S^5$), color silence (index cancellation on $\mathbb{CP}^3$), Gegenbauer-critical coupling (Gegenbauer critical-endpoint condition of $\mathbb{CP}^5$). Each is the natural generalization of polarization to a higher-dimensional geometry. The geometry specifies not only what interaction handles exist but what entire classes of interaction are geometrically forbidden — not suppressed, unavailable.
 
 A particle with coordinate support in a force sector may still have zero coupling to that force if its sector geometry projects the relevant representation to zero (as neutrinos are colour-neutral despite their $S^5$ coordinates containing $\Xi_4$).
 
 **P5 — Gravity as Curvature of $M_\infty$**
-Gravity is the curvature of $M_\infty$ sourced by mass, operating across all sector coordinates without a sector boundary. There are no gravitons; gravity cannot be quantized because there is no gravitational field — only geometry. A mass sources a curvature gradient only in the dimensions it is localized in: where the source is uniform (free), the geometry is translation-invariant and there is no gradient, so each object gravitates in its own sector and ordinary 3D gravity follows from ordinary matter being $d=3$-bound (Part 4 §3.8). The observed $G_N = G_\infty/(4\pi)$: a 3D observer integrates a source over its hidden coordinates, leaving the ordinary Newtonian coupling with the sector-independent 3D Green's-function constant $4\pi$. $G_\infty$ — the $\infty$D Newton constant — requires fixing the spectral action scale $\Lambda$ and is not yet derived; $G_N$ is currently an external input. Once the $a_2$ Seeley-DeWitt integral over $M_\infty$ is computed, $G_N = G_\infty/(4\pi)$ becomes a parameter-free prediction 🔶 (Part 4 §3.12).
+Gravity is the curvature of $M_\infty$ sourced by mass, operating across all sector coordinates without a sector boundary. There are no gravitons; gravity cannot be quantized because there is no gravitational field — only geometry. A mass sources a curvature gradient only in the dimensions it is localized in: where the source is uniform (free), the geometry is translation-invariant and there is no gradient, so each object gravitates in its own sector and ordinary 3D gravity follows from ordinary matter being $d=3$-bound (Part 4 §3.8). The observed $G_N = G_\infty/(4\pi)$: a 3D observer integrates a source over its hidden coordinates, leaving the ordinary Newtonian coupling with the sector-independent 3D Green's-function constant $4\pi$. $G_\infty$ — the $\infty$D Newton constant — is not derived from the combinatorics; its absolute value is a second dimensional input alongside $m_e$. IDWT fixes the structure of gravity but not its magnitude 🔶 (Part 4 §3.12).
 
 **P6 — Rank-1 Coupling 🔶**
 The inter-sector coupling strength matrix factorizes as $g_{dd'} = v_d \times v_{d'}$ — rank-1 as an outer product of a coupling vector $v = (v_2, v_3, v_4, v_5, v_6, v_{10})$. All six components $v_d$ are derived from seeds $\{n_d=1,\,n_u=3\}$ and composite $n_s=4$ (Part 2 §10, Part 3 §0.1). The rank-1 factorization follows as a **necessary consequence of the sector-separable mass formula (P1)**: if $g_{dd'} = \sum_k v_d^{(k)} v_{d'}^{(k)}$ had rank $r > 1$, the mean-field kernel $V[\Psi](x,\xi) = \sum_k (\sum_d v_d^{(k)}\xi_d)\cdot(\sum_{d'} v_{d'}^{(k)}\xi_{d'} J_{d'}(x))$ would introduce cross-sector entanglement that prevents the sector-by-sector eigenvalue separation $m = m_{\rm scale,d} \times S(n,d)$. Rank-1 ($r=1$) is the unique structure for which the condensate $C(x) = \sum_{d'} v_{d'}\langle\xi_{d'}\rangle(x)$ is common to all sectors, allowing each sector $d$ to see a local harmonic potential $V_d = v_d^2|\xi_d|^2|C(x)|^2$ and reproduce the simplex eigenvalue. **Status: ✅ as a consequence of P1.** Physical consequences: universal correlated coupling scales across sectors, constrained inter-sector mixing, the Wolfenstein angle from a single ratio $v_3/v_4$.
@@ -252,7 +252,7 @@ The beat is structurally confined to $d=3$: conditions 2 and 3 are $d=3$ identit
 
 ### Sector Euler Characteristics
 
-Each CP^n sector carries an Euler characteristic χ(CP^n) = n+1 (one cell in each even dimension 0, 2, ..., 2n; alternating signs give n+1).
+Each $\mathbb{CP}^n$ sector carries an Euler characteristic $\chi(\mathbb{CP}^n) = n+1$ (one cell in each even dimension $0, 2, \ldots, 2n$; alternating signs give $n+1$).
 
 The Euler characteristics of the IDWT sectors are:
 
@@ -433,7 +433,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 
 #### d = 3 — Hadronic Sector (Down-Type Quarks)
 
-**Geometry.** $S^3$ (round); isometry $SU(2)$×$SU(2)$ ≅ SO(4). Color charge by coordinate containment inside $\Xi_4$ (Part 3 §2). Confinement: $E_{\rm conf} = \lambda_c|\vec{N}|$.
+**Geometry.** $S^3$ (round); isometry $SU(2)\times SU(2) \cong SO(4)$. Color charge by coordinate containment inside $\Xi_4$ (Part 3 §2). Confinement: $E_{\rm conf} = \lambda_c|\vec{N}|$.
 
 | Parameter | Value |
 |---|---|
@@ -454,7 +454,7 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 - **Confinement:** Scattering states are non-normalizable — not bound states — so they do not appear in the physical spectrum; all physical modes are confined.
 - **Cabibbo angle:** $\sin\theta_C = (1+1/240)/\sqrt{S(4,3)} = 0.22454$ (PDG: 0.22450, +0.09σ). The 1/240 is the $\mathbb{CP}^1$ sector curvature correction.
 - **Baryon number:** Topological winding number of the $S^3$ mode.
-- **Coupling filter:** Left-handed weak isospin. The SO(4) = $SU(2)_L$ × $SU(2)_R$ isometry of $S^3$ gives left-handed W coupling and leaves the right-handed component decoupled from the weak interaction. Color coupling is inherited derivatively via coordinate containment inside $\Xi_4$, not from $S^3$ itself.
+- **Coupling filter:** Left-handed weak isospin. The $SO(4) = SU(2)_L \times SU(2)_R$ isometry of $S^3$ gives left-handed W coupling and leaves the right-handed component decoupled from the weak interaction. Color coupling is inherited derivatively via coordinate containment inside $\Xi_4$, not from $S^3$ itself.
 
 **Spectral.** $\zeta_3(1) = 3/2$, $\zeta_3(0) = -3/2$, $a_{03} \approx 1.623$.
 
@@ -472,7 +472,7 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 
 | Particle | $n$ | Predicted mass (bare) | PDG | error |
 |---|---|---|---|---|
-| u quark | 3 | $m_{\rm scale,4} \times S(3,4) = 2.177$ MeV | 2.16 MeV | +0.8% (within light-quark error) 🔵 |
+| u quark | 3 | $m_{\rm scale,4} \times S(3,4) = 2.177$ MeV | 2.16 MeV | +0.77% (within light-quark error) 🔵 |
 | c quark | 20 | $m_{\rm scale,4} \times S(20,4) = 1284.9$ MeV | 1273.0 MeV | +0.93% (+2.6σ, open residue) 🔶 |
 | t quark | 72 | $m_{\rm scale,4} \times S(72,4) = 176.36$ GeV | 172.57 GeV | +2.20% (+13σ, open residue) 🔶 |
 
@@ -491,12 +491,12 @@ Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare. A form
 
 #### d = 5 — Neutrino Sector
 
-**Geometry.** $S^5$ (round); isometry SO(6) ≅ $SU(4)$. d mod 8 = 5 → spinor bundle on $S^5$ admits no real (Majorana) structure → Majorana mass terms forbidden.
+**Geometry.** $S^5$ (round); isometry $SO(6) \cong SU(4)$. d mod 8 = 5 → spinor bundle on $S^5$ admits no real (Majorana) structure → Majorana mass terms forbidden.
 
 | Parameter | Value |
 |---|---|
-| $g_{55}$ | 96/722.5 ≈ 0.1329 |
-| $m_{\rm scale,5}$ | ≈ $7.4 \times 10^{-13}$ MeV |
+| $g_{55}$ | $96/722.5 \approx 0.1329$ |
+| $m_{\rm scale,5}$ | $\approx 7.4 \times 10^{-13}$ MeV |
 | $L_5$ | 1.571 fm |
 
 $m_{\rm scale,5}$ is fully derived from the cross-sector constraint $m_{\rm scale,5} \times m_{\rm scale,4}^2 = (n_u/n_s) \times m_{\rm scale,6}^3$. No neutrino mass data enters.
@@ -558,7 +558,7 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 
 #### d = 10 — Tau Sector
 
-**Geometry.** $\mathbb{CP}^5$ = $SU(6)$/U(5); local symmetry U(5). V_{10}(r) sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton composite coupling.
+**Geometry.** $\mathbb{CP}^5$ = $SU(6)$/U(5); local symmetry U(5). $V_{10}(r)$ sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton composite coupling.
 
 | Parameter | Value |
 |---|---|
@@ -568,7 +568,7 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 
 | Particle | n | Back-reaction factor | Predicted mass | PDG |
 |---|---|---|---|---|
-| τ (tau) | 23 | × (1+1/1680) | 1776.84 MeV | 1776.93 MeV ✅ |
+| τ (tau) | 23 | $\times (1+1/1680)$ | 1776.84 MeV | 1776.93 MeV ✅ |
 
 Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))$ from the Gegenbauer critical endpoint sector phase delay correction. Without it, m_τ is 0.06% low.
 
@@ -576,7 +576,7 @@ Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))
 - **Lepton number L=1 and charge −1:** Shared with $d=6$ via joint g=1/4 coupling.
 - **Gegenbauer critical-endpoint condition:** At the Gegenbauer critical point, the sector phase delay is exact — no higher-order corrections to the tau mass. Unique among all sectors.
 - **Lepton universality:** $m_{\rm scale,10} = m_{\rm scale,6}$ enforces identical mass unit for the heavy lepton family; mass splitting comes entirely from different mode indices (23 vs 13, 35).
-- **Coupling filter:** Gegenbauer-critical coupling. At the Gegenbauer critical endpoint (Jacobi threshold $b_{k_0} = 1/2$), modes sit at the Jacobi coupling boundary — coupling weight is distributed across many channels with no dominant mode. This is a critical-point property, not a fractal or self-similar structure. The tau's coordinate space Ξ_{10} contains all other sectors; in principle it couples to everything, but at every specific channel the coupling is marginal. This explains the tau's decay pattern: no gap (short lifetime), but no dominant channel (broad decay distribution). The geometric back-reaction correction δ_τ = 1/1680 (required only at the critical point) is the mathematical signature of this critical-boundary coupling.
+- **Coupling filter:** Gegenbauer-critical coupling. At the Gegenbauer critical endpoint (Jacobi threshold $b_{k_0} = 1/2$), modes sit at the Jacobi coupling boundary — coupling weight is distributed across many channels with no dominant mode. This is a critical-point property, not a fractal or self-similar structure. The tau's coordinate space $\Xi_{10}$ contains all other sectors; in principle it couples to everything, but at every specific channel the coupling is marginal. This explains the tau's decay pattern: no gap (short lifetime), but no dominant channel (broad decay distribution). The geometric back-reaction correction δ_τ = 1/1680 (required only at the critical point) is the mathematical signature of this critical-boundary coupling.
 
 **The tau is the only particle that touches everything (✅ structural, 2026-06-18).** The tau's $d=10$ sector contains all of $\Xi_2$ through $\Xi_{10}$; every other particle's coordinates are a subset of the tau's. The tau is the only particle where the contact condition — that one sector's coordinates overlap with the partner's — is trivially satisfied for every possible partner. In the ring language of the condensation front (Part 2 §15), the τ is identified with $\omega_2^2\omega_3^3$ — the unique top/volume class of the seed product $\mathbb{CP}^2\times\mathbb{CP}^3$ — the deposit that exhausts both generators simultaneously. This is forced by nilpotency ($\omega_2^3 = 0$, $\omega_3^4 = 0$) and the termination condition of $R = \mathbb{R}[\omega_2,\omega_3]/(\omega_2^3,\omega_3^4)$; it is a structural consequence of the proved Hypothesis H (`idwt.py` STEP 74). But the Gegenbauer criticality means coupling weight is distributed with no dominant channel. The tau's interaction pattern is the direct consequence: it decays to electrons, muons, pions, kaons, multiple neutrinos — every channel is open, none dominates. The electron ($d=6$) does not decay; the muon ($d=6$) decays almost entirely to an electron and neutrinos; the tau ($d=10$) distributes across every sector. The widening of the accessible channel tree with d is a readout of coordinate nesting depth, with the Gegenbauer criticality of $d=10$ preventing any single open channel from being selected.
 
@@ -619,7 +619,7 @@ Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector d
 | muon | 6 | $\mathbb{CP}^3$ | $SU(4)$ | 35 | 3,838,380 | 105.7 MeV |
 | tau | 10 | $\mathbb{CP}^5$ | $SU(6)$ | 23 | 64,512,240 | 1776.84 MeV |
 
-The bottom quark is not in the table: it is not a single (n,d) mode but the geometric-mean beat between $n=16$ and $n=17$ in $d=3$ at the resonance site $k_0 = n_s^2 = 16$, $m_b = \sqrt{S(16,3)\cdot S(17,3)} \times m_{\rm scale,3} \approx 4181$ MeV. It is a stable $d=3$ resonance, not one of the 15 co-fixed-point pairs Σ_pairs (§3b, §5).
+The bottom quark is not in the table: it is not a single (n,d) mode but the geometric-mean beat between $n=16$ and $n=17$ in $d=3$ at the resonance site $k_0 = n_s^2 = 16$, $m_b = \sqrt{S(16,3)\cdot S(17,3)} \times m_{\rm scale,3} \approx 4181$ MeV. It is a stable $d=3$ resonance, not one of the 15 co-fixed-point pairs $\Sigma_{\rm pairs}$ (§3b, §5).
 
 ---
 
@@ -653,7 +653,7 @@ The electron ($d=6$, mode $n=13$) couples to the photon ($d=2$) via the two coor
 
 Each sector $\Xi_d$ is a self-contained dynamical system. Its Hamiltonian $H_d = -\Delta_{\Xi_d} + V_d(|\xi_d|)$ is invariant under the isometry group $G_d$ of the sector manifold, and its eigenvalue problem $H_d \chi = m_{\rm eff} \chi$ can be solved sector by sector without reference to any other sector. The mass formula $m = m_{\rm scale,d} \times S(n,d)$ is sector-separable: the $d=6$ lepton spectrum is determined entirely by $H_6$; the $d=4$ quark spectrum by $H_4$.
 
-This autonomy survives the nesting $\Xi_2$ ⊂ $\Xi_3$ ⊂ ··· ⊂ Ξ_{10}. At the level of coordinate algebras, the inclusion of coordinate subspaces induces a nested chain of observable algebras — the shared coordinate algebra of $M_\infty$:
+This autonomy survives the nesting $\Xi_2 \subset \Xi_3 \subset \cdots \subset \Xi_{10}$. At the level of coordinate algebras, the inclusion of coordinate subspaces induces a nested chain of observable algebras — the shared coordinate algebra of $M_\infty$:
 
 $$C^\infty(\Xi_2) \subset C^\infty(\Xi_3) \subset C^\infty(\Xi_4) \subset C^\infty(\Xi_5) \subset C^\infty(\Xi_6) \subset C^\infty(\Xi_7) \subset C^\infty(\Xi_8) \subset C^\infty(\Xi_9) \subset C^\infty(\Xi_{10}) \subset C^\infty(M_\infty)$$
 
@@ -701,7 +701,7 @@ The coordinate extension picture (§3f) assigns a concrete meaning to the phrase
 
 **Bound within, free without. ✅** A particle is confined in its own $d$ sector dimensions by the sector well $V_d$ (Part 4 §3.9); its sector mode function is the normalizable ground state on $\Xi_d$. The well is the mode's own self-binding, evaluated in the mode's frame (Part 4 §3.10.2 covariance note): it binds the particle's structure about its centroid, equally in all $d$ of its dimensions, and travels with the mode. Nothing anchors the centroid — the absolute-origin reading of the well is excluded by the framework's own results (`files/idwt.py` STEP 58) — so the centroid propagates freely with $E^2 = P^2 + m^2$, and bound within means bound about its center within: no three of a particle's own dimensions are marked out by the well. In every dimension beyond d — the ones it is not in — there is no such well: the $d=7$,8,9 band carries no sector geometry, and the $d=10$ well belongs to the tau, not to a $d < 10$ mode. There the particle is free, governed by the bare Laplacian. The free Laplacian $-\partial^2$ on any one of those directions has spectrum [0,∞): no negative eigenvalue, hence no normalizable bound state can localize the particle there, and the unique zero-momentum configuration is the constant. The three solutions are e^{iky} (E>0, carrying momentum), the constant (E=0, uniform), and e^{+|k|y} (E<0, divergent and unphysical). The rest configuration is the constant alone.
 
-A massive particle, in the dimensions beyond its sector, is therefore uniform across them. The physical reading is that the particle floats freely there: present everywhere across those directions at once, pinned to no point. 🔵 It does not sit at a point — localizing it to a width Δ costs kinetic energy of order $1/(2m\Delta^2)$, so the rest limit E→0 forces Δ→∞, i.e. uniformity — and it does not drift as a lump, which would require momentum and so an excited outer state. Uniform co-presence is the only zero-energy state a free direction allows. This is the precise mode-theoretic content of the "already there" framing above: the electron ($d=6$) is a feature of the tau's deeper coordinates not by travelling or extending into $d=7$–10 but by being uniform across them.
+A massive particle, in the dimensions beyond its sector, is therefore uniform across them. The physical reading is that the particle floats freely there: present everywhere across those directions at once, pinned to no point. 🔵 It does not sit at a point — localizing it to a width $\Delta$ costs kinetic energy of order $1/(2m\Delta^2)$, so the rest limit $E\to0$ forces $\Delta\to\infty$, i.e. uniformity — and it does not drift as a lump, which would require momentum and so an excited outer state. Uniform co-presence is the only zero-energy state a free direction allows. This is the precise mode-theoretic content of the "already there" framing above: the electron ($d=6$) is a feature of the tau's deeper coordinates not by travelling or extending into $d=7$–10 but by being uniform across them.
 
 Normalizability is untouched by this. ✅ The mode is normalized on its own $\Xi_d$ ($\int_{\Xi_d}|\chi|^2 = 1$), and its uniform factor in the dimensions beyond $d$ is the nesting embedding $C^\infty(\Xi_d) \subset C^\infty(\Xi_{d'})$ of §3h. The norm taken over the outer volume does not converge, and it is not meant to: that divergence is the statement "this is a $d$-object — normalize it on $\Xi_d$," not a defect of the mode.
 
@@ -896,7 +896,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Dirac neutrinos | $d=5$ has d mod 8=5: Majorana forbidden → 0νββ rate = 0 predicted | ✅ |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (Part 3 §8, §13) | ✅ |
 | Confinement | Colour-neutrality condition $|\vec{N}|=0$ from $\mathbb{CP}^2$ isometry geometry; $\lambda_c$ is an open item; full QCD confinement mechanism (flux tubes, asymptotic freedom) not derived | 🔵 |
-| Cosmological constant | Λ_eff from unoccupied-mode vacuum energy; suppression mechanism not derived | 🔶 |
+| Cosmological constant | $\Lambda_{\rm eff}$ from unoccupied-mode vacuum energy; suppression mechanism not derived | 🔶 |
 | Dark matter | Spectrum is complete at 15 particles; IDWT offers no dark matter candidate at present | ❓ |
 
 ---

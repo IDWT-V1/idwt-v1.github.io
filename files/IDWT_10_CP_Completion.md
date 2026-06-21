@@ -288,7 +288,7 @@ The following table consolidates the full theorem status after the T8 completion
 | T4 | $n_s = 4$ from double degeneracy $4/7$ | ✅ | Exact | Unique composite; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | b=1/2 exact | Chain terminates; τ is critical |
 | T6 | All three PMNS angles | 🔵 | ≤0.51% | Determined by $g_{55}$, $m_{\rm scale,5}$, and mode indices |
-| T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.85% | EW scale self-consistency |
+| T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
 | **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; J = −0.00981** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
 | T9a–d | All 6 coupling constants derived | ✅ | Exact | No free coupling parameters |
 | T10a | ℓ=2 self-energy scale ε = 1/(280√7) | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$; former (1−ε)^k quark correction removed 2026-06-16 |
@@ -301,15 +301,15 @@ The following table consolidates the full theorem status after the T8 completion
 | T13c | Exact mass ratios | ✅/🔶 | ≤0.002% non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer S; $d=4$ up-type bare (GTC removed) |
 | T15 | $N_c = \chi(\mathbb{CP}^2) = n_u$; all couplings/indices from one Euler characteristic | ✅ | Exact | Coupling filter and mass hierarchy share one root |
 | $\sin^2\theta_W$ | $1-(S(76,2)/S(81,2))^2 = 0.2237$; +0.37% from PDG on-shell | ✅ | +0.37% | Within EW radiative corrections |
-| G_N | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ from spectral action scale Λ | 🔶 | — | $4\pi$ exact (3D Green's-function constant); $G_\infty$ from Λ (one open item) |
+| G_N | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |
 
 **Count:**
 - ✅ Proved: 17 items
 - 🔵 Numerically verified (derivation complete): 2 items (T6 and T7)
-- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: δ_CP formula with three derivation gaps; G_N: G_∞ from spectral action scale Λ)
+- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: δ_CP formula with three derivation gaps; G_N: G_∞ absolute scale a second dimensional input, not derived)
 - □ Open: 0 items
 
-The open 🔶 physics items — the spectral triple operator T0 and the spectral-action scale $\Lambda$ fixing $G_\infty$ (hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 (δ_CP) is a structural derivation with three technical gaps noted in §4.
+The open 🔶 physics items — the spectral triple operator T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 (δ_CP) is a structural derivation with three technical gaps noted in §4.
 
 ---
 
@@ -372,7 +372,7 @@ $^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix C exists o
 - **CP-violating phase δ (APS spectral flow):** Structural derivation complete. $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$. Source: Chern class mismatch $\Delta c_1 = -2$ between $\mathbb{CP}^3$ and $\mathbb{CP}^5$, accumulated as APS spectral flow of the Dirac family on the charged-lepton sectors. Status remains 🔶 — three technical gaps prevent elevation to 🔵 (see §4 status note): (i) spectral flow coefficient needs rigorous derivation beyond Weyl-density heuristic; (ii) sign $\partial U_{e3}/\partial\theta_{13}|_{0^+}$ not explicitly computed from T6 coupling matrix; (iii) equivalence with Part 9 coupling-space integral not proved formally.
 
 **Remaining genuine open item:**
-- **$G_\infty$ from spectral action scale $\Lambda$:** The single open item is fixing the spectral action cutoff $\Lambda$ to determine $G_\infty$ and hence $G_N = G_\infty/(4\pi)$. This requires either an additional physical input or deriving $\Lambda$ from the combinatorial structure of $M_\infty$ itself — a problem analogous to deriving the overall mass unit from the sector structure (currently $m_e$ is the unit input).
+- **$G_\infty$ is a second dimensional input:** The single open item is the absolute gravitational scale $G_\infty$ (hence $G_N = G_\infty/(4\pi)$), which is not derived from the sector combinatorics. Fixing it would require an independent geometric determination — a problem analogous to deriving the overall mass unit from the sector structure (currently $m_e$ is the unit input).
 
 **Not open (reclassified):**
 - $\sin^2\theta_W$ (+0.37%): Within EW loop corrections. Not a structural failure.
@@ -407,7 +407,7 @@ The entire observable content of IDWT — every particle mass, every coupling co
 | $G_F$ | $g_2^2/(4\sqrt{2}\,m_W^2)$ | $1.1658\times10^{-5}\ \mathrm{GeV}^{-2}$ |
 | Neutrino mass scale | T11a cross-sector fixed point | $\Sigma m_\nu = 60.39\ \mathrm{meV}$ |
 
-The one open dimensional input is $G_N$ — equivalently, the spectral action scale $\Lambda$. All dimensionless quantities are determined by $N_c$ and the combinatorial structure alone. All masses are determined by $N_c$ and $m_e$. Fixing $\Lambda$ would make IDWT fully parameter-free.
+The one open dimensional input is $G_N$ — equivalently, the absolute gravitational scale $G_\infty$. All dimensionless quantities are determined by $N_c$ and the combinatorial structure alone. All masses are determined by $N_c$ and $m_e$. Deriving $G_\infty$ would make IDWT fully parameter-free.
 
 ---
 
