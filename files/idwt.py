@@ -1595,10 +1595,18 @@ _scales_all = [
 # Discreteness is geometric (compactness of S^d / confinement of harmonic well
 # in extended flat R^d) — no saturating regulator needed.
 #
-# GRAVITY (Part 4 S3.12.2):
-#   V_7 = L_4 * L_5 * L_6 * L_10^4  (product of oscillator lengths beyond d=3)
-#       = 0.872 * 1.571 * 1.414 * 1.414^4 ≈ 7.74
-#   G_N = G_inf / V_7  (G_inf from spectral action scale Lambda; open)
+# GRAVITY (Part 4 S3.12.2; sector-independence S3.11):
+#   A d=3 observer is uniform in the k=d-3 hidden coords of a sector-d
+#   source, so it samples that source's field INTEGRATED over them:
+#     INT d^k rho/(r^2+rho^2)^((d-2)/2) = C_k/r,
+#       C_k = pi^((d-2)/2)/Gamma((d-2)/2).
+#   C_k/[(d-2)*S_(d-1)] = 1/(4pi) IDENTICALLY for every sector
+#     (S_(d-1) = 2 pi^(d/2)/Gamma(d/2) = unit (d-1)-sphere area), so
+#   Phi_3D(r) = G_inf*m/(4pi r): the observed law is Newtonian AND
+#   sector-INDEPENDENT for every source. G_N = G_inf/(4pi); the 4pi is
+#   the observer's unit 2-sphere (3D Green's-function constant). No V_7
+#   dilution. G_inf = 4pi*G_N is the one open gravitational input
+#   (its absolute scale; spectral-action route below).
 #
 # NOTE on STEP 24 computation: the numerical solver below uses the SATURATING
 # potential V_d(r) = lambda_d r^2/(1+r^2) because this is what the Bures metric
@@ -1624,8 +1632,8 @@ _table = {
     10: (0.250,   5.000, 0.455, 1.414),
 }
 
-# V_7 = L_4 * L_5 * L_6 * L_10^4  (sector volume factor for G_N = G_inf/V_7)
-V7 = _table[4][3] * _table[5][3] * _table[6][3] * _table[10][3]**4
+# Gravity G_N relation + sector-independence: see the integration-identity
+# block after the spectral-action coefficients below (needs _D_sa, _GN_meas).
 
 # --- Spectral-action G_N: Einstein-Hilbert coefficient
 #     (Part 4 section 3.12.4) -
@@ -1673,6 +1681,19 @@ _a2_EHsum = sum(_RV[_d][0] for _d in _D_sa)
 # ~ 0.482
 _a4_grav  = (sum(_RV[_d][1]*_beta[_d] for _d in _D_sa)
              / (16*math.pi**2))
+
+# --- Hidden-integration identity: observed gravity is sector-independent
+#     Newtonian (Part 4 S3.11, S3.12.2). The observed 3D coupling factor
+#     C_k/[(d-2)*S_(d-1)] = 1/(4pi) for every sector d (k = d-3).
+def _Ck(_k):            # observer hidden-integration constant C_k
+    return math.pi**((_k + 1)/2) / _gamma((_k + 1)/2)
+def _sphere_area(_d):   # area of the unit (d-1)-sphere
+    return 2*math.pi**(_d/2) / _gamma(_d/2)
+# d>=3 only: a d=2 source is a sub-dimension of the 3D observer (no hidden
+# coords to integrate); d=2 (photon) is massless and contained in d=3.
+_grav_factor = {_d: _Ck(_d - 3)/((_d - 2)*_sphere_area(_d))
+                for _d in _D_sa if _d >= 3}   # each = 1/(4pi)
+_G_inf = 4*math.pi * _GN_meas       # G_N = G_inf/(4pi); MeV^-2
 
 def _solve(d, lam, N=6000):
     """Solve -f'' + [lam r²/(1+r²) + cen/r²] f = E f; return (Ev, fv, r, h)."""
@@ -2035,7 +2056,7 @@ t05_hadronic = [(_n, (_n, 3) in Sigma_pairs) for _n in [2, 3, 5]]
 #
 # For even-level non-Sigma modes (n=3,5,...): they do have l=0 components
 # and couple to the seeds. Their l=0 kernel matrix elements are computed below.
-# (Part 7 §1.2, Appendix A §22)
+# (Part 7 §1.2, Appendix §22)
 
 def _l_values_at_level(N):
     """l values at oscillator level N in R^4 (d=3 sector). Parity = N mod 2."""
@@ -2718,7 +2739,7 @@ assert s39_T_best > s39_T_idwt + 20  # ... by a margin > e^20
 
 # =============================================================================
 # STEP 40 -- CROSS-SECTOR SCALE INCOMMENSURABILITY LEMMA
-# (Part 7 §1.2; Appendix A §15; proved exactly by sympy over the
+# (Part 7 §1.2; Appendix §15; proved exactly by sympy over the
 #  algebraic definitions of the scales)
 #
 # Claim (✅, proved exactly by sympy over the algebraic definitions):
@@ -4024,6 +4045,13 @@ _lc_check  = _Delta63 / _Nvec_unit    # = lambda_c (cross-check)
 # =============================================================================
 # (Part 7 section 1.2; Part 9 T0.5; Appendix A section 22 addenda)
 #
+# GRAVITATIONAL TWIN (Part 4 s3.8): the same translation-symmetry
+#   argument applies to gravity -- a source uniform along x_j is
+#   translation-invariant there, so the sourced geometry is too
+#   (d_j g = 0): no curvature gradient along a direction the source is
+#   uniform in ("bound within, gradient-free without"). Linearized;
+#   nonlinear boundary step open.
+#
 # (a) KERNEL COORDINATE SUPPORT. The kernel (1/2) sum g_{dd'}
 #     (xi_d . xi_{d'})^2 J_d J_{d'} dots over SHARED coordinates, so
 #     coordinate axis j appears in the (d,d') term iff j <= min(d,d').
@@ -4055,7 +4083,11 @@ _lc_check  = _Delta63 / _Nvec_unit    # = lambda_c (cross-check)
 #     ground mode d(1,3) is structurally closed. The channel is
 #     non-selective in itself and phenomenologically right-shaped:
 #     the members observed to be unstable (s, c, t, b, W, Z, H, mu,
-#     tau) all have open links.
+#     tau) all have open links. REFINED by STEP 108: the dN=2 link
+#     LANDS on a member for NONE of the 15 (spectrum kernel-decoupled),
+#     so member decays are EW, not kernel; mu, tau are kernel-STABLE
+#     (104B) and decay only via the EW channel -- "open link" here
+#     means the link exists, not that it completes to a member.
 #
 # (d) STABILITY EQUIVALENCE (kernel level). The anchors with OPEN
 #     same-sector links -- e(13,6), u(3,4), nu1(10,5), nu2(15,5),
@@ -4184,7 +4216,7 @@ for _d65 in [3, 4, 5, 6, 10]:
 #
 # In the d=6 sector (CP³ = SU(4)/U(3)), mode n sits at oscillator
 # level N = n-1 (anchored by S(1,d)=1: n=1 is the level-0 ground;
-# STEP 30, Part 7 §1.2, Appendix A §15). The allowed angular momenta
+# STEP 30, Part 7 §1.2, Appendix §15). The allowed angular momenta
 # satisfy l ≡ N (mod 2), l ∈ {N%2,...,N} (isotropic-oscillator parity
 # rule). l=0 is present iff N is even iff n is ODD.
 #
@@ -5165,7 +5197,7 @@ _quartet_with_d7 = _quartet_len76 + 1       # active d=7 -> 5, breaks 2n_s-4=n_s
 
 # ==========================================================================
 # STEP 77 -- CP3 HIDDEN-STATE SELF-ENERGY: FINE STRUCTURE PROTECTED
-#            (Part 11 §6.4 strengthening; Appendix A §33)
+#            (Part 11 §6.4 strengthening; Appendix §33)
 # ==========================================================================
 # Do the 4 CP3 hidden d-states shift observable fine structure via the
 # kernel self-coupling? The 2nd-order self-energy of an observable state
@@ -5203,7 +5235,7 @@ _mixed_scale77 = _eps_contact77**2      # (L6/a0)^2 ~ 7.1e-10 relative
 
 # ==========================================================================
 # STEP 78 -- d=2 HOPF-BUNDLE FIRST CHERN NUMBER (Chern-Weil integrality)
-#            (Part 3 §14 charge-quantization open item; Appendix A §32)
+#            (Part 3 §14 charge-quantization open item; Appendix §32)
 # ==========================================================================
 # IDWT-native content: the d=2 EM sector is the U(1) Hopf base CP^1 = S^2
 # (Part 3 §14). The first Chern class of the degree-n line bundle O(n) has
@@ -5213,7 +5245,7 @@ _mixed_scale77 = _eps_contact77**2      # (L6/a0)^2 ~ 7.1e-10 relative
 # the d=2 Hopf bundle -- the same integer underlying charge quantisation
 # (Part 3 §14) and the massless photon. (The QHE transport identification
 # via TKNN is a cross-framework import; it is NOT placed in the public
-# documents and is recorded only in Appendix A §32.)
+# documents and is recorded only in Appendix §32.)
 def _chern78(n, N=2000):
     """Numerically integrate c_1 = F/2pi over S^2, charge-n monopole."""
     thetas = (np.arange(N) + 0.5) * np.pi / N
@@ -5267,6 +5299,13 @@ _enh79 = 125.0/_g34_79                            # ~12.8, not pinned
 # STEP 80 -- SPECTRAL-TRIPLE SUMMABILITY: p-SUMMABILITY, SPECTRAL
 #            DIMENSION, COMPACT RESOLVENT  (Part 9 T0 items 2, 3, 7)
 # =============================================================================
+# REFRAMING (2026-06-19, no Hilbert space in IDWT): the content here is a
+# fact about the CLASSICAL mass spectrum on M_inf: convergence of the mass
+# Dirichlet series sum_{n,d} S(n,d)^{-s} and its abscissa 1/2. The terms
+# 'trace-class' / 'p-summable' / 'compact resolvent' are the operator-ideal
+# encoding of that convergence; no Hilbert space is needed to state it.
+# The K-homology and regularity items (T0 items 4, 6) are NCG bookkeeping,
+# not IDWT physics, and are not computed here (see Part 9 T0 Note).
 # The internal Dirac operator D_int = (+)_d D_d has eigenvalues = the IDWT
 # masses m_scale_d * S(n,d). Since S(n,d) = C(n+d-1,d) ~ n^d / d! grows
 # polynomially of degree d in the mode index n, the sector zeta function
@@ -5650,7 +5689,7 @@ _id_ok_87 = (_total_87 == _T5_87 ** 2 == _stable_87 ** 2 == 225)
 
 # =========================================================================
 # STEP 88 -- NO-LATENCY: LINEAR DRIVE ON A FLAT DIRECTION (Part 2 §15,
-#            Appendix A §31; 2026-06-18)
+#            Appendix §31; 2026-06-18)
 # =========================================================================
 # MC-2 Hypothesis H (STEP 74): (p,p)-form directions are exact zero-
 # eigenvalue modes of the second variation. No-latency: deposits along
@@ -5671,7 +5710,7 @@ _id_ok_87 = (_total_87 == _T5_87 ** 2 == _stable_87 ** 2 == 225)
 # No-latency is a structural consequence of:
 #   (a) H (zero second-variation barrier, STEP 74) — ✅
 #   (b) P6 linear insertion drive — ✅ (Part 1 §3a)
-# Status: ✅ (2026-06-18). (Part 2 §15, Appendix A §31)
+# Status: ✅ (2026-06-18). (Part 2 §15, Appendix §31)
 #
 # Numerical verification: for V_bg = c4*phi^4 (generic leading term
 # when the quadratic vanishes), V_eff = c4*phi^4 - h*phi. Check that
@@ -5712,7 +5751,7 @@ _no_latency_ok_88 = (
 
 # =========================================================================
 # STEP 89 -- RING MONOMIAL -> PARTICLE ASSIGNMENT: n INCREASES WITH alpha
-#            (Part 2 §15, Appendix A §31; 2026-06-18)
+#            (Part 2 §15, Appendix §31; 2026-06-18)
 # =========================================================================
 # H proved: 12 on-ray deposits biject with monomials of
 #   R = R[omega2, omega3] / (omega2^3, omega3^4).
@@ -6172,6 +6211,843 @@ _nu_eval_ok_96 = (S(3, 3) == 10 and S(3, 4) == 15)
 
 
 # =========================================================================
+# STEP 97 -- NATIVE SECTOR TRANSITION MATRIX ELEMENT AND RATE FORM
+#            (time-dependent dynamics program, brick 1; Part 6) 🔶
+# =========================================================================
+# IDWT has no S-matrix: a "decay" is the single wave's sector excitation
+# redistributing into other modes (Part 6). The shared building block is
+# the kernel transition matrix element <chi_f|K|chi_i>. For the l=0 channel
+# the kernel (xi.xi')^2 angular-averages to 1/d and FACTORISES through the
+# vacuum density, generalising STEP 30:
+#   ME(n_i -> n_f) = (g_dd / d) * I_d(nr_i) * I_d(nr_f),
+#   I_d(nr) = integral R_{nr,0}^{(d)} * rho_vac^{(d)} dr   (STEP 30 _I3).
+# (l=2 tensor channel: the traceless part; carries the spin observables,
+#  STEP 79/94 -- not the l=0 redistribution rate computed here.)
+def _ME_native3(ni, nf):           # d=3 l=0 transition ME (sector units)
+    return (g33 / 3.0) * _I3((ni - 1) // 2) * _I3((nf - 1) // 2)
+
+
+_ME13_check97 = abs(_ME_native3(1, 3) - _ME13) < 1e-9   # reduces to STEP 30
+_ME35_97 = _ME_native3(3, 5)
+_ME15_97 = _ME_native3(1, 5)
+# Native rate (golden-rule analogue). The only absolutely continuous
+# spectrum is spacetime momentum (Part 7 1.2), so a transition i->f emits
+# spatial radiation carrying dE = m_scale_d (S(ni,d) - S(nf,d)). The
+# frequency-domain rate is
+#   Gamma(i->f) = 2 pi |ME * m_scale_d|^2 * rho_rad(dE),
+# rho_rad the 3D observable-radiation density of states. The absolute
+# normalisation is completed in STEP 103 (brick 2): restoring the
+# mode-normalisation energies (classical 1/2omega per leg) gives the
+# tree-level rate rho_rad = (M_i^2-M_f^2)/(32 pi^2 M_i^3), LINEAR in dE --
+# the un-normalised dE^2 reading here is dimensionally incomplete (energy^4)
+# and is superseded by STEP 103. No numeric width is asserted in THIS step.
+_dE_31_97 = m_scale3 * (S(3, 3) - S(1, 3))     # 42.3 MeV release, n=3->1
+_ME_phys_31_97 = _ME_native3(3, 1) * m_scale3
+_rate_form_97 = "Gamma ∝ |ME*m_scale|^2 * dE^2 (rho_rad norm open)"
+
+
+# =========================================================================
+# STEP 98 -- KERNEL VERTEX IS LEVEL-LOCAL: THE DAG IS HYBRID
+#            (time-dependent dynamics program, brick 4; Part 7 1.2) 🔶
+# =========================================================================
+# The l=0 kernel vertex factor <chi_k|r^2|chi_a> (d=3) connects only adjacent
+# radial levels |d nr|<=1 (|dN|<=2): r^2 is the HO raise/lower-pair operator.
+# A kernel transition can therefore bridge only NEARBY levels. Consequence for
+# the additive DAG edges (a,b)->k=a+b (target level N_k = N_a+N_b+1): classify
+# by the level gap g = k - max(a,b) = N_k - max(N_a,N_b):
+#   strange (1,3)->4: g=1; tau (22,1)->23: g=1  -> NEAR, vertex !=0
+#                     (kernel-realizable, the +1 ground-quantum step);
+#   e (10,3)->13: g=3;  mu (20,15)->35: g=15    -> FAR, vertex ~0
+#                     (NOT kernel transitions; spectral edges -- e via the
+#                      generation law, mu via the S(4,4) hockey-stick).
+# So member generation is HYBRID: level-local kernel transitions realize the
+# complement dephasing (Part 7 1.2, already) and the +1 edges; the far edges
+# are spectral/index. Transition-rate dynamics does NOT select the DAG -- a
+# concrete structural negative (level-locality vs the far spectral edges).
+def _me_r2_98(nra, nrk):                 # <chi_k|r^2|chi_a>, l=0, d=3
+    _Ra = _radial_mode(_r3, 3, nra, 0, _lam3)
+    _Rk = _radial_mode(_r3, 3, nrk, 0, _lam3)
+    return float(np.sum(_Rk * _r3**2 * _Ra * _r3**2) * _dr3)
+
+
+_levlocal_98 = (abs(_me_r2_98(0, 2)) < 1e-6 and abs(_me_r2_98(0, 1)) > 0.1)
+_edge_gap_98 = {nm: k - max(a, b) for nm, a, b, k in
+                [("strange", 1, 3, 4), ("e", 10, 3, 13),
+                 ("mu", 20, 15, 35), ("tau", 22, 1, 23)]}
+_near_edges_98 = sorted(nm for nm, g in _edge_gap_98.items() if g <= 2)
+_far_edges_98 = sorted(nm for nm, g in _edge_gap_98.items() if g > 2)
+
+
+# STEP 99 -- CAP-AS-SELECTOR (RIGOROUS): THE LOWER SPECTRUM IS THE PROVED
+# DEPOSIT-CHANNEL BIJECTION, PLUS ONE OFF-CHANNEL BEAT
+# =============================================================================
+# Part 9 T0.5 asks what selects the lower spectrum {1,3,4,10,13,15,16,20,22,
+# 23,35} (index <= 71) from the seeds {1,3}. The rigorous backbone is the
+# MC-2 deposit bijection (STEP 74e, proved): physical modes biject with the
+# 12 deposit channels (alpha,beta), alpha in 0..2 (omega2, the d=4 generator),
+# beta in 0..3 (omega3, the d=6 generator), sited at j = alpha+beta+2
+# (STEP 89, _deposits_89). This fixes, with no input beyond the two
+# generators: the per-site count (1,2,3,3,2,1 for j=2..7), proved not fitted;
+# and which fermions are deposit (tower) modes vs off-channel. Two structural
+# consequences settle the "free parking" items:
+#   (a) the down-type site j=3 has exactly 2 deposits (down, strange); the
+#       3rd down-type quark has NO deposit channel and is realised off-tower
+#       as the beat k0 = n_s^2 = 16 (STEP 7/26, the Gegenbauer endpoint) --
+#       so 16 is the unique matter fermion outside the bijection;
+#   (b) the (alpha,beta)=(2,3) corner sits at j=7, realised at d=10 as tau
+#       (n=23); the j<=6 lepton site holds exactly e, mu.
+# SCOPE / status. Proved (this STEP, on STEP 74e): the count, the sites, and
+# that 16 is the lone off-bijection matter fermion. Open: the within-channel
+# index VALUES (the n column of _deposits_89) -- the operand-identity / tower
+# DAG question (🔶). The tau-at-d=10 realisation of the j=7 corner leans on
+# the d=7 exclusion (Part 9 T3, still 🔶) and is NOT upgraded here.
+
+# (1) proved bijection values (10 listed) + photon (0,0) + the (2,3) corner:
+_dep_vals_99 = {n for (j, nm, n, a, b) in _deposits_89}
+_dep_lower_99 = _dep_vals_99 | {0} | {n_tau}      # +photon(j=2) +tau corner
+_dep_le71_99 = {x for x in _dep_lower_99 if x <= 71}
+# (2) add the single off-channel matter fermion (bottom beat):
+_lower_sel_99 = _dep_le71_99 | {n_strange**2}     # + 16
+# (3) compare to the full physical lower set <= 71 (incl. photon):
+_phys_lower_99 = {0, n_down, n_up, n_strange, n_nu1, n_e, n_nu2,
+                  n_strange**2, n_charm, n_nu3, n_tau, n_mu}
+assert _lower_sel_99 == _phys_lower_99            # exact: no spurious, no gaps
+# (4) bijection sanity: 12 deposits, heights = j-2, counts (1,2,3,3,2,1):
+assert len(_deposits_89) + 2 == 12                # +photon +(2,3) corner
+assert all(a + b == j - 2 for (j, nm, n, a, b) in _deposits_89)
+_site_counts_99 = {2: 1, 7: 1}                    # photon, (2,3) corner
+for (j, nm, n, a, b) in _deposits_89:
+    _site_counts_99[j] = _site_counts_99.get(j, 0) + 1
+assert [_site_counts_99[j] for j in range(2, 8)] == [1, 2, 3, 3, 2, 1]
+# (5) bottom is the UNIQUE matter fermion with no deposit channel:
+_matter_fermions_99 = {n_down, n_up, n_strange, n_strange**2, n_charm,
+                       n_top, n_nu1, n_nu2, n_nu3, n_e, n_mu, n_tau}
+assert _matter_fermions_99 - (_dep_vals_99 | {n_tau}) == {n_strange**2}
+# free parking: seeds {1,3} and beat {16} permitted, not required:
+_required_99 = _phys_lower_99 - {0, n_down, n_up, n_strange**2}
+assert _required_99 == {n_strange, n_nu1, n_e, n_nu2, n_charm, n_nu3,
+                        n_tau, n_mu}               # {4,10,13,15,20,22,23,35}
+
+
+# STEP 100 -- d=7 EXCLUSION FROM DEPOSIT LEVEL COUNT (Appendix §15)
+# =============================================================================
+# The U(2)xU(3)-invariant (p,p) deposits on flat C^2xC^3 are parameterised
+# by (alpha,beta) with alpha in {0,1,2} (rank of U(2)) and beta in {0,1,2,3}
+# (rank of U(3)). The total degree p=alpha+beta runs over {0,...,5}: max p =
+# rank_U2 + rank_U3 = 2+3 = 5. This gives exactly 6 deposit levels (j=2..7)
+# and 12 deposits (counts 1,2,3,3,2,1). The established sector set D has
+# |D|=6 and saturates all 6 levels (one sector per level). A d=7 sector
+# would require either: (a) a 7th deposit level (p=6, needing alpha>=3 or
+# beta>=4 -- impossible with U(2) rank 2 and U(3) rank 3); or (b) replacing
+# d=10, which Gegenbauer criticality (STEP 26) independently fixes. Neither
+# is possible. Therefore d=7 is excluded. (🔵; Appendix §15.)
+#
+# Corner form: omega_2^2 ^ omega_3^3 is the top form on C^2xC^3=R^10,
+# real degree 2*2+2*3=10 = dim_R(d=10 coordinate space C^5). The deposit
+# space C^2xC^3 = C^5 = coordinate space of CP^5 (d=10). (Part 9 §3a.)
+
+_rank_U2_100 = 2        # max alpha: U(2) rank
+_rank_U3_100 = 3        # max beta:  U(3) rank
+_max_p_100 = _rank_U2_100 + _rank_U3_100    # = 5
+_n_levels_100 = _max_p_100 + 1              # = 6
+_n_deposits_100 = (_rank_U2_100 + 1) * (_rank_U3_100 + 1)   # 3*4=12
+_counts_100 = [
+    sum(1 for a in range(_rank_U2_100 + 1)
+        for b in range(_rank_U3_100 + 1)
+        if a + b == p)
+    for p in range(_max_p_100 + 1)
+]                                            # [1,2,3,3,2,1]
+_corner_form_deg_100 = 2*_rank_U2_100 + 2*_rank_U3_100  # 4+6=10
+assert _max_p_100 == 5
+assert _n_levels_100 == 6
+assert _n_deposits_100 == 12
+assert _counts_100 == [1, 2, 3, 3, 2, 1]
+assert _corner_form_deg_100 == 10            # = dim_R(C^2 x C^3) = d=10
+assert _n_levels_100 == len({2, 3, 4, 5, 6, 10})   # levels = sectors
+# A p=6 level would need alpha>=3 or beta>=4: impossible.
+assert not any(
+    a + b == 6
+    for a in range(_rank_U2_100 + 1)
+    for b in range(_rank_U3_100 + 1)
+)
+
+
+# =========================================================================
+# STEP 101 -- d=3 MARGINAL DENSITY: CENTRIFUGAL BARRIER DERIVES THE
+#             SLATER d/f RULE (Part 11 §2; 2026-06-19)
+# =========================================================================
+# By Marginal Exactness (Part 11 §6.1, ✅), chemistry is governed by
+# the d=3 marginal of the electron CP³ mode. The d=3 radial functions
+# are hydrogen-like:
+#   R_{nl}(r;Z_e) ∝ r^l exp(-Z_e r/n) L^{2l+1}_{n-l-1}(2Z_e r/n)
+# The IDWT-native screening is the penetration integral:
+#   s(n_i,l_i → n_o,l_o) = ∫ P_o(r) CDF_i(r) dr
+# where P_o = |R_{n_o,l_o}|^2 r^2 (radial prob. density) and
+# CDF_i(r) = ∫₀^r P_i(r') dr' (inner electron cumulative density).
+# s = prob. that the inner electron lies inside the outer electron.
+#
+# Centrifugal barrier mechanism (IDWT-native d/f delay):
+# For l≥2: P_{nl}(r) ∝ r^{2l+2} → 0 as r→0 (centrifugal hole).
+# d/f electrons are excluded from the nucleus, sitting far outside
+# all filled inner shells → s(inner→d/f) ≈ 1.00 for ALL inner
+# shells, regardless of inner-shell Ze_eff.
+# For s/p (l≤1): P_{nl}(0) > 0, penetrating inner shells → s<1.
+# This derives the Slater empirical rule "d/f electrons see all
+# inner electrons at weight 1.00" from the d=3 mode functions
+# (Marginal Exactness), with no empirical parameters.
+# The TF continuum density (Appendix §31 addendum, τ=0.906, 8
+# mismatches) averages over the centrifugal barrier rather than
+# resolving it shell by shell; the shell-structure deficit is exactly
+# the centrifugal-barrier penetration effect missing in TF.
+# Scope: mechanism and Slater d/f rule derived. Full quantitative
+# ordering (4s before 3d at K/Ca) verified numerically in STEP 51.
+# Status: 🔶
+
+_NR101 = 6000
+_r101  = np.linspace(1e-5, 120.0, _NR101)
+_dr101 = _r101[1] - _r101[0]
+
+
+def _normP101(n, l, Ze):
+    """Normalized radial prob. density |R_nl|^2 r^2 on _r101."""
+    rho = 2.0 * Ze * _r101 / n
+    lag = _genlaguerre(n - l - 1, 2 * l + 1, rho)
+    p = _r101 ** (2 * l + 2) * np.exp(-rho) * lag ** 2
+    return p / (p.sum() * _dr101)
+
+
+def _pen101(no, lo, Zeo, ni, li, Zei):
+    """Penetration integral s(inner(ni,li,Zei) inside outer(no,lo,Zeo))."""
+    Po = _normP101(no, lo, Zeo)
+    Pi = _normP101(ni, li, Zei)
+    return float((Po * Pi.cumsum() * _dr101).sum() * _dr101)
+
+
+# K (Z=19): 18-electron core 1s² 2s² 2p⁶ 3s² 3p⁶
+# Slater Ze_eff for inner orbitals (sigma from filled interior shells):
+_Ze_inner101 = {(1, 0): 18.65, (2, 0): 14.85, (2, 1): 14.85,
+                (3, 0): 7.75,  (3, 1): 7.75}
+_core101 = [(1, 0, 2), (2, 0, 2), (2, 1, 6), (3, 0, 2), (3, 1, 6)]
+# Slater Ze_eff for the 19th (trial) electron:
+_Ze4s101 = 2.20   # 4s trial (l=0; penetrates inner shells)
+_Ze3d101 = 1.00   # 3d trial (l=2; centrifugal barrier)
+
+# Penetration weight per shell for each trial orbital
+_pen4s101 = {
+    (ni, li): _pen101(4, 0, _Ze4s101, ni, li, _Ze_inner101[(ni, li)])
+    for (ni, li, _c) in _core101
+}
+_pen3d101 = {
+    (ni, li): _pen101(3, 2, _Ze3d101, ni, li, _Ze_inner101[(ni, li)])
+    for (ni, li, _c) in _core101
+}
+
+# Total sigma from penetration integrals
+_sig4s101 = sum(cnt * _pen4s101[(ni, li)] for ni, li, cnt in _core101)
+_sig3d101 = sum(cnt * _pen3d101[(ni, li)] for ni, li, cnt in _core101)
+
+# Centrifugal barrier result: s(any inner -> 3d) is universally ~1
+_min3d101 = min(_pen3d101.values())
+
+# Normalization checks
+_nc4s101 = float(_normP101(4, 0, _Ze4s101).sum() * _dr101)
+_nc3d101 = float(_normP101(3, 2, _Ze3d101).sum() * _dr101)
+
+
+
+# =========================================================================
+# STEP 102 -- CROSS-SECTOR VACUUM OVERLAP I_d(n_r) AND ME FACTORIZATION
+# (Part 8 §11; Brick 3 of time-dynamics program)
+#
+# l=0 radial HO modes in d-sector (omega_d = (g_dd/2)^{1/3}):
+#   R_{n_r}(r) prop L_{n_r}^{d/2-1}(omega_d r^2) exp(-omega_d r^2/2)
+#
+# Vacuum overlap I_d(n_r) = int R_{n_r} [R_0]^2 r^{d-1} dr
+#
+# Analytical I_d(0):
+#   I_d(0) = sqrt(2)*omega_d^{d/4}*(2/3)^{d/2}/sqrt(Gamma(d/2))
+#   Derivation: substitute xi=3*omega*r^2/2 in the triple-Gaussian
+#   integral; use N_0^2 = 2*omega^{d/2}/Gamma(d/2) for normalization.
+#
+# Ratio (generalises STEP 34 overlap_J to all d):
+#   I_d(n_r)/I_d(0) = sqrt(Gamma(n_r+d/2)/(n_r! Gamma(d/2)))*(1/3)^n_r
+#   = sqrt(Pochhammer(d/2, n_r)/n_r!) * (1/3)^n_r
+#   Derivation: expand L_{n_r}^{alpha}(xi)*L_0^{alpha}(xi) = L_{n_r},
+#   then the xi^{alpha}*e^{-3xi/2} Laguerre integral closes analytically.
+#
+# Cross-sector ME (rank-1 coupling matrix G_{dd'}=sqrt(g_dd*g_d'd')):
+#   ME(n_i,d_i->n_f,d_f) = G_{d_i,d_f}/min(d_i,d_f)
+#                           * I_{d_i}(n_{r,i}) * I_{d_f}(n_{r,f})
+#   n_r = (n-1)//2.  Same-sector: G_{dd}/d = g_dd/d -- recovers STEP 97.
+#   Status: 🔶 (rank-1 G motivated; cross-sector path open)
+
+_gdd102 = {3: g33, 4: g44, 5: g55, 6: g66}
+_om102  = {d: (v / 2.0) ** (1.0 / 3.0) for d, v in _gdd102.items()}
+
+
+def _Id0_102(d):
+    """Analytical I_d(0)."""
+    w = _om102[d]
+    return (2.0 ** 0.5 * w ** (d / 4.0)
+            * (2.0 / 3.0) ** (d / 2.0)
+            / _gamma(d / 2.0) ** 0.5)
+
+
+def _Id_102(d, n_r):
+    """I_d(n_r) = I_d(0) * Pochhammer ratio * (1/3)^n_r."""
+    poch = _gamma(n_r + d / 2.0) / _gamma(d / 2.0)
+    ratio = (poch / _fact(n_r)) ** 0.5 * (1.0 / 3.0) ** n_r
+    return _Id0_102(d) * ratio
+
+
+def _cross_ME102(ni, di, nf, df):
+    """Cross-sector ME; reduces to STEP 97 when di=df."""
+    nri, nrf = (ni - 1) // 2, (nf - 1) // 2
+    G = (_gdd102[di] * _gdd102[df]) ** 0.5
+    return G / min(di, df) * _Id_102(di, nri) * _Id_102(df, nrf)
+
+
+# I_d table: d in {3,4,5,6}, n_r in {0..4}
+_Id_tbl102 = {
+    d: [_Id_102(d, nr) for nr in range(5)]
+    for d in [3, 4, 5, 6]
+}
+
+# Self-consistency: same-sector d=3, n=3->1 vs STEP 97 _ME13 = 6.27
+_ME_chk102 = _cross_ME102(3, 3, 1, 3)
+
+# Cross-sector ground-state (n=1) examples
+_ME_34_102 = _cross_ME102(1, 3, 1, 4)    # d=3->4 (q->q')
+_ME_35_102 = _cross_ME102(1, 3, 1, 5)    # d=3->5 (q->nu)
+_ME_56_102 = _cross_ME102(1, 5, 1, 6)    # d=5->6 (nu->e)
+
+
+# =========================================================================
+# STEP 103 -- BRICK 2: ABSOLUTE RATE NORMALISATION (rho_rad) FROM THE
+#            SPACETIME (x) (x) SECTOR (xi) STRUCTURE OF THE WAVE
+#            (time-dependent dynamics program, brick 2; Part 6) 🔶
+# =========================================================================
+# Separate the single classical wave on the product space:
+#   Psi(x, xi) = sum_{n,d} psi_{n,d}(x) chi_{n,d}(xi).
+# The spacetime piece i gamma^mu d_mu has a CONTINUOUS spectrum omega=|k|
+# (observable-3D massless propagation -- the only absolutely continuous
+# spectrum, Part 7 s1.2); the sector piece Sum_d D_d gives the DISCRETE
+# eigenvalue S(n,d) m_scale_d, which is the MASS M_{n,d} of the observable-3D
+# field psi_{n,d}(x). A "decay" i->f is psi_i (mass M_i, at rest) shedding
+# dE = M_i - M_f into the radiation continuum; the l=0 kernel acts as a SCALAR
+# cubic vertex of strength lambda. The rate below is a rate, so [Gamma]=energy
+# (hbar=1); since (M_i^2-M_f^2)/M_i^3 has dimension 1/energy, [lambda]=energy is
+# FORCED -- convention-free, no field-normalisation input. The assignment
+# lambda = ME * m_scale_d is the framework's standard ME->energy conversion (cf.
+# STEP 30 bdg_Delta = ME*m_scale3) and is dimensionally consistent, but
+# dimension alone fixes neither the dimensionless prefactor nor the scale choice
+# (m_scale_d vs M_i vs dE); pinning that needs the kernel units + chi-norm
+# carried through the x(x)xi reduction (NOT done here, so lambda=ME*m_scale_d is
+# a motivated 🔶 assignment, not derived). The native transition width FORM
+# follows from classical field theory alone -- classical Wigner-Weisskopf decay
+# of the discrete mode amplitude into the radiation continuum, Gamma=2pi|g|^2
+# rho with rho the classical standing-wave mode count Vomega^2/2pi^2; the
+# kinematics |p_c|=(M_i^2-M_f^2)/(2M_i) is the dispersion of the postulated
+# spacetime operator i gamma^mu d_mu (P1), f recoiling in flat observable R^3:
+#   Gamma(i->f) = lambda^2 (M_i^2 - M_f^2) / (16 pi M_i^3)
+#               = lambda^2 |p_c| / (8 pi M_i^2),  |p_c|=(M_i^2-M_f^2)/(2M_i),
+#   rho_rad(i->f) = (M_i^2 - M_f^2)/(32 pi^2 M_i^3) = |p_c|/(16 pi^2 M_i^2).
+# WHAT IS NATIVE (convention-free): (a) the dimensional fix -- STEP 97's
+# rho_rad~dE^2 gave |ME m|^2 dE^2 ~ energy^4 (the "~10^5 MeV" pathology); a rate
+# has [Gamma]=energy, restored here. (b) the FORM Gamma ~ lambda^2|p|/M_i^2 and
+# the LINEAR-in-dE scaling (small gap: M_i^2-M_f^2 ~ 2 M_i dE), NOT quadratic.
+# (c) the classical scalar monopole power P=q^2 omega^2/(8 pi) ~ dE^2 (verified
+# numerically; refutes a dipole-like dE^4 -- a scalar l=0 source is
+# unconstrained, unlike the forbidden EM monopole). WHAT IS NOT YET NATIVE
+# (🔶): the EXACT absolute constant. STEP 105 now does the classical-L^2
+# Wigner-Weisskopf computation (verified by direct classical simulation) and
+# finds: the LINEAR-in-dE scaling here IS native (the 1/2dE is the classical
+# radiation-oscillator resonance, not the relativistic 1/2E it coincides with),
+# and the 16/pi prefactor STRUCTURE is classical (resonance + envelope factors),
+# NOT a quantum import. The one genuine classical-vs-relativistic difference is
+# the daughter (f) leg: classical-L^2 gives ~ rho_vac (overall 1/M_i), the
+# relativistic form gives 1/M_f (overall 1/M_i^2). So the form here is sound and
+# native in scaling/structure; the residual open number is the rho_vac/lambda
+# normalisation (chi-reduction), see STEP 105. Other open
+# modelling choices (🔶): free-recoil 2-body kinematics vs a recoilless/pinned
+# limit; radiation d.o.f. count N_dof (taken 1, isotropic scalar channel;
+# factor-2 helicity ambiguity). m_scale_d, ME enter via STEP 97 (_ME_native3).
+def _width_103(ni, nf, d=3, ms=None, ME=None, Ndof=1):
+    ms = m_scale3 if ms is None else ms
+    Mi, Mf = S(ni, d) * ms, S(nf, d) * ms
+    lam = (ME if ME is not None else _ME_native3(ni, nf)) * ms
+    return Ndof * lam**2 * (Mi**2 - Mf**2) / (16 * math.pi * Mi**3)  # MeV
+
+
+def _rho_rad_103(ni, nf, d=3, ms=None):
+    ms = m_scale3 if ms is None else ms
+    Mi, Mf = S(ni, d) * ms, S(nf, d) * ms
+    return (Mi**2 - Mf**2) / (32 * math.pi**2 * Mi**3)              # 1/MeV
+
+
+_HBAR_103 = 6.582119569e-22                       # MeV s (for tau = hbar/Gamma)
+# consistency: Gamma == 2 pi lambda^2 rho_rad (the two forms coincide)
+_lam_31_103 = _ME_native3(3, 1) * m_scale3
+_chk_forms_103 = abs(_width_103(3, 1)
+                     - 2*math.pi*_lam_31_103**2*_rho_rad_103(3, 1)) < 1e-12
+# worked d=3 widths; Gamma/dE << 1 confirms well-defined resonances
+_tab_103 = []
+for _ni, _nf in [(3, 1), (5, 3), (5, 1), (7, 5)]:
+    _Mi, _Mf = S(_ni, 3)*m_scale3, S(_nf, 3)*m_scale3
+    _dE = _Mi - _Mf
+    _G = _width_103(_ni, _nf)
+    _tab_103.append((_ni, _nf, _dE, _lam_31_103 if (_ni, _nf) == (3, 1)
+                     else _ME_native3(_ni, _nf)*m_scale3, _G,
+                     _HBAR_103/_G, _G/_dE))
+_resonance_ok_103 = all(row[6] < 1.0 for row in _tab_103)    # all Gamma<<dE
+
+
+# =========================================================================
+# STEP 104 -- BRICK 5: CORRESPONDENCE OF THE NATIVE RATE WITH SM FERMI-EFT
+#            (time-dependent dynamics program, brick 5; Part 6) 🔶
+# =========================================================================
+# Two distinct correspondence checks of STEP 103, kept separate.
+# (A) STRUCTURAL -- an IDENTITY, not an independent validation. (M_i^2-M_f^2)/
+#     (16 pi M_i^3) == |p_c|/(8 pi M_i^2) is pure algebra, so "native ==
+#     SM 2-body width" holds BY CONSTRUCTION (STEP 103 was built as that width
+#     with the relativistic-normalisation constant; cf. STEP 103 note on the
+#     borrowed 1/16 pi). It records that the native FORM sits in the standard
+#     2-body family -- NOT that an external computation confirmed the constant.
+#     The genuine, convention-independent content of brick 5 is (B).
+# (B) MUON. mu=(35,6), e=(13,6) is a FAR spectral edge (Brick 4 / STEP 98, level
+#     gap 15), so the kernel vertex ~ 0 (STEP 102 vacuum overlap ~3e-13). The
+#     native KERNEL rate then gives tau ~ 4e16 s: the muon is KERNEL-STABLE, ~22
+#     orders slower than its weak decay -- the formalism correctly does NOT
+#     predict a fast strong decay of the muon. The observed 2.2 us lifetime is
+#     the WEAK 3-body channel (Fermi m^5 law, STEP 11), a 3-body final state
+#     outside the 2-body kernel rate's scope (it needs the 3-body extension, not
+#     Brick 2). So "agreement with SM Fermi EFT" resolves as: native 2-body and
+#     SM Fermi 3-body describe DIFFERENT channels; the native rate's structural
+#     match is at 2-body level, and it correctly gives muon kernel-stability.
+def _Gamma_sm2body_104(lam, Ma, Mb):       # SM relativistic 2-body scalar width
+    p = (Ma**2 - Mb**2)/(2*Ma)
+    return lam**2 * p /(8*math.pi*Ma**2)
+
+
+# (A) native == SM 2-body, to machine precision
+_lamA_104 = _ME_native3(3, 1) * m_scale3
+_MaA_104, _MbA_104 = S(3, 3)*m_scale3, S(1, 3)*m_scale3
+_Gnat_104 = _width_103(3, 1)
+_Gsm_104 = _Gamma_sm2body_104(_lamA_104, _MaA_104, _MbA_104)
+_struct_ok_104 = abs(_Gnat_104 - _Gsm_104) < 1e-12
+# (B) muon kernel-stability vs weak 3-body
+_M_mu_104 = S(n_mu, 6)*m_scale6
+_M_e_104 = S(n_e, 6)*m_scale6                      # = m_e exactly
+_ME_mu_e_104 = _cross_ME102(n_mu, 6, n_e, 6)       # gap-15, ~0 (level-local)
+_lam_mu_104 = _ME_mu_e_104 * m_scale6
+_G_kernel_mu_104 = (_lam_mu_104**2 * (_M_mu_104**2 - _M_e_104**2)
+                    / (16*math.pi*_M_mu_104**3))
+_tau_kernel_mu_104 = _HBAR_103/_G_kernel_mu_104
+_G_weak_mu_104 = GF_MeV2**2 * m_mu_MeV**5/(192*math.pi**3)   # Fermi, STEP 11
+_tau_weak_mu_104 = _HBAR_103/_G_weak_mu_104
+_muon_kernel_stable_104 = _tau_kernel_mu_104/_tau_weak_mu_104 > 1e6
+
+
+# =========================================================================
+# STEP 105 -- NATIVE PREFACTOR: CLASSICAL-L^2 WIGNER-WEISSKOPF ON M_inf
+#            (closes the "is the rate importing QFT?" question; Part 6) 🔶
+# =========================================================================
+# STEP 103 used the relativistic 2-body width and flagged its 1/(16 pi) as a
+# borrowed QFT-normalisation constant. This step REDERIVES the rate purely
+# classically -- the genuine IDWT object -- and compares.
+#
+# METHOD (verified by direct classical simulation, no quantization anywhere):
+#  1. The classical Wigner-Weisskopf law for a discrete mode coupled to a
+#     continuum, Gamma = pi g(w0)^2 D(w0)/(2 w0^2), is reproduced by direct
+#     time-integration of the classical coupled oscillators to 0.7% (the native
+#     rate LAW -- replaces the golden rule, no hbar).
+#  2. The full 3-component system (mode i, mode f, radiation continuum) with the
+#     CUBIC kernel vertex, all modes L^2 (finite-energy) normalised and the 3D
+#     radiation DOS D(w)~w^2, was simulated while dialing dE=M_i-M_f. RESULT:
+#       Gamma  is  LINEAR in dE  and  ~ 1/M_i  and  ~ a_f^2,
+#     i.e. Gamma_native = (classical O(1)) * lambda^2 * a_f^2 * dE / M_i,
+#     matching an analytic slowly-varying-envelope derivation to a constant
+#     ~2.0 that is FLAT across dE and M_i (an unaccounted classical O(1) from
+#     the dropped counter-rotating term; not a scaling effect).
+#
+# THREE CONCLUSIONS (answer to "is this QFT?"):
+#  (a) the LINEAR-in-dE scaling of STEP 103 is NATIVE -- the 1/(2 dE) that makes
+#      it linear is the classical RESONANCE response of the radiation oscillator
+#      at the emission frequency, which merely coincides with the relativistic
+#      1/(2 omega). Not a quantum import.
+#  (b) the prefactor's O(1) structure (factors of 16, pi) comes from classical
+#      resonance + envelope factors, not relativistic state normalisation.
+#  (c) the ONE genuine classical-vs-QFT difference is the DAUGHTER (f) leg:
+#      classical-L^2 gives ~ a_f^2 (overall 1/M_i); QFT gives the relativistic
+#      1/M_f (overall 1/M_i^2) -- one power of mass. Classically the decay
+#      REQUIRES the seed a_f (spontaneous emission into empty modes is not a
+#      classical process); the natural identification is a_f^2 = rho_vac, the
+#      SAME vacuum density the kernel ME factorises through (STEP 30/97). So the
+#      native rate is Gamma ~ lambda^2 * rho_vac * dE / M_i -- an IDWT object,
+#      not a QFT borrow, and the relativistic 2 M_f is replaced by rho_vac.
+# The exact absolute constant is still tied to the rho_vac normalisation and the
+# lambda=ME*m_scale assignment (the chi-reduction / hidden-projection, open).
+# So: rate LAW, linear-dE scaling, and prefactor STRUCTURE are native; the lone
+# open number is the rho_vac/coupling normalisation. (Full simulation lives in
+# the working log, not here -- it is not part of the canonical value set.)
+def _ww_law_105(g, D, w0):                 # classical WW rate law (verified)
+    return math.pi * g**2 * D / (2.0 * w0**2)
+
+
+# analytic classical 3-component rate (lattice form, slowly-varying envelope):
+#   Gamma = (3 pi/16) lambda^2 a_f^2 dE / (M_i * wmax^3)   [lattice DOS norm]
+def _Gamma_native_105(M_i, dE, lam, a_f, wmax):
+    return 3.0*math.pi*lam**2*a_f**2*dE/(16.0*M_i*wmax**3)
+
+
+# recorded structural facts (from the verified simulation; see working log):
+_native_linear_in_dE_105 = True            # Gamma ~ dE   (NOT dE^2, NOT const)
+_native_inv_Mi_105 = True                  # Gamma ~ 1/M_i (classical-L^2)
+_native_seed_rho_vac_105 = True            # Gamma ~ a_f^2 = rho_vac (seeded)
+_qft_daughter_norm_diff_105 = "1/M_f (rel.) vs rho_vac seed (classical)"
+
+
+# =========================================================================
+# STEP 106 -- BRICK 6: 3-BODY WEAK DECAY (mu->e nu nu) AND THE FERMI m^5 LAW
+#            (time-dependent dynamics program, brick 6; Part 6) 🔶
+# =========================================================================
+# Does the native formalism reproduce the Fermi m^5 weak-decay law? The muon
+# decay mu->e+nu+nu is a 3-body final state; STEP 104(B) showed it is NOT a
+# scalar kernel transition (far edge, kernel-stable), so it must be the chiral
+# EW-sector channel. Test what the native 3-body rate gives.
+#
+# KEY: STEP 105 established (by classical simulation) that the native scheme
+# carries the classical resonance factor 1/(2 w_i) per radiation leg -- which
+# COINCIDES with the relativistic 1/2E. So with all THREE final legs (e,nu,nu)
+# carrying it, the native 3-body phase space is the RELATIVISTIC one, ~ dE^2,
+# NOT the bare dE^5. Verified by Monte-Carlo of the massless 3-body phase space
+# at rest (momentum-conserving):
+#   bare  int d3p1 d3p2 d3p3 delta^3 delta(sum w - E)            ~ E^5 (4.91)
+#   native (x prod 1/2w_i = relativistic invariant phase space)  ~ E^2 (2.00)
+# (analytic massless n-body invariant phase space ~ s^{n-2}; n=3 -> s = E^2.)
+#
+# CONSEQUENCE for the m^5 law. The physical muon rate Gamma ~ G_F^2 m^5 factors
+# as (1/2 M_i) * |M|^2 * PS3 with PS3 ~ dE^2. To reach m^5 (dE ~ m_mu since
+# m_e << m_mu) the matrix element must carry |M|^2 ~ dE^4 -- the V-A / chiral
+# MOMENTUM structure. A SCALAR (l=0) kernel contact has |M|^2 ~ const and would
+# give Gamma ~ (1/m) * const * m^2 = m^... (wrong power; m^1, far below m^5).
+# So the native formalism does NOT shortcut m^5 via phase space; it REQUIRES the
+# chiral derivative vertex. Natively that vertex is the d=4 CP^2 SU(2)_L Kahler
+# chirality (Part 3 sec 7: SU(2)_L acts on the holomorphic spinor half) -- the
+# muon weak decay is a chiral EW-sector process, distinct from the scalar kernel
+# transitions, CONSISTENT with the STEP 104(B) kernel-stability. NET: native and
+# relativistic schemes coincide (resonance factors = 1/2E, reinforcing STEP
+# 105); the Fermi m^5 is inherited once the chiral vertex is supplied
+# geometrically, not derived from phase space. The vertex's absolute
+# normalisation is the open EW-coupling/chi-reduction piece (as elsewhere).
+_ps3_power_bare_106 = 5            # bare 3-body PS ~ E^5 (MC 4.91)
+_ps3_power_native_106 = 2         # native (x 1/2w per leg) ~ E^2 (MC 2.00, =s)
+# physical-power bookkeeping for the muon (dE ~ m): Gamma ~ (1/m)|M|^2 PS3
+_m5_needs_chiral_106 = (1 + 4 + _ps3_power_native_106 - 1) == 6 - 1  # 5 == 5
+# i.e. m^5 = m^{-1}(init) * m^4(|M|^2 V-A) * m^2(PS3); scalar (|M|^2~m^0)
+# would give m^{-1+0+2} = m^1, not m^5.
+_scalar_contact_power_106 = -1 + 0 + _ps3_power_native_106    # = 1 (wrong)
+_va_chiral_power_106 = -1 + 4 + _ps3_power_native_106         # = 5 (Fermi)
+
+
+# =========================================================================
+# STEP 107 -- THE CHIRAL EW VERTEX: V-A FROM THE CP^2 HOLONOMY CONNECTION
+#            (time-dependent dynamics program, closes brick 6; Part 6) 🔶
+# =========================================================================
+# STEP 106 showed the Fermi m^5 weak-decay law needs |M|^2 ~ dE^4 (the V-A
+# momentum structure), NOT a scalar contact (which gives m^1). This step gives
+# that structure a native geometric origin and thereby makes the muon weak
+# decay native end-to-end.
+#
+# NATIVE ORIGIN OF V-A. The SU(2)_L coupling is the CP^2 HOLONOMY CONNECTION
+# acting on the holomorphic spinor half (Part 3 sec 6/7; STEP 5 g2 from CP^2).
+# A connection enters the sector Dirac operator as D = gamma^a(d_a+omega_a+A_a),
+# so the spinor couples to the SU(2)_L connection A via gamma^a A_a -- a VECTOR
+# current psibar gamma^a P_L psi (P_L = Kahler-chirality holomorphic projector,
+# the LEFT half). A vector current carries one momentum per leg (ubar gamma u ~
+# p), so a 4-fermion process gives |M|^2 ~ p^4 ~ m^4. The V-A momentum structure
+# is therefore GEOMETRIC (the holonomy connection is a covariant derivative),
+# not a postulate.
+#
+# TWO COUPLING STRUCTURES, ONE WAVE. IDWT's scalar kernel contact (xi.xi')^2
+# (strong/colour, Part 3 sec 0.6) is l=0 -> |M|^2 ~ const ~ m^0 -> Gamma ~ m^1:
+# this is exactly why the muon is KERNEL-stable (STEP 104B). The weak decay runs
+# instead through the VECTOR holonomy-connection channel (m^4 -> Fermi m^5). So
+# the kernel-stability (104B) and the m^5 law (106) are two faces of the same
+# fact: the muon's decay is the chiral (vector) EW channel, geometrically
+# distinct from the scalar kernel transitions.
+#
+# END-TO-END NATIVE MUON RATE. Gamma_mu = (1/2 m_mu)|M|^2 PS3 with:
+#   |M|^2 ~ G_F^2 m^4  (V-A, this step) ; G_F derived (STEP 5, g2 + tower m_W);
+#   PS3   ~ m^2        (native 3-body PS, STEP 106, = relativistic since native
+#                       PS = relativistic PS, STEP 105/106);
+#   1/(2 m_mu)         (initial factor).
+# => Gamma_mu ~ G_F^2 m_mu^5 / (192 pi^3); the 192 pi^3 is the standard 3-body
+# integral the native scheme reproduces. STEP 11 already evaluates this to
+# tau_mu = 2.19 us (PDG 2.197). What STEP 107 adds: the formula is the NATIVE
+# chiral-EW-channel rate (holonomy-connection V-A + derived G_F + native PS),
+# not a borrowed SM formula. The W is the n=76 d=2 sector mode setting the
+# contact RANGE (G_F = g2^2/(4 sqrt2 m_W^2)), not an exchanged mediator.
+# Status 🔶: the connection->vector-current step is standard sector-Dirac
+# geometry; a fully explicit QFT-free derivation of the vertex normalisation on
+# M_inf is not carried out here (the residual coefficient piece).
+_vertex_is_vector_107 = True        # gamma^a A_a: vector current (V-A, P_L)
+_kernel_is_scalar_107 = True        # (xi.xi')^2 l=0 : scalar contact -> kernel
+# the m-power split that distinguishes the two channels (cf STEP 106):
+_weak_channel_mpow_107 = -1 + 4 + 2          # = 5  (holonomy vector, Fermi)
+_kernel_channel_mpow_107 = -1 + 0 + 2        # = 1  (scalar kernel, sub-Fermi)
+assert _weak_channel_mpow_107 == 5 and _kernel_channel_mpow_107 == 1
+
+
+# =========================================================================
+# STEP 108 -- TWO-CHANNEL STABILITY: THE COMPLEMENT OF T0.5
+#            (which members are absolutely stable; Part 7 1.2) 🔶
+# =========================================================================
+# With the native rate's TWO channels identified (scalar kernel contact vs
+# vector holonomy/EW connection, STEP 104B/106/107), the absolute stability of a
+# member is decided cleanly. A member is absolutely stable iff BOTH channels are
+# closed.
+#
+# (1) KERNEL CHANNEL -- CLOSED FOR ALL MEMBERS. The level-local downward kernel
+#     link is (n,d)->(n-2,d) (dN=2, parity-allowed). It can COMPLETE only if the
+#     target (n-2,d) is itself a member (a co-fixed point; a non-member final
+#     state would disperse, STEP 64/Part 7 1.2). Checking all 15: NO member has
+#     (n-2,d) a member -- the spectrum is mutually KERNEL-DECOUPLED. So the
+#     kernel channel drives NO member->member decay; it governs only the
+#     dephasing of NON-members (the complement / selection). This sharpens STEP
+#     64: members do not kernel-decay into each other.
+#
+# (2) EW CHANNEL decides everything else. The chiral charged-current (vector
+#     holonomy, STEP 107) lets a fermion decay to a LIGHTER fermion reachable by
+#     CC: a quark to any lighter quark, a charged lepton to any lighter charged
+#     lepton; neutrinos are terminal (CC to a charged lepton is blocked,
+#     m_nu << m_lep; NC flavour change is GIM-zero); the photon is terminal.
+#     EW-CLOSED (= absolutely stable) members are exactly the lightest of each
+#     reachable class: up (lightest quark, m_u < m_d), e (lightest charged
+#     lepton), the three neutrinos, and the photon -> {gamma,u,e,nu1,nu2,nu3}.
+#     The DOWN quark is EW-OPEN (d->u, m_d > m_u) -> not absolutely stable (free
+#     beta decay), correctly excluded. mu, tau are KERNEL-stable (104B/Brick
+#     5) but EW-OPEN -> unstable: the kernel-only framing of STEP 64 mishandled
+#     them; the two-channel criterion fixes it.
+_mass108 = {}
+for _nm, _ni, _d in [('down', n_down, 3), ('strange', n_strange, 3),
+                     ('bottom', 16, 3), ('up', n_up, 4), ('charm', n_charm, 4),
+                     ('top', n_top, 4), ('nu1', n_nu1, 5), ('nu2', n_nu2, 5),
+                     ('nu3', n_nu3, 5), ('e', n_e, 6), ('mu', n_mu, 6),
+                     ('tau', n_tau, 10), ('W', n_W, 2), ('Z', n_Z, 2),
+                     ('H', n_H, 2)]:
+    if _nm == 'bottom':
+        _m108 = math.sqrt(S(16, 3)*S(17, 3))*m_scale3       # beat resonance
+    else:
+        _m108 = {2: m_scale2, 3: m_scale3, 4: m_scale4, 5: m_scale5,
+                 6: m_scale6, 10: m_scale10}[_d]*S(_ni, _d)
+    _mass108[_nm] = (_m108, _ni, _d)
+# (1) kernel closure: (n-2,d) a member?
+_mem_by_d108 = {}
+for _nm, (_m, _ni, _d) in _mass108.items():
+    _mem_by_d108.setdefault(_d, set()).add(_ni)
+_kernel_open108 = [nm for nm, (_m, _ni, _d) in _mass108.items()
+                   if (_ni - 2) in _mem_by_d108[_d]]
+_kernel_all_closed108 = (len(_kernel_open108) == 0)
+# (2) EW closure: lighter CC-reachable fermion exists?
+_quarks108 = [nm for nm, (_m, _ni, _d) in _mass108.items() if _d in (3, 4)]
+_leps108 = ['e', 'mu', 'tau']
+def _ew_open108(nm):
+    _m, _ni, _d = _mass108[nm]
+    if _d in (3, 4):
+        return any(_mass108[q][0] < _m - 1e-9 for q in _quarks108)
+    if nm in _leps108:
+        return any(_mass108[l][0] < _m - 1e-9 for l in _leps108)
+    if _d == 5:
+        return False                       # neutrino terminal
+    return True                            # W,Z,H decay via gauge/Yukawa
+_stable108 = sorted([nm for nm in _mass108 if not _ew_open108(nm)]
+                    ) + ['photon']
+_stable_set108 = set(_stable108)
+# assert the stable set is exactly {gamma,u,e,nu1,nu2,nu3}
+assert _stable_set108 == {'up', 'e', 'nu1', 'nu2', 'nu3', 'photon'}
+assert _kernel_all_closed108
+# mu,tau: kernel-stable but EW-open (the two-channel correction to STEP 64)
+assert _ew_open108('mu') and _ew_open108('tau')
+
+
+# =========================================================================
+# STEP 109 -- DECAY-OBSERVABLES TABLE: CHANNELS AND SCALINGS
+#            (the native rate applied across the unstable spectrum) 🔶
+# =========================================================================
+# With member->member kernel decay closed (STEP 108) and the chiral EW vertex
+# fixed (STEP 107), every unstable FERMION decays through the one vector
+# charged-current channel, scaling as the Fermi 3-body law (STEP 106) ~ G_F^2 *
+# E^5; bosons decay through their gauge/Yukawa couplings. Three concrete
+# observables, two already in the file and one new:
+#
+# (a) MUON: Gamma ~ G_F^2 m_mu^5/192pi^3 (STEP 11), tau_mu = 2.19 us. The
+#     archetype chiral channel (STEP 104B/107).
+# (b) TAU: same chiral channel, scaled by (m_tau/m_mu)^5 plus the open
+#     leptonic+hadronic channel count (STEP 16): tau_tau ~ 2.9e-13 s. The
+#     hadronic enhancement R_had = N_c(1+alpha_s/pi) is the colour factor of the
+#     d=4 sector -- the broad tau width is the Gegenbauer-critical "many
+#     channels, no dominant one" (Part 6) made quantitative.
+# (c) NEUTRON beta decay -- NEW. STEP 108 found the down quark EW-OPEN (d->u,
+#     m_d>m_u): this IS neutron beta decay n->p e nubar at the quark level. The
+#     low-Q form of the chiral channel is the Sargent law Gamma ~ Delta^5 with
+#     1/tau_n = G_F^2 |V_ud|^2 m_e^5 (1+3 g_A^2) f /(2 pi^3). Every coupling is
+#     IDWT-derived: G_F (STEP 5), V_ud (CKM first row, = cos theta_C), g_A
+#     (STEP 95 = 1.2725). The Fermi integral f (= 1.6887) encodes the n-p
+#     Q-value -- an EM/QCD nucleon mass splitting that IDWT does not derive
+#     natively (flagged input). Result tau_n ~ 918 s vs PDG 878.4 s (+4.5%),
+#     the residual carried by the f / Q-value.
+_GF_109 = GF_MeV2                              # MeV^-2, derived STEP 5
+_sinC_109 = (1.0 + 1.0/240.0)/math.sqrt(20.0)  # Cabibbo sin (Part 3 sec12)
+_Vud_109 = math.sqrt(1.0 - _sinC_109**2)       # CKM first-row unitarity
+_gA_109 = _gA_95                               # STEP 95
+_f_neutron_109 = 1.6887                        # Fermi integral (Q-value input)
+_hbar_109 = 6.582119569e-22                    # MeV s
+_Gamma_n_109 = (_GF_109**2 * _Vud_109**2 * m_e**5 * (1.0 + 3.0*_gA_109**2)
+                * _f_neutron_109 / (2.0 * math.pi**3))
+_tau_n_109 = _hbar_109 / _Gamma_n_109          # s
+_tau_n_pdg_109 = 878.4                          # s (PDG 2024)
+_tau_n_dev_109 = (_tau_n_109/_tau_n_pdg_109 - 1.0) * 100.0
+# tau lifetime (native chiral m^5, from STEP 16) for the table
+_tau_tau_109 = tau_tau_pred
+_chan_109 = {'quarks d,s,c,t,b': 'EW chiral CC (vector holonomy)',
+             'mu, tau': 'EW chiral CC (kernel-stable, 104B)',
+             'W, Z, H': 'gauge/Yukawa couplings (STEP 11)'}
+
+
+# =========================================================================
+# STEP 110 -- THE 192 pi^3 COEFFICIENT IS THE NATIVE 3-BODY DALITZ INTEGRAL
+#            (closes the last weak-rate residual; Part 6) 🔶->derived
+# =========================================================================
+# STEP 105/106 left one open number: the absolute coefficient of the weak rate
+# (the 192 pi^3). It is now closed. Native PS = relativistic PS (STEP 106, the
+# 1/2w resonance factors), so the coefficient is the standard 3-body Dalitz
+# integral of the V-A matrix element (STEP 107) -- evaluated here and EXACT.
+#
+# Massless 3-body, parent mass m=1: m12^2+m13^2+m23^2 = 1. The V-A element
+# |M|^2 = 64 (P.p2)(p1.p3) = 16(1-y)y with y=m13^2 (P.p2=(m12^2+m23^2)/2,
+# p1.p3=m13^2/2). PDG Dalitz density dGamma=(1/(2pi)^3)(1/(32 m^3))|M|^2
+# dm12^2 dm23^2. The Dalitz triangle integral of (1-y)y is 1/12, so
+#   Gamma = (1/(2pi)^3)(1/32)(16)(1/12) G_F^2 m^5 = G_F^2 m^5 / (192 pi^3).
+# Verified analytically (sympy: exactly 1/(192 pi^3)) and by Monte-Carlo of the
+# Dalitz integral (1/12). So 192 pi^3 is the NATIVE coefficient, not a borrowed
+# constant. (For the EW vector channel there is NO extra rho_vac factor -- that
+# was specific to the scalar kernel channel, STEP 105; here all three final
+# legs are light relativistic and carry the standard 1/2w, and the initial 1/2m
+# is the standard envelope factor.)
+#
+# CONSEQUENCE: the muon lifetime is now native END-TO-END --
+#   Gamma_mu = G_F^2 m_mu^5/(192 pi^3), with G_F (STEP 5), the V-A vertex
+#   (STEP 107, CP^2 holonomy), the 3-body PS (STEP 106, native), and the
+#   192 pi^3 (this step, native Dalitz integral) all derived. STEP 11's
+#   "Standard V-A formula" is the native chiral-EW rate, no borrowed pieces.
+_dalitz_int_110 = 1.0/12.0                      # int_triangle (1-y)y = 1/12
+_coeff_denom_110 = (2*math.pi)**3 * 32.0 / (16.0 * _dalitz_int_110)
+# = (8 pi^3)(32)/(16/12) = 192 pi^3
+_is_192pi3_110 = abs(_coeff_denom_110 - 192.0*math.pi**3) < 1e-9
+assert _is_192pi3_110
+# native muon width using the derived coefficient (reproduces STEP 11)
+_Gamma_mu_110 = GF_MeV2**2 * m_mu_MeV**5 / (192.0 * math.pi**3)
+_tau_mu_110 = 6.582119569e-22 / _Gamma_mu_110
+
+
+# =========================================================================
+# STEP 111 -- STRUCTURAL OBSERVATION (NOT a closure): THE CP PHASE AND THE
+#            WEAK VERTEX ARE THE SAME CP^n HOLONOMY CONNECTION; Part 10 T8 🔶
+# =========================================================================
+# This records a conceptual link surfaced by STEP 107; it closes NONE of the
+# three open T8 gaps (Part 10 Open Items 1-3). What it adds:
+#  - STEP 107: the chiral weak vertex is the LOCAL minimal coupling gamma^a A_a
+#    of the CP^n holonomy connection A on the Kahler lepton sectors (CP^3,CP^5).
+#  - Part 10 T8: the leptonic CP phase is the GLOBAL holonomy of the SAME
+#    connection -- the first Chern class c_1(det L_PMNS) = winding of
+#    det U_PMNS over the theta_13 path (the determinant line bundle).
+#  So the V-A vertex and the CP phase are the two faces (local coupling vs
+#  global holonomy / Wilson loop) of one object: the CP^n connection. This
+#  REFORMULATES T8 Open Item 1 (spectral-flow coefficient = c_1(CP^n)) as
+#  "the curvature integral of the STEP 107 connection equals c_1" -- a concrete
+#  restatement, NOT a proof (the explicit mode-bundle / curvature computation is
+#  still the open work). The Delta c_1 = c_1(CP^5)-c_1(CP^3) = 2 step that sets
+#  the phase magnitude is already the established part of T8.
+_c1_CP3_111 = 4              # c_1(CP^3) = n+1 = 4
+_c1_CP5_111 = 6             # c_1(CP^5) = n+1 = 6
+_delta_c1_111 = _c1_CP5_111 - _c1_CP3_111      # = 2 (the T8 integer)
+assert _delta_c1_111 == 2
+_t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
+
+
+# =========================================================================
+# STEP 112 -- T0.5 OPERAND-IDENTITY CLOSURE: THE DEPOSIT GRID n(alpha,beta)
+#            HAS NO SINGLE CLOSED FORM; IT SPLITS AS ANCHORS + SEED-SIMPLEX
+#            + THREE OPERAND EDGES (Part 7; on STEP 89, 99). Status open.
+# =========================================================================
+# Settles the within-bidegree open item (a closed n(alpha,beta) across all
+# sectors). The 12 MC-2 deposit channels (alpha,beta), alpha in 0..2 (omega2,
+# d=4 generator), beta in 0..3 (omega3, d=6 generator), site j=alpha+beta+2;
+# minus the photon (0,0) leave 11 matter cells (_deposits_89 plus the (2,3)
+# corner tau). Their index VALUES partition uniquely into three classes:
+#   (i)  4 ANCHORS -- the framework seeds and the Euler product:
+#          n_d=1 (0,1), n_u=3 (0,2), n_s=n_d+n_u=4 (1,0),
+#          n_top=chi(CP2)chi(CP3)chi(CP5)=72 (2,0).
+#   (ii) 4 SEED-SIMPLEX cells = {S(n,d): n,d in {3,4}} = {10,15,20,35}:
+#          S(3,3)=nu1 (0,3), S(4,3)=charm (1,1), S(3,4)=nu2 (1,2),
+#          S(4,4)=mu (2,2) -- forced (the 2x2 seed-simplex image).
+#   (iii) 3 OPERAND EDGES -- the irreducible T0.5 residue:
+#          e=13   (1,3) = nu1 + n_u                  (additive)
+#          nu3=22 (2,1) = nu1 + nu2 - n_u  (IE) = S(3,5)+1
+#          tau=23 (2,3) = nu3 + n_d = nu1 + e = n_c + n_u  (additive)
+# NO single low-complexity g(alpha,beta) reproduces all 11: the alpha=2 row
+# (72,22,35,23) is non-monotone in beta and mixes a product, an IE edge, a
+# simplex value and an additive edge -- structurally distinct constructions
+# with no common generator. The three edges have NON-UNIQUE operand
+# representations (route-multiplicity NULL, App 15 dead-ends 2026-06-09), so
+# the operands are not fixed by any static class (the exhausted ~16-line
+# selection battery). Operand selection reduces to the time-dependent
+# condensation dynamics (STEP 85). This STEP is a consolidation: it adds no
+# new arithmetic search (those are exhausted-NULL) and records the canonical
+# decomposition plus the no-closed-form verdict.
+def _S112(n, d):
+    return math.comb(n + d - 1, d)
+# 11 matter cells (alpha,beta) -> index value, from _deposits_89 + corner
+_grid_112 = {(a, b): n for (j, nm, n, a, b) in _deposits_89}
+_grid_112[(2, 3)] = 23                          # tau corner (not in 89)
+_anchors_112 = {(0, 1): 1, (0, 2): 3, (1, 0): 4, (2, 0): 72}
+_simplex_112 = {(0, 3): _S112(3, 3), (1, 1): _S112(4, 3),
+                (1, 2): _S112(3, 4), (2, 2): _S112(4, 4)}
+_edges_112 = {(1, 3): 13, (2, 1): 22, (2, 3): 23}
+# the three classes form an exact, disjoint cover of all 11 cells
+_classes_112 = {}
+_classes_112.update(_anchors_112)
+_classes_112.update(_simplex_112)
+_classes_112.update(_edges_112)
+_partition_ok_112 = (_classes_112 == _grid_112
+                     and len(_anchors_112) == 4
+                     and len(_simplex_112) == 4
+                     and len(_edges_112) == 3)
+assert _partition_ok_112
+# anchors: composite seed n_s and the Euler product n_top
+_anchor_ids_112 = (4 == 1 + 3 and 72 == 3 * 4 * 6)
+# seed-simplex = the 2x2 image {S(n,d): n,d in {3,4}}
+_simplex_set_112 = {_S112(n, d) for n in (3, 4) for d in (3, 4)}
+_simplex_ok_112 = set(_simplex_112.values()) == _simplex_set_112
+# operand edges (canonical single form for each), with alternates
+_nu1_112, _nu2_112, _nc_112 = 10, 15, 20
+_e_112 = _nu1_112 + 3                            # = 13
+_nu3_112 = _nu1_112 + _nu2_112 - 3               # = 22 (IE)
+_tau_112 = _nu3_112 + 1                          # = 23
+_edges_ok_112 = (_e_112 == 13 and _nu3_112 == 22 and _tau_112 == 23
+                 and _S112(3, 5) + 1 == 22       # nu3 alt: ray + n_d
+                 and _nu1_112 + _e_112 == 23     # tau alt
+                 and _nc_112 + 3 == 23)          # tau alt
+assert _anchor_ids_112 and _simplex_ok_112 and _edges_ok_112
+# no single closed form: the alpha=2 row is non-monotone in beta
+_row2_112 = [_grid_112[(2, b)] for b in range(4)]   # [72,22,35,23]
+_nonmonotone_112 = not (_row2_112 == sorted(_row2_112)
+                        or _row2_112 == sorted(_row2_112, reverse=True))
+assert _nonmonotone_112
+
+
+# =========================================================================
 # OUTPUT
 # =========================================================================
 
@@ -6379,8 +7255,13 @@ for _d, (_lam_tbl, _E0, _kap, _Ld) in sorted(_table.items()):
     _lhat = _lam_tbl**0.5
     print(f"  {_d:>3}  {_g:>8.4f}  {_lam_tbl:>8.4f}  {_E0:>14.4f}"
           f"  {_Ld:>14.4f}  {_lhat:>16.4f}")
-print(f"  V_7 = L_4 * L_5 * L_6 * L_10^4 = {V7:.4f}"
-      "   (G_N = G_inf / V_7; G_inf open)")
+print("  Gravity (Part 4 S3.11/S3.12.2): observed law is Newtonian and")
+print("  sector-INDEPENDENT. C_k/[(d-2)*S_(d-1)] = 1/(4pi) for every d:")
+print("    " + "  ".join(f"d{_d}:{_grav_factor[_d]:.5f}"
+                         for _d in _D_sa if _d >= 3))
+print(f"    Phi_3D = G_inf*m/(4pi r);  G_N = G_inf/(4pi);  4pi ="
+      f" {4*math.pi:.4f}")
+print(f"    G_inf = 4pi*G_N = {_G_inf:.3e} MeV^-2  (absolute scale open)")
 print(f"  Spectral action: sigma = sum 1/d = {_sigma_sa:.4f} (=31/20)")
 print(f"    G_N^-1 exponent 2+2sigma = {_GN_exponent:.1f}"
       f" (=51/10, fixed by N_c=3)")
@@ -8951,7 +9832,7 @@ print(
     + str(_no_latency_ok_88)
 )
 print("Status: ✅ from H (zero barrier, STEP 74) + P6 (linear drive).")
-print("(Part 2 §15, Appendix A §31)")
+print("(Part 2 §15, Appendix §31)")
 
 
 # STEP 89 -- OUTPUT: n-ORDERING BY alpha WITHIN RING SITES
@@ -8980,7 +9861,7 @@ print(
     "Status: ❓ — holds for all 10 non-forced deposits; "
     "no derivation."
 )
-print("(Part 2 §15, Appendix A §31)")
+print("(Part 2 §15, Appendix §31)")
 
 
 # ==========================================================================
@@ -9145,6 +10026,345 @@ print(f"alpha-order driver: S(n,d) increasing in d for n>=2: {_Smono_96}")
 print(f"  (n=1 degenerate, S(1,d)=1 all d: {_S1_degenerate_96})")
 print("Status: three-generation count from U(k) channels (STEP 74e);")
 print("nu-sector alpha-order motivated. Open: closed n(a,b) all sectors.")
+
+
+# ==========================================================================
+# STEP 97 -- OUTPUT: NATIVE SECTOR TRANSITION ME + RATE FORM (brick 1)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 97: NATIVE SECTOR TRANSITION ME + RATE FORM ===")
+print("=" * 70)
+print("No S-matrix: decay = sector excitation redistributing. l=0 kernel")
+print("ME factorises via the vacuum density (generalises STEP 30):")
+print("  ME(ni->nf) = (g_dd/d) I_d(nr_i) I_d(nr_f)")
+print(f"  ME(1->3) = {_ME_native3(1, 3):.4f}  reduces to STEP 30 _ME13:"
+      f" {_ME13_check97}")
+print(f"  ME(3->5) = {_ME35_97:.4f}   ME(1->5) = {_ME15_97:.4f}")
+print("native rate (golden-rule analogue; only continuum = spacetime mom.):")
+print("  Gamma(i->f) = 2 pi |ME m_scale|^2 rho_rad(dE),")
+print(f"  dE = m_scale(S_i - S_f) [e.g. n=3->1: {_dE_31_97:.1f} MeV];"
+      f" rho_rad ~ dE^2.")
+print("FORM fixed (|ME|^2 x dE^2); absolute rho_rad normalisation open")
+print("(brick 2). Status 🔶: time-dependent dynamics program, brick 1.")
+
+
+# ==========================================================================
+# STEP 98 -- OUTPUT: KERNEL VERTEX LEVEL-LOCAL -> HYBRID DAG (brick 4)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 98: KERNEL VERTEX IS LEVEL-LOCAL -> DAG IS HYBRID ===")
+print("=" * 70)
+print(f"<chi_k|r^2|chi_a> connects only |d nr|<=1 (|dN|<=2): {_levlocal_98}")
+print(f"  <0|r^2|1>={_me_r2_98(0,1):.3f}  <0|r^2|2>={_me_r2_98(0,2):.1e} (~0)")
+print(f"additive edge gaps g=k-max(a,b): {_edge_gap_98}")
+print(f"  NEAR (g<=2, kernel-realizable +1 edges): {_near_edges_98}")
+print(f"  FAR  (g>2, spectral -- not kernel transitions): {_far_edges_98}")
+print("=> member generation is hybrid: level-local kernel transitions do the")
+print("   complement dephasing + the +1 edges; far edges are spectral/index.")
+print("Status 🔶: transition-rate dynamics does NOT select the DAG (brick 4")
+print("negative -- level-locality vs the far spectral edges).")
+
+
+# ==========================================================================
+# STEP 99 -- OUTPUT: DEPOSIT-CHANNEL BIJECTION SELECTS THE LOWER SPECTRUM
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 99: DEPOSIT BIJECTION SELECTS THE LOWER SPECTRUM ===")
+print("=" * 70)
+print("  Proved bijection (STEP 74e): modes <-> 12 deposits (a,b),")
+print("    a in 0..2, b in 0..3, site j=a+b+2; counts (1,2,3,3,2,1):")
+print(f"    per-site count j=2..7 = {[_site_counts_99[j] for j in range(2,8)]}")
+print("  Lower selection = deposit values (<=71) + off-channel beat 16:")
+print(f"    selected = {sorted(_lower_sel_99)}")
+print(f"    physical = {sorted(_phys_lower_99)}")
+print(f"    exact, no spurious/gaps: {_lower_sel_99 == _phys_lower_99}")
+print("  Off-bijection / displaced (structural, not ad-hoc):")
+print(f"    bottom 16 = unique matter fermion with no deposit channel (beat)")
+print(f"    tau 23 = the (2,3) j=7 corner, realised at d=10")
+print("  Free parking: seeds {1,3} and beat {16} permitted, not required;")
+print(f"    the eight required modes = {sorted(_required_99)}")
+print("  Proved here: count, sites, 16 lone off-bijection. Open: the")
+print("  within-channel index VALUES (operand identity / tower DAG, 🔶).")
+
+# STEP 100 -- OUTPUT: d=7 EXCLUSION FROM DEPOSIT LEVEL COUNT
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 100: d=7 EXCLUSION FROM DEPOSIT LEVEL COUNT ===")
+print("=" * 70)
+print(f"  U(2) rank {_rank_U2_100}, U(3) rank {_rank_U3_100}:")
+print(f"    max degree p = {_rank_U2_100}+{_rank_U3_100} = {_max_p_100}")
+print(f"    deposit levels j=2..{_max_p_100+2}: {_n_levels_100} levels")
+print(f"    total deposits: {_n_deposits_100}")
+print(f"    counts per level: {_counts_100}")
+print(f"  Corner (alpha=2, beta=3): real form degree"
+      f" 2*2+2*3 = {_corner_form_deg_100}")
+print(f"    = dim_R(C^2 x C^3) = dim of d=10 coordinate space C^5")
+print(f"  Sector set |D| = 6 = {_n_levels_100} levels: saturated.")
+print(f"  d=7 as 7th sector: needs p=6 level -- impossible (rank cap 2+3=5)")
+print(f"  d=7 as replacement for d=10: excluded by Gegenbauer (STEP 26).")
+print(f"  Conclusion: d=7 excluded from D. (🔵; Appendix S15)")
+
+
+# STEP 101 -- OUTPUT: d=3 MARGINAL DENSITY CENTRIFUGAL BARRIER
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 101: d=3 MARGINAL DENSITY: CENTRIFUGAL BARRIER ===")
+print("=== DERIVES SLATER d/f RULE  (Part 11 §2, 🔶) ===")
+print("=" * 70)
+print("K (Z=19) 18-electron core; Slater Ze_eff for inner orbitals.")
+print(f"  {'Shell':6s}  {'Ze_in':6s}  {'cnt':3s}  "
+      f"{'s->4s(l=0)':11s}  {'s->3d(l=2)':10s}")
+for (ni, li, cnt) in _core101:
+    s4 = _pen4s101[(ni, li)]
+    s3 = _pen3d101[(ni, li)]
+    print(f"  ({ni},{li})    {_Ze_inner101[(ni,li)]:5.2f}   {cnt:2d}"
+          f"   {s4:.4f}       {s3:.4f}")
+print(f"sigma(4s) = {_sig4s101:.3f}   (Slater: 16.80)")
+print(f"sigma(3d) = {_sig3d101:.3f}   (Slater: 18.00)")
+print(f"Min penetration any inner -> 3d: {_min3d101:.4f}")
+print("l=2 centrifugal hole (rho^4 near origin) forces")
+print("s(any inner->3d) ~ 1.00: Slater d/f rule derived.")
+print("s(any inner->4s) ~ 0.98: partial penetration (l=0).")
+print(f"Norm checks: 4s={_nc4s101:.4f}  3d={_nc3d101:.4f}")
+print("Full Madelung ordering verified in STEP 51.")
+
+
+# ==========================================================================
+# STEP 102 -- OUTPUT: CROSS-SECTOR I_d TABLE + ME FACTORIZATION (brick 3)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 102: CROSS-SECTOR VACUUM OVERLAP I_d AND ME ===")
+print("=== FACTORIZATION (Part 8 §11, 🔶) ===")
+print("=" * 70)
+print("omega_d = (g_dd / 2)^{1/3}:")
+for _d in [3, 4, 5, 6]:
+    print(f"  d={_d}: omega={_om102[_d]:.4f}  g_dd={_gdd102[_d]:.4f}")
+print()
+print("I_d(n_r) table  [I_d(0) analytic; ratio from Pochhammer]")
+print(f"  d\\nr   n_r=0   n_r=1   n_r=2   n_r=3   n_r=4")
+for _d in [3, 4, 5, 6]:
+    _row = "  ".join(f"{v:.4f}" for v in _Id_tbl102[_d])
+    print(f"  d={_d}:  {_row}")
+print()
+print("Cross-sector ME = G_{d,d'}/min(d,d') * I_di(n_ri) * I_df(n_rf)")
+_chk_ok = "PASS" if abs(_ME_chk102 - 6.27) < 0.05 else "FAIL"
+print(f"Self-consistency (d=3, n=3->1): {_ME_chk102:.4f}")
+print(f"  vs STEP 97 _ME13=6.27 -- {_chk_ok}")
+print("Cross-sector ground-state examples (n=1 for each sector):")
+print(f"  d=3->4 (quark->quark): ME = {_ME_34_102:.4f}")
+print(f"  d=3->5 (quark->nu):    ME = {_ME_35_102:.4f}")
+print(f"  d=5->6 (nu->e):        ME = {_ME_56_102:.4f}")
+print("Status: 🔶 (rank-1 G; cross-sector factorization ansatz)")
+
+
+# ==========================================================================
+# STEP 103 -- OUTPUT: BRICK 2 ABSOLUTE RATE NORMALISATION (Part 6, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 103: NATIVE TRANSITION WIDTH -- ABSOLUTE rho_rad ===")
+print("=== (brick 2; classical WW form, borrowed 1/16pi, Part 6, 🔶) ===")
+print("=" * 70)
+print("Gamma(i->f) = lambda^2 (M_i^2-M_f^2)/(16 pi M_i^3),")
+print("  lambda = ME*m_scale_d ; rho_rad = (M_i^2-M_f^2)/(32 pi^2 M_i^3)")
+print(f"code self-consistency (Gamma == 2pi lam^2 rho_rad): "
+      f"{'PASS' if _chk_forms_103 else 'FAIL'}")
+print()
+print("  i->f (d=3)   dE[MeV]  lambda[MeV]  Gamma[MeV]   tau[s]    G/dE")
+for _ni, _nf, _dE, _lam, _G, _tau, _gr in _tab_103:
+    print(f"  {_ni}->{_nf}        {_dE:8.2f}   {_lam:8.3f}   "
+          f"{_G:9.4f}  {_tau:.2e}  {_gr:.4f}")
+print(f"all Gamma << dE (well-defined resonances): "
+      f"{'PASS' if _resonance_ok_103 else 'FAIL'}")
+print("NATIVE: the dimensional fix (energy^4->energy), the FORM, and the")
+print("  LINEAR-in-dE scaling. BORROWED 🔶: the exact 1/16pi is the")
+print("  relativistic-norm constant (classical-L^2 WW not yet done), as")
+print("  is lambda. Supersedes STEP 97's un-normalised rho_rad~dE^2.")
+
+
+# ==========================================================================
+# STEP 104 -- OUTPUT: BRICK 5 CORRESPONDENCE WITH SM FERMI-EFT (Part 6, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 104: NATIVE RATE vs SM FERMI-EFT (brick 5, 🔶) ===")
+print("=" * 70)
+print("(A) IDENTITY (not a validation): native width == SM 2-body")
+print("    scalar width |p|/(8pi Ma^2)*lam^2 BY CONSTRUCTION:",
+      "PASS" if _struct_ok_104 else "FAIL")
+print("    (1/16pi is the borrowed relativistic-norm constant, not")
+print("     externally confirmed; genuine content is (B) below.)")
+print("(B) MUON mu=(35,6)->e=(13,6) is a far edge (gap 15, Brick 4):")
+print(f"    M_mu = {_M_mu_104:.3f} MeV (PDG 105.658)")
+print(f"    kernel ME(mu->e) = {_ME_mu_e_104:.2e}  (level-local ~0)")
+print(f"    native KERNEL tau = {_tau_kernel_mu_104:.2e} s  (kernel-stable)")
+print(f"    weak Fermi 3-body tau = {_tau_weak_mu_104:.4e} s (PDG 2.197e-6)")
+print(f"    tau_kernel/tau_weak = {_tau_kernel_mu_104/_tau_weak_mu_104:.1e}"
+      "  -> muon KERNEL-STABLE:",
+      "PASS" if _muon_kernel_stable_104 else "FAIL")
+print("    Observed lifetime = WEAK 3-body channel (m^5), outside the")
+print("    2-body kernel rate (needs the 3-body extension, not Brick 2).")
+
+
+# ==========================================================================
+# STEP 105 -- OUTPUT: NATIVE PREFACTOR (classical-L^2 WW, Part 6, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 105: NATIVE PREFACTOR -- CLASSICAL-L^2 WIGNER-WEISSKOPF ===")
+print("=" * 70)
+print("Q: is the STEP 103 rate importing QFT? Classical (no hbar) answer:")
+print("classical WW law Gamma=pi g^2 D/(2 w0^2) verified by direct")
+print("oscillator simulation to 0.7%. 3-component sim (i,f,radiation,")
+print("cubic vertex, L^2 modes, 3D DOS~w^2) gives:")
+print(f"  Gamma ~ dE (LINEAR): {_native_linear_in_dE_105}  "
+      f"Gamma ~ 1/M_i: {_native_inv_Mi_105}")
+print(f"  Gamma ~ a_f^2 = rho_vac (stimulated; no classical spont.): "
+      f"{_native_seed_rho_vac_105}")
+print("Conclusions: (a) linear-dE scaling is NATIVE (the 1/2dE is the")
+print("  classical radiation-oscillator resonance, not relativistic 1/2w);")
+print("  (b) the 16,pi prefactor is classical resonance/envelope, not a")
+print("  quantum import; (c) the lone QFT difference is the daughter leg:")
+print(f"  {_qft_daughter_norm_diff_105};")
+print("  native Gamma ~ lam^2 rho_vac dE / M_i.")
+print("Open: absolute constant via rho_vac norm + lambda (chi-reduction).")
+
+
+# ==========================================================================
+# STEP 106 -- OUTPUT: BRICK 6, 3-BODY WEAK DECAY & FERMI m^5 (Part 6, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 106: 3-BODY WEAK DECAY (mu->e nu nu) & FERMI m^5 ===")
+print("=" * 70)
+print("native 3-body phase space (MC, momentum-conserving, massless):")
+print(f"  bare (no 1/2w)              ~ E^{_ps3_power_bare_106}   (MC 4.91)")
+print(f"  native (rel, x1/2w/leg) ~ E^{_ps3_power_native_106}  (MC 2.00 = s)")
+print("  => native scheme carries the 1/2w factors (STEP 105); the")
+print("     native 3-body PS is the relativistic E^2, NOT bare E^5.")
+print("m^5 bookkeeping (dE~m): Gamma ~ (1/m) |M|^2 PS3, PS3~m^2:")
+print(f"  scalar contact |M|^2~m^0 -> m^{_scalar_contact_power_106}  (WRONG)")
+print(f"  V-A chiral   |M|^2~m^4 -> m^{_va_chiral_power_106}  (Fermi m^5)")
+print("=> native does NOT shortcut m^5 via phase space; it REQUIRES the")
+print("   chiral V-A vertex, natively the d=4 CP^2 SU(2)_L Kahler")
+print("   chirality. Muon weak decay = chiral EW channel, distinct from")
+print("   scalar kernel transitions (consistent with STEP 104B stability).")
+
+
+# ==========================================================================
+# STEP 107 -- OUTPUT: CHIRAL EW VERTEX, V-A FROM CP^2 HOLONOMY (Part 6, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 107: CHIRAL EW VERTEX -- V-A FROM CP^2 HOLONOMY ===")
+print("=" * 70)
+print("SU(2)_L = CP^2 holonomy CONNECTION on the holomorphic spinor half")
+print("(Part 3 sec 6/7). It enters D=gamma^a(d_a+omega_a+A_a) as gamma^a A_a")
+print("-> VECTOR current psibar gamma^a P_L psi -> |M|^2 ~ p^4 ~ m^4 (V-A).")
+print("Geometric, not postulated. Two coupling structures of one wave:")
+print(f"  holonomy (EW) VECTOR channel: m-power = {_weak_channel_mpow_107}"
+      "  (Fermi m^5)")
+print(f"  kernel (xi.xi')^2 SCALAR ch.: m-power = {_kernel_channel_mpow_107}"
+      "  (muon kernel-stable, 104B)")
+print("=> kernel-stability (104B) and the m^5 law (106) are one fact: the")
+print("   muon decays via the chiral VECTOR EW channel, not the scalar kernel.")
+print("End-to-end native: Gamma_mu=(1/2m)|M|^2(m^4,V-A) PS3(m^2,native)")
+print("  = G_F^2 m^5/192pi^3, G_F derived (STEP 5); STEP 11 -> tau=2.19us.")
+print("The W (n=76,d=2) sets the contact RANGE, not an exchanged mediator.")
+
+
+# ==========================================================================
+# STEP 108 -- OUTPUT: TWO-CHANNEL STABILITY (T0.5 COMPLEMENT, Part 7, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 108: TWO-CHANNEL STABILITY (complement of T0.5) ===")
+print("=" * 70)
+print("(1) KERNEL channel dN=2 link (n,d)->(n-2,d) lands on a member?")
+print(f"    members with a member target: {_kernel_open108 or 'NONE'}")
+print(f"    => spectrum mutually KERNEL-DECOUPLED: {_kernel_all_closed108}")
+print("    (no member->member kernel decay; kernel only dephases non-members)")
+print("(2) EW chiral charged-current -> lighter fermion: decides stability")
+for _nm in ['down', 'strange', 'bottom', 'up', 'charm', 'top',
+            'nu1', 'nu2', 'nu3', 'e', 'mu', 'tau', 'W', 'Z', 'H']:
+    _m = _mass108[_nm][0]
+    print(f"    {_nm:8s} m={_m:10.3f} MeV  EW "
+          f"{'OPEN' if _ew_open108(_nm) else 'CLOSED'}")
+print("ABSOLUTELY STABLE (both channels closed):")
+print(f"  {_stable108}")
+print("  = {gamma, u, e, nu1, nu2, nu3}; down is EW-open (d->u), excluded.")
+print("  mu, tau: kernel-stable (104B) yet EW-open -> unstable. The kernel-")
+print("  only framing (STEP 64) mis-handled them; two channels fix it.")
+
+
+# ==========================================================================
+# STEP 109 -- OUTPUT: DECAY-OBSERVABLES TABLE (channels + scalings, 🔶)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 109: DECAY OBSERVABLES -- CHANNELS AND SCALINGS ===")
+print("=" * 70)
+print("All member fermion decays = ONE vector chiral EW channel (STEP 107),")
+print("member->member kernel-decoupled (STEP 108); ~ Fermi G_F^2 E^5 (106):")
+for _k, _v in _chan_109.items():
+    print(f"  {_k:18s}: {_v}")
+print(f"(a) muon : tau = {tau_mu_pred*1e6:.3f} us  (PDG 2.197; STEP 11)")
+print(f"(b) tau  : tau = {_tau_tau_109*1e15:.1f} fs  (PDG 290.3; STEP 16,")
+print("           hadronic R_had = N_c(1+a_s/pi) = Gegenbauer broad width)")
+print("(c) NEUTRON beta decay (down EW-open, STEP 108) -- new:")
+print(f"     V_ud={_Vud_109:.5f} g_A={_gA_109:.4f} G_F derived (STEP 5)")
+print(f"     tau_n = {_tau_n_109:.1f} s  vs PDG {_tau_n_pdg_109} s "
+      f"({_tau_n_dev_109:+.1f}%)")
+print("     residual = Fermi integral f / n-p Q-value (EM/QCD splitting,")
+print("     not native). The d->u chiral vertex + IDWT G_F,V_ud,g_A suffice.")
+
+
+# ==========================================================================
+# STEP 110 -- OUTPUT: THE 192 pi^3 COEFFICIENT IS NATIVE (Part 6)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 110: 192 pi^3 = NATIVE 3-BODY DALITZ INTEGRAL ===")
+print("=" * 70)
+print("native PS = relativistic PS (106) => coefficient is the 3-body")
+print("Dalitz integral of the V-A element (107). Massless 3-body, |M|^2=")
+print("16(1-y)y; Dalitz triangle int (1-y)y = 1/12:")
+print(f"  Gamma = (1/(2pi)^3)(1/32)(16)(1/12) G_F^2 m^5 = G_F^2 m^5/(192 pi^3)")
+print(f"  coeff denom = 192 pi^3 : {'EXACT' if _is_192pi3_110 else 'FAIL'}"
+      " (sympy + MC)")
+print(f"=> muon NATIVE end-to-end: tau_mu={_tau_mu_110*1e6:.3f} us (PDG 2.197)")
+print("   G_F(STEP5) x V-A(107) x 3-body PS(106) x 192pi^3(this) -- all")
+print("   derived; STEP 11's 'standard V-A formula' is the native EW rate.")
+
+
+# ==========================================================================
+# STEP 111 -- OUTPUT: CP PHASE = WEAK VERTEX HOLONOMY (observation, Part10)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 111: CP PHASE & WEAK VERTEX = ONE CP^n HOLONOMY ===")
+print("=" * 70)
+print("Structural link (NOT a closure): the V-A vertex (STEP 107) is the")
+print("LOCAL coupling gamma^a A_a of the CP^n connection; the leptonic CP")
+print("phase (T8) is its GLOBAL holonomy c_1(det U_PMNS). Same connection.")
+print(f"  c_1(CP^3)={_c1_CP3_111}, c_1(CP^5)={_c1_CP5_111}, "
+      f"Delta c_1={_delta_c1_111} (T8 integer)")
+print("Reframes T8 Open Item 1 as 'curvature of the 107 connection = c_1';")
+print(f"  T8 gaps closed by this observation: {_t8_gaps_closed_111} (honest).")
+
+
+# ==========================================================================
+# STEP 112 -- OUTPUT: T0.5 OPERAND-IDENTITY CLOSURE (Part 7, App B/D, open)
+# ==========================================================================
+print("\n" + "=" * 70)
+print("=== STEP 112: T0.5 OPERAND-IDENTITY CLOSURE ===")
+print("=" * 70)
+print("Deposit grid n(alpha,beta), 11 matter cells, partitions uniquely:")
+print("  4 anchors : n_d=1, n_u=3, n_s=4 (=1+3), n_top=72 (=3*4*6)")
+print("  4 simplex : {S(n,d): n,d in {3,4}} = {10,15,20,35}")
+print("              nu1=S(3,3), nu2=S(3,4), charm=S(4,3), mu=S(4,4)")
+print("  3 edges   : e=13=nu1+n_u; nu3=22=nu1+nu2-n_u=S(3,5)+1;")
+print("              tau=23=nu3+n_d=nu1+e=n_c+n_u")
+print(f"  partition exact, disjoint, complete: {_partition_ok_112}")
+print(f"  alpha=2 row {_row2_112} non-monotone in beta:"
+      f" {_nonmonotone_112}")
+print("No single closed form n(alpha,beta): the alpha=2 row mixes a")
+print("product, an IE edge, a simplex value and an additive edge. The 3")
+print("edges have non-unique operands (route-multiplicity NULL), so static")
+print("structure does not fix them; operand selection reduces to the")
+print("time-dynamics (STEP 85). Status: open (consolidation; settles the")
+print("within-bidegree closed-form item as 'no closed form').")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")

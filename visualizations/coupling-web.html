@@ -56,6 +56,10 @@ html, body { margin: 0; height: 100%; overflow: hidden; }
 .controls hr { border: none; border-top: 1px solid rgba(139,156,255,0.14); margin: 9px 0; }
 .hint { position: absolute; right: 16px; top: 14px; z-index: 10; font-size: 0.76rem; color: #7a8499; background: rgba(8,12,24,0.6); border: 1px solid rgba(139,156,255,0.12); border-radius: 8px; padding: 6px 10px; }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
 </head>
 <body>
 <div class="bg"></div>
@@ -84,10 +88,10 @@ html, body { margin: 0; height: 100%; overflow: hidden; }
       <div class="legrow"><span class="swatch" style="background:#4ea8ff"></span> Electromagnetism — charged sectors couple to the photon (d=2)</div>
       <div class="legrow"><span class="swatch" style="background:#56e08a"></span> Weak — fermion sectors couple to the W/Z (d=2)</div>
       <div class="legrow"><span class="swatch" style="background:#ff9a4d"></span> Colour — direct contact between the quark sectors d=3, d=4</div>
-      <div class="legrow"><span class="swatch" style="background:#8a93ad"></span> Gravity — every sector, through the curvature of M∞</div>
+      <div class="legrow"><span class="swatch" style="background:#8a93ad"></span> Gravity — every sector, through the curvature of \(M_\infty\)</div>
     </div>
 
-    <p class="hintline">Electromagnetism and the weak coupling run through the d=2 boson sector: a charged sector couples to the photon, and a fermion sector to the W and Z, in the d=2 coordinates they share — not by a boson carried between two other sectors. Colour needs no boson sector (it is a kernel contact term), so it joins the two quark sectors directly. Gravity is the curvature of M∞ and reaches every sector. Toggle a force to see exactly which sectors it links; click any node or line for detail.</p>
+    <p class="hintline">Electromagnetism and the weak coupling run through the d=2 boson sector: a charged sector couples to the photon, and a fermion sector to the W and Z, in the d=2 coordinates they share — not by a boson carried between two other sectors. Colour needs no boson sector (it is a kernel contact term), so it joins the two quark sectors directly. Gravity is the curvature of \(M_\infty\) and reaches every sector. Toggle a force to see exactly which sectors it links; click any node or line for detail.</p>
 
     <p style="margin-top:16px;"><a href="/articles/coupling-grid.html">The coupling grid →</a> &nbsp;·&nbsp; <a href="/visualizations/">All visualizations →</a></p>
   </div>

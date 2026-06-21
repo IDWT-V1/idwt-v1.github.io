@@ -106,7 +106,7 @@ Seeds: n_down = 1 (universal ground state, S(1,d)=1 for all d) in d=3; n_s = 4 (
 
 The co-fixed-point condition applies to the (n,d) pair. The n and d for each particle come from **two independent derivation chains**:
 - **n** is derived by the generation tower operations (hockey-stick, additive, g-rule) below.
-- **d** is assigned by the sector structure established in Part 1 §3: the Hopf fibration assigns particle families to sectors (quarks→d=3,4; neutrinos→d=5; charged leptons→d=6; tau→d=10; bosons→d=2) prior to and independently of the mode index derivation. There is no equation d=f(n) — the sector cannot be derived from the mode index alone (Appendix A §15), and the same tower operation (e.g. HS with d_eval=3) can produce particles in different sectors depending on which seed is used.
+- **d** is assigned by the sector structure established in Part 1 §3: the Hopf fibration assigns particle families to sectors (quarks→d=3,4; neutrinos→d=5; charged leptons→d=6; tau→d=10; bosons→d=2) prior to and independently of the mode index derivation. There is no equation d=f(n) — the sector cannot be derived from the mode index alone (Appendix §15), and the same tower operation (e.g. HS with d_eval=3) can produce particles in different sectors depending on which seed is used.
 
 The table below records both derivation chains side by side. The d-source column cites which sector-structure result assigns that family to that d; it is not a derivation of d from n.
 

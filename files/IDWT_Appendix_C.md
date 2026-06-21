@@ -519,3 +519,39 @@ with multiplicity in mode $n$ equal to $\#\{N\in[0,n-1]:N\ge m,\ N\equiv m\ (\ma
 
 An SO(3) $\ell$ exists only when an external $d=3$ object — the nucleus — breaks SO(6)$\to$SO(3)$_{\rm obs}\times$SO(3)$_{\rm hid}$ in the **bound** hydrogen problem (§14.2: "the split is anchored by the nucleus, not the electron"); STEP 81's $m(\ell,N)$ is that nucleus-anchored branch. The earlier follow-up flag resolves as a no: STEP 81's SO(3)$_{\rm obs}$ (real; mixed-parity $\ell$; $\ell=0$ for every $n$) and the Part 8 §14.3 holomorphic SU(4)$\supset$SU(3)$\supset$SO(3) (STEP 66; parity-$N$) are **different subgroups** giving different $\ell$-spectra — the vector $\mathbf{6}$ branches as $\ell{=}1\oplus\ell{=}1$ under the former and $\ell{=}1\oplus 3{\cdot}\ell{=}0$ under the latter (`explore_so3_embedding_check.py`). Their disagreement is the proof that no SO(3) is intrinsic. The load-bearing "$\ell=0$ contact present iff $n$ odd" (Part 7 §1.2; Part 11 §6.4) is frame-free as **the SO(6) singlet $H_0$, present iff $N=n-1$ is even iff $n$ is odd** — "$\ell=0$" there names the rotation-invariant contact harmonic, not an SO(3) label. ⭐ identity (pure representation theory / dimension counting).
 
+---
+
+### §52. Native transition-rate program — Bricks 2–6, two-channel stability, and decay observables (`files/idwt.py` STEPs 97, 102–111, 2026-06-18/19) 🔶
+
+**Programme.** The native IDWT transition-rate formalism is built from the kernel matrix element $\langle\chi_{n_f,d_f}|K|\chi_{n_i,d_i}\rangle$ with the explicit sector harmonic mode functions $\chi$. The building blocks, in order:
+
+**Brick 1 — native $l=0$ matrix element (STEP 97, 🔶).** ME $= (g_{dd}/d)\cdot I_d(n_{r,i})\cdot I_d(n_{r,f})$, where $I_d(n_r)$ is the radial mode integral. Validated: ME$(1\to3) = 6.27$ reduces to STEP 30 `_ME13`; $\tau$-factor $= 0.034\ \text{MeV}^{-1}$ reproduced.
+
+**Brick 3 — cross-sector ME factorisation (STEP 102, 🔶).** ME$(n_i,d_i\to n_f,d_f) = G_{d_i,d_f}/d_{\rm shared}\times I_{d_i}(n_{r,i})\times I_{d_f}(n_{r,f})$, motivated by rank-1 $G$ (STEP 2b). The radial integral ratio is $I_d(n_r)/I_d(0) = \sqrt{\Gamma(n_r+d/2)/(n_r!\,\Gamma(d/2))}\cdot(1/3)^{n_r}$; the ground-state integral is $I_d(0) = \sqrt{2}\,\omega_d^{d/4}(2/3)^{d/2}/\sqrt{\Gamma(d/2)}$, $\omega_d=(g_{dd}/2)^{1/3}$. Self-consistency: same-sector $d=3$, $n: 3\to1$ gives 6.2655 vs STEP 97 6.27 (PASS). Corrected $I_5(0)=0.1438$ (prior erroneous 0.3961 used the wrong $\omega_5$).
+
+**Brick 4 — level locality; kernel complement (STEP 98, sharp negative).** The $l=0$ kernel vertex $\langle\chi_k|r^2|\chi_a\rangle$ is level-local ($|\Delta N|\le 2$; $r^2$ = HO raise/lower pair). The kernel drives only $\Delta N=\pm2$ transitions; the far generation edges ($e$: $\Delta N=22$, $\mu$: $\Delta N=34$) have kernel ME $\approx 0$ and are spectral (hockey-stick), not dynamical. Member generation is hybrid: the adjacent $\Delta N=\pm1$ edges are kernel-realised; the far edges are spectral/postulated. Implication: the within-tower operand selection (T0.5 open core) is not closable by transition-rate dynamics alone.
+
+**Brick 2 — native transition width (STEP 103, 🔶).** Classical tree-level rate from the nonlinear Dirac EOM on $M_\infty$ (no second quantisation, no loop integrals): $\Gamma(i\to f) = \lambda^2(M_i^2-M_f^2)/(16\pi M_i^3)$, $\lambda=\text{ME}\cdot m_{\rm scale,d}$. Width is linear in $\Delta E = M_i - M_f$ (not quadratic); the $\Delta E^4$ quadratic form was refuted by direct classical simulation (scratchpad/`native_ww.py`). The 1/16π factor is from relativistic single-particle normalisation; the QFT-free derivation on $M_\infty$ (classical $L^2$ normalisation via explicit $\chi$) is the one remaining open coefficient piece.
+
+**Brick 5 — two-body identity and muon kernel stability (STEP 104, 🔶).** The native 2-body width is algebraically equivalent to the SM scalar form $|p|/(8\pi M_a^2)\lambda^2$ by pure kinematics. The muon $(35,6)\to(13,6)$ is a far edge ($\Delta N=22$): kernel ME $\approx 3\times10^{-13}$, native kernel $\tau_\mu\approx4\times10^{16}\ \text{s}$ — muon is kernel-stable, observed 2.2 μs entirely from the 3-body EW channel.
+
+**Native prefactor — classical Wigner–Weisskopf on $M_\infty$ (STEP 105, verified).** Classical 3-component simulation (scratchpad/`native_ww.py`, `native_scaling.py`): (a) classical WW rate law $\Gamma=\pi g^2 D/(2\omega^2)$ holds to 0.7%; (b) 3D DOS gives $\Gamma\sim\Delta E$ (linear), confirming STEP 103; (c) 16/π prefactor is classical; (d) classical vs QFT difference is the daughter leg — classical $\sim a_f^2\sim\rho_{\rm vac}$, so native $\Gamma\sim\lambda^2\rho_{\rm vac}\,\Delta E/M_i$.
+
+**Brick 6 — native 3-body phase space (STEP 106, MC-verified, 🔶).** The 3-body phase space with per-leg $1/2\omega$ resonance factor is $\sim\Delta E^2$ (power 2.00), matching the relativistic result. The Fermi $m^5$ law therefore requires $|M|^2\sim m^4$ from the chiral vertex — the phase space does not supply the $m^5$ power automatically.
+
+**Chiral EW vertex (STEP 107, 🔶).** The $V$–$A$ momentum structure needed by the Fermi $m^5$ law is geometric: the $SU(2)_L$ coupling is the $\mathbb{CP}^2$ holonomy connection on the holomorphic spinor half (Part 3 §6/§7), entering the sector Dirac operator as $\gamma^a A_a$ — a vector current $\bar\psi\gamma^a P_L\psi$, giving $|M|^2\sim p^4\sim m^4$. End-to-end native muon rate: $\Gamma_\mu = (1/2m_\mu)|M|^2(m^4,V\text{-}A)\cdot\text{PS}_3(m^2,\text{native}) = G_F^2 m_\mu^5/(192\pi^3)$, $G_F$ derived (STEP 5), $\tau_\mu=2.19\ \mu\text{s}$ (PDG: 2.197 μs). The $W$ boson $(n=76,d=2)$ sets the contact range $G_F=g_2^2/(4\sqrt2\,m_W^2)$, not an exchanged mediator. The 192π³ coefficient is the native 3-body Dalitz integral (STEP 110).
+
+**Two-channel stability and the stable set (STEP 108, 🔶).** (1) *Kernel channel:* the $\Delta N=2$ link $(n,d)\to(n-2,d)$ lands on a non-member for every one of the 15. The spectrum is mutually kernel-decoupled; no member-to-member kernel decay exists. (2) *EW channel:* a member is absolutely stable iff the EW channel is also closed (no lighter reachable fermion by CC). EW-closed = $\{\gamma, u, e, \nu_1, \nu_2, \nu_3\}$; down is EW-open ($d\to u$, $m_d>m_u$). $\mu$ and $\tau$ are kernel-stable (Brick 5) but EW-open: they decay via the chiral EW channel, not via the scalar kernel. Verified computationally: `_kernel_all_closed108 = True`; `_stable_set108 = {'up','e','nu1','nu2','nu3','photon'}`.
+
+**Decay observables (STEP 109, 🔶).**
+
+| Observable | IDWT | PDG | Residual |
+|---|---|---|---|
+| $\tau_\mu$ | 2.19 μs | 2.197 μs | $\approx 0\%$ |
+| $\tau_\tau$ | $\sim2.9\times10^{-13}$ s | $2.903\times10^{-13}$ s | $\approx 0\%$ |
+| $\tau_n$ | 918 s | 878.4 s | $+4.5\%$ |
+
+The neutron lifetime uses $G_F$ (STEP 5), $V_{ud}$ (Part 3 §12), $g_A=1.2725$ (STEP 95), and Fermi integral $f=1.6887$ (the $n$–$p$ $Q$-value, a non-IDWT input). The $+4.5\%$ residual is carried entirely by $f$ / the $Q$-value; all other couplings in the formula are IDWT-derived. Cross-reference: Part 8 §10.
+
+**Status and limits.** The rate formalism is 🔶 throughout: the form, linear-$\Delta E$ scaling, 3-body phase space, chiral $V$–$A$ vertex, and $G_F$ are IDWT-native or verified by classical simulation. The one open coefficient piece is the exact $1/16\pi$ 2-body normalisation factor (Brick 2 residual). The programme also settles the T0.5 dynamical route: kernel dynamics governs non-member dephasing and the $\Delta N=\pm1$ adjacent member edges only; the far member edges ($e$, $\mu$, all hockey-sticks) are spectral/postulated, and T0.5 sufficient selection requires time-dependent condensation dynamics not yet derived (Part 6, MC-4).
+

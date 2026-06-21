@@ -4,197 +4,159 @@
 
 ## 1. Confirmed Predictions
 
-The mass ratios below are not fitted. Within each sector, S(n,d)/S(m,d) is a ratio of binomial coefficients — fixed the moment the mode indices are assigned. The eigenmode selection rule identities (muon = charm + ν₂, etc.) are consequences of the Pascal recursion S(n,d) = S(n,d−1) + S(n−1,d), not separate postulates.
+The mass ratios below are not fitted. Within each sector, $S(n,d)/S(m,d)$ is a ratio of binomial coefficients — fixed the moment the mode indices are assigned. The eigenmode selection rule identities (muon $=$ charm $+\nu_2$, etc.) are consequences of the Pascal recursion $S(n,d) = S(n,d{-}1) + S(n{-}1,d)$, not separate postulates.
 
-The absolute scale for the d=3 sector is fixed by the kernel vacuum fixed-point: m_scale_3 = m_e × √(g₃₃/g₆₆) = 4.702 MeV, with g₃₃ = 8√7 and g₆₆ = 1/4 derived from seed pair {n_u=3, n_s=4} and anomaly cancellation respectively. Full derivation in Part 2 §10.
+The absolute scale for the $d=3$ sector is fixed by the kernel vacuum fixed-point: $m_{\rm scale,3} = m_e \times \sqrt{g_{33}/g_{66}} = 4.702$ MeV, with $g_{33} = 8\sqrt{7}$ and $g_{66} = 1/4$ derived from seed pair $\{n_u=3,\,n_s=4\}$ and anomaly cancellation respectively. Full derivation in Part 2 §10.
 
-**Strange/down ratio = 20 exactly**
-```
-S(4,3) / S(1,3) = 20 / 1 = 20.000
-```
+**Strange/down ratio = 20 exactly ⭐**
+
+$$S(4,3)/S(1,3) = 20/1 = 20.000$$
+
 Fixed by the formula before comparing to data. Zero-error prediction.
 
-**Muon/electron ratio** (both d=6 CP³ sector excitations of Ψ∞, inhabiting six spatial dimensions; n=35 for the muon, n=13 for the electron)
-```
-S(35,6) / S(13,6) = 3,838,380 / 18,564 = 206.7647   (PDG: 206.7683,  −0.002%)
-```
+**Muon/electron ratio 🔵** (both $d=6$ $\mathbb{CP}^3$ sector excitations of $\Psi_\infty$, inhabiting six spatial dimensions; $n=35$ for the muon, $n=13$ for the electron)
 
-**Tau/electron ratio**
-```
-S(23,10) / S(13,6) = 64,512,240 / 18,564 = 3,475.126   (PDG: 3,477.23, bare −0.060%; back-reaction corrected: −0.14σ inside 1σ)
-```
+$$S(35,6)/S(13,6) = 3\,838\,380/18\,564 = 206.7647 \quad (\text{PDG: }206.7683,\ {-}0.002\%)$$
 
-**Up-type quark mass ratios (bare)**
+**Tau/electron ratio 🔵**
 
-The d=4 up-type mass ratios are quoted bare; the former Generation Tower Correction is removed (its per-quark exponent was a fit — Part 2 §11). The ratios run high because charm and top overshoot:
+$$S(23,10)/S(13,6) = 64\,512\,240/18\,564 = 3\,475.126 \quad (\text{PDG: }3\,477.23,\ \text{bare }{-}0.060\%;\text{ back-reaction corrected: }{-}0.14\sigma)$$
 
-```
-c/u bare: S(20,4)/S(3,4)  = 590.33   (PDG ≈ 589.4,  +0.16%)
-t/u bare: S(72,4)/S(3,4)  = 81,030   (PDG ≈ 79,893, +1.42%)
-t/c bare: S(72,4)/S(20,4) = 137.26   (PDG ≈ 135.6,  +1.25%)
-```
+**Up-type quark mass ratios (bare) 🔵**
 
-**Bottom quark**
-```
-√(S(16,3) × S(17,3)) × m_scale_3 = √(816 × 969) × 4.702 = 4,181 MeV   (PDG: 4,183 ± 7,  −0.05%)
-```
+The $d=4$ up-type mass ratios are quoted bare; the former Generation Tower Correction is removed (its per-quark exponent was a fit — Part 2 §11). The ratios run high because charm and top overshoot:
 
-**Photon mass = 0**
-```
-S(0, 2) = C(1, 2) = 0   →   m_photon = 0   (exact, derived)
-```
+$$S(20,4)/S(3,4) = 590.33 \quad (\text{PDG} \approx 589.4,\ +0.16\%)$$
+$$S(72,4)/S(3,4) = 81\,030 \quad (\text{PDG} \approx 79\,893,\ +1.42\%)$$
+$$S(72,4)/S(20,4) = 137.26 \quad (\text{PDG} \approx 135.6,\ +1.25\%)$$
 
-**Electroweak sector**
-```
-m_W:      80,379 MeV   (PDG: 80,369,   +0.012%)
-m_Z:      91,230 MeV   (PDG: 91,188,   +0.047%)
-m_Higgs: 125,266 MeV   (PDG: 125,200,  +0.053%)
-sin²θ_W:      0.2237   (PDG on-shell: 0.22290,   +0.37%)
-ρ parameter:       1   (exact, derived)
-```
+**Bottom quark 🔵**
 
-**ρ meson from the comb filter (consistency check)**
-```
-Im[Γ₃₄₆(ω)] peak = 775.8 MeV   (PDG: 775.3 MeV,  +0.07%)
-```
-All inputs — g₃₃=8√7, g₄₄=12/√7, g₆₆=1/4, delays from k₀=16 — come from seeds {n_d=1, n_u=3} and composite n_s=4, with m_e alone. This is a cross-check of the coupling geometry, not an independent mass prediction.
+$$\sqrt{S(16,3)\times S(17,3)}\times m_{\rm scale,3} = \sqrt{816\times 969}\times 4.702 = 4\,181\text{ MeV} \quad (\text{PDG: }4\,183\pm 7,\ {-}0.05\%)$$
 
-**Cabibbo angle**
-```
-sin θ_C = (1+1/240)/√20 = 0.22454   (PDG: 0.22450 ± 0.00044,  +0.09σ)
-```
-Derived from the Vandermonde d=3↔d=4 coupling: sin²θ_C = 1/S(n_s,3) = 1/20, equivalently S(2,3)/(S(2,3)+n_W) = 4/80 = 1/20. Determined entirely by the seed structure and mode indices. Curvature correction from CP¹ holonomy (CP¹ sector curvature correction): +1/240 shift — see Part 3 §12.
+**Photon mass = 0 ✅**
 
-**Up/down quark mass ratio (Theorem S2, Part 8 §5)**
-```
-m_u / m_d = √(g44/g33) = √(3/14) = 0.463   (PDG: 0.462,  +0.08%;  exact from seeds)
-```
+$$S(0,2) = \binom{1}{2} = 0 \;\Rightarrow\; m_{\rm photon} = 0 \quad (\text{exact, derived})$$
 
-**Neutrino mass ordering: normal hierarchy**
-S(n,5) is monotonically increasing, n_ν₁ < n_ν₂ < n_ν₃ → m_ν₁ < m_ν₂ < m_ν₃. Consistent with current experimental preference at 3–4σ.
+**Electroweak sector 🔵**
 
-**CKM matrix elements from the Lagrangian kernel**
+$$m_W = 80\,379\text{ MeV} \quad (\text{PDG: }80\,369,\ +0.012\%)$$
+$$m_Z = 91\,230\text{ MeV} \quad (\text{PDG: }91\,188,\ +0.047\%)$$
+$$m_H = 125\,266\text{ MeV} \quad (\text{PDG: }125\,200,\ +0.053\%)$$
+$$\sin^2\theta_W = 0.2237 \quad (\text{PDG on-shell: }0.22290,\ +0.37\%)$$
+$$\rho = 1 \quad (\text{exact, derived})$$
 
-The kernel off-diagonal matrix element between modes n_i (lighter) and n_j (heavier) within sector d satisfies |V_{i→j}|² = S(n_lighter,d)/S(n_heavier,d) — the squared ratio of the heavier mode's amplitude at the d=3 coordinate level to the lighter's (Part 1 §2.2).
+**ρ meson from the comb filter (consistency check) 🔵**
 
-```
-|V_cb| = √(S(n_u,4)/S(n_c,4)) = √(15/8855) = 0.04116
-          (PDG exclusive: 0.04100 ± 0.0014,  +0.11σ)
+$$\mathrm{Im}[\Gamma_{346}(\omega)]_{\rm peak} = 775.8\text{ MeV} \quad (\text{PDG: }775.3\text{ MeV},\ +0.07\%)$$
 
-A = |V_cb| / sin²θ_C = √(S(n_u,4)/S(n_c,4)) × S(n_s,3) = 0.82315
-          (PDG: 0.826 ± 0.012,  −0.24σ)
+All inputs — $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, delays from $k_0=16$ — come from seeds $\{n_d=1,\,n_u=3\}$ and composite $n_s=4$, with $m_e$ alone. This is a cross-check of the coupling geometry, not an independent mass prediction.
 
-|V_ts| ≈ |V_cb| = 0.04116    [from CKM unitarity, third row]
-          (PDG: 0.04183 ± 0.0007,  −0.96σ)
+**Cabibbo angle 🔵**
 
-|V_ub| = A s_C³ × √(ρ²+η²);  A s_C³ = 0.00920 is the CP-conserving prefactor.
-          √(ρ²+η²) is the quark CP factor — NOT YET DERIVED (see warning below).
-          (PDG: 0.00382)
-```
+$$\sin\theta_C = (1+1/240)/\sqrt{20} = 0.22454 \quad (\text{PDG: }0.22450\pm 0.00044,\ +0.09\sigma)$$
 
-> **⚠ Correction (2026-06-16).** A previous version assigned `|V_ub|` using the *leptonic* CP phase δ = π + 2θ₁₃ = 197.11° (and mislabelled the result a "lower bound"). That is wrong in the IDWT context and has been removed. The leptonic CP phase is a relative Berry holonomy between two **Kähler** sectors, CP³ (d=6) and CP⁵ (d=10), both complex (Part 10 §1); the quark CP phase spans CP² (d=4, Kähler, up-type) and S³ (d=3, **real**, down-type) — entirely different geometries — so the leptonic phase cannot be imported here. The holonomy mechanism that fixes the leptonic phase is switched off here: all three up-type quarks share one Kähler sector (CP²) and all three down-type share one real sector (S³), so the spectral-flow phase is a generation-independent up-vs-down offset, rephased away — giving J = 0 at leading order, consistent with ρ = η = 0 above (✅). The small measured CP violation is therefore a *subleading* holomorphic(CP²)-vs-real(S³) overlap mismatch on V_ub; its magnitude √(ρ²+η²) awaits the explicit CP² mode functions (🔶). Until then `|V_ub|` carries only its CP-conserving prefactor A s_C³.
+Derived from the Vandermonde $d=3\leftrightarrow d=4$ coupling: $\sin^2\theta_C = 1/S(n_s,3) = 1/20$, equivalently $S(2,3)/(S(2,3)+n_W) = 4/80 = 1/20$. Determined entirely by the seed structure and mode indices. Curvature correction from $\mathbb{CP}^1$ holonomy ($\mathbb{CP}^1$ sector curvature correction): $+1/240$ shift — see Part 3 §12.
+
+**Up/down quark mass ratio ✅ (Theorem S2, Part 8 §5)**
+
+$$m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14} = 0.463 \quad (\text{PDG: }0.462,\ +0.08\%;\text{ exact from seeds})$$
+
+**Neutrino mass ordering: normal hierarchy ✅**
+$S(n,5)$ is monotonically increasing, $n_{\nu_1} < n_{\nu_2} < n_{\nu_3} \to m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$. Consistent with current experimental preference at $3$–$4\sigma$.
+
+**CKM matrix elements from the Lagrangian kernel 🔵**
+
+The kernel off-diagonal matrix element between modes $n_i$ (lighter) and $n_j$ (heavier) within sector $d$ satisfies $|V_{i\to j}|^2 = S(n_{\rm lighter},d)/S(n_{\rm heavier},d)$ — the squared ratio of the heavier mode's amplitude at the $d=3$ coordinate level to the lighter's (Part 1 §2.2).
+
+$$|V_{cb}| = \sqrt{S(n_u,4)/S(n_c,4)} = \sqrt{15/8855} = 0.04116 \quad (\text{PDG exclusive: }0.04100\pm 0.0014,\ +0.11\sigma)$$
+
+$$A = |V_{cb}|/\sin^2\theta_C = \sqrt{S(n_u,4)/S(n_c,4)}\times S(n_s,3) = 0.82315 \quad (\text{PDG: }0.826\pm 0.012,\ {-}0.24\sigma)$$
+
+$$|V_{ts}| \approx |V_{cb}| = 0.04116 \quad [\text{CKM unitarity, third row}] \quad (\text{PDG: }0.04183\pm 0.0007,\ {-}0.96\sigma)$$
+
+$$|V_{ub}| = A s_C^3 \times \sqrt{\rho^2+\eta^2};\quad A s_C^3 = 0.00920\text{ (CP-conserving prefactor).}$$
+$$\sqrt{\rho^2+\eta^2}\text{ is the quark CP factor — NOT YET DERIVED (see warning below).} \quad (\text{PDG: }0.00382)$$
+
+> **⚠ Correction (2026-06-16).** A previous version assigned `|V_ub|` using the *leptonic* CP phase $\delta = \pi + 2\theta_{13} = 197.11°$ (and mislabelled the result a "lower bound"). That is wrong in the IDWT context and has been removed. The leptonic CP phase is a relative Berry holonomy between two **Kähler** sectors, $\mathbb{CP}^3$ ($d=6$) and $\mathbb{CP}^5$ ($d=10$), both complex (Part 10 §1); the quark CP phase spans $\mathbb{CP}^2$ ($d=4$, Kähler, up-type) and $S^3$ ($d=3$, **real**, down-type) — entirely different geometries — so the leptonic phase cannot be imported here. The holonomy mechanism that fixes the leptonic phase is switched off here: all three up-type quarks share one Kähler sector ($\mathbb{CP}^2$) and all three down-type share one real sector ($S^3$), so the spectral-flow phase is a generation-independent up-vs-down offset, rephased away — giving J = 0 at leading order, consistent with ρ = η = 0 above (✅). The small measured CP violation is therefore a *subleading* holomorphic($\mathbb{CP}^2$)-vs-real($S^3$) overlap mismatch on V_ub; its magnitude $\sqrt{\rho^2+\eta^2}$ awaits the explicit $\mathbb{CP}^2$ mode functions (🔶). Until then `|V_ub|` carries only its CP-conserving prefactor $A s_C^3$.
 
 See Part 3 §0.8 for the derivation.
 
-**Neutrino mass ratios**
+**Neutrino mass ratios 🔵**
 
-The d=5 sector neutrino mode indices n_ν₁=10, n_ν₂=15, n_ν₃=22 follow from the eigenmode selection rule. The primary IDWT predictions are the absolute mass ratios:
+The $d=5$ sector neutrino mode indices $n_{\nu_1}=10$, $n_{\nu_2}=15$, $n_{\nu_3}=22$ follow from the eigenmode selection rule. The primary IDWT predictions are the absolute mass ratios:
 
-```
-m_ν₂/m_ν₁ = S(15,5)/S(10,5) = 11628/2002 = 5.808
-m_ν₃/m_ν₁ = S(22,5)/S(10,5) = 65780/2002 = 32.86
-```
+$$m_{\nu_2}/m_{\nu_1} = S(15,5)/S(10,5) = 11\,628/2002 = 5.808$$
+$$m_{\nu_3}/m_{\nu_1} = S(22,5)/S(10,5) = 65\,780/2002 = 32.86$$
 
-These are exact from the mode indices alone. As a cross-check in oscillation-experiment language (Δm² = differences of squares of absolute masses):
+These are exact from the mode indices alone. As a cross-check in oscillation-experiment language ($\Delta m^2 =$ differences of squares of absolute masses):
 
-```
-Δm²₂₁/Δm²₃₂ = (S(15,5)² − S(10,5)²) / (S(22,5)² − S(15,5)²)
-             = 131,202,380 / 4,191,798,016 = 0.03130
-```
+$$\frac{\Delta m^2_{21}}{\Delta m^2_{32}} = \frac{S(15,5)^2 - S(10,5)^2}{S(22,5)^2 - S(15,5)^2} = \frac{131\,202\,380}{4\,191\,798\,016} = 0.03130$$
 
-PDG 2024 (normal hierarchy): 7.53×10⁻⁵/2.455×10⁻³ = 0.03067 ± 0.001. The code block above uses the bare (uncorrected) mode values; with δ_ν₃ = 1/35 applied (Part 2 §9d), the corrected ratio is 0.02953 — a −3.7% discrepancy from PDG 2024, driven by the solar-splitting tension in Δm²₂₁ (the Δm²₃₂ denominator matches at +0.1%). The ~5.9% gap in the bare ratio belongs to the bare m_ν₃ only; the remaining gap reflects the open Δm²₂₁ question (Part 2 §9).
+PDG 2024 (normal hierarchy): $7.53\times10^{-5}/2.455\times10^{-3} = 0.03067\pm 0.001$. The code block above uses the bare (uncorrected) mode values; with $\delta_{\nu_3} = 1/35$ applied (Part 2 §9d), the corrected ratio is 0.02953 — a −3.7% discrepancy from PDG 2024, driven by the solar-splitting tension in $\Delta m^2_{21}$ (the $\Delta m^2_{32}$ denominator matches at +0.1%). The ~5.9% gap in the bare ratio belongs to the bare $m_{\nu_3}$ only; the remaining gap reflects the open $\Delta m^2_{21}$ question (Part 2 §9).
 
 
-**f_π and Λ_QCD from the IDWT geometric dilution function**
+**$f_\pi$ and $\Lambda_{\rm QCD}$ from the IDWT geometric dilution function 🔵**
 
-The IDWT geometric dilution function is derived from the kernel expectation value per mode. Each of the S(n,3) modes at level n carries an equal share of g₃₃, giving the effective d=3 coupling:
+The IDWT geometric dilution function is derived from the kernel expectation value per mode. Each of the $S(n,3)$ modes at level $n$ carries an equal share of $g_{33}$, giving the effective $d=3$ coupling:
 
-```
-g_eff(n) = g₃₃ / S(n,3)
-```
+$$g_{\rm eff}(n) = g_{33}/S(n,3)$$
 
 The geometric dilution rate:
 
-```
-d g_eff / d(ln S) = −g_eff
-```
+$$\frac{d\,g_{\rm eff}}{d(\ln S)} = -g_{\rm eff}$$
 
-The coupling decreases as 1/S(n,3) ~ 1/n³ with mode index — this is not RG running but geometric dilution across microstates. At high energy E, n ~ (6E/m_scale3)^{1/3} and g_eff ~ m_scale3/E: the effective coupling falls as 1/E, an inverse power law distinct from logarithmic QCD running. At low n (infrared) the coupling grows. The confinement condition g_eff(n_conf) = 1 is a heuristic criterion adopted by analogy with α_s ≈ 1 in QCD; derivation from the IDWT action is an open item.
+The coupling decreases as $1/S(n,3) \sim 1/n^3$ with mode index — this is not RG running but geometric dilution across microstates. At high energy $E$, $n \sim (6E/m_{\rm scale,3})^{1/3}$ and $g_{\rm eff} \sim m_{\rm scale,3}/E$: the effective coupling falls as $1/E$, an inverse power law distinct from logarithmic QCD running. At low $n$ (infrared) the coupling grows. The confinement condition $g_{\rm eff}(n_{\rm conf}) = 1$ is a heuristic criterion adopted by analogy with $\alpha_s \approx 1$ in QCD; derivation from the IDWT action is an open item.
 
-**The confinement condition g_eff(n_conf) = 1:**
+**The confinement condition $g_{\rm eff}(n_{\rm conf}) = 1$:**
 
-```
-S(n_conf, 3) = g₃₃ = 8√7 = 21.166
-```
+$$S(n_{\rm conf}, 3) = g_{33} = 8\sqrt{7} = 21.166$$
 
-The unique integer n satisfying this: S(4,3) = 20, S(5,3) = 35. The nearest mode is n_conf = n_s = 4 — the composite itself. The coupling at the composite level:
+The unique integer $n$ satisfying this: $S(4,3) = 20$, $S(5,3) = 35$. The nearest mode is $n_{\rm conf} = n_s = 4$ — the composite itself. The coupling at the composite level:
 
-```
-g_eff(n_s) = g₃₃ / S(n_s,3) = 8√7/20 = 1.058
-```
+$$g_{\rm eff}(n_s) = g_{33}/S(n_s,3) = 8\sqrt{7}/20 = 1.058$$
 
-just above 1 (confined). At n_s+1=5, g_eff = 0.605 (free). The composite n_s = 4 is the mode where the QCD coupling crosses 1 — the physical meaning of the composite is that it is the confinement mode.
+just above 1 (confined). At $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The composite $n_s = 4$ is the mode where the QCD coupling crosses 1 — the physical meaning of the composite is that it is the confinement mode.
 
 **The pion decay constant:**
 
-```
-f_π = m_scale_3 × S(n_s, 3) = 4.702 MeV × 20 = 94.04 MeV
-PDG f_π = 92.1 MeV (charged pion).  Error: +2.1%
-```
+$$f_\pi = m_{\rm scale,3}\times S(n_s,3) = 4.702\text{ MeV}\times 20 = 94.04\text{ MeV} \quad (\text{PDG: }92.1\text{ MeV},\ +2.1\%)$$
 
-f_π is the mass at the confinement mode — the scale where the d=3 geometric dilution coupling g_eff(n) = g₃₃/S(n,3) reaches unity. No additional input beyond m_e and the seeds.
+$f_\pi$ is the mass at the confinement mode — the scale where the $d=3$ geometric dilution coupling $g_{\rm eff}(n) = g_{33}/S(n,3)$ reaches unity. No additional input beyond $m_e$ and the seeds.
 
-**The QCD scale from large-N_c:**
+**The QCD scale from large-$N_c$:**
 
-```
-Λ_QCD = N_c × f_π = 3 × 94.04 = 282 MeV
-matches 3×f_π(PDG) = 3 × 92.07 = 276 MeV within +2.1%
-```
+$$\Lambda_{\rm QCD} = N_c\times f_\pi = 3\times 94.04 = 282\text{ MeV} \quad (\text{matches }3\times f_\pi^{\rm PDG} = 276\text{ MeV within }+2.1\%)$$
 
-N_c = 3 comes from the CP² Dirac index (Part 3 §2). The large-N_c QCD relation Λ_QCD ≈ N_c f_π is known; IDWT provides both N_c and f_π from seeds and m_e alone.
+$N_c = 3$ comes from the $\mathbb{CP}^2$ Dirac index (Part 3 §2). The large-$N_c$ QCD relation $\Lambda_{\rm QCD} \approx N_c f_\pi$ is known; IDWT provides both $N_c$ and $f_\pi$ from seeds and $m_e$ alone.
 
-```
-g_A = √(S(n_s+1,3)/S(n_s,3)) = √(35/20) = √(7/4) = 1.3229
-PDG: 1.2723 ± 0.0023.  Error: +4.0%
-```
+$$g_A = \sqrt{S(n_s+1,3)/S(n_s,3)} = \sqrt{35/20} = \sqrt{7/4} = 1.3229 \quad (\text{PDG: }1.2723\pm 0.0023,\ +4.0\%)$$
 
-The ratio of successive d=3 mode counts at the composite level n_s=4 — the geometric mean of the mode density transition at the confinement boundary.
+The ratio of successive $d=3$ mode counts at the composite level $n_s=4$ — the geometric mean of the mode density transition at the confinement boundary.
 
-The d=5 sector has d mod 8 = 5, the unique Clifford class for which Majorana spinors are geometrically forbidden. More strongly: no charge-conjugation matrix C exists on the S⁵ spinor bundle (d mod 8 = 5 globally), so cross-sector couplings cannot construct ψ^T Cψ at any loop order. 0νββ is forbidden at all orders. Current experiments (KamLAND-Zen 2023: m_ββ < 36 meV) have seen no signal, consistent with this prediction. This is a qualitative, falsifiable prediction independent of the mass spectrum.
+The $d=5$ sector has $d \bmod 8 = 5$, the unique Clifford class for which Majorana spinors are geometrically forbidden. More strongly: no charge-conjugation matrix $C$ exists on the $S^5$ spinor bundle ($d \bmod 8 = 5$ globally), so cross-sector couplings cannot construct $\psi^T C\psi$ at any loop order. $0\nu\beta\beta$ is forbidden at all orders. Current experiments (KamLAND-Zen 2023: $m_{\beta\beta} < 36$ meV) have seen no signal, consistent with this prediction. This is a qualitative, falsifiable prediction independent of the mass spectrum.
 
 **Left-handed weak coupling is geometric**
-The SU(2)_L structure acts only on the left-handed (holomorphic) half of each Kähler sector spinor. The Kähler γ₅ operator on CP² (d=4) and CP³ (d=6) splits each sector spinor into holomorphic left-handed and anti-holomorphic right-handed components; only the holomorphic half transforms under SU(2)_L.
+The $SU(2)_L$ structure acts only on the left-handed (holomorphic) half of each Kähler sector spinor. The Kähler $\gamma_5$ operator on $\mathbb{CP}^2$ ($d=4$) and $\mathbb{CP}^3$ ($d=6$) splits each sector spinor into holomorphic left-handed and anti-holomorphic right-handed components; only the holomorphic half transforms under $SU(2)_L$.
 
 ---
 
 ## 1b. Cross-Framework Estimates
 
-The results here apply large-N_c QCD scaling relations with IDWT-derived inputs. They are clearly labeled cross-framework: the scaling law is external; the inputs (N_c, Λ_QCD, mode indices) are IDWT-derived. Native derivations from the IDWT kernel binding energy are pending (Part 8 §11).
+The results here apply large-$N_c$ QCD scaling relations with IDWT-derived inputs. They are clearly labeled cross-framework: the scaling law is external; the inputs ($N_c$, $\Lambda_{\rm QCD}$, mode indices) are IDWT-derived. Native derivations from the IDWT kernel binding energy are pending (Part 8 §11).
 
-🔶 **Proton and neutron masses** (cross-framework estimate — large-N_c QCD scaling with IDWT inputs)
+🔶 **Proton and neutron masses** (cross-framework estimate — large-$N_c$ QCD scaling with IDWT inputs)
 
-```
-m_p = N_c × Λ_QCD × (1 + 1/n_up²) = 3 × 282.1 × (1 + 1/9) = 940.4 MeV   (PDG: 938.272, +0.22%)
-m_n = m_p + (m_d − m_u) = 940.4 + 2.5 = 942.9 MeV   (PDG: 939.565, +0.35%)
-```
+$$m_p = N_c\times\Lambda_{\rm QCD}\times(1+1/n_u^2) = 3\times 282.1\times(1+1/9) = 940.4\text{ MeV} \quad (\text{PDG: }938.272,\ +0.22\%)$$
+$$m_n = m_p + (m_d - m_u) = 940.4 + 2.5 = 942.9\text{ MeV} \quad (\text{PDG: }939.565,\ +0.35\%)$$
 
-The large-N_c QCD scaling law m_baryon ≈ N_c × Λ_QCD is applied here with IDWT-derived inputs (N_c = 3 from χ(CP²), Λ_QCD = N_c × f_π = 282.1 MeV from the IDWT geometric dilution function). The Fermi-momentum correction (1 + 1/n_up²) = 10/9 uses n_up = n_u = 3 from IDWT. Native derivation from kernel binding energy for a colour-singlet uud state (Part 8 §11, flagged as open) is pending and should replace the large-N_c scaling law. The n−p splitting 2.5 MeV is 2× the PDG value (1.293 MeV); the discrepancy is the **electromagnetic self-energy of the proton**: the current IDWT calculation uses quark masses only (m_d − m_u = 4.702 − 2.203 = 2.499 MeV), whereas the observed splitting m_n − m_p = 1.293 MeV includes the Cottingham EM correction Δm_EM ≈ −1.2 MeV (proton EM self-energy is positive, reducing the splitting). Since α and Λ_QCD are both IDWT-derived, this correction is in principle computable from the IDWT framework once the hadronic form factor (Cottingham integral) is evaluated; it is not a structural failure but an omitted calculation.
+The large-$N_c$ QCD scaling law $m_{\rm baryon} \approx N_c\times\Lambda_{\rm QCD}$ is applied here with IDWT-derived inputs ($N_c = 3$ from $\chi(\mathbb{CP}^2)$, $\Lambda_{\rm QCD} = N_c\times f_\pi = 282.1$ MeV from the IDWT geometric dilution function). The Fermi-momentum correction $(1+1/n_u^2) = 10/9$ uses $n_u = 3$ from IDWT. Native derivation from kernel binding energy for a colour-singlet $uud$ state (Part 8 §11, flagged as open) is pending and should replace the large-$N_c$ scaling law. The $n$–$p$ splitting 2.5 MeV is $2\times$ the PDG value (1.293 MeV); the discrepancy is the **electromagnetic self-energy of the proton**: the current IDWT calculation uses quark masses only ($m_d - m_u = 4.702 - 2.203 = 2.499$ MeV), whereas the observed splitting $m_n - m_p = 1.293$ MeV includes the Cottingham EM correction $\Delta m_{\rm EM} \approx -1.2$ MeV (proton EM self-energy is positive, reducing the splitting). Since $\alpha$ and $\Lambda_{\rm QCD}$ are both IDWT-derived, this correction is in principle computable from the IDWT framework once the hadronic form factor (Cottingham integral) is evaluated; it is not a structural failure but an omitted calculation.
 
 ---
 
 ## 2. Full Prediction Table with Statistical Significance
 
-Using m_e = 0.511 MeV as the sole unit reference:
+Using $m_e = 0.511$ MeV as the sole unit reference:
 
 | Particle | IDWT (MeV) | PDG (MeV) | Error | Note |
 |----------|-----------|-----------|-------|------|
@@ -211,24 +173,24 @@ Using m_e = 0.511 MeV as the sole unit reference:
 | Z | 91,230 | 91,188 | +0.047% | — |
 | H | 125,266 | 125,200 | +0.053% | — |
 
-† **m_τ = m_e × S(23,10)/S(13,6) × (1 + 1/1680) = 1776.84 MeV (PDG 2024: 1776.93 ± 0.09 MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/(n_u × n_s² × S(n_s,4)) is the geometric back-reaction resummation of the d=6→d=10 coupling. Physical mechanism: (1) g_{6,10}/(k₀×n_mu) = 1/2240 is the leading back-reaction from the isotropic coupling g_{6,6}=g_{6,10}=g_{10,10}=1/4; (2) the correction feeds back via the d=10 self-coupling g_{10,10}=1/n_s, giving resummation factor n_s/(n_s−1) = n_s/n_u (since n_u = n_s−1 by T15). Combined: 1/2240 × 4/3 = 1/1680. No inputs beyond m_e and seed pair {n_u=3, n_s=4}.
+† **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: 1776.93 ± 0.09 MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/($n_u \times n_s^2 \times S(n_s,4)$) is the geometric back-reaction resummation of the $d=6$→$d=10$ coupling. Physical mechanism: (1) $g_{6,10}/(k_0\times n_{\rm mu}) = 1/2240$ is the leading back-reaction from the isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/4$; (2) the correction feeds back via the $d=10$ self-coupling $g_{10,10}=1/n_s$, giving resummation factor $n_s/(n_s-1) = n_s/n_u$ (since $n_u = n_s-1$ by T15). Combined: $1/2240 \times 4/3 = 1/1680$. No inputs beyond $m_e$ and seed pair $\{n_u=3, n_s=4\}$.
 
 ### 2a. Is the spectrum a fit? — null-model significance 🔵
 
-The standard objection to any mass formula built from integers is that integers are flexible: with a tunable integer per particle and an adjustable scale, almost any spectrum can be reached. Two facts of the IDWT construction answer it quantitatively. First, the sector scales are not free — each is fixed by m_e and n_s through the coupling chain (Part 2 §10), not refit per sector — so once they are set, predicting a mass is choosing one integer on a fixed ladder, with no continuous dial. Second, the simplex ladder is coarse: neighbouring rungs differ by S(n+1,d)/S(n,d) − 1, which is ≈17% at the muon (d=6) and ≈43% at the tau (d=10). A measured value at a random position between rungs would put the nearest rung off by ~¼ of the gap; landing within parts per million is not generic.
+The standard objection to any mass formula built from integers is that integers are flexible: with a tunable integer per particle and an adjustable scale, almost any spectrum can be reached. Two facts of the IDWT construction answer it quantitatively. First, the sector scales are not free — each is fixed by $m_e$ and $n_s$ through the coupling chain (Part 2 §10), not refit per sector — so once they are set, predicting a mass is choosing one integer on a fixed ladder, with no continuous dial. Second, the simplex ladder is coarse: neighbouring rungs differ by $S(n+1,d)/S(n,d) - 1$, which is $\approx 17\%$ at the muon ($d=6$) and $\approx 43\%$ at the tau ($d=10$). A measured value at a random position between rungs would put the nearest rung off by ~¼ of the gap; landing within parts per million is not generic.
 
-This scores each prediction. For a parameter-free dimensionless ratio (sector scale cancels) fixed by one mode index, let ε = |IDWT − obs|/obs, floored at the relative measurement error (a fit cannot be claimed tighter than the measurement resolves), and let g = S(n+1,d)/S(n,d) − 1 be the grid spacing at that rung; the luck factor L = min(1, 2ε/g) estimates the chance the nearest available integer lands within ε of a randomly placed target. Every mode index is treated as a free integer — the maximally conservative stance, granting nothing to the claim that the indices are forced.
+This scores each prediction. For a parameter-free dimensionless ratio (sector scale cancels) fixed by one mode index, let $\varepsilon = |\text{IDWT} - \text{obs}|/\text{obs}$, floored at the relative measurement error (a fit cannot be claimed tighter than the measurement resolves), and let $g = S(n+1,d)/S(n,d) - 1$ be the grid spacing at that rung; the luck factor $L = \min(1, 2\varepsilon/g)$ estimates the chance the nearest available integer lands within $\varepsilon$ of a randomly placed target. Every mode index is treated as a free integer — the maximally conservative stance, granting nothing to the claim that the indices are forced.
 
-| Quantity | IDWT | Measured | ε | grid g | L = 2ε/g |
+| Quantity | IDWT | Measured | $\varepsilon$ | grid $g$ | $L = 2\varepsilon/g$ |
 |---|---|---|---|---|---|
-| m_μ/m_e = S(35,6)/S(13,6) | 206.765 | 206.768 | 1.7×10⁻⁵ | 0.17 | 2.0×10⁻⁴ |
-| m_τ/m_e = $\frac{S(23,10)}{S(13,6)}(1{+}\frac{1}{1680})$ | 3477.19 | 3477.37 | 5.1×10⁻⁵ | 0.43 | 2.3×10⁻⁴ |
-| m_Z/m_W = S(81,2)/S(76,2) | 1.13500 | 1.13461 | 3.4×10⁻⁴ | 0.025 | 2.7×10⁻² |
-| m_H/m_W = S(95,2)/S(76,2) | 1.55844 | 1.55781 | 4.1×10⁻⁴ | 0.021 | 8.5×10⁻² |
+| $m_\mu/m_e = S(35,6)/S(13,6)$ | 206.765 | 206.768 | $1.7\times10^{-5}$ | 0.17 | $2.0\times10^{-4}$ |
+| $m_\tau/m_e = \frac{S(23,10)}{S(13,6)}(1+\frac{1}{1680})$ | 3477.19 | 3477.37 | $5.1\times10^{-5}$ | 0.43 | $2.3\times10^{-4}$ |
+| $m_Z/m_W = S(81,2)/S(76,2)$ | 1.13500 | 1.13461 | $3.4\times10^{-4}$ | 0.025 | $2.7\times10^{-2}$ |
+| $m_H/m_W = S(95,2)/S(76,2)$ | 1.55844 | 1.55781 | $4.1\times10^{-4}$ | 0.021 | $8.5\times10^{-2}$ |
 
-The τ row uses PDG 2024 (m_τ = 1776.93 ± 0.09 MeV); its ε is the measurement floor — the fit residual is 4.9×10⁻⁵ (−0.9σ). The four independent luck factors multiply to ≈ 1.1×10⁻¹⁰ (≈ 1 in 9×10⁹). The lepton ratios dominate: a sub-10⁻⁴ hit on a 17–43% grid is what a flexible fit cannot manufacture. (Computed in `idwt.py` STEP 38.)
+The $\tau$ row uses PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV); its $\varepsilon$ is the measurement floor — the fit residual is $4.9\times10^{-5}$ (−0.9σ). The four independent luck factors multiply to $\approx 1.1\times10^{-10}$ ($\approx$ 1 in $9\times10^9$). The lepton ratios dominate: a sub-$10^{-4}$ hit on a 17–43% grid is what a flexible fit cannot manufacture. (Computed in `idwt.py` STEP 38.)
 
-**Honest scope.** The L = 2ε/g luck model treats each quantity separately; multiplying the four L values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived, not refit (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist (g_A +4%, f_π +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. The result retires the "fit anything" objection: the spectrum is not a flexible structure.
+**Honest scope.** The $L = 2\varepsilon/g$ luck model treats each quantity separately; multiplying the four $L$ values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived, not refit (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist ($g_A$ +4%, $f_\pi$ +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. The result retires the "fit anything" objection: the spectrum is not a flexible structure.
 
 **Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from n_s by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$, composite $n_s=4$, and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
 
@@ -236,36 +198,36 @@ The τ row uses PDG 2024 (m_τ = 1776.93 ± 0.09 MeV); its ε is the measurement
 
 Two null models make the §2a estimate a defensible joint p-value. Both are computed in `idwt.py` STEP 39.
 
-**Null A — random target position.** The hypothesis being tested: the measured values are unrelated to the simplex grid, so each sits at a uniformly random position inside its local inter-rung cell. The normalized distance from a measured value to its nearest rung is then uniform on [0,1]; with the measurement floor f = min(1, 2σ/g) the per-quantity luck is L = max(p, f), and the joint statistic is X = −Σ ln Lᵢ. The joint p-value P(X ≥ X_obs) is computed two ways: exactly, as the tail of the convolution of the per-quantity densities, and by Fisher's closed form P(χ²₂ₖ ≥ 2X_obs), which ignores the floors and is therefore conservative (floors only thin the null tail).
+**Null A — random target position.** The hypothesis being tested: the measured values are unrelated to the simplex grid, so each sits at a uniformly random position inside its local inter-rung cell. The normalized distance from a measured value to its nearest rung is then uniform on $[0,1]$; with the measurement floor $f = \min(1, 2\sigma/g)$ the per-quantity luck is $L = \max(p, f)$, and the joint statistic is $X = -\sum \ln L_i$. The joint p-value $P(X \geq X_{\rm obs})$ is computed two ways: exactly, as the tail of the convolution of the per-quantity densities, and by Fisher's closed form $P(\chi^2_{2k} \geq 2X_{\rm obs})$, which ignores the floors and is therefore conservative (floors only thin the null tail).
 
-The quantity set is fixed by a rule stated in advance, not by closeness: a quantity enters if it is dimensionless, parameter-free, and its measurement resolves the grid (σ < g/2 — the experiment can distinguish adjacent rungs, so the test can fail). Eight quantities pass: the four ratios of §2a plus sin θ_C, m_s/m_d, m_t/m_c, and Δm²₃₁/Δm²₂₁. Each is scored on the grid of one free index, the other index being the anchor (e is the global mass unit; W anchors the d=2 ratios; d anchors s/d; c anchors t/c); the grid is the conservative local spacing min over n → n±1. The "both indices free" objection is exactly what Null B answers.
+The quantity set is fixed by a rule stated in advance, not by closeness: a quantity enters if it is dimensionless, parameter-free, and its measurement resolves the grid (σ < g/2 — the experiment can distinguish adjacent rungs, so the test can fail). Eight quantities pass: the four ratios of §2a plus $\sin\theta_C$, $m_s/m_d$, $m_t/m_c$, and $\Delta m^2_{31}/\Delta m^2_{21}$. Each is scored on the grid of one free index, the other index being the anchor ($e$ is the global mass unit; $W$ anchors the $d=2$ ratios; $d$ anchors $s/d$; $c$ anchors $t/c$); the grid is the conservative local spacing $\min$ over $n \to n\pm 1$. The "both indices free" objection is exactly what Null B answers.
 
-| Quantity | IDWT | Measured | ε_eff | grid g | L |
+| Quantity | IDWT | Measured | $\varepsilon_{\rm eff}$ | grid $g$ | $L$ |
 |---|---|---|---|---|---|
-| m_μ/m_e | 206.765 | 206.768 | 1.7×10⁻⁵ | 0.150 | 2.3×10⁻⁴ |
-| m_τ/m_e | 3477.19 | 3477.37 ± 0.18 | 5.1×10⁻⁵ | 0.313 | 3.2×10⁻⁴ |
-| m_Z/m_W | 1.13500 | 1.13461 ± 0.00019 | 3.4×10⁻⁴ | 0.024 | 2.8×10⁻² |
-| m_H/m_W | 1.55844 | 1.55781 ± 0.00139 | 8.9×10⁻⁴ | 0.021 | 8.6×10⁻² |
-| sin θ_C | 0.22454 | 0.2245 ± 0.0008 | 3.6×10⁻³ | 0.245 | 2.9×10⁻² |
-| m_s/m_d | 20.000 | 19.81 ± 0.13 | 9.6×10⁻³ | 0.500 | 3.8×10⁻² |
-| m_t/m_c | 135.60 | 135.56 ± 0.54 | 4.0×10⁻³ | 0.053 | 1.5×10⁻¹ |
-| Δm²₃₁/Δm²₂₁ | 34.86 | 33.60 ± 0.88 | 3.8×10⁻² | 0.348 | 2.2×10⁻¹ |
+| $m_\mu/m_e$ | 206.765 | 206.768 | $1.7\times10^{-5}$ | 0.150 | $2.3\times10^{-4}$ |
+| $m_\tau/m_e$ | 3477.19 | 3477.37 ± 0.18 | $5.1\times10^{-5}$ | 0.313 | $3.2\times10^{-4}$ |
+| $m_Z/m_W$ | 1.13500 | 1.13461 ± 0.00019 | $3.4\times10^{-4}$ | 0.024 | $2.8\times10^{-2}$ |
+| $m_H/m_W$ | 1.55844 | 1.55781 ± 0.00139 | $8.9\times10^{-4}$ | 0.021 | $8.6\times10^{-2}$ |
+| $\sin\theta_C$ | 0.22454 | 0.2245 ± 0.0008 | $3.6\times10^{-3}$ | 0.245 | $2.9\times10^{-2}$ |
+| $m_s/m_d$ | 20.000 | 19.81 ± 0.13 | $9.6\times10^{-3}$ | 0.500 | $3.8\times10^{-2}$ |
+| $m_t/m_c$ | 135.60 | 135.56 ± 0.54 | $4.0\times10^{-3}$ | 0.053 | $1.5\times10^{-1}$ |
+| $\Delta m^2_{31}/\Delta m^2_{21}$ | 34.86 | 33.60 ± 0.88 | $3.8\times10^{-2}$ | 0.348 | $2.2\times10^{-1}$ |
 
-Measured inputs: PDG 2024 (m_τ = 1776.93 ± 0.09 MeV; m_W = 80369.2 ± 13.3 MeV; m_Z = 91188.0 ± 2.0 MeV; m_H = 125200 ± 110 MeV; V_us = 0.2245 ± 0.0008; m_t = 172570 ± 290 MeV; m_c = 1273.0 ± 4.6 MeV; Δm²₃₁ = 2.530(28)×10⁻³ eV²; Δm²₂₁ = 7.53(18)×10⁻⁵ eV²) and FLAG 2024 (m_s/m_d = 19.81 ± 0.13 from m_s/m_ud = 27.23(10), m_u/m_d = 0.455(8)). ε_eff is |IDWT − obs|/obs floored at the relative measurement error. The m_s/m_d entry is the largest pull in the set (+1.5σ against the lattice ratio); it is scored as found.
+Measured inputs: PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV; $m_W = 80369.2 \pm 13.3$ MeV; $m_Z = 91188.0 \pm 2.0$ MeV; $m_H = 125200 \pm 110$ MeV; $V_{us} = 0.2245 \pm 0.0008$; $m_t = 172570 \pm 290$ MeV; $m_c = 1273.0 \pm 4.6$ MeV; $\Delta m^2_{31} = 2.530(28)\times10^{-3}$ eV$^2$; $\Delta m^2_{21} = 7.53(18)\times10^{-5}$ eV$^2$) and FLAG 2024 ($m_s/m_d = 19.81 \pm 0.13$ from $m_s/m_{ud} = 27.23(10)$, $m_u/m_d = 0.455(8)$). $\varepsilon_{\rm eff}$ is $|\text{IDWT} - \text{obs}|/\text{obs}$ floored at the relative measurement error. The $m_s/m_d$ entry is the largest pull in the set (+1.5σ against the lattice ratio); it is scored as found.
 
-The result: X_obs = 32.69, joint p = 5.4×10⁻¹¹ (6.5σ) exact; 6.4×10⁻⁸ (5.3σ) under the conservative Fisher treatment; a ×100 look-elsewhere allowance leaves 5.4×10⁻⁹ (5.7σ). The §2a core set alone gives 3.8×10⁻⁷ (4.9σ) under the same combination. The exact convolution was validated against Monte Carlo at every tail depth the simulation can resolve.
+The result: $X_{\rm obs} = 32.69$, joint $p = 5.4\times10^{-11}$ (6.5σ) exact; $6.4\times10^{-8}$ (5.3σ) under the conservative Fisher treatment; a ×100 look-elsewhere allowance leaves $5.4\times10^{-9}$ (5.7σ). The §2a core set alone gives $3.8\times10^{-7}$ (4.9σ) under the same combination. The exact convolution was validated against Monte Carlo at every tail depth the simulation can resolve.
 
-The three PMNS angles and m_c/m_u fail the resolution rule — their effective grids are finer than current measurement errors, so under Null A they cannot carry evidence either way. As consistency checks they sit at +0.30σ (sin²θ₂₃), +0.13σ (sin²θ₁₂), +0.19σ (sin²θ₁₃), and −0.04σ (m_c/m_u).
+The three PMNS angles and $m_c/m_u$ fail the resolution rule — their effective grids are finer than current measurement errors, so under Null A they cannot carry evidence either way. As consistency checks they sit at +0.30σ ($\sin^2\theta_{23}$), +0.13σ ($\sin^2\theta_{12}$), +0.19σ ($\sin^2\theta_{13}$), and −0.04σ ($m_c/m_u$).
 
-**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all n placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for d=5), recompute all twelve quantities — the eight above plus the PMNS angles and m_c/m_u, with g₅₅ fixed by the seeds — and score each random theory by T = Σ ln ε_eff,ᵢ against the same measured set. No random index assignment in 8.4×10⁶ draws (6×10⁶ at the stated windows, the rest at halved and doubled windows) scored as well as IDWT; at the stated windows this gives p_B < 5×10⁻⁷ (95% CL). The best random theory fell short by 36 ln-units (a factor ~10¹⁵ in joint residual). Per quantity, random draws match the lepton ratios essentially never (m_μ/m_e: ~3×10⁻⁵ per draw; m_τ/m_e: zero in all draws) and the remaining quantities at the 10⁻⁴–10⁻² level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
+**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all n placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for $d=5$), recompute all twelve quantities — the eight above plus the PMNS angles and $m_c/m_u$, with $g_{55}$ fixed by the seeds — and score each random theory by $T = \sum \ln \varepsilon_{{\rm eff},i}$ against the same measured set. No random index assignment in $8.4\times10^6$ draws ($6\times10^6$ at the stated windows, the rest at halved and doubled windows) scored as well as IDWT; at the stated windows this gives $p_B < 5\times10^{-7}$ (95% CL). The best random theory fell short by 36 ln-units (a factor $\sim10^{15}$ in joint residual). Per quantity, random draws match the lepton ratios essentially never ($m_\mu/m_e$: $\sim3\times10^{-5}$ per draw; $m_\tau/m_e$: zero in all draws) and the remaining quantities at the $10^{-4}$–$10^{-2}$ level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
 
 Both nulls leave the conclusion of §2a in place with the arithmetic now rigorous: the spectrum is not a flexible fit, and the open question that carries the remaining evidential weight is the index-forcing (T0.5, Part 9), not the statistics.
 
 ---
 
-## 3. d=4 Sector: Up-Type Overshoot (uncorrected, open)
+## 3. $d=4$ Sector: Up-Type Overshoot (uncorrected, open)
 
-The d=4 up-type masses are quoted bare and overshoot PDG, growing with generation:
+The $d=4$ up-type masses are quoted bare and overshoot PDG, growing with generation:
 
 | Particle | n | Bare $S(n,4)\,m_{\rm scale,4}$ | Error vs PDG |
 |---|---|---|---|
@@ -275,56 +237,53 @@ The d=4 up-type masses are quoted bare and overshoot PDG, growing with generatio
 
 A former correction (the "Generation Tower Correction," (1−ε)^k with ε = 1/(280√7) derived and per-quark exponents {0,7,16}) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. Charm and top are open residues. The l=2 tensor part of the kernel supplies the overshoot's sign — a real, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) — but its magnitude is not derived, so no correction is applied (🔶, §11.4).
 
-🔶 **Nucleon static properties** (Dirac spin-orbit structure of the d=3 sector, Part 8 §10)
-```
-μ_p = 2.793 μ_N    (PDG: 2.7928,  match to 0.01%)
-μ_n = −1.913 μ_N   (PDG: −1.9130, match to 0.02%)
-```
-The sign and the μ_p/μ_n ratio follow from the udd colour-singlet projector; the absolute magnitudes are set by the Dirac spin-orbit structure of the d=3 sector and await that computation. The values above were reached with two scale parameters — g_{3,4}^{eff} = 125 against the kernel value g_{3,4} = 4√6 ≈ 9.80, and f_{overlap} = 0.72 — neither of which follows from the scalar kernel: a magnetic moment is a spin observable, and the spin-independent contact kernel cannot source one (`files/idwt.py` STEP 94). Those parameters are withdrawn as a mechanism. The axial coupling is the geometric ratio g_A = √(S(n_s+1,3)/S(n_s,3)) = 1.3229 (+4.0% from PDG 1.2723); the residual is a relativistic Dirac spin-orbit quenching, not an orbital admixture (open item, Part 8 §10).
+🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 
-**Neutrino absolute masses** (scale derived from m_scale_5 × m_scale_4² = (n_u/n_s) × m_scale_6³ — no neutrino data)
-```
-m_ν₁ = 1.487 meV,  m_ν₂ = 8.639 meV,  m_ν₃ = 50.27 meV,  Σm_ν = 60.39 meV
-m_ν₂/m_ν₁ = S(15,5)/S(10,5) = 5.808,  m_ν₃/m_ν₁ = S(22,5)/S(10,5) = 32.86
-(Bare: m_ν₃ = 48.87 meV, Σm_ν = 59.00 meV. Corrected by δ_ν₃ = ε×g_{33} = 1/35, Part 2 §9d.)
-```
-The primary predictions are the absolute masses and their ratios — derived entirely from mode indices and m_scale_5, with no neutrino oscillation data entering. The corrected m_ν₃ = 50.27 meV implies Δm²₃₁ = 2.524×10⁻³ eV², matching PDG 2024 within 0.21% (0.2σ).
+$$\mu_p = 2.793\,\mu_N \quad (\text{PDG: }2.7928,\ +0.01\%)$$
+$$\mu_n = -1.913\,\mu_N \quad (\text{PDG: }-1.9130,\ +0.02\%)$$
+
+The sign and the $\mu_p/\mu_n$ ratio follow from the $udd$ colour-singlet projector; the absolute magnitudes are set by the Dirac spin-orbit structure of the $d=3$ sector and await that computation. The values above were reached with two scale parameters — $g_{3,4}^{\rm eff} = 125$ against the kernel value $g_{3,4} = 4\sqrt{6} \approx 9.80$, and $f_{\rm overlap} = 0.72$ — neither of which follows from the scalar kernel: a magnetic moment is a spin observable, and the spin-independent contact kernel cannot source one (`files/idwt.py` STEP 94). Those parameters are withdrawn as a mechanism. The axial coupling is the geometric ratio $g_A = \sqrt{S(n_s+1,3)/S(n_s,3)} = 1.3229$ ($+4.0\%$ from PDG 1.2723); the residual is a relativistic Dirac spin-orbit quenching, not an orbital admixture (open item, Part 8 §10).
+
+**Neutrino absolute masses 🔵** (scale derived from $m_{\rm scale,5}\times m_{\rm scale,4}^2 = (n_u/n_s)\times m_{\rm scale,6}^3$ — no neutrino data)
+
+$$m_{\nu_1} = 1.487\text{ meV},\quad m_{\nu_2} = 8.639\text{ meV},\quad m_{\nu_3} = 50.27\text{ meV},\quad \Sigma m_\nu = 60.39\text{ meV}$$
+$$m_{\nu_2}/m_{\nu_1} = S(15,5)/S(10,5) = 5.808,\qquad m_{\nu_3}/m_{\nu_1} = S(22,5)/S(10,5) = 32.86$$
+$$(\text{Bare: }m_{\nu_3} = 48.87\text{ meV},\ \Sigma m_\nu = 59.00\text{ meV.}\text{ Corrected by }\delta_{\nu_3} = \varepsilon\times g_{33} = 1/35,\text{ Part 2 §9d.})$$
+
+The primary predictions are the absolute masses and their ratios — derived entirely from mode indices and $m_{\rm scale,5}$, with no neutrino oscillation data entering. The corrected $m_{\nu_3} = 50.27$ meV implies $\Delta m^2_{31} = 2.524\times10^{-3}$ eV$^2$, matching PDG 2024 within 0.21% ($0.2\sigma$).
 
 **Absent high-energy states** — observation of either falsifies the framework:
-```
-S(35,10) × m_scale_10 ≈ 68.3 GeV    [below Z mass; excluded at LEP]
-S(72,10) × m_scale_10 ≈ 51.7 TeV    [beyond LHC reach; no fourth generation]
-```
 
-**EW coupling and derived quantities from g₂ = Q_u√g_s**
+$$S(35,10)\times m_{\rm scale,10} \approx 68.3\text{ GeV} \quad [\text{below }Z\text{ mass; excluded at LEP}]$$
+$$S(72,10)\times m_{\rm scale,10} \approx 51.7\text{ TeV} \quad [\text{beyond LHC reach; no fourth generation}]$$
 
-The SU(2)_L coupling is determined by the CP²→CP¹ sector reduction weighted by the up-quark electric charge Q_u = 2/3:
+**EW coupling and derived quantities from $g_2 = Q_u\sqrt{g_s}$ 🔵**
 
-```
-g₂ = (2/3) √(2g₄₄/π²) = 0.65275     (PDG: 0.65270,  +0.008%)
-EW scale: √Tr(D²) = 248.3 GeV        (SM v ≈ 246 GeV, +0.93%)
-1/α (at d=2 sector scale ≈m_W) = 131.8     (PDG α(m_Z)=1/127.9, +3.1%)
-```
+The $\mathrm{SU}(2)_L$ coupling is determined by the $\mathbb{CP}^2\to\mathbb{CP}^1$ sector reduction weighted by the up-quark electric charge $Q_u = 2/3$:
 
-$\sqrt{\text{Tr}(D^2)} = 248.3$ GeV is the IDWT-native electroweak scale — the RMS of the mass spectrum. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the d=2 sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
+$$g_2 = (2/3)\sqrt{2g_{44}/\pi^2} = 0.65275 \quad (\text{PDG: }0.65270,\ +0.008\%)$$
+$$\sqrt{\mathrm{Tr}(D^2)} = 248.3\text{ GeV} \quad (\text{SM }v\approx 246\text{ GeV},\ +0.93\%)$$
+$$1/\alpha\text{ (at }d=2\text{ sector scale }\approx m_W) = 131.8 \quad (\text{PDG }\alpha(m_Z)=1/127.9,\ +3.1\%)$$
+
+$\sqrt{\text{Tr}(D^2)} = 248.3$ GeV is the IDWT-native electroweak scale — the RMS of the mass spectrum. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the $d=2$ sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
 
 ---
 
 ## 3b. Extended Predictions
 
-**PMNS CP-violation amplitude 🔶→ derived result**
-```
-J_max = s₁₂c₁₂s₂₃c₂₃s₁₃c₁₃² = 0.03335   (PDG J_max ≈ 0.03180,  +4.9%)
-δ_CP = π + 2θ₁₃ = 197.11°   (PDG NH best fit: 197° ± 27°, +0.05°)
-J = J_max × sin(δ_CP) = 0.03335 × sin(197.11°) = −0.00981   (PDG: ≈ −0.0098, +0.1%)
-```
-J_max is the CP-violation amplitude from the PMNS angles derived in §4–6. The +4.9% gap in J_max relative to PDG traces to the same sin²θ_W structural gap (+0.37%) that limits g₁. The phase δ_CP = π + 2θ₁₃ = 197.11° is now derived from APS spectral flow of the one-parameter Dirac family across the CP³→CP⁵ Chern class mismatch Δc₁ = −2 (T8 🔶, Part 10 §4). Three technical gaps remain before T8 reaches 🔵. J = −0.00981 is a concrete prediction matching PDG within 0.1%.
+**PMNS CP-violation amplitude 🔶**
 
-**Number of neutrino species**
-```
-N_ν = 3  (PDG: 2.9840 ± 0.0082,  +0.54%)
-```
-Three active neutrino species from the d=5 sector structure (three co-fixed-point modes n=10,15,22).
+$$J_{\rm max} = s_{12}c_{12}s_{23}c_{23}s_{13}c_{13}^2 = 0.03335 \quad (\text{PDG }J_{\rm max}\approx 0.03180,\ +4.9\%)$$
+$$\delta_{\rm CP} = \pi + 2\theta_{13} = 197.11° \quad (\text{PDG NH best fit: }197°\pm 27°,\ +0.05°)$$
+$$J = J_{\rm max}\times\sin(\delta_{\rm CP}) = 0.03335\times\sin(197.11°) = -0.00981 \quad (\text{PDG: }\approx{-}0.0098,\ +0.1\%)$$
+
+$J_{\rm max}$ is the CP-violation amplitude from the PMNS angles derived in §4–6. The $+4.9\%$ gap in $J_{\rm max}$ relative to PDG traces to the same $\sin^2\theta_W$ structural gap ($+0.37\%$) that limits $g_1$. The phase $\delta_{\rm CP} = \pi + 2\theta_{13} = 197.11°$ is derived from APS spectral flow of the one-parameter Dirac family across the $\mathbb{CP}^3\to\mathbb{CP}^5$ Chern class mismatch $\Delta c_1 = -2$ (T8 🔶, Part 10 §4). Three technical gaps remain before T8 reaches 🔵. $J = -0.00981$ is a concrete prediction matching PDG within 0.1%.
+
+**Number of neutrino species 🔵**
+
+$$N_\nu = 3 \quad (\text{PDG: }2.9840\pm 0.0082,\ +0.54\%)$$
+
+Three active neutrino species from the $d=5$ sector structure (three co-fixed-point modes $n=10,15,22$).
 
 **Quark mass ratios (selection)**
 
@@ -338,65 +297,60 @@ Three active neutrino species from the d=5 sector structure (three co-fixed-poin
 | m_b/m_s | 44.461 | 44.8 | −0.76% |
 | m_u/m_d | 0.463 | 0.474 | −2.3% † |
 
-† m_u/m_d = √(g44/g33) = √(3/14) exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is derived, not fitted.
+† $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is derived, not fitted.
 
 **Neutrino masses — absolute prediction, no oscillation data used**
 
-Cross-sector fixed point: m_scale_5 × m_scale_4² = (n_u/n_s) × m_scale_6³  (Part 2 §9c)
+Cross-sector fixed point: $m_{\rm scale,5}\times m_{\rm scale,4}^2 = (n_u/n_s)\times m_{\rm scale,6}^3$ (Part 2 §9c)
 
-```
-m_scale_5 = (3/4) × m_scale_6³ / m_scale_4² = 7.429 × 10⁻¹³ MeV
+$$m_{\rm scale,5} = (3/4)\times m_{\rm scale,6}^3/m_{\rm scale,4}^2 = 7.429\times10^{-13}\text{ MeV}$$
 
-m_ν₁ = m_scale_5 × S(10,5) = 1.487 meV     [n_ν₁ = S(n_u,3) = 10]
-m_ν₂ = m_scale_5 × S(15,5) = 8.639 meV     [n_ν₂ = S(n_u,4) = 15]
-m_ν₃ = m_scale_5 × S(22,5) × (1 + 1/35) = 50.27 meV  [n_ν₃ = n_τ − n_d = 22; δ_ν₃ = 1/35]
-Σm_ν = 60.39 meV                            (Planck bound: < 120 meV)
+$$m_{\nu_1} = m_{\rm scale,5}\times S(10,5) = 1.487\text{ meV} \quad [n_{\nu_1} = S(n_u,3) = 10]$$
+$$m_{\nu_2} = m_{\rm scale,5}\times S(15,5) = 8.639\text{ meV} \quad [n_{\nu_2} = S(n_u,4) = 15]$$
+$$m_{\nu_3} = m_{\rm scale,5}\times S(22,5)\times(1+1/35) = 50.27\text{ meV} \quad [n_{\nu_3} = n_\tau - n_d = 22;\;\delta_{\nu_3} = 1/35]$$
+$$\Sigma m_\nu = 60.39\text{ meV} \quad (\text{Planck bound: }<120\text{ meV})$$
 
-m_β (beta-decay effective) ≈ 8.77 meV       (KATRIN bound: < 450 meV)
-m_ββ (0νββ) = 0                              (no C on S⁵ bundle → no ψ^T Cψ at any order; 0νββ forbidden at all orders)
-(Bare: m_ν₃ = 48.87 meV, Σm_ν = 59.00 meV.)
-```
+$$m_\beta\text{ (beta-decay effective)} \approx 8.77\text{ meV} \quad (\text{KATRIN bound: }<450\text{ meV})$$
+$$m_{\beta\beta}\text{ (0}\nu\beta\beta) = 0 \quad (\text{no }C\text{ on }S^5\text{ bundle}\to\text{no }\psi^T C\psi\text{ at any order; 0}\nu\beta\beta\text{ forbidden at all orders})$$
 
-Σm_ν = 60.39 meV is a concrete, falsifiable prediction within reach of CMB-S4 (target sensitivity ~30 meV). Normal hierarchy confirmed.
+(Bare: $m_{\nu_3} = 48.87$ meV, $\Sigma m_\nu = 59.00$ meV.)
 
-**On oscillation comparisons.** Δm² values are derived consequences of the absolute masses expressed in oscillation-experiment language (which measures interference, not absolute masses). They are not native IDWT quantities. The correction δ_ν₃ = ε×g_{33} = 1/35 is a closure relation (🔶, primary derivation Part 2 §9d): algebraically exact given ε and g_{33}, but the deeper operator mechanism is not yet derived. The corrected m_ν₃ = 50.27 meV implies Δm²₃₁ = 2.524×10⁻³ eV², matching PDG 2024 within 0.21% (0.2σ).
+$\Sigma m_\nu = 60.39$ meV is a concrete, falsifiable prediction within reach of CMB-S4 (target sensitivity $\sim 30$ meV). Normal hierarchy confirmed.
+
+**On oscillation comparisons.** $\Delta m^2$ values are derived consequences of the absolute masses expressed in oscillation-experiment language (which measures interference, not absolute masses). They are not native IDWT quantities. The correction $\delta_{\nu_3} = \varepsilon\times g_{33} = 1/35$ is a closure relation (🔶, primary derivation Part 2 §9d): algebraically exact given $\varepsilon$ and $g_{33}$, but the deeper operator mechanism is not yet derived. The corrected $m_{\nu_3} = 50.27$ meV implies $\Delta m^2_{31} = 2.524\times10^{-3}$ eV$^2$, matching PDG 2024 within 0.21% ($0.2\sigma$).
 
 ## 3c. Deep Predictions
 
-**No hierarchy problem**
-```
-m_H/m_e = √(g₂₂/g₆₆) × S(95,2) = 53.76 × 4560 = 245,140  (exact integer-determined ratio)
-```
-In IDWT, m_H is a confinement mass from the sector spectrum, not a Higgs VEV.
-Radiative corrections cannot shift integer mode indices n (Mode Index Stability Theorem, Part 8 §3a). The hierarchy is fixed by combinatorics, not cancellations.
-Unit references: IDWT = **1** (m_e, to set the MeV scale) vs SM = 19 free parameters.
+**No hierarchy problem ✅**
+
+$$m_H/m_e = \sqrt{g_{22}/g_{66}}\times S(95,2) = 53.76\times 4560 = 245\,140 \quad (\text{exact integer-determined ratio})$$
+
+In IDWT, $m_H$ is a confinement mass from the sector spectrum, not a Higgs VEV.
+Radiative corrections cannot shift integer mode indices $n$ (Mode Index Stability Theorem, Part 8 §3a). The hierarchy is fixed by combinatorics, not cancellations.
+Unit references: IDWT = **1** ($m_e$, to set the MeV scale) vs SM = 19 free parameters.
 
 **Higgs vacuum stability**
 
-In IDWT the Higgs is a confinement mode of the d=2 sector — there is no quartic scalar sector and no RG running of a Higgs self-coupling. The concept of vacuum metastability from λ_H running does not apply.
+In IDWT the Higgs is a confinement mode of the $d=2$ sector — there is no quartic scalar sector and no RG running of a Higgs self-coupling. The concept of vacuum metastability from $\lambda_H$ running does not apply.
 
-## 3d. Why the d=3 Sector Scale Correlates with Hadronic Masses
+## 3d. Why the $d=3$ Sector Scale Correlates with Hadronic Masses
 
-Hadrons — mesons and baryons — are composite bound states of the fundamental d=3 and d=4 sector eigenmodes. They are not sector eigenmodes and carry no IDWT mode indices. The correlation between hadronic masses and the d=3 sector scale has a direct explanation.
+Hadrons — mesons and baryons — are composite bound states of the fundamental $d=3$ and $d=4$ sector eigenmodes. They are not sector eigenmodes and carry no IDWT mode indices. The correlation between hadronic masses and the $d=3$ sector scale has a direct explanation.
 
-**The confinement scale.** The d=3 geometric dilution function $g_{\rm eff}(n) = g_{33}/S(n,3)$ passes through $O(1)$ at the composite mode $n_s = 4$:
+**The confinement scale.** The $d=3$ geometric dilution function $g_{\rm eff}(n) = g_{33}/S(n,3)$ passes through $O(1)$ at the composite mode $n_s = 4$:
 
 $$g_{\rm eff}(n_s) = \frac{g_{33}}{S(n_s,3)} = \frac{8\sqrt{7}}{20} = 1.058$$
 
-just above 1 (confined); at $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The d=3 coupling crosses the confinement threshold at the composite mode n_s=4. The energy scale there is:
+just above 1 (confined); at $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The $d=3$ coupling crosses the confinement threshold at the composite mode $n_s=4$. The energy scale there is:
 
-```
-f_π = m_scale_3 × S(n_s,3) = 4.702 × 20 = 94.04 MeV   (PDG: 92.1 MeV, +2.1%)
-Λ_QCD = N_c × f_π = 3 × 94.04 = 282 MeV               (PDG: 276 MeV, +2.1%)
-```
+$$f_\pi = m_{\rm scale,3}\times S(n_s,3) = 4.702\times 20 = 94.04\text{ MeV} \quad (\text{PDG: }92.1\text{ MeV},\ +2.1\%)$$
+$$\Lambda_{\rm QCD} = N_c\times f_\pi = 3\times 94.04 = 282\text{ MeV} \quad (\text{PDG: }276\text{ MeV},\ +2.1\%)$$
 
-Both follow from $m_e$ and $n_s$ alone. Hadronic masses cluster near the d=3 sector scale not because hadrons are eigenmodes, but because they are built from quarks whose confinement scale is set by $m_{\rm scale,3}$.
+Both follow from $m_e$ and $n_s$ alone. Hadronic masses cluster near the $d=3$ sector scale not because hadrons are eigenmodes, but because they are built from quarks whose confinement scale is set by $m_{\rm scale,3}$.
 
-**The comb filter.** The coupling geometry of the d=3, d=4, and d=6 sectors — coupling constants $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, and resonance site $k_0=16$, all derived from $\{n_s=4,\,n_d=1\}$ and $m_e$ — produces an interference peak at:
+**The comb filter.** The coupling geometry of the $d=3$, $d=4$, and $d=6$ sectors — coupling constants $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, and resonance site $k_0=16$, all derived from $\{n_s=4,\,n_d=1\}$ and $m_e$ — produces an interference peak at:
 
-```
-Im[Γ₃₄₆(ω)] peak = 775.8 MeV   (PDG ρ(770)/ω(782) isospin average: 779.0 MeV, −0.4%)
-```
+$$\mathrm{Im}[\Gamma_{346}(\omega)]_{\rm peak} = 775.8\text{ MeV} \quad (\text{PDG }\rho(770)/\omega(782)\text{ isospin average: }779.0\text{ MeV},\ {-}0.4\%)$$
 
 This is a cross-check of the inter-sector coupling geometry, not a mode-index prediction for the ρ or ω. The peak lands near the lightest vector meson mass because those composites form at the energy scale set by the inter-sector coupling structure.
 
@@ -406,45 +360,45 @@ $$B_0 = \frac{N_c}{2} \cdot \frac{f_\pi^2}{m_{\rm scale,3}} = \Lambda_{\rm QCD} 
 
 | Meson | Predicted | PDG | Error |
 |-------|-----------|-----|-------|
-| π± | 139.3 MeV | 139.6 | −0.2% |
+| $\pi^\pm$ | 139.3 MeV | 139.6 | −0.2% |
 | K± | 521.0 | 493.7 | +5.5% |
 | D± | 1903.6 | 1869.7 | +1.8% |
-| D⁰ | 1901.7 | 1864.8 | +2.0% |
-| D_s | 1968.7 | 1968.4 | 0.0% |
+| D$^0$ | 1901.7 | 1864.8 | +2.0% |
+| $D_s$ | 1968.7 | 1968.4 | 0.0% |
 
-**Heavy-meson and bottomonium masses — beat-binding formula. 🔵** For $m_{\rm quark} \gg \Lambda_{\rm QCD}$ the binding energy is $\sqrt{m_{\rm heavy} \times \Lambda_{\rm QCD}}$ (Part 2 §8a). For B mesons and bottomonium the k₀=n_s²=16 triple-coincidence that fixes m_b also determines the binding:
+**Heavy-meson and bottomonium masses — beat-binding formula. 🔵** For $m_{\rm quark} \gg \Lambda_{\rm QCD}$ the binding energy is $\sqrt{m_{\rm heavy} \times \Lambda_{\rm QCD}}$ (Part 2 §8a). For B mesons and bottomonium the $k_0=n_s^2=16$ triple-coincidence that fixes $m_b$ also determines the binding:
 
 $$E_{\rm bind}(b) = \sqrt{m_b \times \Lambda_{\rm QCD}} = 1086\ \text{MeV}$$
 
 | Meson | Predicted | PDG | Error |
 |-------|-----------|-----|-------|
 | B± | 5269.3 MeV | 5279.3 | −0.19% |
-| B⁰ | 5271.9 | 5279.7 | −0.15% |
+| B$^0$ | 5271.9 | 5279.7 | −0.15% |
 | B_s | 5361.2 | 5366.9 | −0.11% |
 | Υ(1S) | 9448.3 | 9460.3 | −0.13% |
 | J/ψ | 3160.3 | 3096.9 | +2.0% |
 
-The J/ψ residual (+2.0%) reflects the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ being non-negligible for charm (vs 0.07 for bottom, where the formula gives <0.2% errors). The J/ψ–η_c difference (113 MeV) is a vector–pseudoscalar distinction — different object types in IDWT, as with ρ and π — not a correction to the single heavy-quark formula. The φ(ss̄) is the d=3 hadronic resonance at $n_\phi = 2n_s + 2n_{\rm down} = 10$: $m_\phi = S(10,3)\times m_{\rm scale,3} = 1034$ MeV (+1.4% vs PDG 1019.5); see Part 2 §8a.
+The J/ψ residual (+2.0%) reflects the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ being non-negligible for charm (vs 0.07 for bottom, where the formula gives <0.2% errors). The J/ψ–η_c difference (113 MeV) is a vector–pseudoscalar distinction — different object types in IDWT, as with ρ and π — not a correction to the single heavy-quark formula. The φ(ss̄) is the $d=3$ hadronic resonance at $n_\phi = 2n_s + 2n_{\rm down} = 10$: $m_\phi = S(10,3)\times m_{\rm scale,3} = 1034$ MeV (+1.4% vs PDG 1019.5); see Part 2 §8a.
 
-**Baryon octet — (N_c−1) color-bond formula. 🔵** (Part 2 §8a.) $m(\text{baryon}) = m_N + (N_c-1)\sum(m_s - m_{\rm replaced})$, with $N_c-1 = \chi(\mathbb{CP}^1) = 2$. Results: Λ +0.3%, Ξ −0.9% to −1.4%. Σ and Λ have identical content, so the formula gives them the same mass; the 77 MeV difference is a small same-type residual the formula does not resolve. Ω (J=3/2) lies outside the octet formula.
+**Baryon octet — $(N_c-1)$ color-bond formula. 🔵** (Part 2 §8a.) $m(\text{baryon}) = m_N + (N_c-1)\sum(m_s - m_{\rm replaced})$, with $N_c-1 = \chi(\mathbb{CP}^1) = 2$. Results: Λ +0.3%, Ξ −0.9% to −1.4%. Σ and Λ have identical content, so the formula gives them the same mass; the 77 MeV difference is a small same-type residual the formula does not resolve. Ω (J=3/2) lies outside the octet formula.
 
 ## 4. PMNS Mixing
 
-**The μ–τ interchange symmetry.** The d=6 (electron, muon) and d=10 (tau) sectors carry identical self-couplings: $g_{66} = g_{10,10} = 1/n_s = 1/4$ (shared composite coupling). Therefore $v_6 = \sqrt{g_{66}} = v_{10} = \sqrt{g_{10,10}} = 1/2$ **exactly**. The coupling of each charged lepton to the d=5 neutrino sector is:
+**The μ–τ interchange symmetry.** The $d=6$ (electron, muon) and $d=10$ (tau) sectors carry identical self-couplings: $g_{66} = g_{10,10} = 1/n_s = 1/4$ (shared composite coupling). Therefore $v_6 = \sqrt{g_{66}} = v_{10} = \sqrt{g_{10,10}} = 1/2$ **exactly**. The coupling of each charged lepton to the $d=5$ neutrino sector is:
 
 $$g_{5,6} = v_5 v_6 = \frac{v_5}{2}, \qquad g_{5,10} = v_5 v_{10} = \frac{v_5}{2}.$$
 
-These are identical regardless of which charged-lepton sector ($d=6$ or $d=10$) the lepton lives in. This is a **μ–τ interchange symmetry**: the full IDWT Lagrangian is invariant under swapping $\mu \leftrightarrow \tau$ at tree level, because d=6 and d=10 enter the kernel with the same coupling strength.
+These are identical regardless of which charged-lepton sector ($d=6$ or $d=10$) the lepton lives in. This is a **μ–τ interchange symmetry**: the full IDWT Lagrangian is invariant under swapping $\mu \leftrightarrow \tau$ at tree level, because $d=6$ and $d=10$ enter the kernel with the same coupling strength.
 
 **Consequence: μ–τ symmetric mixing at tree level.** The μ–τ symmetry forces $|U_{\mu i}| = |U_{\tau i}|$ for all $i$, which implies $\sin^2\theta_{23} = 1/2$ exactly. Combined with the rank-1 structure of the charged-lepton coupling matrix (a single coupling strength $v_5/2$ for all three generations), the tree-level PMNS matrix takes the μ–τ symmetric form:
 
-| Angle | μ–τ symmetric limit (tree) | PDG best fit | Deviation |
+| Angle | $\mu$–$\tau$ symmetric limit (tree) | PDG best fit | Deviation |
 |---|---|---|---|
 | $\sin^2\theta_{12}$ | $1/3 = 0.3333$ | $0.307$ | $-0.026$ |
 | $\sin^2\theta_{23}$ | $1/2 = 0.5000$ | $0.553$ | $+0.053$ |
 | $\sin^2\theta_{13}$ | $0$ | $0.0220$ | $+0.022$ |
 
-**Spectral geometry formulas for all three PMNS angles.** The rank-1 coupling matrix $W[\alpha,i] \propto \sqrt{S(n_\alpha,d_\alpha)}\sqrt{S(n_{\nu_i},5)}$ gives the PMNS as a weighted average of the μ–τ symmetric limit (weight $1-g_{55}$) and simplex-ratio structure (weight $g_{55}$), where $g_{55}=96/g_{22}=0.1329$:
+**Spectral geometry formulas for all three PMNS angles.** The rank-1 coupling matrix $W[\alpha,i] \propto \sqrt{S(n_\alpha,d_\alpha)}\sqrt{S(n_{\nu_i},5)}$ gives the PMNS as a weighted average of the $\mu$–$\tau$ symmetric limit (weight $1-g_{55}$) and simplex-ratio structure (weight $g_{55}$), where $g_{55}=96/g_{22}=0.1329$:
 
 $$\sin^2\theta_{23} = \frac{1-g_{55}}{2} + g_{55}\frac{S(n_\tau,10)}{S(n_\mu,6)+S(n_\tau,10)} = 0.5590 \quad (\text{PDG 2024: }0.553, +1.07\%)$$
 
@@ -454,25 +408,25 @@ $$\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu,6)} = 
 
 where $\delta_{23} = \sin^2\theta_{23}-1/2$. All three angles are determined by $g_{55}$ and four mode indices, with no additional parameters beyond those fixed by the mass sector.
 
-**Physical interpretation.** The d=5 self-coupling $g_{55}=0.1329$ sets how much the neutrino mass hierarchy displaces the PMNS from the μ–τ symmetric limit toward simplex-ratio dominance. $\theta_{13}$ is the second-order correction: the product of the atmospheric deviation $\delta_{23}$ and the $\mu$–$\tau$ log mass ratio, weighted by $g_{55}$.
+**Physical interpretation.** The $d=5$ self-coupling $g_{55}=0.1329$ sets how much the neutrino mass hierarchy displaces the PMNS from the μ–τ symmetric limit toward simplex-ratio dominance. $\theta_{13}$ is the second-order correction: the product of the atmospheric deviation $\delta_{23}$ and the $\mu$–$\tau$ log mass ratio, weighted by $g_{55}$.
 
-**Falsifiable prediction:** Any future measurement of $\sin^2\theta_{23}$ differing from 0.5590 by more than 0.005 would require revision of the d=5 coupling structure.
+**Falsifiable prediction:** Any future measurement of $\sin^2\theta_{23}$ differing from 0.5590 by more than 0.005 would require revision of the $d=5$ coupling structure.
 
 ---
 
 ## 5. Electroweak Sector Coupling Comparison
 
-IDWT couplings g₁, g₂ are fixed geometric numbers defined at the d=2 sector scale — they do not run. There is no gauge field kinetic term and no loop renormalization in IDWT.
+IDWT couplings $g_1$, $g_2$ are fixed geometric numbers defined at the $d=2$ sector scale — they do not run. There is no gauge field kinetic term and no loop renormalization in IDWT.
 
-The natural comparison is sin²θ_W, which is purely combinatorial and scale-independent in IDWT:
+The natural comparison is $\sin^2\theta_W$, which is purely combinatorial and scale-independent in IDWT:
 
 $$\sin^2\theta_W = 1 - \frac{m_W^2}{m_Z^2} = 1 - \frac{S(76,2)^2}{S(81,2)^2} = 1 - \frac{2926^2}{3321^2} = 0.2237 \quad \text{(PDG on-shell: 0.22290, +0.37\%)}$$
 
-The g₁ offset follows mechanically from this structural gap via the Weinberg angle relation — it is not a separate quantity:
+The $g_1$ offset follows mechanically from this structural gap via the Weinberg angle relation — it is not a separate quantity:
 
 $$\frac{\Delta g_1}{g_1} \approx \frac{\Delta(\sin^2\theta_W)}{2\sin^2\theta_W(1-\sin^2\theta_W)} = \frac{+0.00083}{0.3474} \approx +0.24\%$$
 
-IDWT predicts g₁ = 0.35043 at the d=2 sector scale (from sin²θ_W = 0.22373 and g₂ = 0.65275). The self-consistent PDG value — computed from PDG sin²θ_W = 0.22290 and PDG g₂ = 0.65270 via the Weinberg relation — is 0.34957. IDWT sits +0.25% above that, consistent with the +0.24% from the linearized formula. Note: the PDG also tabulates g₁ = 0.35740 computed via a specific renormalization procedure at energy scale m_Z; this is a different quantity defined by a different prescription, and the −1.95% gap to the IDWT sector-scale value is a factual comparison of two differently defined numbers, not a physics test of the structural prediction.
+IDWT predicts $g_1 = 0.35043$ at the $d=2$ sector scale (from $\sin^2\theta_W = 0.22373$ and $g_2 = 0.65275$). The self-consistent PDG value — computed from PDG $\sin^2\theta_W = 0.22290$ and PDG $g_2 = 0.65270$ via the Weinberg relation — is 0.34957. IDWT sits +0.25% above that, consistent with the +0.24% from the linearized formula. Note: the PDG also tabulates $g_1 = 0.35740$ computed via a specific renormalization procedure at energy scale $m_Z$; this is a different quantity defined by a different prescription, and the −1.95% gap to the IDWT sector-scale value is a factual comparison of two differently defined numbers, not a physics test of the structural prediction.
 
 ---
 
@@ -498,7 +452,7 @@ The hierarchy $\theta_{23}>\theta_{12}>\theta_{13}$ is a robust structural predi
 
 ---
 
-## 7. d=10 as the Gegenbauer Critical Point
+## 7. $d=10$ as the Gegenbauer Critical Point
 
 The Jacobi coupling $b_{k_0}(d) = \sqrt{k_0(k_0+d-1)}/(2k_0+d-2)$ plays the role of the hopping-to-disorder ratio in the Gegenbauer sector-coupling critical-point model. The Gegenbauer critical-endpoint condition occurs at $b=1/2$.
 
@@ -508,12 +462,12 @@ This is the **unique** dimension satisfying $4k_0=(d-2)^2$. All $d\in D\setminus
 
 **Physical consequences:**
 - The chain terminates at $d=10$ because $d=11$ falls below the Jacobi coupling threshold; no stable sector-bound states exist there.
-- The $\tau$ lepton (d=10, n=23) is a **critical state**. The geometric back-reaction correction $1/1680$ is the required all-orders result at the Gegenbauer critical point, where the naive perturbation series does not converge.
+- The $\tau$ lepton ($d=10$, $n=23$) is a **critical state**. The geometric back-reaction correction $1/1680$ is the required all-orders result at the Gegenbauer critical point, where the naive perturbation series does not converge.
 - The $\tau$–$\nu_3$ coupling is maximally enhanced at the critical point, explaining why $\theta_{23}$ is the largest PMNS angle.
 
 ---
 
-## 8. S(n,d) as IDOS
+## 8. $S(n,d)$ as IDOS
 
 $S(n,d) = \binom{n+d-1}{d}$ is the **integrated density of states (IDOS)** of a $d$-dimensional harmonic oscillator at quantum level $n$: it counts the total number of eigenstates up to level $n$. By analogy (no formal connection to photonics is claimed), in laser cavity physics $S(n,d)$ plays the role of the cumulative count of transverse modes up to mode order $n$ in a $(d-1)$-dimensional cavity — the combinatorial structure is the same, but the physical meaning and derivation are entirely distinct. The IDWT mass formula:
 $$m(n,d) = S(n,d) \times m_{\rm scale,d} = \text{(IDOS at level }n\text{)} \times \text{(sector energy scale)}$$
@@ -523,9 +477,9 @@ is a **spectral counting theorem**: the mass equals the total spectral weight be
 
 ## 9. Falsification Criteria — Complete Reference
 
-Every prediction derives from one integer (n_s = 4) and one unit of mass (m_e = 0.511 MeV). The following inventory is organized from the most decisive tests — single observations that directly falsify the framework — through precision quantitative thresholds, structural qualitative predictions differing from SM assumptions, and near-future experimental windows.
+Every prediction derives from one integer ($n_s = 4$) and one unit of mass ($m_e = 0.511$ MeV). The following inventory is organized from the most decisive tests — single observations that directly falsify the framework — through precision quantitative thresholds, structural qualitative predictions differing from SM assumptions, and near-future experimental windows.
 
-The distinction between a *falsifier* and a *residual* is sharpness. IDWT residuals are small (≤ 0.51% for PMNS angles, ≤ 0.003% for W mass), structurally explained by identified open items (CP phase, G_N derivation), and lie within PDG measurement uncertainties. A falsifier is a prediction where IDWT has no adjustment available: either the geometric argument holds or it does not.
+The distinction between a *falsifier* and a *residual* is sharpness. IDWT residuals are small (≤ 0.51% for PMNS angles, ≤ 0.003% for W mass), structurally explained by identified open items (CP phase, $G_N$ derivation), and lie within PDG measurement uncertainties. A falsifier is a prediction where IDWT has no adjustment available: either the geometric argument holds or it does not.
 
 ---
 
@@ -535,11 +489,11 @@ A single observation in this category directly and irrecoverably falsifies IDWT.
 
 | # | Prediction | Geometric basis | Current status |
 |---|---|---|---|
-| **F1** | **Neutrinoless double beta decay absent at all orders.** Clifford algebra Cl(d) for d=5 has d mod 8 = 5 — the unique residue class for which no charge-conjugation matrix C exists on the S⁵ spinor bundle. Since no C satisfying the required anti-commutation relations exists globally, cross-sector couplings cannot construct ψ^T Cψ at any loop order. 0νββ is forbidden at all orders, not merely at leading order. | d=5 Clifford structure: no C on S⁵ → no ψ^T Cψ at any order (§6, Part 8 §2.1) | KamLAND-Zen 2023: m_ββ < 36 meV. No signal. ✅ |
-| **F2** | **Normal neutrino mass ordering.** Mode indices n_ν₁ = 10, n_ν₂ = 15, n_ν₃ = 22 are fixed by the eigenmode selection rule (n_ν₁ = S(n_u,3), n_ν₂ = S(n_u,4), n_ν₃ = n_τ − n_d). Since S(n,5) is strictly monotone, m_ν₁ < m_ν₂ < m_ν₃ necessarily. Inverted ordering cannot be accommodated within any consistent mode-index assignment that preserves algebraic closure of the generation chain. | Eigenmode selection rule; monotonicity of S(n,5) (§5, §6) | 3–4σ preference for normal ordering at current experiments ✅ |
-| **F3** | **No new stable fundamental particles.** The sector set D = {2,3,4,5,6,10} is complete and unique (§3a). Within each sector, the occupied mode index set Σ is the unique solution to the co-fixed-point system (Uniqueness Theorem, Part 1 §5c). The only beat mode is at k₀ = 16 in d=3, verified by exhaustive search. Any new particle requires a new sector (excluded by Rule A + Rule B) or a new mode index (excluded by the Uniqueness Theorem) — neither exists. | Sector Set Theorem + Completeness Theorem (Part 1 §3a, §3b) | No new fundamental particles at LEP, Tevatron, LHC ✅ |
-| **F4** | **No stable particle near 68.3 GeV.** S(35,10) × m_scale_10 ≈ 68.3 GeV is below the Z mass. IDWT explicitly predicts its absence: n=35 in d=10 is not a co-fixed-point eigenmode (the tau is n=23; n=35 in d=10 has no eigenmode selection rule support). | Tau sector co-fixed-point structure | Excluded at LEP (√s up to 209 GeV, no such state) ✅ |
-| **F6** | **No fourth quark or lepton generation.** S(72,10) × m_scale_10 ≈ 51.7 TeV is the next d=10 mode above tau — far beyond LHC reach and not a co-fixed-point eigenmode. No d=4 mode above top (n=72) or d=6 mode above muon (n=35) is in the co-fixed-point set. A confirmed fourth-generation fermion at any mass falsifies the spectrum closure. | Completeness Theorem (Part 1 §3b) | Z pole invisible width: N_ν = 3.0000 predicted (PDG: 2.984 ± 0.008) ✅ |
+| **F1** | **Neutrinoless double beta decay absent at all orders.** Clifford algebra Cl(d) for $d=5$ has d mod 8 = 5 — the unique residue class for which no charge-conjugation matrix C exists on the $S^5$ spinor bundle. Since no C satisfying the required anti-commutation relations exists globally, cross-sector couplings cannot construct $\psi^T C\psi$ at any loop order. 0νββ is forbidden at all orders, not merely at leading order. | $d=5$ Clifford structure: no C on $S^5$ → no $\psi^T C\psi$ at any order (§6, Part 8 §2.1) | KamLAND-Zen 2023: m_ββ < 36 meV. No signal. ✅ |
+| **F2** | **Normal neutrino mass ordering.** Mode indices $n_{\nu_1} = 10$, $n_{\nu_2} = 15$, $n_{\nu_3} = 22$ are fixed by the eigenmode selection rule ($n_{\nu_1} = S(n_u,3)$, $n_{\nu_2} = S(n_u,4)$, $n_{\nu_3} = n_\tau - n_d$). Since S(n,5) is strictly monotone, $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ necessarily. Inverted ordering cannot be accommodated within any consistent mode-index assignment that preserves algebraic closure of the generation chain. | Eigenmode selection rule; monotonicity of S(n,5) (§5, §6) | 3–4σ preference for normal ordering at current experiments ✅ |
+| **F3** | **No new stable fundamental particles.** The sector set D = {2,3,4,5,6,10} is complete and unique (§3a). Within each sector, the occupied mode index set Σ is the unique solution to the co-fixed-point system (Uniqueness Theorem, Part 1 §5c). The only beat mode is at $k_0 = 16$ in $d=3$, verified by exhaustive search. Any new particle requires a new sector (excluded by Rule A + Rule B) or a new mode index (excluded by the Uniqueness Theorem) — neither exists. | Sector Set Theorem + Completeness Theorem (Part 1 §3a, §3b) | No new fundamental particles at LEP, Tevatron, LHC ✅ |
+| **F4** | **No stable particle near 68.3 GeV.** S(35,10) × $m_{\rm scale,10}$ ≈ 68.3 GeV is below the Z mass. IDWT explicitly predicts its absence: $n=35$ in $d=10$ is not a co-fixed-point eigenmode (the tau is $n=23$; $n=35$ in $d=10$ has no eigenmode selection rule support). | Tau sector co-fixed-point structure | Excluded at LEP (√s up to 209 GeV, no such state) ✅ |
+| **F6** | **No fourth quark or lepton generation.** S(72,10) × $m_{\rm scale,10}$ ≈ 51.7 TeV is the next $d=10$ mode above tau — far beyond LHC reach and not a co-fixed-point eigenmode. No $d=4$ mode above top ($n=72$) or $d=6$ mode above muon ($n=35$) is in the co-fixed-point set. A confirmed fourth-generation fermion at any mass falsifies the spectrum closure. | Completeness Theorem (Part 1 §3b) | Z pole invisible width: N_ν = 3.0000 predicted (PDG: 2.984 ± 0.008) ✅ |
 
 ---
 
@@ -552,19 +506,19 @@ These predictions have specific numerical values from mode indices and sector ge
 | **F7** | Strange/down mass ratio | 20.000 (zero error) | S(4,3)/S(1,3) = 20/1 | Ratio measured outside 19.5–20.5 at a well-controlled renormalization scale |
 | **F8** | Muon/electron mass ratio | 206.7647 | S(35,6)/S(13,6) | Measured outside 206.760 ± 0.005 |
 | **F9** | Tau/electron mass ratio | 3475.126 (PDG −0.14σ) | S(23,10)/S(13,6) × (1 + 1/1680) | More than 3σ from 3475.13 (PDG 1σ = ±0.24) |
-| **F10** | Sum of neutrino masses | Σm_ν = 60.39 meV (corrected; δ_ν₃=1/35, Part 2 §9d) | Cross-sector Hopf fixed point; no oscillation data used | Measured < 40 meV or > 80 meV |
-| **F11** | Neutrino mass ratio m_ν₂/m_ν₁ | 5.808 (exact) | S(15,5)/S(10,5) = 11628/2002 | Ratio measured outside 5.5–6.1 |
-| **F12** | Neutrino mass ratio m_ν₃/m_ν₁ | 32.86 (exact) | S(22,5)/S(10,5) = 65780/2002 | Ratio measured outside 30–36 |
-| **F13** | Atmospheric mixing angle sin²θ₂₃ | 0.5590 (PDG 2024: 0.553, +1.07%) | PMNS spectral geometry (§4) | Outside 0.554–0.564 at > 3σ |
-| **F14** | Solar mixing angle sin²θ₁₂ | 0.3086 (PDG 0.307, +0.51%) | PMNS spectral geometry (§4) | Outside 0.302–0.315 at > 3σ |
-| **F15** | Reactor mixing angle sin²θ₁₃ | 0.02211 (PDG 0.022, +0.51%) | PMNS spectral geometry (§4) | Outside 0.020–0.025 at > 3σ |
-| **F16** | Cabibbo angle sin θ_C | 0.22454 (PDG +0.09σ) | sin²θ_C = 1/S(n_s,3) + CP¹ sector curvature correction | Outside 0.2237–0.2254 at > 3σ |
-| **F17** | ρ parameter at tree level | ρ = 1.00000 exactly | m_W²/(m_Z² cos²θ_W) from mode indices 76, 81 | ρ ≠ 1 at tree level beyond radiative corrections (~0.4%) |
-| **F18** | Number of light neutrino species | N_ν = 3 exactly | Three d=5 modes; no sterile neutrinos; closed spectrum | Z invisible width implying N_ν ≠ 3 |
-| **F19** | 0νββ effective Majorana mass | m_ββ = 0 at all orders | d=5 Clifford structure: no C on S⁵ → no Majorana operator at any order (see F1) | Any detection m_ββ > 0 with > 3σ significance |
-| **F20** | Beta-decay effective neutrino mass | m_β ≈ 8.77 meV | PMNS mixing + neutrino mass spectrum from mode indices | m_β measured > 50 meV (KATRIN 5-year sensitivity ~200 meV; Project 8 targets ~40 meV) |
-| **F21** | W/Z mass ratio | m_W/m_Z = √(S(76,2)/S(81,2)) = 0.93896 | Mode indices 76, 81 | Measured ratio outside 0.9386–0.9394 |
-| **F22** | Leptonic CP phase δ_CP | 197.11° (PDG NH best fit: 197° ± 27°, +0.05°; J = −0.00981) | δ_CP = π + 2θ₁₃; APS spectral flow Δc₁ = −2 (T8 🔶, Part 10 §4) | δ_CP outside 185°–210° at 5σ, or δ–θ₁₃ correlation violated by > 5° at fixed θ₁₃ |
+| **F10** | Sum of neutrino masses | $\Sigma m_\nu = 60.39$ meV (corrected; $\delta_{\nu_3}=1/35$, Part 2 §9d) | Cross-sector Hopf fixed point; no oscillation data used | Measured < 40 meV or > 80 meV |
+| **F11** | Neutrino mass ratio $m_{\nu_2}/m_{\nu_1}$ | 5.808 (exact) | S(15,5)/S(10,5) = 11628/2002 | Ratio measured outside 5.5–6.1 |
+| **F12** | Neutrino mass ratio $m_{\nu_3}/m_{\nu_1}$ | 32.86 (exact) | S(22,5)/S(10,5) = 65780/2002 | Ratio measured outside 30–36 |
+| **F13** | Atmospheric mixing angle $\sin^2\theta_{23}$ | 0.5590 (PDG 2024: 0.553, +1.07%) | PMNS spectral geometry (§4) | Outside 0.554–0.564 at > 3σ |
+| **F14** | Solar mixing angle $\sin^2\theta_{12}$ | 0.3086 (PDG 0.307, +0.51%) | PMNS spectral geometry (§4) | Outside 0.302–0.315 at > 3σ |
+| **F15** | Reactor mixing angle $\sin^2\theta_{13}$ | 0.02211 (PDG 0.022, +0.51%) | PMNS spectral geometry (§4) | Outside 0.020–0.025 at > 3σ |
+| **F16** | Cabibbo angle $\sin\theta_C$ | 0.22454 (PDG +0.09σ) | $\sin^2\theta_C = 1/S(n_s,3)$ + $\mathbb{CP}^1$ sector curvature correction | Outside 0.2237–0.2254 at > 3σ |
+| **F17** | ρ parameter at tree level | ρ = 1.00000 exactly | $m_W^2/(m_Z^2 \cos^2\theta_W)$ from mode indices 76, 81 | ρ ≠ 1 at tree level beyond radiative corrections (~0.4%) |
+| **F18** | Number of light neutrino species | N_ν = 3 exactly | Three $d=5$ modes; no sterile neutrinos; closed spectrum | Z invisible width implying N_ν ≠ 3 |
+| **F19** | 0νββ effective Majorana mass | m_ββ = 0 at all orders | $d=5$ Clifford structure: no C on $S^5$ → no Majorana operator at any order (see F1) | Any detection m_ββ > 0 with > 3σ significance |
+| **F20** | Beta-decay effective neutrino mass | $m_\beta \approx 8.77$ meV | PMNS mixing + neutrino mass spectrum from mode indices | $m_\beta$ measured $> 50$ meV (KATRIN 5-year sensitivity $\sim 200$ meV; Project 8 targets $\sim 40$ meV) |
+| **F21** | W/Z mass ratio | $m_W/m_Z = \sqrt{S(76,2)/S(81,2)} = 0.93896$ | Mode indices 76, 81 | Measured ratio outside 0.9386–0.9394 |
+| **F22** | Leptonic CP phase $\delta_{CP}$ | 197.11° (PDG NH best fit: 197° ± 27°, +0.05°; J = −0.00981) | $\delta_{CP} = \pi + 2\theta_{13}$; APS spectral flow $\Delta c_1 = -2$ (T8 🔶, Part 10 §4) | $\delta_{CP}$ outside 185°–210° at 5σ, or $\delta$–$\theta_{13}$ correlation violated by > 5° at fixed $\theta_{13}$ |
 
 ---
 
@@ -572,23 +526,23 @@ These predictions have specific numerical values from mode indices and sector ge
 
 These follow from the IDWT framework geometry and differ qualitatively from Standard Model assumptions. They are not numerical point predictions but predict the absence of certain phenomena or physical mechanisms.
 
-**C1 — No hierarchy problem. ✅** The ratio m_H/m_e = √(g₂₂/g₆₆) × S(95,2) = 245,140 is determined by integer mode indices n_H = 95 and n_e = 13. The Mode Index Stability Theorem (Part 8 §3a) proves that radiative corrections cannot shift integer mode indices: $n$ is the rank of an eigenvalue in a purely discrete spectrum, a topological invariant preserved under any bounded perturbation. The Higgs mass is technically natural without supersymmetry — not because corrections cancel, but because the integer $S(95,2) = 4560$ cannot receive a fractional additive renormalization. The hierarchy problem does not arise; it presupposes that mass is an action coefficient, which it is not in IDWT. If supersymmetric partners, WIMPs, or other hierarchy-solving particles are discovered, they are absent from the IDWT closed spectrum (F3, F6) — their existence would simultaneously require reopening the spectrum and explaining why the Uniqueness Theorem is wrong.
+**C1 — No hierarchy problem. ✅** The ratio $m_H/m_e = \sqrt{g_{22}/g_{66}} \times S(95,2) = 245{,}140$ is determined by integer mode indices $n_H = 95$ and $n_e = 13$. The Mode Index Stability Theorem (Part 8 §3a) proves that radiative corrections cannot shift integer mode indices: $n$ is the rank of an eigenvalue in a purely discrete spectrum, a topological invariant preserved under any bounded perturbation. The Higgs mass is technically natural without supersymmetry — not because corrections cancel, but because the integer $S(95,2) = 4560$ cannot receive a fractional additive renormalization. The hierarchy problem does not arise; it presupposes that mass is an action coefficient, which it is not in IDWT. If supersymmetric partners, WIMPs, or other hierarchy-solving particles are discovered, they are absent from the IDWT closed spectrum (F3, F6) — their existence would simultaneously require reopening the spectrum and explaining why the Uniqueness Theorem is wrong.
 
-**C2 — Higgs is a confinement mode, not a condensate.** In IDWT the Higgs is mode n=95 of the d=2 sector potential V₂(r) = λ₂r². There is no quartic scalar self-coupling, no Higgs VEV, no spontaneous symmetry breaking, and no vacuum metastability from RG running of λ_H. If vacuum instability is established at high confidence — the electroweak vacuum confirmed metastable with a cosmologically short lifetime — this contradicts the IDWT Higgs interpretation, since there is no λ_H to run negative.
+**C2 — Higgs is a confinement mode, not a condensate.** In IDWT the Higgs is mode $n=95$ of the $d=2$ sector potential $V_2(r) = \lambda_2 r^2$. There is no quartic scalar self-coupling, no Higgs VEV, no spontaneous symmetry breaking, and no vacuum metastability from RG running of λ_H. If vacuum instability is established at high confidence — the electroweak vacuum confirmed metastable with a cosmologically short lifetime — this contradicts the IDWT Higgs interpretation, since there is no λ_H to run negative.
 
-**C3 — No seesaw mechanism.** Neutrino masses are small because m_scale_5 is set by the cross-sector Hopf fixed-point equation m_scale_5 × m_scale_4² = (n_u/n_s) × m_scale_6³, not by a seesaw with a heavy right-handed neutrino. No lepton-number-violating operator appears at leading order from this structure. Discovery of a right-handed neutrino mass term, lepton-number-violating interactions at any scale, or any operator that generates a Majorana mass for SM neutrinos would falsify C3 and F1/F2 simultaneously.
+**C3 — No seesaw mechanism.** Neutrino masses are small because $m_{\rm scale,5}$ is set by the cross-sector Hopf fixed-point equation $m_{\rm scale,5} \times m_{\rm scale,4}^2 = (n_u/n_s) \times m_{\rm scale,6}^3$, not by a seesaw with a heavy right-handed neutrino. No lepton-number-violating operator appears at leading order from this structure. Discovery of a right-handed neutrino mass term, lepton-number-violating interactions at any scale, or any operator that generates a Majorana mass for SM neutrinos would falsify C3 and F1/F2 simultaneously.
 
-**C4 — No sterile neutrinos.** The co-fixed-point condition selects exactly the d=5 modes that are tower outputs. There are exactly three neutrino species: ν₁, ν₂, ν₃ at n = 10, 15, 22. No additional neutrino species at any mass scale is predicted; the PMNS matrix is unitary 3×3 exactly. Evidence for a fourth neutrino mixing into the PMNS matrix — from short-baseline anomalies, reactor anomalies, or direct detection — would falsify F3, F6, and C4 simultaneously.
+**C4 — No sterile neutrinos.** The co-fixed-point condition selects exactly the $d=5$ modes that are tower outputs. There are exactly three neutrino species: $\nu_1$, $\nu_2$, $\nu_3$ at n = 10, 15, 22. No additional neutrino species at any mass scale is predicted; the PMNS matrix is unitary 3×3 exactly. Evidence for a fourth neutrino mixing into the PMNS matrix — from short-baseline anomalies, reactor anomalies, or direct detection — would falsify F3, F6, and C4 simultaneously.
 
-**C5 — Left-handed weak coupling is geometric.** The W boson's exclusive left-handed coupling follows from the Kähler structure of CP² (d=4) and CP³ (d=6): the Kähler γ₅ operator splits each sector spinor into holomorphic (left-handed) and anti-holomorphic (right-handed) components; W is a holomorphic connection and cannot couple to the right-handed component at any order that does not involve the anti-holomorphic mixing. Right-handed W couplings beyond known radiative corrections would falsify the Kähler sector geometry.
+**C5 — Left-handed weak coupling is geometric.** The W boson's exclusive left-handed coupling follows from the Kähler structure of $\mathbb{CP}^2$ ($d=4$) and $\mathbb{CP}^3$ ($d=6$): the Kähler $\gamma_5$ operator splits each sector spinor into holomorphic (left-handed) and anti-holomorphic (right-handed) components; W is a holomorphic connection and cannot couple to the right-handed component at any order that does not involve the anti-holomorphic mixing. Right-handed W couplings beyond known radiative corrections would falsify the Kähler sector geometry.
 
-**C6 — No gravitons in the sector spectrum.** IDWT derives gravity from the |Ψ∞|² back-reaction on the observer's 3D spacetime geometry. Gravity is not a quantum field theory in IDWT; there are no graviton modes in any of the six sectors. The equivalence principle m_grav = m_inertial is a theorem from the sector geometry (Part 4 §3.6). Detection of spin-2 gravitons as fundamental particles in a Fock-space sense would constitute an additional mode not in the IDWT sector structure.
+**C6 — No gravitons in the sector spectrum.** IDWT derives gravity from the $|\Psi_\infty|^2$ back-reaction on the observer's 3D spacetime geometry. Gravity is not a quantum field theory in IDWT; there are no graviton modes in any of the six sectors. The equivalence principle $m_{\rm grav} = m_{\rm inertial}$ is a theorem from the sector geometry (Part 4 §3.6). Detection of spin-2 gravitons as fundamental particles in a Fock-space sense would constitute an additional mode not in the IDWT sector structure.
 
-**C7 — Exact CKM unitarity.** The CKM matrix is exactly unitary at tree level: |V_ud|² + |V_us|² + |V_ub|² = 1. IDWT gives V_us = sin θ_C = 0.22454 and V_ud = √(1 − sin²θ_C) = 0.97447. The apparent 5.5σ Cabibbo Angle Anomaly (nuclear beta-decay |V_ud| = 0.97370 vs kaon |V_us|) is a tension between two independent PDG measurements. IDWT's exact-unitarity value 0.97447 matches the kaon-derived determination. If the Cabibbo Angle Anomaly is confirmed to require genuinely non-unitary CKM physics, that would falsify C7.
+**C7 — Exact CKM unitarity.** The CKM matrix is exactly unitary at tree level: $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 1$. IDWT gives $V_{us} = \sin\theta_C = 0.22454$ and $V_{ud} = \sqrt{1 - \sin^2\theta_C} = 0.97447$. The apparent 5.5σ Cabibbo Angle Anomaly (nuclear beta-decay $|V_{ud}| = 0.97370$ vs kaon $|V_{us}|$) is a tension between two independent PDG measurements. IDWT's exact-unitarity value 0.97447 matches the kaon-derived determination. If the Cabibbo Angle Anomaly is confirmed to require genuinely non-unitary CKM physics, that would falsify C7.
 
-**C8 — No glueballs.** The strong interaction in IDWT is a direct quark contact coupling — SU(3)-symmetric by the CP² isometry, with no colour-exchange field (Part 3 §0.2, §0.6). There is no colour-exchange field to bind into a glueball; any state that QCD would classify as a glueball must in IDWT be a misidentified quark-sector resonance. IDWT therefore predicts that no glueball will ever be definitively identified as a particle species distinct from quark-sector states. Claimed evidence from radiative J/ψ decays (e.g. f₀(1710), f₀(1500) candidates) is reinterpreted within IDWT as ordinary d=3 or d=4 hadronic resonances misidentified as pure-colour-field states — colour-intense production channels do not require a glueball in the final state when the underlying interaction is a quark contact term. A confirmed glueball with quantum numbers incompatible with any quark-model assignment, established at > 5σ significance with independent production and decay mode consistency, would falsify the IDWT colour sector.
+**C8 — No glueballs.** The strong interaction in IDWT is a direct quark contact coupling — $SU(3)$-symmetric by the $\mathbb{CP}^2$ isometry, with no colour-exchange field (Part 3 §0.2, §0.6). There is no colour-exchange field to bind into a glueball; any state that QCD would classify as a glueball must in IDWT be a misidentified quark-sector resonance. IDWT therefore predicts that no glueball will ever be definitively identified as a particle species distinct from quark-sector states. Claimed evidence from radiative J/ψ decays (e.g. $f_0(1710)$, $f_0(1500)$ candidates) is reinterpreted within IDWT as ordinary $d=3$ or $d=4$ hadronic resonances misidentified as pure-colour-field states — colour-intense production channels do not require a glueball in the final state when the underlying interaction is a quark contact term. A confirmed glueball with quantum numbers incompatible with any quark-model assignment, established at > 5σ significance with independent production and decay mode consistency, would falsify the IDWT colour sector.
 
-**C9 — Hidden-coordinate momentum loss in e–e scattering. 🔶** The electron is a d=6 object, and a second electron is a localized 6D probe rather than a uniform 3D source, so the projection theorem that protects every 3D-apparatus measurement (Part 3 §0.8a; Marginal Exactness, Part 11 §6.1) does not apply to e–e contact. The short-range kernel contact (ξ·ξ′)² (range L₆ = 1.414 fm) deflects the relative momentum into the three hidden coordinates: in the 6D centre-of-mass frame, on average 3/5 of the transverse momentum transfer goes invisible, registering as missing momentum per electron (m_app² = m² + |p_hidden|²) above a Coulomb threshold of α ħc/L₆ ≈ 1.06 MeV relative CM energy. The signature is anomalous beam diffusion — transverse emittance growth beyond standard intra-beam (Coulomb) scattering — and missing-momentum events in precision fixed-target Møller, both carrying the 3/5 fingerprint. It is not excess wide-angle scattering, so e–e compositeness limits (Λ ≳ 10 TeV) do not constrain it. The kinematic factor and threshold are derived; the rate reduces to a single structural number. The hidden centroid of an electron is a free coordinate — electromagnetism is the d=2 zero mode, uniform in 4, 5, 6, and by Marginal Exactness no 3D-source field acts there — so a 3D-prepared beam cannot localize the hidden coordinates and sits at the uniform rest limit. The overlap factor f_hid is then a hidden-volume average ⟨f_hid⟩ ∼ (L₆/L_hid)³, set by the extent L_hid over which matter is localized in coordinates 4, 5, 6, and → 0 in the delocalized limit. This is why ordinary high-energy e–e scattering shows nothing: f_hid ∼ 1 is structurally unavailable to 3D-prepared matter. If the hidden centroids are genuinely delocalized the channel is closed; a finite L_hid — gravity, as M∞ curvature, is the only force acting in all coordinates that could set it — gives the computable (L₆/L_hid)³ rate. Anomalous beam diffusion of the predicted 3/5 form above threshold would measure L_hid. (Part 6 Falsifiability; `files/idwt.py` STEP 83–84.)
+**C9 — Hidden-coordinate momentum loss in e–e scattering. 🔶** The electron is a $d=6$ object, and a second electron is a localized 6D probe rather than a uniform 3D source, so the projection theorem that protects every 3D-apparatus measurement (Part 3 §0.8a; Marginal Exactness, Part 11 §6.1) does not apply to e–e contact. The short-range kernel contact $(\xi\cdot\xi')^2$ (range $L_6 = 1.414$ fm) deflects the relative momentum into the three hidden coordinates: in the 6D centre-of-mass frame, on average 3/5 of the transverse momentum transfer goes invisible, registering as missing momentum per electron ($m_{\rm app}^2 = m^2 + |p_{\rm hidden}|^2$) above a Coulomb threshold of $\alpha\hbar c/L_6 \approx 1.06$ MeV relative CM energy. The signature is anomalous beam diffusion — transverse emittance growth beyond standard intra-beam (Coulomb) scattering — and missing-momentum events in precision fixed-target Møller, both carrying the 3/5 fingerprint. It is not excess wide-angle scattering, so e–e compositeness limits ($\Lambda \gtrsim 10$ TeV) do not constrain it. The kinematic factor and threshold are derived; the rate reduces to a single structural number. The hidden centroid of an electron is a free coordinate — electromagnetism is the $d=2$ zero mode, uniform in 4, 5, 6, and by Marginal Exactness no 3D-source field acts there — so a 3D-prepared beam cannot localize the hidden coordinates and sits at the uniform rest limit. The overlap factor $f_{\rm hid}$ is then a hidden-volume average $\langle f_{\rm hid}\rangle \sim (L_6/L_{\rm hid})^3$, set by the extent $L_{\rm hid}$ over which matter is localized in coordinates 4, 5, 6, and → 0 in the delocalized limit. This is why ordinary high-energy e–e scattering shows nothing: $f_{\rm hid} \sim 1$ is structurally unavailable to 3D-prepared matter. If the hidden centroids are genuinely delocalized the channel is closed; a finite $L_{\rm hid}$ — gravity, as $M_\infty$ curvature, is the only force acting in all coordinates that could set it — gives the computable $(L_6/L_{\rm hid})^3$ rate. Anomalous beam diffusion of the predicted 3/5 form above threshold would measure $L_{\rm hid}$. (Part 6 Falsifiability; `files/idwt.py` STEP 83–84.)
 
 ---
 
@@ -598,12 +552,12 @@ These predictions are within reach of running or funded experiments within the n
 
 | Prediction | IDWT value | Key experiment | Current status | Timescale |
 |---|---|---|---|---|
-| 0νββ signal absent (all orders) | m_ββ = 0 at all orders | nEXO, LEGEND-1000, KamLAND-Zen 800 | No signal (m_ββ < 36 meV) | now–2035; reaching ~2–5 meV sensitivity |
+| $0\nu\beta\beta$ signal absent (all orders) | $m_{\beta\beta} = 0$ at all orders | nEXO, LEGEND-1000, KamLAND-Zen 800 | No signal ($m_{\beta\beta} < 36$ meV) | now–2035; reaching $\sim 2$–5 meV sensitivity |
 | Σm_ν = 60.39 meV | 60.39 meV | CMB-S4 (target ~30 meV) | Below Planck bound (< 120 meV) | 2030s; within 2× of detection |
-| Normal ordering (definitive) | m_ν₁ < m_ν₂ < m_ν₃ | JUNO, DUNE, Hyper-Kamiokande | 3–4σ preference | now–2030 |
-| sin²θ₂₃ = 0.5590 | 0.5590 ± 0.001 | T2K, NOvA, DUNE | PDG 2024: 0.553, +1.07% | Running now |
+| Normal ordering (definitive) | $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ | JUNO, DUNE, Hyper-Kamiokande | 3–4σ preference | now–2030 |
+| $\sin^2\theta_{23} = 0.5590$ | 0.5590 ± 0.001 | T2K, NOvA, DUNE | PDG 2024: 0.553, +1.07% | Running now |
 | No new stable particles | closed spectrum | HL-LHC, FCC | LHC Run 3 consistent | now–2040 |
-| m_β ≈ 8.77 meV | 8.77 meV | Project 8 | KATRIN: < 0.45 eV | 2030s; targeting ~40 meV |
+| $m_\beta \approx 8.77$ meV | 8.77 meV | Project 8 | KATRIN: $< 0.45$ eV | 2030s; targeting $\sim 40$ meV |
 | No fourth generation | none at any mass | FCC-ee (Z pole) | Z width consistent | 2040s |
 
 ---
@@ -619,9 +573,9 @@ The table below condenses the hardest predictions in order of experimental decis
 | 3 | Σm_ν = 60.39 meV (F10) | Measured < 40 meV or > 80 meV |
 | 4 | No new stable particles (F3) | Any confirmed new fundamental particle |
 | 5 | m_s/m_d = 20 exactly (F7) | Ratio outside 19.5–20.5 at controlled scale |
-| 6 | N_ν = 3 exactly (F18) | Fourth neutrino species confirmed |
-| 7 | sin²θ₂₃ = 0.5590 (F13) | > 3σ departure from 0.5590 |
-| 8 | sin²θ₁₂ = 0.3086 (F14) | > 3σ departure from 0.3086 |
-| 9 | sin²θ₁₃ = 0.02211 (F15) | > 3σ departure from 0.02211 |
+| 6 | $N_\nu = 3$ exactly (F18) | Fourth neutrino species confirmed |
+| 7 | $\sin^2\theta_{23} = 0.5590$ (F13) | > 3σ departure from 0.5590 |
+| 8 | $\sin^2\theta_{12} = 0.3086$ (F14) | > 3σ departure from 0.3086 |
+| 9 | $\sin^2\theta_{13} = 0.02211$ (F15) | > 3σ departure from 0.02211 |
 | 10 | ρ = 1 at tree level (F17) | ρ ≠ 1 beyond radiative corrections |
 | 11 | No glueballs (C8) | Confirmed glueball state at > 5σ with quantum numbers incompatible with all quark-model assignments |

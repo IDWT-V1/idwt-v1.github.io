@@ -12,4 +12,4 @@
 
 **Dropped sections (closed, in main documents):** §12, §14, §30. §35 moved to Appendix C.
 
-**Split performed:** 2026-06-18. All cross-references of the form "Appendix A §N" remain valid — each §N lives in exactly one of the five files above.
+**Split performed:** 2026-06-18. Cross-references use the letterless form "Appendix §N" — each §N lives in exactly one of the five files above.

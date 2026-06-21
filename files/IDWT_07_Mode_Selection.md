@@ -4,24 +4,24 @@
 
 ---
 
-**Where we are.** We are inside M_∞ at the d=3 coordinate level — not external observers viewing a projection from a separate space. Every mode of Ψ_∞ is a feature of the same manifold we occupy. The question this document addresses is which resonances of M_∞ are stable — which mode-sector pairs (n,d) persist as physical particles rather than dispersing. That is an intrinsic property of the modes and of M_∞, not a property of an observer.
+**Where we are.** We are inside $M_\infty$ at the $d=3$ coordinate level — not external observers viewing a projection from a separate space. Every mode of $\Psi_\infty$ is a feature of the same manifold we occupy. The question this document addresses is which resonances of $M_\infty$ are stable — which mode-sector pairs (n,d) persist as physical particles rather than dispersing. That is an intrinsic property of the modes and of $M_\infty$, not a property of an observer.
 
 ---
 
 ## 1. Candidate Resonances and the Co-fixed-point Condition
 
-The framework treats every integer pair (n,d) with d ∈ {2,3,4,5,6,10} as a candidate resonance of Ψ∞ on M_∞. The physical particles are those whose mode-sector pair (n,d) is an element of **Σ_pairs** — the unique finite closed set produced by the generation tower from the seeds (1,3) and (3,4) with offset-additive composite (4,3) at depth 1. The generation tower assigns both the mode index and the sector; stability is a property of the pair, not of the mode index alone. A mode index n appearing in a sector not assigned by the tower is not a physical particle.
+The framework treats every integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ as a candidate resonance of $\Psi_\infty$ on $M_\infty$. The physical particles are those whose mode-sector pair $(n,d)$ is an element of $\mathbf{\Sigma_{\rm pairs}}$ — the unique finite closed set produced by the generation tower from the seeds $(1,3)$ and $(3,4)$ with offset-additive composite $(4,3)$ at depth 1. The generation tower assigns both the mode index and the sector; stability is a property of the pair, not of the mode index alone. A mode index $n$ appearing in a sector not assigned by the tower is not a physical particle.
 
-This makes mode selection a geometric/combinatorial problem on M_∞ itself: which (n,d) pairs are stable resonances.
+This makes mode selection a geometric/combinatorial problem on $M_\infty$ itself: which $(n,d)$ pairs are stable resonances.
 
 ---
 
 ### 1.1 The Co-fixed-point Condition
 
-A mode-sector pair (n,d) is a physical particle if and only if it is an element of Σ_pairs — the unique finite closed set of 15 pairs produced by the generation tower (Part 1 §5, Part 2 §2–4). The tower is seeded by (n_down=1, d=3) and (n_up=3, d=4), with offset-additive composite (n_s=4, d=3); it applies hockey-stick evaluations and additive operations that generate both the mode index and the sector assignment for every stable pair.
-**Two independent derivation chains.** Membership in Σ_pairs requires both the correct mode index n and the correct sector d. These come from separate sources: (i) the generation tower derives n via hockey-stick, additive, and g-rule operations; (ii) the sector structure of Part 1 §3 assigns each particle family to its sector — quarks to d=3,4 via χ(CP²)=N_c; neutrinos to d=5 via the Hopf fibration S¹→S⁵→CP²; charged leptons to d=6 via d=3⊗d=3 colour neutrality; tau to d=10 via Gegenbauer criticality; bosons to d=2 via the g-rule. Neither chain derives the other: d cannot be recovered from n alone, and the same HS operation applied to different seeds yields particles in different sectors. Concretely: n=10 is stable only as (10,5)=ν₁, because the sector structure assigns the neutrino family to d=5 and the generation tower produces n=10 within that family. The pair (10,6) is not a physical particle, not because of the tower but because no sector-structure rule places the n=10 particle in d=6.
+A mode-sector pair $(n,d)$ is a physical particle if and only if it is an element of $\Sigma_{\rm pairs}$ — the unique finite closed set of 15 pairs produced by the generation tower (Part 1 §5, Part 2 §2–4). The tower is seeded by $(n_{\rm down}=1, d=3)$ and $(n_{\rm up}=3, d=4)$, with offset-additive composite $(n_s=4, d=3)$; it applies hockey-stick evaluations and additive operations that generate both the mode index and the sector assignment for every stable pair.
+**Two independent derivation chains.** Membership in $\Sigma_{\rm pairs}$ requires both the correct mode index $n$ and the correct sector $d$. These come from separate sources: (i) the generation tower derives $n$ via hockey-stick, additive, and g-rule operations; (ii) the sector structure of Part 1 §3 assigns each particle family to its sector — quarks to $d=3$,4 via $\chi(\mathbb{CP}^2)=N_c$; neutrinos to $d=5$ via the Hopf fibration $S^1\to S^5\to\mathbb{CP}^2$; charged leptons to $d=6$ via $d{=}3\otimes d{=}3$ colour neutrality; tau to $d=10$ via Gegenbauer criticality; bosons to $d=2$ via the g-rule. Neither chain derives the other: $d$ cannot be recovered from $n$ alone, and the same HS operation applied to different seeds yields particles in different sectors. Concretely: $n=10$ is stable only as $(10,5)=\nu_1$, because the sector structure assigns the neutrino family to $d=5$ and the generation tower produces $n=10$ within that family. The pair $(10,6)$ is not a physical particle, not because of the tower but because no sector-structure rule places the $n=10$ particle in $d=6$.
 
-**What the co-fixed-point condition excludes.** A mode index n ∈ Σ_indices appearing in a sector not assigned by the tower is excluded: the pair (n,d) is not in Σ_pairs. Σ_pairs is the complete co-fixed-point set; verified exhaustively up to n ≤ 1000, no pair outside Σ_pairs is generated by the tower operations. The sectors d=7,8,9 appear in the coordinate hierarchy of M_∞ but the current coupling construction does not establish active eigenmode geometry there (Rule A, §3a); they have no co-fixed-point tower and therefore no stable modes under the present framework.
+**What the co-fixed-point condition excludes.** A mode index $n \in \Sigma_{\rm indices}$ appearing in a sector not assigned by the tower is excluded: the pair $(n,d)$ is not in $\Sigma_{\rm pairs}$. $\Sigma_{\rm pairs}$ is the complete co-fixed-point set; verified exhaustively up to $n \leq 1000$, no pair outside $\Sigma_{\rm pairs}$ is generated by the tower operations. The sectors $d=7,8,9$ appear in the coordinate hierarchy of $M_\infty$ but the current coupling construction does not establish active eigenmode geometry there (Rule A, §3a); they have no co-fixed-point tower and therefore no stable modes under the present framework.
 
 ---
 
@@ -31,9 +31,9 @@ The free Hamiltonian $H_0 = \sum_d H_d$ has eigenvalues at $m_{\rm scale,d} \tim
 
 **Mechanism 1 — l-parity protection (exact). ⭐**
 
-The kernel $(ξ_d \cdot ξ_{d'})^2$ decomposes angularly into $l=0$ (scalar) and $l=2$ (tensor) components only. A single application of $V_{\rm kernel}$ can change the angular momentum quantum number $l$ of a sector mode by $0$ or $\pm 2$ at most. Starting from the seeds — which are at level $N=0$ (l=0) in d=3 — every mode reachable by any number of kernel applications must have **even** $l$.
+The kernel $(ξ_d \cdot ξ_{d'})^2$ decomposes angularly into $l=0$ (scalar) and $l=2$ (tensor) components only. A single application of $V_{\rm kernel}$ can change the angular momentum quantum number $l$ of a sector mode by $0$ or $\pm 2$ at most. Starting from the seeds — which are at level $N=0$ ($l=0$) in $d=3$ — every mode reachable by any number of kernel applications must have **even** $l$.
 
-Sector d=3, level $N=n-1$: the $l$-values present at level $N$ have the same parity as $N$. Level $N=3$ (the strange quark, $n=4$) contains only $l=1$ and $l=3$ — both odd. Level $N=1$ ($n=2$), $N=5$ ($n=6$), and all odd-$N$ levels contain only odd $l$.
+Sector $d=3$, level $N=n-1$: the $l$-values present at level $N$ have the same parity as $N$. Level $N=3$ (the strange quark, $n=4$) contains only $l=1$ and $l=3$ — both odd. Level $N=1$ ($n=2$), $N=5$ ($n=6$), and all odd-$N$ levels contain only odd $l$.
 
 Consequence: **the seeds at level $N=0$ ($l=0$) cannot reach any odd-level mode by any power of $V_{\rm kernel}$.** The odd-level non-$\Sigma_{\rm pairs}$ modes $n=2,6,8,10,\ldots$ are permanently disconnected from the vacuum. They cannot be excited from the seeds and cannot be sustained by the coupling chain. Their instability is exact and requires no self-energy calculation.
 
@@ -63,15 +63,15 @@ Read from the complement, the same split shows that half of the anti-tower is cl
 
 **The even-level selection in its sharpest form — the stability equivalence. 🔵** The downward-channel catalog (`files/idwt.py` STEP 64) sharpens the content of the even-level selection. Each single tower mode with $n\ge3$ has a parity-allowed same-sector kernel link $(n,d)\to(n-2,d)$ ($N$ and $N-2$ share $l$-parity; radial matrix element nonzero at the kernel weight, STEP 34), and every such target is a non-member. Radiating into a non-member is not a decay: the target is not an asymptotic particle state, so that amplitude is the bounded even-level dephasing (🔵, STEP 49), not a width. A genuine decay requires a parity-allowed channel to lighter *members* conserving charge, colour, and lepton number; within a sector the kernel moves $N$ by even steps only, so a same-sector member is reachable iff $\Delta N$ is even, and $\Delta N$ odd is forbidden at all orders.
 
-Read through this criterion, the absolute stability of the light anchors is structural rather than assumed (`files/idwt.py` STEP 93). The u quark is the lightest up-type mode and its only downward link $(3,4)\to(1,4)$ terminates on the sector ground mode, which is the vacuum condensate that sources the well (Part 4 §3.10.5): the $n=1$ mode's only zero-energy fluctuation is the $U(1)$ Goldstone phase and its amplitude mode is gapped, so $(1,4)$ is the symmetry-broken vacuum, not a populatable final state (STEP 92, ✅). The electron ($0.511$ MeV) is the lightest electrically charged member — lighter than the up quark and every other charged mode — so charge conservation leaves it no lighter charged state to reach (✅, charge). For the neutrinos the absence of a charge-conjugation $C$ on $S^5$ ($d\bmod 8=5$) conserves lepton number and confines them to the $d=5$ tower: $\nu_1$ is the lightest and absolutely stable; $\nu_2\to\nu_1$ is $\Delta N=-5$, odd, forbidden at all orders by $l$-parity, so $\nu_2$ is absolutely stable (⭐, exact); $\nu_3\to\nu_1$ is $\Delta N=-12$, even and reachable only at sixth order through non-member intermediates, so $\nu_3$ is effectively rather than absolutely stable. The members observed to decay all carry a parity-allowed channel to a lighter member — same-sector ($\mu\to e$, $H\to Z$, top$\to$charm, bottom$\to$strange) or cross-sector through the weak contact ($s, c, \tau$).
+Read through this criterion, the absolute stability of the light anchors is structural rather than assumed (`files/idwt.py` STEP 93). The u quark is the lightest up-type mode and its only downward link $(3,4)\to(1,4)$ terminates on the sector ground mode, which is the vacuum condensate that sources the well (Part 4 §3.10.5): the $n=1$ mode's only zero-energy fluctuation is the $U(1)$ Goldstone phase and its amplitude mode is gapped, so $(1,4)$ is the symmetry-broken vacuum, not a populatable final state (STEP 92, ✅). The electron ($0.511$ MeV) is the lightest electrically charged member — lighter than the up quark and every other charged mode — so charge conservation leaves it no lighter charged state to reach (✅, charge). For the neutrinos the absence of a charge-conjugation $C$ on $S^5$ ($d\bmod 8=5$) conserves lepton number and confines them to the $d=5$ tower: $\nu_1$ is the lightest and absolutely stable; $\nu_2\to\nu_1$ is $\Delta N=-5$, odd, forbidden at all orders by $l$-parity, so $\nu_2$ is absolutely stable (⭐, exact); $\nu_3\to\nu_1$ is $\Delta N=-12$, even and reachable only at sixth order through non-member intermediates, so $\nu_3$ is effectively rather than absolutely stable. The unstable members are those the chiral EW channel reaches: $s, c, t, b$ (quark EW-open), $\mu$, $\tau$ (lepton EW-open), $W$, $Z$, $H$ (gauge/Yukawa open). For every one of the 15, the kernel $\Delta N=2$ link $(n,d)\to(n{-}2,d)$ lands on a non-member (`files/idwt.py` STEP 108): the spectrum is mutually kernel-decoupled and member decays are entirely through the chiral EW channel (STEP 107), whether the final state shares the initial sector ($\mu\to e$ in $d=6$, top$\to$charm in $d=4$, bottom$\to$strange in $d=3$, $H\to ZZ/WW$ in $d=2$) or not.
 
 The sharp anchors of the even-level selection — $u$, $e$, $\nu_1$, $\nu_2$ — are therefore closed on independent structural grounds (condensate; charge; lightest member; lepton number and $l$-parity), with $\nu_3$ effectively stable, and the empirical witness $\tau_e > 6.6\times10^{28}$ yr and the proton-decay bounds stand on them. What remains quantitative is the general statement that every even-level non-member disperses rather than persisting — the dephasing bound (🔵, STEP 49); the absolute-stability content the equivalence reduced to is structural (Part 9 T0.5).
 
 **Pre-prism–prism structural bridge. ⭐** Before sector scales exist, the additive index tower is an on-shell harmonic resonance network: index conservation $n_i+n_j=n_k+n_l$ is identically level-energy conservation $N_i+N_j=N_k+N_l$ (the zero-point shifts cancel algebraically). The prism map $N\mapsto S(n,d)\cdot m_{{\rm scale},d}$ throws the network off-shell — cross-sector detuning reaches $\sim10^7$ for typical non-tower pairs — freezing the integer-additive structure as the sector condensate forms. This gives the additive tower a dynamical reading: it is the on-shell residue of the pre-prism harmonic network, preserved because the prism makes every non-additive recombination energetically blocked. On-shell-ness is generic to all index-conserving four-waves and does not by itself select which modes fire (`files/idwt.py` STEP 85).
 
-**Structural note on the μ–τ pair.** The single commensurate pair is $d=6$ and $d=10$: $m_{\rm scale,6} = m_{\rm scale,10}$ exactly (Part 1 §5). This is the unique sector pair that can phase-lock — a new structural reading of why the tau, displaced to the non-adjacent $d=10$ sector, survives in the generation tower alongside the muon at $d=6$. The 14 remaining pairs are all incommensurate, so the no-common-revival argument applies to the full cross-sector dephasing dynamics for every non-member mode. ❓ (status: structural observation, not yet derived from EOM.)
+**Structural note on the $\mu$–$\tau$ pair.** The single commensurate pair is $d=6$ and $d=10$: $m_{\rm scale,6} = m_{\rm scale,10}$ exactly (Part 1 §5). This is the unique sector pair that can phase-lock — a new structural reading of why the tau, displaced to the non-adjacent $d=10$ sector, survives in the generation tower alongside the muon at $d=6$. The 14 remaining pairs are all incommensurate, so the no-common-revival argument applies to the full cross-sector dephasing dynamics for every non-member mode. ❓ (status: structural observation, not yet derived from EOM.)
 
-**The three-ray timing constraint. 🔶** A third, independent organization of the selection: in the (derivation depth, sector dimension) plane, every matter mode and the photon satisfies $d - k_{\min} \in \{2,3,4\}$ — three slope-1 rays anchored at the depth-0 modes, with matter sector $d$ occupiable only at depths $d-4 \le k_{\min} \le d-2$ (Part 2 §15). Where the mechanisms above constrain channel parity and persistence, the ray law constrains *when* a sector can fire. The τ appears in it as a band-edge mode: its ray slot is $d=7$, the sectors $7$–$9$ are a three-sector inadmissibility gap (T3), and the deposit lands at the terminal $d=10$ — the same μ–τ commensurate pair seen from the timing side. The per-dimension deposit budget required by the associated front model is the Betti vector of $\mathbb{CP}^2\times\mathbb{CP}^3$ (Part 2 §15). The law fixes the $(k,d)$ skeleton only; the per-index selection (T0.5) is unchanged.
+**The three-ray timing constraint. 🔶** A third, independent organization of the selection: in the (derivation depth, sector dimension) plane, every matter mode and the photon satisfies $d - k_{\min} \in \{2,3,4\}$ — three slope-1 rays anchored at the depth-0 modes, with matter sector $d$ occupiable only at depths $d-4 \le k_{\min} \le d-2$ (Part 2 §15). Where the mechanisms above constrain channel parity and persistence, the ray law constrains *when* a sector can fire. The $\tau$ appears in it as a band-edge mode: its ray slot is $d=7$, the sectors $7$–$9$ are a three-sector inadmissibility gap (T3), and the deposit lands at the terminal $d=10$ — the same $\mu$–$\tau$ commensurate pair seen from the timing side. The per-dimension deposit budget required by the associated front model is the Betti vector of $\mathbb{CP}^2\times\mathbb{CP}^3$ (Part 2 §15). The law fixes the $(k,d)$ skeleton only; the per-index selection (T0.5) is unchanged.
 
 Scripts: `files/idwt.py` STEP 30, STEP 34, STEP 35, STEP 36, STEP 40, STEP 64, STEP 73, STEP 85.
 
@@ -79,33 +79,31 @@ Scripts: `files/idwt.py` STEP 30, STEP 34, STEP 35, STEP 36, STEP 40, STEP 64, S
 
 ### 1.3 Quartic Bifurcation — The Bottom Quark
 
-The bottom quark survives as a geometric-mean beat between two virtual d=3 modes rather than as a single simplex mode. The bifurcation point:
+The bottom quark survives as a geometric-mean beat between two virtual $d=3$ modes rather than as a single simplex mode. The bifurcation point:
 
-```
-k₀ = n_strange² = 4² = 16
-```
+$$k_0 = n_{\rm strange}^2 = 4^2 = 16$$
 
-Three independent resonance conditions add in phase at k₀ (see Part 2 §8 and the three k₀ conditions):
+Three independent resonance conditions add in phase at $k_0$ (see Part 2 §8 and the three $k_0$ conditions):
 
-1. k₀ = n_s² = 16 (seed self-product)
-2. k₀ = n_e + n_u = 13 + 3 = 16 (cross-sector lepton + quark sum)
-3. k₀ = S(n_s,3) − S(2,3) = 20 − 4 = 16 (intra-d=3 gap identity)
+1. $k_0 = n_s^2 = 16$ (seed self-product)
+2. $k_0 = n_e + n_u = 13 + 3 = 16$ (cross-sector lepton + quark sum)
+3. $k_0 = S(n_s,3) - S(2,3) = 20 - 4 = 16$ (intra-$d=3$ gap identity)
 
-These raise the drive D_{16} by a factor of three, making the single-mode solution at n=16 unstable. The off-diagonal quartic coupling K_{16,17} sustains a two-mode beat at equal occupation |A₁₆| = |A₁₇|. Because that coupling is a density–density product $|\Psi^{(16)}|^2|\Psi^{(17)}|^2$, its energy scale is the geometric mean $\sqrt{E_{16}E_{17}}$:
+These raise the drive D_{16} by a factor of three, making the single-mode solution at $n=16$ unstable. The off-diagonal quartic coupling $K_{16,17}$ sustains a two-mode beat at equal occupation $|A_{16}| = |A_{17}|$. Because that coupling is a density–density product $|\Psi^{(16)}|^2|\Psi^{(17)}|^2$, its energy scale is the geometric mean $\sqrt{E_{16}E_{17}}$:
 
-```
-m_b = √(S(16,3) × S(17,3)) × m_scale_3
-    = √(816 × 969) × 4.702 ≈ 4,181 MeV
-```
+$$\begin{aligned}
+m_b &= \sqrt{S(16,3) \times S(17,3)} \times m_{\rm scale,3}\\
+    &= \sqrt{816 \times 969} \times 4.702 \approx 4{,}181~\text{MeV}
+\end{aligned}$$
 PDG: 4,183 ± 7 MeV. Error: −0.05%.
 
-The beat partner n=17 = k₀+1 = n_c−n_u = 20−3.
+The beat partner $n=17 = k_0+1 = n_c-n_u = 20-3$.
 
 **The two product-form quark sites. ⭐** The bottom beat site $k_0 = n_s^2 = 16$ and the top index $n_{\rm top} = N_c\,n_s\,N_f = 72$ have no solution to $S(n,d) = 16$ or $72$ (checked $d\le 11$, $n\le 200$). Among the six quarks they are the only two not given by a single $S(n,d)$ value — the other four are ($1,3,4,20$). Several non-quark indices are also not single $S$-values ($13,22,23$ for the leptons/neutrinos, $76,81,95$ for the bosons), but those are additive simplex sums and Vandermonde $g$-steps; $16$ and $72$ are instead products. That product character is why the bottom appears as a beat rather than a simplex mode and why the binomial restatement of the tower (Part 9 T0.5) reaches the top only through a $+1$ offset. Both are 3rd-generation quarks. Both are divisible by 8 — a consequence of $n_s = 4$ carrying the even factors ($16 = n_s^2$, $72 = N_c n_s N_f$ with $n_s N_f = 24$), an arithmetic observation about the factorizations and not a spinor selection rule, since no Clifford reality invariant singles out $n \equiv 0 \pmod 8$.
 
 ### 1.3c g_{3,4} Effective Coupling at the Bifurcation 🔶
 
-The exact cross-coupling g_{3,4} = 4√6 is fully derived from seed structure (Part 2 §9). At the bifurcation site k₀=16, the effective coupling involves kernel overlap integrals at n=16,17 in d=3. The bottom quark prediction (+0.02%) is consistent with g_{3,4} = 4√6; the detailed prefactor for the quartic amplitude is not yet derived from first principles.
+The exact cross-coupling $g_{3,4} = 4\sqrt{6}$ is fully derived from seed structure (Part 2 §9). At the bifurcation site $k_0=16$, the effective coupling involves kernel overlap integrals at $n=16$,17 in $d=3$. The bottom quark prediction (+0.02%) is consistent with $g_{3,4} = 4\sqrt{6}$; the detailed prefactor for the quartic amplitude is not yet derived from first principles.
 
 ---
 
@@ -115,28 +113,28 @@ The (d,d') sector pairs give additional predicted resonances:
 
 | Pair | Beat (MeV) | Nearest state | Mass error |
 |------|-----------|----------------|-------|
-| (3,6) | 775.0 | mass consistent with ρ(770) = 775.26 MeV; quantum numbers and decay channels not yet verified | −0.04% (simple beat; Im[Γ₃₄₆] gives 775.8 MeV, +0.07% consistency check) |
-| (4,6) | 1207.6 | mass consistent with a₁(1260) = 1230 MeV; quantum numbers and decay channels not yet verified | −1.82% |
+| (3,6) | 775.0 | mass consistent with $\rho(770) = 775.26$ MeV; quantum numbers and decay channels not yet verified | −0.04% (simple beat; $\mathrm{Im}[\Gamma_{346}]$ gives 775.8 MeV, +0.07% consistency check) |
+| (4,6) | 1207.6 | mass consistent with $a_1(1260) = 1230$ MeV; quantum numbers and decay channels not yet verified | −1.82% |
 
 The (3,4) beat at 2163 MeV and the (6,10) beat at 736 MeV do not have clean hadronic mass matches. **Caveat on all beat identifications:** hadronic spectra are dense and overlapping; a mass match alone is insufficient for identification. Spin/parity quantum numbers, decay widths, and selection rules have not been verified from IDWT for any of the beat-tower states.
 
-### 1.5 Complete d=3 Sideband Beat Tower
+### 1.5 Complete $d=3$ Sideband Beat Tower
 
-The formula beat(n,n+1) = √(S(n,3) × S(n+1,3)) × m_scale_3 produces a full tower:
+The formula $\text{beat}(n,n+1) = \sqrt{S(n,3) \times S(n+1,3)} \times m_{\rm scale,3}$ produces a full tower:
 
 | n, n+1 | Beat (MeV) | Nearest state | Mass error |
 |--------|------------|---------------|-------|
 | 4, 5 | 124.4 | (no identification — pion is a collective excitation, absent from sector spectrum; §3d Part 5) | — |
-| 11, 12 | 1517.1 | mass consistent with f₂(1525); quantum numbers and decay channels not yet verified | −0.5% |
+| 11, 12 | 1517.1 | mass consistent with $f_2(1525)$; quantum numbers and decay channels not yet verified | −0.5% |
 | **16, 17** | **4181** | **b quark (4183)** | **−0.05%** |
 
 ---
 
 ## 2. Mode Selection Summary
 
-The co-fixed-point condition unifies all mode-selection results. Every (n,d) exists as a candidate resonance; the physical particles are the elements of Σ_pairs. The co-fixed-point uniqueness (Part 1 §5), spectral independence, and the sideband mechanism (§1.3 above) are all consequences.
+The co-fixed-point condition unifies all mode-selection results. Every $(n,d)$ exists as a candidate resonance; the physical particles are the elements of $\Sigma_{\rm pairs}$. The co-fixed-point uniqueness (Part 1 §5), spectral independence, and the sideband mechanism (§1.3 above) are all consequences.
 
-The n=2,3 modes in d=3 are absent from the co-fixed-point spectrum — they are not selected by the hockey-stick fixed-point structure. Their suppression is combinatorial: n=2 (odd level) is l-parity disconnected from the seeds, and n=3 (even level) dephases in the infinite-dimensional coupled system (§1.2). They are not stable particles; at most they appear as very short-lived d=3 resonances.
+The $n=2$,3 modes in $d=3$ are absent from the co-fixed-point spectrum — they are not selected by the hockey-stick fixed-point structure. Their suppression is combinatorial: $n=2$ (odd level) is l-parity disconnected from the seeds, and $n=3$ (even level) dephases in the infinite-dimensional coupled system (§1.2). They are not stable particles; at most they appear as very short-lived $d=3$ resonances.
 
 ---
 
@@ -144,18 +142,18 @@ The n=2,3 modes in d=3 are absent from the co-fixed-point spectrum — they are 
 
 Full enumeration of the low-n modes and their masses. Co-fixed-point membership determines occupancy; the stability mechanisms of §1.2 determine the fate of the non-members.
 
-**d=2 (Bosons)** — m_scale_2 = 27.47 MeV:
+**$d=2$ (Bosons)** — $m_{\rm scale,2}$ = 27.47 MeV:
 
-| n | S(n,2) | Mass | Status |
+| $n$ | $S(n,2)$ | Mass | Status |
 |---|--------|------|--------|
 | 0 | 0 | 0 | photon (massless, exact) |
 | 76 | 2926 | 80.379 GeV | **W** |
 | 81 | 3321 | 91.230 GeV | **Z** |
 | 95 | 4560 | 125.266 GeV | **H** |
 
-**d=3 (Down-type quarks)** — m_scale_3 = 4.702 MeV:
+**$d=3$ (Down-type quarks)** — $m_{\rm scale,3}$ = 4.702 MeV:
 
-| n | S(n,3) | Mass (MeV) | Co-fixed-point | Final status |
+| $n$ | $S(n,3)$ | Mass (MeV) | Co-fixed-point | Final status |
 |---|--------|------------|----------------|--------------|
 | 1 | 1 | 4.702 | ✅ | **Occupied (down)** |
 | 2 | 4 | 18.807 | ❌ | Short-lived resonance only (odd level, l-parity disconnected) |
@@ -164,45 +162,45 @@ Full enumeration of the low-n modes and their masses. Co-fixed-point membership 
 | 5 | 35 | 164.565 | ❌ | Absent |
 | 6 | 56 | 263.304 | ❌ | Absent |
 
-The n=2 and n=3 d=3 modes are not co-fixed-points. They are not stable hadrons; they may appear as very short-lived colour-triplet resonances. No stable particles are predicted in the 15–50 MeV window beyond known pion sector states.
+The $n=2$ and $n=3$ $d=3$ modes are not co-fixed-points. They are not stable hadrons; they may appear as very short-lived colour-triplet resonances. No stable particles are predicted in the 15–50 MeV window beyond known pion sector states.
 
-**d=4 (Up-type quarks)** — m_scale_4 = 0.14510 MeV. Masses are quoted bare, m_scale_4 × S(n,4); the former (1−ε)^k correction is removed (fitted exponent, Part 2 §11). Charm and top overshoot PDG and are open residues, and the top index n=72 is a seed input (accepted on the same footing as n_d=1 and n_u=3; Fedge 2026-06-18):
+**$d=4$ (Up-type quarks)** — $m_{\rm scale,4}$ = 0.14510 MeV. Masses are quoted bare, $m_{\rm scale,4} \times S(n,4)$; the former $(1-\varepsilon)^k$ correction is removed (fitted exponent, Part 2 §11). Charm and top overshoot PDG and are open residues, and the top index $n=72$ is a seed input (accepted on the same footing as $n_d=1$ and $n_u=3$; Fedge 2026-06-18):
 
-| n | S(n,4) | Mass (MeV) | PDG | Status |
+| $n$ | $S(n,4)$ | Mass (MeV) | PDG | Status |
 |---|--------|------------|-----|--------|
 | 3 | 15 | 2.177 | 2.16 (+0.8%) | **Occupied (up)** |
-| 20 | 8,855 | 1,284.9 | 1273.0 (+2.6σ) | **Occupied (charm)** 🔶 |
-| 72 | 1,215,450 | 176,365 | 172570 (+13σ) | **Occupied (top)** 🔶 |
+| 20 | 8,855 | 1,284.9 | 1273.0 (+$2.6\sigma$) | **Occupied (charm)** 🔶 |
+| 72 | 1,215,450 | 176,365 | 172570 (+$13\sigma$) | **Occupied (top)** 🔶 |
 
-**d=5 (Neutrinos)** — m_scale_5 = 7.429 × 10⁻¹³ MeV:
+**$d=5$ (Neutrinos)** — $m_{\mathrm{scale},5} = 7.429 \times 10^{-13}$ MeV:
 
-| n | S(n,5) | Mass (meV) | Status |
+| $n$ | $S(n,5)$ | Mass (meV) | Status |
 |---|--------|------------|--------|
-| 10 | 2,002 | 1.487 | **Occupied (ν₁)** |
-| 15 | 11,628 | 8.639 | **Occupied (ν₂)** |
-| 22 | 65,780 | 50.27 (bare: 48.871) | **Occupied (ν₃)** |
+| 10 | 2,002 | 1.487 | **Occupied ($\nu_1$)** |
+| 15 | 11,628 | 8.639 | **Occupied ($\nu_2$)** |
+| 22 | 65,780 | 50.27 (bare: 48.871) | **Occupied ($\nu_3$)** |
 
-**d=6 (Charged leptons)** — m_scale_6 = 2.753 × 10⁻⁵ MeV:
+**$d=6$ (Charged leptons)** — $m_{\mathrm{scale},6} = 2.753 \times 10^{-5}$ MeV:
 
-| n | S(n,6) | Mass (MeV) | Status |
+| $n$ | $S(n,6)$ | Mass (MeV) | Status |
 |---|--------|------------|--------|
 | 13 | 18,564 | 0.511 | **Occupied (e)** |
 | 35 | 3,838,380 | 105.657 | **Occupied (μ)** |
 
-**d=10 (Tau sector)** — m_scale_10 = m_scale_6:
+**$d=10$ (Tau sector)** — $m_{\rm scale,10}$ = $m_{\rm scale,6}$:
 
-| n | S(n,10) | Mass (MeV) | Status |
+| $n$ | $S(n,10)$ | Mass (MeV) | Status |
 |---|---------|------------|--------|
-| 23 | 64,512,240 | 1776.84 | **Occupied (τ)** |
+| 23 | 64,512,240 | 1776.84 | **Occupied ($\tau$)** |
 
 **Falsifiable predictions from this atlas:**
 
-1. Two light colour-triplet d=3 resonances at **18.807 MeV** (n=2) and **47.019 MeV** (n=3) should exist as short-lived states but are absent as stable particles (not co-fixed-points). No stable hadrons or narrow resonances are predicted in the 15–50 MeV window beyond the known pion sector.
-2. The next d=3 mode above strange (n=5, 164.565 MeV) is not a co-fixed-point and is absent as a stable state.
-3. The full occupied spectrum is exactly the 15-element Σ_pairs; no stable mode-sector pair exists outside it under the present construction.
+1. Two light colour-triplet $d=3$ resonances at **18.807 MeV** ($n=2$) and **47.019 MeV** ($n=3$) should exist as short-lived states but are absent as stable particles (not co-fixed-points). No stable hadrons or narrow resonances are predicted in the 15–50 MeV window beyond the known pion sector.
+2. The next $d=3$ mode above strange ($n=5$, 164.565 MeV) is not a co-fixed-point and is absent as a stable state.
+3. The full occupied spectrum is exactly the 15-element $\Sigma_{\rm pairs}$; no stable mode-sector pair exists outside it under the present construction.
 
 ---
 
 ## 2.6 Dark Matter ❓
 
-Σ_pairs is the complete co-fixed-point set: 15 stable pairs and no others. The spectrum admits no new stable fundamental particle, so IDWT offers no dark matter candidate at present. Accounting for the astrophysical dark matter evidence is an open question for the framework.
+$\Sigma_{\rm pairs}$ is the complete co-fixed-point set: 15 stable pairs and no others. The spectrum admits no new stable fundamental particle, so IDWT offers no dark matter candidate at present. Accounting for the astrophysical dark matter evidence is an open question for the framework.

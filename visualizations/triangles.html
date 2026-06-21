@@ -53,22 +53,22 @@
     /* legend */
     #legend {
         position: absolute; top: 64px; left: 12px;
-        background: rgba(0,0,0,0.75); padding: 10px 14px;
-        border-radius: 8px; z-index: 10;
+        background: rgba(5,5,15,0.92); padding: 10px 12px;
+        border-radius: 10px; border: 1px solid #333; z-index: 10;
     }
     #legend-title {
         font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
         color: #555; margin-bottom: 7px;
     }
     .leg {
-        display: flex; align-items: center; margin: 5px 0;
-        font-size: 13px; cursor: pointer; border-radius: 5px;
-        padding: 3px 5px; transition: background 0.12s, opacity 0.2s;
-        user-select: none;
+        display: flex; align-items: center; margin: 4px 0;
+        font-size: 13px; cursor: pointer; border-radius: 6px;
+        padding: 7px 13px; background: #1f2937; color: #ddd;
+        transition: background 0.12s, opacity 0.2s; user-select: none;
     }
-    .leg:hover { background: rgba(255,255,255,0.07); }
+    .leg:hover { background: #374151; }
     .leg.dimmed { opacity: 0.28; }
-    .leg.active-filter { background: rgba(255,255,255,0.08); outline: 1px solid rgba(255,255,255,0.2); }
+    .leg.active-filter { background: #2563eb; color: #fff; }
     .dot { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:8px; flex-shrink:0; }
 
     /* info panel */
@@ -113,8 +113,14 @@
     /* controls */
     .controls {
         position: absolute; top: 64px; right: 12px;
-        background: rgba(0,0,0,0.7); padding: 6px; border-radius: 8px; z-index: 10;
-        display: flex; flex-wrap: wrap; gap: 4px; max-width: 340px; justify-content: flex-end;
+        background: rgba(5,5,15,0.92); padding: 10px 12px; border-radius: 10px;
+        border: 1px solid #333; z-index: 10;
+        display: flex; flex-wrap: wrap; gap: 6px; max-width: 340px; justify-content: flex-end;
+    }
+    .controls-title {
+        flex-basis: 100%; text-align: right;
+        font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+        color: #555; margin-bottom: 3px;
     }
     button {
         padding: 7px 13px; background: #1f2937; color: #ddd;
@@ -178,6 +184,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
 </head>
 <body>
 
@@ -199,13 +209,14 @@
 </div>
 
 <div class="controls">
+    <div class="controls-title">Overlay — click to toggle</div>
     <button id="btnGen">Generation Law</button>
-    <button id="btnRec">Pascal Recursion</button>
+    <button id="btnRec">Recursion / closures</button>
     <button id="btnHock">Hockey-stick</button>
     <button id="btnGens">Generations</button>
     <button id="btnGRule">g-rule cascade</button>
     <button id="btnDiag">Sector Lines</button>
-    <button id="btnReset" title="Reset camera to default view">&#8635; Reset view</button>
+    <button id="btnReset" title="Reset camera and turn off all overlays">&#8635; Reset view</button>
 </div>
 
 <div id="info"></div>
@@ -359,7 +370,7 @@ sectors.forEach((s, gi) => {
     // Dots cover all rows needed to show every particle in this sector.
     // Largest particle n is s.nmax; it sits at row = n+d-1, col = d.
     const maxRow = s.nmax + s.d - 1;
-    const dotMat = new THREE.MeshBasicMaterial({ color: s.color });
+    const dotMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(s.color).multiplyScalar(0.32) });
     for (let row = 0; row <= maxRow; row++) {
         for (let col = 0; col <= row; col++) {
             const pos = calcPos(row, col);
@@ -463,12 +474,6 @@ particles.forEach(p => {
     groups[gi].add(m);
     particleMeshes.push(m);
     particleMap[p.symbol] = m;
-
-    const spr = makeSprite(p.symbol, s.color);
-    spr.position.copy(pos).add(new THREE.Vector3(1.9, 1.6, 0.6));
-    groups[gi].add(spr);
-
-
 });
 
 // ==================== SPRITE HELPERS ====================
@@ -511,13 +516,23 @@ const genPairs = [
     ['\u03bd1','e'], ['u','e'], ['c','\u03bc'], ['\u03bd2','\u03bc'],
     ['\u03bd3','\u03c4'], ['d','\u03c4']
 ];
+// Recursion / closures \u2014 every edge is a verified index identity:
+//  c,\u03bd2 \u2192 \u03bc : Pascal   S(4,4) = S(4,3)+S(3,4) = 20+15 = 35
+//  u,c,t \u2192 H : Higgs closure  n_H = n_u+n_c+n_top = 3+20+72 = 95
+//  \u03bd2,Z \u2192 H : alt route       n_H = n_Z+n_\u03bd2\u22121 = 81+15\u22121 = 95
+//  d,u \u2192 s : composite seed   n_s = n_d+n_u = 1+3 = 4
+//  s \u2192 b : bottom beat        n_b = n_s\u00b2 = 16
 const recPairs = [
-    ['c','\u03bc'], ['\u03bd2','\u03bc'], ['\u03bd1','e'], ['u','e'], ['\u03bd3','\u03c4'],
-    ['d','\u03c4'], ['u','H'], ['c','H'], ['t','H'], ['s','d'], ['c','u'], ['t','c'],
-    ['\u03bc','e'], ['W','Z'], ['H','Z'], ['b','d'], ['b','s']
+    ['c','\u03bc'], ['\u03bd2','\u03bc'],
+    ['u','H'], ['c','H'], ['t','H'],
+    ['\u03bd2','H'], ['Z','H'],
+    ['d','s'], ['u','s'],
+    ['s','b']
 ];
+// Hockey-stick \u2014 index = simplex evaluation S(parent, d'):
+//  u\u2192\u03bd1 S(3,3)=10 \u00b7 u\u2192\u03bd2 S(3,4)=15 \u00b7 s\u2192c S(4,3)=20 \u00b7 s\u2192\u03bc S(4,4)=35
 const hockPairs = [
-    ['u','\u03bd1'], ['u','\u03bd2'], ['s','c']
+    ['u','\u03bd1'], ['u','\u03bd2'], ['s','c'], ['s','\u03bc']
 ];
 
 const genLines      = [];
@@ -525,6 +540,17 @@ const recLines      = [];
 const hockLines     = [];
 const gensLines     = [];
 const gRuleLines    = [];
+
+// ---- direction markers: a bright cone that flows from source a -> target b ----
+const markers   = [];
+const markerGeo = new THREE.ConeGeometry(0.75, 2.2, 12);
+const MK_UP     = new THREE.Vector3(0, 1, 0);
+function addMarker(pa, pb, color, group) {
+    const cone = new THREE.Mesh(markerGeo, new THREE.MeshBasicMaterial({ color }));
+    cone.quaternion.setFromUnitVectors(MK_UP, pb.clone().sub(pa).normalize());
+    group.add(cone);
+    markers.push({ mesh: cone, pa: pa.clone(), pb: pb.clone() });
+}
 
 function buildConnections(pairs, color, group, store) {
     pairs.forEach(([a, b]) => {
@@ -539,11 +565,12 @@ function buildConnections(pairs, color, group, store) {
         line.userData = { a, b, baseColor: color };
         group.add(line);
         store.push(line);
+        addMarker(pa, pb, color, group);
     });
 }
 buildConnections(genPairs,  0x22d3ee, genGroup,    genLines);
-buildConnections(recPairs,  0xf59e0b, recurGroup,  recLines);
-buildConnections(hockPairs, 0xa855f7, hockeyGroup, hockLines);
+buildConnections(recPairs,  0xffb020, recurGroup,  recLines);
+buildConnections(hockPairs, 0xc77dff, hockeyGroup, hockLines);
 
 function buildConnectionsMulti(entries, group, store) {
     entries.forEach(({a, b, color, label}) => {
@@ -558,6 +585,7 @@ function buildConnectionsMulti(entries, group, store) {
         line.userData = { a, b, baseColor: color, label };
         group.add(line);
         store.push(line);
+        addMarker(pa, pb, color, group);
     });
 }
 
@@ -648,12 +676,16 @@ function showInstructions() {
             <span style="color:#aaa;font-size:12px">n<sub>lepton</sub> = n<sub>&nu;</sub> + n<sub>quark</sub></span>
         </div>
         <div class="row" style="margin-bottom:4px">
-            <span class="pill" style="border-color:#f59e0b">Pascal Recursion</span>
-            <span style="color:#aaa;font-size:12px">S(n,d)&thinsp;=&thinsp;S(n,d&minus;1)&thinsp;+&thinsp;S(n&minus;1,d)</span>
+            <span class="pill" style="border-color:#ffb020">Recursion / closures</span>
+            <span style="color:#aaa;font-size:12px">Pascal S(4,4), Higgs &amp; strange closures</span>
         </div>
         <div class="row" style="margin-bottom:4px">
-            <span class="pill" style="border-color:#a855f7">Hockey-stick</span>
-            <span style="color:#aaa;font-size:12px">S(n,d)&thinsp;=&thinsp;&Sigma;<sub>k</sub>&thinsp;S(k,d&minus;1)</span>
+            <span class="pill" style="border-color:#c77dff">Hockey-stick</span>
+            <span style="color:#aaa;font-size:12px">n&thinsp;=&thinsp;S(n&prime;,&thinsp;d) simplex evaluation</span>
+        </div>
+        <div class="row" style="margin-bottom:4px">
+            <span class="pill" style="border-color:#e879f9">g-rule cascade</span>
+            <span style="color:#aaa;font-size:12px">g(d,&thinsp;n)&thinsp;=&thinsp;d&thinsp;+&thinsp;n&thinsp;&minus;&thinsp;1 &mdash; top&thinsp;&rarr;&thinsp;W&thinsp;&rarr;&thinsp;Z</span>
         </div>
         <div class="row" style="margin-bottom:4px">
             <span class="pill" style="border-color:#4ade80">Generations</span>
@@ -673,8 +705,8 @@ function updateInfo(p) {
     // Fixed-color overlays (pair arrays)
     [
         { pairs: genPairs,  color:'#22d3ee', label:'Generation Law' },
-        { pairs: recPairs,  color:'#f59e0b', label:'Pascal Recursion' },
-        { pairs: hockPairs, color:'#a855f7', label:'Hockey-stick' },
+        { pairs: recPairs,  color:'#ffb020', label:'Recursion / closures' },
+        { pairs: hockPairs, color:'#c77dff', label:'Hockey-stick' },
     ].forEach(({pairs, color, label}) => {
         pairs.forEach(([a, b]) => {
             if (a === sym) allRel.push({sym:b, color, label, arrow:'→'});
@@ -860,11 +892,16 @@ document.getElementById('btnDiag').onclick = function() {
 
 document.getElementById('btnReset').onclick = function() {
     startFly(CAM_DEFAULT_POS, CAM_DEFAULT_TARGET);
+    [genGroup, recurGroup, hockeyGroup, gensGroup, gRuleGroup].forEach(g => g.visible = false);
+    diagonalLines.forEach(l => l.visible = false);
+    ['btnGen','btnRec','btnHock','btnGens','btnGRule','btnDiag'].forEach(id =>
+        document.getElementById(id).classList.remove('active'));
+    resetLineColors();
 };
 
 // ==================== INITIAL STATE ====================
 genGroup.visible = recurGroup.visible = hockeyGroup.visible = false;
-gensGroup.visible = false;
+gensGroup.visible = gRuleGroup.visible = false;
 diagonalLines.forEach(l => l.visible = false);
 showInstructions();
 
@@ -891,6 +928,14 @@ function tick() {
     particleMeshes.forEach((m, i) => {
         if (m !== selected) m.scale.setScalar(1 + Math.sin(time * 1.2 + i) * 0.03);
     });
+
+    // flow direction markers along visible connection lines
+    const mph = 0.1 + ((time * 0.33) % 1) * 0.8;
+    for (const mk of markers) {
+        if (mk.mesh.parent && mk.mesh.parent.visible) {
+            mk.mesh.position.lerpVectors(mk.pa, mk.pb, mph);
+        }
+    }
 
     renderer.render(scene, camera);
     requestAnimationFrame(tick);

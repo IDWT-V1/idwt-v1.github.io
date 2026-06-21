@@ -322,15 +322,15 @@ The **pure harmonic self-binding** V_d = λ_d r² in flat, extended ℝ^d cures 
 
 **Mode functions** are the flat harmonic eigenfunctions (Laguerre × Gaussian, §20 Part E, with closed-form norms) — not a proxy after all; they are the genuine self-binding modes. The spinor-harmonic / S^d picture is their SO(d+1)-covariant relabeling.
 
-**Decision (2026-05-29) — L_d = λ_d^{−1/4}, the harmonic oscillator length.** Under the current construction L_d appears in two places: (U1) gravity V_7 = L_4 L_5 L_6 L_10⁴ → G_N = G_∞/V_7; (U2) the KK/curvature gap (d+1)/L_d² and R/4 = m(m+1)/(4L_d²). (It formerly also entered a dimensional-visibility amplitude and the Part 7 §2.9 spurion form; both were removed with the visibility apparatus.) With harmonic confinement the ground state is the Gaussian exp(−√λ_d r²/2), whose localization length is the **oscillator length L_d = λ_d^{−1/4}** — not the threshold length λ_d^{−1/2} (that is an exponential-tail length the harmonic well has no continuum to produce). The reason this is the correct choice:
+**Decision (2026-05-29) — L_d = λ_d^{−1/4}, the harmonic oscillator length.** Under the current construction L_d appears in two places: (U1) gravity V_7 = L_4 L_5 L_6 L_10⁴ → G_N = G_∞/V_7 (superseded 2026-06-20 — see note below); (U2) the KK/curvature gap (d+1)/L_d² and R/4 = m(m+1)/(4L_d²). (It formerly also entered a dimensional-visibility amplitude and the Part 7 §2.9 spurion form; both were removed with the visibility apparatus.) With harmonic confinement the ground state is the Gaussian exp(−√λ_d r²/2), whose localization length is the **oscillator length L_d = λ_d^{−1/4}** — not the threshold length λ_d^{−1/2} (that is an exponential-tail length the harmonic well has no continuum to produce). The reason this is the correct choice:
 
 - It is the genuine length of the harmonic ground state we adopted; λ_d^{−1/2} belongs to the rejected saturating well.
 
 Recomputed values (L_d = λ_d^{−1/4}): L_2 = 0.375, L_3 = 0.675, L_4 = 0.872, L_5 = 1.571, L_6 = 1.414, L_10 = 1.414. Downstream:
-- **V_7 = 7.74** (was 113). Not a broken prediction: G_∞ is underived/free, so V_7's absolute value only rescales G_∞. The structure G_N = G_∞/V_7 (product of seven sector lengths) is unchanged. Note: comparing G_N to sector coupling constants is a category error in IDWT — they are different types of quantity; V_7 is not "why gravity is weak", it is the geometric factor connecting G_∞ to what a 3D observer measures.
+- **V_7 = 7.74** (was 113). [SUPERSEDED 2026-06-20: V_7 as a gravity factor is removed entirely. A 3D observer is uniform in a sector-d source's k=d−3 hidden coordinates and integrates its field over them; ∫d^kρ/(r²+ρ²)^{(d−2)/2}=C_k/r with C_k/[(d−2)S_{d−1}]=1/(4π) identically gives G_N = G_∞/(4π), sector-independent, no V_7 (idwt.py STEP 24; Part 4 §3.12.2). The earlier note that "V_7 is not why gravity is weak, only a geometric factor connecting G_∞ to what a 3D observer measures" anticipated this — that factor is the universal 4π, the 3D Green's-function constant.]
 - **KK gap (d+1)/L_d² = (d+1)√λ_d** (21, 9, 6.6, 2.4, 3.5, 5.5 in sector units) — positive and O(few), so excited modes remain gapped; no KK tower. Fine.
 
-L_d = λ_d^{−1/4} and V_7 ≈ 7.74 are now the values used throughout the main documents.
+L_d = λ_d^{−1/4} are the sector lengths used throughout the main documents (they feed the spectral-action a₂/a₄ and the KK gap, U2). The V_7 gravity-dilution use (U1) is superseded: G_N = G_∞/(4π), no V_7.
 
 ### §20a. T2 kernel overlap of the mode functions, and the nature of the CKM formula (2026-06-04)
 
