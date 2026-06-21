@@ -60,16 +60,19 @@
         font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
         color: #555; margin-bottom: 7px;
     }
+    #legend-grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 5px;
+    }
     .leg {
-        display: flex; align-items: center; margin: 4px 0;
-        font-size: 13px; cursor: pointer; border-radius: 6px;
-        padding: 7px 13px; background: #1f2937; color: #ddd;
+        display: flex; align-items: center;
+        font-size: 12px; cursor: pointer; border-radius: 6px;
+        padding: 6px 10px; background: #1f2937; color: #ddd;
         transition: background 0.12s, opacity 0.2s; user-select: none;
     }
     .leg:hover { background: #374151; }
     .leg.dimmed { opacity: 0.28; }
     .leg.active-filter { background: #2563eb; color: #fff; }
-    .dot { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:8px; flex-shrink:0; }
+    .dot { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:6px; flex-shrink:0; }
 
     /* info panel */
     #info {
@@ -206,6 +209,7 @@
 
 <div id="legend">
     <div id="legend-title">Sector — click to isolate</div>
+    <div id="legend-grid"></div>
 </div>
 
 <div class="controls">
@@ -321,7 +325,7 @@ const groups = sectors.map((s, i) => {
 // ---- Clickable legend ----
 let activeSectorFilter = null;
 const legItems = [];
-const legendEl = document.getElementById('legend');
+const legendGrid = document.getElementById('legend-grid');
 sectors.forEach(s => {
     const div = document.createElement('div');
     div.className = 'leg';
@@ -331,7 +335,7 @@ sectors.forEach(s => {
         activeSectorFilter = (activeSectorFilter === s.d) ? null : s.d;
         applyFilter();
     });
-    legendEl.appendChild(div);
+    legendGrid.appendChild(div);
     legItems.push({ el: div, d: s.d });
 });
 

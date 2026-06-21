@@ -6977,35 +6977,53 @@ _t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
 
 
 # =========================================================================
-# STEP 112 -- T0.5 OPERAND-IDENTITY CLOSURE: THE DEPOSIT GRID n(alpha,beta)
-#            HAS NO SINGLE CLOSED FORM; IT SPLITS AS ANCHORS + SEED-SIMPLEX
-#            + THREE OPERAND EDGES (Part 7; on STEP 89, 99). Status open.
+# STEP 112 -- T0.5 OPERAND-IDENTITY CONSOLIDATION: THE DEPOSIT GRID
+#            n(alpha,beta) DECOMPOSES AS ANCHORS + SEED-SIMPLEX + THREE
+#            OPERAND EDGES (Part 7; on STEP 89, 99). Status open.
 # =========================================================================
-# Settles the within-bidegree open item (a closed n(alpha,beta) across all
+# Narrows the within-bidegree open item (a closed n(alpha,beta) across all
 # sectors). The 12 MC-2 deposit channels (alpha,beta), alpha in 0..2 (omega2,
 # d=4 generator), beta in 0..3 (omega3, d=6 generator), site j=alpha+beta+2;
 # minus the photon (0,0) leave 11 matter cells (_deposits_89 plus the (2,3)
-# corner tau). Their index VALUES partition uniquely into three classes:
+# corner tau). PROVED here: their index VALUES partition uniquely into three
+# classes:
 #   (i)  4 ANCHORS -- the framework seeds and the Euler product:
 #          n_d=1 (0,1), n_u=3 (0,2), n_s=n_d+n_u=4 (1,0),
 #          n_top=chi(CP2)chi(CP3)chi(CP5)=72 (2,0).
 #   (ii) 4 SEED-SIMPLEX cells = {S(n,d): n,d in {3,4}} = {10,15,20,35}:
 #          S(3,3)=nu1 (0,3), S(4,3)=charm (1,1), S(3,4)=nu2 (1,2),
 #          S(4,4)=mu (2,2) -- forced (the 2x2 seed-simplex image).
-#   (iii) 3 OPERAND EDGES -- the irreducible T0.5 residue:
+#   (iii) 3 OPERAND EDGES -- the residual T0.5 open core:
 #          e=13   (1,3) = nu1 + n_u                  (additive)
 #          nu3=22 (2,1) = nu1 + nu2 - n_u  (IE) = S(3,5)+1
 #          tau=23 (2,3) = nu3 + n_d = nu1 + e = n_c + n_u  (additive)
-# NO single low-complexity g(alpha,beta) reproduces all 11: the alpha=2 row
-# (72,22,35,23) is non-monotone in beta and mixes a product, an IE edge, a
-# simplex value and an additive edge -- structurally distinct constructions
-# with no common generator. The three edges have NON-UNIQUE operand
-# representations (route-multiplicity NULL, App 15 dead-ends 2026-06-09), so
-# the operands are not fixed by any static class (the exhausted ~16-line
-# selection battery). Operand selection reduces to the time-dependent
-# condensation dynamics (STEP 85). This STEP is a consolidation: it adds no
-# new arithmetic search (those are exhausted-NULL) and records the canonical
-# decomposition plus the no-closed-form verdict.
+# OPEN (not impossibility). No NATURAL single g(alpha,beta) over all 11 is
+# known; the PROVED content is the 3-class partition above. The deeper
+# lepton-tower structure, sharper once top and bottom are FREE anchors (off
+# the hockey-stick tower, STEP 99) rather than tower outputs:
+#  - GENERATIONAL RULE (motivated): charged lepton_i = nu_i + (up-type)_i.
+#      e = nu1 + n_u = 13;  mu = nu2 + n_c = 35  (documented additive edges).
+#      The 3rd would be tau = nu3 + n_top = 94, but n_top is a FREE anchor
+#      (product form, off-tower), so the 3rd charged lepton cannot inherit
+#      it; tau is displaced -- minimally, by the ground quantum -- to the
+#      (2,3) corner: tau = nu3 + n_d = 23. This is the lepton analogue of the
+#      bottom quark, whose 3rd down-type also leaves the tower (beat k0=16).
+#      Given the rule, e and mu are forced (a 2-generation pattern, not a
+#      theorem: the operand "up-type, same generation" is motivated, the why
+#      is not proved).
+#  - +n_d THIRD-GEN DISPLACEMENT: both lepton anomalies reduce to one
+#      ground-quantum shift -- nu3 = S(3,5) + n_d (ray S(3,5)=21 -> 22) and
+#      tau = nu3 + n_d (22 -> 23). Equivalently the +1 = n_d level-vs-index
+#      offset (level-addition N_c=N_a+N_b forces n_a+n_b-1; the tower uses
+#      n_a+n_b, one higher). Why the +n_d shift fires is the unproved step;
+#      it ties to the time-dependent condensation dynamics (STEP 85).
+# CAVEAT on the App 15 null battery (~16 lines): those mostly targeted the
+# OVER-BROAD "one rule cuts the 15-set" with top and bottom AS tower outputs;
+# they do not close this narrowed lepton-operand question and must not be
+# read as doing so. The open core here is the +n_d third-gen displacement
+# (plus the up-type generational operand), not a generic operand scan. This
+# STEP adds no blind arithmetic search; it records the proved decomposition
+# and the motivated generational reduction.
 def _S112(n, d):
     return math.comb(n + d - 1, d)
 # 11 matter cells (alpha,beta) -> index value, from _deposits_89 + corner
@@ -7040,11 +7058,25 @@ _edges_ok_112 = (_e_112 == 13 and _nu3_112 == 22 and _tau_112 == 23
                  and _nu1_112 + _e_112 == 23     # tau alt
                  and _nc_112 + 3 == 23)          # tau alt
 assert _anchor_ids_112 and _simplex_ok_112 and _edges_ok_112
-# no single closed form: the alpha=2 row is non-monotone in beta
+# alpha=2 row non-monotone in beta: rules out forms monotone in beta only
+# (a necessary check, NOT a proof that no closed form exists)
 _row2_112 = [_grid_112[(2, b)] for b in range(4)]   # [72,22,35,23]
 _nonmonotone_112 = not (_row2_112 == sorted(_row2_112)
                         or _row2_112 == sorted(_row2_112, reverse=True))
 assert _nonmonotone_112
+# generational rule (motivated): charged lepton_i = nu_i + same-gen up-type
+_gen_rule_112 = (10 + 3 == 13           # e  = nu1 + n_u (up)
+                 and 15 + 20 == 35)     # mu = nu2 + n_c (charm)
+_tau_would_112 = 22 + 72                 # = 94: nu3 + n_top (top is off-tower)
+_tau_disp_112 = 22 + 1                   # = 23: nu3 + n_d displacement
+assert _gen_rule_112 and _tau_would_112 == 94 and _tau_disp_112 == 23
+# the +n_d third-gen displacement (the live open lead for nu3 and tau):
+_nu3_disp_112 = _S112(3, 5) + 1          # = 22 = ray S(3,5)=21 + n_d
+# equivalently the +1 = n_d level-vs-index offset on the additive edges:
+_level_add_112 = (10 + 3) - 1            # e via level-addition = 12
+_index_add_112 = 10 + 3                  # e via index-addition = 13
+_plus_one_offset_112 = _index_add_112 - _level_add_112   # = 1 = n_d
+assert _nu3_disp_112 == 22 and _plus_one_offset_112 == 1
 
 
 # =========================================================================
@@ -10345,10 +10377,10 @@ print(f"  T8 gaps closed by this observation: {_t8_gaps_closed_111} (honest).")
 
 
 # ==========================================================================
-# STEP 112 -- OUTPUT: T0.5 OPERAND-IDENTITY CLOSURE (Part 7, App B/D, open)
+# STEP 112 -- OUTPUT: T0.5 OPERAND-IDENTITY CONSOLIDATION (Part 7, App, open)
 # ==========================================================================
 print("\n" + "=" * 70)
-print("=== STEP 112: T0.5 OPERAND-IDENTITY CLOSURE ===")
+print("=== STEP 112: T0.5 OPERAND-IDENTITY CONSOLIDATION ===")
 print("=" * 70)
 print("Deposit grid n(alpha,beta), 11 matter cells, partitions uniquely:")
 print("  4 anchors : n_d=1, n_u=3, n_s=4 (=1+3), n_top=72 (=3*4*6)")
@@ -10356,15 +10388,22 @@ print("  4 simplex : {S(n,d): n,d in {3,4}} = {10,15,20,35}")
 print("              nu1=S(3,3), nu2=S(3,4), charm=S(4,3), mu=S(4,4)")
 print("  3 edges   : e=13=nu1+n_u; nu3=22=nu1+nu2-n_u=S(3,5)+1;")
 print("              tau=23=nu3+n_d=nu1+e=n_c+n_u")
-print(f"  partition exact, disjoint, complete: {_partition_ok_112}")
+print(f"  partition exact, disjoint, complete (PROVED): {_partition_ok_112}")
 print(f"  alpha=2 row {_row2_112} non-monotone in beta:"
       f" {_nonmonotone_112}")
-print("No single closed form n(alpha,beta): the alpha=2 row mixes a")
-print("product, an IE edge, a simplex value and an additive edge. The 3")
-print("edges have non-unique operands (route-multiplicity NULL), so static")
-print("structure does not fix them; operand selection reduces to the")
-print("time-dynamics (STEP 85). Status: open (consolidation; settles the")
-print("within-bidegree closed-form item as 'no closed form').")
+print("    (rules out beta-monotone forms only -- not a no-form proof)")
+print("Generational rule (motivated): charged lepton_i = nu_i + up-type_i")
+print(f"  e=nu1+n_u={10+3}, mu=nu2+n_c={15+20}; 3rd would be"
+      f" tau=nu3+top={_tau_would_112},")
+print(f"  but top is a FREE anchor (off-tower) -> tau=nu3+n_d="
+      f"{_tau_disp_112} (corner).")
+print("  Lepton analogue of the bottom quark leaving the tower (beat 16).")
+print(f"Open core = the +n_d third-gen displacement: nu3=S(3,5)+n_d"
+      f"={_nu3_disp_112}, tau=nu3+n_d.")
+print("CAVEAT: the App-15 null battery targeted the OLD 15-set (top+bottom")
+print("AS outputs); it does not close this narrowed lepton-operand item.")
+print("The +n_d shift ties to the time-dynamics (STEP 85). Status: open")
+print("(consolidation: proves the decomposition, pins the open core).")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")

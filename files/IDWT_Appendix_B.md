@@ -381,3 +381,29 @@ STEP 74(e) proves MC-2 completeness on **flat C^k** (k = d/2) by U(k) representa
 
 **(2) α-ordering driver (🔶 motivated).** Within a sector the mode index n increases with α = #(ω₂) (STEP 89). The clean case is the neutrino sector, where the index *is* the re-evaluated count: ν₁ (α=0) = S(n_u,3) = S(3,3) = 10 and ν₂ (α=1) = S(n_u,4) = S(3,4) = 15 — i.e. d_eval = 3+α, with ω₂ the d=4 evaluation channel. Since S(n,d) is strictly increasing in d for n ≥ 2 (here n_u = 3), each extra ω₂ lands the seed on a strictly larger count, so n rises with α. (For n=1 the ground is degenerate, S(1,d)=1 for all d.) The other sectors order the same way but through tower constructions rather than a single S(n_u, 3+α); ν₃ = 22 = S(3,5)+1 carries a tower additive offset, and the up/down/lepton indices come from the generation DAG. **Open:** a closed n(α,β) across all sectors — the within-bidegree n-assignment, the residual T0.5 piece. The between-degree count (three generations) follows from the U(k) channel structure above.
 
+### §51a. Operand-identity consolidation: the deposit-grid decomposition and the $+n_d$ third-generation displacement (2026-06-20, opus; `idwt.py` STEP 112, builds on §51, STEP 89/99)
+
+This narrows the within-bidegree open item of §51(2). Write the deposit index value as $n(\alpha,\beta)$, $\alpha\in\{0,1,2\}$ ($\omega_2$ power, $d=4$ generator), $\beta\in\{0,1,2,3\}$ ($\omega_3$ power, $d=6$ generator), site $j=\alpha+\beta+2$. Removing the photon $(0,0)$ leaves the eleven matter cells.
+
+**Decomposition (⭐ identity, verified exhaustively in STEP 112).** The eleven index values partition *uniquely* into three classes:
+
+- **Four anchors** — the framework seeds and the Euler product: $n_d=1$ at $(0,1)$, $n_u=3$ at $(0,2)$, $n_s=n_d+n_u=4$ at $(1,0)$, and $n_\text{top}=\chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5)=72$ at $(2,0)$.
+- **Four seed-simplex cells** — the $2\times2$ image $\{S(n,d):n,d\in\{3,4\}\}=\{10,15,20,35\}$: $\nu_1=S(3,3)$ at $(0,3)$, $\nu_2=S(3,4)$ at $(1,2)$, charm $=S(4,3)$ at $(1,1)$, $\mu=S(4,4)$ at $(2,2)$.
+- **Three operand edges** — the residual open core: $e=13$ at $(1,3)$, $\nu_3=22$ at $(2,1)$, $\tau=23$ at the $(2,3)$ corner (housed at $d=10$).
+
+No *natural* single closed form $g(\alpha,\beta)$ reproducing all eleven is known. This is **not** an impossibility theorem: the only firm structural fact is that the $\alpha=2$ row $(72,22,35,23)$ is non-monotone in $\beta$, which rules out forms monotone in $\beta$ (necessary, not sufficient — a binomial in compound arguments can be non-monotone). The proved content is the three-class partition.
+
+**Generational reduction (🔶 motivated).** The picture sharpens once the top and bottom are recognised as **free anchors off the hockey-stick tower** (STEP 99) rather than tower outputs. The charged leptons then satisfy a same-generation rule, charged lepton$_i = \nu_i + (\text{up-type})_i$:
+
+$$e=\nu_1+n_u=10+3=13,\qquad \mu=\nu_2+n_c=15+20=35,$$
+
+both documented additive edges. The third would be $\tau=\nu_3+n_\text{top}=22+72=94$, but $n_\text{top}$ is a free anchor (product form, off-tower), so the third charged lepton cannot inherit it; $\tau$ is displaced — minimally, by the ground quantum — to the corner deposit, $\tau=\nu_3+n_d=23$. This is the lepton-sector analogue of the bottom quark, whose third down-type also leaves the tower (the beat $k_0=16$, Part 7 §1.3). Given the rule, $e$ and $\mu$ are fixed; the operand "up-type, same generation" is motivated by the weak-doublet pairing, but with two generations it is a pattern, not a theorem.
+
+**The $+n_d$ third-generation displacement (🔶, the live lead).** Both lepton-tower anomalies reduce to a single ground-quantum shift:
+
+$$\nu_3=S(3,5)+n_d=21+1=22,\qquad \tau=\nu_3+n_d=22+1=23.$$
+
+Equivalently this is the systematic $+1=n_d$ level-vs-index offset: level-addition of disjoint excitations ($N_c=N_a+N_b$, with $N=n-1$) forces $n_c=n_a+n_b-1$, whereas the tower's additive edges sit one higher at $n_c=n_a+n_b$. Why the $+n_d$ shift fires — index-addition over level-addition — is the unproved step; it ties to the time-dependent condensation dynamics (STEP 85).
+
+**Caveat on the prior null record (§15).** The ~16-line selection-null battery mostly targeted the over-broad "one rule cuts the 15-set" with top and bottom *as tower outputs*; it does not close this narrowed lepton-operand question and must not be read as doing so. The open core here is the $+n_d$ third-generation displacement together with the up-type generational operand, not a generic operand scan.
+

@@ -167,6 +167,8 @@ The pattern across all three generation laws:
 $$n_{\rm lepton} = n_{\rm neutrino} + n_{\rm quark\,partner}$$
 This is the hockey-stick identity at different (n, d) pairs.
 
+**The generation-3 anomaly — why $\tau$ breaks the up-type pattern. 🔶** Read across the partners, generations 1 and 2 add the *same-generation up-type quark*: $n_e = n_{\nu_1} + n_u$ (up) and $n_\mu = n_{\nu_2} + n_c$ (charm). The pattern would continue $n_\tau = n_{\nu_3} + n_{\rm top} = 22 + 72 = 94$ — but $n_{\rm top} = 72$ is a product-form anchor off the hockey-stick tower (§6; it is not a hockey-stick output), so the third charged lepton cannot inherit its up-type partner. Instead $\tau$ takes the minimal displacement available, the universal ground quantum $n_{\rm down} = S(1,d) = 1$: $n_\tau = n_{\nu_3} + n_d = 23$. This is the lepton-sector analogue of the bottom quark, whose third down-type generation likewise leaves the tower (the beat resonance $k_0 = 16$, §8): in both sectors the third generation fails to follow its natural tower continuation and is displaced by one ground quantum. Equivalently, the third-generation neutrino and charged lepton carry the same $+n_d$ shift, $n_{\nu_3} = S(3,5) + n_d = 22$ and $n_\tau = n_{\nu_3} + n_d = 23$ — the systematic $+1 = n_d$ offset between index-addition ($n_a + n_b$, the tower edge) and level-addition ($n_a + n_b - 1$, disjoint excitations $N_c = N_a + N_b$ with $N = n-1$). Why the $+n_d$ shift fires rather than level-addition is open, and plausibly set by the condensation dynamics (Part 6; `idwt.py` STEP 112).
+
 **Mode indices from sector Euler characteristics (Part 1 §3b):**
 
 $$n_e = \bigl(\chi(\mathbb{CP}^3)\bigr)^2 - \chi(\mathbb{CP}^2) = n_s^2 - n_u = 13 \quad[= k_0 - n_u]$$
