@@ -328,6 +328,22 @@ What the functional does **not** do is select the occupancy. Its stationary poin
 
 The condensate structure does settle one of those radiative channels directly. Linearizing the functional about the $n=1$ ground state gives a real Hessian $\mathrm{diag}(4(\mu-\varepsilon_1),\,0)$: the amplitude fluctuation is gapped and the phase fluctuation is the exact $U(1)$ Goldstone of the condensate. The $n=1$ mode is the symmetry-broken vacuum — its only zero-energy fluctuation is the gauge phase, so it carries no populatable positive-energy excitation and cannot serve as a radiation final state. The up quark is the unique tower member whose downward link $(3,4)\to(1,4)$ terminates on a ground mode, so its stability follows from the condensate alone, independent of the occupancy selection (`files/idwt.py` STEP 92). ✅
 
+### 3.10.5a The excitation amplitude is fixed, not free 🔵
+
+The functional (1) determines not only the well depth but the amplitude of a single excitation. Writing the conserved $U(1)$ charge $Q = \int_{\Xi_d}|\Psi|^2$ explicitly, the stationary well depth is $\lambda_d(Q) = (g_{dd}Q/2)^{2/3}$; the published self-consistency $\lambda_d = (g_{dd}/2)^{2/3}$ (§3.10.3) is exactly the $Q=1$ case — the $L^2$-normalised mode it was derived from already fixed the charge to one quantum. The amplitude was therefore settled the moment the well was, and is not an additional free parameter. For a Gaussian sector mode at unit charge the field amplitude is finite in every sector,
+
+$$A = \lambda_d^{d/8}/\pi^{d/4}, \qquad |\Psi(0)|^2 = A^2,$$
+
+with $A = 0.0635$ in the electron sector ($d=6$). The excitation thus has a definite, finite height. The *absolute* physical amplitude still carries the one-quantum normalisation — the quantum of action, §3.10.5c — so only the dimensionless shape amplitude is fixed here. (`files/idwt.py` STEP 122.)
+
+### 3.10.5b The mass is the integrated density of states ✅
+
+The mode mass $M = m_{\rm scale,d}\,S(n,d)$ is a *cumulative state count*, not a single eigenvalue. The combinatorial degeneracy $S(n,d) = \binom{n+d-1}{d} = \sum_{k=0}^{n-1}\binom{k+d-1}{d-1}$ is exactly the cumulative number of $d$-dimensional isotropic harmonic-oscillator states up to level $N=n-1$, since $\binom{k+d-1}{d-1}$ is the level-$k$ degeneracy. The sector well is therefore harmonic with no anharmonic correction: the apparently anharmonic $d=3$ tower $1,10,35,84,165$ (gaps the odd squares) is the parity-selected odd-$n$ subsequence, while the full sequence $1,4,10,20,35,\dots$ has smooth triangular gaps. The mass — a count growing as $N^d$ — and the size-law radial factor $\sqrt{N+d/2}$ — a single-level rms radius (§3.9a) — are two consistent readings of the same harmonic well at the same level $N$; there is no harmonic-versus-anharmonic seam. The absolute energy scale is the single input $m_e$ ($m_{\rm scale,6} = m_e/S(n_e,6)$). (`files/idwt.py` STEP 123; Theorem S1, Part 8 §60b.)
+
+### 3.10.5c The amplitude normalisation is the quantum of action 🔵
+
+A spontaneous decay produces one daughter quantum, and the rate is set by the seed occupation $a_f^2$ of that final mode (Part 6; `files/idwt.py` STEP 105). This is the one quantum of §3.10.5a, fixed by the unit conserved charge $Q=1$, which is invariant under a global rescaling $\Psi\to c\Psi$ (the charge transforms as $Q\to c^2 Q$, so unit charge is $c$-independent). It is therefore not a free per-decay amplitude but the single universal quantum of action — the role $\hbar$ plays in a quantised theory, here supplied as the definition of one excitation. A purely classical field does not produce this normalisation on its own; it is the one genuine physical import beyond the dimensionless sector structure (`files/idwt.py` STEP 125). The contentful inputs of the framework are dimensionless — the gravitational coupling $G_\infty m_e^2 \approx 2.2\times10^{-44}$ and the integer seeds — and a single Compton-scale anchor with $c$ converts them to physical times and lengths; $\hbar$ enters only inside that anchor (as the Compton frequency $m_e/\hbar$ and length $\hbar/m_e c$), never alone.
+
 ### 3.10.6 The sector self-consistency hierarchy
 
 The structure of §3.10 reflects a three-level self-consistency in the particle spectrum, each level a distinct fixed-point condition on a different aspect of the field.
