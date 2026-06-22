@@ -7634,7 +7634,7 @@ assert (_evl_all_pos_118 and _Id_nonode_118 and _mem_all_decoupled_118
 # =============================================================================
 # STEP 119 -- e=13 DUAL-FACE UNIQUENESS: THE ADDITIVE-NODE READING AND THE
 #            PROJECTIVE READING MEET ONLY AT THE UP SEED (Part 7 1.2a/1.3;
-#            on 89, 112, 115, 116). Sharpening of the open e residue.
+#            on 89, 112, 115, 116). Confrontation; grading NULL (PASS 2).
 #            positions/identity: ⭐  |  e=13 value: 🔶 (still not forced)
 # =============================================================================
 # Confrontational re-attack on the "n_e=13 irreducible" verdict (emu task).
@@ -7645,15 +7645,20 @@ assert (_evl_all_pos_118 and _Id_nonode_118 and _mem_all_decoupled_118
 #       = 1 + N_c + N_c^2 = points of PG(2,N_c) = the N_c-graded
 #       Betti sum of H*(CP^2) (Betti (1,1,1), graded by N_c).
 # As polynomials S(a,3)+a and a^2+a+1 are distinct and coincide at
-# EXACTLY one real a: a=3 (their difference factors (a-3)(a^2+2)). And e
-# is the UNIQUE matter index carrying BOTH faces -- every other index is a
-# single S-value (charm, nu1, nu2, mu) or a +n_d offset (nu3, tau). So
-# "arbitrary additive node" sharpens to "unique fixed point of an
-# additive-node reading and a projective reading, e-specific, locked at
-# a = n_u". This is NOT yet a forcing: the N_c-grading of face (A) is
-# itself underived, so (A) stays a structural restatement, not an
-# independent selector. n_e=13 STAYS 🔶; residual reduced to "derive the
-# N_c-grading of face (A)". Three further forcing routes, all NULL:
+# EXACTLY one real a: a=3 (difference factors (a-3)(a^2+2)); e is the
+# unique index with BOTH a k^2+k+1 and an S(k,3)+k face. PASS 2 (Fedge
+# "follow the lead") tried to DERIVE the N_c-grading of (A) and found it
+# NULL. The collision is NOT a deep e-specific overdetermination: it is the
+# SAME (a-3)(a^2+2) coincidence nu1 already carries (S(N_c,3)=N_c^2+1 at
+# N_c=3, i.e. C(5,3)=10=3^2+1), and e's face is just nu1's plus the
+# additive node (+n_u). The only clean meaning of 1+N_c+N_c^2 is the
+# q-point-count |CP^2(F_N_c)|=|PG(2,N_c)|=[3]_N_c, which needs finite-
+# field/motivic structure ABSENT from IDWT (an external import) and does
+# not generalise across the grid. So the N_c-grading is a CHOICE, not a
+# forcing; T15d's n_e=N_c^2+N_c+1 stays an algebraic face, the additive
+# node e=nu1+n_u is the primary reading, and n_e=13 STAYS 🔶 (irreducible
+# at current axioms; no remaining identified avenue). Three static forcing
+# routes were also run, all NULL:
 #   (a) global grid sum-rule: the 12 cells sum to 218 = 2*109, no
 #       framework target forces the open cell;
 #   (b) downstream back-forcing: n_e feeds T = S(n_e,2) = 91 (boson anchor)
@@ -7684,6 +7689,18 @@ _downstream_119 = (_anchor_119 == 91
 assert (_collide_119 == [3] and _both_faces_119
         and _dual_face_119 == ["e"] and _downstream_119
         and _gridsum_119 == 218)
+# PASS 2: the dual-face collision is nu1's own (shared difference
+# polynomial), and the |CP^k(F_N_c)| point-count reading is non-uniform.
+_shared_collide_119 = all(
+    (math.comb(a + 2, 3) + a) - (a * a + a + 1)
+    == math.comb(a + 2, 3) - (a * a + 1) for a in range(0, 30))
+_pg_119 = lambda k, q: sum(q ** i for i in range(k + 1))
+_pgNc_hits_119 = [nm for nm, v in _matter_119.items()
+                  if any(_pg_119(k, n_up) == v for k in range(1, 6))]
+# strange=1+N_c and e=1+N_c+N_c^2 are the only |CP^k(F_N_c)| hits, and BOTH
+# have primary additive derivations (n_s=n_u+n_d, e=nu1+n_u) -> the point-
+# count face adds no forcing; the N_c-grading lead is NULL.
+assert _shared_collide_119 and _pgNc_hits_119 == ["strange", "e"]
 
 
 # =============================================================================
@@ -11197,9 +11214,13 @@ print(f"unique matter index with BOTH projective and additive faces: "
 print(f"null forcing routes: grid sum = {_gridsum_119} (= 2*109, no target);")
 print(f"  downstream S(n_e,2) = {_anchor_119}, n_e+n_u = {_beat_119} = n_s^2")
 print("  are both derived independently of n_e -> neither pins it")
-print("=> sharpens 'arbitrary additive node' to 'unique fixed point of an")
-print("   additive-node and a projective reading'; n_e=13 STAYS 🔶 because")
-print("   the N_c-grading of face (A) is itself underived (not a forcing).")
+print(f"PASS 2 (derive the N_c-grading): NULL. the collision is nu1's own")
+print(f"  (shared diff poly {_shared_collide_119}; S(N_c,3)=N_c^2+1); the")
+print(f"  point-count faces |CP^k(F_N_c)| = {_pgNc_hits_119} both have")
+print("  primary additive derivations -> non-uniform, external structure")
+print("=> N_c-grading is a choice, not a forcing; the additive node")
+print("   e=nu1+n_u is primary. n_e=13 STAYS 🔶, irreducible at current")
+print("   axioms -- no remaining identified avenue.")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
