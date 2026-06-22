@@ -83,7 +83,7 @@ A mode-sector pair $(n,d)$ is a stable resonance if and only if it is an element
 
 **Sector assignment — the rung placements are derived (✅); the routing DAG is the open item (🔶).** Two results carry the assignment without SM input:
 
-*(i) Seed values and seed sector.* The primitive seeds are $n_d = 1$ (ground seed: $S(1,d) = 1$ in every sector) and $n_u = 3$ (geometric seed: $\chi(\mathbb{CP}^2) = N_c = 3$, T15, ✅-grade). The composite $n_s = 4 = 1+3$ is sourced from these seeds via the offset-additive channel (🔶 MC-4.4 kernel reading); T4 (the $4/7$ double-degeneracy equation, Part 9), the muon fixed-point $S(4,4) = 35$, the Gegenbauer crossing, and the matter-quartet identity $2n_s - 4 = n_s$ are uniqueness certificates confirming the composite. The seed sector is $d=3$: the observable spacetime sector and the first Hopf total space $S^3$ of the complex Hopf chain (§3a). Both seeds occupy $d=3$ independently by R1 — no cross-seed argument is required for their shared sector placement.
+*(i) Seed values and seed sector.* The primitive seeds are $n_d = 1$ (ground seed: $S(1,d) = 1$ in every sector) and $n_u = 3$ (geometric seed: $\chi(\mathbb{CP}^2) = N_c = 3$, T15, ✅-grade). The composite $n_s = 4 = 1+3$ is sourced from these seeds via the offset-additive channel, forced to the antisymmetric channel because the lower operand $n_d=1$ is the condensate ground: the symmetric merge index would equal the existing seed $n_u$, so the composite must take the antisymmetric channel by elimination (⭐ ground-quantum forcing; Part 7 §1.2a, `files/idwt.py` STEP 114). T4 (the $4/7$ double-degeneracy equation, an exact linear forcing $n+1=5$ unique over all reals, Part 9), the muon fixed-point $S(4,4) = 35$, the closed-form ratio crossing, and the matter-quartet identity $2n_s - 4 = n_s$ are uniqueness certificates confirming the composite. The seed sector is $d=3$: the observable spacetime sector and the first Hopf total space $S^3$ of the complex Hopf chain (§3a). Both seeds occupy $d=3$ independently by R1 — no cross-seed argument is required for their shared sector placement.
 
 *(ii) Remaining sector assignments follow from Hopf chain geometry.* Given seeds in $d=3$, the subsequent sector assignments propagate via the Hopf fibration chain $\{2,3\} \to \{4,5\} \to \{6,10\}$:
 - $d=4$ ($\mathbb{CP}^2$): the first Hopf base space over $S^3$ ($d=3$). All modes derived by direct HS from $d=3$ seeds land here. $N_c = \chi(\text{CP}^2) = 3$ identifies this as the colour sector (T15, §3a) — no SM name needed.
@@ -108,7 +108,7 @@ P8 as a postulate remains 🔶 until the EOM derives co-fixed-point stability. T
 |---|---|---|---|
 | 1 | down | 0 | Seed |
 | 3 | up | 0 | Seed: $\chi(\mathbb{CP}^2) = N_c = 3$ (T15) |
-| 4 | strange | 1 | $b = 1+a$: offset-additive composite (🔶) |
+| 4 | strange | 1 | $b = 1+a$: offset-additive composite (⭐: ground-quantum forced, $n_d=1$ ground operand) |
 | 10 | $\nu_1$ | 1 | $S(3,3)$: HS from up (depth 0) |
 | 15 | $\nu_2$ | 1 | $S(3,4)$: HS from up in $d=4$ (depth 0) |
 | 13 | electron | 2 | $n_{\nu_1}+n_u$: additive rule on depth-1 + depth-0 |

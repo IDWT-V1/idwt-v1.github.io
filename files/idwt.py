@@ -7753,6 +7753,53 @@ assert _Ndof_default_120 == 1 and _width_finite_120 and _scale_form_120
 
 
 # =============================================================================
+# STEP 121 -- ELEMENTARY-PARTICLE PHYSICAL SIZE: THE SECTOR STIFFNESS WELL
+#            (CONSTITUTIVE LAW; the first observable needing BOTH inputs)
+# =============================================================================
+# The absolute physical size of a single-mode excitation -- the first observable
+# that needs BOTH dimensional inputs (m_e, via the mode mass M, and G_inf).
+# A mode (n,d) is a harmonic oscillator in its sector well:
+#   R = sqrt(N+d/2) * (mu*kappa)^{-1/4},   N = n-1,
+# with inertia mu = M_Pl = 1/sqrt(G_inf) (the EH stiffness AS a mass, NOT a
+# frequency) and well curvature kappa = s_d * M / G_inf = s_d * M * M_Pl^2
+# (curvature = mass x stiffness, linear in M). Folding mu and kappa:
+#   R = sqrt(N+d/2) * G_inf^{3/8} * M^{-1/4} * s_d^{-1/4}.
+#
+# STATUS -- CONSTITUTIVE LAW, NOT a theorem. What IS forced:
+#   - kappa = M/G_inf is the UNIQUE dimension-E^3 monomial in {M, G_inf};
+#   - the kernel SHAPE lambda_d cancels exactly (a^4 = lambda_d/(mu*kappa)), so
+#     the manifold enters the physical size ONLY through s_d -- NOT lambda_d;
+#   - the mu=M_Pl, kappa = M/G_inf, M^{-1/4} branch is the UNIQUE survivor of
+#     the constraints: self-gravity (kappa = G_inf*M^2) gives R ~ 1e31 m
+#     (excluded); mu=M gives the wrong M^{-1/2}; a Compton size violates the
+#     electron compositeness bound.
+# What is NOT forced (the wall): kappa linear in M is a constitutive choice --
+# a standard scale-covariant action gives an M-INDEPENDENT size (the mass term
+# is rescaling-invariant), and the overall coordinate/amplitude scale is the
+# SAME inaccessible Psi_inf wall as STEP 120. The sector factor s_d = Lambda_d
+# (the Einstein constant, Ric = Lambda_d g; S^d: d-1, CP^k: 2(k+1)) is the
+# natural curvature invariant; it fixes the inter-sector RATIOS, with the
+# overall constant on the wall. (Part 4 sec 3.9; STEP 120; both inputs meet
+# here, as in STEP 35.)
+_hbarc_MeVfm_121 = 197.3269804           # hbar c, MeV.fm (MeV^-1 -> fm)
+_M_Pl_121 = 1.0 / math.sqrt(_G_inf)      # stiffness as a mass = inertia mu
+_Lambda_121 = {2: 4, 3: 2, 4: 6, 5: 4, 6: 8, 10: 12}   # Einstein constant
+def _size_m_121(n, d, M):
+    """Physical rms size of mode (n,d), mass M (MeV), returned in metres."""
+    _Rinv = (math.sqrt((n - 1) + d / 2.0) * _G_inf ** (3.0 / 8.0)
+             * M ** (-0.25) * _Lambda_121[d] ** (-0.25))      # MeV^-1
+    return _Rinv * _hbarc_MeVfm_121 * 1.0e-15
+_R_e_121 = _size_m_121(n_e, 6, m_e)                  # electron, d=6/CP^3
+_M_top_121 = S(n_top, 4) * m_scale4                  # top mass (MeV)
+_R_top_121 = _size_m_121(n_top, 4, _M_top_121)
+_R_selfgrav_e_121 = (1.0 / (_G_inf * m_e ** 3)) * _hbarc_MeVfm_121 * 1.0e-15
+_e_pointlike_m_121 = 1.0e-18             # conservative compositeness bound (m)
+assert _R_e_121 < _e_pointlike_m_121 / 1.0e6         # deeply pointlike
+assert _R_e_121 > _R_top_121                          # heavier = smaller
+assert _R_selfgrav_e_121 > 1.0e20                     # self-gravity absurd
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11290,6 +11337,27 @@ print("  IDWT has no VEV/condensate amplitude to set it (Part 3 0.7), so it")
 print("  is the inaccessible Psi_inf global amplitude -- the SAME wall as the")
 print("  selection firing (Open Theorem A). => program COMPLETE; absolute")
 print("  magnitude irreducibly 🔶 (inaccessible), not pending.")
+
+
+# =============================================================================
+# STEP 121 -- OUTPUT: ELEMENTARY-PARTICLE PHYSICAL SIZE (constitutive law)
+# =============================================================================
+print("\n" + "=" * 70)
+print("=== STEP 121: ELEMENTARY-PARTICLE PHYSICAL SIZE ===")
+print("=" * 70)
+print("law (constitutive):  R = sqrt(N+d/2) * G_inf^(3/8) * M^(-1/4)")
+print("                         * s_d^(-1/4),   s_d = Lambda_d")
+print("  mu = M_Pl = 1/sqrt(G_inf) (stiffness as inertia, not a frequency);")
+print("  kappa = s_d * M / G_inf (well curvature = mass x stiffness)")
+print(f"  electron R_e = {_R_e_121:.2e} m  (d=6/CP^3, s_d=Lambda=8)")
+print(f"  top      R   = {_R_top_121:.2e} m  ->  heavier = smaller (M^-1/4)")
+print(f"  both << {_e_pointlike_m_121:.0e} m compositeness bound => POINTLIKE")
+print(f"  self-gravity branch excluded: 1/(G_inf m_e^3) = "
+      f"{_R_selfgrav_e_121:.1e} m (absurd)")
+print("  G_inf^(3/8) sets the scale: G_inf DOES set elementary size.")
+print("  status: NAMED CONSTITUTIVE LAW (not a theorem) -- kappa linear in M")
+print("  and the overall scale are the inaccessible Psi_inf wall (STEP 120);")
+print("  s_d ratios from the Einstein curvature Lambda_d. (Part 4 sec 3.9)")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")

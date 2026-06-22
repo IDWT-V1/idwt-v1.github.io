@@ -195,11 +195,25 @@ Values:
 
 - There is no KK tower (no periodic modes, no 1/R quantization)
 - The sector modes are exponentially localized bound states, not plane waves
-- At any laboratory distance $r \gg L_d$, the mode is already Gaussian-suppressed as $\exp(-r^2/L_d^2) \approx \exp(-10^{60})$ for macroscopic $L_d$
+- At any laboratory distance $r \gg L_d$, the mode is already Gaussian-suppressed as $\exp(-r^2/L_d^2)$; with the physical single-mode localization now predicted microscopic ($\sim10^{-29}$ m, §3.9a) the suppression is extreme at every accessible scale
 - No deviation from $1/r^2$ gravity occurs at any accessible scale
 - The gravitational interaction appears standard to the observer: $G_{\mu\nu} = 8\pi G\, T_{\mu\nu}^{\rm eff}$ with $T_{\mu\nu}^{\rm eff}$ indistinguishable from a standard point mass
 
 The hydrogen spectroscopy bound of 6 mm was computed assuming KK modes modify the hydrogen energy levels. With no KK modes, no such bound exists. The bound evaporates entirely.
+
+## 3.9a The Physical Size of an Excitation — the Stiffness Well 🔶
+
+The $L_d$ above is the *dimensionless* sector localization length (the kernel shape $\lambda_d^{-1/4}$, in sector-coordinate units). The **absolute physical size** of a single-mode excitation is the first observable that requires *both* IDWT dimensional inputs — $m_e$ (through the mode mass $M$) and $G_\infty$ (the stiffness of space). Treating the mode as a harmonic oscillator in its sector well fixes it:
+
+$$R_{n,d} = \sqrt{N + d/2}\,(\mu\kappa)^{-1/4} = \sqrt{N+d/2}\; G_\infty^{3/8}\, M^{-1/4}\, s_d^{-1/4}, \qquad N = n-1,$$
+
+with inertia $\mu = M_{\rm Pl} = 1/\sqrt{G_\infty}$ (the stiffness *as a mass*, not a frequency) and well curvature $\kappa = s_d\,M/G_\infty = s_d\,M\,M_{\rm Pl}^2$ (curvature = mass $\times$ stiffness, linear in $M$). The dimensionless kernel shape $\lambda_d$ **cancels** from the physical size, so the sector geometry enters only through $s_d$; the natural choice is the Einstein constant $s_d = \Lambda_d$ ($\mathrm{Ric} = \Lambda_d\,g$; $S^d$: $d-1$, $\mathbb{CP}^k$: $2(k+1)$). (idwt.py STEP 121.)
+
+Numerically the electron (d=6/$\mathbb{CP}^3$, $\Lambda_6 = 8$) is $R_e \approx 3.8\times10^{-29}$ m, and **every** elementary mode lands at $10^{-29}$–$10^{-30}$ m: sub-Compton by ~16 orders, ~11 orders below the electron compositeness bound ($\sim10^{-18}$ m), heavier $\Rightarrow$ smaller ($M^{-1/4}$). So $G_\infty^{3/8}$ sets the scale — **$G_\infty$ does set elementary-particle size** — and every elementary particle is a deeply pointlike single mode, clearing all compositeness, $g\!-\!2$, and spectroscopy bounds. (The microscopic localization also *strengthens* §3.9: a mode confined to $10^{-29}$ m is even more invisible to a $d=3$ observer.)
+
+**Status — a constitutive law, not a theorem (🔶).** *Forced:* $\kappa = M/G_\infty$ is the unique dimension-$E^3$ combination of $\{M, G_\infty\}$; and the $\mu = M_{\rm Pl}$, $\kappa = M/G_\infty$, $M^{-1/4}$ branch is the unique survivor of the size constraints — self-gravity ($\kappa \propto G_\infty M^2$) gives the electron $\sim10^{31}$ m (excluded), $\mu = M$ gives the wrong $M^{-1/2}$, and a Compton-scale size violates the compositeness bound. *Not forced (the wall):* the well-versus-mass coupling $\kappa \propto M$ is a constitutive choice — a scale-covariant action gives an $M$-independent size — and the overall coordinate/amplitude normalization is the same inaccessible $\Psi_\infty$ scale that bounds the absolute transition rate (STEP 120). The sector factor $s_d = \Lambda_d$ fixes the inter-sector size *ratios*; the overall constant rests on that wall.
+
+**Two distinct scales — single mode versus composite.** The $\sim10^{-29}$ m here is the size of a *single* elementary mode. It does not conflict with the $\sim$fm scale that appears for hadrons: the proton's $0.84$ fm charge radius is the *composite* confinement extent of three quark modes (Part 8 §11), not a single-mode width. For a single mode, charge extent and mass extent coincide (both $|\chi|^2$), and for elementary modes both equal the tiny $R_{n,d}$ above. (The reference tables that quote $L_d$ directly in fm for the *leptonic* sectors — Part 1 §3e — predate this result and are pending revision to the dimensionless sector unit; the fm values remain the correct *composite/hadronic* unit only for the confining sectors.)
 
 
 ---
@@ -322,7 +336,7 @@ The structure of §3.10 reflects a three-level self-consistency in the particle 
 
 **Level 2 — Active sector set (✅/🔶, Part 1 §3a T3).** Which values of $d$ admit a self-consistent well at all is governed by the Sector Set Theorem. Gegenbauer criticality (Rule B, ✅), Euler-characteristic seeding (✅), and Hopf consistency (T9a–c, ✅) together give the necessary conditions for sector activation. Their mechanisms are not uniform: $d=8$ and $d=9$ are excluded by seed-unmatched Euler characteristics; $d=7$ remains the genuinely open case (🔶), as the mean-field equation alone cannot distinguish it from the active set — that discrimination is the content of Part 6 Open Theorem A. The active sectors $D = \{2,3,4,5,6,10\}$ are the set at which all three conditions are jointly satisfied.
 
-**Level 3 — Physical mode indices (🔶/🔵, Part 9 T0.5, MC-4).** Within the active sectors, odd-level modes are excluded by an exact l-parity zero (⭐), and even-level non-members disperse in the coupled tower (🔵). Which even-level modes survive as the 15 physical particles is the co-fixed-point condition T0.5. As §3.10.5 makes explicit, this selection is not a stationary point of the Level-1 functional, nor a consequence of Level-2 criticality; it is a radiative stability question whose sufficient derivation is the framework's principal open problem (MC-4).
+**Level 3 — Physical mode indices (🔶, Part 9 T0.5, MC-4).** Within the active sectors, odd-level modes are excluded by an exact l-parity zero (⭐), and even-level non-members are excluded by a strictly positive irreversible radiative width into the spacetime-momentum continuum (✅, idwt.py STEP 118). Which even-level modes survive as the 15 physical particles is the co-fixed-point condition T0.5. As §3.10.5 makes explicit, this selection is not a stationary point of the Level-1 functional, nor a consequence of Level-2 criticality; it is a radiative stability question whose sufficient derivation is the framework's principal open problem (MC-4).
 
 Each level determines a distinct piece of the spectrum — potential depth, active dimensions, particle indices — and the three together constitute the full sector self-consistency of $\Psi_\infty$ on $M_\infty$.
 
