@@ -586,7 +586,7 @@ Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))
 
 ### 3e. Sector Summary Table
 
-| $d$ | Geometry | Particles | $g_{dd}$ | $m_{\rm scale,d}$ | $L_d$ (fm) | $\zeta_d(1)$ | $\zeta_d(0)$ | $a_{0,d}$ |
+| $d$ | Geometry | Particles | $g_{dd}$ | $m_{\rm scale,d}$ | $L_d$ (fm)\* | $\zeta_d(1)$ | $\zeta_d(0)$ | $a_{0,d}$ |
 |---|---|---|---|---|---|---|---|---|
 | 2 | $\mathbb{CP}^1$ (EW/Hopf) | γ, W, Z, H | 722.5 | 27.47 MeV | 0.375 | 2 | −1 | 1.253 |
 | 3 | $S^3$ (hadronic) | d, s, b | $8\sqrt{7}$ | 4.702 MeV | 0.675 | 3/2 | −3/2 | 1.623 |
@@ -596,6 +596,8 @@ Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))
 | 10 | $\mathbb{CP}^5$ (tau) | τ | 1/4 | = $m_{\rm scale,6}$ | 1.414 | 10/9 | −5 | 4.308 |
 
 $\zeta_d(1) = d/(d-1)$ and $\zeta_d(0) = -d/2$ are exact for all sectors (Part 9 T13–T14, Pascal telescoping and heat kernel). All 15 particle masses follow from $m_{\rm scale,d} \times S(n,d)$ plus two corrections (geometric back-reaction for tau, beat resonance for b quark) and the $d=4$ up-type overshoot left uncorrected (the former GTC was removed, Part 2 §11). No other free parameters once the six couplings $g_{dd}$ are fixed from seeds $\{n_d=1, n_u=3\}$ and composite $n_s = 4$.
+
+\***Two length scales — interaction versus intrinsic (Part 4 §3.9a).** The $L_d = \lambda_d^{-1/4}$ tabulated here is the dimensionless sector localization length, quoted at the *matter/interaction* scale (1 sector unit $\approx$ 1 fm). This is the contact/binding range that governs hadronic, nuclear and atomic physics — e.g. it reproduces the proton charge radius to 2% (Part 8 §11) and the hydrogen length scales (Part 8 §14). It is **not** the intrinsic size of a single excitation. A single elementary mode is far smaller: its stiffness-bound physical size is $R = \sqrt{N+d/2}\,M^{-1/4}\,G_d^{3/8} \approx 10^{-29}$ m (Part 4 §3.9a), set by gravity through the per-dimension coupling $G_d$. So every elementary particle is deeply pointlike ($\sim10^{-29}$ m); the $\sim$fm figures above are the *interaction* scale, and the $\sim$fm size of a hadron is the *composite* extent of its confined quark modes, not a single-mode width.
 
 ### 3e-ii. The Particle Map — All Fifteen Modes
 
