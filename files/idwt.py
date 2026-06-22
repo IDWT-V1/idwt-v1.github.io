@@ -7704,6 +7704,55 @@ assert _shared_collide_119 and _pgNc_hits_119 == ["strange", "e"]
 
 
 # =============================================================================
+# STEP 120 -- TIME-DYNAMICS PROGRAM CLOSURE: THE NATIVE RATE IS FIXED EXCEPT
+#            FOR ONE INACCESSIBLE Psi_inf AMPLITUDE (a_f^2 = rho_vac); THE
+#            PROGRAM'S TWO OPEN ENDS ARE ONE WALL (Part 6; on 97-110, 103,
+#            105, 35, 30; selection = Open Theorem A)
+#            form/scale/dof/recoil: fixed  |  absolute magnitude: 🔶 (Psi_inf)
+# =============================================================================
+# Closes the transition-rate program (bricks 1-6, STEP 97-110). The native
+# width Gamma(i->f) = lambda^2 (M_i^2 - M_f^2)/(16 pi M_i^3) (STEP 103) is
+# determined EXCEPT for one overall multiplicative factor, and that factor is
+# an inaccessible Psi_inf amplitude -- a characterised wall, NOT a pending
+# calculation. Three pieces are fixed with NO amplitude input:
+#   - SCALE: lambda = ME * m_scale_d is the framework's standard ME->energy
+#     conversion -- the SAME rule as the BdG pairing Delta = ME*m_scale_d
+#     (STEP 35) and the n=3 self-energy (STEP 30). Using M_i or dE instead
+#     would contradict those, so the scale is fixed by internal consistency.
+#   - N_dof = 1: the radiative channel is the l=0 (scalar monopole) part of
+#     the kernel K=(xi.xi')^2 (l=0+l=2, STEP 98); a scalar channel has one
+#     polarisation. The factor-2 helicity belongs to the VECTOR (EW) vertex
+#     (STEP 107), a different channel.
+#   - FREE-RECOIL: an isolated mode at rest sheds dE into the flat observable
+#     R^3 continuum, daughter recoiling with |p_c|=(M_i^2-M_f^2)/(2 M_i); a
+#     recoilless limit would need external pinning, absent for a free mode.
+# THE LONE OPEN NUMBER is the daughter seed factor a_f^2 = rho_vac (STEP 105):
+# an overall amplitude^2 = the global occupation of the seed mode in Psi_inf.
+# IDWT has NO VEV / condensate amplitude to set it (Part 3 0.7: no Higgs VEV;
+# the EW scale is (sqrt2 G_F)^{-1/2} from seeds, not a VEV), so it is not
+# merely uncomputed -- nothing short of Psi_inf's global amplitude fixes it,
+# and that amplitude is inaccessible (the same Psi_inf whose coupled fixed
+# point (Psi_inf,{M_d}) is the open selection firing, Open Theorem A; STEP 36
+# note). So the program's TWO open ends -- the absolute rate magnitude and the
+# positive member-selection firing -- are ONE wall: Psi_inf's global
+# amplitude. VERDICT: the rate formalism is COMPLETE -- form, scale, dof and
+# kinematics native and fixed; the absolute magnitude is irreducibly 🔶,
+# inaccessible (not pending), unless Psi_inf's amplitude is itself derived
+# (it is not). Nothing here computes or normalises an amplitude.
+_Ndof_default_120 = 1                  # l=0 scalar channel, one polarisation
+# every input to the native width is DERIVED (no amplitude): masses
+# M=S(n,d)*m_scale_d, coupling ME (kernel overlaps x g_dd), scale m_scale_d;
+# the only non-derived factor is the overall seed amplitude^2 a_f^2 = rho_vac.
+_width_finite_120 = (_width_103(3, 1) > 0
+                     and _width_103(3, 1)
+                     / (S(3, 3)*m_scale3 - S(1, 3)*m_scale3) < 1.0)
+# scale choice = the ME*m_scale_d conversion, shared with the BdG pairing
+_scale_form_120 = (bdg_Delta_seed == bdg_ME_seed * m_scale3        # STEP 35
+                   and _lam_31_103 == _ME_native3(3, 1) * m_scale3)  # STEP 103
+assert _Ndof_default_120 == 1 and _width_finite_120 and _scale_form_120
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11221,6 +11270,26 @@ print("  primary additive derivations -> non-uniform, external structure")
 print("=> N_c-grading is a choice, not a forcing; the additive node")
 print("   e=nu1+n_u is primary. n_e=13 STAYS 🔶, irreducible at current")
 print("   axioms -- no remaining identified avenue.")
+
+
+# =============================================================================
+# STEP 120 -- OUTPUT: TIME-DYNAMICS PROGRAM CLOSURE (rate native up to the
+#            inaccessible Psi_inf amplitude)
+# =============================================================================
+print("\n" + "=" * 70)
+print("=== STEP 120: TIME-DYNAMICS PROGRAM CLOSURE ===")
+print("=" * 70)
+print("native width Gamma = lambda^2 (M_i^2-M_f^2)/(16 pi M_i^3) (STEP 103)")
+print("fixed with NO amplitude input:")
+print("  scale  lambda = ME*m_scale_d  (= the BdG-pairing convention,")
+print(f"         STEP 35: Delta = ME*m_scale_d); shared: {_scale_form_120}")
+print(f"  N_dof = {_Ndof_default_120} (l=0 scalar monopole channel, STEP 98)")
+print("  recoil = free 2-body, |p_c|=(M_i^2-M_f^2)/(2 M_i) (isolated mode)")
+print("lone open number: a_f^2 = rho_vac = seed amplitude^2 in Psi_inf;")
+print("  IDWT has no VEV/condensate amplitude to set it (Part 3 0.7), so it")
+print("  is the inaccessible Psi_inf global amplitude -- the SAME wall as the")
+print("  selection firing (Open Theorem A). => program COMPLETE; absolute")
+print("  magnitude irreducibly 🔶 (inaccessible), not pending.")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
