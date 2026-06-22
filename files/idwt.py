@@ -3786,6 +3786,9 @@ _ratio_ok57 = abs(_phi_idwt57 / _phi_std57 - _ratio57) < 1e-12
 #   dE/|E_1s| = 4 sigma^2,  sigma = L_6/a0,
 # the same order as the proton-finite-size items of Part 8 s14.4.
 # Lengths below in sector units (base unit = L_6/lam_6^(-1/4) = 1 fm).
+# (This fm is the interaction/matter scale; the intrinsic single-mode
+# size is the far smaller STEP-121 R ~ 1e-29 m, from which lambda_d/L_d
+# cancels. Part 4 sec 3.9a.)
 
 _d58    = 6
 _g58    = g_self[_d58]                         # = g66 = 1/4
