@@ -7387,6 +7387,67 @@ assert _mu_pascal_116 and _e_not_pascal_116 and _e_face_116
 
 
 # =========================================================================
+# STEP 117 -- 3rd-GENERATION DISPLACEMENT: WHY BOTTOM DISPLACES IN INDEX
+#            (d=3 beat) BUT TAU DISPLACES IN DIMENSION (d=6 -> d=10)
+#            (Part 7 1.3; on 89, 96, 112; Gegenbauer STEP 26, gap STEP 100)
+#            deposit-accounting: ⭐  |  dimensional placement: 🔵
+# =========================================================================
+# Resolves the index-vs-dimension disanalogy between the two 3rd-generation
+# displacements. The 12 deposits (hump 1,2,3,3,2,1; heights 0..5; additive
+# site j = alpha+beta+2 = d=2..7) cover the photon + 11 matter cells.
+#   (A) BOTTOM is the UNIQUE matter fermion OFF the deposit grid. The 11
+#       matter deposits are {down,strange,up,charm,top,nu1,nu2,nu3,e,mu,tau};
+#       the 12th fermion, bottom, is not a deposit -- it is the d=3 BEAT at
+#       k0 = n_s^2 = 16 (STEP 7). Its defining triple resonance
+#       (k0 = n_s^2 = n_e+n_u = S(n_s,3)-S(2,3) = 16) is a d=3 identity, and
+#       d=3 is Gegenbauer-SUPERCRITICAL for k0=16 (b_16(3)>1/2), so the beat
+#       BINDS in d=3 -> INDEX displacement (same dimension).
+#   (B) d=3 (height 1) and d=6 (height 4) are the hump-symmetric pair, each
+#       with only 2 deposit cells -> each needs a 3rd member from elsewhere.
+#       d=6's 3rd is the CORNER deposit (2,3) = omega2^2 ^ omega3^3. Its
+#       additive site is j = 2+3+2 = 7, but d=7 is INADMISSIBLE (the 7-9 gap,
+#       STEP 100). The corner is the top form on C^2 x C^3 = R^10 (real
+#       degree 2*2 + 2*3 = 10), so it lands at the terminal admissible sector
+#       d=10 -> DIMENSION displacement (tau). d=10 is exactly where k0=16 is
+#       Gegenbauer-CRITICAL: 4*k0 = (d-2)^2 -> 4*16 = 64 = 8^2 -> d=10 unique
+#       (STEP 26).
+#   (C) The two product-form quark sites anchor both displacements: bottom
+#       lands ON 16 = n_s^2; tau's would-be tower operand IS n_top=72
+#       (nu3+n_top = 94, off-tower), so it cannot continue in d=6. The same
+#       16 that is bottom's beat home fixes tau's sector d=10 via Gegenbauer.
+# READING: one 3rd-generation mode is a beat that binds in its own sector
+# (index displacement), the other is the gap-straddling corner deposit forced
+# to the terminal sector (dimension displacement). The asymmetry is exactly
+# the asymmetry between an off-grid beat and an on-grid corner whose additive
+# site is inadmissible. Deposit-accounting/hump/corner-degree are ⭐; the
+# dimensional landing rests on STEP 26 (✅) and STEP 100 (✅), so 🔵.
+# (A) bottom is the unique matter fermion off the deposit grid
+_matter_dep_117 = {nm for (j, nm, n, a, b) in _deposits_89} | {"tau"}
+_all_fermion_117 = {"down", "up", "strange", "charm", "top", "bottom",
+                    "nu1", "nu2", "nu3", "e", "mu", "tau"}
+_off_grid_117 = _all_fermion_117 - _matter_dep_117
+assert len(_matter_dep_117) == 11 and _off_grid_117 == {"bottom"}
+# (B) hump, symmetric pair, corner additive-site vs real top-form degree
+_hump_117 = [sum(1 for a in range(3) for b in range(4) if a + b == h)
+             for h in range(6)]
+_corner_site_117 = 2 + 3 + 2                  # additive site j = 7
+_corner_deg_117 = 2 * 2 + 2 * 3               # real top-form degree = 10
+assert _hump_117 == [1, 2, 3, 3, 2, 1]
+assert _hump_117[1] == _hump_117[4] == 2      # d=3, d=6 symmetric, both 2
+assert _corner_site_117 == 7 and _corner_deg_117 == 10
+# (C) Gegenbauer: 4 k0 = (d-2)^2, k0 = n_s^2 = 16 -> d=10 unique; d=3
+#     supercritical (b>1/2), d=10 critical (b=1/2)
+_k0_117 = n_strange**2                        # 16
+def _bgeg_117(k0, d):
+    return math.sqrt(k0 * (k0 + d - 1)) / (2 * k0 + d - 2)
+_geg_d_117 = [d for d in range(2, 30) if 4 * _k0_117 == (d - 2)**2]
+assert (_k0_117 == 16 and _geg_d_117 == [10]
+        and _bgeg_117(16, 3) > 0.5 and abs(_bgeg_117(16, 10) - 0.5) < 1e-12)
+# the triple resonance at 16 is a d=3 identity; the two product-form sites
+assert n_e + n_up == 16 and n_strange**2 == 16 and n_top == 72
+
+
+# =========================================================================
 # OUTPUT
 # =========================================================================
 
@@ -10784,6 +10845,27 @@ print(f"  {{nu1,n_u}}={{10,3}} Pascal-adjacent? no (parents of 10 are "
 print(f"  -> e is NOT a Pascal step; e = nu1+n_u = n_s^2-n_u = {n_e}")
 print("=> mu closed by Pascal; e is the lone irreducible gen-1 edge;")
 print("   only generation 2 is a theorem.")
+
+
+# STEP 117 -- OUTPUT: 3rd-GEN DISPLACEMENT (bottom index vs tau dimension)
+print("\n" + "=" * 70)
+print("=== STEP 117: 3rd-GEN DISPLACEMENT -- INDEX vs DIMENSION ===")
+print("=" * 70)
+print(f"deposit hump (heights 0..5 = d 2..7): {_hump_117}")
+print(f"(A) bottom is the UNIQUE matter fermion off the grid: "
+      f"{_off_grid_117}")
+print(f"    (it is the d=3 beat at k0 = n_s^2 = {_k0_117})")
+print(f"(B) d=3 & d=6 both have {_hump_117[1]} deposit cells "
+      f"(hump-symmetric)")
+print(f"    corner (2,3): additive site j={_corner_site_117} (d=7, "
+      f"inadmissible),")
+print(f"    top-form degree {_corner_deg_117} -> tau lands at d=10")
+print(f"(C) Gegenbauer 4*k0=(d-2)^2, k0=16 -> d={_geg_d_117[0]} unique; "
+      f"b_16(3)={_bgeg_117(16, 3):.4f}>1/2,")
+print(f"    b_16(10)={_bgeg_117(16, 10):.3f} (critical)")
+print("=> bottom: off-grid beat binds in d=3 (INDEX displacement);")
+print("   tau: corner deposit, site d=7 inadmissible -> terminal d=10")
+print("   (DIMENSION displacement). The same 16 anchors both.")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
