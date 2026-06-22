@@ -503,7 +503,7 @@ where $P_L$ is the small-component probability and $\tfrac{1}{3}$ is the angular
 - EM self-energy (proton charged, neutron neutral) adds $\approx -1.29$ MeV shift
 - Computed $\Delta m_{N-P} \approx 1.29$ MeV (observed: 1.293 MeV)
 
-**Status:** The kernel contributes zero extra energy for colour-singlet configurations at leading order (§8), so the 929 MeV is NOT kernel binding — it is the sector oscillator energy of the quarks in the colour-singlet configuration. In QCD language, this is the confinement energy (kinetic + potential energy of quarks in the confining field). In IDWT, computing it requires determining which collective mode of the combined $d=3$ ⊕ $d=4$ sector the colour-singlet uud corresponds to. The current quark masses $2m_u + m_d = 9.06\ \text{MeV}$ are the free-quark energies at levels ($n=3$,$d=4$), ($n=3$,$d=4$), ($n=1$,$d=3$); the confined proton is at a much higher effective level in the joint sector. Identifying that level from the colour-singlet constraint equations is the open problem. The N-P mass difference 1.29 MeV follows from the quark mass difference alone and does not require the confinement energy.
+**Status:** The kernel contributes zero extra energy for colour-singlet configurations at leading order (§8), so the 929 MeV is NOT kernel binding — it is the sector oscillator energy of the quarks in the colour-singlet configuration. In QCD language, this is the confinement energy (kinetic + potential energy of quarks in the confining field). In IDWT, computing it requires determining which collective mode of the combined $d=3 \oplus d=4$ sector the colour-singlet uud corresponds to. The current quark masses $2m_u + m_d = 9.06\ \text{MeV}$ are the free-quark energies at levels ($n=3$,$d=4$), ($n=3$,$d=4$), ($n=1$,$d=3$); the confined proton is at a much higher effective level in the joint sector. Identifying that level from the colour-singlet constraint equations is the open problem. The N-P mass difference 1.29 MeV follows from the quark mass difference alone and does not require the confinement energy.
 
 **The internucleon contact: structure, range, and the deuteron.** Kernel covariance fixes both the range and the functional form of the nucleon–nucleon kernel interaction; what remains free is one depth scale, and the deuteron measures it.
 
@@ -517,7 +517,7 @@ where $P_L$ is the small-component probability and $\tfrac{1}{3}$ is the angular
 
 $$V_0 = \frac{\kappa^2}{\Delta} = \frac{N_c\Lambda^2}{N_c\Lambda} = \Lambda \qquad \text{(exact in large-}N_c\text{)}$$
 
-This also fixes the colour energy scale: $\lambda_c = N_c\,\Lambda/2 = N_c^2\, f_\pi/2 \approx 423$ MeV. The O(1) coefficients in $\kappa$ and $\Delta$ are fixed by the leading large-$N_c$ structure; exact kernel matrix elements require identifying the collective $d=3$ ⊕ $d=4$ mode of the colour-singlet baryon — the same open problem as §5.3. (`files/idwt.py` STEP 63.)
+This also fixes the colour energy scale: $\lambda_c = N_c\,\Lambda/2 = N_c^2\, f_\pi/2 \approx 423$ MeV. The O(1) coefficients in $\kappa$ and $\Delta$ are fixed by the leading large-$N_c$ structure; exact kernel matrix elements require identifying the collective $d=3 \oplus d=4$ mode of the colour-singlet baryon — the same open problem as §5.3. (`files/idwt.py` STEP 63.)
 
 *Spin-tensor channel. 🔶* The deuteron has spin-1 ($^3S_1$–$^3D_1$ channel); this section checks only the central s-wave. The tensor component of the N–N kernel and the resulting $^3S_1$–$^3D_1$ mixing are spin observables, and the spin-independent contact kernel cannot generate them (`files/idwt.py` STEP 94); they are not reachable from the scalar collective mode. They live in the Dirac spin-orbit structure of the sector — the same open computation as the nucleon moments and $g_A$ (§10). (`files/idwt.py` STEP 61–62.)
 
@@ -559,7 +559,7 @@ Because the potential separates exactly, the Schrödinger equation on $\mathbb{C
 
 $$H_{\rm eff} = -\frac{\hbar^2}{2m_e}\nabla_r^2 - \frac{\alpha}{|r|} + m_e$$
 
-**What anchors the $r/\xi$ split. ✅** The decomposition into $r$ and $\xi$ is anchored by the nucleus, not by the electron. The nucleus is the $d=3$ structure in the problem, and its Coulomb term selects the three coordinates it has structure in; the sector well itself binds the electron's structure about the mode's own centroid, equally in all six of its dimensions, and travels with the mode (Part 4 §3.10.2 covariance note) — no three of the electron's six dimensions are marked out by anything in the electron. The $V_6$ factor above is the spectating sector structure written in the nucleus's split. The compact internal structure (width L_6) corrects the point-center treatment only through its smearing of the Coulomb term, $\Delta E/|E_{1s}| = 4(L_6/a_0)^2 \approx 2.9\times10^{-9}$ — the same order as the proton-finite-size correction catalogued in §14.4. (`files/idwt.py` STEP 58.)
+**What anchors the $r/\xi$ split. ✅** The decomposition into $r$ and $\xi$ is anchored by the nucleus, not by the electron. The nucleus is the $d=3$ structure in the problem, and its Coulomb term selects the three coordinates it has structure in; the sector well itself binds the electron's structure about the mode's own centroid, equally in all six of its dimensions, and travels with the mode (Part 4 §3.10.2 covariance note) — no three of the electron's six dimensions are marked out by anything in the electron. The $V_6$ factor above is the spectating sector structure written in the nucleus's split. The compact internal structure (width $L_6$) corrects the point-center treatment only through its smearing of the Coulomb term, $\Delta E/|E_{1s}| = 4(L_6/a_0)^2 \approx 2.9\times10^{-9}$ — the same order as the proton-finite-size correction catalogued in §14.4. (`files/idwt.py` STEP 58.)
 
 ### 14.3 The Hydrogen Spectrum and Orbit Structure ✅
 
@@ -573,7 +573,7 @@ Both $\alpha$ and $m_e$ are IDWT structural outputs. This is the Bohr spectrum w
 
 $$\mathrm{Sym}^L(\mathbb{C}^4), \qquad \dim = \binom{L+3}{3}$$
 
-Under the subgroup chain $SU(4)$ ⊃ $SU(3)$ ⊃ SO(3), these states split into three classes:
+Under the subgroup chain $SU(4) \supset SU(3) \supset SO(3)$, these states split into three classes:
 
 | Class | Count | Description |
 |---|---|---|
@@ -607,7 +607,7 @@ $\Delta L = 0$ is forbidden by parity for all $L$. This is verified numerically 
 
 **Status: ✅** The Bohr spectrum, orbit degeneracies, and all selection rules are structural consequences of the $\mathbb{CP}^3$ geometry and the exact potential separability of Lemma 1. No new parameters beyond $\alpha$ and $m_e$ (both derived). The explicit $SU(4)$ bases through the f-shell, the Simplex Identity, and interactive orbit visualisations are in the companion page *Atomic Orbits as $\mathbb{CP}^3$ Projection* (visualizations/6d-orbit-slice.html).
 
-**$\mathbb{CP}^3$-hidden states — falsifiable prediction. ✅** $\mathbb{CP}^3$-hidden orbit states exist at every shell L ≥ 1 (one hidden state in the p-shell, four in the d-shell, ten in the f-shell, …). Lemma 2 makes them strictly inaccessible to every apparatus operating in $\mathbb{R}^3$ — not merely undetected but impossible to couple to at any order, any energy, by any mechanism. Any measured coupling to a $z_4$-direction state would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
+**$\mathbb{CP}^3$-hidden states — falsifiable prediction. ✅** $\mathbb{CP}^3$-hidden orbit states exist at every shell $L \geq 1$ (one hidden state in the p-shell, four in the d-shell, ten in the f-shell, …). Lemma 2 makes them strictly inaccessible to every apparatus operating in $\mathbb{R}^3$ — not merely undetected but impossible to couple to at any order, any energy, by any mechanism. Any measured coupling to a $z_4$-direction state would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
 
 ### 14.4 What Opens From Here
 
@@ -667,7 +667,7 @@ The repulsion $V_{12}$ is the wave's $U(1)$ self-coupling on the shared $d=2$ co
 
 ### 16.2 Pauli Exclusion from Spinor Anticommutation
 
-The $d=6$ sector spinor satisfies fermionic anticommutation (§2). The two-electron state must therefore be antisymmetric under exchange of all quantum numbers (spatial × spin). For the ground state:
+The $d=6$ sector spinor satisfies fermionic anticommutation (§2). The two-electron state must therefore be antisymmetric under exchange of all quantum numbers (spatial $\times$ spin). For the ground state:
 
 - Spatial: both electrons in 1s, therefore symmetric under spatial exchange
 - Spin: must be antisymmetric → singlet $(|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle)/\sqrt{2}$
@@ -696,7 +696,7 @@ The observed ground-state energy is −79.0 eV; the first-order estimate is −7
 
 Each additional electron beyond helium occupies the lowest available orbit consistent with the exclusion principle. The 6D orbits are labeled by Coulomb quantum numbers $(n, l, m_l)$ — these are the observable-sector angular momentum quantum numbers of the full 6D orbit. Their energies depend on the nuclear charge Z and screening from inner electrons.
 
-The orbit filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, ... — the Aufbau principle — is the sequence of $(n, l)$ pairs sorted by $E(n,l,Z_{\rm eff})$, where $Z_{\rm eff}$ accounts for shielding. In IDWT this is the sequence in which the angular momentum levels of the SO(3) ⊂ $SU(4)$ chain are filled by $d=6$ resonances subject to Pauli exclusion.
+The orbit filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, ... — the Aufbau principle — is the sequence of $(n, l)$ pairs sorted by $E(n,l,Z_{\rm eff})$, where $Z_{\rm eff}$ accounts for shielding. In IDWT this is the sequence in which the angular momentum levels of the $SO(3) \subset SU(4)$ chain are filled by $d=6$ resonances subject to Pauli exclusion.
 
 **Shell structure.** Each value of n accommodates $2n^2$ electrons (factor of 2 from spin). This count is:
 - $n=1$ (1s): 2 states → He fills the first shell
@@ -760,7 +760,7 @@ failure of the bond mechanism — it is the same systematic α error throughout.
 The equilibrium geometry $R_{\text{eq}}$ and full 6D character of the bond orbit are open.
 
 **Opens:**
-- **Heteronuclear bonds and bond angles** (HF, CO, $H_2O$): same Coulomb framework, nuclei with Z ≠ Z'. Bond polarity follows from asymmetric nuclear potentials selecting asymmetric angular momentum configurations. Bond angles (H–O–H = 104.5°, H–N–H = 107°, etc.) are not set by VSEPR repulsion — they are the 3D projections of which 6D angular momentum states are occupied: bonding states project toward nuclei, lone-pair states project away, and the angle between bonding projections is determined by the angular momentum structure of all occupied states together. This is derived from the 6D orbit picture; the detailed calculation is open. 🔶
+- **Heteronuclear bonds and bond angles** (HF, CO, $H_2O$): same Coulomb framework, nuclei with $Z \neq Z'$. Bond polarity follows from asymmetric nuclear potentials selecting asymmetric angular momentum configurations. Bond angles (H–O–H = 104.5°, H–N–H = 107°, etc.) are not set by VSEPR repulsion — they are the 3D projections of which 6D angular momentum states are occupied: bonding states project toward nuclei, lone-pair states project away, and the angle between bonding projections is determined by the angular momentum structure of all occupied states together. This is derived from the 6D orbit picture; the detailed calculation is open. 🔶
 - **π bonds and aromaticity**: molecular orbits built from the $L=1$ ($p$) states of the SO(3) chain. Benzene's ring orbit is a single 6D orbit coupling to all six nuclear centers simultaneously — not a delocalized superposition of local orbitals, but one orbit that naturally goes around the ring (see §17a). Hückel's rule (4n+2 closed shells) is the condition for closed angular momentum shells of the ring orbit.
 - **Van der Waals forces**: second-order dipole-dipole correlation between charge-neutral molecules. In IDWT: second order in the $d=2$ $U(1)$ self-coupling between two neutral $d=6$ systems — the same vertex as Coulomb (§14), correlating charge-density fluctuations rather than exchanging a quantum — giving an attractive potential $\sim -C_6/R^6$. The $R^{-6}$ power follows from the two dipole-dipole factors and dipole selection rules — see §17b. The $C_6$ coefficient is open.
 - **Woodward–Hoffmann rules**: thermal pericyclic reactions conserve hidden-sector angular momentum ($\Delta L=0$); photochemical reactions require a photon to supply $\Delta L=1$. The condition $L_{\text{HOMO}_1} \equiv L_{\text{LUMO}_2}$ (mod 2) for thermal allowedness follows from 6D angular momentum conservation across the transition state. This reduces all pericyclic selection rules to one conservation law. Detailed derivation open. 🔶
@@ -772,7 +772,7 @@ The equilibrium geometry $R_{\text{eq}}$ and full 6D character of the bond orbit
 
 ### 17a.1 π Orbits as $L=1$ Sector States
 
-The $s$ and $p$ orbital shapes are not different objects — they are the $L=0$ and $L=1$ angular momentum eigenstates of the same 6D electron orbit, classified by the $SU(4)$ ⊃ SO(3) chain (§14.4). An $s$ orbital is the 3D projection of a 6D orbit with zero angular momentum. A $p$ orbital is the 3D projection of a 6D orbit with one unit of angular momentum, projected along a specific axis. Hybridization is not mixing — it is the electron settling into the angular momentum configuration of its 6D orbit that minimises energy in the bonding environment.
+The $s$ and $p$ orbital shapes are not different objects — they are the $L=0$ and $L=1$ angular momentum eigenstates of the same 6D electron orbit, classified by the $SU(4) \supset SO(3)$ chain (§14.4). An $s$ orbital is the 3D projection of a 6D orbit with zero angular momentum. A $p$ orbital is the 3D projection of a 6D orbit with one unit of angular momentum, projected along a specific axis. Hybridization is not mixing — it is the electron settling into the angular momentum configuration of its 6D orbit that minimises energy in the bonding environment.
 
 The σ bonds of §17 arise from $L=0$ ($s$-type) or $L=1$ ($p$-type, overlap along the bond axis) angular momentum states. The π bonds arise from $L=1$ states overlapping *perpendicular* to the internuclear axis — the $p_z$ lobes in a planar molecule.
 

@@ -165,7 +165,7 @@ The $+1 = n_{\rm down} = S(1,d) = 1$ for every $d$ — the base case of every ho
 The pattern across all three generation laws:
 
 $$n_{\rm lepton} = n_{\rm neutrino} + n_{\rm quark\,partner}$$
-This is the hockey-stick identity at different (n, d) pairs.
+holds as a pattern, but it is a Pascal/hockey-stick *identity* only for generation 2: $n_\mu = n_c + n_{\nu_2} = S(4,3) + S(3,4) = S(4,4)$, forced because $n_s - 1 = n_u$ makes the second Pascal parent $S(n_s-1,4) = S(n_u,4) = n_{\nu_2}$. Generation 1 is **not** a Pascal step — $13$ is not an $S(n,d)$ value at any sector dimension, and the operands $\{n_{\nu_1}, n_u\} = \{10,3\}$ are not Pascal-adjacent (the Pascal parents of $S(3,3) = 10$ are $\{6,4\}$, and the seed $3$ is neither). So $n_e = n_{\nu_1} + n_u$ attaches the up seed as an additive node (Part 7 §1.2a), carrying one irreducible input (🔶). Generation 3 is displaced off the tower (§6). Only generation 2 is a theorem (`idwt.py` STEP 116).
 
 **The generation-3 anomaly — why $\tau$ breaks the up-type pattern. 🔶** Read across the partners, generations 1 and 2 add the *same-generation up-type quark*: $n_e = n_{\nu_1} + n_u$ (up) and $n_\mu = n_{\nu_2} + n_c$ (charm). The pattern would continue $n_\tau = n_{\nu_3} + n_{\rm top} = 22 + 72 = 94$ — but $n_{\rm top} = 72$ is a product-form anchor off the hockey-stick tower (§6; it is not a hockey-stick output), so the third charged lepton cannot inherit its up-type partner. Instead $\tau$ takes the minimal displacement available, the universal ground quantum $n_{\rm down} = S(1,d) = 1$: $n_\tau = n_{\nu_3} + n_d = 23$. This is the lepton-sector analogue of the bottom quark, whose third down-type generation likewise leaves the tower (the beat resonance $k_0 = 16$, §8): in both sectors the third generation fails to follow its natural tower continuation and is displaced by one ground quantum. The third-generation neutrino and charged lepton both sit one ground quantum above a predecessor, $n_{\nu_3} = S(3,5) + n_d = 22$ and $n_\tau = n_{\nu_3} + n_d = 23$, but they are not the same kind of edge. The $\tau$ value is a genuine index-addition ($n_\tau = n_{\nu_3} + n_d = n_c + n_u$; further index-sums $n_{\nu_1}+n_e$ and $1+n_{\nu_3}$ also reach $23$), carrying the systematic $+1 = n_d$ offset between index-addition ($n_a + n_b$, the tower edge) and level-addition ($n_a + n_b - 1$, disjoint excitations $N_c = N_a + N_b$ with $N = n-1$). The $\nu_3$ value is *not* an index-sum at all — no two smaller tower indices add to $22$, and $S(3,5) + n_d = 22$ coincides with the inclusion-exclusion form $n_{\nu_1} + n_{\nu_2} - n_u$ only through $n_s = n_u + n_d$; $\nu_3$ is inclusion-exclusion-forced. So the open index- versus level-addition question lives at $\tau$ (and the generation-1,2 edges $e, \mu$), not at $\nu_3$; why index-addition fires there rather than level-addition is plausibly set by the condensation dynamics (Part 6; `idwt.py` STEP 112).
 
@@ -234,9 +234,9 @@ The composite pair $(n_s=4,\,d=3)$ is the unique pair for which the $d=3$ evalua
 
 ---
 
-## 6. The Complete Index Derivation — Hockey-Stick All the Way Down
+## 6. The Complete Index Derivation — Hockey-Stick Engine and the Named Exceptions
 
-Every mode index is a hockey-stick evaluation or a difference between successive partial sums of the same identity. The operations are the only ones the identity permits:
+The hockey-stick is the engine of the spectrum's backbone: the simplex modes are hockey-stick evaluations of the seeds, and that engine is finite-positive (FP-free). The remaining indices are built from those primaries by a small, named set of additional operations — additive and inclusion–exclusion edges, the Vandermonde $g$-rule, and the top's Euler product — each flagged in the table. The named exceptions are exactly where the framework's extra inputs sit:
 
 | Index | Value | Derivation |
 |---|---|---|
@@ -244,7 +244,7 @@ Every mode index is a hockey-stick evaluation or a difference between successive
 | $n_c$ | $S(4,3)=20$ | hockey-stick in $d{=}3$ through level 3 |
 | $n_{\nu_1}$ | $S(3,3)=10$ | hockey-stick in $d{=}3$ through level 2 |
 | $n_{\nu_2}$ | $S(3,4)=15$ | hockey-stick in $d{=}4$ through level 2 |
-| $n_e$ | $n_{\nu_1}+n_u=13$ | hockey-stick generation law, generation 1 |
+| $n_e$ | $n_{\nu_1}+n_u=13$ | additive node: up seed onto $n_{\nu_1}$; $13$ is not an $S(n,d)$ value and $\{10,3\}$ are not Pascal-adjacent, so generation 1 is **not** a Pascal step (🔶; STEP 116) |
 | $n_\mu$ | $S(4,4)=35$ | $= S(4,3)+S(3,4)=n_c+n_{\nu_2}$ (Pascal) |
 | $n_{\nu_3}$ | $n_{\nu_1}+n_{\nu_2}-n_u=22$ | inclusion-exclusion: $n_{\nu_1}$ and $n_{\nu_2}$ both arise from seed $n_u$ in $d{=}3$ and $d{=}4$; subtracting $n_u$ removes the double-counted overlap (forced: without it $\Sigma m_\nu\approx98\,\text{meV}$, excluded by DESI); cross-check: $n_{\nu_3}=n_\tau-n_d=22$ |
 | $n_\tau$ | $n_{\nu_3}+S(1,d)=23$ | base case $S(1,d)=1$ for all $d$ |
@@ -257,7 +257,7 @@ Every mode index is a hockey-stick evaluation or a difference between successive
 
 **Seed-pair grounding: $\{1, a=3\}$. 🔶** The mode indices 1 (ground seed; $n_d = 1$) and $a = n_u = 3$ are both seeds — inputs to the tower, not derived from $n_s$. $n_u = 3$ carries two independent groundings: (i) $\chi(\mathbb{CP}^2) = N_c = 3$ (T15, ✅-grade geometric anchor), and (ii) it is the unique single-kernel-image of the ground seed ($\Delta N = +2$). $n_s = 4$ is the composite of the seed pair $\{1, a=3\}$ via the offset-additive channel: $b = 1 + a = 4$ (🔶 MC-4.4 kernel two-density reading). The identity $n_u = n_s-1$ holds as the $\chi$-consecutiveness relation $\chi(\mathbb{CP}^k) = k+1$ (T15) applied at $k=2$ and $k=3$ — a geometric consequence, not a mechanism selecting $n_u$ from $n_s$. The g-rule lattice closure, the T4 double-degeneracy exhaustion, the Gegenbauer crossing, the matter-quartet identity $2n_s-4 = n_s$, and the muon fixed point $S(4,4) = 35$ are uniqueness certificates confirming the composite $b = 4$. The 🔶 label attaches to the offset-additive channel reading of $b = 1+a$; the $\chi(\mathbb{CP}^2) = N_c$ anchor for $n_u = 3$ is ✅-grade.
 
-The physical claim this sharpens: **if mass is the cumulative microstate count $S(n,d)$, then the hockey-stick identity must appear throughout the spectrum, and the eigenmode selection rule must hold exactly.** The hockey-stick identity leaves no room for them to fail.
+The physical claim this sharpens: **if mass is the cumulative microstate count $S(n,d)$, then the hockey-stick identity governs the simplex backbone exactly** — every simplex mode index is a forced hockey-stick evaluation, and where two simplex modes meet at a Pascal node (the generation-2 lepton $n_\mu = S(4,4) = S(4,3)+S(3,4)$, ✅) the selection rule is a theorem. The composite indices are the named exceptions where additional inputs enter: the top's Euler product, the generation-1 charged-lepton additive node ($n_e = n_{\nu_1}+n_u$, **not** a Pascal step — STEP 116), the inclusion-exclusion $\nu_3$, and the boson $g$-rule chain. The hockey-stick leaves no freedom in the backbone; the open content of the spectrum lives entirely in those named composite edges.
 
 ### 6a. Cross-Mode Polynomial Identity ⭐
 
@@ -378,9 +378,9 @@ $$\boxed{m(\text{baryon}) = m_N + (N_c-1)\sum_{\text{replaced}} (m_s - m_{\rm re
 | Baryon | Content | Prediction | PDG | Error |
 |--------|---------|-----------|-----|-------|
 | p/n | uud/udd | 940.4 MeV | 938.9 | +0.2% |
-| Λ | uds | m_N + 2(m_s − m_d) = 1119 | 1115.7 | +0.3% |
-| $\Xi^0$ | uss | m_N + 2[(m_s−m_u)+(m_s−m_d)] = 1303 | 1314.9 | −0.9% |
-| $\Xi^-$ | dss | m_N + 2[(m_s−m_u)+(m_s−m_d)] = 1303 | 1321.7 | −1.4% |
+| Λ | uds | $m_N + 2(m_s - m_d) = 1119$ | 1115.7 | +0.3% |
+| $\Xi^0$ | uss | $m_N + 2[(m_s-m_u)+(m_s-m_d)] = 1303$ | 1314.9 | −0.9% |
+| $\Xi^-$ | dss | $m_N + 2[(m_s-m_u)+(m_s-m_d)] = 1303$ | 1321.7 | −1.4% |
 
 The Σ(uds) has identical quark content to the Λ, so the formula gives the same prediction for both; the 77 MeV Σ−Λ difference is a small same-type residual the formula does not resolve. The Ω(sss, J=3/2) is in the baryon decuplet, outside this formula's scope. Script: `files/idwt.py`.
 
@@ -419,7 +419,7 @@ $$g_{33} = \frac{n_s^2\sqrt{n_s+n_u}}{2} = 8\sqrt{7}, \quad g_{44} = \frac{n_s n
 
 $$g_{33}\times g_{44} = \frac{n_s^3 n_u}{2} = \frac{64\times3}{2} = 96$$
 
-The rank-1 identity $g_{33}\times g_{44} = g_{34}^2$ follows from the seed structure alone. $g_{33}$, $g_{44}$, and $g_{34}$ are all theorems of the seed pair {n_d=1, n_u=3} and composite n_s=4.
+The rank-1 identity $g_{33}\times g_{44} = g_{34}^2$ follows from the seed structure alone. $g_{33}$, $g_{44}$, and $g_{34}$ are all theorems of the seed pair $\{n_d=1, n_u=3\}$ and composite $n_s=4$.
 
 **$g_{33}$ from $g_{44}$:** $g_{33}/g_{44} = n_s(n_s+n_u)/(2n_u) = 4\times7/6 = 14/3$. This ratio equals $(m_d/m_u)^2$ — the squared lightest-particle mass ratio between sectors — another consequence of the seed structure, not an independent assumption.
 
@@ -497,7 +497,7 @@ $$g_{6,10} = \sqrt{g_{66}g_{10,10}} = \tfrac{1}{4} \;[= g_{66}]$$
 
 The tau is the one lepton whose raw simplex prediction requires a correction at all. The mechanism is the isotropic back-reaction between the $d=6$ and $d=10$ sectors.
 
-**Setup.** The $d=6$ and $d=10$ sectors share the coupling g_{6,6} = g_{6,10} = g_{10,10} = 1/n_s = 1/4, derived from the composite $n_s=4$ (not from hypercharge). This isotropy — both sectors carry identical coupling $1/n_s$ — means the back-reaction from $d=6$ onto $d=10$ feeds back on itself via g_{10,10}.
+**Setup.** The $d=6$ and $d=10$ sectors share the coupling $g_{6,6} = g_{6,10} = g_{10,10} = 1/n_s = 1/4$, derived from the composite $n_s=4$ (not from hypercharge). This isotropy — both sectors carry identical coupling $1/n_s$ — means the back-reaction from $d=6$ onto $d=10$ feeds back on itself via $g_{10,10}$.
 
 **Self-consistent equation.** The $d{=}6\to d{=}10$ back-reaction shift $\Delta m$ satisfies:
 
@@ -543,7 +543,7 @@ The $d=5$ sector ($S^5$) has Euler characteristic χ=0 — no self-confinement a
 
 $$m_{\rm scale,5}\times m_{\rm scale,4}^2 = \frac{n_u}{n_s}\times m_{\rm scale,6}^3$$
 
-This is the $d=5$ analog of the $d=2$ back-reaction equation $g_{22} = p^2q/2$: the neutrino scale is fixed by the balance between the $d=4$ quark scale (heavy, appearing squared in the denominator) and the $d=6$ lepton scale (light, appearing cubed). The ratio n_u/n_s = 3/4 is the Hopf chain geometric-seed-to-composite ratio.
+This is the $d=5$ analog of the $d=2$ back-reaction equation $g_{22} = p^2q/2$: the neutrino scale is fixed by the balance between the $d=4$ quark scale (heavy, appearing squared in the denominator) and the $d=6$ lepton scale (light, appearing cubed). The ratio $n_u/n_s = 3/4$ is the Hopf chain geometric-seed-to-composite ratio.
 
 **Explicit formula:**
 
@@ -571,11 +571,11 @@ $$m_{\rm scale,5} = \frac{n_u}{n_s}\times\frac{m_{\rm scale,6}^3}{m_{\rm scale,4
 
 **Structural source.** $n_{\nu_1} = S(n_u,3) = 10$ and $n_{\nu_2} = S(n_u,4) = 15$ are primary Pascal evaluations at the seed. $n_{\nu_3} = n_{\nu_1} + n_{\nu_2} - n_u = 22$ is derived by inclusion-exclusion from two primary modes — the only neutrino mode requiring information from both the $d=3$ and $d=4$ Hopf images. This cross-sector entanglement makes $n_{\nu_3}$ susceptible to a correction at the seed level: the leading $d=4$ evaluation above $n_u$ is $S(n_s,4) = 35$ (a hockey-stick identity consequence: $S(n_s+1,3) = S(n_s,4) = 35$), which appears as the natural denominator. This is structurally analogous to the τ back-reaction correction $1/1680 = 1/(n_u \times n_s^2 \times S(n_s,4))$ — the same $S(n_s,4) = 35$ appears — but without the Gegenbauer criticality factor $n_s^2 = 16$ ($d=5$ is not at the critical point) and without the back-reaction resummation factor $n_u$ ($g_{55} \neq 1/n_s$). The first-principles derivation of this coefficient is given in §9d.
 
-The corrected Σm_ν = 1.487 + 8.639 + 50.267 = 60.393 meV; bare 59.00 meV. Both are within current cosmological bounds; CMB-S4 will distinguish them.
+The corrected $\Sigma m_\nu = 1.487 + 8.639 + 50.267 = 60.393$ meV; bare 59.00 meV. Both are within current cosmological bounds; CMB-S4 will distinguish them.
 
 **Observable predictions:**
 
-- Σm_ν = 60.39 meV: detectable by Simons Observatory (CMB-S4 sensitivity ~30 meV — within a factor 2)
+- $\Sigma m_\nu = 60.39$ meV: detectable by Simons Observatory (CMB-S4 sensitivity ~30 meV — within a factor 2)
 - m_β ≈ 8.77 meV: below KATRIN bound (< 450 meV) and below Project 8's long-term goal (~40 meV) — not accessible in near-term beta-decay experiments
 - m_ββ = 0 exactly: 0νββ decay is forbidden (Majorana mass forbidden in $d=5$ by spin structure)
 - Normal hierarchy: $m_{\nu_1} \ll m_{\nu_2} \ll m_{\nu_3}$
@@ -636,7 +636,7 @@ $$\Sigma m_\nu\ (\text{corrected}) = 1.487+8.639+50.267 = 60.393\ \text{meV}$$
 
 The kernel vacuum analysis gives a single fixed-point equation that applies to all sectors uniformly:
 
-> **In equilibrium, the squared mass of the lightest occupied mode in sector d equals (g_dd/g_66) × $m_e^2$.**
+> **In equilibrium, the squared mass of the lightest occupied mode in sector $d$ equals $(g_{dd}/g_{66}) \times m_e^2$.**
 
 The lightest occupied mode in sector $d$ has mass $m_{\rm lightest}(d) = m_{\rm scale,d} \times S(n_{\min}(d), d)$, where $n_{\min}(d)$ is the lowest mode index selected by the co-fixed-point. The fixed-point equation is therefore:
 
@@ -696,7 +696,7 @@ The light-quark predictions are parameter-free outputs of the coupling self-cons
 
 ### 10b. $g_{22}$ — the kernel back-reaction fixed-point 🔶
 
-**Status: 🔶 Structurally motivated (state-counting).** $g_{22} = p^2q/2 = 722.5$ is a multiplicity count: the product of available Dirac-eigenspace dimensions across the $d=3$ sector (two kernel legs → $p^2$) and the $d=4$ sector (one leg → q), with the 1/2 from the ξ↔ξ' symmetry of the two-body kernel. It is not a kernel matrix element. Testing whether a genuine $(\xi\cdot\xi')^2$ trace yields $p^2q/2$ (`files/idwt.py` STEP 2d): the literal Tr[$G_{23}^2 + G_{24}^2$] is additive (∼ $p^2+q$, the wrong structure for a product), and the actual $(\xi\cdot\xi')^2$ overlap returns $\langle r^2\rangle$ magnitudes that scale as the mode index n — O(1), orders of magnitude below the multiplicity product. $p^2q$ appears only as a trace of the identity over rank-(p,p,q) eigenspaces, where the multiplicities are the input. So $g_{22}$ is a state-count (IDOS), on the same footing as the CKM formula: combinatorial, empirically exact, mechanism = counting. The 1/2 and the leg-counting are kernel-motivated; the magnitude is a count of eigenstates, not a dynamical overlap.
+**Status: 🔶 Structurally motivated (state-counting).** $g_{22} = p^2q/2 = 722.5$ is a multiplicity count: the product of available Dirac-eigenspace dimensions across the $d=3$ sector (two kernel legs → $p^2$) and the $d=4$ sector (one leg → q), with the 1/2 from the $\xi\leftrightarrow\xi'$ symmetry of the two-body kernel. It is not a kernel matrix element. Testing whether a genuine $(\xi\cdot\xi')^2$ trace yields $p^2q/2$ (`files/idwt.py` STEP 2d): the literal Tr[$G_{23}^2 + G_{24}^2$] is additive (∼ $p^2+q$, the wrong structure for a product), and the actual $(\xi\cdot\xi')^2$ overlap returns $\langle r^2\rangle$ magnitudes that scale as the mode index n — O(1), orders of magnitude below the multiplicity product. $p^2q$ appears only as a trace of the identity over rank-(p,p,q) eigenspaces, where the multiplicities are the input. So $g_{22}$ is a state-count (IDOS), on the same footing as the CKM formula: combinatorial, empirically exact, mechanism = counting. The 1/2 and the leg-counting are kernel-motivated; the magnitude is a count of eigenstates, not a dynamical overlap.
 
 The $d=3$ self-coupling $g_{33}$ is fixed by the intra-sector confinement condition $g_{\rm eff}(n_s,3) = g_{33}/S(n_s,3) \approx 1$ (Part 2 §8). The $d=2$ sector has no self-confinement — the W is massive but not confined in the quark sense. Its self-coupling $g_{22}$ is instead fixed by the **cross-sector back-reaction**: the requirement that the $d=2$ vacuum amplitude is consistent with the $d=3$ and $d=4$ quark sector structures at the composite level n_s=4.
 
@@ -715,7 +715,7 @@ $$q = S(n_u,4) - S(n_u,3) = 15-10 = 5 = S(n_u-1,4) = S(2,4)$$
 
 These q eigenstates below the up-quark threshold couple to $d=2$ through a single $G_{24}$ insertion, entering linearly.
 
-**Step 3.** The kernel $(\xi\cdot\xi')^2 = (\xi'\cdot\xi)^2$ is symmetric under ξ↔ξ', so the vacuum integral double-counts. Divide by 2.
+**Step 3.** The kernel $(\xi\cdot\xi')^2 = (\xi'\cdot\xi)^2$ is symmetric under $\xi\leftrightarrow\xi'$, so the vacuum integral double-counts. Divide by 2.
 
 **Step 4 (fixed-point).** Equate the cross-sector back-reaction to the $d{=}2$ self-coupling:
 
@@ -753,7 +753,7 @@ The overshoot has a known sign and a known candidate source, though it is not ye
 
 The scale ε below is a genuinely derived quantity. It is no longer applied to the up-type quark masses (§11.3); it is retained only because the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§9d) depends on it.
 
-**g_coeff = 2/√7 from the kernel self-consistency eigenvalue.**
+**$g_{\rm coeff} = 2/\sqrt{7}$ from the kernel self-consistency eigenvalue.**
 
 The kernel self-consistency condition from Part 2 §9 requires:
 
@@ -860,7 +860,7 @@ For the six active IDWT sectors and the three inactive-but-present sectors: $b_{
 
 **Theorem.**  $b_{k_0}(d) = 1/2$  ⟺  $4k_0 = (d-2)^2$  ⟺  $d = 2 + 2n_s = 10$.
 
-**Proof.**  $b = 1/2$  ↔  $4k_0(k_0+d-1) = (2k_0+d-2)^2$.  Expanding: LHS $= 4k_0^2 + 4k_0(d-1)$, RHS $= 4k_0^2 + 4k_0(d-2) + (d-2)^2$. Subtracting: $4k_0 = (d-2)^2$. With $k_0 = n_s^2 = 16$: $d = 2 + 2\sqrt{16} = 2 + 2n_s = 10$. □
+**Proof.**  $b = 1/2 \Longleftrightarrow 4k_0(k_0+d-1) = (2k_0+d-2)^2$.  Expanding: LHS $= 4k_0^2 + 4k_0(d-1)$, RHS $= 4k_0^2 + 4k_0(d-2) + (d-2)^2$. Subtracting: $4k_0 = (d-2)^2$. With $k_0 = n_s^2 = 16$: $d = 2 + 2\sqrt{16} = 2 + 2n_s = 10$. □
 
 **Corollary (exact sector phase delay for $d=10$).** The leading-order sector phase delay $\tau_d = 1/(2\sqrt{k_0+d})$ acquires a next-order correction proportional to $(b_{k_0}-1/2)/b_{k_0}^2$. For $d=10$ this correction **vanishes identically**, so the leading-order sector phase delay is exact at the terminal sector. For $d=3$ through $d=6$ the corrections are −0.67% to −0.44% and shift the ρ meson prediction in the wrong direction (away from PDG), confirming that the +0.069% residual is a genuine floor, not a sector phase delay artifact.
 

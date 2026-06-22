@@ -28,7 +28,7 @@ IDWT has none of this structure:
 
 **The sector dimensions are detected.** They produce the entire observed particle mass spectrum via $m = m_{\rm scale,d} \times S(n,d)$. The sectors are not invisible — they are the origin of all fermion and boson masses. What they do not produce is any additional gravitational signature, because the sector-space geometry contributes to gravity only through the observer's stress-energy of the particles it hosts.
 
-**Why no other signatures appear.** The physical modes are exactly the exponentially localised bound states of each sector potential. Any mode that would propagate through Ξ — a scattering state with $E \geq \lambda_d$ — is non-normalizable, hence not a bound-state eigenmode, and is absent from the physical spectrum. There are no bulk modes, no KK excitations above the particle spectrum already identified, and no missing energy channels at any collider energy.
+**Why no other signatures appear.** The physical modes are exactly the exponentially localised bound states of each sector potential. Any mode that would propagate through $\Xi$ — a scattering state with $E \geq \lambda_d$ — is non-normalizable, hence not a bound-state eigenmode, and is absent from the physical spectrum. There are no bulk modes, no KK excitations above the particle spectrum already identified, and no missing energy channels at any collider energy.
 
 
 ---
@@ -100,11 +100,11 @@ More specifically: the sector-space geometry $h_{ab}(\xi)$ is a fixed classical 
 
 The question of cross-terms between different sector-space coordinates — $\delta^2 S/\delta g_{\mu\nu}(\xi_a)\,\delta g_{\rho\sigma}(\xi_b)$ for $a\neq b$ — does not arise: the 3D observer constructs a single metric $g_{\mu\nu}(x)$ on their $d=3$ spacetime, not a family parameterised by $\xi$. The coupling $\int_\Xi T_{\mu\nu}\, d\mu_\xi$ is already the $\xi$-integrated source; there is no per-leaf metric.
 
-### 3.5 Boundary Terms on Non-Compact Ξ
+### 3.5 Boundary Terms on Non-Compact $\Xi$
 
 For macroscopic (non-compact) Ξ, the variation of ∫_Ξ ... dμ_ξ by parts requires boundary conditions as |ξ| → ∞.
 
-Physical modes are bound states of the harmonic sector potential $V(\xi) = \lambda_d r^2$ (Part 4 §3.10). Bound states decay as a Gaussian: $|\chi_{n,d}(\xi)| \sim P(|\xi|)\exp(-\sqrt{\lambda_d}|\xi|^2/2)$ for |ξ| → ∞ (polynomial × Gaussian). Boundary terms in the integration by parts that yields the field equations therefore vanish. The action integral is well-defined despite the non-compact domain.
+Physical modes are bound states of the harmonic sector potential $V(\xi) = \lambda_d r^2$ (Part 4 §3.10). Bound states decay as a Gaussian: $|\chi_{n,d}(\xi)| \sim P(|\xi|)\exp(-\sqrt{\lambda_d}|\xi|^2/2)$ for $|\xi| \to \infty$ (polynomial $\times$ Gaussian). Boundary terms in the integration by parts that yields the field equations therefore vanish. The action integral is well-defined despite the non-compact domain.
 
 Non-normalizable (scattering) modes do not satisfy this condition — they are not bound-state eigenmodes of the sector potential and are absent from the physical spectrum. The bound-state normalizability condition automatically selects precisely the modes for which the sector-space integrals converge.
 
@@ -158,7 +158,7 @@ A sector-$d$ particle is localized (bound) in the coordinates $x_1,\dots,x_d$ an
 
 ## 3.9 The Sector Localization Length — No Compactification Needed
 
-**$L_d$ is the sector localization length — not a compactification radius.** IDWT has no compact extra dimensions, no periodic boundary conditions, no Kaluza-Klein tower. The space Ξ is limitless. $L_d$ is the characteristic width of the sector ground-state Gaussian in the sector direction (the harmonic oscillator length), derived from the self-consistency equation for $\lambda_d$ in §3.10.
+**$L_d$ is the sector localization length — not a compactification radius.** IDWT has no compact extra dimensions, no periodic boundary conditions, no Kaluza-Klein tower. The space $\Xi$ is limitless. $L_d$ is the characteristic width of the sector ground-state Gaussian in the sector direction (the harmonic oscillator length), derived from the self-consistency equation for $\lambda_d$ in §3.10.
 
 **What $L_d$ is:**
 
@@ -195,7 +195,7 @@ Values:
 
 - There is no KK tower (no periodic modes, no 1/R quantization)
 - The sector modes are exponentially localized bound states, not plane waves
-- At any laboratory distance r >> L_d, the mode is already Gaussian-suppressed as $\exp(-r^2/L_d^2) \approx \exp(-10^{60})$ for macroscopic L_d
+- At any laboratory distance $r \gg L_d$, the mode is already Gaussian-suppressed as $\exp(-r^2/L_d^2) \approx \exp(-10^{60})$ for macroscopic $L_d$
 - No deviation from $1/r^2$ gravity occurs at any accessible scale
 - The gravitational interaction appears standard to the observer: $G_{\mu\nu} = 8\pi G\, T_{\mu\nu}^{\rm eff}$ with $T_{\mu\nu}^{\rm eff}$ indistinguishable from a standard point mass
 
@@ -243,7 +243,7 @@ The gate profile follows from the established structure as well ✅. Three input
 
 $$\Omega(R) = \frac{[\rho_A\star\tilde\rho_B](R)}{[\rho_A\star\tilde\rho_B](0)}$$
 
-For Gaussian sector ground modes, $\Omega(R) = \exp(-R^2/(2(a^2+b^2)))$, contact range $\sqrt{a^2+b^2}$. Corollary, exact: a same-sector pair has contact range $\sqrt{2\sigma_d^2} = \lambda_d^{-1/4} = L_d$ — the sector localization length is the same-sector contact range (e–e: L_6, the range of Part 11 §6.3; nucleon–nucleon at $d=3$: L_3 = 0.675, taken up quantitatively in Part 8 §11). The $d=3$–$d=4$ quark pair has range 0.78 in sector units, the sub-femtometre strong-force scale. Long-range physics is untouched: electromagnetism is carried by the massless, non-compact $d=2$ zero mode (Part 3 §16, §0.8a), to which no width gate applies, and gravity is $M_\infty$ curvature (§1). At A = B, R = 0 the gated form reduces to the §3.10.2 self-term. (`files/idwt.py` STEP 59, STEP 60.)
+For Gaussian sector ground modes, $\Omega(R) = \exp(-R^2/(2(a^2+b^2)))$, contact range $\sqrt{a^2+b^2}$. Corollary, exact: a same-sector pair has contact range $\sqrt{2\sigma_d^2} = \lambda_d^{-1/4} = L_d$ — the sector localization length is the same-sector contact range (e–e: $L_6$, the range of Part 11 §6.3; nucleon–nucleon at $d=3$: $L_3 = 0.675$, taken up quantitatively in Part 8 §11). The $d=3$–$d=4$ quark pair has range 0.78 in sector units, the sub-femtometre strong-force scale. Long-range physics is untouched: electromagnetism is carried by the massless, non-compact $d=2$ zero mode (Part 3 §16, §0.8a), to which no width gate applies, and gravity is $M_\infty$ curvature (§1). At A = B, R = 0 the gated form reduces to the §3.10.2 self-term. (`files/idwt.py` STEP 59, STEP 60.)
 
 ### 3.10.2 Evaluating the Self-Coupling
 
@@ -257,7 +257,7 @@ $$V_{\rm self}(r) = g_{dd}\times\frac{\langle r'^2\rangle_d}{d}\times r^2$$
 
 where $r = |\xi_d|$ and $\langle r'^2\rangle_d = \int_{\Xi_d} r'^2|\chi_d(\xi')|^2\,d\mu_{\xi'}$ is the mean-square sector radius of the ground-state mode. This gives a harmonic potential $V_{\rm self}\propto r^2$ — which is the confining potential itself, $V_d = \lambda_d r^2$ (the saturating form once posited here is dropped; see the note below), with:
 
-**Note on the potential functional form (MC-2, resolved).** The kernel self-energy derives the $r^2$ coefficient (above). The earlier saturating form $\lambda_d r^2/(1+r^2)$ is dropped: it supports no localized bound state in $d=5$,6,10 — the neutrino, charged-lepton, and tau sectors — so it cannot host the spectrum. The adopted potential is the **pure harmonic** $V_d(r) = \lambda_d r^2$, which is confining (purely discrete spectrum, σ_ess = ∅), reproduces the IDOS S(n,d) exactly in every sector, and makes the §3.10.3 self-consistency exact rather than circular. The narrow residual: the kernel fixes the $r^2$ coefficient near a localized source, and extending the pure-harmonic form to all r is adopted on these grounds rather than derived term-by-term from the action.
+**Note on the potential functional form (MC-2, resolved).** The kernel self-energy derives the $r^2$ coefficient (above). The earlier saturating form $\lambda_d r^2/(1+r^2)$ is dropped: it supports no localized bound state in $d=5$,6,10 — the neutrino, charged-lepton, and tau sectors — so it cannot host the spectrum. The adopted potential is the **pure harmonic** $V_d(r) = \lambda_d r^2$, which is confining (purely discrete spectrum, $\sigma_{\rm ess} = \emptyset$), reproduces the IDOS $S(n,d)$ exactly in every sector, and makes the §3.10.3 self-consistency exact rather than circular. The narrow residual: the kernel fixes the $r^2$ coefficient near a localized source, and extending the pure-harmonic form to all r is adopted on these grounds rather than derived term-by-term from the action.
 
 $$\lambda_d = g_{dd}\times\frac{\langle r'^2\rangle_d}{d}$$
 
@@ -290,7 +290,7 @@ This is the self-consistency condition: the sector potential depth is determined
 | 2 | 722.5 | 50.723 | 14.244 | 0.375 | 7.122 |
 | 3 | $8\sqrt{7} \approx 21.17$ | 4.820 | 6.586 | 0.675 | 2.195 |
 | 4 | $12/\sqrt{7} \approx 4.54$ | 1.726 | 5.255 | 0.872 | 1.314 |
-| 5 | 96/722.5 ≈ 0.133 | 0.164 | 2.025 | 1.571 | 0.405 |
+| 5 | $96/722.5 \approx 0.133$ | 0.164 | 2.025 | 1.571 | 0.405 |
 | 6 | 1/4 | 0.250 | 3.000 | 1.414 | 0.500 |
 | 10 | 1/4 | 0.250 | 5.000 | 1.414 | 0.500 |
 
@@ -308,7 +308,7 @@ Expanding $\Psi = \sum_n A_n\chi_n$ in the well's own modes (ground state $n=1$,
 
 $$E[\{A_n\}] = \sum_n\varepsilon_n|A_n|^2 + \frac{g_{dd}}{2}\sum_{N_1+N_2=N_3+N_4}K_{n_1n_2n_3n_4}\,A^*_{n_1}A^*_{n_2}A_{n_3}A_{n_4} \tag{2}$$
 
-with K the $(\xi\cdot\xi')^2$ overlap, nonzero only on the l = 0 ⊕ l = 2 channel. Two features of (2) are exact and structural. The quartic term enforces the index resonance N1+N2 = N3+N4: the generation-tower production edges are four-wave-resonant in the mode index (⭐) — the spectrum is an index-locked four-wave comb on the condensate. Its l = 0 ⊕ l = 2 content is the l-parity rule: the ground mode connects only to even levels, so the conservative flow of (2) populates the even-level ladder and excludes the odd levels exactly (⭐, Part 7 §1.2).
+with K the $(\xi\cdot\xi')^2$ overlap, nonzero only on the $l = 0 \oplus l = 2$ channel. Two features of (2) are exact and structural. The quartic term enforces the index resonance N1+N2 = N3+N4: the generation-tower production edges are four-wave-resonant in the mode index (⭐) — the spectrum is an index-locked four-wave comb on the condensate. Its l = 0 ⊕ l = 2 content is the l-parity rule: the ground mode connects only to even levels, so the conservative flow of (2) populates the even-level ladder and excludes the odd levels exactly (⭐, Part 7 §1.2).
 
 What the functional does **not** do is select the occupancy. Its stationary point fixes the well ($\lambda_d$); its quartic term fixes the four-wave comb structure; but the choice of which modes occupy the comb — the co-fixed-point selection (Part 9 T0.5) — is not a minimum of (1)/(2). The conservative Gross–Pitaevskii flow of (2) from the condensate reproduces the l-parity cut and the first injection (ground → up) and then spreads amplitude across the whole even ladder without isolating the tower (🔶/🔵). The even-level selection is therefore not a property of this vacuum functional; it is the radiative-stability statement of Part 7 §1.2 — which even modes are protected against decay through the downward kernel links. The functional (1) is the well closure and the comb kinematics; the occupancy selection is a separate, radiative question, and the sector-activation arbiter for Rule A is the distinct coupled ($\Psi_\infty$, $\{M_d\}$) fixed point of Part 6 Open Theorem A.
 
@@ -443,7 +443,7 @@ Once $G$ is fixed by one measurement, all gravitational forces $F = G m_1 m_2/r^
 | Spacetime Einstein equations from $M_\infty$ action | ✅ §3.1–3.4 |
 | No additional gravitational propagating modes | ✅ §3.4 |
 | Equivalence principle: $m_{\rm grav} = m_{\rm inertial}$ | ✅ §3.6 |
-| Boundary terms vanish on non-compact Ξ | ✅ §3.5 |
+| Boundary terms vanish on non-compact $\Xi$ | ✅ §3.5 |
 | $L^2(\Xi)$ normalisability via sector mode localization theorem | ✅ §3.13 Part I |
 | Bianchi identity $\nabla^\mu T_{\mu\nu}^{\rm eff} = 0$ | ✅ §3.13 Part II |
 | Spectral counting $S(n,d) = N_d(n-1)$ | ✅ Part 8 §3 |
@@ -502,17 +502,17 @@ $$\|\chi_{n,d}\|^2_{\mathbb{R}^d} = \int_{\mathbb{R}^d}|\chi_{n,d}(\xi)|^2\,d\xi
 
 for all $d\geq 1$ and all $n\geq 1$. Compactness of $\Xi_d$ is not required — confinement follows from the harmonic potential growing without bound. $\square$
 
-Numerical verification ($d=3$, $n=1$, l=0): $\chi_0 \propto \exp(-\sqrt{\lambda_3} r^2/2)$; $\int_0^\infty r^2 e^{-2\sqrt{\lambda_3} r^2/2} dr = \int_0^\infty r^2 e^{-\sqrt{4.82}\, r^2} dr$ = (√π/4)(√4.82)^{-3/2} < ∞. ✓
+Numerical verification ($d=3$, $n=1$, l=0): $\chi_0 \propto \exp(-\sqrt{\lambda_3} r^2/2)$; $\int_0^\infty r^2 e^{-2\sqrt{\lambda_3} r^2/2} dr = \int_0^\infty r^2 e^{-\sqrt{4.82}\, r^2} dr = (\sqrt{\pi}/4)(\sqrt{4.82})^{-3/2} < \infty$. ✓
 
-**Theorem (Physical mode ↔ $L^2$).** For macroscopic non-compact $\Xi_d$, a mode χ is a physical mode — a normalised eigenfunction of H_d^harm (i.e. χ ∈ $L^2(\mathbb{R}^d)$) — if and only if it is an exponentially localised bound state of the sector potential. Existence as a physical mode is a normalizability condition, independent of whether the mode is visible to a $d=3$ observer.
+**Theorem (Physical mode $\leftrightarrow L^2$).** For macroscopic non-compact $\Xi_d$, a mode $\chi$ is a physical mode — a normalised eigenfunction of $H_d^{\rm harm}$ (i.e. $\chi \in L^2(\mathbb{R}^d)$) — if and only if it is an exponentially localised bound state of the sector potential. Existence as a physical mode is a normalizability condition, independent of whether the mode is visible to a $d=3$ observer.
 
 **Proof.**
 
 *(→) Non-eigenfunction modes are non-normalizable.* Any mode that is not a discrete eigenfunction of H_d^harm either oscillates (plane-wave-like in the sector directions) or grows. For any such state, $\int|\chi|^2 d\xi$ diverges, so $\chi \notin L^2(\mathbb{R}^d)$ and it is not a bound state.
 
-*(←) Harmonic eigenstates are normalizable.* Every χ_{n,d} ∈ $L^2(\mathbb{R}^d)$ by the corollary above, with a Gaussian envelope that decays exponentially — a genuine bound state. □
+*(←) Harmonic eigenstates are normalizable.* Every $\chi_{n,d} \in L^2(\mathbb{R}^d)$ by the corollary above, with a Gaussian envelope that decays exponentially — a genuine bound state. □
 
-These $L^2$ bound states are the physical modes: each exists, carries mass m = $m_{\rm scale,d}$ × S(n,d), and gravitates. Among them, the co-fixed-point condition (the generation tower) selects the stable spectrum. What a $d=3$ observer can or cannot detect is a separate question that does not affect existence or gravitation.
+These $L^2$ bound states are the physical modes: each exists, carries mass $m = m_{\rm scale,d} \times S(n,d)$, and gravitates. Among them, the co-fixed-point condition (the generation tower) selects the stable spectrum. What a $d=3$ observer can or cannot detect is a separate question that does not affect existence or gravitation.
 
 ---
 
@@ -544,7 +544,7 @@ $$\nabla^\mu T_{\mu\nu}^{\rm eff}(x) = \int_\Xi|\chi_{n,d}(\xi)|^2\times 0\,d\mu
 
 ## 4. Cosmological Constant
 
-The vacuum energy that sources Λ_eff would come from the sector mode tower. Its observed smallness is not currently derived: an existing mode gravitates whether or not a $d=3$ observer can resolve it, so the relevant question is which modes are persistent physical excitations — only the co-fixed-point modes are stable resonances of $M_\infty$, while the rest are not persistent states. Whether that distinction, together with the sector radii and coupling strengths that fix particle masses, yields a naturally small Λ_eff is an open problem. ❓
+The vacuum energy that sources $\Lambda_{\rm eff}$ would come from the sector mode tower. Its observed smallness is not currently derived: an existing mode gravitates whether or not a $d=3$ observer can resolve it, so the relevant question is which modes are persistent physical excitations — only the co-fixed-point modes are stable resonances of $M_\infty$, while the rest are not persistent states. Whether that distinction, together with the sector radii and coupling strengths that fix particle masses, yields a naturally small $\Lambda_{\rm eff}$ is an open problem. ❓
 
 The contribution of the dimensions beyond $d=10$ is fixed: it is zero. ✅ The cosmological term is the $a_0$ Seeley–DeWitt coefficient of the spectral action ${\rm Tr}(f(D/\Lambda))$, and by T5 every $d > 10$ mode lies in the essential spectrum — an extended scattering state, not $L^2$-normalisable, contributing no discrete eigenvalue to the trace. This is the same trace-exclusion established for Newton's constant in §3.12.2; it is coefficient-blind, so it removes the $d > 10$ vacuum dimensions from $a_0$ (the cosmological term) exactly as it removes them from $a_2$ (the Einstein–Hilbert term). Extending the sector self-coupling $g_{dd}$ naively into $d > 10$ instead gives an exponentially divergent vacuum volume (§3.12.2) — the divergence T5 excludes. The same conclusion follows from the mass-scale condition $m_{\rm scale,d}^2 = g_{dd}\langle|\Psi^{(d)}|^2\rangle$ (Part 2 §12): the $d > 10$ scattering states support no localised condensate, so the vacuum dimensions carry no sector scale and source no vacuum energy density. The open problem is thereby confined to the finite occupied tower $d ≤ 10$, whose condensed modes carry real vacuum energy. ❓
 
@@ -552,6 +552,6 @@ The contribution of the dimensions beyond $d=10$ is fixed: it is zero. ✅ The c
 
 ## 5. Generation Tower Mode Selection
 
-Every integer pair (n,d) with d ∈ {2,3,4,5,6,10} exists as a resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from n_s=4 — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
+Every integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ exists as a resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from n_s=4 — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
 
-In $d=3$, the co-fixed-point spectrum selects exactly $n=1$ (down) and $n=4$ (strange). The intermediate modes $n=2$,3 are not co-fixed-points — they are unoccupied resonances of $M_\infty$, predicted absent as stable distinct states (their $d=3$ masses would be 18.8 and 47 MeV). Modes n≥5 in $d=3$ are likewise not selected.
+In $d=3$, the co-fixed-point spectrum selects exactly $n=1$ (down) and $n=4$ (strange). The intermediate modes $n=2$,3 are not co-fixed-points — they are unoccupied resonances of $M_\infty$, predicted absent as stable distinct states (their $d=3$ masses would be 18.8 and 47 MeV). Modes $n\geq5$ in $d=3$ are likewise not selected.

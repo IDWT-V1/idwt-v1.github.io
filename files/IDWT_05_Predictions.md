@@ -173,7 +173,7 @@ Using $m_e = 0.511$ MeV as the sole unit reference:
 | Z | 91,230 | 91,188 | +0.047% | — |
 | H | 125,266 | 125,200 | +0.053% | — |
 
-† **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: 1776.93 ± 0.09 MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/($n_u \times n_s^2 \times S(n_s,4)$) is the geometric back-reaction resummation of the $d=6$→$d=10$ coupling. Physical mechanism: (1) $g_{6,10}/(k_0\times n_{\rm mu}) = 1/2240$ is the leading back-reaction from the isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/4$; (2) the correction feeds back via the $d=10$ self-coupling $g_{10,10}=1/n_s$, giving resummation factor $n_s/(n_s-1) = n_s/n_u$ (since $n_u = n_s-1$ by T15). Combined: $1/2240 \times 4/3 = 1/1680$. No inputs beyond $m_e$ and seed pair $\{n_u=3, n_s=4\}$.
+† **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: $1776.93 \pm 0.09$ MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/($n_u \times n_s^2 \times S(n_s,4)$) is the geometric back-reaction resummation of the $d=6$→$d=10$ coupling. Physical mechanism: (1) $g_{6,10}/(k_0\times n_{\rm mu}) = 1/2240$ is the leading back-reaction from the isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/4$; (2) the correction feeds back via the $d=10$ self-coupling $g_{10,10}=1/n_s$, giving resummation factor $n_s/(n_s-1) = n_s/n_u$ (since $n_u = n_s-1$ by T15). Combined: $1/2240 \times 4/3 = 1/1680$. No inputs beyond $m_e$ and seed pair $\{n_u=3, n_s=4\}$.
 
 ### 2a. Is the spectrum a fit? — null-model significance 🔵
 
@@ -192,7 +192,7 @@ The $\tau$ row uses PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV); its $\varepsilon
 
 **Honest scope.** The $L = 2\varepsilon/g$ luck model treats each quantity separately; multiplying the four $L$ values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived, not refit (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist ($g_A$ +4%, $f_\pi$ +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. The result retires the "fit anything" objection: the spectrum is not a flexible structure.
 
-**Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from n_s by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$, composite $n_s=4$, and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
+**Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from $n_s$ by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$, composite $n_s=4$, and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
 
 ### 2b. Joint p-value and random-theory Monte Carlo 🔵
 
@@ -205,13 +205,13 @@ The quantity set is fixed by a rule stated in advance, not by closeness: a quant
 | Quantity | IDWT | Measured | $\varepsilon_{\rm eff}$ | grid $g$ | $L$ |
 |---|---|---|---|---|---|
 | $m_\mu/m_e$ | 206.765 | 206.768 | $1.7\times10^{-5}$ | 0.150 | $2.3\times10^{-4}$ |
-| $m_\tau/m_e$ | 3477.19 | 3477.37 ± 0.18 | $5.1\times10^{-5}$ | 0.313 | $3.2\times10^{-4}$ |
-| $m_Z/m_W$ | 1.13500 | 1.13461 ± 0.00019 | $3.4\times10^{-4}$ | 0.024 | $2.8\times10^{-2}$ |
-| $m_H/m_W$ | 1.55844 | 1.55781 ± 0.00139 | $8.9\times10^{-4}$ | 0.021 | $8.6\times10^{-2}$ |
-| $\sin\theta_C$ | 0.22454 | 0.2245 ± 0.0008 | $3.6\times10^{-3}$ | 0.245 | $2.9\times10^{-2}$ |
-| $m_s/m_d$ | 20.000 | 19.81 ± 0.13 | $9.6\times10^{-3}$ | 0.500 | $3.8\times10^{-2}$ |
-| $m_t/m_c$ | 137.26 | 135.56 ± 0.54 | $1.25\times10^{-2}$ | 0.053 | $4.7\times10^{-1}$ |
-| $\Delta m^2_{31}/\Delta m^2_{21}$ | 34.86 | 33.60 ± 0.88 | $3.8\times10^{-2}$ | 0.348 | $2.2\times10^{-1}$ |
+| $m_\tau/m_e$ | 3477.19 | $3477.37 \pm 0.18$ | $5.1\times10^{-5}$ | 0.313 | $3.2\times10^{-4}$ |
+| $m_Z/m_W$ | 1.13500 | $1.13461 \pm 0.00019$ | $3.4\times10^{-4}$ | 0.024 | $2.8\times10^{-2}$ |
+| $m_H/m_W$ | 1.55844 | $1.55781 \pm 0.00139$ | $8.9\times10^{-4}$ | 0.021 | $8.6\times10^{-2}$ |
+| $\sin\theta_C$ | 0.22454 | $0.2245 \pm 0.0008$ | $3.6\times10^{-3}$ | 0.245 | $2.9\times10^{-2}$ |
+| $m_s/m_d$ | 20.000 | $19.81 \pm 0.13$ | $9.6\times10^{-3}$ | 0.500 | $3.8\times10^{-2}$ |
+| $m_t/m_c$ | 137.26 | $135.56 \pm 0.54$ | $1.25\times10^{-2}$ | 0.053 | $4.7\times10^{-1}$ |
+| $\Delta m^2_{31}/\Delta m^2_{21}$ | 34.86 | $33.60 \pm 0.88$ | $3.8\times10^{-2}$ | 0.348 | $2.2\times10^{-1}$ |
 
 Measured inputs: PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV; $m_W = 80369.2 \pm 13.3$ MeV; $m_Z = 91188.0 \pm 2.0$ MeV; $m_H = 125200 \pm 110$ MeV; $V_{us} = 0.2245 \pm 0.0008$; $m_t = 172570 \pm 290$ MeV; $m_c = 1273.0 \pm 4.6$ MeV; $\Delta m^2_{31} = 2.530(28)\times10^{-3}$ eV$^2$; $\Delta m^2_{21} = 7.53(18)\times10^{-5}$ eV$^2$) and FLAG 2024 ($m_s/m_d = 19.81 \pm 0.13$ from $m_s/m_{ud} = 27.23(10)$, $m_u/m_d = 0.455(8)$). $\varepsilon_{\rm eff}$ is $|\text{IDWT} - \text{obs}|/\text{obs}$ floored at the relative measurement error. The $m_s/m_d$ entry is the largest pull in the set (+1.5σ against the lattice ratio); it is scored as found.
 
@@ -235,7 +235,7 @@ The $d=4$ up-type masses are quoted bare and overshoot PDG, growing with generat
 | c | 20 | 1284.9 MeV | +0.93% (+2.6σ, outside) |
 | t | 72 | 176,365 MeV | +2.20% (+13σ, outside) |
 
-A former correction (the "Generation Tower Correction," (1−ε)^k with ε = 1/(280√7) derived and per-quark exponents {0,7,16}) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. Charm and top are open residues. The l=2 tensor part of the kernel supplies the overshoot's sign — a real, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) — but its magnitude is not derived, so no correction is applied (🔶, §11.4).
+A former correction (the "Generation Tower Correction," $(1-\varepsilon)^k$ with $\varepsilon = 1/(280\sqrt{7})$ derived and per-quark exponents $\{0,7,16\}$) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. Charm and top are open residues. The l=2 tensor part of the kernel supplies the overshoot's sign — a real, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) — but its magnitude is not derived, so no correction is applied (🔶, §11.4).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 
@@ -289,13 +289,13 @@ Three active neutrino species from the $d=5$ sector structure (three co-fixed-po
 
 | Ratio | IDWT | PDG | Error |
 |---|---|---|---|
-| m_s/m_d | 20 (exact) | 20 | 0% |
-| m_c/m_u | 590.33 | 589.4 | +0.16% ‡ |
-| m_c/m_s | 13.66 | 13.6 | +0.5% ‡ |
-| m_t/m_c | 137.26 | 135.6 | +1.25% ‡ |
-| m_t/m_b | 42.18 | 41.3 | +2.1% ‡ |
-| m_b/m_s | 44.461 | 44.8 | −0.76% |
-| m_u/m_d | 0.463 | 0.474 | −2.3% † |
+| $m_s/m_d$ | 20 (exact) | 20 | 0% |
+| $m_c/m_u$ | 590.33 | 589.4 | +0.16% ‡ |
+| $m_c/m_s$ | 13.66 | 13.6 | +0.5% ‡ |
+| $m_t/m_c$ | 137.26 | 135.6 | +1.25% ‡ |
+| $m_t/m_b$ | 42.18 | 41.3 | +2.1% ‡ |
+| $m_b/m_s$ | 44.461 | 44.8 | −0.76% |
+| $m_u/m_d$ | 0.463 | 0.474 | −2.3% † |
 
 † $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is derived, not fitted.
 
@@ -376,13 +376,13 @@ $$E_{\rm bind}(b) = \sqrt{m_b \times \Lambda_{\rm QCD}} = 1086\ \text{MeV}$$
 |-------|-----------|-----|-------|
 | B± | 5269.3 MeV | 5279.3 | −0.19% |
 | B$^0$ | 5271.9 | 5279.7 | −0.15% |
-| B_s | 5361.2 | 5366.9 | −0.11% |
+| $B_s$ | 5361.2 | 5366.9 | −0.11% |
 | Υ(1S) | 9448.3 | 9460.3 | −0.13% |
 | J/ψ | 3160.3 | 3096.9 | +2.0% |
 
 The J/ψ residual (+2.0%) reflects the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ being non-negligible for charm (vs 0.07 for bottom, where the formula gives <0.2% errors). The J/ψ–η_c difference (113 MeV) is a vector–pseudoscalar distinction — different object types in IDWT, as with ρ and π — not a correction to the single heavy-quark formula. The φ(ss̄) is the $d=3$ hadronic resonance at $n_\phi = 2n_s + 2n_{\rm down} = 10$: $m_\phi = S(10,3)\times m_{\rm scale,3} = 1034$ MeV (+1.4% vs PDG 1019.5); see Part 2 §8a.
 
-**Baryon octet — $(N_c-1)$ color-bond formula. 🔵** (Part 2 §8a.) $m(\text{baryon}) = m_N + (N_c-1)\sum(m_s - m_{\rm replaced})$, with $N_c-1 = \chi(\mathbb{CP}^1) = 2$. Results: Λ +0.3%, Ξ −0.9% to −1.4%. Σ and Λ have identical content, so the formula gives them the same mass; the 77 MeV difference is a small same-type residual the formula does not resolve. Ω (J=3/2) lies outside the octet formula.
+**Baryon octet — $(N_c-1)$ color-bond formula. 🔵** (Part 2 §8a.) $m(\text{baryon}) = m_N + (N_c-1)\sum(m_s - m_{\rm replaced})$, with $N_c-1 = \chi(\mathbb{CP}^1) = 2$. Results: $\Lambda$ +0.3%, $\Xi$ −0.9% to −1.4%. $\Sigma$ and $\Lambda$ have identical content, so the formula gives them the same mass; the 77 MeV difference is a small same-type residual the formula does not resolve. $\Omega$ ($J=3/2$) lies outside the octet formula.
 
 ## 4. PMNS Mixing
 
@@ -481,7 +481,7 @@ is a **spectral counting theorem**: the mass equals the total spectral weight be
 
 Every prediction derives from one integer ($n_s = 4$) and one unit of mass ($m_e = 0.511$ MeV). The following inventory is organized from the most decisive tests — single observations that directly falsify the framework — through precision quantitative thresholds, structural qualitative predictions differing from SM assumptions, and near-future experimental windows.
 
-The distinction between a *falsifier* and a *residual* is sharpness. IDWT residuals are small (≤ 0.51% for PMNS angles, ≤ 0.003% for W mass), structurally explained by identified open items (CP phase, $G_N$ derivation), and lie within PDG measurement uncertainties. A falsifier is a prediction where IDWT has no adjustment available: either the geometric argument holds or it does not.
+The distinction between a *falsifier* and a *residual* is sharpness. IDWT residuals are small ($\leq 0.51\%$ for PMNS angles, $\leq 0.003\%$ for W mass), structurally explained by identified open items (CP phase, $G_N$ derivation), and lie within PDG measurement uncertainties. A falsifier is a prediction where IDWT has no adjustment available: either the geometric argument holds or it does not.
 
 ---
 
@@ -493,9 +493,9 @@ A single observation in this category directly and irrecoverably falsifies IDWT.
 |---|---|---|---|
 | **F1** | **Neutrinoless double beta decay absent at all orders.** Clifford algebra Cl(d) for $d=5$ has d mod 8 = 5 — the unique residue class for which no charge-conjugation matrix C exists on the $S^5$ spinor bundle. Since no C satisfying the required anti-commutation relations exists globally, cross-sector couplings cannot construct $\psi^T C\psi$ at any loop order. 0νββ is forbidden at all orders, not merely at leading order. | $d=5$ Clifford structure: no C on $S^5$ → no $\psi^T C\psi$ at any order (§6, Part 8 §2.1) | KamLAND-Zen 2023: m_ββ < 36 meV. No signal. ✅ |
 | **F2** | **Normal neutrino mass ordering.** Mode indices $n_{\nu_1} = 10$, $n_{\nu_2} = 15$, $n_{\nu_3} = 22$ are fixed by the eigenmode selection rule ($n_{\nu_1} = S(n_u,3)$, $n_{\nu_2} = S(n_u,4)$, $n_{\nu_3} = n_\tau - n_d$). Since S(n,5) is strictly monotone, $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ necessarily. Inverted ordering cannot be accommodated within any consistent mode-index assignment that preserves algebraic closure of the generation chain. | Eigenmode selection rule; monotonicity of S(n,5) (§5, §6) | 3–4σ preference for normal ordering at current experiments ✅ |
-| **F3** | **No new stable fundamental particles.** The sector set D = {2,3,4,5,6,10} is complete and unique (§3a). Within each sector, the occupied mode index set Σ is the unique solution to the co-fixed-point system (Uniqueness Theorem, Part 1 §5c). The only beat mode is at $k_0 = 16$ in $d=3$, verified by exhaustive search. Any new particle requires a new sector (excluded by Rule A + Rule B) or a new mode index (excluded by the Uniqueness Theorem) — neither exists. | Sector Set Theorem + Completeness Theorem (Part 1 §3a, §3b) | No new fundamental particles at LEP, Tevatron, LHC ✅ |
-| **F4** | **No stable particle near 68.3 GeV.** S(35,10) × $m_{\rm scale,10}$ ≈ 68.3 GeV is below the Z mass. IDWT explicitly predicts its absence: $n=35$ in $d=10$ is not a co-fixed-point eigenmode (the tau is $n=23$; $n=35$ in $d=10$ has no eigenmode selection rule support). | Tau sector co-fixed-point structure | Excluded at LEP (√s up to 209 GeV, no such state) ✅ |
-| **F6** | **No fourth quark or lepton generation.** S(72,10) × $m_{\rm scale,10}$ ≈ 51.7 TeV is the next $d=10$ mode above tau — far beyond LHC reach and not a co-fixed-point eigenmode. No $d=4$ mode above top ($n=72$) or $d=6$ mode above muon ($n=35$) is in the co-fixed-point set. A confirmed fourth-generation fermion at any mass falsifies the spectrum closure. | Completeness Theorem (Part 1 §3b) | Z pole invisible width: N_ν = 3.0000 predicted (PDG: 2.984 ± 0.008) ✅ |
+| **F3** | **No new stable fundamental particles.** The sector set $D = \{2,3,4,5,6,10\}$ is complete and unique (§3a). Within each sector, the occupied mode index set $\Sigma$ is the unique solution to the co-fixed-point system (Uniqueness Theorem, Part 1 §5c). The only beat mode is at $k_0 = 16$ in $d=3$, verified by exhaustive search. Any new particle requires a new sector (excluded by Rule A + Rule B) or a new mode index (excluded by the Uniqueness Theorem) — neither exists. | Sector Set Theorem + Completeness Theorem (Part 1 §3a, §3b) | No new fundamental particles at LEP, Tevatron, LHC ✅ |
+| **F4** | **No stable particle near 68.3 GeV.** $S(35,10) \times m_{\rm scale,10} \approx 68.3$ GeV is below the Z mass. IDWT explicitly predicts its absence: $n=35$ in $d=10$ is not a co-fixed-point eigenmode (the tau is $n=23$; $n=35$ in $d=10$ has no eigenmode selection rule support). | Tau sector co-fixed-point structure | Excluded at LEP ($\sqrt{s}$ up to 209 GeV, no such state) ✅ |
+| **F6** | **No fourth quark or lepton generation.** $S(72,10) \times m_{\rm scale,10} \approx 51.7$ TeV is the next $d=10$ mode above tau — far beyond LHC reach and not a co-fixed-point eigenmode. No $d=4$ mode above top ($n=72$) or $d=6$ mode above muon ($n=35$) is in the co-fixed-point set. A confirmed fourth-generation fermion at any mass falsifies the spectrum closure. | Completeness Theorem (Part 1 §3b) | Z pole invisible width: $N_\nu = 3.0000$ predicted (PDG: $2.984 \pm 0.008$) ✅ |
 
 ---
 
@@ -506,8 +506,8 @@ These predictions have specific numerical values from mode indices and sector ge
 | # | Prediction | IDWT value | Basis | Falsified if... |
 |---|---|---|---|---|
 | **F7** | Strange/down mass ratio | 20.000 (zero error) | S(4,3)/S(1,3) = 20/1 | Ratio measured outside 19.5–20.5 at a well-controlled renormalization scale |
-| **F8** | Muon/electron mass ratio | 206.7647 | S(35,6)/S(13,6) | Measured outside 206.760 ± 0.005 |
-| **F9** | Tau/electron mass ratio | 3475.126 (PDG −0.14σ) | S(23,10)/S(13,6) × (1 + 1/1680) | More than 3σ from 3475.13 (PDG 1σ = ±0.24) |
+| **F8** | Muon/electron mass ratio | 206.7647 | S(35,6)/S(13,6) | Measured outside $206.760 \pm 0.005$ |
+| **F9** | Tau/electron mass ratio | 3475.126 (PDG −0.14σ) | $S(23,10)/S(13,6) \times (1+1/1680)$ | More than 3σ from 3475.13 (PDG 1σ = $\pm 0.24$) |
 | **F10** | Sum of neutrino masses | $\Sigma m_\nu = 60.39$ meV (corrected; $\delta_{\nu_3}=1/35$, Part 2 §9d) | Cross-sector Hopf fixed point; no oscillation data used | Measured < 55 meV or > 65 meV |
 | **F11** | Neutrino mass ratio $m_{\nu_2}/m_{\nu_1}$ | 5.808 (exact) | S(15,5)/S(10,5) = 11628/2002 | Ratio measured outside 5.5–6.1 |
 | **F12** | Neutrino mass ratio $m_{\nu_3}/m_{\nu_1}$ | 32.86 (exact) | S(22,5)/S(10,5) = 65780/2002 | Ratio measured outside 30–36 |
@@ -515,12 +515,12 @@ These predictions have specific numerical values from mode indices and sector ge
 | **F14** | Solar mixing angle $\sin^2\theta_{12}$ | 0.3086 (PDG 0.307, +0.51%) | PMNS spectral geometry (§4) | Outside 0.302–0.315 at > 3σ |
 | **F15** | Reactor mixing angle $\sin^2\theta_{13}$ | 0.02211 (PDG 0.022, +0.51%) | PMNS spectral geometry (§4) | Outside 0.020–0.025 at > 3σ |
 | **F16** | Cabibbo angle $\sin\theta_C$ | 0.22454 (PDG +0.09σ) | $\sin^2\theta_C = 1/S(n_s,3)$ + $\mathbb{CP}^1$ sector curvature correction | Outside 0.2237–0.2254 at > 3σ |
-| **F17** | ρ parameter at tree level | ρ = 1.00000 exactly | $m_W^2/(m_Z^2 \cos^2\theta_W)$ from mode indices 76, 81 | ρ ≠ 1 at tree level beyond radiative corrections (~0.4%) |
-| **F18** | Number of light neutrino species | N_ν = 3 exactly | Three $d=5$ modes; no sterile neutrinos; closed spectrum | Z invisible width implying N_ν ≠ 3 |
-| **F19** | 0νββ effective Majorana mass | m_ββ = 0 at all orders | $d=5$ Clifford structure: no C on $S^5$ → no Majorana operator at any order (see F1) | Any detection m_ββ > 0 with > 3σ significance |
+| **F17** | ρ parameter at tree level | $\rho = 1.00000$ exactly | $m_W^2/(m_Z^2 \cos^2\theta_W)$ from mode indices 76, 81 | $\rho \neq 1$ at tree level beyond radiative corrections (~0.4%) |
+| **F18** | Number of light neutrino species | $N_\nu = 3$ exactly | Three $d=5$ modes; no sterile neutrinos; closed spectrum | Z invisible width implying $N_\nu \neq 3$ |
+| **F19** | 0νββ effective Majorana mass | $m_{\beta\beta} = 0$ at all orders | $d=5$ Clifford structure: no C on $S^5$ → no Majorana operator at any order (see F1) | Any detection $m_{\beta\beta} > 0$ with > 3σ significance |
 | **F20** | Beta-decay effective neutrino mass | $m_\beta \approx 8.77$ meV | PMNS mixing + neutrino mass spectrum from mode indices | $m_\beta$ measured $> 50$ meV (KATRIN 5-year sensitivity $\sim 200$ meV; Project 8 targets $\sim 40$ meV) |
 | **F21** | W/Z mass ratio | $m_W/m_Z = \sqrt{S(76,2)/S(81,2)} = 0.93896$ | Mode indices 76, 81 | Measured ratio outside 0.9386–0.9394 |
-| **F22** | Leptonic CP phase $\delta_{CP}$ | 197.11° (PDG NH best fit: 197° ± 27°, +0.05°; J = −0.00981) | $\delta_{CP} = \pi + 2\theta_{13}$; APS spectral flow $\Delta c_1 = -2$ (T8 🔶, Part 10 §4) | $\delta_{CP}$ outside 185°–210° at 5σ, or $\delta$–$\theta_{13}$ correlation violated by > 5° at fixed $\theta_{13}$ |
+| **F22** | Leptonic CP phase $\delta_{CP}$ | 197.11° (PDG NH best fit: $197^\circ \pm 27^\circ$, +0.05°; J = −0.00981) | $\delta_{CP} = \pi + 2\theta_{13}$; APS spectral flow $\Delta c_1 = -2$ (T8 🔶, Part 10 §4) | $\delta_{CP}$ outside 185°–210° at 5σ, or $\delta$–$\theta_{13}$ correlation violated by > 5° at fixed $\theta_{13}$ |
 
 ---
 
@@ -555,9 +555,9 @@ These predictions are within reach of running or funded experiments within the n
 | Prediction | IDWT value | Key experiment | Current status | Timescale |
 |---|---|---|---|---|
 | $0\nu\beta\beta$ signal absent (all orders) | $m_{\beta\beta} = 0$ at all orders | nEXO, LEGEND-1000, KamLAND-Zen 800 | No signal ($m_{\beta\beta} < 36$ meV) | now–2035; reaching $\sim 2$–5 meV sensitivity |
-| Σm_ν = 60.39 meV | 60.39 meV | CMB-S4 (target ~30 meV) | Below Planck bound (< 120 meV) | 2030s; within 2× of detection |
+| $\Sigma m_\nu = 60.39$ meV | 60.39 meV | CMB-S4 (target ~30 meV) | Below Planck bound (< 120 meV) | 2030s; within 2× of detection |
 | Normal ordering (definitive) | $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ | JUNO, DUNE, Hyper-Kamiokande | 3–4σ preference | now–2030 |
-| $\sin^2\theta_{23} = 0.5590$ | 0.5590 ± 0.001 | T2K, NOvA, DUNE | PDG 2024: 0.553, +1.07% | Running now |
+| $\sin^2\theta_{23} = 0.5590$ | $0.5590 \pm 0.001$ | T2K, NOvA, DUNE | PDG 2024: 0.553, +1.07% | Running now |
 | No new stable particles | closed spectrum | HL-LHC, FCC | LHC Run 3 consistent | now–2040 |
 | $m_\beta \approx 8.77$ meV | 8.77 meV | Project 8 | KATRIN: $< 0.45$ eV | 2030s; targeting $\sim 40$ meV |
 | No fourth generation | none at any mass | FCC-ee (Z pole) | Z width consistent | 2040s |
@@ -572,9 +572,9 @@ The table below condenses the hardest predictions in order of experimental decis
 |---|---|---|
 | 1 | 0νββ absent at all orders (F1, F19) | Any signal above background at > 3σ |
 | 2 | Normal neutrino mass ordering (F2) | Definitive inverted-ordering measurement |
-| 3 | Σm_ν = 60.39 meV (F10) | Measured < 55 meV or > 65 meV |
+| 3 | $\Sigma m_\nu = 60.39$ meV (F10) | Measured < 55 meV or > 65 meV |
 | 4 | No new stable particles (F3) | Any confirmed new fundamental particle |
-| 5 | m_s/m_d = 20 exactly (F7) | Ratio outside 19.5–20.5 at controlled scale |
+| 5 | $m_s/m_d = 20$ exactly (F7) | Ratio outside 19.5–20.5 at controlled scale |
 | 6 | $N_\nu = 3$ exactly (F18) | Fourth neutrino species confirmed |
 | 7 | $\sin^2\theta_{23} = 0.5590$ (F13) | > 3σ departure from 0.5590 |
 | 8 | $\sin^2\theta_{12} = 0.3086$ (F14) | > 3σ departure from 0.3086 |

@@ -430,9 +430,9 @@ const particles = [
     { symbol:'t',  name:'top quark',         d:4,  n:72, S:1215450,  pred:'176,365', pdg:'172,570', err:'+2.20%', unit:'MeV',
       deriv:'n_top = 72  (seed, T15b)\n72 = \u03c7(CP\u00b2)\u00b7\u03c7(CP\u00b3)\u00b7\u03c7(CP\u2075) = 3\u00b74\u00b76  (value identity)' },
     { symbol:'e',  name:'electron',          d:6,  n:13, S:18564,    pred:'0.511', pdg:'0.511',  err:'0%',     unit:'MeV',
-      deriv:'n_e = n_\u03bd1 + n_u = 10 + 3 = 13\n(generation-tower selection)' },
+      deriv:'n_e = n_\u03bd1 + n_u = 10 + 3 = 13\nadditive node \u2014 not a Pascal step (gen-1; 13 is no S(n,d), {10,3} not Pascal-adjacent)' },
     { symbol:'\u03bc',  name:'muon',         d:6,  n:35, S:3838380,  pred:'105.66', pdg:'105.66', err:'-0.00%', unit:'MeV',
-      deriv:'n_\u03bc = n_c + n_\u03bd2 = 20+15 = 35 = S(4,4)\nPascal: S(4,3)+S(3,4) = 20+15 = 35' },
+      deriv:'n_\u03bc = n_c + n_\u03bd2 = 20+15 = 35 = S(4,4)\nforced Pascal recursion S(4,3)+S(3,4) \u2014 a theorem, not the additive rule (gen-2)' },
     { symbol:'\u03c4',  name:'tau lepton',   d:10, n:23, S:64512240, pred:'1,776.8', pdg:'1,776.93', err:'-0.01%', unit:'MeV',
       deriv:'n_\u03c4 = n_\u03bd3 + n_d = 22 + 1 = 23\n(base case: S(1,d)=1)' },
     { symbol:'\u03bd1', name:'electron neutrino', d:5, n:10, S:2002,  pred:'1.49', pdg:'\u2014', err:'', unit:'meV',
@@ -515,9 +515,13 @@ const genGroup      = new THREE.Group(); scene.add(genGroup);
 const gensGroup     = new THREE.Group(); scene.add(gensGroup);
 const gRuleGroup    = new THREE.Group(); scene.add(gRuleGroup);
 
+// Generation Law = additive nodes  n_lepton = n_\u03bd + n_quark  (gen-1 e and
+// gen-3 \u03c4; \ud83d\udd36, NOT a Pascal step \u2014 STEP 116, App D \u00a715). gen-2 \u03bc = n_c + n_\u03bd2
+// = S(4,4) is a FORCED Pascal recursion S(4,3)+S(3,4), so it lives in the
+// Recursion/closures overlay below, not here. (\u03bd3 = \u03bd1+\u03bd2\u2212n_u is the IE edge.)
 const genPairs = [
     ['\u03bd1','\u03bd3'], ['\u03bd2','\u03bd3'],
-    ['\u03bd1','e'], ['u','e'], ['c','\u03bc'], ['\u03bd2','\u03bc'],
+    ['\u03bd1','e'], ['u','e'],
     ['\u03bd3','\u03c4'], ['d','\u03c4']
 ];
 // Recursion / closures \u2014 every edge is a verified index identity:

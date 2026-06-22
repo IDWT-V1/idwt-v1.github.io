@@ -374,9 +374,9 @@ For the IDWT sectors with $k_0 = n_s^2 = 16$ this evaluates to:
 | **10** | **0.50000** | **critical (exact) — active** |
 | 11 | 0.49747 | subcritical — cannot localize |
 
-**Theorem.** $b_{k_0}(d) = 1/2$  ↔  $4k_0 = (d-2)^2$  ↔  $d = 2 + 2\sqrt{k_0} = 2(n_s+1) = 10$.
+**Theorem.** $b_{k_0}(d) = 1/2 \;\Longleftrightarrow\; 4k_0 = (d-2)^2 \;\Longleftrightarrow\; d = 2 + 2\sqrt{k_0} = 2(n_s+1) = 10$.
 
-**Proof.**  $b = 1/2$  ↔  $4k_0(k_0+d-1) = (2k_0+d-2)^2$  ↔  $4k_0(d-1) - 4k_0(d-2) = (d-2)^2$  ↔  $4k_0 = (d-2)^2$.  With $k_0 = n_s^2 = 16$: $d = 2 + 2\sqrt{16} = 2 + 2n_s = 10$. □
+**Proof.**  $b = 1/2 \Longleftrightarrow 4k_0(k_0+d-1) = (2k_0+d-2)^2 \Longleftrightarrow 4k_0(d-1) - 4k_0(d-2) = (d-2)^2 \Longleftrightarrow 4k_0 = (d-2)^2$.  With $k_0 = n_s^2 = 16$: $d = 2 + 2\sqrt{16} = 2 + 2n_s = 10$. □
 
 **Monotonicity.** $b_{k_0}(d)$ is strictly decreasing in d. $d=10$ is therefore the **last** sector with $b_{k_0} \geq 1/2$. For $d ≥ 11$ the coupling is subcritical: the resonance site $k_0$ falls outside the chain's natural coupling range and the sector cannot propagate.
 
@@ -388,7 +388,7 @@ For the IDWT sectors with $k_0 = n_s^2 = 16$ this evaluates to:
 
 | Route | Condition | Result |
 |---|---|---|
-| **Gegenbauer (algebra)** | **$b_{k_0}(d) = 1/2$ ↔ $d = 2(n_s+1)$** | **$d = 10$** |
+| **Gegenbauer (algebra)** | **$b_{k_0}(d) = 1/2 \Leftrightarrow d = 2(n_s+1)$** | **$d = 10$** |
 | Hypercharge (gauge) | $g_{10,10} = g_{6,6} = 1/n_s = 1/4$ | $d = 10$ |
 
 Two routes, one answer. The IDWT framework is over-determined on the terminal sector.
@@ -514,7 +514,7 @@ Note: $S(n,5) = n(n+1)(n+2)(n+3)(n+4)/120$. $\Sigma m_\nu = 60.39$ meV (correcte
 - **Normal ordering:** $n_1 < n_2 < n_3$ and $S(n,5)$ monotone → $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ necessarily. Experiments prefer normal ordering at 3–4σ.
 - **PMNS angles:** $\theta_{12}$, $\theta_{23}$, $\theta_{13}$ determined by $g_{55} = 96/g_{22}$ and the four mode indices $(n_e, n_\mu, n_\tau, n_\nu)$; all three angles determined by sector geometry (Part 9 T6).
 - **No sterile neutrinos:** bulk-propagating modes are non-normalizable (not bound states) and do not appear; the co-fixed-point condition selects exactly three $d=5$ modes.
-- **Coupling filter:** Dirac condition — geometric prohibition of an entire class of interactions. The Clifford algebra of $S^5$ ($d \bmod 8 = 5$) cannot support the spinor structure required by Majorana mass terms, the see-saw mechanism, or any lepton-number-violating vertex. These interactions are not suppressed — they cannot be written down for $S^5$ modes. The $S^5$ Hopf fibration ($S^1 \to S^5 \to \mathbb{CP}^2$) additionally projects the color representation from $\mathbb{CP}^2$ onto its singlet component, giving color-neutral neutrinos despite their coordinate support inside $\Xi_4$. Positively, the SO(6) ≅ $SU(4)$ sector gives neutrinos their B−L charge.
+- **Coupling filter:** Dirac condition — geometric prohibition of an entire class of interactions. The Clifford algebra of $S^5$ ($d \bmod 8 = 5$) cannot support the spinor structure required by Majorana mass terms, the see-saw mechanism, or any lepton-number-violating vertex. These interactions are not suppressed — they cannot be written down for $S^5$ modes. The $S^5$ Hopf fibration ($S^1 \to S^5 \to \mathbb{CP}^2$) additionally projects the color representation from $\mathbb{CP}^2$ onto its singlet component, giving color-neutral neutrinos despite their coordinate support inside $\Xi_4$. Positively, the $SO(6) \cong SU(4)$ sector gives neutrinos their $B-L$ charge.
 
 **Spectral.** $\zeta_5(1) = 5/4$, $\zeta_5(0) = -5/2$, $a_{05} \approx 2.392$.
 
@@ -641,7 +641,7 @@ Particles in different sectors couple because their sectors share coordinate sub
 
 This is why electromagnetism is universal. Every sector $d ≥ 2$ contains $d=2$ as its lowest coordinate subspace, so every charged particle couples to the photon. The coupling constant reflects the coordinate overlap — the ratio of shared dimensions to total dimensions of the higher sector.
 
-The strong force spans $d \in \{3,4\}$. Down-type quarks ($d=3$) and up-type quarks ($d=4$) interact through the $d=4$ kernel self-coupling $g_{44}$, which is $SU(3)$-invariant by the $\mathbb{CP}^2$ isometry. Down-type quarks couple because $d=3$ ⊂ $d=4$ — they share the full $d=3$ coordinate subspace with the $d=4$ quark sector. Up-type quarks couple because they occupy $d=4$ directly. The coupling is a direct contact term in the kernel.
+The strong force spans $d \in \{3,4\}$. Down-type quarks ($d=3$) and up-type quarks ($d=4$) interact through the $d=4$ kernel self-coupling $g_{44}$, which is $SU(3)$-invariant by the $\mathbb{CP}^2$ isometry. Down-type quarks couple because $d=3 \subset d=4$ — they share the full $d=3$ coordinate subspace with the $d=4$ quark sector. Up-type quarks couple because they occupy $d=4$ directly. The coupling is a direct contact term in the kernel.
 
 The electron ($d=6$, mode $n=13$) couples to the photon ($d=2$) via the two coordinates they share. The coupling strength derives from a cascade: $g_{44} \to g_s \to g_2 \to \sin^2\theta_W \to g_1 \to \alpha$ (Part 3 §0.7). Coordinate containment determines that the coupling exists and which sectors are linked; coupling magnitudes are set by the spectral geometry of each sector manifold — integrals over $S^{d-1}$ and $\mathbb{CP}^m$, not bare dimension counts. There is one step in the cascade where the coordinate ratio does appear literally: $g_2 = (2/3)\sqrt{g_s}$, where $2/3 = d_{\rm photon}/d_{\rm hadronic}$. The factor $2/3$ is the electric charge of the up quark and the ratio of photon sector dimension to hadronic sector dimension $N_c = 3$, and those are the same number because $N_c = d_{\rm hadronic}$.
 
@@ -843,7 +843,7 @@ No mode index is chosen to match a mass. Eleven mode indices are the unique outp
 
 ## 6. Neutrino Sector
 
-Neutrinos cannot fit $d=6$. The sector scale $m_{\rm scale,6}$ = 27.5 eV means the lightest possible $d=6$ mode ($n=1$) has mass 27.5 eV — already 550× heavier than $m_{\nu_3}$ and over 18,000× heavier than $m_{\nu_1}$. No integer simplex index gives a $d=6$ mass in the meV range. They occupy **$d=5$** with mode indices n=(10,15,22), all structurally derived:
+Neutrinos cannot fit $d=6$. The sector scale $m_{\rm scale,6}$ = 27.5 eV means the lightest possible $d=6$ mode ($n=1$) has mass 27.5 eV — already $550\times$ heavier than $m_{\nu_3}$ and over $18{,}000\times$ heavier than $m_{\nu_1}$. No integer simplex index gives a $d=6$ mass in the meV range. They occupy **$d=5$** with mode indices n=(10,15,22), all structurally derived:
 
 $$\begin{aligned}
 n_{\nu_1} &= S(n_u,3) = S(3,3) = 10 \quad[\text{simplex image of up quark into }d=3]\\

@@ -13,7 +13,7 @@ keywords:
   - hockey-stick identity
   - Dirac spectral counting
 msc: "81V05, 58J50, 53C27, 11B65"
-doi: "10.5281/zenodo.20753222"
+doi: "10.5281/zenodo.20784573"
 header-includes:
   - |
     \let\oldabstract\abstract
@@ -25,7 +25,7 @@ header-includes:
       \par\medskip
       \noindent\textbf{MSC 2020:} 81V05 $\cdot$ 58J50 $\cdot$ 53C27 $\cdot$ 11B65\par
       \noindent\textbf{Keywords:} Standard Model mass spectrum; simplex number; sector manifolds; neutrino mass prediction; coupling filter; hockey-stick identity; Dirac spectral counting\par
-      \noindent\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.20753222}{10.5281/zenodo.20753222}\par
+      \noindent\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.20784573}{10.5281/zenodo.20784573}\par
     }
 abstract: |
   We present Infinite-Dimensional Wave Theory (IDWT), a framework that derives the complete mass spectrum of the Standard Model from three integer seeds $\{n_d = 1,\, n_u = 3,\, n_{\rm top} = 72\}$ — whose composite $n_s = n_d + n_u = 4$ drives the fermion tower — together with a single dimensional reference $m_e$ (the electron mass, used only to convert dimensionless ratios to MeV). The mass of each particle is
@@ -186,7 +186,7 @@ $$\chi(\mathbb{CP}^{N_c-1}) = 3,\; d=4. \quad \chi(\mathbb{CP}^{n_s-1}) = 4,\; d
 
 ## 4. Mode Index Tower
 
-Every mode index is determined by the hockey-stick filtration chain — no index is chosen to match a mass:
+Every mode index is fixed by the seeds through a small set of named operations — hockey-stick (Pascal) evaluations, additive and inclusion–exclusion edges, the Vandermonde $g$-rule, and the top's Euler product — with no index chosen to match a mass. The hockey-stick is the engine for the simplex backbone; the composite indices (the top, the charged-lepton edges, the bosons, the Higgs) enter through the other operations:
 
 | Particle | $d$ | $n$ | Derivation |
 |---|---|---|---|

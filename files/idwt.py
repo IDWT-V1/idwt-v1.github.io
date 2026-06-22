@@ -183,11 +183,16 @@ n_nu2 = S(n_up, 4)    # = 15
 # Cross-check: n_nu3 = n_tau - n_down = 23 - 1 = 22. (Part 2 section 6)
 n_nu3 = n_nu1 + n_nu2 - n_up   # = 22
 
-# --- Lepton mode indices (via the comb filtration rule) ----------------------
-# Eigenmode selection rule: n_lepton = n_neutrino + n_quark_partner.
-# This is the hockey-stick identity S(n,d) = S(n,d-1) + S(n-1,d) applied
-# at specific combinatorial fixed points. It is a theorem.
-# (Part 2 section 4)
+# --- Lepton mode indices (generation law n_l = n_nu + up-type partner) -------
+# n_lepton = n_neutrino + (same-generation up-type). This is a Pascal/
+# hockey-stick identity S(n,d)=S(n,d-1)+S(n-1,d) for GENERATION 2 ONLY:
+# n_mu = n_charm + n_nu2 = S(4,3)+S(3,4) = S(4,4), forced because
+# n_s-1 = n_u (STEP 115/116). Generation 1 (n_e = n_nu1 + n_u) is NOT a
+# Pascal step -- 13 is not an S(n,d) tower output at any physical sector
+# and {10,3} are not Pascal-adjacent (STEP 116); it is an additive-node
+# attachment of the up seed (STEP 114), 🔶. Generation 3 (tau) is
+# displaced off the tower (n_top off-tower, STEP 112). Only generation 2
+# is a theorem. (Part 2 section 4)
 
 # n_e = n_nu1 + n_up = 10 + 3 = 13
 # Electron: the lightest lepton. This is the unique d=6 mode consistent
@@ -7055,9 +7060,10 @@ _t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
 #      question (level-addition N_c=N_a+N_b forces n_a+n_b-1; the tower uses
 #      n_a+n_b, one higher) lives ONLY at tau and the gen-1,2 edges e,mu --
 #      NOT at nu3, whose "+n_d" face is just the IE/ray offset
-#      (S(3,5)+n_d = nu1+nu2-n_u via n_s=n_u+n_d). Why index-addition fires
-#      at tau/e/mu is the unproved step; it ties to the time-dependent
-#      condensation dynamics (STEP 85).
+#      (S(3,5)+n_d = nu1+nu2-n_u via n_s=n_u+n_d). The +n_d offset at
+#      tau/e/mu is DERIVED in STEP 113/114 (condensate-seat / antisym
+#      node); it is spectral, NOT a time-dynamics object -- the member
+#      edges are kernel-forbidden (STEP 98/108).
 # CAVEAT on the App 15 null battery -- NOW CLOSED on the narrowed target
 # (App D 15, 2026-06-20): the battery was re-run with 16,72 pulled OUT as
 # free anchors (route-multiplicity, closure, per-mode operand uniqueness).
@@ -7202,7 +7208,8 @@ assert (_i1_ok_113 and _binary_join_113 and _ie_nojoin_113
 # =========================================================================
 # STEP 114 -- THE +n_d NODE FROM ANTISYMMETRIC PAIRING (no statistics
 #            postulate): DERIVES STEP 113's "one ground quantum per join"
-#            (Part 7; on 98, 113; classical Psi_inf) 🔶
+#            (Part 7; on 98, 113; classical Psi_inf)
+#            n_s, tau: ⭐  |  e, mu: 🔶
 # =========================================================================
 # Solves the open premise of STEP 113: WHY a node at coincidence (the +1).
 # No Pauli / second quantization (Psi_inf is a classical field) -- pure
@@ -7223,10 +7230,22 @@ assert (_i1_ok_113 and _binary_join_113 and _ie_nojoin_113
 # (l=0+l=2, even) cannot make -> member edges spectral (full consistency).
 # nu3 (D=0): nu1,nu2 share the n_u (d=4) substructure (the IE -n_u); in
 # the shared coords there is NO antisym part -> no node -> no +1.
-# STATUS: the node COST (+1, l=1, d-indep) and the sym/antisym split are
-# identities (verified); the identification composite==antisym pairing is
-# the physical input (🔶), reinforced by the complement principle (the new
-# resonance is the kernel-product's parity complement). Part commit: Fedge.
+#
+# GROUND-QUANTUM FORCING (⭐ for n_s and tau):
+# When one operand IS the condensate ground n_d=1 (level N=0), the
+# symmetric-merge index is n_a + n_d - 1 = n_a + 1 - 1 = n_a -- the
+# OTHER operand, already present as a distinct member. The composite
+# cannot be the merge (that would be an existing particle); it is forced
+# to the antisymmetric channel without any identification principle.
+# n_s = n_u + n_d: sym-merge index = n_u + 1 - 1 = n_u  (existing) ⭐
+# tau = nu3 + n_d: sym-merge index = nu3 + 1 - 1 = nu3  (existing) ⭐
+# e = nu1+n_u and mu = nu2+n_c: both operands non-ground (N != 0);
+# sym merge does not reproduce an existing member -> identification 🔶.
+#
+# STATUS:
+#   (a) Node cost (+1, l=1, d-indep), sym/antisym split: ⭐ (identities).
+#   (b) n_s = n_u+n_d and tau = nu3+n_d: ground-quantum forcing ⭐.
+#   (c) e = nu1+n_u and mu = nu2+n_c: identification 🔶.
 def _he_114(n, x):                       # probabilists' Hermite * Gaussian
     c = np.zeros(n + 1)
     c[n] = 1.0
@@ -7253,7 +7272,118 @@ def _parity_ok_114(na, nb):
     return (np.allclose(asy.T, -asy, atol=1e-9)
             and np.allclose(sym.T, sym, atol=1e-9))
 _relparity_114 = all(_parity_ok_114(a, b) for a, b in [(0, 1), (1, 3)])
+# ground-quantum forcing: sym-merge index = n_a + n_d - 1 = n_a
+_gnd_force_114 = (n_up  + n_down - 1 == n_up    # n_s case ⭐
+                  and n_nu3 + n_down - 1 == n_nu3)  # tau case ⭐
 assert _node_at_coinc_114 and _plus_one_114 and _relparity_114
+assert _gnd_force_114
+
+
+# =========================================================================
+# STEP 115 -- e/mu OPERAND PATTERN IN BIDEGREE: CHARGED LEPTON = nu + w2,
+#            UP-TYPE PARTNER = nu - w3; RING CAPS FORCE TWO d=6 LEPTONS AND
+#            EXPEL THE THIRD (Part 7 1.2a/1.3; on 89, 96, 112, 114)
+#            positions/caps: ⭐  |  e,mu value identification: 🔶
+# =========================================================================
+# Sharpens the residual e/mu open core of STEP 112/114. The operand rule
+# l_i = nu_i + (same-gen up-type)_i is recast as ONE ring operation on the
+# deposit bidegree (alpha,beta): alpha = w2 (CP^2/d=4 generator) count,
+# beta = w3 (CP^3/d=6 generator) count, site j = alpha+beta+2 = sector d,
+# ring R[w2,w3]/(w2^3, w3^4) so alpha<=2, beta<=3 (STEP 89).
+#   (P1) CHARGED LEPTON = nu + w2 (one CP^2/d=4 quantum), uniform:
+#        nu1(0,3)+w2 = e(1,3); nu2(1,2)+w2 = mu(2,2). One operation, not a
+#        per-generation choice of operand. ⭐ (position identity).
+#   (P2) d=6 (height 4) admits EXACTLY two cells under the caps,
+#        {(1,3),(2,2)} -- the count equals the convolution coeff[x^4]=2
+#        (STEP 96). So exactly two charged leptons live in d=6. ⭐.
+#   (P3) nu3(2,1)+w2 = (3,1) is RING-FORBIDDEN (w2^3=0); nu3+w3 = (2,2) is
+#        the mu cell (occupied). nu3 has NO charged-lepton child in d=6, so
+#        the 3rd charged lepton cannot sit in d=6 and is displaced off the
+#        tower (tau -> d=10). A bidegree/cap origin of the 3rd-gen lepton
+#        anomaly, INDEPENDENT of and reinforcing the value-space reason that
+#        its tower operand n_top=72 is a free off-tower anchor (STEP 112).
+#        ⭐ (cap fact); the tau placement reading is 🔵.
+#   (P4) the same-generation up-type partner is nu_i - w3 (same alpha,
+#        beta-1): u(0,2)=nu1-w3, c(1,1)=nu2-w3, t(2,0)=nu3-w3. So "+up-type,
+#        same generation" = "+w2, with the up-type quark the same alpha
+#        column one w3 below the neutrino". ⭐ (position identity).
+# WHAT STAYS OPEN (🔶): the VALUE identity val(l)=val(nu)+val(up-type), i.e.
+# val(alpha+1,beta) = val(alpha,beta) + val(alpha,beta-1), holds ONLY at the
+# two lepton cells (1,3),(2,2) and NOWHERE else in the grid. It is an
+# isolated coincidence, not a grid-wide law, so the e/mu value
+# identification is NOT upgraded -- the bidegree OPERATION is structural,
+# the value ADDITION is not (yet) derived. No blind search is added here
+# (value-pattern searches are exhausted-NULL, App D 15); this records the
+# positional reframing and pins the residual to one coincidence.
+_grid_115 = {(0, 0): 0, (0, 1): 1, (1, 0): 4, (0, 2): 3, (1, 1): 20,
+             (2, 0): 72, (0, 3): 10, (1, 2): 15, (2, 1): 22, (1, 3): 13,
+             (2, 2): 35, (2, 3): 23}
+_ACAP_115, _BCAP_115 = 2, 3              # w2^3=0, w3^4=0
+# (P1) charged lepton = nu + w2 (positions)
+_p1_115 = ((1, 3) == (0 + 1, 3) and (2, 2) == (1 + 1, 2))
+# (P2) d=6 (height 4) admits exactly {(1,3),(2,2)} under the caps
+_h4_115 = sorted((a, b) for a in range(_ACAP_115 + 1)
+                 for b in range(_BCAP_115 + 1) if a + b == 4)
+_p2_115 = (_h4_115 == [(1, 3), (2, 2)])
+# (P3) nu3+w2 ring-forbidden; nu3+w3 occupied by mu
+_p3_115 = ((2 + 1) > _ACAP_115 and (2, 1 + 1) == (2, 2))
+# (P4) up-type partner = nu - w3 (same alpha, beta-1)
+_p4_115 = all(up == (v[0], v[1] - 1) and up[0] == v[0]
+              for v, up in [((0, 3), (0, 2)), ((1, 2), (1, 1)),
+                            ((2, 1), (2, 0))])
+# residual coincidence: val(a+1,b) = val(a,b) + val(a,b-1) ONLY at e,mu
+_coinc_115 = sorted(
+    (a + 1, b) for a in range(_ACAP_115 + 1)
+    for b in range(1, _BCAP_115 + 1)
+    if (a + 1, b) in _grid_115 and (a, b) in _grid_115
+    and (a, b - 1) in _grid_115
+    and _grid_115[(a + 1, b)] == _grid_115[(a, b)] + _grid_115[(a, b - 1)])
+_p5_115 = (_coinc_115 == [(1, 3), (2, 2)])
+# value-space operand rule recovered from the same-alpha partner
+_e_val_115 = _grid_115[(0, 3)] + _grid_115[(0, 2)]    # nu1 + n_u = 13
+_mu_val_115 = _grid_115[(1, 2)] + _grid_115[(1, 1)]   # nu2 + n_c = 35
+_p6_115 = (_e_val_115 == 13 and _mu_val_115 == 35)
+assert _p1_115 and _p2_115 and _p3_115 and _p4_115 and _p5_115 and _p6_115
+
+
+# =========================================================================
+# STEP 116 -- GENERATION-LAW REDUCIBILITY: gen-2 (mu) IS A FORCED PASCAL
+#            STEP; gen-1 (e) IS PROVABLY NOT (Part 2 4; on 89, 112, 115)
+#            mu: ✅ (Pascal) | e: 🔶 (one irreducible additive input)
+# =========================================================================
+# The generation law n_lepton = n_nu + (same-gen up-type) is a Pascal/
+# hockey-stick identity for GENERATION 2 ONLY -- not a blanket theorem.
+# Settles which charged-lepton edges are closed and which is irreducible.
+#   GEN-2 (mu) -- FORCED PASCAL ✅:
+#     mu = n_charm + n_nu2 = S(n_s,3) + S(n_u,4). Since n_s-1 = n_u this is
+#     S(n_s,3) + S(n_s-1,4) = S(n_s,4) = S(4,4) = 35 by Pascal
+#     S(n,d)=S(n,d-1)+S(n-1,d). mu's VALUE is the simplex corner S(4,4),
+#     fixed by the lattice -- no identification freedom.
+#   GEN-1 (e) -- PROVABLY NOT PASCAL 🔶:
+#     (a) 13 is not S(n,d) at any physical sector d in 2..10 (only the
+#         degenerate (13,1),(2,12)); e is not a tower output at all.
+#     (b) the operands {n_nu1,n_u}={10,3} are NOT Pascal-adjacent: the
+#         Pascal parents of S(3,3)=10 are {S(3,2),S(2,3)}={6,4}, and 10's
+#         children pair it with {5} or {10}; the seed 3 never appears.
+#     So e = n_nu1 + n_u = 13 is NO S(N,D)=S(N,D-1)+S(N-1,D) step; it is an
+#     additive-node attachment of the up seed onto nu1 (the +w2 antisym
+#     node, STEP 114/115), carrying ONE irreducible input.
+#   CONSEQUENCE: the open "e/mu operand pattern" reduces to the SINGLE
+#     gen-1 input e = n_nu1 + n_u = n_s^2 - n_u = 13 (mu closed by Pascal,
+#     tau displaced STEP 112, nu3 IE-forced STEP 113). gen-3 is also
+#     non-Pascal (displaced). Only generation 2 is a theorem.
+# gen-2 (mu): forced Pascal, because n_strange - 1 = n_up
+_mu_pascal_116 = (S(4, 4) == S(4, 3) + S(3, 4) == 35
+                  and S(n_strange - 1, 4) == S(n_up, 4) == n_nu2)
+# gen-1 (e): 13 is not a tower output at any physical sector d in 2..10
+_e_img_116 = [(n, d) for d in range(2, 11) for n in range(1, 200)
+              if S(n, d) == 13]
+# {10,3} not Pascal-adjacent: the parents of S(3,3)=10 are {6,4}
+_p10_parents_116 = {S(3, 2), S(2, 3)}                  # {6, 4}
+_e_not_pascal_116 = (_e_img_116 == [] and n_up not in _p10_parents_116)
+# the lone irreducible gen-1 input, two equivalent faces
+_e_face_116 = (n_e == n_nu1 + n_up == n_strange**2 - n_up == 13)
+assert _mu_pascal_116 and _e_not_pascal_116 and _e_face_116
 
 
 # =========================================================================
@@ -10622,6 +10752,38 @@ print("   = STEP 113's +1, d-independent, = STEP 98 parity flip (kernel")
 print("   l=0+l=2 cannot make it). nu3: shared n_u substructure has no")
 print("   antisym part -> no node -> D=0. The +n_d node is DERIVED (cost")
 print("   exact; composite==antisym is the physical input; Part: Fedge).")
+
+
+# STEP 115 -- OUTPUT: e/mu OPERAND PATTERN IN BIDEGREE (nu + w2)
+print("\n" + "=" * 70)
+print("=== STEP 115: e/mu OPERAND PATTERN IN BIDEGREE ===")
+print("=" * 70)
+print("deposit bidegree (alpha=w2/CP^2, beta=w3/CP^3); caps a<=2, b<=3")
+print(f"(P1) charged lepton = nu + w2 (uniform e,mu): {_p1_115}")
+print("     nu1(0,3)+w2=e(1,3); nu2(1,2)+w2=mu(2,2)")
+print(f"(P2) d=6 admits exactly {_h4_115} (count=conv coeff 2): {_p2_115}")
+print(f"(P3) nu3+w2=(3,1) forbidden; nu3+w3=(2,2)=mu occupied: {_p3_115}")
+print("     -> no 3rd charged lepton in d=6; tau displaced (d=10)")
+print(f"(P4) same-gen up-type partner = nu - w3 (same alpha): {_p4_115}")
+print("     u=nu1-w3, c=nu2-w3, t=nu3-w3")
+print(f"=> e=nu1+n_u={_e_val_115}, mu=nu2+n_c={_mu_val_115} (value rule)")
+print(f"   residual: val-add holds ONLY at e,mu {_coinc_115} (still open)")
+print("   positions/caps proved; e,mu value identification stays open")
+
+
+# STEP 116 -- OUTPUT: GENERATION-LAW REDUCIBILITY (mu Pascal; e not)
+print("\n" + "=" * 70)
+print("=== STEP 116: GENERATION-LAW REDUCIBILITY ===")
+print("=" * 70)
+print(f"gen-2 mu = charm+nu2 = S(4,3)+S(3,4) = S(4,4) = {S(4, 4)}:")
+print(f"  forced Pascal (n_s-1=n_u): {_mu_pascal_116} -> mu CLOSED")
+print(f"gen-1 e=13: tower outputs S(n,d)=13 at physical d in 2..10:"
+      f" {_e_img_116} (none)")
+print(f"  {{nu1,n_u}}={{10,3}} Pascal-adjacent? no (parents of 10 are "
+      f"{sorted(_p10_parents_116)})")
+print(f"  -> e is NOT a Pascal step; e = nu1+n_u = n_s^2-n_u = {n_e}")
+print("=> mu closed by Pascal; e is the lone irreducible gen-1 edge;")
+print("   only generation 2 is a theorem.")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")

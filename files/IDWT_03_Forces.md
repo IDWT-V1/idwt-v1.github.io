@@ -35,7 +35,7 @@ $$\quad + \frac{1}{2}\sum_{d,d'\in D} g_{dd'} \int_{\mathbb{R}^{3,1}\times\Xi\ti
 
 where $P_d$ is the projector onto sector $\Xi_d$, and $g_{dd'} = v_d \times v_{d'}$ is the rank-1 coupling matrix with $v_d = \sqrt{g_{dd}}$ determined by the seed pair $\{n_d{=}1,\, n_u{=}3\}$ and composite $n_s{=}4$.
 
-The kernel term is the unique leading interaction invariant under $U(d) \times U(d')$ rotations of each sector (T2). Its quartic-in-Ψ form gives confinement, mass, and inter-sector coupling from a single geometric term.
+The kernel term is the unique leading interaction invariant under $U(d) \times U(d')$ rotations of each sector (T2). Its quartic-in-$\Psi$ form gives confinement, mass, and inter-sector coupling from a single geometric term.
 
 **Note on $G_N$. 🔶** The Einstein--Hilbert coefficient $G_N$ appearing in the action as written is a second dimensional input — the one additional input beyond the seed pair $\{n_d{=}1,\, n_u{=}3\}$, composite $n_s{=}4$, and $m_e$. The framework fixes the *structure* of gravity (curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent) but not the absolute scale $G_\infty$, which is not derived from the combinatorics (Part 4 §3.12.4). The action above is therefore an effective description with $G_N$ as a measured input. **Particle physics predictions (masses, mixing angles, coupling constants) are independent of $G_N$** — they depend only on the seed pair $\{n_d{=}1,\, n_u{=}3\}$, composite $n_s{=}4$, $m_e$, and the kernel geometry.
 
@@ -66,8 +66,8 @@ with sector potential $V_{\rm conf} = \sum_d V_d(|\xi_d|)$, $V_d(r) = \lambda_d 
 | $L_{\rm kinetic}$ (sector part) | $\delta\bar\Psi_\infty$ | Mass eigenvalue problem $H_d \chi = m_{\rm eff} \chi$ |
 | $L_{\rm kernel}$ ($d{=}d'$, self) | $\delta\bar\Psi_\infty$ | Sector confinement $V_d$, $\lambda_d = (g_{dd}/2)^{2/3}$ |
 | $L_{\rm kernel}$ ($d=4$, colour) | $\delta\bar\Psi_\infty$ | $\mathrm{SU}(3)$-symmetric quark contact coupling; effective coupling $g^2_{\rm eff} = 2g_{44}/\pi^2$ (§4) |
-| $L_{\rm kernel}$ ($d=4$↔$d=2$) | consistency | $U(2)$ electroweak coupling fields, $W^\pm$, $Z$, $\gamma$ |
-| $L_{\rm kernel}$ ($d=3$↔$d=4$) | eigenvalue + $\mathbb{CP}^1$ sector curvature correction | Cabibbo angle $\sin\theta_C$ |
+| $L_{\rm kernel}$ ($d=4 \leftrightarrow d=2$) | consistency | $U(2)$ electroweak coupling fields, $W^\pm$, $Z$, $\gamma$ |
+| $L_{\rm kernel}$ ($d=3 \leftrightarrow d=4$) | eigenvalue + $\mathbb{CP}^1$ sector curvature correction | Cabibbo angle $\sin\theta_C$ |
 
 ### 0.5 Mass Spectrum from the Action
 
