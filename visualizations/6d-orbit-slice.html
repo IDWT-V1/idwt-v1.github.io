@@ -452,7 +452,7 @@ html, body { margin:0; height:100%; overflow:hidden; }
   <h1>Atomic Orbitals as CP³ Projection</h1>
   <p class="sub">Every electron has a <strong>definite 3D location</strong> — the first three of its six coordinates. The s, p, d, f orbital families are the 3D shadow of the electron's full 6D orbit; Bohr levels, all multipole selection rules, Stark, Zeeman, and fine/hyperfine structure follow as theorems of CP³. At every shell with \(L \geq 1\), the SU(4) representation also carries states with angular momentum in the ξ-direction. These are <em>not</em> invisible particles: each is a real electron sitting at a definite 3D point with a real charge density. What Lemma 2 actually shows is narrower — they <em>decouple</em> from the standard orbitals, adding no new spectral lines.</p>
   <p>Note: \(\Xi_6 = \mathbb{CP}^3\) is a macroscopic 6-real-dimensional space in IDWT, not a compactified extra dimension. The electron moves through all six dimensions of \(M_\infty = \mathbf{R}^3 \times \Xi_6\); our 3D space is the first three coordinates, and the electron always has a definite position there.</p>
-  <p>The panel at right computes the full 6D orbit directly — there are no spherical harmonics anywhere in the code. Each state is a point on \(\mathbb{CP}^3\) following a deterministic torus orbit \(z_k(t)=\rho_k\,e^{i(\omega_k t+\phi_k)}\) for \(k=1,2,3\); the six real coordinates are the real and imaginary parts of \((z_1,z_2,z_3)\), and the observable position is the first three, \((\mathrm{Re}\,z_1,\mathrm{Im}\,z_1,\mathrm{Re}\,z_2)\) — computed live and always defined. The s, p, d, f anisotropy emerges purely from this projection as the orbits accumulate: the moduli \(\rho_k\) are set by the state's monomial weights, so the observable-orbital states fill the outer shells (blue) while the ξ-states — which spend part of their norm in the \(z_4\) direction — nest inward at smaller radius (pink). Their 3D shadow is still a genuine, definite charge cloud, never invisible; the lower-j 3D content (green) is likewise fully present. A static legend at upper left names each colour; nothing here can be made to disappear.</p>
+  <p>There are only <strong>two kinds of state</strong> at each shell, and both are genuine 6D orbits projected to their definite 3D position. The \(2L+1\) <strong>standard orbitals</strong> (blue) are the harmonic states — the ones textbooks call s, p, d, f. Their exact 3D shadow is the spherical harmonic \(Y_L^m\), so we trace that closed form and the familiar lobes accumulate. The <strong>additional states</strong> (pink) are every other state in \(\mathrm{Sym}^L(\mathbb{C}^4)\); each follows the deterministic torus orbit \(z_k(t)=\rho_k\,e^{i(\omega_k t+\phi_k)}\), and we draw its observable position — the first three of the six real coordinates, \((\mathrm{Re}\,z_1,\mathrm{Im}\,z_1,\mathrm{Re}\,z_2)\). Because they carry more of their motion in the \(z_4\)/\(z_3\) directions, their 3D shadow nests inward at smaller radius — but it is a real, definite charge cloud, never invisible. Everything is shown at once; the legend at upper left is just a key, and nothing can be hidden.</p>
 
   <h2>Setup</h2>
   <p>In IDWT, the electron is the \((d=6)\) mode \((n=13)\): an eigenmode of the sector-6 Dirac operator on \(\mathrm{CP}^3\), with isometry group \(\mathrm{SU}(4)\). Its 6D orbit is the full trajectory in \(Ξ_6\), while the observable 3D "orbital" is the projection of that orbit onto ordinary space. The hydrogen atom is a bound system on \(M_\infty = \mathbf{R}^3 \times \Xi_6\). The angular momentum eigenmodes are representations of \(\mathrm{SU}(4)\), restricted to the observable subgroup via the chain</p>
@@ -467,22 +467,23 @@ html, body { margin:0; height:100%; overflow:hidden; }
   <div class="formula-block">
     \[\mathrm{Sym}^L(\mathbb{C}^4), \quad \dim = \binom{L+3}{3}\]
   </div>
-  <p>Under the full subgroup chain, only the highest-spin \(\mathrm{SO}(3)\) irrep at each level survives projection as a standard orbital — the harmonic polynomials of degree \(L\) in \((z_1, z_2, z_3)\). These are the \(2L+1\) standard spherical harmonics. The remaining states split into two distinct categories with very different physical meanings — see the Counting Theorem below.</p>
+  <p>Under the full subgroup chain, only the highest-spin \(\mathrm{SO}(3)\) irrep at each level projects to a <strong>standard orbital</strong> — the harmonic polynomials of degree \(L\) in \((z_1, z_2, z_3)\). These are the \(2L+1\) familiar spherical harmonics. Every other state in \(\mathrm{Sym}^L(\mathbb{C}^4)\) is an <strong>additional state</strong>: a real 6D orbit at a definite 3D location that simply isn't one of the textbook orbital shapes. That is the only distinction — see the Counting Theorem below.</p>
 
   <h3>Orbital Counting Theorem <span class="status-tag tag-id">⭐ Identity</span></h3>
-  <p>Projection of \(\mathrm{Sym}^L(\mathbb{C}^4)\) to the observable \(\mathrm{SO}(3)\) selects exactly \(2L+1\) states — the harmonic polynomials of degree \(L\) in \((z_1,z_2,z_3)\). These are traceless symmetric tensors of rank \(L\), forming precisely the spin-\(L\) irrep of \(\mathrm{SO}(3)\); no lower-\(j\) irrep is harmonic at degree \(L\), which is why only the highest spin survives. The remaining \(\binom{L+3}{3}-(2L+1)\) states fall into two distinct categories:</p>
+  <p>Projection of \(\mathrm{Sym}^L(\mathbb{C}^4)\) to the observable \(\mathrm{SO}(3)\) selects exactly \(2L+1\) states — the harmonic polynomials of degree \(L\) in \((z_1,z_2,z_3)\). These are traceless symmetric tensors of rank \(L\), forming precisely the spin-\(L\) irrep of \(\mathrm{SO}(3)\); no lower-\(j\) irrep is harmonic at degree \(L\), which is why only the highest spin survives as the textbook orbital. The other \(\binom{L+3}{3}-(2L+1)\) are the additional states.</p>
+  <p>If you want the finer accounting, the additional states are of two algebraic types — but this is a basis label, <em>not</em> a difference in visibility: both are real 6D orbits sitting at definite 3D locations.</p>
   <ul style="margin:6px 0 10px 1.2em; font-size:0.9rem; line-height:1.7">
-    <li><strong>ξ-states</strong> — \(L(L+1)(L+2)/6\) states with at least one \(z_4\) factor. Equivalently: \(\binom{L+3}{3} - \binom{L+2}{2}\), the total minus those with no \(z_4\). Each is a genuine electron at a definite 3D location; by ξ-orthogonality (Lemma 2) it decouples from the standard orbitals under any 3D operator, so it adds no new spectral line — but it is not invisible.</li>
-    <li><strong>Lower-j 3D</strong> — \(L(L-1)/2\) non-harmonic degree-\(L\) polynomials in \((z_1,z_2,z_3)\) only. Equivalently: \(\binom{L+2}{2}-(2L+1)\), all degree-\(L\) polynomials in three variables minus the harmonics. No \(z_4\)-dependence; already counted in shells \(L'&lt;L\). They fail the harmonic condition, not anything to do with observability.</li>
+    <li><strong>\(z_4\)-carrying</strong> — \(L(L+1)(L+2)/6\) states with at least one \(z_4\) factor (the ξ-direction). By ξ-orthogonality (Lemma 2) these decouple from the standard orbitals under any 3D operator, so they add no new spectral line — but each is still a real electron with a definite 3D charge density.</li>
+    <li><strong>non-harmonic 3D</strong> — \(L(L-1)/2\) degree-\(L\) polynomials in \((z_1,z_2,z_3)\) with no \(z_4\). These are the traces; they carry the same \(\mathrm{SO}(3)\) content as orbitals already present at lower shells, so they introduce no new orbital shape.</li>
   </ul>
 
   <table class="data-table">
-    <thead><tr><th>Shell</th><th>\(L\)</th><th>Total</th><th class="obs-cell">Observable</th><th class="hid-cell">ξ-states</th><th class="low-cell">Lower-j 3D</th></tr></thead>
+    <thead><tr><th>Shell</th><th>\(L\)</th><th>Total \(S(L{+}1,3)\)</th><th class="obs-cell">Standard orbital \((2L{+}1)\)</th><th class="hid-cell">Additional states</th></tr></thead>
     <tbody>
-      <tr><td>s</td><td>0</td><td>1</td><td class="obs-cell">1</td><td class="hid-cell">0</td><td class="low-cell">0</td></tr>
-      <tr><td>p</td><td>1</td><td>4</td><td class="obs-cell">3</td><td class="hid-cell">1</td><td class="low-cell">0</td></tr>
-      <tr><td>d</td><td>2</td><td>10</td><td class="obs-cell">5</td><td class="hid-cell">4</td><td class="low-cell">1</td></tr>
-      <tr><td>f</td><td>3</td><td>20</td><td class="obs-cell">7</td><td class="hid-cell">10</td><td class="low-cell">3</td></tr>
+      <tr><td>s</td><td>0</td><td>1</td><td class="obs-cell">1</td><td class="hid-cell">0</td></tr>
+      <tr><td>p</td><td>1</td><td>4</td><td class="obs-cell">3</td><td class="hid-cell">1</td></tr>
+      <tr><td>d</td><td>2</td><td>10</td><td class="obs-cell">5</td><td class="hid-cell">5</td></tr>
+      <tr><td>f</td><td>3</td><td>20</td><td class="obs-cell">7</td><td class="hid-cell">13</td></tr>
     </tbody>
   </table>
 
@@ -502,12 +503,12 @@ html, body { margin:0; height:100%; overflow:hidden; }
     <tbody>
       <tr><td>\(\mathbf{1}\)</td><td>\(\mathbf{1}\)</td><td><span class="obs-cell">\(j=0\)</span></td></tr>
       <tr><td>\(\mathbf{4}\)</td><td>\(\mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=1\)</span> · <span class="hid-cell">\(j=0\)</span></td></tr>
-      <tr><td>\(\mathbf{10}\)</td><td>\(\mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=2\)</span> · <span class="hid-cell">\(j=1\)</span> · \(j=0\) (<span class="hid-cell">1 ξ</span> + <span class="low-cell">1 low-j</span>)</td></tr>
-      <tr><td>\(\mathbf{20}\)</td><td>\(\mathbf{10} + \mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=3\)</span> · <span class="hid-cell">\(j=2\)</span> · \(j=1\) (<span class="hid-cell">3 ξ</span> + <span class="low-cell">3 low-j</span>) · <span class="hid-cell">\(j=0\)</span></td></tr>
+      <tr><td>\(\mathbf{10}\)</td><td>\(\mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=2\)</span> · <span class="hid-cell">\(j=1\)</span> · <span class="hid-cell">\(j=0\) (×2)</span></td></tr>
+      <tr><td>\(\mathbf{20}\)</td><td>\(\mathbf{10} + \mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=3\)</span> · <span class="hid-cell">\(j=2\)</span> · <span class="hid-cell">\(j=1\) (×2)</span> · <span class="hid-cell">\(j=0\)</span></td></tr>
     </tbody>
   </table>
 
-  <p><span class="obs-cell">Observable</span> states are the unique highest-\(j\) irrep at each level. <span class="hid-cell">ξ-states</span> involve the \(z_4\) direction; they decouple from the standard orbitals under any 3D operator (Lemma 2, off-diagonal), so they add no new spectral lines — but each still occupies a definite 3D location with a real charge density. <span class="low-cell">Lower-\(j\) 3D</span> content is non-harmonic in \((z_1,z_2,z_3)\) with no \(z_4\) dependence; it is already counted in lower orbital shells. At \(L \geq 2\) a given \(j\) value can receive contributions from both the ξ-states and lower-\(j\) categories — see the explicit bases below.</p>
+  <p>The <span class="obs-cell">standard orbital</span> is the unique highest-\(j\) irrep at each level (blue). Everything below it is an <span class="hid-cell">additional state</span> (pink): the lower-\(j\) pieces, some of which carry the \(z_4\) direction (and so decouple from the standard orbitals by Lemma 2) and some of which are \(z_4\)-free traces repeating \(\mathrm{SO}(3)\) content already seen at lower shells. All are real 6D orbits at definite 3D locations — the split is bookkeeping, not visibility.</p>
 
   <h2>The Exact Hamiltonian</h2>
 
@@ -550,20 +551,18 @@ html, body { margin:0; height:100%; overflow:hidden; }
 
   <h2>Explicit Basis: L = 1</h2>
   <p>\(\mathrm{Sym}^1(\mathbb{C}^4)\) has basis \(\{z_1, z_2, z_3, z_4\}\).</p>
-  <p><span style="color:#4488ff">Observable p-orbitals:</span> \(\{z_1, z_2, z_3\} \to (p_x, p_y, p_z)\). These are the standard \(Y_1^m\).</p>
-  <p><span style="color:#ee44aa">ξ-state:</span> \(\{z_4\}\) — a single basis vector along the SU(3)-singlet coordinate. Its <em>cross term</em> with any monomial in \((z_1, z_2, z_3)\) under the SU(4)-invariant measure is zero (different monomials at the same degree are orthogonal). Hence \(\langle z_4 \,|\, O \,|\, z_i\rangle = 0\) for every 3D operator \(O\) and every \(i \in \{1,2,3\}\): it does not mix with the p-orbitals. It remains a real electron configuration with a definite 3D charge density of its own.</p>
+  <p><span style="color:#4488ff">Standard orbital (p):</span> \(\{z_1, z_2, z_3\} \to (p_x, p_y, p_z)\). These are the standard \(Y_1^m\).</p>
+  <p><span style="color:#ee44aa">Additional state (1):</span> \(\{z_4\}\) — a single basis vector along the SU(3)-singlet (\(z_4\)) coordinate. Its <em>cross term</em> with any monomial in \((z_1, z_2, z_3)\) under the SU(4)-invariant measure is zero (different monomials at the same degree are orthogonal). Hence \(\langle z_4 \,|\, O \,|\, z_i\rangle = 0\) for every 3D operator \(O\) and every \(i \in \{1,2,3\}\): it does not mix with the p-orbitals. It remains a real electron configuration with a definite 3D charge density of its own.</p>
 
   <h2>Explicit Basis: L = 2</h2>
   <p>\(\mathrm{Sym}^2(\mathbb{C}^4)\) has 10 basis monomials.</p>
-  <p><span style="color:#4488ff">Observable d-orbitals (5):</span> the traceless degree-2 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_2^m\).</p>
-  <p><span style="color:#ee44aa">ξ-states (4):</span> \(\{z_1 z_4,\, z_2 z_4,\, z_3 z_4\}\) (\(j=1\)) and \(\{z_4^2\}\) (\(j=0\)). All carry \(z_4\)-dependence, so their cross terms with the standard d-orbitals vanish (Lemma 2) and they add no new lines — yet each is a real state occupying a definite 3D location with its own charge cloud.</p>
-  <p><span style="color:#44dd88">Lower-j 3D state (1):</span> \(\{z_1^2+z_2^2+z_3^2\}\) — the SO(3) trace, \(j=0\), no \(z_4\)-dependence. A 3D apparatus couples to it just fine; it transforms identically to a higher Sym\(^L\) copy of the spin-0 representation that already appears at \(L=0\). It does not introduce a new observable orbital — it is the same SO(3) representation showing up again at a higher SU(4) degree.</p>
+  <p><span style="color:#4488ff">Standard orbital (d), 5:</span> the traceless degree-2 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_2^m\).</p>
+  <p><span style="color:#ee44aa">Additional states (5):</span> four carry \(z_4\) — \(\{z_1 z_4,\, z_2 z_4,\, z_3 z_4\}\) (\(j=1\)) and \(\{z_4^2\}\) (\(j=0\)) — so their cross terms with the standard d-orbitals vanish (Lemma 2) and they add no new lines; one is the \(z_4\)-free trace \(\{z_1^2+z_2^2+z_3^2\}\) (\(j=0\)), which repeats the spin-0 representation already seen at \(L=0\). All five are real states at definite 3D locations with their own charge clouds.</p>
 
   <h2>Explicit Basis: L = 3</h2>
   <p>\(\mathrm{Sym}^3(\mathbb{C}^4)\) has 20 basis monomials.</p>
-  <p><span style="color:#4488ff">Observable f-orbitals (7):</span> the harmonic degree-3 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_3^m\) for \(m = -3,\ldots,+3\).</p>
-  <p><span style="color:#ee44aa">ξ-states (10):</span> all monomials containing at least one \(z_4\) factor. These split into three sub-families by z₄ multiplicity: (i) \(\{z_i z_j z_4 : i,j \in \{1,2,3\}\}\) — six states, of which 5 are traceless (\(j=2\)) and 1 is the trace \(z_4(z_1^2+z_2^2+z_3^2)\) (\(j=0\)); (ii) \(\{z_1 z_4^2,\, z_2 z_4^2,\, z_3 z_4^2\}\) (\(j=1\), 3 states); (iii) \(\{z_4^3\}\) (\(j=0\), 1 state). Total: 5+1+3+1 = 10. Each has a z₄ factor, so its cross term with the standard f-orbitals vanishes (Lemma 2) — no new lines — while remaining a real state with a definite 3D charge cloud.</p>
-  <p><span style="color:#44dd88">Lower-j 3D states (3):</span> \(\{(z_1^2+z_2^2+z_3^2)\,z_1,\; (z_1^2+z_2^2+z_3^2)\,z_2,\; (z_1^2+z_2^2+z_3^2)\,z_3\}\) — degree-3 polynomials in \((z_1,z_2,z_3)\) only, no \(z_4\)-dependence. Each is the SO(3) trace \((z_1^2+z_2^2+z_3^2)\) times a \(j=1\) factor, placing them in the \(j=1\) representation. They are not ξ-states; they are already counted in the \(L=1\) p-shell.</p>
+  <p><span style="color:#4488ff">Standard orbital (f), 7:</span> the harmonic degree-3 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_3^m\) for \(m = -3,\ldots,+3\).</p>
+  <p><span style="color:#ee44aa">Additional states (13):</span> ten carry at least one \(z_4\) factor — by z₄ multiplicity: (i) \(\{z_i z_j z_4\}\), six states (5 traceless \(j=2\), 1 trace \(j=0\)); (ii) \(\{z_i z_4^2\}\) (\(j=1\), 3 states); (iii) \(\{z_4^3\}\) (\(j=0\), 1 state) — these decouple from the standard f-orbitals by Lemma 2. The remaining three are \(z_4\)-free traces \(\{(z_1^2+z_2^2+z_3^2)\,z_i\}\) (\(j=1\)), repeating \(\mathrm{SO}(3)\) content already present in the \(L=1\) p-shell. All thirteen are real 6D orbits at definite 3D locations.</p>
 
   <h2>What This Derives</h2>
   <div class="bomb-box">
@@ -597,14 +596,12 @@ html, body { margin:0; height:100%; overflow:hidden; }
 <!-- ══════════════════════ VIZ PANEL ══════════════════════ -->
 <div class="viz-panel" id="vizPanel">
   <div class="category-bar">
-    <div class="cat-btn cat-obs active legend"><span class="swatch"></span>Observable</div>
-    <div class="cat-btn cat-hid active legend"><span class="swatch"></span>ξ-states</div>
-    <div class="cat-btn cat-low active legend"><span class="swatch"></span>Lower-j 3D</div>
+    <div class="cat-btn cat-obs active legend"><span class="swatch"></span>Standard orbital (2L+1)</div>
+    <div class="cat-btn cat-hid active legend"><span class="swatch"></span>Additional states</div>
   </div>
   <div class="viz-info" id="vizInfo">
     <div class="vi-title">s shell — L=0</div>
-    <div class="vi-obs">1 observable</div>
-    <div class="vi-hid">0 ξ-states</div>
+    <div class="vi-obs">1 standard orbital</div>
     <div class="vi-dim">S(1,3) = 1</div>
   </div>
   <div class="shell-bar">
@@ -670,7 +667,7 @@ group.rotation.x = 0.4;
 group.rotation.y = 0.6;
 scene.add(group);
 
-// colour conventions: observable / ξ-states / lower-j 3D
+// colour conventions: standard orbital (blue) / additional states (pink)
 const OBS = 0x4488ff, HID = 0xee44aa, LOW = 0x44dd88;
 const R0 = 2.4;        // observable shell radius (world units)
 const MAX_TRAIL = 900;  // points in each electron's trail
@@ -743,65 +740,125 @@ function makeTrail(color) {
 let electrons = [];
 let readoutE = null;   // electron whose 6-vector is shown in the readout
 
-// ── states = monomials of Sym^L(C⁴) ──────────────────────────
-// A state at level L is a monomial z1^a z2^b z3^c z4^d with a+b+c+d=L.
-// There are C(L+3,3)=S(L+1,3) of them — the exact basis the text enumerates.
-// NO spherical harmonics anywhere: every shape is the 3D projection of a
-// genuine 6D orbit (see electronOrbit). Colour classes (counts unchanged):
-//   • ξ-states (pink): d≥1, carry the z4 / SU(3)-singlet direction.
-//   • the z4-free states (d=0, count C(L+2,2)) split by observable weight
-//     a+b into the 2L+1 observable orbitals (blue) and the L(L−1)/2
-//     lower-j 3D states (green) — a basis labelling, not a visibility split.
-function generateStates(L) {
+// ── spherical harmonics: the exact 3D shadow of the standard orbitals ──
+// The 2L+1 "standard orbital" states are the harmonic part of Sym^L(C⁴);
+// their projection onto observable space is exactly the spherical harmonic
+// Y_L^m, so we trace that closed form directly (this is the recognisable
+// s,p,d,f shape — a genuine 6D orbit whose shadow happens to have a name).
+function realSH(L, m, theta, phi) {
+  const ct = Math.cos(theta), st = Math.sin(theta);
+  const cp = Math.cos(phi), sp = Math.sin(phi);
+  if (L === 0) return 1;
+  if (L === 1) {
+    if (m ===  0) return ct;
+    if (m ===  1) return st * cp;
+    if (m === -1) return st * sp;
+  }
+  if (L === 2) {
+    if (m ===  0) return 0.5 * (3*ct*ct - 1);
+    if (m ===  1) return st * ct * cp;
+    if (m === -1) return st * ct * sp;
+    if (m ===  2) return st*st * Math.cos(2*phi);
+    if (m === -2) return st*st * Math.sin(2*phi);
+  }
+  if (L === 3) {
+    if (m ===  0) return 0.5 * ct * (5*ct*ct - 3);
+    if (m ===  1) return st * (5*ct*ct - 1) * cp;
+    if (m === -1) return st * (5*ct*ct - 1) * sp;
+    if (m ===  2) return st*st * ct * Math.cos(2*phi);
+    if (m === -2) return st*st * ct * Math.sin(2*phi);
+    if (m ===  3) return st*st*st * Math.cos(3*phi);
+    if (m === -3) return st*st*st * Math.sin(3*phi);
+  }
+  return 0;
+}
+
+// ── deterministic 6D orbit for the additional states (the template's Orbit6D) ──
+// State = monomial z1^a z2^b z3^c z4^d. The orbit is z_k(t)=ρ_k·e^{i(ω_k t+φ_k)}
+// with fixed moduli ρ_k and incommensurate ω_k; the six real coordinates are
+// (Re z1, Im z1, Re z2, Im z2, Re z3, Im z3) and the OBSERVABLE position is the
+// first three. A small baseline keeps z4-heavy states from collapsing to a
+// point (so a pure-z4 state reads as a small uniform sphere, per its meaning).
+const BETA = 0.16, EXTRA_SCALE = 1.7;
+class Orbit6D {
+  constructor(exponents, idx) {
+    const [a, b, c, d] = exponents;
+    const den = (a + b + c + d) + 4 * BETA;
+    this.r1 = Math.sqrt((a + BETA) / den);
+    this.r2 = Math.sqrt((b + BETA) / den);
+    this.r3 = Math.sqrt((c + BETA) / den);
+    this.w1 = Math.SQRT2; this.w2 = Math.sqrt(3); this.w3 = Math.sqrt(5);
+    this.p1 = idx * 0.7; this.p2 = idx * 1.31 + 0.4; this.p3 = idx * 2.1 + 0.9;
+    this.six = [0, 0, 0, 0, 0, 0];
+  }
+  position(t) {
+    const S = EXTRA_SCALE;
+    const z1r = this.r1 * Math.cos(this.w1*t + this.p1) * S;
+    const z1i = this.r1 * Math.sin(this.w1*t + this.p1) * S;
+    const z2r = this.r2 * Math.cos(this.w2*t + this.p2) * S;
+    const z2i = this.r2 * Math.sin(this.w2*t + this.p2) * S;
+    const z3r = this.r3 * Math.cos(this.w3*t + this.p3) * S;
+    const z3i = this.r3 * Math.sin(this.w3*t + this.p3) * S;
+    this.six[0]=z1r; this.six[1]=z1i; this.six[2]=z2r;
+    this.six[3]=z2i; this.six[4]=z3r; this.six[5]=z3i;
+    return { x: z1r, y: z1i, z: z2r };   // observable = first three coordinates
+  }
+}
+
+// Two kinds of state per shell, both genuine 6D orbits:
+//   • 'obs'   — the 2L+1 harmonic states → the standard s,p,d,f orbital (realSH).
+//   • 'extra' — the remaining S(L+1,3)−(2L+1) states → 6D orbits (Orbit6D),
+//               the z4 / non-harmonic monomials, nested inside.
+function shellStates(L) {
+  const out = [];
+  for (let m = -L; m <= L; m++) out.push({ type: 'obs', L, m });
   const mon = [];
   for (let a = 0; a <= L; a++)
     for (let b = 0; b <= L - a; b++)
       for (let c = 0; c <= L - a - b; c++)
-        mon.push({ a, b, c, d: L - a - b - c });
-  const xi = mon.filter(m => m.d > 0).map(m => ({ ...m, color: HID }));
-  // z4-free states sorted by observable weight (a+b) desc → first 2L+1 = obs
-  const flat = mon.filter(m => m.d === 0)
-    .sort((p, q) => (q.a + q.b) - (p.a + p.b) || (q.a - p.a) || (q.b - p.b));
-  const nObs = 2 * L + 1;
-  const obs = flat.slice(0, nObs).map(m => ({ ...m, color: OBS }));
-  const low = flat.slice(nObs).map(m => ({ ...m, color: LOW }));
-  return [...obs, ...xi, ...low];
+        mon.push([a, b, c, L - a - b - c]);
+  // keep the most z4/z3-rich monomials as the additional states (they nest in)
+  mon.sort((p, q) => (q[3]+q[2]) - (p[3]+p[2]) || (q[3]-p[3]) || (q[2]-p[2]));
+  mon.slice(0, mon.length - (2*L + 1))
+     .forEach(e => out.push({ type: 'extra', exponents: e }));
+  return out;
 }
 
 const SHELL_NAMES = ['s','p','d','f'];
 const SHELL_META  = [
-  { name:'s shell — L=0', obs:1, hid:0,  low:0, dim:1  },
-  { name:'p shell — L=1', obs:3, hid:1,  low:0, dim:4  },
-  { name:'d shell — L=2', obs:5, hid:4,  low:1, dim:10 },
-  { name:'f shell — L=3', obs:7, hid:10, low:3, dim:20 },
+  { name:'s shell — L=0', std:1, extra:0,  dim:1  },
+  { name:'p shell — L=1', std:3, extra:1,  dim:4  },
+  { name:'d shell — L=2', std:5, extra:5,  dim:10 },
+  { name:'f shell — L=3', std:7, extra:13, dim:20 },
 ];
 
 let tt = 0;                  // orbit phase
 const SPEED = 1.0;
-// The electron is a point on CP³ tracing a deterministic torus orbit:
-//   z_k(t) = ρ_k · exp(i(ω_k t + φ_k)),  k = 1,2,3   (z4 = normalisation)
-// ω_k are fixed incommensurate rates, so each orbit densely fills its torus.
-const OMEGA = [Math.SQRT2, 1.7320508, 2.2360680].map(x => x * 0.55);
-const BETA  = 0.15;   // modulus baseline so no plane fully collapses
-const S6    = 2.7;    // world-unit scale for the six coordinates
+// observable-orbital sweep rates (incommensurate → each lobe fills out)
+const F_PHI = 0.80, F_THETA = 0.80 / 1.6180339887;
 let targetCamDist = 7, actualCamDist = 7;
 
-// Full 6D orbit. The six real coordinates are (Re z1, Im z1, Re z2, Im z2,
-// Re z3, Im z3); the OBSERVABLE position is the first three. Nothing is
-// discarded — the other three are the same electron's ξ-coordinates, stored
-// on e.six and shown in the readout. Moduli ρ_k come from the monomial
-// weights, so z4 content (which lowers ρ1,ρ2,ρ3) nests a state inward, and
-// the s,p,d,f anisotropy emerges purely from this projection — no harmonics.
+// Position dispatch — both kinds are 6D orbits, we draw the observable 3D part.
+//   • 'extra' states: the genuine 6D torus orbit (Orbit6D); observable = first 3.
+//   • 'obs' states: their observable shadow is exactly Y_L^m, traced via realSH.
+// e.six holds the full six coordinates either way (obs: 3 observable + zeros,
+// since the standard orbital already lies in observable space).
 const _v = new THREE.Vector3();
 function electronPoint(e, t) {
-  const a1 = OMEGA[0]*t + e.ph[0];
-  const a2 = OMEGA[1]*t + e.ph[1];
-  const a3 = OMEGA[2]*t + e.ph[2];
-  const X1 = e.r1*Math.cos(a1)*S6, X2 = e.r1*Math.sin(a1)*S6;   // z1
-  const X3 = e.r2*Math.cos(a2)*S6, X4 = e.r2*Math.sin(a2)*S6;   // z2
-  const X5 = e.r3*Math.cos(a3)*S6, X6 = e.r3*Math.sin(a3)*S6;   // z3
-  e.six[0]=X1; e.six[1]=X2; e.six[2]=X3; e.six[3]=X4; e.six[4]=X5; e.six[5]=X6;
-  return _v.set(X1, X2, X3);   // observable = first three coordinates
+  if (e.orbit) {                         // additional state → 6D orbit
+    const p = e.orbit.position(t);
+    e.six = e.orbit.six;
+    return _v.set(p.x, p.y, p.z);
+  }
+  const phi   = F_PHI * t + e.phi0;      // standard orbital → Y_L^m shadow
+  const theta = Math.acos(Math.sin(F_THETA * t + e.th0));
+  const val   = realSH(e.L, e.m, theta, phi);
+  const r     = R0 * Math.abs(val);
+  const st    = Math.sin(theta);
+  e.val = val;
+  const x = r*st*Math.cos(phi), y = r*Math.cos(theta), z = r*st*Math.sin(phi);
+  e.six[0]=x; e.six[1]=y; e.six[2]=z; e.six[3]=0; e.six[4]=0; e.six[5]=0;
+  return _v.set(x, y, z);
 }
 
 // ── shell switching ───────────────────────────────────────────
@@ -818,30 +875,28 @@ function clearElectrons() {
 function setShell(L) {
   clearElectrons();
   tt = 0;
-  generateStates(L).forEach((o, idx) => {
-    const g = groupFor(o.color);
-    const mesh = makeElectron(o.color); g.add(mesh);
-    const trail = makeTrail(o.color);   g.add(trail.line);
-    const den = L + 4 * BETA;   // L = a+b+c+d ; z4 holds the rest of the norm
-    electrons.push({
-      color: o.color, a:o.a, b:o.b, c:o.c, d:o.d,
-      r1: Math.sqrt((o.a + BETA) / den),
-      r2: Math.sqrt((o.b + BETA) / den),
-      r3: Math.sqrt((o.c + BETA) / den),
-      ph: [idx*0.7, idx*1.31 + 0.4, idx*2.1 + 0.9],
-      six: [0,0,0,0,0,0], mesh, trail });
+  shellStates(L).forEach((o, idx) => {
+    const color = o.type === 'obs' ? OBS : HID;
+    const g = groupFor(color);
+    const mesh = makeElectron(color); g.add(mesh);
+    const trail = makeTrail(color);   g.add(trail.line);
+    const e = { type: o.type, color, six: [0,0,0,0,0,0], mesh, trail };
+    if (o.type === 'obs') {
+      e.L = o.L; e.m = o.m; e.phi0 = idx * 0.7; e.th0 = idx * 1.31; e.val = 1;
+    } else {
+      e.orbit = new Orbit6D(o.exponents, idx);
+    }
+    electrons.push(e);
   });
-  // representative electron for the live 6-vector readout: prefer a ξ-state
-  // (d≥1) so the extra coordinates read nonzero; else the first electron.
-  readoutE = electrons.find(e => e.d > 0) || electrons[0];
+  // readout: prefer an additional (6D-orbit) state so all six coords read nonzero
+  readoutE = electrons.find(e => e.orbit) || electrons[0];
   SHELL_NAMES.forEach((n, i) =>
     document.getElementById('btn-' + n).classList.toggle('active', i === L));
   const m = SHELL_META[L];
   document.getElementById('vizInfo').innerHTML =
     `<div class="vi-title">${m.name}</div>` +
-    `<div class="vi-obs">${m.obs} observable</div>` +
-    `<div class="vi-hid">${m.hid} ξ-states</div>` +
-    (m.low ? `<div class="vi-low">${m.low} lower-j 3D</div>` : '') +
+    `<div class="vi-obs">${m.std} standard orbital</div>` +
+    (m.extra ? `<div class="vi-hid">${m.extra} additional states</div>` : '') +
     `<div class="vi-dim">S(${L+1},3) = ${m.dim}</div>` +
     `<div class="vi-six" id="sixReadout"></div>`;
 }
@@ -924,8 +979,9 @@ function animate() {
     t.geo.attributes.position.needsUpdate = true;
     t.geo.attributes.color.needsUpdate = true;
 
-    // shadow — accumulate the observable projection of the 6D orbit
-    if (deposit) depositCloud(clouds[e.color], x, y, z);
+    // shadow — accumulate the observable projection; skip orbital nodes
+    if (deposit && (e.orbit || Math.abs(e.val) > 0.05))
+      depositCloud(clouds[e.color], x, y, z);
   }
 
   // live 6-vector readout (a few times/sec): first three = observable,
