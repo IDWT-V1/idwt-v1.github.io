@@ -420,7 +420,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 
 Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode equation has no zero-eigenvalue force term.
 
-† The $m_Z$ prediction is $+0.05\%$ (42 MeV) high. The nominal $\sim$21σ this would be against the $\pm2$ MeV statistical error of the on-shell mass overstates the tension: the $Z$ mass carries a definition ambiguity of $\sim$34 MeV (the on-shell Breit–Wigner and pole definitions differ by $\Gamma_Z^2/2m_Z \approx 34$ MeV, with $\overline{\rm MS}$ differing similarly), comparable to the overshoot. The clean, scale-independent comparison is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$, a pure combinatorial identity (⭐) matching PDG ($1.13461$) to 0.03% (Part 5 §3).
+† The absolute $m_Z$ prediction is $+0.05\%$ (42 MeV) above the measured $91{,}188.0 \pm 2.0$ MeV — a small but genuine overshoot ($+21\sigma$ against that error). The framework's clean, scale-independent prediction in this sector is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$ — a pure combinatorial identity (⭐) with no sector scale in it — which matches PDG ($1.13461 \pm 0.00019$) to 0.03%, $\approx 2\sigma$ (the ratio error dominated by $m_W$, $\pm13$ MeV). The absolute mass additionally inherits the $m_{\rm scale,2}$ derivation uncertainty of the $d=2$ electroweak sector (Part 3 §0.7); the residual is small relative to that sector's known few-percent scale-translation gaps ($\alpha(m_Z)$, $\sin^2\theta_W$).
 
 **Quantum properties.**
 - **Electromagnetism:** $U(1)$ Hopf fiber holonomy → gauge field $A_\mu$; photon is the connection 1-form.
