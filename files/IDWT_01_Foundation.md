@@ -415,10 +415,12 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 |---|---|---|---|---|
 | γ (photon) | 0 | 0 | 0 (zero mode — exact) | 0 ✅ |
 | W boson | 76 | 2926 | 80.377 GeV | 80.377 GeV ✅ |
-| Z boson | 81 | 3321 | 91.188 GeV | 91.188 GeV ✅ |
+| Z boson | 81 | 3321 | 91.230 GeV | 91.188 GeV ($+0.05\%$) 🔵† |
 | Higgs H | 95 | 4560 | 125.25 GeV | 125.25 GeV ✅ |
 
 Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode equation has no zero-eigenvalue force term.
+
+† The $m_Z$ prediction is $+0.05\%$ (42 MeV) high. The nominal $\sim$21σ this would be against the $\pm2$ MeV statistical error of the on-shell mass overstates the tension: the $Z$ mass carries a definition ambiguity of $\sim$34 MeV (the on-shell Breit–Wigner and pole definitions differ by $\Gamma_Z^2/2m_Z \approx 34$ MeV, with $\overline{\rm MS}$ differing similarly), comparable to the overshoot. The clean, scale-independent comparison is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$, a pure combinatorial identity (⭐) matching PDG ($1.13461$) to 0.03% (Part 5 §3).
 
 **Quantum properties.**
 - **Electromagnetism:** $U(1)$ Hopf fiber holonomy → gauge field $A_\mu$; photon is the connection 1-form.
