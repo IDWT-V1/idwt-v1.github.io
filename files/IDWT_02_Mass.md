@@ -816,6 +816,23 @@ Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sit
 
 So two things remain genuinely open at the top. The index $72$ is a product rather than a tower output, with no selecting condition yet found; and the $+2.2\%$ mass overshoot is uncorrected. The top mass is quoted bare ($\textbf{🔶}$): a $\sim$2% overshoot above the standard pole mass, read with the scheme caveat above — an honest open residue, not a derived agreement and not a $13\sigma$ anomaly.
 
+### 11.8 Scale versus structure: the residual is $n$-dependent and confined to $d=3$ and $d=4$
+
+The quark-sector residuals admit two readings: a uniform per-sector scale offset — a single high $m_{\mathrm{scale},d}$ shifting every mode in the sector by one common fraction — or $n$-dependent structure in the count $S(n,d)$. The two are separated by the scale-free **in-sector mass ratio** $S(n_{\mathrm{hi}},d)/S(n_{\mathrm{lo}},d)$, an exact combinatorial identity ($\textbf{⭐}$) in which $m_{\mathrm{scale},d}$ and the unit anchor $m_e$ cancel identically. A uniform scale offset is invisible to this ratio; only structure survives it.
+
+| In-sector ratio | $d$ | IDWT | PDG 2024 | Residual |
+|---|---|---|---|---|
+| $Z/W$ | $2$ | $1.1350$ | $1.1346$ | $+0.03\%$ |
+| $H/W$ | $2$ | $1.5584$ | $1.5578$ | $+0.04\%$ |
+| $s/d$ | $3$ | $20.0000$ | $19.894$ | $+0.54\%$ |
+| $c/u$ | $4$ | $590.33$ | $589.35$ | $+0.17\%$ |
+| $t/c$ | $4$ | $137.26$ | $135.56$ | $+1.25\%$ |
+| $\mu/e$ | $6$ | $206.7647$ | $206.7683$ | $-0.002\%$ |
+
+The residual is at most a few parts in $10^{4}$ in the boson ($d=2$) and charged-lepton ($d=6$) sectors, and grows with the level gap inside the quark sectors $d=3$ and $d=4$. That growth is the signature of structure in $S(n,d)$, not of a sector scale error: a uniform offset would be $n$-independent and would leave every in-sector ratio exact. The discrepancy is therefore $n$-dependent and confined to the two quark sectors, while the boson and lepton sectors are reproduced to within $4\times10^{-4}$ by the bare count (`files/idwt.py` STEP 126).
+
+This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit, of the kind removed in §11.3. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is open ($\textbf{🔶}$).
+
 ## 12. Two-Layer Mass Structure and Unified Scale Formula
 
 All sector mass scales reduce to $m_e$ (via $m_{\rm scale,6} = m_e/S(13,6)$) plus the coupling ratios:

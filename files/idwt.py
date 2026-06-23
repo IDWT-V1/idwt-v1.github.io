@@ -7904,6 +7904,57 @@ assert 0.0 < _hier_125 < 1.0e-40         # the hierarchy is tiny but nonzero
 
 
 # =============================================================================
+# STEP 126 -- SCALE-vs-STRUCTURE DECOMPOSITION OF THE MASS RESIDUALS:
+#             THE SECTOR OFFSETS ARE n-STRUCTURAL, CONFINED TO d=3 AND d=4
+# =============================================================================
+# Honest measured-accuracy account (Fedge 2026-06-23), RECORDED not applied as a
+# correction. Question: is the up-/down-type mass overshoot a uniform per-sector
+# SCALE error (a high m_scale_d shifts every mode in the sector by one common
+# fraction), or n-dependent STRUCTURE in S(n,d)? The clean probe is the
+# scale-free IN-SECTOR mass ratio S(n_hi,d)/S(n_lo,d): it cancels m_scale_d AND
+# m_e entirely, leaving only structure. A pure scale error is INVISIBLE to it
+# (ratio residual = 0); a structural error grows with the level gap. The in- and
+# intra-sector comparison below uses PDG 2024 central values (MeV; the pdg2024
+# reference set), the same anchors as STEP 1/2's mass assignments.
+_pdg_126 = {
+    "W": 80369.2, "Z": 91188.0, "H": 125200.0,
+    "down": 4.70, "strange": 93.5,
+    "up": 2.16, "charm": 1273.0, "top": 172570.0,
+    "electron": 0.51099895, "muon": 105.6583755,
+}
+# scale-free in-sector ratios: (label, d, n_hi, n_lo, mode_hi, mode_lo)
+_pairs_126 = [
+    ("Z/W", 2, 81, 76, "Z", "W"),
+    ("H/W", 2, 95, 76, "H", "W"),
+    ("strange/down", 3, 4, 1, "strange", "down"),
+    ("charm/up", 4, 20, 3, "charm", "up"),
+    ("top/charm", 4, 72, 20, "top", "charm"),
+]
+_order_126 = [p[0] for p in _pairs_126]   # fixed print order (no body assign)
+_ratio_resid_126 = {}        # label -> (d, idwt_ratio, pdg_ratio, resid_pct)
+for _lab126, _d126, _nhi126, _nlo126, _hi126, _lo126 in _pairs_126:
+    _ri126 = S(_nhi126, _d126) / S(_nlo126, _d126)
+    _rp126 = _pdg_126[_hi126] / _pdg_126[_lo126]
+    _ratio_resid_126[_lab126] = (_d126, _ri126, _rp126,
+                                 (_ri126 / _rp126 - 1.0) * 100.0)
+# d=6 lepton in-sector probe (anchored at e -> isolates structure)
+_mu_e_idwt_126 = S(35, 6) / S(13, 6)
+_mu_e_pdg_126 = _pdg_126["muon"] / _pdg_126["electron"]
+_mu_e_resid_126 = (_mu_e_idwt_126 / _mu_e_pdg_126 - 1.0) * 100.0
+# verdict numbers
+_resid_top_charm_126 = _ratio_resid_126["top/charm"][3]      # d=4, +1.25%
+_resid_str_down_126 = _ratio_resid_126["strange/down"][3]    # d=3, +0.54%
+_resid_zw_126 = _ratio_resid_126["Z/W"][3]                   # d=2, +0.03%
+# Structural fingerprint: the residual is carried by the QUARK sectors d=3,4 and
+# GROWS with the level gap, while the boson (d=2) and lepton (d=6) in-sector
+# ratios are ~0. A uniform per-sector scale offset would be n-independent (equal
+# residual for every pair in a sector) -> the data rules it out.
+assert _resid_top_charm_126 > _resid_str_down_126 > 0.0
+assert abs(_resid_zw_126) < 0.1 and abs(_mu_e_resid_126) < 0.1
+assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11523,6 +11574,29 @@ print("  only m_e/hbar (Compton freq) and hbar/(m_e c) (Compton length) --")
 print("  hbar never appears alone, so it is NOT a separate unit-conversion")
 print("  import. The one physical import is the quantization concept (one")
 print("  quantum, STEP 124), which a classical field does not supply.")
+
+
+# =============================================================================
+# STEP 126 -- OUTPUT: SCALE-vs-STRUCTURE DECOMPOSITION (sector offsets are
+#             n-structural, confined to d=3 and d=4)
+# =============================================================================
+print("\n" + "=" * 70)
+print("=== STEP 126: SCALE-FREE IN-SECTOR RATIOS (structure vs scale) ===")
+print("=" * 70)
+print("  in-sector ratio       d       IDWT        PDG   resid%")
+for _lab126 in _order_126:
+    print(f"  {_lab126:16}{_ratio_resid_126[_lab126][0]:>3}"
+          f"{_ratio_resid_126[_lab126][1]:>11.4f}"
+          f"{_ratio_resid_126[_lab126][2]:>11.4f}"
+          f"{_ratio_resid_126[_lab126][3]:>+9.3f}")
+print(f"  {'muon/electron':16}{6:>3}{_mu_e_idwt_126:>11.4f}"
+      f"{_mu_e_pdg_126:>11.4f}{_mu_e_resid_126:>+9.3f}")
+print("verdict: in-sector ratios cancel m_scale_d and m_e -> pure structure.")
+print("  the residual GROWS with the level gap and sits only in the QUARK")
+print("  sectors d=3 (strange/down +0.54%) and d=4 (top/charm +1.25%); the")
+print("  boson d=2 and lepton d=6 ratios are ~0. A uniform per-sector SCALE")
+print("  offset (n-independent) is ruled out. Quoted as measured accuracy,")
+print("  NOT applied as a correction.")
 
 
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
