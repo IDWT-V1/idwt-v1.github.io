@@ -452,7 +452,7 @@ html, body { margin:0; height:100%; overflow:hidden; }
   <h1>Atomic Orbitals as CP³ Projection</h1>
   <p class="sub">Every electron has a <strong>definite 3D location</strong> — the first three of its six coordinates. The s, p, d, f orbital families are the 3D shadow of the electron's full 6D orbit; Bohr levels, all multipole selection rules, Stark, Zeeman, and fine/hyperfine structure follow as theorems of CP³. At every shell with \(L \geq 1\), the SU(4) representation also carries states with angular momentum in the ξ-direction. These are <em>not</em> invisible particles: each is a real electron sitting at a definite 3D point with a real charge density. What Lemma 2 actually shows is narrower — they <em>decouple</em> from the standard orbitals, adding no new spectral lines.</p>
   <p>Note: \(\Xi_6 = \mathbb{CP}^3\) is a macroscopic 6-real-dimensional space in IDWT, not a compactified extra dimension. The electron moves through all six dimensions of \(M_\infty = \mathbf{R}^3 \times \Xi_6\); our 3D space is the first three coordinates, and the electron always has a definite position there.</p>
-  <p>The panel at right shows the full 6D orbit. Each electron — one point particle per state, never a cloud — carries six real coordinates; its observable position is the first three, computed live and always defined. Those observable positions accumulate over many laps into the familiar s, p, d, f shapes (blue). The ξ-states orbit too (pink): part of their motion runs through the extra three coordinates, but their 3D shadow is a genuine, definite charge cloud — never invisible. The lower-j 3D content (green) is likewise fully present. A static legend at upper left names each colour; nothing here can be made to disappear.</p>
+  <p>The panel at right computes the full 6D orbit directly — there are no spherical harmonics anywhere in the code. Each state is a point on \(\mathbb{CP}^3\) following a deterministic torus orbit \(z_k(t)=\rho_k\,e^{i(\omega_k t+\phi_k)}\) for \(k=1,2,3\); the six real coordinates are the real and imaginary parts of \((z_1,z_2,z_3)\), and the observable position is the first three, \((\mathrm{Re}\,z_1,\mathrm{Im}\,z_1,\mathrm{Re}\,z_2)\) — computed live and always defined. The s, p, d, f anisotropy emerges purely from this projection as the orbits accumulate: the moduli \(\rho_k\) are set by the state's monomial weights, so the observable-orbital states fill the outer shells (blue) while the ξ-states — which spend part of their norm in the \(z_4\) direction — nest inward at smaller radius (pink). Their 3D shadow is still a genuine, definite charge cloud, never invisible; the lower-j 3D content (green) is likewise fully present. A static legend at upper left names each colour; nothing here can be made to disappear.</p>
 
   <h2>Setup</h2>
   <p>In IDWT, the electron is the \((d=6)\) mode \((n=13)\): an eigenmode of the sector-6 Dirac operator on \(\mathrm{CP}^3\), with isometry group \(\mathrm{SU}(4)\). Its 6D orbit is the full trajectory in \(Ξ_6\), while the observable 3D "orbital" is the projection of that orbit onto ordinary space. The hydrogen atom is a bound system on \(M_\infty = \mathbf{R}^3 \times \Xi_6\). The angular momentum eigenmodes are representations of \(\mathrm{SU}(4)\), restricted to the observable subgroup via the chain</p>
@@ -743,93 +743,29 @@ function makeTrail(color) {
 let electrons = [];
 let readoutE = null;   // electron whose 6-vector is shown in the readout
 
-// ── spherical harmonics ───────────────────────────────────────
-function realSH(L, m, theta, phi) {
-  const ct = Math.cos(theta), st = Math.sin(theta);
-  const cp = Math.cos(phi), sp = Math.sin(phi);
-  if (L === 0) return 1;
-  if (L === 1) {
-    if (m ===  0) return ct;
-    if (m ===  1) return st * cp;
-    if (m === -1) return st * sp;
-  }
-  if (L === 2) {
-    if (m ===  0) return 0.5 * (3*ct*ct - 1);
-    if (m ===  1) return st * ct * cp;
-    if (m === -1) return st * ct * sp;
-    if (m ===  2) return st*st * Math.cos(2*phi);
-    if (m === -2) return st*st * Math.sin(2*phi);
-  }
-  if (L === 3) {
-    if (m ===  0) return 0.5 * ct * (5*ct*ct - 3);
-    if (m ===  1) return st * (5*ct*ct - 1) * cp;
-    if (m === -1) return st * (5*ct*ct - 1) * sp;
-    if (m ===  2) return st*st * ct * Math.cos(2*phi);
-    if (m === -2) return st*st * ct * Math.sin(2*phi);
-    if (m ===  3) return st*st*st * Math.cos(3*phi);
-    if (m === -3) return st*st*st * Math.sin(3*phi);
-  }
-  return 0;
-}
-
-// ── per-shell electron set — full 6D orbits ──────────────────
-// Every state is a genuine electron with SIX real coordinates. Its
-// observable position is the first three (x1,x2,x3), computed live every
-// frame and ALWAYS defined — no state is ever hidden or made invisible.
-//   • Observable orbitals (blue): the 2L+1 harmonics. They have no z4
-//     content (q=0), so the whole orbit lives in observable 3-space and
-//     traces the standard s,p,d,f lobe at full radius.
-//   • ξ-states (pink): q≥1 z4 factors. Part of the orbit runs through the
-//     extra three coordinates (x4,x5,x6); the observable 3D shadow is a
-//     smaller but perfectly real, definite charge cloud. Not invisible —
-//     by Lemma 2 it only decouples from the standard orbitals (no new
-//     lines). q = z4-multiplicity = how much of the orbit lives in ξ.
-//   • Lower-j 3D (green): q=0 traces, already present at lower L.
-function shellData(L) {
-  if (L === 0) return [
-    { L:0, m: 0, color:OBS, scale:1.00, q:0 },
-  ];
-  if (L === 1) return [
-    { L:1, m: 1, color:OBS, scale:1.00, q:0 },
-    { L:1, m: 0, color:OBS, scale:1.00, q:0 },
-    { L:1, m:-1, color:OBS, scale:1.00, q:0 },
-    { L:0, m: 0, color:HID, scale:0.50, q:1 },
-  ];
-  if (L === 2) return [
-    { L:2, m: 0, color:OBS, scale:1.00, q:0 },
-    { L:2, m: 1, color:OBS, scale:1.00, q:0 },
-    { L:2, m:-1, color:OBS, scale:1.00, q:0 },
-    { L:2, m: 2, color:OBS, scale:1.00, q:0 },
-    { L:2, m:-2, color:OBS, scale:1.00, q:0 },
-    { L:1, m: 1, color:HID, scale:0.55, q:1 },
-    { L:1, m: 0, color:HID, scale:0.55, q:1 },
-    { L:1, m:-1, color:HID, scale:0.55, q:1 },
-    { L:0, m: 0, color:HID, scale:0.36, q:2 },
-    { L:0, m: 0, color:LOW, scale:0.22, q:0 },
-  ];
-  if (L === 3) return [
-    { L:3, m: 0, color:OBS, scale:1.00, q:0 },
-    { L:3, m: 1, color:OBS, scale:1.00, q:0 },
-    { L:3, m:-1, color:OBS, scale:1.00, q:0 },
-    { L:3, m: 2, color:OBS, scale:1.00, q:0 },
-    { L:3, m:-2, color:OBS, scale:1.00, q:0 },
-    { L:3, m: 3, color:OBS, scale:1.00, q:0 },
-    { L:3, m:-3, color:OBS, scale:1.00, q:0 },
-    { L:2, m: 0, color:HID, scale:0.58, q:1 },
-    { L:2, m: 1, color:HID, scale:0.58, q:1 },
-    { L:2, m:-1, color:HID, scale:0.58, q:1 },
-    { L:2, m: 2, color:HID, scale:0.58, q:1 },
-    { L:2, m:-2, color:HID, scale:0.58, q:1 },
-    { L:1, m: 1, color:HID, scale:0.38, q:2 },
-    { L:1, m: 0, color:HID, scale:0.38, q:2 },
-    { L:1, m:-1, color:HID, scale:0.38, q:2 },
-    { L:0, m: 0, color:HID, scale:0.26, q:1 },
-    { L:0, m: 0, color:HID, scale:0.22, q:3 },
-    { L:1, m: 1, color:LOW, scale:0.28, q:0 },
-    { L:1, m: 0, color:LOW, scale:0.28, q:0 },
-    { L:1, m:-1, color:LOW, scale:0.28, q:0 },
-  ];
-  return [];
+// ── states = monomials of Sym^L(C⁴) ──────────────────────────
+// A state at level L is a monomial z1^a z2^b z3^c z4^d with a+b+c+d=L.
+// There are C(L+3,3)=S(L+1,3) of them — the exact basis the text enumerates.
+// NO spherical harmonics anywhere: every shape is the 3D projection of a
+// genuine 6D orbit (see electronOrbit). Colour classes (counts unchanged):
+//   • ξ-states (pink): d≥1, carry the z4 / SU(3)-singlet direction.
+//   • the z4-free states (d=0, count C(L+2,2)) split by observable weight
+//     a+b into the 2L+1 observable orbitals (blue) and the L(L−1)/2
+//     lower-j 3D states (green) — a basis labelling, not a visibility split.
+function generateStates(L) {
+  const mon = [];
+  for (let a = 0; a <= L; a++)
+    for (let b = 0; b <= L - a; b++)
+      for (let c = 0; c <= L - a - b; c++)
+        mon.push({ a, b, c, d: L - a - b - c });
+  const xi = mon.filter(m => m.d > 0).map(m => ({ ...m, color: HID }));
+  // z4-free states sorted by observable weight (a+b) desc → first 2L+1 = obs
+  const flat = mon.filter(m => m.d === 0)
+    .sort((p, q) => (q.a + q.b) - (p.a + p.b) || (q.a - p.a) || (q.b - p.b));
+  const nObs = 2 * L + 1;
+  const obs = flat.slice(0, nObs).map(m => ({ ...m, color: OBS }));
+  const low = flat.slice(nObs).map(m => ({ ...m, color: LOW }));
+  return [...obs, ...xi, ...low];
 }
 
 const SHELL_NAMES = ['s','p','d','f'];
@@ -842,33 +778,30 @@ const SHELL_META  = [
 
 let tt = 0;                  // orbit phase
 const SPEED = 1.0;
-// incommensurate angular frequencies → each orbit fills its own lobe
-const F_PHI = 0.80, F_THETA = 0.80 / 1.6180339887;
-// incommensurate rates for the three EXTRA coordinates (x4,x5,x6)
-const F_XI = [Math.SQRT2 * 0.41, 1.7320508 * 0.37, 2.2360680 * 0.31];
-const XI_UNIT = 0.42;   // ξ-extent per z4 factor (world units)
+// The electron is a point on CP³ tracing a deterministic torus orbit:
+//   z_k(t) = ρ_k · exp(i(ω_k t + φ_k)),  k = 1,2,3   (z4 = normalisation)
+// ω_k are fixed incommensurate rates, so each orbit densely fills its torus.
+const OMEGA = [Math.SQRT2, 1.7320508, 2.2360680].map(x => x * 0.55);
+const BETA  = 0.15;   // modulus baseline so no plane fully collapses
+const S6    = 2.7;    // world-unit scale for the six coordinates
 let targetCamDist = 7, actualCamDist = 7;
 
-// Full 6D orbit. Returns the OBSERVABLE position = first three coordinates
-// (always defined); also stamps the complete six-vector onto e.six so the
-// extra three coordinates are genuinely computed, not discarded. For q=0
-// states e.six[3..5]=0 → the orbit lies entirely in observable 3-space.
+// Full 6D orbit. The six real coordinates are (Re z1, Im z1, Re z2, Im z2,
+// Re z3, Im z3); the OBSERVABLE position is the first three. Nothing is
+// discarded — the other three are the same electron's ξ-coordinates, stored
+// on e.six and shown in the readout. Moduli ρ_k come from the monomial
+// weights, so z4 content (which lowers ρ1,ρ2,ρ3) nests a state inward, and
+// the s,p,d,f anisotropy emerges purely from this projection — no harmonics.
 const _v = new THREE.Vector3();
 function electronPoint(e, t) {
-  const phi   = F_PHI * t + e.phi0;
-  const theta = Math.acos(Math.sin(F_THETA * t + e.th0));
-  const val   = realSH(e.L, e.m, theta, phi);
-  const r     = e.radius * Math.abs(val);
-  const st    = Math.sin(theta);
-  e.val = val;
-  const x1 = r*st*Math.cos(phi), x2 = r*Math.cos(theta), x3 = r*st*Math.sin(phi);
-  // extra three coordinates — nonzero only when the state has z4 content (q≥1)
-  const a  = e.xiR;
-  const x4 = a * Math.cos(F_XI[0]*t + e.xi0);
-  const x5 = a * Math.cos(F_XI[1]*t + e.xi0 * 1.7);
-  const x6 = a * Math.cos(F_XI[2]*t + e.xi0 * 2.3);
-  e.six[0]=x1; e.six[1]=x2; e.six[2]=x3; e.six[3]=x4; e.six[4]=x5; e.six[5]=x6;
-  return _v.set(x1, x2, x3);
+  const a1 = OMEGA[0]*t + e.ph[0];
+  const a2 = OMEGA[1]*t + e.ph[1];
+  const a3 = OMEGA[2]*t + e.ph[2];
+  const X1 = e.r1*Math.cos(a1)*S6, X2 = e.r1*Math.sin(a1)*S6;   // z1
+  const X3 = e.r2*Math.cos(a2)*S6, X4 = e.r2*Math.sin(a2)*S6;   // z2
+  const X5 = e.r3*Math.cos(a3)*S6, X6 = e.r3*Math.sin(a3)*S6;   // z3
+  e.six[0]=X1; e.six[1]=X2; e.six[2]=X3; e.six[3]=X4; e.six[4]=X5; e.six[5]=X6;
+  return _v.set(X1, X2, X3);   // observable = first three coordinates
 }
 
 // ── shell switching ───────────────────────────────────────────
@@ -885,17 +818,22 @@ function clearElectrons() {
 function setShell(L) {
   clearElectrons();
   tt = 0;
-  shellData(L).forEach((o, idx) => {
+  generateStates(L).forEach((o, idx) => {
     const g = groupFor(o.color);
     const mesh = makeElectron(o.color); g.add(mesh);
     const trail = makeTrail(o.color);   g.add(trail.line);
-    electrons.push({ L:o.L, m:o.m, color:o.color, radius:o.scale * R0,
-      q:o.q, xiR:o.q * XI_UNIT, xi0: idx * 0.9, six:[0,0,0,0,0,0],
-      mesh, trail, phi0: idx * 0.7, th0: idx * 1.31, val: 1 });
+    const den = L + 4 * BETA;   // L = a+b+c+d ; z4 holds the rest of the norm
+    electrons.push({
+      color: o.color, a:o.a, b:o.b, c:o.c, d:o.d,
+      r1: Math.sqrt((o.a + BETA) / den),
+      r2: Math.sqrt((o.b + BETA) / den),
+      r3: Math.sqrt((o.c + BETA) / den),
+      ph: [idx*0.7, idx*1.31 + 0.4, idx*2.1 + 0.9],
+      six: [0,0,0,0,0,0], mesh, trail });
   });
   // representative electron for the live 6-vector readout: prefer a ξ-state
-  // (q≥1) so the extra coordinates show as nonzero; else the first electron.
-  readoutE = electrons.find(e => e.q > 0) || electrons[0];
+  // (d≥1) so the extra coordinates read nonzero; else the first electron.
+  readoutE = electrons.find(e => e.d > 0) || electrons[0];
   SHELL_NAMES.forEach((n, i) =>
     document.getElementById('btn-' + n).classList.toggle('active', i === L));
   const m = SHELL_META[L];
@@ -986,9 +924,8 @@ function animate() {
     t.geo.attributes.position.needsUpdate = true;
     t.geo.attributes.color.needsUpdate = true;
 
-    // shadow — deposit the observable projection, skipping angular nodes
-    if (deposit && Math.abs(e.val) > 0.05)
-      depositCloud(clouds[e.color], x, y, z);
+    // shadow — accumulate the observable projection of the 6D orbit
+    if (deposit) depositCloud(clouds[e.color], x, y, z);
   }
 
   // live 6-vector readout (a few times/sec): first three = observable,
