@@ -420,7 +420,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 
 Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode equation has no zero-eigenvalue force term.
 
-† The absolute $m_Z$ prediction is $+0.05\%$ (42 MeV) above the measured $91{,}188.0 \pm 2.0$ MeV — a small but genuine overshoot ($+21\sigma$ against that error). The framework's clean, scale-independent prediction in this sector is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$ — a pure combinatorial identity (⭐) with no sector scale in it — which matches PDG ($1.13461 \pm 0.00019$) to 0.03%, $\approx 2\sigma$ (the ratio error dominated by $m_W$, $\pm13$ MeV). The absolute mass additionally inherits the $m_{\rm scale,2}$ derivation uncertainty of the $d=2$ electroweak sector (Part 3 §0.7); the residual is small relative to that sector's known few-percent scale-translation gaps ($\alpha(m_Z)$, $\sin^2\theta_W$).
+† The absolute $m_Z$ prediction is $+0.05\%$ (42 MeV) above the measured $91{,}188.0 \pm 2.0$ MeV — a small but genuine overshoot ($+21\sigma$ against that error). It is a sharp prediction: $m_Z = m_{\rm scale,2}\,S(81,2)$ with $m_{\rm scale,2} = m_e\sqrt{g_{22}/g_{66}}$ an exact multiple of $m_e$, so there is no scale uncertainty to absorb the residual. The framework's clean, scale-independent comparison is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$ — a pure combinatorial identity (⭐) — which matches PDG ($1.13461 \pm 0.00019$) to 0.03%, $\approx 2\sigma$ (the ratio error dominated by $m_W$, $\pm13$ MeV).
 
 **Quantum properties.**
 - **Electromagnetism:** $U(1)$ Hopf fiber holonomy → gauge field $A_\mu$; photon is the connection 1-form.
