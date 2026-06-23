@@ -486,6 +486,7 @@ html, body { margin:0; height:100%; overflow:hidden; }
       <tr><td>f</td><td>3</td><td>20</td><td class="obs-cell">7</td><td class="hid-cell">13</td></tr>
     </tbody>
   </table>
+  <p style="font-size:0.82rem; color:#8b94ac; margin-top:-4px">The counts above are the full \(\mathrm{Sym}^L(\mathbb{C}^4)\) decomposition. The interactive panel draws every standard orbital and a representative set of the additional states (one per \(z_4\)-direction family), so it shows 5 additional orbits at the d- and f-shells rather than the full 5 and 13 — enough to see them nest inside without crowding the view.</p>
 
   <h3>Simplex Identity <span class="status-tag tag-id">⭐ Identity</span></h3>
   <p>The total dimension equals the IDWT simplex number at mode \(n = L+1\) in the d=3 hadronic sector:</p>
@@ -774,62 +775,75 @@ function realSH(L, m, theta, phi) {
 }
 
 // ── deterministic 6D orbit for the additional states (the template's Orbit6D) ──
-// State = monomial z1^a z2^b z3^c z4^d. The orbit is z_k(t)=ρ_k·e^{i(ω_k t+φ_k)}
-// with fixed moduli ρ_k and incommensurate ω_k; the six real coordinates are
-// (Re z1, Im z1, Re z2, Im z2, Re z3, Im z3) and the OBSERVABLE position is the
-// first three. A small baseline keeps z4-heavy states from collapsing to a
-// point (so a pure-z4 state reads as a small uniform sphere, per its meaning).
-const BETA = 0.16, EXTRA_SCALE = 1.7;
+// State = monomial z1^a z2^b z3^c z4^d. Moduli |z_k|=√(weight_k/L), phases
+// advance at incommensurate rates √2,√3,√5. The six real coordinates are
+// (Re z1, Im z1, Re z2, Im z2, Re z3, Im z3); the OBSERVABLE position is the
+// first three. Because each template monomial puts its weight in a single
+// spatial direction, the orbit is a flat ring or an arc — never a tube.
 class Orbit6D {
-  constructor(exponents, idx) {
+  constructor(exponents) {
     const [a, b, c, d] = exponents;
-    const den = (a + b + c + d) + 4 * BETA;
-    this.r1 = Math.sqrt((a + BETA) / den);
-    this.r2 = Math.sqrt((b + BETA) / den);
-    this.r3 = Math.sqrt((c + BETA) / den);
-    this.w1 = Math.SQRT2; this.w2 = Math.sqrt(3); this.w3 = Math.sqrt(5);
-    this.p1 = idx * 0.7; this.p2 = idx * 1.31 + 0.4; this.p3 = idx * 2.1 + 0.9;
+    const L = (a + b + c + d) || 1;
+    this.r1 = Math.sqrt(a / L);
+    this.r2 = Math.sqrt(b / L);
+    this.r3 = Math.sqrt(c / L);
+    this.w1 = Math.sqrt(2); this.w2 = Math.sqrt(3); this.w3 = Math.sqrt(5);
+    this.phase1 = Math.random() * 2 * Math.PI;
+    this.phase2 = Math.random() * 2 * Math.PI;
+    this.phase3 = Math.random() * 2 * Math.PI;
     this.six = [0, 0, 0, 0, 0, 0];
   }
   position(t) {
-    const S = EXTRA_SCALE;
-    const z1r = this.r1 * Math.cos(this.w1*t + this.p1) * S;
-    const z1i = this.r1 * Math.sin(this.w1*t + this.p1) * S;
-    const z2r = this.r2 * Math.cos(this.w2*t + this.p2) * S;
-    const z2i = this.r2 * Math.sin(this.w2*t + this.p2) * S;
-    const z3r = this.r3 * Math.cos(this.w3*t + this.p3) * S;
-    const z3i = this.r3 * Math.sin(this.w3*t + this.p3) * S;
-    this.six[0]=z1r; this.six[1]=z1i; this.six[2]=z2r;
-    this.six[3]=z2i; this.six[4]=z3r; this.six[5]=z3i;
-    return { x: z1r, y: z1i, z: z2r };   // observable = first three coordinates
+    const z1_re = this.r1 * Math.cos(this.w1 * t + this.phase1);
+    const z1_im = this.r1 * Math.sin(this.w1 * t + this.phase1);
+    const z2_re = this.r2 * Math.cos(this.w2 * t + this.phase2);
+    const z2_im = this.r2 * Math.sin(this.w2 * t + this.phase2);
+    const z3_re = this.r3 * Math.cos(this.w3 * t + this.phase3);
+    const z3_im = this.r3 * Math.sin(this.w3 * t + this.phase3);
+    this.six[0]=z1_re; this.six[1]=z1_im; this.six[2]=z2_re;
+    this.six[3]=z2_im; this.six[4]=z3_re; this.six[5]=z3_im;
+    return { x: z1_re, y: z1_im, z: z2_re };   // observable = first three coords
   }
 }
 
-// Two kinds of state per shell, both genuine 6D orbits:
-//   • 'obs'   — the 2L+1 harmonic states → the standard s,p,d,f orbital (realSH).
-//   • 'extra' — the remaining S(L+1,3)−(2L+1) states → 6D orbits (Orbit6D),
-//               the z4 / non-harmonic monomials, nested inside.
+// Two kinds of state per shell, exactly as in the template:
+//   • 'obs'        — the 2L+1 harmonic states → standard s,p,d,f orbital (realSH).
+//   • 'hid'/'low'  — additional states → the deterministic 6D orbit (Orbit6D),
+//                    rendered identically (both are just "additional", pink).
 function shellStates(L) {
-  const out = [];
-  for (let m = -L; m <= L; m++) out.push({ type: 'obs', L, m });
-  const mon = [];
-  for (let a = 0; a <= L; a++)
-    for (let b = 0; b <= L - a; b++)
-      for (let c = 0; c <= L - a - b; c++)
-        mon.push([a, b, c, L - a - b - c]);
-  // keep the most z4/z3-rich monomials as the additional states (they nest in)
-  mon.sort((p, q) => (q[3]+q[2]) - (p[3]+p[2]) || (q[3]-p[3]) || (q[2]-p[2]));
-  mon.slice(0, mon.length - (2*L + 1))
-     .forEach(e => out.push({ type: 'extra', exponents: e }));
-  return out;
+  if (L === 0) return [
+    { type:'obs', L:0, m:0 },
+  ];
+  if (L === 1) return [
+    { type:'obs', L:1, m:1 }, { type:'obs', L:1, m:0 }, { type:'obs', L:1, m:-1 },
+    { type:'hid', exponents:[0,0,0,1] },
+  ];
+  if (L === 2) return [
+    { type:'obs', L:2, m:2 }, { type:'obs', L:2, m:1 }, { type:'obs', L:2, m:0 },
+    { type:'obs', L:2, m:-1 }, { type:'obs', L:2, m:-2 },
+    { type:'hid', exponents:[1,0,0,1] },
+    { type:'hid', exponents:[0,1,0,1] },
+    { type:'hid', exponents:[0,0,1,1] },
+    { type:'hid', exponents:[0,0,0,2] },
+    { type:'low', exponents:[2,0,0,0] },
+  ];
+  if (L === 3) return [
+    { type:'obs', L:3, m:3 }, { type:'obs', L:3, m:2 }, { type:'obs', L:3, m:1 },
+    { type:'obs', L:3, m:0 }, { type:'obs', L:3, m:-1 }, { type:'obs', L:3, m:-2 },
+    { type:'obs', L:3, m:-3 },
+    { type:'hid', exponents:[1,0,0,2] }, { type:'hid', exponents:[0,1,0,2] },
+    { type:'hid', exponents:[0,0,1,2] }, { type:'hid', exponents:[0,0,0,3] },
+    { type:'low', exponents:[2,0,0,1] },
+  ];
+  return [];
 }
 
 const SHELL_NAMES = ['s','p','d','f'];
 const SHELL_META  = [
-  { name:'s shell — L=0', std:1, extra:0,  dim:1  },
-  { name:'p shell — L=1', std:3, extra:1,  dim:4  },
-  { name:'d shell — L=2', std:5, extra:5,  dim:10 },
-  { name:'f shell — L=3', std:7, extra:13, dim:20 },
+  { name:'s shell — L=0', std:1, extra:0, dim:1  },
+  { name:'p shell — L=1', std:3, extra:1, dim:4  },
+  { name:'d shell — L=2', std:5, extra:5, dim:10 },
+  { name:'f shell — L=3', std:7, extra:5, dim:20 },
 ];
 
 let tt = 0;                  // orbit phase
@@ -884,7 +898,7 @@ function setShell(L) {
     if (o.type === 'obs') {
       e.L = o.L; e.m = o.m; e.phi0 = idx * 0.7; e.th0 = idx * 1.31; e.val = 1;
     } else {
-      e.orbit = new Orbit6D(o.exponents, idx);
+      e.orbit = new Orbit6D(o.exponents);
     }
     electrons.push(e);
   });
