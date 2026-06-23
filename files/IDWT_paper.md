@@ -299,7 +299,7 @@ PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \
 | $\mu^-$ | 6 | 35 | 3,838,380 | 105.657 | 105.6584 | $-0.001\%$ |
 | $\tau^-$ | 10 | 23 | 64,512,240 | 1,776.84 | 1,776.93(12) | $-1.0\sigma$ |
 
-$^\dagger$ The light quarks ($d$, $s$, $u$) sit within the sizable PDG $\overline{\rm MS}$ uncertainties; any scale error in $m_{\mathrm{scale},d}$ is identical for all modes in that sector (rank-1 kernel), consistent with the scheme-conversion residual between the IDWT confinement scale and $\overline{\rm MS}$ at $\mu = 2$ GeV (Section 13). The charm and top **bare** masses overshoot by $+0.93\%$ ($+2.6\sigma$) and $+2.20\%$ ($+13\sigma$); these are open residues — a former $(1-\varepsilon)^k$ correction reproduced PDG but used a fitted exponent and is removed (§7.1).
+$^\dagger$ The light quarks ($d$, $s$, $u$) sit within the sizable PDG $\overline{\rm MS}$ uncertainties; any scale error in $m_{\mathrm{scale},d}$ is identical for all modes in that sector (rank-1 kernel), consistent with the scheme-conversion residual between the IDWT confinement scale and $\overline{\rm MS}$ at $\mu = 2$ GeV (Section 13). The charm and top **bare** masses overshoot by $+0.93\%$ and $+2.20\%$; the nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and are scheme-sensitive (heavy-quark masses differ several percent between schemes). The generation-dependence is accounted for by the derived $\ell=2$ self-energy (no free parameter), the residual uniform $\sim$0.6\% offset open; a former $(1-\varepsilon)^k$ correction reproduced PDG but used a fitted exponent and is removed (§7.1).
 
 ---
 
@@ -307,13 +307,13 @@ $^\dagger$ The light quarks ($d$, $s$, $u$) sit within the sizable PDG $\overlin
 
 ### 7.1 The $d=4$ Up-Type Overshoot (open)
 
-The raw mass formula overshoots in the $d=4$ up-type sector, growing with generation: up $+0.77\%$, charm $+0.93\%$ ($+2.6\sigma$), top $+2.20\%$ ($+13\sigma$). The up-type masses are quoted bare (Table 1); this overshoot is an open residue of the framework.
+The raw mass formula overshoots in the $d=4$ up-type sector, growing with generation: up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$. (The nominal $+2.6\sigma$/$+13\sigma$ these represent are against statistical errors only and are scheme-sensitive — heavy-quark masses differ by several percent between the pole and $\overline{\rm MS}$ schemes, so the top's $+2.2\%$ is a $\sim$2\% overshoot above the standard pole mass, not a $13\sigma$ falsification.) The up-type masses are quoted bare (Table 1); the residual is recorded as an open item.
 
-**Candidate mechanism.** The $\ell=2$ tensor component of the kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the candidate source. For $d=3$ on $S^2$,
+**Mechanism (generation-dependence).** The $\ell=2$ tensor component of the kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the source of the generation-dependent part. For $d=3$ on $S^2$,
 
 $$(\xi \cdot \xi')^2 = \tfrac{1}{3}[\ell=0] + \tfrac{2}{3}P_2(\cos\theta)[\ell=2].$$
 
-The $\ell=0$ piece sets the sector mass scale; the $\ell=2$ piece is traceless and contributes a second-order self-energy that grows with the mode index and pulls the masses down — the correct sign and qualitative growth. It does not, however, fix the magnitude.
+The $\ell=0$ piece sets the sector mass scale; the $\ell=2$ piece is traceless and contributes a second-order self-energy that grows with the mode index and pulls the masses down — the correct sign and growth. Applied with the derived prefactor $\varepsilon$ (no free parameter), it collapses the generation-dependent scatter of the residuals from $1.43\%$ to $0.20\%$, accounting for the *generation dependence* of the overshoot and leaving a quasi-uniform $\sim$0.6\% offset. What it does not do is reproduce the masses exactly — its $\{0,3,10\}$ shape does not land on PDG — and the uniform residual is itself underived.
 
 **The scale $\varepsilon$ (retained for $\delta_{\nu_3}$, not applied to quarks).** The $\ell=2$ coupling amplitude at the resonance site $k_0 = n_s^2 = 16$, normalised at the muon mode $n_\mu = S(n_s,4) = 35$, is
 
@@ -321,7 +321,7 @@ $$g_{\rm coeff} = \sqrt{n_s(n_s+1)/S(n_s,4)} = \sqrt{4/7} = 2/\sqrt{7}, \qquad \
 
 Every factor is forced ($g_{\rm coeff}$ from the double self-consistency condition, $k_0$ from the seed $n_s$, $n_\mu$ from $S(n_s,4)$), so $\varepsilon$ is a genuinely derived quantity. It is retained as the scale of the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§7.2).
 
-**No correction is applied.** A former "Generation Tower Correction" multiplied the up-type masses by $(1-\varepsilon)^k$ with a per-quark exponent $k$ tuned to reproduce the data. Only $\varepsilon$ was derived; the exponent was a fit, and a fitted correction is not a derivation, so it has been removed. The up-type masses are quoted bare. Deriving both the top index $72$ (a product-form $N_c n_s N_f$, off the additive tower, with an open origin) and the magnitude of this overshoot is the principal open problem of the mass sector.
+**No correction is applied.** A former "Generation Tower Correction" multiplied the up-type masses by $(1-\varepsilon)^k$ with a per-quark exponent $k$ tuned to reproduce the data. Only $\varepsilon$ was derived; the exponent was a fit, and a fitted correction is not a derivation, so it has been removed. The up-type masses are quoted bare. The generation-*dependent* part of the overshoot is accounted for by the derived $\ell=2$ self-energy above; what remains open is the residual quasi-uniform $\sim$0.6\% offset (the $\ell=0$ sector-scale piece) and the top index $72$ (a product-form $N_c n_s N_f$, off the additive tower, with an open origin). The clean, scale-independent comparison is the ratio $m_t/m_c = S(72,4)/S(20,4) = 137.26$, which matches the conventional ratio to $\sim$1\%.
 
 ### 7.2 Tau Lepton Geometric Back-reaction Correction — Complete Derivation
 

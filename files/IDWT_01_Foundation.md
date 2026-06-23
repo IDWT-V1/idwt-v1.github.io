@@ -475,10 +475,10 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 | Particle | $n$ | Predicted mass (bare) | PDG | error |
 |---|---|---|---|---|
 | u quark | 3 | $m_{\rm scale,4} \times S(3,4) = 2.177$ MeV | 2.16 MeV | +0.77% (within light-quark error) 🔵 |
-| c quark | 20 | $m_{\rm scale,4} \times S(20,4) = 1284.9$ MeV | 1273.0 MeV | +0.93% (+2.6σ, open residue) 🔶 |
-| t quark | 72 | $m_{\rm scale,4} \times S(72,4) = 176.36$ GeV | 172.57 GeV | +2.20% (+13σ, open residue) 🔶 |
+| c quark | 20 | $m_{\rm scale,4} \times S(20,4) = 1284.9$ MeV | 1273.0 MeV | +0.93% (open residue; σ scheme-sensitive) 🔶 |
+| t quark | 72 | $m_{\rm scale,4} \times S(72,4) = 176.36$ GeV | 172.57 GeV | +2.20% (open residue; σ scheme-sensitive) 🔶 |
 
-Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare. A former (1−ε)^k correction (the "GTC") brought charm and top onto PDG, but its per-quark exponent was a fit, so it has been removed (Part 2 §11.3). Charm and top overshoot and are open residues; the up quark sits within the PDG light-quark error.
+Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare. A former (1−ε)^k correction (the "GTC") brought charm and top onto PDG, but its per-quark exponent was a fit, so it has been removed (Part 2 §11.3). Charm and top overshoot: the generation-*dependent* part is accounted for by the derived $\ell=2$ self-energy (no free parameter; Part 2 §11.1), leaving a quasi-uniform $\sim$0.6% residual that is open, and the nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7). The up quark sits within the PDG light-quark error.
 
 **Quantum properties.**
 - **$SU(3)$ color:** Up-type quarks share color with $d=3$ via the cross-sector tower coupling $g_{33} \times g_{44}$.

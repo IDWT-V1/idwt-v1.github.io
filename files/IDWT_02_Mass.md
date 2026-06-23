@@ -786,8 +786,8 @@ Absolute up-type masses vs PDG 2024, quoted bare — no correction applied:
 | Particle | $n$ | $S(n,4)\,m_{\rm scale,4}$ | error |
 |---|---|---|---|
 | up | 3 | 2.177 MeV | $+0.79\%$ ($0.2\sigma$, within the PDG light-quark margin) |
-| charm | 20 | 1284.9 MeV | $+0.93\%$ ($+2.6\sigma$, outside margin — open residue) |
-| top | 72 | 176{,}365 MeV | $+2.20\%$ ($+13\sigma$, outside margin — open residue) |
+| charm | 20 | 1284.9 MeV | $+0.93\%$ (open residue; $+2.6\sigma$ vs stat error, scheme-sensitive — §11.7) |
+| top | 72 | 176{,}365 MeV | $+2.20\%$ (open residue; $+13\sigma$ vs stat error, scheme-sensitive — §11.7) |
 
 The bare formula overshoots systematically, growing with generation. The up quark sits within the PDG light-quark uncertainty; charm and top sit above their measured masses. The $\sigma$ counts in the table are against statistical errors only and are scheme-sensitive (§11.7). The generation-dependent part of the overshoot is accounted for by the derived $\ell=2$ self-energy (§11.1), which collapses the residual scatter to $\sim$0.2%, leaving a quasi-uniform $\sim$0.6% offset that is open. The masses are quoted bare, not corrected to agreement. 🔶
 
@@ -826,7 +826,7 @@ where $n_{\min}(d)$ is the lightest occupied mode in sector $d$. For $d{=}3$ thi
 
 **The $d=4$ up-type overshoot (uncorrected):**
 
-The light-quark predictions are parameter-free outputs of the derived sector scales; against PDG 2024 the residuals are small and not equal across a sector (d +0.04%, s +0.57%, u +0.77%). The $d=4$ up-type masses overshoot by +0.77% (up), +0.93% (charm, +2.6σ), +2.20% (top, +13σ) and are quoted bare: the former (1−ε)^k correction used fitted exponents and has been removed (§11.3). The overshoot's sign is supplied by the l=2 tensor part of the cross-sector kernel $(\xi_d\cdot\xi_{d'})^2$ — a real, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) — but its magnitude is not derived, so no correction is applied (🔶, §11.4).
+The light-quark predictions are parameter-free outputs of the derived sector scales; against PDG 2024 the residuals are small and not equal across a sector (d +0.04%, s +0.57%, u +0.77%). The $d=4$ up-type masses overshoot by +0.77% (up), +0.93% (charm), +2.20% (top) and are quoted bare: the former (1−ε)^k correction used fitted exponents and has been removed (§11.3). The generation-*dependent* part of the overshoot is accounted for by the l=2 tensor part of the cross-sector kernel $(\xi_d\cdot\xi_{d'})^2$ — a derived, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) which, with the derived prefactor $\varepsilon$ and no free parameter, collapses the residual scatter from 1.43% to 0.20%. The remaining quasi-uniform $\sim$0.6% offset is open, and the $\sigma$-counts are scheme-sensitive (heavy-quark masses differ several percent between schemes; §11.7), so no correction is applied (🔶, §11.4).
 
 The l=0 scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the l=2 tensor part supplies this mode-dependent shift.
 

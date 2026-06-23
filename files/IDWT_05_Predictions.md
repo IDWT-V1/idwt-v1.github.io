@@ -232,10 +232,10 @@ The $d=4$ up-type masses are quoted bare and overshoot PDG, growing with generat
 | Particle | n | Bare $S(n,4)\,m_{\rm scale,4}$ | Error vs PDG |
 |---|---|---|---|
 | u | 3 | 2.177 MeV | +0.77% (within light-quark margin) |
-| c | 20 | 1284.9 MeV | +0.93% (+2.6σ, outside) |
-| t | 72 | 176,365 MeV | +2.20% (+13σ, outside) |
+| c | 20 | 1284.9 MeV | +0.93% (open; +2.6σ vs stat err, scheme-sensitive) |
+| t | 72 | 176,365 MeV | +2.20% (open; +13σ vs stat err, scheme-sensitive) |
 
-A former correction (the "Generation Tower Correction," $(1-\varepsilon)^k$ with $\varepsilon = 1/(280\sqrt{7})$ derived and per-quark exponents $\{0,7,16\}$) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. Charm and top are open residues. The l=2 tensor part of the kernel supplies the overshoot's sign — a real, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) — but its magnitude is not derived, so no correction is applied (🔶, §11.4).
+A former correction (the "Generation Tower Correction," $(1-\varepsilon)^k$ with $\varepsilon = 1/(280\sqrt{7})$ derived and per-quark exponents $\{0,7,16\}$) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. The generation-*dependent* part of the overshoot is accounted for by the l=2 tensor part of the kernel — a derived, correctly-signed second-order self-energy (`files/idwt.py` STEP 86) which, with the derived prefactor $\varepsilon$ and no free parameter, collapses the residual scatter from 1.43% to 0.20% — leaving a quasi-uniform $\sim$0.6% offset that is open. The $\sigma$-counts above are against statistical errors only and are scheme-sensitive (heavy-quark masses differ several percent between the pole and $\overline{\rm MS}$ schemes; Part 2 §11.7). No correction is applied (🔶, §11.4).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 

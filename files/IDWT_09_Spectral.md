@@ -141,8 +141,8 @@ Sector $d$ Hilbert series — first seven coefficients:
 
 1. **Non-trivial sector mixing**: cannot be written as a product of sector-local terms.
 2. **$\ell=0\oplus\ell=2$ decomposition**: on $S^{d-1}$,
-$$(\xi\cdot\xi')^2 = \underbrace{\tfrac{1}{d}|\xi|^2|\xi'|^2}_{\ell=0,\;\rm mass\;scale} + \underbrace{\tfrac{d-1}{d}|\xi|^2|\xi'|^2 P_2(\cos\theta)}_{\ell=2,\;\rm GTC},$$
-with the $\ell=0$ part generating sector mass scales (T9) and the $\ell=2$ part generating the $d=4$ up-type self-energy of scale $\varepsilon=1/(280\sqrt{7})$ (T10a, an open residue — the correction it once parameterized is removed).
+$$(\xi\cdot\xi')^2 = \underbrace{\tfrac{1}{d}|\xi|^2|\xi'|^2}_{\ell=0,\;\rm mass\;scale} + \underbrace{\tfrac{d-1}{d}|\xi|^2|\xi'|^2 P_2(\cos\theta)}_{\ell=2,\;\text{self-energy}},$$
+with the $\ell=0$ part generating sector mass scales (T9) and the $\ell=2$ part generating the $d=4$ up-type second-order self-energy of scale $\varepsilon=1/(280\sqrt{7})$ (T10a). With the derived $\varepsilon$ this self-energy accounts for the generation-*dependence* of the up-type overshoot with no free parameter; the residual uniform offset is open, and the former $(1-\varepsilon)^k$ correction it once parameterized is removed (Part 2 §11).
 3. **Rank-1 factorisation**: the coupling matrix $g_{dd'}=v_d v_{d'}$ is rank-one, as required by the bi-invariant structure under $U(d)\times U(d')$.
 
 **Proof sketch.** The $U(d)\times U(d')$-invariant degree-4 ring on $(\xi_d,\xi_{d'})$ has four generators: $|\xi_d|^4$, $|\xi_{d'}|^4$, $|\xi_d|^2|\xi_{d'}|^2$, and $(\xi_d\cdot\xi_{d'})^2$. The first three either fail condition 1 (sector-local) or condition 2 (diagonal in the $\ell$-basis). The fourth satisfies all three. $\square$
@@ -303,7 +303,7 @@ From the 15 IDWT physical masses:
 
 $$\operatorname{Tr}(D^2) = \sum_{i=1}^{15} m_i^2 = 6.165\times10^{10}\ \text{MeV}^2, \qquad \sqrt{\operatorname{Tr}(D^2)} = 248.30\ \text{GeV}.$$
 
-From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3\ \text{GeV}$. The 0.82% gap between $\sqrt{\operatorname{Tr}(D^2)}$ and this scale arises because $\operatorname{Tr}(D^2)$ sums the raw spectral eigenvalues (without GTC perturbative corrections) while $G_F$ is derived from the W mode index and $g_2$ coupling — both are spectral quantities from the same seeds, so agreement is structurally expected and the residual is a spectral normalisation artefact, not a free parameter.
+From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3\ \text{GeV}$. The 0.82% gap between $\sqrt{\operatorname{Tr}(D^2)}$ and this scale arises because $\operatorname{Tr}(D^2)$ sums the raw (bare) spectral eigenvalues while $G_F$ is derived from the W mode index and $g_2$ coupling — both are spectral quantities from the same seeds, so agreement is structurally expected and the residual is a spectral normalisation artefact, not a free parameter.
 
 This is a self-consistency check: both quantities are derived from the same seed structure, so agreement is structurally expected. It is not an independent prediction. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT — the Higgs is a confinement mode of the $d=2$ sector, and there is no quartic scalar potential (Part 5 §3c).
 
@@ -419,7 +419,7 @@ All six sector self-couplings are derived from $n_s=4$, $n_u=3$:
 
 $$\boxed{\varepsilon = \frac{g_{\rm coeff}}{k_0\times n_{\rm mu}} = \frac{2/\sqrt{7}}{16\times35} = \frac{1}{280\sqrt{7}} \approx 0.001350.}$$
 
-A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so the correction is **removed**; the up-type masses are quoted bare and overshoot PDG 2024 (charm $1{,}284.9$ MeV, $+0.93\%$, $+2.6\sigma$; top $176{,}365$ MeV, $+2.20\%$, $+13\sigma$). The $\ell=2$ self-energy supplies the overshoot's sign but not its magnitude (`files/idwt.py` STEP 86), so the overshoot is an open residue (🔶). See Part 2 §11. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
+A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so the correction is **removed**; the up-type masses are quoted bare and overshoot PDG 2024 (charm $1{,}284.9$ MeV, $+0.93\%$; top $176{,}365$ MeV, $+2.20\%$; the $\sigma$-counts are against statistical errors only and scheme-sensitive, Part 2 §11.7). The derived $\ell=2$ self-energy accounts for the generation-*dependence* of the overshoot with no free parameter — with the derived $\varepsilon$ it collapses the residual scatter from 1.43% to 0.20% (`files/idwt.py` STEP 86) — leaving a quasi-uniform $\sim$0.6% offset that is open (🔶). See Part 2 §11. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
 
 **T10b** (Geometric back-reaction correction for $\tau$). At the Gegenbauer critical endpoint (T5), the $d=10$ eigenvalue admits an infinite-series correction resummed through $g_{10,10}=1/n_s$:
 

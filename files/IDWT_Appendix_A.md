@@ -178,10 +178,10 @@ Constants derived from the seeds that appear across multiple derivations.
 
 | Constant | Definition | Value | Appearances |
 |----------|-----------|-------|-------------|
-| $k_0$ | $n_s^2$ | 16 | Gegenbauer resonance site; $g_{33}$ factor; GTC |
+| $k_0$ | $n_s^2$ | 16 | Gegenbauer resonance site; $g_{33}$ factor |
 | $p$ | $S(n_s,3) - n_{\rm up}$ | 17 | Enters $g_{22} = p^2 q/2$ as Dirac eigenstate count |
 | $q$ | $S(n_{\rm up},4) - S(n_{\rm up},3)$ | 5 | Enters $g_{22}$; equals $n_Z - n_W$; equals $n_s+1$; equals $\chi(\mathbb{CP}^4)$ |
-| $\varepsilon$ | $1/(280\sqrt{7})$ | $\approx 0.001350$ | GTC per-quark correction; $\varepsilon\cdot g_{33} = 1/35 = \delta_{\nu_3}$ |
+| $\varepsilon$ | $1/(280\sqrt{7})$ | $\approx 0.001350$ | $\ell=2$ up-type self-energy scale; $\varepsilon\cdot g_{33} = 1/35 = \delta_{\nu_3}$ |
 | back-reaction | $1 + 1/(n_{\rm up}\cdot n_s^2\cdot S(n_s,4))$ | $\approx 1.000595$ | Tau mass resummation factor |
 
 **Multiple characterisations of $k_0$:**
@@ -193,7 +193,7 @@ Constants derived from the seeds that appear across multiple derivations.
 **Back-reaction denominator:**  
 $n_{\rm up} \cdot k_0 \cdot n_\mu = 3 \cdot 16 \cdot 35 = \mathbf{1680} = n_s \cdot n_{\rm up} \cdot (n_s + n_{\rm up}) \cdot S(n_s,3) = 4\cdot3\cdot7\cdot20$. Appears as the resummation denominator for the tau mass correction.
 
-**GTC correction:** $\varepsilon \cdot g_{33} = [1/(280\sqrt{7})] \cdot [8\sqrt{7}] = 8/280 = \mathbf{1/35 = 1/n_\mu}$ exactly. The per-mode GTC shift is the reciprocal of the muon mode index.
+**$\ell=2$ self-energy scale:** $\varepsilon \cdot g_{33} = [1/(280\sqrt{7})] \cdot [8\sqrt{7}] = 8/280 = \mathbf{1/35 = 1/n_\mu}$ exactly — the derived scale of the $\nu_3$ closure $\delta_{\nu_3}$ (Part 2 §9d) and of the $d=4$ up-type $\ell=2$ self-energy (Part 2 §11.1). The per-mode shift is the reciprocal of the muon mode index. (The former $(1-\varepsilon)^k$ up-type "GTC" correction is removed — fitted exponent; Part 2 §11.3.)
 
 ### §7. Sector scales
 
