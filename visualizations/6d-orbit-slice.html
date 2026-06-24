@@ -151,10 +151,9 @@ html,body{ margin:0; height:100%; overflow:hidden; }
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { Line2 } from 'three/addons/lines/Line2.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 
 const FREQS=[2,3,5,7], W1=FREQS[0], WB=4;            // commensurate -> closed orbit
 const PAIRS=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
@@ -169,12 +168,6 @@ container.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(45,W/H,0.1,200); camera.position.set(0,0,16);
 const controls=new OrbitControls(camera,renderer.domElement); controls.enableDamping=true; controls.dampingFactor=0.08;
-// subtle bloom over the whole scene — keeps the transparent background (clearAlpha 0)
-const composer=new EffectComposer(renderer); composer.setPixelRatio(Math.min(devicePixelRatio,2)); composer.setSize(W,H);
-composer.addPass(new RenderPass(scene,camera));
-const bloomPass=new UnrealBloomPass(new THREE.Vector2(W,H),0.55,0.45,0.18);  // strength, radius, threshold
-composer.addPass(bloomPass);
-composer.addPass(new OutputPass());
 scene.add(new THREE.AmbientLight(0x1a1f3a,0.4));
 const dirLight=new THREE.DirectionalLight(0xffffff,1.0); dirLight.position.set(1,2,3); scene.add(dirLight);
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(0.05,16,12),new THREE.MeshBasicMaterial({color:0xffffff})));   // neutral white nucleus
@@ -195,8 +188,10 @@ SHELLS.forEach((sh,idx)=>{
   sh.pos=new Float32Array(NPTS*3);
   sh.trailLen=(sh.name==='f')?TRAIL_F:TRAIL;
   sh.tpos=new Float32Array(sh.trailLen*3); sh.tcol=new Float32Array(sh.trailLen*3);
-  const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.BufferAttribute(sh.tpos,3)); tg.setAttribute('color',new THREE.BufferAttribute(sh.tcol,3));
-  sh.trail=new THREE.Line(tg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+  const tg=new LineGeometry();
+  const tmat=new LineMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,worldUnits:false,linewidth:2});
+  tmat.resolution.set(W,H);
+  sh.trail=new Line2(tg,tmat);
   scene.add(sh.trail);
   sh.electron=new THREE.Mesh(new THREE.SphereGeometry(0.05,16,12),new THREE.MeshBasicMaterial({color:sh.col}));
   scene.add(sh.electron);
@@ -258,13 +253,13 @@ function animate(){
       const a=1-back/(sh.trailLen-1);
       sh.tcol[k*3]=sh.rgb[0]/255*a; sh.tcol[k*3+1]=sh.rgb[1]/255*a; sh.tcol[k*3+2]=sh.rgb[2]/255*a;
     }
-    sh.trail.geometry.attributes.position.needsUpdate=true; sh.trail.geometry.attributes.color.needsUpdate=true;
+    sh.trail.geometry.setPositions(sh.tpos); sh.trail.geometry.setColors(sh.tcol);
     const i=head*3; sh.electron.position.set(sh.pos[i],sh.pos[i+1],sh.pos[i+2]);
   }
-  composer.render();
+  renderer.render(scene,camera);
 }
 animate();
-window.addEventListener('resize',()=>{const w=container.clientWidth,h=container.clientHeight;if(w&&h){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);composer.setSize(w,h);bloomPass.setSize(w,h);frameCamera();}});
+window.addEventListener('resize',()=>{const w=container.clientWidth,h=container.clientHeight;if(w&&h){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);for(const sh of SHELLS)sh.trail.material.resolution.set(w,h);frameCamera();}});
 </script>
 </body>
 </html>
