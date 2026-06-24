@@ -133,13 +133,13 @@ The gauge bosons sit at depths 1–3, built from the product-form seed via the g
 
 There is no projection happening in IDWT. We are not external observers mapping $M_\infty$ onto a separate 3D screen. We are at $d=3$ — inside $M_\infty$, at the coordinate level where the first stable sector constitutes space. Our observable universe is $M_\infty$ at the $d=3$ coordinate level, not a shadow of something else.
 
-Particles with $d > 3$ are not separate from us. Their modes include the $d=3$ coordinates we occupy — those coordinates are a literal subset of every higher sector (§3f, §3i). What we cannot access are the additional d−3 sector-space coordinates their modes also span. We are not outside those coordinates looking in; we simply do not have coordinates there. The distinction matters: a projection implies an external observer with a screen. IDWT has neither. There is one manifold $M_\infty$, one field $\Psi_\infty$, and we are a feature of it at coordinate level $d=3$.
+Particles with $d > 3$ are not separate from us. Their modes include the $d=3$ coordinates we occupy — those coordinates are a literal subset of every higher sector (§3f, §3i). What we cannot access are the additional $d-3$ sector-space coordinates their modes also span. We are not outside those coordinates looking in; we simply do not have coordinates there. The distinction matters: a projection implies an external observer with a screen. IDWT has neither. There is one manifold $M_\infty$, one field $\Psi_\infty$, and we are a feature of it at coordinate level $d=3$.
 
 ### 2.2 Observable and Sector Coordinates
 
 The down-type quarks ($d=3$) have sector dimensions that are exactly our three: all of their vibrational activity is in our dimensions, with no component eluding measurement. The photon ($d=2$) has exactly two directions — fewer than our three — but it is not pinned to our three coordinates: it oscillates in its two and moves perpendicular to them, and that perpendicular motion runs through the full manifold, not only the one leftover direction our three dimensions provide (§3i, Part 3 §14).
 
-For particles with $d > 3$, the mode vibrates across d dimensions, of which only 3 are ours. The electron ($d=6$) has 3 observable dimensions and 3 sector dimensions we do not occupy. The tau ($d=10$) has 3 observable and 7 sector dimensions beyond $d=3$. We measure the $d=3$ component of their activity; the rest vibrates in coordinates we do not occupy. What a $d=3$ observer resolves is the $d=3$ cross-section of the full mode — for the electron, the 3D shadow of its 6D orbit (Part 8).
+For particles with $d > 3$, the mode vibrates across $d$ dimensions, of which only $3$ are ours. The electron ($d=6$) has $3$ observable dimensions and $3$ sector dimensions we do not occupy. The tau ($d=10$) has $3$ observable and $7$ sector dimensions beyond $d=3$. We measure the $d=3$ component of their activity; the rest vibrates in coordinates we do not occupy. What a $d=3$ observer resolves is the $d=3$ cross-section of the full mode — for the electron, the $3$D shadow of its $6$D orbit (Part 8).
 
 What an observer at $\xi^0$ can resolve does not affect what the particle is. Mass and coupling are eigenvalues of each particle's sector manifold (T0, Part 9) — intrinsic, and independent of observer position.
 
@@ -147,7 +147,7 @@ What an observer at $\xi^0$ can resolve does not affect what the particle is. Ma
 
 $$\rho(r, t) = \int |\Psi_\infty(r, \xi, t)|^2\,d\xi$$
 
-The observable probability density at position r is the marginal of $|\Psi_\infty|^2$ over the sector coordinates. Since our measurements are mediated by $d=3$ interactions and we cannot independently access the sector-space coordinates, the density we measure is the integral of $|\Psi_\infty|^2$ over ξ — the sector-space marginal, not the full function.
+The observable probability density at position $r$ is the marginal of $|\Psi_\infty|^2$ over the sector coordinates. Since our measurements are mediated by $d=3$ interactions and we cannot independently access the sector-space coordinates, the density we measure is the integral of $|\Psi_\infty|^2$ over $\xi$ — the sector-space marginal, not the full function.
 
 This is not a separate postulate; it follows from the fact that our measurements access only the $d=3$ coordinate marginal. An electron is not a cloud in 3D — it is a structured mode orbiting a nucleus in 6 dimensions whose orbit's $d=3$ marginal appears as a diffuse probability density. Entangled particles are features of $\Psi_\infty$ that are close in the sector-space coordinates even when their $d=3$ marginals are far apart.
 
@@ -198,7 +198,7 @@ $d = 2$ ($\mathbb{CP}^1$) is the $U(1)$ Hopf fiber base required by the chain. T
 
 **Step 3 — Termination rules exclude all remaining spaces.**
 
-*Rule A (coupling termination).* $g_{66} = 1/n_s$ is the composite ratio — a direct output of the seed ($\chi(\mathbb{CP}^3)=n_s$), not a kernel fixed-point coupling — so the coupling-construction chain terminates at $d=6$. The band $d=7,8,9$ acquires no self-coupling and is excluded, all three cases closed 🔵: $d=8$ ($\mathbb{CP}^4$) is the gap in the Euler-characteristic sequence of the active even sectors ($\chi=N_c+2=5$, no fixed point for $g_{88}$; Part 9 T15b); $d=9$ ($S^9$) inherits that gap — its $S^1$-invariant block carries a $\mathbb{CP}^4$-symmetric kernel self-consistency with no admissible coupling; $d=7$ ($S^7$) is excluded by the deposit level-count (🔵; `idwt.py` STEP 100): the MC-2 deposit bijection (STEP 74e, ✅) sites physical modes at $j=\alpha+\beta+2$ for $\alpha\in\{0,1,2\}$, $\beta\in\{0,1,2,3\}$, with maximum degree $p=2+3=5$ — exactly six levels, saturated by the six elements of $D$; a seventh sector would need $p=6$, requiring $\alpha\geq3$ or $\beta\geq4$, impossible under U(2)$\times$U(3). Separately, $d=7$ cannot replace $d=10$ because Rule B fixes the Gegenbauer endpoint independently. Rule A stands 🔵.
+*Rule A (coupling termination).* $g_{66} = 1/n_s$ is the composite ratio — a direct output of the seed ($\chi(\mathbb{CP}^3)=n_s$), not a kernel fixed-point coupling — so the coupling-construction chain terminates at $d=6$. The band $d=7, 8, 9$ acquires no self-coupling and is excluded, all three cases closed 🔵: $d=8$ ($\mathbb{CP}^4$) is the gap in the Euler-characteristic sequence of the active even sectors ($\chi=N_c+2=5$, no fixed point for $g_{88}$; Part 9 T15b); $d=9$ ($S^9$) inherits that gap — its $S^1$-invariant block carries a $\mathbb{CP}^4$-symmetric kernel self-consistency with no admissible coupling; $d=7$ ($S^7$) is excluded by the deposit level-count (🔵; `idwt.py` STEP 100): the MC-2 deposit bijection (STEP 74e, ✅) sites physical modes at $j=\alpha+\beta+2$ for $\alpha\in\{0,1,2\}$, $\beta\in\{0,1,2,3\}$, with maximum degree $p=2+3=5$ — exactly six levels, saturated by the six elements of $D$; a seventh sector would need $p=6$, requiring $\alpha\geq 3$ or $\beta\geq 4$, impossible under $\mathrm{U}(2)\times\mathrm{U}(3)$. Separately, $d=7$ cannot replace $d=10$ because Rule B fixes the Gegenbauer endpoint independently. Rule A stands 🔵.
 
 *Rule B (Gegenbauer criticality).* The Jacobi coupling $b_{k_0}(d) = \sqrt{k_0(k_0+d-1)}/(2k_0+d-2)$ must satisfy $b_{k_0} \geq 1/2$ for a sector to support stable bound-state modes. The unique solution to $b_{k_0}(d) = 1/2$ on the complex Hopf chain is:
 $$4k_0 = (d-2)^2 \quad \Longrightarrow \quad 4\times 16 = 64 = (10-2)^2, \quad d = 10.$$
@@ -209,11 +209,11 @@ $$D = \underbrace{\{2,3,4,5\}}_{\text{Hopf pairs } n=1,2} \cup \underbrace{\{6\}
 
 **Remark.** The lepton sector coupling $g_{66} = 1/n_s = 1/4$ is derived from the composite $n_s=4$ alone — no hypercharge assignment enters.
 
-**Remark — two qualitatively distinct types of inactive dimension.** $d\geq11$ and $d\in\{7,8,9\}$ are inactive for fundamentally different reasons, and the distinction matters.
+**Remark — two qualitatively distinct types of inactive dimension.** $d \geq 11$ and $d \in \{7,8,9\}$ are inactive for fundamentally different reasons, and the distinction matters.
 
-Sectors $d\geq11$ are **subcritical** ($b_{k_0} < 1/2$): localization is geometrically impossible regardless of any coupling. Modes cannot bind; they disperse into the infinite-dimensional bulk. This is the stronger exclusion — it holds unconditionally.
+Sectors $d \geq 11$ are **subcritical** ($b_{k_0} < 1/2$): localization is geometrically impossible regardless of any coupling. Modes cannot bind; they disperse into the infinite-dimensional bulk. This is the stronger exclusion — it holds unconditionally.
 
-Sectors $d\in\{7,8,9\}$ are **supercritical** ($b_{k_0} > 1/2$): localization would be geometrically permissible if a coupling were present. They are absent from the active sector set because IDWT's coupling construction terminates at $d=6$: $d=8$ and $d=9$ are blocked by the $\chi=5$ gap, and $d=7$ is excluded by the deposit level-count (STEP 100, 🔵). No active sector geometry is established for any of the three, so no eigenmodes are generated. This is an exclusion by the coupling-construction structure, not a geometric prohibition — the Gegenbauer criterion does not exclude these sectors.
+Sectors $d \in \{7,8,9\}$ are **supercritical** ($b_{k_0} > 1/2$): localization would be geometrically permissible if a coupling were present. They are absent from the active sector set because IDWT's coupling construction terminates at $d=6$: $d=8$ and $d=9$ are blocked by the $\chi=5$ gap, and $d=7$ is excluded by the deposit level-count (STEP 100, 🔵). No active sector geometry is established for any of the three, so no eigenmodes are generated. This is an exclusion by the coupling-construction structure, not a geometric prohibition — the Gegenbauer criterion does not exclude these sectors.
 
 **Note on the top index.** The top index admits a product form in the Euler characteristics of the three Kähler matter sectors: $n_{\rm top} = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = N_c \times n_s \times N_f = 3\times4\times6 = 72$ (⭐ arithmetic identity). This product is a closed form for the value, not a derivation of why the $d=4$ sector resonates there: a product of Euler characteristics is a count, and the search for a $\mathbb{CP}^2$ resonance/criticality condition that singles out $n=72$ by minimality is open — every non-circular spectral test returns a smaller first solution, and the Kähler analogue of the Gegenbauer criticality that fixes the bottom site has no finite threshold at $72$. The top index is accepted as a seed input — on the same footing as $n_d=1$ and $n_u=3$ — with no further derivation of its resonance origin in progress (Fedge 2026-06-18). The value $72$ is not in the image of $S(n,d)$ — no $(n,d)$ gives $S(n,d)=72$ — so the top is a product-form site rather than a hockey-stick tower output, alongside the bottom beat $k_0=n_s^2=16$. Among the six quarks these are the only two not given by a single $S(n,d)$ value (the others are $1,3,4,20$); both take product closed forms. Several other indices are also not single $S$-values — $13,22,23$ for the leptons/neutrinos and $76,81,95$ for the bosons — but those are additive simplex sums and Vandermonde $g$-steps, not products; the product character among the quarks is what distinguishes $\{16,72\}$ (Part 9 T0.5).
 
@@ -305,7 +305,7 @@ The two uniqueness results are parallel:
 
 **Convergence on $d=10$.** Two independent routes — Hopf chain (topology) and Gegenbauer criticality (algebra) — both give $d=10$.
 
-The spinor type per sector follows from Clifford algebra periodicity (Clifford algebra, mod 8). The $d=10$ sector carries a Majorana-Weyl spinor (16 real components, d mod 8 = 2); the other sectors carry Weyl, Majorana, or Dirac spinors as determined by their d mod 8 (Part 8 §2.1).
+The spinor type per sector follows from Clifford algebra periodicity (Clifford algebra, mod 8). The $d=10$ sector carries a Majorana-Weyl spinor (16 real components, $d \bmod 8 = 2$); the other sectors carry Weyl, Majorana, or Dirac spinors as determined by their $d \bmod 8$ (Part 8 §2.1).
 
 These sector dimensions are not chosen. They are the unique sequence produced by the complex Hopf fibration chain $S^1\to S^{2n+1}\to\mathbb{CP}^n$:
 
@@ -317,7 +317,7 @@ These sector dimensions are not chosen. They are the unique sequence produced by
 
 $d=6$ arises as $\mathbb{CP}^3$, the base space of the next complex Hopf fibration $S^1\to S^7\to\mathbb{CP}^3$. $\mathbb{CP}^3$ has real dimension 6. $d=7$ (the total space $S^7$) is excluded from the IDWT sector set for two consistent reasons: (i) geometrically, $S^7$ is the total space of the quaternionic Hopf fibration $S^3\to S^7\to S^4$ and is fully accounted for by the $d=4$ and $d=3$ sectors already present; (ii) algebraically, Hopf universality (T9b) is a consistency relation between active sector pairs, not an activation mechanism, and any activation route treating the $d=6$ and $d=10$ bases symmetrically would equally activate $S^{11}$ over $\mathbb{CP}^5$, which the $d=11$ endpoint excludes (Part 9 T3 Rule A; the open residual is recorded in Part 6). Both routes reach the same conclusion.
 
-$d=10$ arises as $\mathbb{CP}^5$ = $SU(6)$/U(5), the next step in the complex projective chain beyond $\mathbb{CP}^3$. Its sector dimension $d=10$ is fixed by the Sector Set Theorem (§3a) — $d=10 = 2(N_f-1)$ where $N_f = n_{\rm top}/(N_c \times n_s) = 6$ — and confirmed independently by the Gegenbauer criticality condition (§3b), which shows that $b_{k_0}(d) = 1/2$ is achieved uniquely at $d=10$.
+$d=10$ arises as $\mathbb{CP}^5$ = $\mathrm{SU}(6)/\mathrm{U}(5)$, the next step in the complex projective chain beyond $\mathbb{CP}^3$. Its sector dimension $d=10$ is fixed by the Sector Set Theorem (§3a) — $d=10 = 2(N_f-1)$ where $N_f = n_{\rm top}/(N_c \times n_s) = 6$ — and confirmed independently by the Gegenbauer criticality condition (§3b), which shows that $b_{k_0}(d) = 1/2$ is achieved uniquely at $d=10$.
 
 The sequence terminates at $d=10$ because any $d > 10$ puts the composite resonance site $k_0 = n_s^2$ in the evanescent (subcritical) regime — stable eigenmodes cannot form.
 
@@ -378,9 +378,9 @@ For the IDWT sectors with $k_0 = n_s^2 = 16$ this evaluates to:
 
 **Proof.**  $b = 1/2 \Longleftrightarrow 4k_0(k_0+d-1) = (2k_0+d-2)^2 \Longleftrightarrow 4k_0(d-1) - 4k_0(d-2) = (d-2)^2 \Longleftrightarrow 4k_0 = (d-2)^2$.  With $k_0 = n_s^2 = 16$: $d = 2 + 2\sqrt{16} = 2 + 2n_s = 10$. □
 
-**Monotonicity.** $b_{k_0}(d)$ is strictly decreasing in d. $d=10$ is therefore the **last** sector with $b_{k_0} \geq 1/2$. For $d ≥ 11$ the coupling is subcritical: the resonance site $k_0$ falls outside the chain's natural coupling range and the sector cannot propagate.
+**Monotonicity.** $b_{k_0}(d)$ is strictly decreasing in $d$. $d=10$ is therefore the **last** sector with $b_{k_0} \geq 1/2$. For $d \geq 11$ the coupling is subcritical: the resonance site $k_0$ falls outside the chain's natural coupling range and the sector cannot propagate.
 
-**Physical interpretation.** In the Gegenbauer recurrence, $b = 1/2$ is the critical coupling where a resonance site sits precisely at the boundary between propagating and evanescent regimes. All active IDWT sectors ($d = 2,\ldots,6$ and $d = 10$) are at or above critical at $k_0$. Sectors $d=7$,8,9 are also supercritical ($b > 1/2$) — localization would be geometrically permissible — but IDWT's coupling construction does not reach them (Rule A), so no active sector geometry is established there. This is distinct from $d \geq 11$, where subcriticality ($b < 1/2$) means localization is geometrically impossible regardless of any coupling: modes fall into the evanescent regime and cannot propagate through the chain at $k_0$.
+**Physical interpretation.** In the Gegenbauer recurrence, $b = 1/2$ is the critical coupling where a resonance site sits precisely at the boundary between propagating and evanescent regimes. All active IDWT sectors ($d = 2,\ldots,6$ and $d = 10$) are at or above critical at $k_0$. Sectors $d=7, 8, 9$ are also supercritical ($b > 1/2$) — localization would be geometrically permissible — but IDWT's coupling construction does not reach them (Rule A), so no active sector geometry is established there. This is distinct from $d \geq 11$, where subcriticality ($b < 1/2$) means localization is geometrically impossible regardless of any coupling: modes fall into the evanescent regime and cannot propagate through the chain at $k_0$.
 
 **Sector phase delay consequence.** The sector phase delay correction $\tau_d = 1/(2\sqrt{k_0+d})$ is proportional to $(b_{k_0} - 1/2)/b_{k_0}^2$. For $d = 10$ this correction **vanishes identically** — the leading-order sector phase delay is exact for the terminal sector. For $d = 3$ the correction is $-0.67\%$ and goes in the wrong direction for the $\rho$ meson, confirming that the $+0.069\%$ residual in the $\rho$ prediction is a genuine prediction floor, not a removable sector phase delay artifact.
 
@@ -401,7 +401,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 
 ---
 
-#### d = 2 — Electroweak Sector
+#### $d = 2$ — Electroweak Sector
 
 **Geometry.** $\mathbb{CP}^1$ = $S^2$ (globally); $S^3$ Hopf fibration over $S^2$ with $U(1)$ fiber. Hopf fiber phase → electromagnetic potential $A_\mu = \partial_\mu\theta$, curvature $\to F_{\mu\nu}$. $SU(2)_L$ acts on the base $\mathbb{CP}^1$.
 
@@ -433,7 +433,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 
 ---
 
-#### d = 3 — Hadronic Sector (Down-Type Quarks)
+#### $d = 3$ — Hadronic Sector (Down-Type Quarks)
 
 **Geometry.** $S^3$ (round); isometry $SU(2)\times SU(2) \cong SO(4)$. Color charge by coordinate containment inside $\Xi_4$ (Part 3 §2). Confinement: $E_{\rm conf} = \lambda_c|\vec{N}|$.
 
@@ -452,17 +452,17 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the unique triple-coincidence site $k_0 = n_s^2 = 16$.
 
 **Quantum properties.**
-- **$SU(3)$ color:** Down-type quarks carry color via coordinate containment inside $\Xi_4$; the $SU(3)$ symmetry arises from the $\mathbb{CP}^2$ ($d=4$) isometry. They transform in the fundamental representation.
+- **$\mathrm{SU}(3)$ color:** Down-type quarks carry color via coordinate containment inside $\Xi_4$; the $\mathrm{SU}(3)$ symmetry arises from the $\mathbb{CP}^2$ ($d=4$) isometry. They transform in the fundamental representation.
 - **Confinement:** Scattering states are non-normalizable — not bound states — so they do not appear in the physical spectrum; all physical modes are confined.
-- **Cabibbo angle:** $\sin\theta_C = (1+1/240)/\sqrt{S(4,3)} = 0.22454$ (PDG: 0.22450, +0.09σ). The 1/240 is the $\mathbb{CP}^1$ sector curvature correction.
+- **Cabibbo angle:** $\sin\theta_C = (1+1/240)/\sqrt{S(4,3)} = 0.22454$ (PDG: 0.22450, $+0.09\sigma$). The $1/240$ is the $\mathbb{CP}^1$ sector curvature correction.
 - **Baryon number:** Topological winding number of the $S^3$ mode.
-- **Coupling filter:** Left-handed weak isospin. The $SO(4) = SU(2)_L \times SU(2)_R$ isometry of $S^3$ gives left-handed W coupling and leaves the right-handed component decoupled from the weak interaction. Color coupling is inherited derivatively via coordinate containment inside $\Xi_4$, not from $S^3$ itself.
+- **Coupling filter:** Left-handed weak isospin. The $\mathrm{SO}(4) = \mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ isometry of $S^3$ gives left-handed W coupling and leaves the right-handed component decoupled from the weak interaction. Color coupling is inherited derivatively via coordinate containment inside $\Xi_4$, not from $S^3$ itself.
 
 **Spectral.** $\zeta_3(1) = 3/2$, $\zeta_3(0) = -3/2$, $a_{03} \approx 1.623$.
 
 ---
 
-#### d = 4 — Up-Type Quark Sector
+#### $d = 4$ — Up-Type Quark Sector
 
 **Geometry.** $\mathbb{CP}^2$ (complex projective plane); local symmetry U(2). Kähler structure provides $\gamma_5$ for left-handed chirality. The $l=2$ kernel scale $\varepsilon = 1/(280\sqrt{7})$ arises from the $\mathbb{CP}^2$ geometry; it is no longer applied as an up-type quark mass correction (Part 2 §11).
 
@@ -481,10 +481,10 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare, with no correction applied. A former (1−ε)^k correction (the "GTC") brought charm and top onto PDG, but its per-quark exponent was a fit, so it has been removed (Part 2 §11.3). The nominal $+2.6\sigma$/$+13\sigma$ for charm and top are against statistical errors only and scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7); once that scheme spread is included, the up quark and charm sit within experimental margins, while the top remains a $\sim$2% overshoot above the standard pole mass.
 
 **Quantum properties.**
-- **$SU(3)$ color:** Up-type quarks share color with $d=3$ via the cross-sector tower coupling $g_{33} \times g_{44}$.
-- **Electric charge +2/3:** From Kähler index and U(2) representation theory (Part 3 §4).
+- **$\mathrm{SU}(3)$ color:** Up-type quarks share color with $d=3$ via the cross-sector tower coupling $g_{33} \times g_{44}$.
+- **Electric charge $+2/3$:** From Kähler index and $\mathrm{U}(2)$ representation theory (Part 3 §4).
 - **Chirality:** $\mathbb{CP}^2$ Kähler $\gamma_5$ → W couples to left-handed component only.
-- **Up-type overshoot (open):** the bare up-type masses run high, growing with generation (charm +0.93%, top +2.20%); no correction is applied. A former $(1-\varepsilon)^k$ correction is removed — its exponent was a fit (Part 2 §11.3). The $\sigma$-counts are scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7): once that spread is included the up quark and charm sit within experimental margins, while the top remains a $\sim$2% overshoot above the standard pole mass. Charm and top are quoted bare.
+- **Up-type overshoot (open):** the bare up-type masses run high, growing with generation (charm $+0.93\%$, top $+2.20\%$); no correction is applied. A former $(1-\varepsilon)^k$ correction is removed — its exponent was a fit (Part 2 §11.3). The $\sigma$-counts are scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7): once that spread is included the up quark and charm sit within experimental margins, while the top remains a $\sim 2\%$ overshoot above the standard pole mass. Charm and top are quoted bare.
 - **Coupling filter:** Color conservation. $\chi(\mathbb{CP}^2) = 3$ gives $N_c = 3$ — the number of independent color coupling handles. All processes must conserve color; isolated color-nonsinglet states are geometrically forbidden. Confinement is this filter operating at the level of which asymptotic states can be constructed, not a dynamical suppression.
 
 **Spectral.** $\zeta_4(1) = 4/3$, $\zeta_4(0) = -2$, $a_{04} \approx 2.006$.
