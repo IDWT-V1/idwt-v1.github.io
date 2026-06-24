@@ -748,7 +748,7 @@ The spinor structure of $\Psi_\infty$ means the quantum number structure of the 
 | Left-handed weak coupling | Kähler $\gamma_5$ selects holomorphic half of each sector spinor | §7 above |
 | Quark chirality ($u_L \neq u_R$) | $\mathbb{CP}^2$ Kähler chirality splits 4-spinor into 2L + 2R | §7 above |
 | Lepton chirality ($e_L \neq e_R$) | $\mathbb{CP}^3$ Kähler chirality splits 8-spinor into 4L + 4R | §7 above |
-| Neutrinos are Dirac | $d=5$ has d mod 8 = 5; Majorana spinors forbidden | Clifford periodicity |
+| Neutrinos are Dirac | $d=5$ has $d \bmod 8 = 5$; Majorana spinors forbidden | Clifford periodicity |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (§8, §13) | ✅ |
 | 0νββ rate = 0 | Follows from Dirac neutrino prediction | Falsifiable |
 
