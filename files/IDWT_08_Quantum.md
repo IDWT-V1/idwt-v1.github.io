@@ -578,14 +578,14 @@ Under the subgroup chain $SU(4) \supset SU(3) \supset SO(3)$, these states split
 | Class | Count | Description |
 |---|---|---|
 | Observable | 2L+1 | Harmonic degree-L polynomials in $(z_1, z_2, z_3)$ — the standard s, p, d, f orbitals |
-| $\mathbb{CP}^3$-hidden | L(L+1)(L+2)/6 | States with $z_4$ factors — angular momentum in the $\mathbb{CP}^3$ fibre direction |
+| ξ-states | L(L+1)(L+2)/6 | States with $z_4$ factors — angular momentum in the $\mathbb{CP}^3$ fibre direction |
 | Lower-j | L(L−1)/2 | Non-harmonic polynomials in $(z_1, z_2, z_3)$; already counted in lower shells |
 
 **Counting Theorem. ⭐** The observable count 2L+1 is a pure combinatorial identity — the harmonic component of $\mathrm{Sym}^L(\mathbb{C}^4)$ under SO(3). It requires no dynamics.
 
-**Lemma 2 — ξ-Orthogonality. ✅** For any 3D operator $O(r,\nabla_r)$ and any $\mathbb{CP}^3$-hidden state $|\text{hid}\rangle$ carrying $z_4$-direction angular momentum:
+**Lemma 2 — ξ-Orthogonality. ✅** For any 3D operator $O(r,\nabla_r)$ and any ξ-state $|\xi\rangle$ carrying $z_4$-direction angular momentum:
 
-$$\langle\text{hid}|O|\text{obs}\rangle = 0$$
+$$\langle\xi|O|\text{obs}\rangle = 0$$
 
 The $z_4$ factor integrates to zero over the $\mathbb{CP}^3$ fibre by spherical harmonic orthogonality. This single result derives, as structural consequences with no additional input:
 
@@ -595,7 +595,7 @@ The $z_4$ factor integrates to zero over the $\mathbb{CP}^3$ fibre by spherical 
 - Fine structure: standard Dirac corrections unmodified by sector geometry
 - Hyperfine structure: standard result unmodified
 
-**E1 selection rules — explicit derivation. ✅** The electric-dipole operator $H_{E1} = -e\,\mathbf{r}\cdot\hat{\boldsymbol{\varepsilon}}$ is a rank-1 SO(3) tensor $T^{(1)}_q$ with parity $-1$ under $\mathbf{r} \to -\mathbf{r}$. By Marginal Exactness (Part 11 §6.1), every matrix element of a 3D operator between $d=6$ electron states reduces to the 3D orbital matrix element; the hidden sector coordinates integrate to zero by Lemma 2. The Wigner–Eckart theorem for SO(3) then gives:
+**E1 selection rules — explicit derivation. ✅** The electric-dipole operator $H_{E1} = -e\,\mathbf{r}\cdot\hat{\boldsymbol{\varepsilon}}$ is a rank-1 SO(3) tensor $T^{(1)}_q$ with parity $-1$ under $\mathbf{r} \to -\mathbf{r}$. By Marginal Exactness (Part 11 §6.1), every matrix element of a 3D operator between $d=6$ electron states reduces to the 3D orbital matrix element; the ξ-state coordinates integrate to zero by Lemma 2. The Wigner–Eckart theorem for SO(3) then gives:
 
 $$\langle L', M' | T^{(1)}_q | L, M \rangle = \langle L, M; 1, q | L', M' \rangle \, \langle L' \| T^{(1)} \| L \rangle$$
 
@@ -605,13 +605,13 @@ $$\Delta L = \pm 1, \quad \Delta M = 0, \pm 1$$
 
 $\Delta L = 0$ is forbidden by parity for all $L$. This is verified numerically in `files/idwt.py` STEP 67.
 
-**Status: ✅** The Bohr spectrum, orbit degeneracies, and all selection rules are structural consequences of the $\mathbb{CP}^3$ geometry and the exact potential separability of Lemma 1. No new parameters beyond $\alpha$ and $m_e$ (both derived). The explicit $SU(4)$ bases through the f-shell, the Simplex Identity, and interactive orbit visualisations are in the companion page *Atomic Orbits as $\mathbb{CP}^3$ Projection* (visualizations/6d-orbit-slice.html).
+**Status: ✅** The Bohr spectrum, orbit degeneracies, and all selection rules are structural consequences of the $\mathbb{CP}^3$ geometry and the exact potential separability of Lemma 1. No new parameters beyond $\alpha$ and $m_e$ (both derived). The explicit $SU(4)$ bases through the f-shell, the Simplex Identity, and interactive orbit visualisations are in the companion page *Atomic Orbitals as Resonant $\mathbb{CP}^3$ Orbits* (visualizations/6d-orbit-slice.html).
 
-**$\mathbb{CP}^3$-hidden states — falsifiable prediction. ✅** $\mathbb{CP}^3$-hidden orbit states exist at every shell $L \geq 1$ (one hidden state in the p-shell, four in the d-shell, ten in the f-shell, …). Lemma 2 makes them strictly inaccessible to every apparatus operating in $\mathbb{R}^3$ — not merely undetected but impossible to couple to at any order, any energy, by any mechanism. Any measured coupling to a $z_4$-direction state would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
+**ξ-states — falsifiable prediction. ✅** ξ-states exist at every shell $L \geq 1$ (one in the p-shell, four in the d-shell, ten in the f-shell, …). Every electron in a ξ-state has a nonzero 3D charge density $\rho(r) = \int |\Psi(r,\xi)|^2\,d\xi \geq 0$ — a definite location in ordinary space. What Lemma 2 establishes is that the off-diagonal matrix element $\langle\xi|O|\text{obs}\rangle = 0$ for any 3D operator $O$: ξ-states decouple from the standard orbitals, adding no spectral lines, no perturbations to fine/hyperfine structure, and no admixture into Zeeman or Stark splittings. The electrons are always visible; only the $z_4$-direction angular momentum is not accessible to 3D apparatus. Any measured coupling of a 3D operator to a $z_4$-direction state — a new spectral line sourced by ξ-state admixture — would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
 
 ### 14.4 What Opens From Here
 
-**The full orbit geometry in $\mathbb{CP}^3$.** The orbit structure — quantum numbers, energy spectrum, degeneracy counts, selection rules, and the existence and undetectability of hidden states — is fully derived from the $\mathbb{CP}^3$ geometry. What has not been worked out is the geometric description of the orbit trajectories themselves: what a 1s, 2p, or 3d orbit looks like as a path in $\mathbb{CP}^3$, how it samples the $z_4$ direction, and what the $SU(4)$ multiplet structure looks like in terms of actual trajectories rather than representation theory. That is the open problem. 🔶
+**The full orbit geometry in $\mathbb{CP}^3$.** The orbit structure — quantum numbers, energy spectrum, degeneracy counts, selection rules, and the existence and decoupling of ξ-states — is fully derived from the $\mathbb{CP}^3$ geometry. What has not been worked out is the geometric description of the orbit trajectories themselves: what a 1s, 2p, or 3d orbit looks like as a path in $\mathbb{CP}^3$, how it samples the $z_4$ direction, and what the $SU(4)$ multiplet structure looks like in terms of actual trajectories rather than representation theory. That is the open problem. 🔶
 
 **Multi-electron atoms.** The second electron adds electron-electron Coulomb repulsion — the $U(1)$ self-coupling of the wave on the $d=2$ coordinates the two $d=6$ electron resonances share. Both electrons carry the same vertex ($Q=-1$, same coupling). The two-electron Hamiltonian, helium ground state, and Aufbau principle are worked out in §16; the hydrogen molecule and covalent bond follow in §17.
 
