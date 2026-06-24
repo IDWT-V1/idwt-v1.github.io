@@ -8124,6 +8124,42 @@ _rings_129 = {N: N - 1 for N in range(1, 5)}      # n_s 1..4 -> 0,1,2,3 rings
 
 
 # =============================================================================
+# STEP 130 -- GENERATING HAMILTONIAN OF THE 6D ORBIT (Bloch/coadjoint flow)
+# =============================================================================
+# The 6D orbit of STEP 129 is the Hamiltonian flow on (CP^3, omega_FS) of the
+# linear-in-generators ("Bloch"/coadjoint) Hamiltonian
+#     H(z) = <z|M|z> / <z|z>,  M Hermitian 4x4 (an su(4)+scalar generator),
+# whose flow is z(t) = exp(-i M t) z(0), along which H is conserved.  This
+# upgrades the construction from kinematics to a closed conserved Hamiltonian
+# system.  Angular block: M = omega(-I + L*sigma_x) on (z1,z2); for z(0)=(1,0),
+#     z1(t) = e^{i omega t} cos(L omega t)   (exact),
+# a rose with 2L petals.  The lobe law is now the eigenvalue GAP of M:
+# eigenvalues -(L+1)omega and (L-1)omega -> gap 2L*omega = petal frequency.
+# The radial rings are a second commuting 2-block.  Verified below to machine
+# precision (gap = 2L, H drift ~ 1e-15, |z1 - e^{iwt}cos Lwt| ~ 1e-15).
+
+_om_130 = 1.0
+_Hgap_130 = {}                      # L -> eigenvalue gap of M (predict 2L*om)
+_Hdrift_130 = {}                    # L -> max H drift on the flow (predict ~0)
+_Hzerr_130 = {}                     # L -> max|z1 - e^{iwt}cos(Lwt)| (predict 0)
+for _L in range(1, 5):
+    _M130 = _om_130 * np.array([[-1.0, _L], [_L, -1.0]], dtype=complex)
+    _w130, _V130 = np.linalg.eigh(_M130)
+    _Hgap_130[_L] = float(_w130.max() - _w130.min())
+    _tt130 = np.linspace(0.0, 2 * np.pi, 4000)
+    _c130 = _V130.conj().T @ np.array([1.0, 0.0], dtype=complex)
+    _Z130 = _V130 @ (np.exp(-1j * np.outer(_w130, _tt130)) * _c130[:, None])
+    _n2_130 = np.sum(np.abs(_Z130) ** 2, axis=0)
+    _H130 = np.einsum('it,ij,jt->t', _Z130.conj(), _M130, _Z130).real / _n2_130
+    _Hdrift_130[_L] = float(_H130.max() - _H130.min())
+    _ex130 = np.exp(1j * _om_130 * _tt130) * np.cos(_L * _om_130 * _tt130)
+    _Hzerr_130[_L] = float(np.max(np.abs(_Z130[0] - _ex130)))
+assert all(abs(_Hgap_130[L] - 2 * L * _om_130) < 1e-9 for L in range(1, 5))
+assert all(_Hdrift_130[L] < 1e-9 for L in range(1, 5))     # H conserved
+assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11807,6 +11843,22 @@ print("  radial ring law (verified): n_s=N -> N-1 rings   "
 print("status: motivated classical illustration; lobe (2L) and ring (N-1)")
 print("laws derived/verified, kappa=3/sqrt2 observed; see Part 8 section 14")
 print("and visualization 6d-orbit-slice.")
+
+
+# =============================================================================
+# STEP 130 -- OUTPUT: GENERATING HAMILTONIAN OF THE 6D ORBIT
+# =============================================================================
+print("\n=== STEP 130: GENERATING HAMILTONIAN OF THE 6D ORBIT ===")
+print("orbit = Hamiltonian flow on (CP^3, omega_FS) of H(z)=<z|M|z>/<z|z>,")
+print("M Hermitian 4x4 (su(4)+scalar); flow z(t)=exp(-iMt)z0, H conserved.")
+print("angular block M=omega(-I+L*sigma_x): z1(t)=e^{iwt}cos(Lwt) exact =")
+print("2L-petal rose; the lobe law is the eigenvalue GAP of M:")
+for _L in range(1, 5):
+    print(f"  L={_L}: gap={_Hgap_130[_L]:.3f} (=2L)  H-drift="
+          f"{_Hdrift_130[_L]:.1e}  |z1-exact|={_Hzerr_130[_L]:.1e}")
+print("=> a conserved Hamiltonian system; radial rings = 2nd commuting block.")
+print("now derived dynamics (the M entries still encode the same choices);")
+print("see STEP 129 and Part 8 section 14.")
 
 
 # =============================================================================
