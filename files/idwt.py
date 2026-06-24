@@ -7966,8 +7966,10 @@ assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
 # of that energy stays permanently locked in the colour field; the realised
 # mass is lower:
 #     M_phys = M_bare * (1 - x_e_d * <k>),        d in {3,4} only.
-# <k> = degeneracy-weighted mean level = sum_k k C(k+d-1,d-1)/S(n,d), which
-# tends to (d/(d+1)) N for large N. The per-state softening x_e is the cavity /
+# <k> = degeneracy-weighted mean level = d*(n-1)/(d+1) EXACTLY for all n,d
+# (not merely large-n). Proof: k*C(k+d-1,d-1)=d*C(k+d-1,d);
+# sum via hockey-stick gives d*C(n+d-1,d+1); divide by S(n,d)=C(n+d-1,d) to get
+# d*(n-1)/(d+1). The per-state softening x_e is the cavity /
 # anharmonic form x_e = 3/(16 N_b): the eigenmodes of a FINITE confining well
 # flatten toward the top, so the per-state ENERGY softens while STEP 123's COUNT
 # S(n,d) stays exact (no anharmonic seam). N_b is the coloured-well mode
@@ -7978,8 +7980,10 @@ assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
 # per-state deficit. Hence 🔶. Colour-silent sectors (d=2,6,10) get no
 # correction. (STEP 126; STEP 123; STEP 63; has_SU3; Part 2 sec 11.9.)
 def _kbar_127(n, d):                      # degeneracy-weighted mean HO level
-    return sum(k * math.comb(k + d - 1, d - 1)
-               for k in range(n)) / S(n, d)
+    result = d * (n - 1) / (d + 1)       # exact closed form (see header)
+    assert abs(result - sum(k * math.comb(k + d - 1, d - 1)
+               for k in range(n)) / S(n, d)) < 1e-10
+    return result
 _pdg_127 = {"down": (4.70, 0.07), "strange": (93.5, 0.8),
             "up": (2.16, 0.07), "charm": (1273.0, 4.6),
             "top": (172570.0, 290.0)}     # PDG 2024 central, stat error (MeV)

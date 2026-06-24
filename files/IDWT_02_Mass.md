@@ -839,7 +839,7 @@ The bare IDWT mass $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-qua
 
 **Form (derived).** The sector's self-consistent Gaussian well is a finite cavity, so its eigenmodes flatten toward the well top — the per-state energy spacing decreases weakly with level. This level-dependent softening is linear in the mean level $\langle k\rangle$ (`files/idwt.py` STEP 127; Part 4 §3.10.5b):
 
-$$M_{\rm phys} = M_{\rm bare}\,(1 - x_e\,\langle k\rangle), \qquad \langle k\rangle = \frac{d}{d+1}(n-1)\ \text{(large-}n\text{ limit)}$$
+$$M_{\rm phys} = M_{\rm bare}\,(1 - x_e\,\langle k\rangle), \qquad \langle k\rangle = \frac{d(n-1)}{d+1}\ \text{(exact for all }n,d\text{)}$$
 
 The form is derived two independent ways — cavity group-velocity dispersion and soliton anharmonic perturbation theory — and gives $x_e = 3/(16\,N_b)$, where $N_b$ is the condensate occupation of the sector well. The linear-in-$\langle k\rangle$ form is selected by the data (quadratic is ruled out: it brings charm into margin but leaves top at $+2.1\sigma$).
 
