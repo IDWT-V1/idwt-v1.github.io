@@ -234,16 +234,18 @@ function frameCamera(){
 }
 frameCamera();
 
-let head=0;
+let head=0, elapsed=0;
 function animate(){
   requestAnimationFrame(animate); controls.update();
-  head=(head+8)%NPTS;
+  head=(head+8)%NPTS; elapsed+=8;
   for(const sh of SHELLS){
     if(!sh.visible) continue;
+    const span=Math.min(elapsed,sh.trailLen-1);   // trail grows from the electron, not pre-drawn
     for(let k=0;k<sh.trailLen;k++){
-      const idx=((head-(sh.trailLen-1)+k)%NPTS+NPTS)%NPTS;
+      const back=Math.min(sh.trailLen-1-k,span);   // steps behind head, clamped to how far we've travelled
+      const idx=((head-back)%NPTS+NPTS)%NPTS;
       sh.tpos[k*3]=sh.pos[idx*3]; sh.tpos[k*3+1]=sh.pos[idx*3+1]; sh.tpos[k*3+2]=sh.pos[idx*3+2];
-      const a=k/(sh.trailLen-1);
+      const a=1-back/(sh.trailLen-1);
       sh.tcol[k*3]=sh.rgb[0]/255*a; sh.tcol[k*3+1]=sh.rgb[1]/255*a; sh.tcol[k*3+2]=sh.rgb[2]/255*a;
     }
     sh.trail.geometry.attributes.position.needsUpdate=true; sh.trail.geometry.attributes.color.needsUpdate=true;
