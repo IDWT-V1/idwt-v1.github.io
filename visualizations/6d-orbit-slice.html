@@ -188,6 +188,11 @@ SHELLS.forEach((sh,idx)=>{
   const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.BufferAttribute(sh.tpos,3)); tg.setAttribute('color',new THREE.BufferAttribute(sh.tcol,3));
   sh.trail=new THREE.Line(tg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
   scene.add(sh.trail);
+  sh.glowLen=Math.max(2,Math.floor(sh.trailLen/2));   // bright glow tail, half the length, steeper fade
+  sh.gpos=new Float32Array(sh.glowLen*3); sh.gcol=new Float32Array(sh.glowLen*3);
+  const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.BufferAttribute(sh.gpos,3)); gg.setAttribute('color',new THREE.BufferAttribute(sh.gcol,3));
+  sh.glow=new THREE.Line(gg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+  scene.add(sh.glow);
   sh.electron=new THREE.Mesh(new THREE.SphereGeometry(0.042,14,10),new THREE.MeshPhongMaterial({color:0xffffff,emissive:sh.col,emissiveIntensity:2.6}));
   scene.add(sh.electron);
   sh.visible=true;
@@ -195,13 +200,13 @@ SHELLS.forEach((sh,idx)=>{
   const btn=document.createElement('div'); btn.className='shell-btn';
   btn.style.setProperty('--c','#'+sh.col.toString(16).padStart(6,'0'));
   btn.innerHTML=`<span class="dot"></span><span class="nm">${sh.name}</span>`;
-  btn.addEventListener('click',()=>{ sh.visible=!sh.visible; sh.trail.visible=sh.visible; sh.electron.visible=sh.visible; btn.classList.toggle('off',!sh.visible); });
+  btn.addEventListener('click',()=>{ sh.visible=!sh.visible; sh.trail.visible=sh.visible; sh.glow.visible=sh.visible; sh.electron.visible=sh.visible; btn.classList.toggle('off',!sh.visible); });
   ctr.appendChild(btn); sh.btn=btn;
 });
 
 const resetBtn=document.createElement('div'); resetBtn.className='reset-btn'; resetBtn.textContent='⟲ Reset';
 resetBtn.addEventListener('click',()=>{
-  for(const sh of SHELLS){ sh.visible=true; sh.trail.visible=true; sh.electron.visible=true; sh.btn.classList.remove('off'); }
+  for(const sh of SHELLS){ sh.visible=true; sh.trail.visible=true; sh.glow.visible=true; sh.electron.visible=true; sh.btn.classList.remove('off'); }
   frameCamera();
 });
 ctr.appendChild(resetBtn);
@@ -249,6 +254,15 @@ function animate(){
       sh.tcol[k*3]=sh.rgb[0]/255*a; sh.tcol[k*3+1]=sh.rgb[1]/255*a; sh.tcol[k*3+2]=sh.rgb[2]/255*a;
     }
     sh.trail.geometry.attributes.position.needsUpdate=true; sh.trail.geometry.attributes.color.needsUpdate=true;
+    const gspan=Math.min(elapsed,sh.glowLen-1);
+    for(let k=0;k<sh.glowLen;k++){
+      const back=Math.min(sh.glowLen-1-k,gspan);
+      const idx=((head-back)%NPTS+NPTS)%NPTS;
+      sh.gpos[k*3]=sh.pos[idx*3]; sh.gpos[k*3+1]=sh.pos[idx*3+1]; sh.gpos[k*3+2]=sh.pos[idx*3+2];
+      let a=1-back/(sh.glowLen-1); a*=a;   // squared -> fades out faster than the line
+      sh.gcol[k*3]=sh.rgb[0]/255*a; sh.gcol[k*3+1]=sh.rgb[1]/255*a; sh.gcol[k*3+2]=sh.rgb[2]/255*a;
+    }
+    sh.glow.geometry.attributes.position.needsUpdate=true; sh.glow.geometry.attributes.color.needsUpdate=true;
     const i=head*3; sh.electron.position.set(sh.pos[i],sh.pos[i+1],sh.pos[i+2]);
   }
   renderer.render(scene,camera);
