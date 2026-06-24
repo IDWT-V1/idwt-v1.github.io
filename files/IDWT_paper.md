@@ -178,7 +178,7 @@ $$\chi(\mathbb{CP}^{N_c-1}) = 3,\; d=4. \quad \chi(\mathbb{CP}^{n_s-1}) = 4,\; d
 
 **Step 3.** $d=2$ ($\mathbb{CP}^1$) is the $U(1)$ Hopf base. $d=3$ ($S^3$ over $\mathbb{CP}^1$) has coupling $g_{33} = n_s^2\sqrt{n_s+n_u}/2$ from the kernel fixed-point. $d=5$ ($S^5$ over $\mathbb{CP}^2$) has coupling $g_{55} = 96/g_{22}$ from Hopf universality $v_3/v_2 = v_5/v_4$.
 
-**Step 4.** $d=7$ is excluded: $g_{66} = 1/n_s$ is a seed ratio, not a kernel fixed-point coupling; Hopf universality cannot determine $g_{77}$. $d=8$: $\chi(\mathbb{CP}^4) = 5 \notin \{N_c, n_s, N_f\}$. $d \geq 11$: no mode index in the occupied range. $\square$
+**Step 4.** $d=7$ carries no matter: it is not a corner of the $\mathbb{C}^2\times\mathbb{C}^3$ deposit grid whose six corners are exactly $D$ (STEP 100), so no mode is sited there (a matter-empty sector is inert). $d=8$: $\chi(\mathbb{CP}^4) = 5 \notin \{N_c, n_s, N_f\}$. $d \geq 11$: no mode index in the occupied range. $\square$
 
 **Completeness Theorem.** The IDWT spectrum consists of exactly 15 states ($\Sigma \cup \{b\text{-quark}\}$). Any new stable particle requires either a new sector (excluded by S4) or a new derivable mode index (excluded by the uniqueness theorem). No such states exist. Any new particle discovery at any energy falsifies IDWT immediately.
 

@@ -4982,10 +4982,12 @@ _ring_term_ok73 = all(
 # 4.6 prove the sufficient T0.5 / operand selection is not energetic (no
 # energy resonance, no Hartree lock, no combinatorial / topological /
 # characteristic-class closure; kernel action set strictly larger than
-# the DAG). What stays open for d=7 activation and the operand selection
-# is the DIRECTED structure -- which kernel moves fire as a set: the
-# coupled (Psi_inf, {M_d}) fixed point and the pre-prism causal firing
-# order (STEP 85) -- not a scalar stability functional. The BdG operator
+# the DAG). What stays open is the operand/firing-set selection -- the
+# DIRECTED structure, which kernel moves fire as a set: the coupled
+# (Psi_inf, {M_d}) fixed point and the pre-prism causal firing order
+# (STEP 85) -- not a scalar stability functional. (d=7 is NOT among these:
+# it carries no matter, not a deposit-grid corner STEP 100, and a matter-
+# empty sector is inert -- no activation owed.) The BdG operator
 # L (STEP 35-36) supplies only the NECESSARY stability condition.
 # no-latency: exact-flat => no-barrier bifurcation (motivated). H's
 # inclusion + (p,p) restriction + sector identity are proved (a,b,c).
@@ -5183,7 +5185,7 @@ _dEel_au75 = _V0_au_SM75 - _dVnn75  # negative: electrons favour D3h
 
 # =============================================================================
 # STEP 76 -- MEAN-FIELD VACUUM SELF-CONSISTENCY IS NON-SELECTIVE IN d
-#            (Rule A d=7 arbiter is NOT a Part 2 §5 functional)
+#            (no d=7 arbiter is owed: d=7 is matter-empty + inert, STEP 100)
 # =============================================================================
 # Part 1 §3a, Part 6, and Part 9 T3 cite "the explicit vacuum-stability
 # functional (Part 2 §5)" as the object whose solvability would close the
@@ -5196,15 +5198,18 @@ _dEel_au75 = _V0_au_SM75 - _dVnn75  # negative: electrons favour D3h
 # (lambda_d)). Substituting, the dimension d CANCELS:
 #     lambda_d = g_dd/(2 sqrt(lambda_d))  ->  2 lambda_d^{3/2} = g_dd.
 # This solves for ANY g_dd > 0 in ANY dimension; it cannot distinguish an
-# active sector from an inactive one. Activation is decided UPSTREAM, by
-# whether a coupling g_dd is constructed -- the static Rule A question,
-# shown underdetermined by the two real activation instances (Appendix A
-# §3). The only cross-sector coupling-fixer in the mean field, Hopf
-# universality v3/v2 = v5/v4, WRITES a formal g77 (= g55 g66/g44) rather
-# than forbidding it, so it is not selective either. Conclusion: the d=7
-# arbiter lives beyond mean field, in the coupled (Psi, {M_d}) fixed point
-# -- Part 6 Open Theorem A (the ground-state covariance operator Ĉ
-# spectral-plateau condition), not a Part 2 §5 functional.
+# active sector from an inactive one. The only cross-sector coupling-fixer in
+# the mean field, Hopf universality v3/v2 = v5/v4, WRITES a formal g77
+# (= g55 g66/g44) rather than forbidding it, so it is not selective either.
+# DISPOSITION (Fedge 2026-06-24): no d=7 arbiter is owed. d=7 carries no
+# matter because it is not a corner of the C^2 x C^3 deposit grid (STEP 100),
+# exactly as d=11,12 carry none; a matter-empty sector is inert (no energy to
+# gravitate, no amplitude for any coupling, nothing to a d=3 observable by the
+# Coulomb projection theorem, Part 3). So the mean field's non-selectivity is
+# not a gap -- there is nothing to select. Rule A is 🔵. (The coupled
+# (Psi,{M_d}) fixed point / Open Theorem A bears on the DISTINCT positive
+# firing-set -- which modes occupy the already-fixed active sectors, MC-4 --
+# not on d=7. Backward-run record: Appendix §15, 2026-06-24.)
 _g76 = {2: 722.5, 3: 8.0*math.sqrt(7.0), 4: 12.0/math.sqrt(7.0),
         5: 96.0/722.5, 6: 0.25, 10: 0.25}
 _D76 = [2, 3, 4, 5, 6, 10]
@@ -10610,9 +10615,10 @@ print(f"  v7/v6 = v5/v4 continuation -> g77 = {_g77_univ76:.5f}")
 print("Only mean-field-adjacent asymmetry is the quartet COUNT (🔵):")
 print(f"  matter quartet length 2 n_s - 4 = {_quartet_len76} = n_s")
 print(f"  active d=7 -> {_quartet_with_d7} sectors, breaks 2 n_s - 4 = n_s")
-print("Conclusion: no Part 2 §5 functional arbitrates d=7. The arbiter")
-print("is the coupled (Psi,{M_d}) fixed point -- Part 6 Open Theorem A")
-print("(ground-state covariance operator Ĉ spectral plateaux). Rule A 🔶.")
+print("Conclusion: no d=7 arbiter is owed. d=7 carries no matter (not a")
+print("deposit-grid corner, STEP 100); a matter-empty sector is inert, so")
+print("the mean field's non-selectivity is no gap. Rule A 🔵. (Coupled")
+print("(Psi,{M_d}) fixed point bears on the firing-set MC-4, not on d=7.)")
 
 
 # =============================================================================
