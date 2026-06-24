@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Interactive visualization showing how the s, p, d, f atomic orbital families arise as the 3D projection of the electron's 6D orbit in the CP³ sector of IDWT. Bohr levels, selection rules, Zeeman and Stark effects follow as theorems of CP³ geometry.">
-<meta name="keywords" content="atomic orbitals, CP3, 6D orbit, electron sector, spherical harmonics, IDWT visualization, SU(4) representations, Infinite-Dimensional Wave Theory">
+<meta name="description" content="Interactive visualization: the s, p, d, f atomic orbital families emerge as a single deterministic electron orbit in the CP³ sector of IDWT. At the resonance κ=ω₁ the 6D path closes into a rose with exactly 2L lobes — 1, 2, 4, 6 for s, p, d, f — nested at the real hydrogenic 1:4:9:16 sizes.">
+<meta name="keywords" content="atomic orbitals, CP3, 6D orbit, electron sector, resonance, lobe count, deterministic, IDWT visualization, SU(4), Infinite-Dimensional Wave Theory">
 <meta name="author" content="Fedge No">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fedgeno.github.io/visualizations/6d-orbit-slice">
-<meta property="og:title" content="Atomic Orbitals as CP³ Projection — IDWT">
-<meta property="og:description" content="Interactive visualization showing how the s, p, d, f atomic orbital families arise as the 3D projection of the electron's 6D orbit in the CP³ sector of IDWT. Bohr levels, selection rules, Zeeman and Stark effects follow as theorems of CP³ geometry.">
+<meta property="og:title" content="Atomic Orbitals as Resonant CP³ Orbits — IDWT">
+<meta property="og:description" content="The s, p, d, f orbital shapes emerge from one deterministic electron orbit on CP³. At κ=ω₁ the path closes into a rose with 2L lobes, nested at the real hydrogenic 1:4:9:16 sizes.">
 <meta property="og:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
 <meta property="og:image:width" content="2000">
 <meta property="og:image:height" content="2000">
 <meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Atomic Orbitals as CP³ Projection — IDWT">
-<meta name="twitter:description" content="Interactive visualization showing how the s, p, d, f atomic orbital families arise as the 3D projection of the electron's 6D orbit in the CP³ sector of IDWT. Bohr levels, selection rules, Zeeman and Stark effects follow as theorems of CP³ geometry.">
+<meta name="twitter:title" content="Atomic Orbitals as Resonant CP³ Orbits — IDWT">
+<meta name="twitter:description" content="The s, p, d, f orbital shapes emerge from one deterministic electron orbit on CP³ at the resonance κ=ω₁.">
 <meta name="twitter:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
-<title>Atomic Orbitals as CP³ Projection — IDWT</title>
+<title>Atomic Orbitals as Resonant CP³ Orbits — IDWT</title>
 <link rel="stylesheet" href="/styles/main.css">
 <script>
 MathJax = {
@@ -28,405 +28,60 @@ MathJax = {
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" type="text/javascript"></script>
 <style>
-/* ── layout ── */
-html, body { margin:0; height:100%; overflow:hidden; }
-
-.split-root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh;
-  padding-top: 56px; /* nav height */
-  box-sizing: border-box;
-}
-
-@media (orientation: portrait) {
-  .split-root {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-}
-
-/* ── text panel ── */
-.text-panel {
-  overflow-y: auto;
-  padding: 32px 36px 60px;
-  border-right: 1px solid rgba(139,156,255,0.12);
-  color: var(--prose, #c4cae2);
-  font-size: 0.925rem;
-  line-height: 1.75;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(139,156,255,0.2) transparent;
-}
-
-@media (orientation: portrait) {
-  .text-panel {
-    border-right: none;
-    border-bottom: 1px solid rgba(139,156,255,0.12);
-    padding: 24px 22px 36px;
-  }
-}
-
-.text-panel h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #e8ecf8;
-  margin: 0 0 6px;
-  line-height: 1.25;
-}
-
-.text-panel .eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #8b9cff;
-  margin-bottom: 10px;
-}
-
-.text-panel .sub {
-  color: #9aa3b8;
-  font-size: 0.9rem;
-  margin: 0 0 28px;
-  border-bottom: 1px solid rgba(139,156,255,0.1);
-  padding-bottom: 20px;
-}
-
-.text-panel h2 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #d6daf0;
-  margin: 28px 0 10px;
-}
-
-.text-panel h3 {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #b8c0d8;
-  margin: 20px 0 8px;
-}
-
-.text-panel p {
-  margin: 0 0 12px;
-}
-
-.text-panel a {
-  color: #8b9cff;
-  text-decoration: none;
-}
-
-.text-panel a:hover {
-  text-decoration: underline;
-}
-
-.status-tag {
-  display: inline-block;
-  font-size: 0.78rem;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-left: 4px;
-  font-weight: 500;
-  vertical-align: middle;
-}
-
-.tag-id    {
-  background: rgba(250,204,21,0.1);
-  color: #fde68a;
-  border: 1px solid rgba(250,204,21,0.25);
-}
-
-.tag-sc    {
-  background: rgba(52,211,153,0.1);
-  color: #6ee7b7;
-  border: 1px solid rgba(52,211,153,0.25);
-}
-
-.tag-open  {
-  background: rgba(251,146,60,0.1);
-  color: #fdba74;
-  border: 1px solid rgba(251,146,60,0.25);
-}
-
-.formula-block {
-  background: rgba(10,13,28,0.7);
-  border: 1px solid rgba(139,156,255,0.14);
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin: 12px 0;
-  overflow-x: auto;
-  font-size: 0.95em;
-}
-
-.formula-block .label {
-  font-size: 0.75rem;
-  color: #7a8499;
-  margin-bottom: 6px;
-  letter-spacing: 0.06em;
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  margin: 12px 0;
-}
-
-.data-table th {
-  text-align: left;
-  color: #8b9cff;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(139,156,255,0.18);
-}
-
-.data-table td {
-  padding: 5px 10px;
-  border-bottom: 1px solid rgba(139,156,255,0.07);
-  color: #c4cae2;
-}
-
-.data-table tr:hover td {
-  background: rgba(139,156,255,0.04);
-}
-
-.obs-cell {
-  color: #4488ff;
-  font-weight: 500;
-}
-
-.hid-cell {
-  color: #ee44aa;
-}
-
-.low-cell {
-  color: #44dd88;
-}
-
-.lemma-box {
-  background: rgba(52,211,153,0.04);
-  border: 1px solid rgba(52,211,153,0.18);
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin: 14px 0;
-}
-
-.lemma-box .lemma-title {
-  font-weight: 600;
-  color: #6ee7b7;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.result-row {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  margin: 6px 0;
-  font-size: 0.88rem;
-}
-
-.result-row .check {
-  color: #6ee7b7;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.bomb-box {
-  background: linear-gradient(
-    135deg,
-    rgba(255,68,170,0.05),
-    rgba(68,221,136,0.05) 50%,
-    rgba(68,136,255,0.05)
-  );
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin: 14px 0 18px;
-}
-
-.bomb-box .bomb-title {
-  font-weight: 600;
-  color: #e8ecf8;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 6px;
-}
-
-.bomb-box ul li {
-  margin-bottom: 4px;
-}
-
-.viz-panel {
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-.viz-panel canvas {
-  display: block;
-}
-
-.shell-bar {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-.shell-btn {
-  background: rgba(10,13,28,0.8);
-  border: 1px solid rgba(139,156,255,0.25);
-  border-radius: 8px;
-  color: #9aa3b8;
-  font-family: inherit;
-  font-size: 0.85rem;
-  padding: 8px 18px;
-  cursor: pointer;
-  transition: all 0.15s;
-  backdrop-filter: blur(8px);
-}
-.shell-btn:hover { border-color: rgba(139,156,255,0.5); color: #e2e8f0; }
-.shell-btn.active { background: rgba(139,156,255,0.15); border-color: #8b9cff; color: #8b9cff; }
-
-.category-bar {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  z-index: 10;
-}
-.cat-btn {
-  background: rgba(10,13,28,0.78);
-  border: 1px solid rgba(139,156,255,0.18);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.78rem;
-  padding: 6px 12px 6px 10px;
-  cursor: pointer;
-  transition: all 0.15s;
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0.45;
-}
-.cat-btn:hover { opacity: 0.75; }
-.cat-btn.active { opacity: 1; }
-.cat-btn .swatch {
-  width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
-  box-shadow: 0 0 8px currentColor;
-}
-.cat-obs { color: #4488ff; }
-.cat-obs.active { border-color: #4488ff; }
-.cat-obs .swatch { background: #4488ff; }
-.cat-hid { color: #ee44aa; }
-.cat-hid.active { border-color: #ee44aa; }
-.cat-hid .swatch { background: #ee44aa; }
-.cat-low { color: #44dd88; }
-.cat-low.active { border-color: #44dd88; }
-.cat-low .swatch { background: #44dd88; }
-
-/* static legend — every category is always rendered; nothing is hideable */
-.cat-btn.legend { cursor: default; pointer-events: none; opacity: 1; }
-
-.aux-bar {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 10;
-}
-
-.viz-info {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(10,13,28,0.78);
-  border: 1px solid rgba(139,156,255,0.18);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.78rem;
-  line-height: 1.6;
-  color: #9aa3b8;
-  backdrop-filter: blur(12px);
-  pointer-events: none;
-  z-index: 10;
-  max-width: 200px;
-}
-.viz-info .vi-title { color: #d6daf0; font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
-.vi-obs { color: #4488ff; }
-.vi-hid { color: #ee44aa; }
-.vi-low { color: #44dd88; }
-.vi-dim { color: #7a8499; }
-.vi-six {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(139,156,255,0.12);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.7rem;
-  color: #7a8499;
-  letter-spacing: -0.01em;
-}
-.vi-six .ro-obs { color: #cfd6ee; }
-.vi-six .ro-xi  { color: #7a8499; }
-
-.drag-hint {
-  position: absolute;
-  bottom: 80px;
-  left: 33%;
-  transform: translateX(-33%);
-  font-size: 0.72rem;
-  color: #4a5270;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 10;
-}
-.wheel-hint {
-  position: absolute;
-  bottom: 80px;
-  left: 66%;
-  transform: translateX(-66%);
-  font-size: 0.72rem;
-  color: #4a5270;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 10;
-}
+:root{ --bg:#0a0d1c; --prose:#c4cae2; --accent:#8b9cff; --heading:#e8ecf8; --muted:#9aa3b8; --border:rgba(139,156,255,0.14); }
+html,body{ margin:0; height:100%; overflow:hidden; }
+.split-root{ display:grid; grid-template-columns:1fr 1fr; height:100vh; padding-top:56px; box-sizing:border-box; }
+@media (orientation:portrait){ .split-root{ grid-template-columns:1fr; grid-template-rows:1fr 1fr; } }
+.text-panel{ overflow-y:auto; padding:30px 34px 60px; border-right:1px solid var(--border); color:var(--prose);
+  font-size:0.925rem; line-height:1.75; scrollbar-width:thin; scrollbar-color:rgba(139,156,255,0.2) transparent; }
+.text-panel .eyebrow{ font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+.text-panel h1{ font-size:1.55rem; color:var(--heading); margin:0 0 8px; font-weight:700; line-height:1.2; }
+.text-panel h2{ font-size:1.04rem; color:#d6daf0; margin:24px 0 8px; font-weight:600; }
+.text-panel .sub{ color:var(--muted); font-size:0.9rem; border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:6px; }
+.text-panel p{ margin:0 0 11px; }
+.text-panel a{ color:#8b9cff; text-decoration:none; } .text-panel a:hover{ text-decoration:underline; }
+.formula-block{ background:rgba(10,13,28,0.7); border:1px solid rgba(139,156,255,0.14); border-radius:8px; padding:12px 18px; margin:12px 0; overflow-x:auto; }
+.formula-block .label{ font-size:0.72rem; color:#7a8499; margin-bottom:4px; letter-spacing:0.06em; }
+.data-table{ width:100%; border-collapse:collapse; font-size:0.85rem; margin:14px 0; }
+.data-table th{ text-align:left; color:#8b9cff; font-weight:500; padding:6px 10px; border-bottom:1px solid rgba(139,156,255,0.18); }
+.data-table td{ padding:5px 10px; border-bottom:1px solid rgba(139,156,255,0.07); color:#c4cae2; }
+.status-tag{ display:inline-block; font-size:0.78rem; padding:2px 8px; border-radius:4px; font-weight:500; vertical-align:middle; }
+.tag-id{ background:rgba(250,204,21,0.1); color:#fde68a; border:1px solid rgba(250,204,21,0.25); }
+.tag-open{ background:rgba(251,146,60,0.1); color:#fdba74; border:1px solid rgba(251,146,60,0.25); }
+.dot-s{color:#ffd27a}.dot-p{color:#5a9bff}.dot-d{color:#46d39a}.dot-f{color:#e06ad0}
+.swatch{ display:inline-block; width:9px; height:9px; border-radius:50%; background:currentColor; box-shadow:0 0 7px currentColor; vertical-align:middle; margin-right:3px; }
+.viz-panel{ position:relative; overflow:hidden; background:transparent; }
+.viz-panel canvas{ display:block; position:absolute; top:0; left:0; }
+.shell-bar{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:9px; z-index:10;
+  background:rgba(10,13,28,0.82); border:1px solid var(--border); border-radius:13px; padding:10px 16px; backdrop-filter:blur(8px); }
+.shell-btn{ display:flex; align-items:center; gap:8px; opacity:1; background:rgba(139,156,255,0.18); border:1px solid rgba(139,156,255,0.55);
+  border-radius:9px; color:#eef2ff; padding:7px 15px; cursor:pointer; font-family:inherit; font-size:0.9rem; transition:all .18s; }
+.shell-btn .dot{ width:11px; height:11px; border-radius:50%; box-shadow:0 0 9px currentColor; }
+.shell-btn .nm{ font-weight:700; } .shell-btn .ct{ font-size:0.72rem; opacity:0.8; }
+.shell-btn:hover{ border-color:var(--accent); background:rgba(139,156,255,0.26); }
+.shell-btn.off{ opacity:0.4; background:rgba(10,13,28,0.6); border-color:rgba(139,156,255,0.15); color:#9aa3b8; }
+.shell-btn.off .dot{ box-shadow:none; }
+.reset-btn{ background:rgba(139,156,255,0.08); border:1px solid rgba(139,156,255,0.3); border-radius:9px; color:#cdd6f5;
+  padding:7px 14px; cursor:pointer; font-family:inherit; font-size:0.86rem; transition:all .18s; margin-left:4px; }
+.reset-btn:hover{ border-color:var(--accent); color:#fff; background:rgba(139,156,255,0.18); }
+.viz-info{ position:absolute; top:14px; right:14px; background:rgba(10,13,28,0.78); border:1px solid rgba(139,156,255,0.18);
+  border-radius:10px; padding:10px 14px; font-size:0.78rem; line-height:1.6; color:#9aa3b8; backdrop-filter:blur(12px); pointer-events:none; z-index:10; max-width:220px; }
+.viz-info .vi-title{ color:#d6daf0; font-weight:600; margin-bottom:4px; font-size:0.82rem; }
+.drag-hint{ position:absolute; bottom:84px; left:50%; transform:translateX(-50%); font-size:0.72rem; color:#4a5270; white-space:nowrap; pointer-events:none; z-index:10; }
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "name": "Atomic Orbitals as CP³ Projection — IDWT",
-  "description": "Interactive visualization showing how the s, p, d, f atomic orbital families arise as the 3D projection of the electron's 6D orbit in the CP³ sector of IDWT. Bohr levels, selection rules, Zeeman and Stark effects follow as theorems of CP³ geometry.",
+  "name": "Atomic Orbitals as Resonant CP³ Orbits — IDWT",
+  "description": "Interactive visualization: the s, p, d, f atomic orbital families emerge as a single deterministic electron orbit in the CP³ sector of IDWT. At the resonance κ=ω₁ the 6D path closes into a rose with exactly 2L lobes, nested at the real hydrogenic 1:4:9:16 sizes.",
   "url": "https://fedgeno.github.io/visualizations/6d-orbit-slice",
-  "author": {
-    "@type": "Person",
-    "name": "Fedge No",
-    "email": "fedge-no@hotmail.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "IDWT",
-    "url": "https://fedgeno.github.io",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png"
-    }
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png",
-    "width": 2000,
-    "height": 2000
-  },
-  "keywords": "atomic orbitals, CP3, 6D orbit, electron sector, spherical harmonics, IDWT visualization, SU(4) representations, Infinite-Dimensional Wave Theory",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "IDWT — Infinite-Dimensional Wave Theory",
-    "url": "https://fedgeno.github.io"
-  }
+  "author": { "@type": "Person", "name": "Fedge No", "email": "fedge-no@hotmail.com" },
+  "publisher": { "@type": "Organization", "name": "IDWT", "url": "https://fedgeno.github.io",
+    "logo": { "@type": "ImageObject", "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png" } },
+  "image": { "@type": "ImageObject", "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png", "width": 2000, "height": 2000 },
+  "keywords": "atomic orbitals, CP3, 6D orbit, electron sector, resonance, lobe count, IDWT visualization, SU(4), Infinite-Dimensional Wave Theory",
+  "isPartOf": { "@type": "WebSite", "name": "IDWT — Infinite-Dimensional Wave Theory", "url": "https://fedgeno.github.io" }
 }
 </script>
 </head>
@@ -448,580 +103,163 @@ html, body { margin:0; height:100%; overflow:hidden; }
 
 <!-- ══════════════════════ TEXT PANEL ══════════════════════ -->
 <div class="text-panel">
-  <div class="eyebrow">Visualization · d=6 Sector</div>
-  <h1>Atomic Orbitals as CP³ Projection</h1>
-  <p class="sub">Every electron has a <strong>definite 3D location</strong> — the first three of its six coordinates. The s, p, d, f orbital families are the 3D shadow of the electron's full 6D orbit; Bohr levels, all multipole selection rules, Stark, Zeeman, and fine/hyperfine structure follow as theorems of CP³. At every shell with \(L \geq 1\), the SU(4) representation also carries states with angular momentum in the ξ-direction. These are <em>not</em> invisible particles: each is a real electron sitting at a definite 3D point with a real charge density. What Lemma 2 actually shows is narrower — they <em>decouple</em> from the standard orbitals, adding no new spectral lines.</p>
-  <p>Note: \(\Xi_6 = \mathbb{CP}^3\) is a macroscopic 6-real-dimensional space in IDWT, not a compactified extra dimension. The electron moves through all six dimensions of \(M_\infty = \mathbf{R}^3 \times \Xi_6\); our 3D space is the first three coordinates, and the electron always has a definite position there.</p>
-  <p>There are only <strong>two kinds of state</strong> at each shell, and both are genuine 6D orbits projected to their definite 3D position. The \(2L+1\) <strong>standard orbitals</strong> (blue) are the harmonic states — the ones textbooks call s, p, d, f. Their exact 3D shadow is the spherical harmonic \(Y_L^m\), so we trace that closed form and the familiar lobes accumulate. The <strong>additional states</strong> (pink) are every other state in \(\mathrm{Sym}^L(\mathbb{C}^4)\); each follows the deterministic torus orbit \(z_k(t)=\rho_k\,e^{i(\omega_k t+\phi_k)}\), and we draw its observable position — the first three of the six real coordinates, \((\mathrm{Re}\,z_1,\mathrm{Im}\,z_1,\mathrm{Re}\,z_2)\). Because they carry more of their motion in the \(z_4\)/\(z_3\) directions, their 3D shadow nests inward at smaller radius — but it is a real, definite charge cloud, never invisible. Everything is shown at once; the legend at upper left is just a key, and nothing can be hidden.</p>
+  <div class="eyebrow">Visualization · d=6 (CP³) sector</div>
+  <h1>Orbitals as closed resonant orbits</h1>
+  <p class="sub">In IDWT the electron is not a probability cloud — it is a single deterministic wave tracing one definite path. Drawn here is that path for the first orbital of each family — <span class="dot-s"><span class="swatch"></span></span>1s, <span class="dot-p"><span class="swatch"></span></span>2p, <span class="dot-d"><span class="swatch"></span></span>3d, <span class="dot-f"><span class="swatch"></span></span>4f — nested at a common nucleus. The familiar s, p, d, f lobe shapes are not put in by hand; they fall out of one closed trajectory in the electron's six-dimensional sector, \(\mathbb{CP}^3\).</p>
 
-  <h2>Setup</h2>
-  <p>In IDWT, the electron is the \((d=6)\) mode \((n=13)\): an eigenmode of the sector-6 Dirac operator on \(\mathrm{CP}^3\), with isometry group \(\mathrm{SU}(4)\). Its 6D orbit is the full trajectory in \(Ξ_6\), while the observable 3D "orbital" is the projection of that orbit onto ordinary space. The hydrogen atom is a bound system on \(M_\infty = \mathbf{R}^3 \times \Xi_6\). The angular momentum eigenmodes are representations of \(\mathrm{SU}(4)\), restricted to the observable subgroup via the chain</p>
-  <div class="formula-block">
-    \[\mathrm{SU}(4) \supset \mathrm{SU}(3) \supset \mathrm{SO}(3)\]
-    <div class="label">the natural projection path from d=6 sector to observable space</div>
-  </div>
-  <p>where \(\mathrm{SU}(3)\) is the d=4 quark-sector colour group embedded in the d=6 lepton isometry, and \(\mathrm{SO}(3)\) acts on the three real observable directions.</p>
+  <h2>What you are looking at</h2>
+  <p>The electron lives in \(\mathbb{CP}^3\), a macroscopic 6‑real‑dimensional space — the \(d=6\) sector of \(M_\infty\). Its state at shell \(L\) is the degree‑\(L\) monomial \(z_1^a z_2^b z_3^c z_4^d\) with \(a+b+c+d=L\). The electron orbits, and the three coordinates we experience as space, \((\mathrm{Re}\,z_1,\ \mathrm{Im}\,z_1,\ \mathrm{Re}\,z_2)\), are plotted directly. Each colored curve is one electron's closed orbit; the bright point is the electron, the fading tail its recent path. No probability, no ensemble — one particle, one trajectory.</p>
 
-  <h2>The Orbital Representations</h2>
-  <p>At angular momentum \(L\), the orbital states form the holomorphic symmetric representation of \(\mathrm{SU}(4)\):</p>
-  <div class="formula-block">
-    \[\mathrm{Sym}^L(\mathbb{C}^4), \quad \dim = \binom{L+3}{3}\]
-  </div>
-  <p>Under the full subgroup chain, only the highest-spin \(\mathrm{SO}(3)\) irrep at each level projects to a <strong>standard orbital</strong> — the harmonic polynomials of degree \(L\) in \((z_1, z_2, z_3)\). These are the \(2L+1\) familiar spherical harmonics. Every other state in \(\mathrm{Sym}^L(\mathbb{C}^4)\) is an <strong>additional state</strong>: a real 6D orbit at a definite 3D location that simply isn't one of the textbook orbital shapes. That is the only distinction — see the Counting Theorem below.</p>
-
-  <h3>Orbital Counting Theorem <span class="status-tag tag-id">⭐ Identity</span></h3>
-  <p>Projection of \(\mathrm{Sym}^L(\mathbb{C}^4)\) to the observable \(\mathrm{SO}(3)\) selects exactly \(2L+1\) states — the harmonic polynomials of degree \(L\) in \((z_1,z_2,z_3)\). These are traceless symmetric tensors of rank \(L\), forming precisely the spin-\(L\) irrep of \(\mathrm{SO}(3)\); no lower-\(j\) irrep is harmonic at degree \(L\), which is why only the highest spin survives as the textbook orbital. The other \(\binom{L+3}{3}-(2L+1)\) are the additional states.</p>
-  <p>If you want the finer accounting, the additional states are of two algebraic types — but this is a basis label, <em>not</em> a difference in visibility: both are real 6D orbits sitting at definite 3D locations.</p>
-  <ul style="margin:6px 0 10px 1.2em; font-size:0.9rem; line-height:1.7">
-    <li><strong>\(z_4\)-carrying</strong> — \(L(L+1)(L+2)/6\) states with at least one \(z_4\) factor (the ξ-direction). By ξ-orthogonality (Lemma 2) these decouple from the standard orbitals under any 3D operator, so they add no new spectral line — but each is still a real electron with a definite 3D charge density.</li>
-    <li><strong>non-harmonic 3D</strong> — \(L(L-1)/2\) degree-\(L\) polynomials in \((z_1,z_2,z_3)\) with no \(z_4\). These are the traces; they carry the same \(\mathrm{SO}(3)\) content as orbitals already present at lower shells, so they introduce no new orbital shape.</li>
-  </ul>
+  <h2>Why the lobes appear — a resonance</h2>
+  <p>As the electron orbits, its amplitude slowly <em>precesses</em> while the phase sweeps around at the orbital frequency \(\omega_1\). When the precession locks to that orbital frequency — the resonance \(\kappa=\omega_1\) — the path closes into a rose, and the number of lobes is fixed entirely by the shell's degree:</p>
+  <div class="formula-block"><div class="label">LOBE COUNT</div>\[ N \;=\; 2L\,\frac{\kappa}{\omega_1}\,,\qquad \kappa=\omega_1\ \Rightarrow\ N=2L. \]</div>
+  <p>The monomial's moment‑of‑inertia gap is exactly \(L\), so the precession runs at \(L\,\omega_1\): the radius wobbles \(L\) times per turn, and taking the modulus doubles that — giving \(2L\) petals. The degree \(L\) enters twice, once as the inertia gap and once as the lobe count, bound together by the lock. (Verified numerically across the shells.)</p>
 
   <table class="data-table">
-    <thead><tr><th>Shell</th><th>\(L\)</th><th>Total \(S(L{+}1,3)\)</th><th class="obs-cell">Standard orbital \((2L{+}1)\)</th><th class="hid-cell">Additional states</th></tr></thead>
+    <thead><tr><th>shell</th><th>\(L\)</th><th>lobes \(=2L\)</th><th>size \(=n^2 a_0\)</th></tr></thead>
     <tbody>
-      <tr><td>s</td><td>0</td><td>1</td><td class="obs-cell">1</td><td class="hid-cell">0</td></tr>
-      <tr><td>p</td><td>1</td><td>4</td><td class="obs-cell">3</td><td class="hid-cell">1</td></tr>
-      <tr><td>d</td><td>2</td><td>10</td><td class="obs-cell">5</td><td class="hid-cell">5</td></tr>
-      <tr><td>f</td><td>3</td><td>20</td><td class="obs-cell">7</td><td class="hid-cell">13</td></tr>
+      <tr><td><span class="dot-s"><span class="swatch"></span></span> s · 1s</td><td>0</td><td>1 (a ring)</td><td>1</td></tr>
+      <tr><td><span class="dot-p"><span class="swatch"></span></span> p · 2p</td><td>1</td><td>2</td><td>4</td></tr>
+      <tr><td><span class="dot-d"><span class="swatch"></span></span> d · 3d</td><td>2</td><td>4</td><td>9</td></tr>
+      <tr><td><span class="dot-f"><span class="swatch"></span></span> f · 4f</td><td>3</td><td>6</td><td>16</td></tr>
     </tbody>
   </table>
-  <p style="font-size:0.82rem; color:#8b94ac; margin-top:-4px">The counts above are the full \(\mathrm{Sym}^L(\mathbb{C}^4)\) decomposition. The interactive panel draws every standard orbital and a representative set of the additional states (one per \(z_4\)-direction family), so it shows 5 additional orbits at the d- and f-shells rather than the full 5 and 13 — enough to see them nest inside without crowding the view.</p>
+  <p>The shells are nested at the real hydrogenic ratio. The smallest orbital of each type is the “circular” orbital \(l=n-1\) — 1s, 2p, 3d, 4f — whose most‑probable radius is exactly \(n^2 a_0\) with \(n=L+1\). That gives the nesting \(1:4:9:16\) you see, s tucked tight at the nucleus, f sweeping wide.</p>
 
-  <h3>Simplex Identity <span class="status-tag tag-id">⭐ Identity</span></h3>
-  <p>The total dimension equals the IDWT simplex number at mode \(n = L+1\) in the d=3 hadronic sector:</p>
-  <div class="formula-block">
-    \[\dim\bigl(\mathrm{Sym}^L(\mathbb{C}^4)\bigr) = \binom{L+3}{3} = S(L+1,\,3)\]
-    <div class="label">pure algebraic identity — valid independently of IDWT postulates</div>
-  </div>
-  <p>The orbital shell structure of atomic physics and the IDWT hadronic mass spectrum are governed by the same combinatorial sequence.</p>
+  <h2>Why the shape is permanent</h2>
+  <p>Every frequency in the orbit is <strong>commensurate</strong> — a rational multiple of one base — so the trajectory is a genuinely closed curve: it retraces itself forever rather than slowly filling the volume. Detune any one frequency and the lobes smear out into a featureless sphere. The closure is exactly what makes the orbital a stable shape instead of a transient.</p>
 
-  <h2>The SU(4) → SO(3) Decomposition</h2>
-  <p>Under \(\mathrm{SU}(4) \supset \mathrm{SU}(3) \times \mathrm{U}(1)\), the fundamental decomposes as \(\mathbf{4} \to \mathbf{3} + \mathbf{1}\). The higher symmetric powers decompose as:</p>
+  <h2>What it means for IDWT</h2>
+  <p>Textbook quantum mechanics hands you the orbital as \(|Y_L^m|^2\), a probability density over where a particle <em>might</em> be. Here the same lobe structure arises from geometry and determinism instead: a single classical path on \(\mathbb{CP}^3\), with the s/p/d/f counts produced by a frequency resonance tied to the monomial — that is, angular‑momentum — structure of the sector. It is a concrete picture of the central IDWT claim: what we read as quantum probability is the shadow of one deterministic wave, and the integers of chemistry (\(1,2,4,6\) lobes; \(1:4:9:16\) sizes) are consequences of where that wave lives.</p>
 
-  <table class="data-table">
-    <thead><tr><th>\(\mathrm{Sym}^L\)</th><th>\(\mathrm{SU}(3)\) content</th><th>\(\mathrm{SO}(3)\) irreps</th></tr></thead>
-    <tbody>
-      <tr><td>\(\mathbf{1}\)</td><td>\(\mathbf{1}\)</td><td><span class="obs-cell">\(j=0\)</span></td></tr>
-      <tr><td>\(\mathbf{4}\)</td><td>\(\mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=1\)</span> · <span class="hid-cell">\(j=0\)</span></td></tr>
-      <tr><td>\(\mathbf{10}\)</td><td>\(\mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=2\)</span> · <span class="hid-cell">\(j=1\)</span> · <span class="hid-cell">\(j=0\) (×2)</span></td></tr>
-      <tr><td>\(\mathbf{20}\)</td><td>\(\mathbf{10} + \mathbf{6} + \mathbf{3} + \mathbf{1}\)</td><td><span class="obs-cell">\(j=3\)</span> · <span class="hid-cell">\(j=2\)</span> · <span class="hid-cell">\(j=1\) (×2)</span> · <span class="hid-cell">\(j=0\)</span></td></tr>
-    </tbody>
-  </table>
+  <p style="margin-top:14px">Status: <span class="status-tag tag-id">🔶 motivated classical illustration</span> &nbsp;The geometric setting — \(\mathbb{CP}^3\) and its degree‑\(L\) monomial states — is correct, and the lobe counts from the \(\kappa=\omega_1\) resonance are verified. <span class="status-tag tag-open">open</span> whether this closed rose <em>is</em> the \(|Y_L^m|^2\) orbital surface or a faithful cousin carrying the same counts and sizes.</p>
 
-  <p>The <span class="obs-cell">standard orbital</span> is the unique highest-\(j\) irrep at each level (blue). Everything below it is an <span class="hid-cell">additional state</span> (pink): the lower-\(j\) pieces, some of which carry the \(z_4\) direction (and so decouple from the standard orbitals by Lemma 2) and some of which are \(z_4\)-free traces repeating \(\mathrm{SO}(3)\) content already seen at lower shells. All are real 6D orbits at definite 3D locations — the split is bookkeeping, not visibility.</p>
-
-  <h2>The Exact Hamiltonian</h2>
-
-  <div class="lemma-box">
-    <div class="lemma-title">Lemma 1 — Exact Potential Separability <span class="status-tag tag-sc">✅ Structural</span></div>
-    <p style="margin:0 0 8px">The total interaction potential on \(M_\infty = \mathbf{R}^3 \times \Xi_6\) is</p>
-    <div class="formula-block" style="margin:0">
-      \[V(\mathbf{r},\xi) = V_\mathrm{Coulomb}(|\mathbf{r}|) + V_6(|\xi|)\]
-    </div>
-    <p style="margin:8px 0 0">an exact sum — no \(\mathbf{r}\)-\(\xi\) cross terms. The proof has three parts: (i) the d=2 photon couples only to \(\rho_\mathrm{3D}(\mathbf{r})\), so the Coulomb term has no \(\xi\)-dependence; (ii) CP³ colour silence means the proton's quark modes create no \(\xi\)-dependent potential for the electron; (iii) the CP³ isometry makes \(V_6\) spherically symmetric in \(\xi\) and independent of \(\mathbf{r}\).</p>
-  </div>
-
-  <p>Because the potential separates exactly, the Schrödinger equation on \(M_\infty\) is exactly separable. The electron occupies sector mode \(n=13\), so \(\chi = \chi_{13}\) with \(E_\xi = m_e\). The 3D Hamiltonian is therefore exact — not an approximation:</p>
-  <div class="formula-block">
-    \[H_\mathrm{eff} = -\frac{\hbar^2}{2m_e}\nabla^2_r - \frac{e^2}{|\mathbf{r}|} + m_e\]
-    <div class="label">effective 3D Hamiltonian — exact consequence of sector structure. Coulomb term in Gaussian units; in SI, replace \(e^2\) with \(e^2/4\pi\varepsilon_0\).</div>
-  </div>
-
-  <h3>Energy Levels <span class="status-tag tag-sc">✅ Structural</span></h3>
-  <div class="formula-block">
-    \[E_{n_H} = m_e - \frac{m_e\,\alpha^2}{2n_H^2}\]
-    <div class="label">non-relativistic Bohr spectrum with electron rest mass — exact, with full \(L\)-degeneracy for \(L = 0, 1, \ldots, n_H-1\). \(n_H\) is the hydrogenic principal quantum number, distinct from the IDWT mode index \(n=13\). Standard Dirac fine-structure corrections enter additively and are unmodified by the sector geometry (see Lemma 2 consequences below).</div>
-  </div>
-
-  <h2>Why ξ-States Don't Disturb the Standard Spectrum</h2>
-
-  <div class="lemma-box">
-    <div class="lemma-title">Lemma 2 — ξ-Orthogonality <span class="status-tag tag-sc">✅ Structural</span></div>
-    <p style="margin:0 0 8px">Let \(O(\mathbf{r}, \nabla_r)\) be any 3D operator (no \(\xi\)-dependence). Let \(|\mathrm{obs}\rangle\) be any observable orbital state (angular part is a polynomial in \(z_1, z_2, z_3\) only). Let \(|\xi\rangle\) have nontrivial \(z_4\)-dependence. Then the <em>off-diagonal</em> element vanishes, \(\langle\xi|O|\mathrm{obs}\rangle = 0\) — the \(\xi\)-sphere integral of the cross term is zero by spherical harmonic orthogonality.</p>
-    <p style="margin:0; color:#9aa3b8; font-size:0.86rem">This is a statement about <em>mixing</em>, not presence. The <em>diagonal</em> expectation \(\langle\xi|O|\xi\rangle\) — including the charge density \(\rho(\mathbf{r})=\int|\Psi(\mathbf{r},\xi)|^2\,d\xi\) — is generally nonzero. A ξ-state is a real electron sitting at a definite 3D location; Lemma 2 says only that no 3D operator <em>connects</em> it to the standard orbitals.</p>
-  </div>
-
-  <p>The off-diagonal vanishing carries five results, one for each physical interaction class described by a 3D operator. In every case the consequence is that ξ-states neither <em>add</em> lines to nor <em>perturb</em> the textbook hydrogen spectrum — they decouple from it:</p>
-  <div class="result-row"><span class="check">✅</span><span><strong>No new spectral lines (all multipoles)</strong> — J<sup>μ</sup>(<b>r</b>) has no ξ-dependence; the ξ-to-orbital matrix element is zero at every EM vertex — E1, E2, M1, M2, … — so no radiative transition of any multipole order connects a ξ-state to an observable orbital. The standard line spectrum gains no extra lines.</span></div>
-  <div class="result-row"><span class="check">✅</span><span><strong>Zeeman splitting</strong> — H<sub>B</sub> = −(e/2m)<b>B</b>·<b>L</b> is a 3D operator; it induces zero ξ–orbital admixture, so each shell gives exactly \(2L+1\) Zeeman energy levels (the \(m_L = -L,\ldots,+L\) substates) with the standard pattern intact.</span></div>
-  <div class="result-row"><span class="check">✅</span><span><strong>Stark selection rules</strong> — the electric dipole operator e<b>r</b>·<b>E</b> has no ξ-dependence; Lemma 2 kills all ξ–orbital mixing; standard \(\Delta L = \pm 1\) follows exactly.</span></div>
-  <div class="result-row"><span class="check">✅</span><span><strong>Fine structure</strong> — H<sub>SO</sub> = (1/2m²c²)(1/r³)<b>L</b>·<b>S</b> is a 3D operator; no ξ–orbital admixture means no anomalous fine-structure shifts; the standard Dirac corrections are unmodified by the sector geometry.</span></div>
-  <div class="result-row"><span class="check">✅</span><span><strong>Hyperfine structure</strong> — the hyperfine terms <b>I</b>·<b>L</b>, <b>I</b>·<b>S</b>, and δ³(<b>r</b>)<b>I</b>·<b>S</b> are all 3D operators; zero ξ–orbital admixture leaves the hyperfine spectrum exactly the standard result.</span></div>
-  <div class="result-row"><span class="check">✅</span><span><strong>Definite 3D presence (what Lemma 2 does <em>not</em> say)</strong> — a ξ-state is not invisible. Its diagonal charge density \(\int|\Psi|^2\,d\xi\) is nonzero and contributes to the atom's total charge and electrostatic field, like any electron. What vanishes is only the <em>off-diagonal</em> coupling to the standard orbitals. "Decoupled from the orbital spectrum" is not "absent from 3D" — the particle is there, at a definite location.</span></div>
-
-  <h2>Explicit Basis: L = 1</h2>
-  <p>\(\mathrm{Sym}^1(\mathbb{C}^4)\) has basis \(\{z_1, z_2, z_3, z_4\}\).</p>
-  <p><span style="color:#4488ff">Standard orbital (p):</span> \(\{z_1, z_2, z_3\} \to (p_x, p_y, p_z)\). These are the standard \(Y_1^m\).</p>
-  <p><span style="color:#ee44aa">Additional state (1):</span> \(\{z_4\}\) — a single basis vector along the SU(3)-singlet (\(z_4\)) coordinate. Its <em>cross term</em> with any monomial in \((z_1, z_2, z_3)\) under the SU(4)-invariant measure is zero (different monomials at the same degree are orthogonal). Hence \(\langle z_4 \,|\, O \,|\, z_i\rangle = 0\) for every 3D operator \(O\) and every \(i \in \{1,2,3\}\): it does not mix with the p-orbitals. It remains a real electron configuration with a definite 3D charge density of its own.</p>
-
-  <h2>Explicit Basis: L = 2</h2>
-  <p>\(\mathrm{Sym}^2(\mathbb{C}^4)\) has 10 basis monomials.</p>
-  <p><span style="color:#4488ff">Standard orbital (d), 5:</span> the traceless degree-2 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_2^m\).</p>
-  <p><span style="color:#ee44aa">Additional states (5):</span> four carry \(z_4\) — \(\{z_1 z_4,\, z_2 z_4,\, z_3 z_4\}\) (\(j=1\)) and \(\{z_4^2\}\) (\(j=0\)) — so their cross terms with the standard d-orbitals vanish (Lemma 2) and they add no new lines; one is the \(z_4\)-free trace \(\{z_1^2+z_2^2+z_3^2\}\) (\(j=0\)), which repeats the spin-0 representation already seen at \(L=0\). All five are real states at definite 3D locations with their own charge clouds.</p>
-
-  <h2>Explicit Basis: L = 3</h2>
-  <p>\(\mathrm{Sym}^3(\mathbb{C}^4)\) has 20 basis monomials.</p>
-  <p><span style="color:#4488ff">Standard orbital (f), 7:</span> the harmonic degree-3 polynomials in \((z_1, z_2, z_3)\) — the standard \(Y_3^m\) for \(m = -3,\ldots,+3\).</p>
-  <p><span style="color:#ee44aa">Additional states (13):</span> ten carry at least one \(z_4\) factor — by z₄ multiplicity: (i) \(\{z_i z_j z_4\}\), six states (5 traceless \(j=2\), 1 trace \(j=0\)); (ii) \(\{z_i z_4^2\}\) (\(j=1\), 3 states); (iii) \(\{z_4^3\}\) (\(j=0\), 1 state) — these decouple from the standard f-orbitals by Lemma 2. The remaining three are \(z_4\)-free traces \(\{(z_1^2+z_2^2+z_3^2)\,z_i\}\) (\(j=1\)), repeating \(\mathrm{SO}(3)\) content already present in the \(L=1\) p-shell. All thirteen are real 6D orbits at definite 3D locations.</p>
-
-  <h2>What This Derives</h2>
-  <div class="bomb-box">
-    <div class="bomb-title">Theorems of CP³ geometry alone</div>
-    <ul style="margin:6px 0 0 1.2em; padding:0; font-size:0.9rem; line-height:1.7">
-      <li>The orbital degeneracy sequence \(1, 3, 5, 7, \ldots = 2L+1\) — from the harmonic component of \(\mathrm{Sym}^L(\mathbb{C}^4)\).</li>
-      <li>The non-relativistic Bohr spectrum \(E_{n_H} = -m_e\alpha^2/(2n_H^2)\) — from Lemma 1 (exact potential separability on \(M_\infty\)).</li>
-      <li>Electric dipole selection rule \(\Delta L = \pm 1\) — from Lemma 2 applied to \(e\mathbf{r}\cdot\mathbf{E}\).</li>
-      <li>All higher multipole selection rules (E2, M1, M2, …) — from Lemma 2 applied to the multipole expansion of \(J^\mu A_\mu\).</li>
-      <li>Zeeman energy levels \(2L+1\) per shell — from Lemma 2 applied to \(\mathbf{B}\cdot\mathbf{L}\).</li>
-      <li>Standard Dirac fine structure (unmodified) — from Lemma 2 applied to spin-orbit and Darwin terms.</li>
-      <li>Standard hyperfine spectrum (unmodified) — from Lemma 2 applied to nuclear-spin coupling terms.</li>
-    </ul>
-    <div class="bomb-title" style="margin-top:14px">Structural prediction</div>
-    <p style="margin:6px 0 0">ξ-states with \(z_4\)-direction angular momentum exist in every shell at \(L \geq 1\). Each is a real electron at a definite 3D location — it carries a charge density like any other — but Lemma 2 makes its <em>off-diagonal</em> coupling to the standard orbitals vanish for every 3D operator. So a ξ-state neither adds a line to the textbook hydrogen spectrum nor perturbs its fine, hyperfine, Zeeman, or Stark structure: it is decoupled, not invisible. The falsifiable content is the decoupling: if a transition were ever measured connecting a ξ-state to a standard orbital — a line that should not exist — the CP³ identification of the electron sector would be challenged.</p>
-  </div>
-
-  <h2>Summary</h2>
-  <p>The orbital degeneracy counts \(2L+1\) for s, p, d, f shells are a theorem of the representation theory of \(\mathrm{SU}(4)\) under the chain \(\mathrm{SU}(4)\supset\mathrm{SU}(3)\supset\mathrm{SO}(3)\). The non-relativistic Bohr spectrum follows from exact potential separability in \(M_\infty\) (Lemma 1). Every standard spectroscopic selection rule and field-coupling result follows from ξ-orthogonality (Lemma 2). The orbital count, energy spectrum, selection rules, and the decoupling of the ξ-states from the standard orbitals are all structural consequences of CP³ — fixed entirely by the inputs of the core IDWT framework (\(m_e\) and \(n_s = 4\)). The electron always has a definite 3D location: the first three of its six coordinates.</p>
-
-  <p style="margin-top:24px; font-size:0.83rem; color:#5a6380">
-    <strong style="color:#8b9cff">Reference:</strong> Fedge No, <em>Infinite Dimensional Wave Theory</em> (2026), <a href="https://doi.org/10.5281/zenodo.19767493" target="_blank" rel="noopener">doi:10.5281/zenodo.19767493</a>
-  </p>
-  <p style="margin-top:12px; font-size:0.83rem; color:#5a6380">
-    See also: <a href="/articles/sectors.html">The Six Sectors</a> &nbsp;·&nbsp;
-    <a href="/articles/mode-selection.html">Generation Tower Mode Selection</a> &nbsp;·&nbsp;
-    <a href="/articles/sector-filters.html">Coupling Filters</a>
-  </p>
-</div><!-- end text-panel -->
+  <h2>How to use</h2>
+  <p>Toggle <strong>s · p · d · f</strong> to show or hide each shell; <strong>⟲ reset view</strong> re‑centers the camera and turns them all back on. Drag to rotate, scroll to zoom.</p>
+</div>
 
 <!-- ══════════════════════ VIZ PANEL ══════════════════════ -->
 <div class="viz-panel" id="vizPanel">
-  <div class="category-bar">
-    <div class="cat-btn cat-obs active legend"><span class="swatch"></span>Standard orbital (2L+1)</div>
-    <div class="cat-btn cat-hid active legend"><span class="swatch"></span>Additional states</div>
-  </div>
-  <div class="viz-info" id="vizInfo">
-    <div class="vi-title">s shell — L=0</div>
-    <div class="vi-obs">1 standard orbital</div>
-    <div class="vi-dim">S(1,3) = 1</div>
-  </div>
-  <div class="shell-bar">
-    <button class="shell-btn active" id="btn-s">s (L=0)</button>
-    <button class="shell-btn" id="btn-p">p (L=1)</button>
-    <button class="shell-btn" id="btn-d">d (L=2)</button>
-    <button class="shell-btn" id="btn-f">f (L=3)</button>
-  </div>
-  <div class="aux-bar"><button class="shell-btn active" id="btn-shadow">Shadow: on</button></div>
-  <div class="drag-hint">Drag = rotate</div>
-  <div class="wheel-hint">Wheel = zoom</div>
+  <div class="viz-info" id="vizInfo"><div class="vi-title">Resonant orbits · κ = ω₁</div>nested 1s · 2p · 3d · 4f at one nucleus</div>
+  <div class="drag-hint">drag to rotate · scroll to zoom</div>
+  <div class="shell-bar" id="controls"></div>
 </div>
 
-</div><!-- end split-root -->
+</div>
 
-<script src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js" type="text/javascript"></script>
 <script type="importmap">{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }</script>
 <script type="module">
 import * as THREE from 'three';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// ── renderer ─────────────────────────────────────────────────
-const panel = document.getElementById('vizPanel');
-// Use window dimensions as safe initial size; ResizeObserver corrects immediately
-const initW = Math.max(100, Math.floor(window.innerWidth / 2));
-const initH = Math.max(100, window.innerHeight - 56);
+const FREQS=[2,3,5,7], W1=FREQS[0], WB=4;            // commensurate -> closed orbit
+const PAIRS=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
+const NPTS=6000, TRAIL=300, RBASE=0.45;
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.1;
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.setClearColor(0x000000, 0);
-renderer.setSize(initW, initH);
-renderer.domElement.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;';
-panel.appendChild(renderer.domElement);
+const container=document.getElementById('vizPanel');
+const W=container.clientWidth,H=container.clientHeight;
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(W,H); renderer.setClearColor(0x000000,0);
+container.appendChild(renderer.domElement);
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(45,W/H,0.1,200); camera.position.set(0,0,16);
+const controls=new OrbitControls(camera,renderer.domElement); controls.enableDamping=true; controls.dampingFactor=0.08;
+scene.add(new THREE.AmbientLight(0x1a1f3a,0.4));
+const dirLight=new THREE.DirectionalLight(0xffffff,1.0); dirLight.position.set(1,2,3); scene.add(dirLight);
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(0.042,16,12),new THREE.MeshPhongMaterial({color:0xfff3d8,emissive:0xffc890,emissiveIntensity:1.4})));
 
-// ── scene ─────────────────────────────────────────────────────
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(50, initW / initH, 0.05, 100);
-camera.lookAt(0, 0, 0);
+function glowTex(rgb){const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');
+  const gr=g.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(0.32,`rgba(${rgb},0.8)`);
+  gr.addColorStop(0.62,`rgba(${rgb},0.28)`);gr.addColorStop(1,`rgba(${rgb},0)`);g.fillStyle=gr;g.beginPath();g.arc(32,32,32,0,7);g.fill();
+  return new THREE.CanvasTexture(c);}
 
-const renderPass = new RenderPass(scene, camera);
-const bloomPass  = new UnrealBloomPass(new THREE.Vector2(initW, initH), 0.28, 0.4, 0.12);
-const composer   = new EffectComposer(renderer);
-composer.addPass(renderPass);
-composer.addPass(bloomPass);
-
-scene.add(new THREE.AmbientLight(0x1a1f3a, 0.18));
-const dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
-dirLight.position.set(3, 5, 4);
-scene.add(dirLight);
-const pLight1 = new THREE.PointLight(0xffffff, 4, 25);
-scene.add(pLight1);
-const pLight2 = new THREE.PointLight(0xffffff, 2.5, 20);
-scene.add(pLight2);
-
-// One group holds the whole atom and rotates with user interaction.
-const group = new THREE.Group();
-group.rotation.x = 0.4;
-group.rotation.y = 0.6;
-scene.add(group);
-
-// colour conventions: standard orbital (blue) / additional states (pink)
-const OBS = 0x4488ff, HID = 0xee44aa, LOW = 0x44dd88;
-const R0 = 2.4;        // observable shell radius (world units)
-const MAX_TRAIL = 900;  // points in each electron's trail
-
-// per-category groups, so a whole category can be toggled at once
-const grpOBS = new THREE.Group();
-const grpHID = new THREE.Group();
-const grpLOW = new THREE.Group();
-group.add(grpOBS, grpHID, grpLOW);
-function groupFor(color) {
-  return color === OBS ? grpOBS : color === HID ? grpHID : grpLOW;
-}
-
-// nucleus at the origin
-const nucleus = new THREE.Mesh(
-  new THREE.SphereGeometry(0.16, 32, 24),
-  new THREE.MeshPhongMaterial({ color: 0xfff3d8, emissive: 0xffc890,
-    emissiveIntensity: 1.5, shininess: 80 }));
-group.add(nucleus);
-
-// one accumulating point-cloud per category — the shadow the orbiting
-// electrons fill in (their 3D projection = the orbital)
-function makeCloud(color, cap) {
-  const pos = new Float32Array(cap * 3);
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  geo.setDrawRange(0, 0);
-  const pts = new THREE.Points(geo, new THREE.PointsMaterial({
-    color, size: 0.045, transparent: true, opacity: 0.45,
-    blending: THREE.AdditiveBlending, depthWrite: false }));
-  return { pos, geo, pts, cap, count: 0, head: 0 };
-}
-function depositCloud(c, x, y, z) {
-  c.pos[c.head*3] = x; c.pos[c.head*3+1] = y; c.pos[c.head*3+2] = z;
-  c.head = (c.head + 1) % c.cap;
-  c.count = Math.min(c.count + 1, c.cap);
-  c.geo.setDrawRange(0, c.count);
-  c.geo.attributes.position.needsUpdate = true;
-}
-function resetCloud(c) { c.count = 0; c.head = 0; c.geo.setDrawRange(0, 0); }
-const clouds = {
-  [OBS]: makeCloud(OBS, 5000),
-  [HID]: makeCloud(HID, 5000),
-  [LOW]: makeCloud(LOW, 2500),
-};
-grpOBS.add(clouds[OBS].pts);
-grpHID.add(clouds[HID].pts);
-grpLOW.add(clouds[LOW].pts);
-
-// electron + trail factories
-function makeElectron(color) {
-  const tint = new THREE.Color(color).lerp(new THREE.Color(0xffffff), 0.45);
-  return new THREE.Mesh(
-    new THREE.SphereGeometry(0.07, 16, 12),
-    new THREE.MeshPhongMaterial({ color: tint, emissive: color,
-      emissiveIntensity: 2.4, shininess: 120 }));
-}
-function makeTrail(color) {
-  const geo = new THREE.BufferGeometry();
-  const pos = new Float32Array(MAX_TRAIL * 3);
-  const col = new Float32Array(MAX_TRAIL * 3);
-  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
-  const line = new THREE.Line(geo, new THREE.LineBasicMaterial({
-    vertexColors: true, transparent: true, opacity: 0.8 }));
-  return { pts: [], geo, pos, col, line, base: new THREE.Color(color) };
-}
-
-// the live set of orbiting electrons for the current shell
-let electrons = [];
-let readoutE = null;   // electron whose 6-vector is shown in the readout
-
-// ── spherical harmonics: the exact 3D shadow of the standard orbitals ──
-// The 2L+1 "standard orbital" states are the harmonic part of Sym^L(C⁴);
-// their projection onto observable space is exactly the spherical harmonic
-// Y_L^m, so we trace that closed form directly (this is the recognisable
-// s,p,d,f shape — a genuine 6D orbit whose shadow happens to have a name).
-function realSH(L, m, theta, phi) {
-  const ct = Math.cos(theta), st = Math.sin(theta);
-  const cp = Math.cos(phi), sp = Math.sin(phi);
-  if (L === 0) return 1;
-  if (L === 1) {
-    if (m ===  0) return ct;
-    if (m ===  1) return st * cp;
-    if (m === -1) return st * sp;
-  }
-  if (L === 2) {
-    if (m ===  0) return 0.5 * (3*ct*ct - 1);
-    if (m ===  1) return st * ct * cp;
-    if (m === -1) return st * ct * sp;
-    if (m ===  2) return st*st * Math.cos(2*phi);
-    if (m === -2) return st*st * Math.sin(2*phi);
-  }
-  if (L === 3) {
-    if (m ===  0) return 0.5 * ct * (5*ct*ct - 3);
-    if (m ===  1) return st * (5*ct*ct - 1) * cp;
-    if (m === -1) return st * (5*ct*ct - 1) * sp;
-    if (m ===  2) return st*st * ct * Math.cos(2*phi);
-    if (m === -2) return st*st * ct * Math.sin(2*phi);
-    if (m ===  3) return st*st*st * Math.cos(3*phi);
-    if (m === -3) return st*st*st * Math.sin(3*phi);
-  }
-  return 0;
-}
-
-// ── deterministic 6D orbit for the additional states (the template's Orbit6D) ──
-// State = monomial z1^a z2^b z3^c z4^d. Moduli |z_k|=√(weight_k/L), phases
-// advance at incommensurate rates √2,√3,√5. The six real coordinates are
-// (Re z1, Im z1, Re z2, Im z2, Re z3, Im z3); the OBSERVABLE position is the
-// first three. Because each template monomial puts its weight in a single
-// spatial direction, the orbit is a flat ring or an arc — never a tube.
-class Orbit6D {
-  constructor(exponents) {
-    const [a, b, c, d] = exponents;
-    const L = (a + b + c + d) || 1;
-    this.r1 = Math.sqrt(a / L);
-    this.r2 = Math.sqrt(b / L);
-    this.r3 = Math.sqrt(c / L);
-    this.w1 = Math.sqrt(2); this.w2 = Math.sqrt(3); this.w3 = Math.sqrt(5);
-    this.phase1 = Math.random() * 2 * Math.PI;
-    this.phase2 = Math.random() * 2 * Math.PI;
-    this.phase3 = Math.random() * 2 * Math.PI;
-    this.six = [0, 0, 0, 0, 0, 0];
-  }
-  position(t) {
-    const z1_re = this.r1 * Math.cos(this.w1 * t + this.phase1);
-    const z1_im = this.r1 * Math.sin(this.w1 * t + this.phase1);
-    const z2_re = this.r2 * Math.cos(this.w2 * t + this.phase2);
-    const z2_im = this.r2 * Math.sin(this.w2 * t + this.phase2);
-    const z3_re = this.r3 * Math.cos(this.w3 * t + this.phase3);
-    const z3_im = this.r3 * Math.sin(this.w3 * t + this.phase3);
-    this.six[0]=z1_re; this.six[1]=z1_im; this.six[2]=z2_re;
-    this.six[3]=z2_im; this.six[4]=z3_re; this.six[5]=z3_im;
-    return { x: z1_re, y: z1_im, z: z2_re };   // observable = first three coords
-  }
-}
-
-// Two kinds of state per shell, exactly as in the template:
-//   • 'obs'        — the 2L+1 harmonic states → standard s,p,d,f orbital (realSH).
-//   • 'hid'/'low'  — additional states → the deterministic 6D orbit (Orbit6D),
-//                    rendered identically (both are just "additional", pink).
-function shellStates(L) {
-  if (L === 0) return [
-    { type:'obs', L:0, m:0 },
-  ];
-  if (L === 1) return [
-    { type:'obs', L:1, m:1 }, { type:'obs', L:1, m:0 }, { type:'obs', L:1, m:-1 },
-    { type:'hid', exponents:[0,0,0,1] },
-  ];
-  if (L === 2) return [
-    { type:'obs', L:2, m:2 }, { type:'obs', L:2, m:1 }, { type:'obs', L:2, m:0 },
-    { type:'obs', L:2, m:-1 }, { type:'obs', L:2, m:-2 },
-    { type:'hid', exponents:[1,0,0,1] },
-    { type:'hid', exponents:[0,1,0,1] },
-    { type:'hid', exponents:[0,0,1,1] },
-    { type:'hid', exponents:[0,0,0,2] },
-    { type:'low', exponents:[2,0,0,0] },
-  ];
-  if (L === 3) return [
-    { type:'obs', L:3, m:3 }, { type:'obs', L:3, m:2 }, { type:'obs', L:3, m:1 },
-    { type:'obs', L:3, m:0 }, { type:'obs', L:3, m:-1 }, { type:'obs', L:3, m:-2 },
-    { type:'obs', L:3, m:-3 },
-    { type:'hid', exponents:[1,0,0,2] }, { type:'hid', exponents:[0,1,0,2] },
-    { type:'hid', exponents:[0,0,1,2] }, { type:'hid', exponents:[0,0,0,3] },
-    { type:'low', exponents:[2,0,0,1] },
-  ];
-  return [];
-}
-
-const SHELL_NAMES = ['s','p','d','f'];
-const SHELL_META  = [
-  { name:'s shell — L=0', std:1, extra:0, dim:1  },
-  { name:'p shell — L=1', std:3, extra:1, dim:4  },
-  { name:'d shell — L=2', std:5, extra:5, dim:10 },
-  { name:'f shell — L=3', std:7, extra:5, dim:20 },
+const SHELLS=[
+  {name:'s',exp:[0,0,0,0],scale:1*RBASE, col:0xffd27a,rgb:[255,210,122]},
+  {name:'p',exp:[1,0,0,0],scale:4*RBASE, col:0x5a9bff,rgb:[90,155,255]},
+  {name:'d',exp:[2,0,0,0],scale:9*RBASE, col:0x46d39a,rgb:[70,211,154]},
+  {name:'f',exp:[3,0,0,0],scale:16*RBASE,col:0xe06ad0,rgb:[224,106,208]},
 ];
-
-let tt = 0;                  // orbit phase
-const SPEED = 1.0;
-// observable-orbital sweep rates (incommensurate → each lobe fills out)
-const F_PHI = 0.80, F_THETA = 0.80 / 1.6180339887;
-let targetCamDist = 7, actualCamDist = 7;
-
-// Position dispatch — both kinds are 6D orbits, we draw the observable 3D part.
-//   • 'extra' states: the genuine 6D torus orbit (Orbit6D); observable = first 3.
-//   • 'obs' states: their observable shadow is exactly Y_L^m, traced via realSH.
-// e.six holds the full six coordinates either way (obs: 3 observable + zeros,
-// since the standard orbital already lies in observable space).
-const _v = new THREE.Vector3();
-function electronPoint(e, t) {
-  if (e.orbit) {                         // additional state → 6D orbit
-    const p = e.orbit.position(t);
-    e.six = e.orbit.six;
-    return _v.set(p.x, p.y, p.z);
-  }
-  const phi   = F_PHI * t + e.phi0;      // standard orbital → Y_L^m shadow
-  const theta = Math.acos(Math.sin(F_THETA * t + e.th0));
-  const val   = realSH(e.L, e.m, theta, phi);
-  const r     = R0 * Math.abs(val);
-  const st    = Math.sin(theta);
-  e.val = val;
-  const x = r*st*Math.cos(phi), y = r*Math.cos(theta), z = r*st*Math.sin(phi);
-  e.six[0]=x; e.six[1]=y; e.six[2]=z; e.six[3]=0; e.six[4]=0; e.six[5]=0;
-  return _v.set(x, y, z);
-}
-
-// ── shell switching ───────────────────────────────────────────
-function clearElectrons() {
-  for (const e of electrons) {
-    e.mesh.geometry.dispose(); e.mesh.material.dispose();
-    e.trail.geo.dispose();     e.trail.line.material.dispose();
-    groupFor(e.color).remove(e.mesh);
-    groupFor(e.color).remove(e.trail.line);
-  }
-  electrons = [];
-  resetCloud(clouds[OBS]); resetCloud(clouds[HID]); resetCloud(clouds[LOW]);
-}
-function setShell(L) {
-  clearElectrons();
-  tt = 0;
-  shellStates(L).forEach((o, idx) => {
-    const color = o.type === 'obs' ? OBS : HID;
-    const g = groupFor(color);
-    const mesh = makeElectron(color); g.add(mesh);
-    const trail = makeTrail(color);   g.add(trail.line);
-    const e = { type: o.type, color, six: [0,0,0,0,0,0], mesh, trail };
-    if (o.type === 'obs') {
-      e.L = o.L; e.m = o.m; e.phi0 = idx * 0.7; e.th0 = idx * 1.31; e.val = 1;
-    } else {
-      e.orbit = new Orbit6D(o.exponents);
-    }
-    electrons.push(e);
-  });
-  // readout: prefer an additional (6D-orbit) state so all six coords read nonzero
-  readoutE = electrons.find(e => e.orbit) || electrons[0];
-  SHELL_NAMES.forEach((n, i) =>
-    document.getElementById('btn-' + n).classList.toggle('active', i === L));
-  const m = SHELL_META[L];
-  document.getElementById('vizInfo').innerHTML =
-    `<div class="vi-title">${m.name}</div>` +
-    `<div class="vi-obs">${m.std} standard orbital</div>` +
-    (m.extra ? `<div class="vi-hid">${m.extra} additional states</div>` : '') +
-    `<div class="vi-dim">S(${L+1},3) = ${m.dim}</div>` +
-    `<div class="vi-six" id="sixReadout"></div>`;
-}
-SHELL_NAMES.forEach((n, i) =>
-  document.getElementById('btn-' + n).addEventListener('click', () => setShell(i)));
-
-// Categories are a static legend, not toggles: every electron is always
-// rendered at its definite 3D location. No category can be hidden.
-
-// shadow (accumulated projection) on/off
-let shadowOn = true;
-const shadowBtn = document.getElementById('btn-shadow');
-shadowBtn.addEventListener('click', () => {
-  shadowOn = !shadowOn;
-  clouds[OBS].pts.visible = clouds[HID].pts.visible =
-    clouds[LOW].pts.visible = shadowOn;
-  shadowBtn.textContent = 'Shadow: ' + (shadowOn ? 'on' : 'off');
-  shadowBtn.classList.toggle('active', shadowOn);
+const ctr=document.getElementById('controls');
+SHELLS.forEach((sh,idx)=>{
+  const rng=mulberry32(1000+idx*97);
+  const L=Math.max(sh.exp.reduce((a,b)=>a+b,0),1);
+  let r0=sh.exp.map(e=>Math.sqrt(Math.max(e,1e-3)/L)); const nr=Math.hypot(...r0); sh.r0=r0.map(v=>v/nr);
+  sh.I=[sh.exp[0]+1,sh.exp[1]+1,sh.exp[2]+1,sh.exp[3]+1];
+  sh.pph=Array.from({length:6},()=>rng()*2*Math.PI); sh.ph=Array.from({length:4},()=>rng()*2*Math.PI);
+  sh.pos=new Float32Array(NPTS*3);
+  const cg=new THREE.BufferGeometry(); cg.setAttribute('position',new THREE.BufferAttribute(sh.pos,3));
+  sh.cloud=new THREE.Points(cg,new THREE.PointsMaterial({size:0.055,map:glowTex(sh.rgb),transparent:true,opacity:0.5,blending:THREE.AdditiveBlending,depthWrite:false,color:sh.col,sizeAttenuation:true}));
+  scene.add(sh.cloud);
+  sh.tpos=new Float32Array(TRAIL*3); sh.tcol=new Float32Array(TRAIL*3);
+  const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.BufferAttribute(sh.tpos,3)); tg.setAttribute('color',new THREE.BufferAttribute(sh.tcol,3));
+  sh.trail=new THREE.Line(tg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+  scene.add(sh.trail);
+  sh.electron=new THREE.Mesh(new THREE.SphereGeometry(0.042,14,10),new THREE.MeshPhongMaterial({color:0xffffff,emissive:sh.col,emissiveIntensity:2.6}));
+  scene.add(sh.electron);
+  sh.visible=true;
+  const deg=sh.exp.reduce((a,b)=>a+b,0); const lobes=(deg===0)?1:2*deg;
+  const btn=document.createElement('div'); btn.className='shell-btn';
+  btn.innerHTML=`<span class="dot" style="color:#${sh.col.toString(16).padStart(6,'0')}"></span><span class="nm">${sh.name}</span><span class="ct">${lobes} lobe${lobes>1?'s':''}</span>`;
+  btn.addEventListener('click',()=>{ sh.visible=!sh.visible; sh.cloud.visible=sh.visible; sh.trail.visible=sh.visible; sh.electron.visible=sh.visible; btn.classList.toggle('off',!sh.visible); });
+  ctr.appendChild(btn); sh.btn=btn;
 });
 
-// ── interaction ───────────────────────────────────────────────
-let isDragging = false, lastX = 0, lastY = 0;
-panel.addEventListener('pointerdown', e => {
-  if (e.target.closest('.shell-btn, .cat-btn')) return;
-  isDragging = true; lastX = e.clientX; lastY = e.clientY;
-  panel.setPointerCapture(e.pointerId);
+const resetBtn=document.createElement('div'); resetBtn.className='reset-btn'; resetBtn.textContent='⟲ reset view';
+resetBtn.addEventListener('click',()=>{
+  for(const sh of SHELLS){ sh.visible=true; sh.cloud.visible=true; sh.trail.visible=true; sh.electron.visible=true; sh.btn.classList.remove('off'); }
+  frameCamera();
 });
-panel.addEventListener('pointermove', e => {
-  if (!isDragging) return;
-  group.rotation.y += (e.clientX - lastX) * 0.007;
-  group.rotation.x += (e.clientY - lastY) * 0.007;
-  lastX = e.clientX; lastY = e.clientY;
-});
-panel.addEventListener('pointerup', () => isDragging = false);
-panel.addEventListener('wheel', e => {
-  e.preventDefault();
-  targetCamDist = Math.max(2, Math.min(20, targetCamDist * (1 + e.deltaY * 0.001)));
-}, { passive: false });
+ctr.appendChild(resetBtn);
 
-// ── resize ────────────────────────────────────────────────────
-function onResize() {
-  const w = panel.clientWidth, h = panel.clientHeight;
-  if (!w || !h) return;
-  camera.aspect = w / h;
-  camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
-  composer.setSize(w, h);
-}
-new ResizeObserver(onResize).observe(panel);
-window.addEventListener('resize', onResize);
-
-// ── animate ───────────────────────────────────────────────────
-let frame = 0;
-function animate() {
-  requestAnimationFrame(animate);
-  frame++;
-  tt += 0.10 * SPEED;
-  if (!isDragging) group.rotation.y += 0.0035;
-
-  const deposit = shadowOn && frame % 2 === 0;
-  for (const e of electrons) {
-    const p = electronPoint(e, tt);
-    const x = p.x, y = p.y, z = p.z;
-    e.mesh.position.set(x, y, z);
-
-    // trail — newest point first, fading to the background behind
-    const t = e.trail;
-    t.pts.unshift(new THREE.Vector3(x, y, z));
-    if (t.pts.length > MAX_TRAIL) t.pts.pop();
-    for (let k = 0; k < t.pts.length; k++) {
-      const f = 1 - k / MAX_TRAIL;
-      t.pos[k*3]     = t.pts[k].x;
-      t.pos[k*3 + 1] = t.pts[k].y;
-      t.pos[k*3 + 2] = t.pts[k].z;
-      t.col[k*3]     = t.base.r * f;
-      t.col[k*3 + 1] = t.base.g * f;
-      t.col[k*3 + 2] = t.base.b * f;
-    }
-    t.geo.setDrawRange(0, t.pts.length);
-    t.geo.attributes.position.needsUpdate = true;
-    t.geo.attributes.color.needsUpdate = true;
-
-    // shadow — accumulate the observable projection; skip orbital nodes
-    if (deposit && (e.orbit || Math.abs(e.val) > 0.05))
-      depositCloud(clouds[e.color], x, y, z);
+function computeShell(sh){
+  const rates=PAIRS.map(([i,j])=>Math.abs(sh.I[i]-sh.I[j])*W1);   // kappa = omega1
+  for(let s=0;s<NPTS;s++){
+    const t=s/NPTS*2*Math.PI;
+    let v=sh.r0.slice();
+    for(let idx=0;idx<6;idx++){ const [i,j]=PAIRS[idx]; const ang=rates[idx]*t+sh.pph[idx];
+      const ca=Math.cos(ang), sa=Math.sin(ang); const vi=v[i],vj=v[j]; v[i]=ca*vi-sa*vj; v[j]=sa*vi+ca*vj; }
+    let n=Math.hypot(v[0],v[1],v[2],v[3])||1; const a0=Math.abs(v[0])/n, a1=Math.abs(v[1])/n;
+    const br=1+0.08*Math.cos(WB*t);
+    sh.pos[s*3]  =sh.scale*br*a0*Math.cos(FREQS[0]*t+sh.ph[0]);
+    sh.pos[s*3+1]=sh.scale*br*a0*Math.sin(FREQS[0]*t+sh.ph[0]);
+    sh.pos[s*3+2]=sh.scale*br*a1*Math.cos(FREQS[1]*t+sh.ph[1]);
   }
-
-  // live 6-vector readout (a few times/sec): first three = observable,
-  // last three = the extra coordinates — both genuinely computed.
-  if (readoutE && frame % 6 === 0) {
-    const el = document.getElementById('sixReadout');
-    if (el) {
-      const s = readoutE.six.map(v => (v >= 0 ? '+' : '') + v.toFixed(2));
-      el.innerHTML = 'x = (<span class="ro-obs">' + s[0] + ', ' + s[1] +
-        ', ' + s[2] + '</span> | <span class="ro-xi">' + s[3] + ', ' +
-        s[4] + ', ' + s[5] + '</span>)';
-    }
-  }
-
-  pLight1.position.set(4*Math.cos(tt*0.1), 3, 4*Math.sin(tt*0.1));
-  pLight2.position.set(-4*Math.cos(tt*0.08), 3, 2);
-
-  actualCamDist += (targetCamDist - actualCamDist) * 0.08;
-  camera.position.set(0, 0, actualCamDist);
-  camera.lookAt(0, 0, 0);
-  composer.render();
+  sh.cloud.geometry.attributes.position.needsUpdate=true;
 }
+SHELLS.forEach(computeShell);
 
-// ── start ─────────────────────────────────────────────────────
-setShell(0);
+function frameCamera(){
+  let R=0; for(const sh of SHELLS) for(let s=0;s<NPTS;s++){ const r=Math.hypot(sh.pos[s*3],sh.pos[s*3+1]); if(r>R)R=r; }
+  R=R||3;
+  const halfV=THREE.MathUtils.degToRad(camera.fov)/2;
+  const dv=R/Math.tan(halfV);
+  const dh=R/Math.tan(Math.atan(Math.tan(halfV)*camera.aspect));
+  const dist=Math.max(dv,dh)*1.1;
+  camera.up.set(0,1,0); camera.position.set(0,0,dist); camera.lookAt(0,0,0);
+  controls.target.set(0,0,0); controls.update();
+}
+frameCamera();
+
+let head=0;
+function animate(){
+  requestAnimationFrame(animate); controls.update();
+  head=(head+8)%NPTS;
+  for(const sh of SHELLS){
+    if(!sh.visible) continue;
+    for(let k=0;k<TRAIL;k++){
+      const idx=((head-(TRAIL-1)+k)%NPTS+NPTS)%NPTS;
+      sh.tpos[k*3]=sh.pos[idx*3]; sh.tpos[k*3+1]=sh.pos[idx*3+1]; sh.tpos[k*3+2]=sh.pos[idx*3+2];
+      const a=k/(TRAIL-1);
+      sh.tcol[k*3]=sh.rgb[0]/255*a; sh.tcol[k*3+1]=sh.rgb[1]/255*a; sh.tcol[k*3+2]=sh.rgb[2]/255*a;
+    }
+    sh.trail.geometry.attributes.position.needsUpdate=true; sh.trail.geometry.attributes.color.needsUpdate=true;
+    const i=head*3; sh.electron.position.set(sh.pos[i],sh.pos[i+1],sh.pos[i+2]);
+  }
+  renderer.render(scene,camera);
+}
 animate();
+window.addEventListener('resize',()=>{const w=container.clientWidth,h=container.clientHeight;if(w&&h){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);frameCamera();}});
 </script>
 </body>
 </html>
