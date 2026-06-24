@@ -116,13 +116,13 @@ The phase of sector $d$ accumulates at a rate inversely proportional to the mode
 
 The cross-sector coupling term $(\xi_d\cdot\xi_{d'})^2$ decomposes on the unit sphere $S^{d-1}$ by spherical harmonics. For the $d=3$ sector ($S^2$), where $P_2$ is the standard Legendre polynomial:
 
-$$(\xi_d\cdot\xi_{d'})^2 = \tfrac{1}{3}\;[l{=}0,\text{ scalar}] \;+\; \tfrac{2}{3}P_2(\cos\theta)\;[l{=}2,\text{ tensor}]$$
+$$(\xi_d\cdot\xi_{d'})^2 = \tfrac{1}{3}\;[$l{=}0$,\text{ scalar}] \;+\; \tfrac{2}{3}P_2(\cos\theta)\;[$l{=}2$,\text{ tensor}]$$
 
-For general d, the l=0 coefficient is 1/d and the l=2 coefficient involves the Gegenbauer polynomial $C_2^{(d-2)/2}$. The $d=3$ formula is given because the $d=3$ quark sector is the primary source of the corrections discussed here.
+For general $d$, the $l=0$ coefficient is $1/d$ and the $l=2$ coefficient involves the Gegenbauer polynomial $C_2^{(d-2)/2}$. The $d=3$ formula is given because the $d=3$ quark sector is the primary source of the corrections discussed here.
 
-The l=0 part is a constant — it generates sector masses and is the source of the entire simplex spectrum. The l=2 part depends on the relative orientation of ξ_d and ξ_{d'} and is responsible for the non-trivial spatial corrections in the theory: the even-l correlations of the $d=3$ colour singlet that set nucleon size and confinement energy, and the n-dependent frequency precession behind the $d=4$ up-type overshoot (§11). Both come from the same tensor term. (The nucleon spin observables μ_p, μ_n, and g_A are not from this term — being spin-independent it cannot source a spin observable; they belong to the Dirac spin-orbit sector, Part 8 §10.)
+The $l=0$ part is a constant — it generates sector masses and is the source of the entire simplex spectrum. The $l=2$ part depends on the relative orientation of $\xi_d$ and $\xi_{d'}$ and is responsible for the non-trivial spatial corrections in the theory: the even-$l$ correlations of the $d=3$ colour singlet that set nucleon size and confinement energy, and the $n$-dependent frequency precession behind the $d=4$ up-type overshoot (§11). Both come from the same tensor term. (The nucleon spin observables μ_p, μ_n, and g_A are not from this term — being spin-independent it cannot source a spin observable; they belong to the Dirac spin-orbit sector, Part 8 §10.)
 
-For the self-coupling (d=d'), ξ=ξ' so $(\xi\cdot\xi)^2=|\xi|^4=1$ on the unit sphere. The Gegenbauer l=2 component is present but averages to zero over the rotationally symmetric vacuum (Gegenbauer orthogonality): only the l=0 piece contributes to the sector self-energy after vacuum averaging. Cross-sector angular mixing is absent in the vacuum expectation value of the self-coupling.
+For the self-coupling ($d=d'$), $\xi=\xi'$ so $(\xi\cdot\xi)^2=|\xi|^4=1$ on the unit sphere. The Gegenbauer $l=2$ component is present but averages to zero over the rotationally symmetric vacuum (Gegenbauer orthogonality): only the $l=0$ piece contributes to the sector self-energy after vacuum averaging. Cross-sector angular mixing is absent in the vacuum expectation value of the self-coupling.
 
 **Verified numerically** for $d=3$ ($\mathrm{Im}[H_3] = 0.0000$, $\mathrm{Re}[H_3] = 1.0000$ at $n=1,\ldots,6$) and $d=4$ (residuals $< 10^{-14}$ at $n=3, 20, 72$).
 
@@ -614,7 +614,7 @@ The $\sqrt{7}$ factors cancel algebraically. The result follows from $n_s$, $n_u
 - $n_{\nu_2} = S(n_u,4) = 15$: primary Pascal evaluation in $d=4$ alone. No cross-sector $l=2$ mixing; no correction.
 - $n_{\nu_3} = n_{\nu_1} + n_{\nu_2} - n_u = 22$: the unique inclusion-exclusion mode, combining the $d=3$ image ($n_{\nu_1}$) and the $d=4$ image ($n_{\nu_2}$) of the same seed $n_u$. The $l=2$ cross-term of the kernel (T2) then operates on the product of the two sector amplitudes: $\varepsilon$ from the $d=4$ coupling geometry, $g_{33}$ from the $d=3$ back-reaction. Their product is 1/35 by the identity above.
 
-**Sign.** The correction is positive. The two sector images ($d=3$ and $d=4$) are both images of the same seed $n_u$ and interfere constructively through the $l=2$ overlap, increasing the effective mode count and hence the eigenvalue. This is distinct from the $d=4$ up-type overshoot (T10a), where the l=2 term generates level-splittings between generations at different depths (a level-repulsion effect), and from the $d=10$ geometric back-reaction correction (T10b), which is a geometric-series resummation at the Gegenbauer critical endpoint. The $\nu_3$ correction is a single-order cross-sector constructive interference.
+**Sign.** The correction is positive. The two sector images ($d=3$ and $d=4$) are both images of the same seed $n_u$ and interfere constructively through the $l=2$ overlap, increasing the effective mode count and hence the eigenvalue. This is distinct from the $d=4$ up-type overshoot (T10a), where the $l=2$ term generates level-splittings between generations at different depths (a level-repulsion effect), and from the $d=10$ geometric back-reaction correction (T10b), which is a geometric-series resummation at the Gegenbauer critical endpoint. The $\nu_3$ correction is a single-order cross-sector constructive interference.
 
 **Numerical check:**
 
@@ -855,7 +855,7 @@ For $d=3$ — colour inherited via the $S^1\!\to S^5\!\to\mathbb{CP}^2$ Hopf map
 
 $$x_e(d{=}3) = 2.553\times10^{-3}\ (N_b\approx73).$$
 
-Its $S^3$ well is ${\sim}5\times$ deeper than the $d=4$ form would give and lacks a clean colour expression, so it remains an input. The ratio $x_e(d3)/x_e(d4)\approx6.6\approx2N_c$ stays colour-like. Label 🔶 now flags the $d=3$ anchor only; the $d=4$ occupation is derived.
+Its $S^3$ well is ${\sim}5\times$ deeper than the $d=4$ form would give and lacks a clean colour expression, so it remains an input. The ratio $x_e(d=3)/x_e(d=4)\approx6.6\approx2N_c$ stays colour-like. Label 🔶 now flags the $d=3$ anchor only; the $d=4$ occupation is derived.
 
 **Corrected masses.** (`files/idwt.py` STEP 127; PDG 2024 pole masses)
 
@@ -901,7 +901,7 @@ The sector mass scales satisfy $m_{\rm scale,d}^2 = g_{dd}\times\langle|\Psi^{(d
 
 ## 13. Sector Termination — Gegenbauer Criticality
 
-The IDWT active sector set {2,3,4,5,6,10} terminates at $d=10$ for three independent reasons, the third being an algebraic consequence of the seed structure: Gegenbauer criticality. Note that $d=7$,8,9 exist as coordinates of $M_\infty$ but are absent from the active sector set — they are supercritical ($b_{k_0} > 1/2$) but Rule A eliminates them before the Gegenbauer criterion is reached. The criticality condition governs where the active chain terminates; the gap from $d=6$ to $d=10$ in the active set is produced by Rule A independently.
+The IDWT active sector set {2,3,4,5,6,10} terminates at $d=10$ for three independent reasons, the third being an algebraic consequence of the seed structure: Gegenbauer criticality. Note that $d=7$, $8$, $9$ exist as coordinates of $M_\infty$ but are absent from the active sector set — they are supercritical ($b_{k_0} > 1/2$) but Rule A eliminates them before the Gegenbauer criterion is reached. The criticality condition governs where the active chain terminates; the gap from $d=6$ to $d=10$ in the active set is produced by Rule A independently.
 
 **Definition.** The Gegenbauer polynomial coupling at the composite resonance site $k_0 = n_s^2 = 16$ in the d-dimensional Jacobi chain is:
 
