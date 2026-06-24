@@ -143,9 +143,18 @@
 </section>
 
 <section>
+  <h2>It's a Hamiltonian, not just a recipe</h2>
+  <div class="prose">
+    <p>None of this is an ad hoc animation: the orbit is the flow of a genuine, conserved Hamiltonian on \(\mathbb{CP}^3\). For any Hermitian \(4\times 4\) matrix \(M\), the function \(H(z) = \langle z|M|z\rangle / \langle z|z\rangle\) generates the flow \(z(t) = e^{-iMt}\,z(0)\) on \((\mathbb{CP}^3,\ \omega_{\text{FS}})\) — a Bloch / coadjoint precession — and \(H\) is exactly conserved along it. The whole 6D orbit is one such flow.</p>
+    <p>The angular rose is the simplest piece of it: a two-level block \(M = \omega(-\mathbb{1} + L\,\sigma_x)\). Starting from \(z=(1,0)\) it gives, exactly, \(z_1(t) = e^{i\omega t}\cos(L\omega t)\) — whose \((\mathrm{Re}\,z_1,\ \mathrm{Im}\,z_1)\) trace is a rose with \(2L\) petals. So the petal count is now something concrete: it is the <strong>eigenvalue gap</strong> of \(M\). The eigenvalues are \(-(L+1)\omega\) and \((L-1)\omega\), so the gap is \(2L\omega\) — the frequency at which the radius beats, hence \(2L\) petals. The "lobe law" is a spectral fact about the generator, and the radial rings are a second commuting block of the same kind. (Checked numerically: \(z_1(t)\) matches the closed form, and \(H\) is conserved, to about one part in \(10^{15}\).)</p>
+    <p>So the construction is a closed, conserved Hamiltonian system — derived dynamics, not a kinematic recipe. What it does <em>not</em> yet fix is <em>which</em> \(M\): the matrix entries that encode a given orbital are still chosen to match, not derived from a deeper principle.</p>
+  </div>
+</section>
+
+<section>
   <h2>What this is, and isn't</h2>
   <div class="prose">
-    <p>This is an illustration of how much of the orbital picture a single deterministic 6D path can carry once you fix the precession and choose a viewing direction: the angular lobe counts, the strong dependence on viewing angle, and the concentric radial rings all appear from one construction, without a probability density. It is not a derivation. The precession value \(\kappa = 3/\sqrt2\) and the breathing frequency are chosen because they make the shapes come out, and several pieces are openly unfinished — why those frequencies, what selects \(N\) for a given orbital, and how to obtain the locks from the IDWT dynamics rather than imposing them. We keep the honest label.</p>
+    <p>This is an illustration of how much of the orbital picture a single deterministic 6D path can carry once you fix the precession and choose a viewing direction: the angular lobe counts, the strong dependence on viewing angle, and the concentric radial rings all appear from one construction, without a probability density. The motion is now a conserved Hamiltonian flow (above), so it is honest dynamics rather than a kinematic recipe — but it is still not a first-principles derivation. The precession value \(\kappa = 3/\sqrt2\) is just the Fubini–Study time scale (the invariant content is the resonance ratio \(\kappa/\omega_1 = 1\)), and several pieces are openly unfinished — what selects \(N\) for a given orbital, and which generator \(M\) the theory should single out rather than us choosing it to match. We keep the honest label.</p>
     <p class="status-line"><span class="tag">🔶 motivated classical illustration — geometry correct, frequencies chosen to fit, derivations open</span></p>
     <p>The interactive version, where you can rotate the orbits yourself, is here:
       <a class="viz-cta" href="/visualizations/6d-orbit-slice.html">↗ 6D orbit visualization</a></p>
