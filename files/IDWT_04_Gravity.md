@@ -582,6 +582,6 @@ The contribution of the dimensions beyond $d=10$ is fixed: it is zero. ✅ The c
 
 ## 5. Generation Tower Mode Selection
 
-Every integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ exists as a resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from n_s=4 — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
+Every integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ exists as a resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from $n_s=4$ — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
 
 In $d=3$, the co-fixed-point spectrum selects exactly $n=1$ (down) and $n=4$ (strange). The intermediate modes $n=2$,3 are not co-fixed-points — they are unoccupied resonances of $M_\infty$, predicted absent as stable distinct states (their $d=3$ masses would be 18.8 and 47 MeV). Modes $n\geq5$ in $d=3$ are likewise not selected.
