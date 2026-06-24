@@ -8100,7 +8100,10 @@ assert max(_scale_pow_128[q] for q in _geom_128) \
 # (2) RADIAL RING LAW (verified).  On the spherically symmetric s-orbit the
 #     radius is swept by the breathing; locking the depth oscillation at
 #     omega2 = N*omega_breath gives N-1 concentric depth rings (projection
-#     caustics) = the n_s = N radial-node count.
+#     caustics) = the radial-node count.  N is a FREE radial quantum number (the
+#     analogue of n_r+1); only the INTEGER RATIO N = omega2/omega_breath sets
+#     the count -- the breathing value (sqrt 11 in demo) is irrelevant (verified
+#     for several values; a non-integer ratio gives no clean rings).
 # (3) THE NUMBER (normalization, not a geometric invariant).  The invariant
 #     content is the RESONANCE RATIO kappa/omega1 = 1: in toric moment/phase
 #     coordinates the Fubini-Study symplectic form is sum d(nu_j) ^ d(phi_j), so
