@@ -184,7 +184,7 @@ The worst case ($d=3$) bounds the coherent within-sector return amplitude at $\l
 
 **Addendum — "condensate-assisted 3-waves" are photon-inclusive 4-waves (2026-06-14).** The pre-prism level-balance identity extends to all three cross-sector composite rules in STEP 1. The photon has $n=0$ and therefore level $N = 0-1 = -1$, which supplies exactly the $-1$ level unit missing from each 3-wave sum. Each "condensate-assisted 3-wave" is an exact 4-wave with the photon on the output side:
 
-| 4-wave | index $n$ | level $N$ |
+| $4$-wave | index $n$ | level $N$ |
 |--------|-----------|-----------|
 | $e(13)+\gamma(0) \leftrightarrow \nu_1(10)+u(3)$ | $13+0=10+3$ ✓ | $12-1=9+2$ ✓ |
 | $\mu(35)+\gamma(0) \leftrightarrow c(20)+\nu_2(15)$ | $35+0=20+15$ ✓ | $34-1=19+14$ ✓ |
@@ -201,12 +201,12 @@ All verified exact. The term "condensate-assisted" in prior notes was a misident
 **Setup.** Charged leptons: $e,\mu$ at $d=6$ ($n=13,35$); $\tau$ at $d=10$ ($n=23$, back-reaction $1+1/1680$). The lepton sectors share one mass scale, $m_{\rm scale,6}=m_{\rm scale,10}$ (Part 2 §9, Part 3 §0.8b). Each mass is that common scale times a pure simplex number, so the scale **cancels** in Koide's degree-0 ratio: $Q$ depends only on $S(13,6)=18564$, $S(35,6)=3{,}838{,}380$, and $S(23,10)(1+1/1680)=64{,}550{,}640$.
 
 **Checked:**
-- $Q_{\rm IDWT} = 0.666661$ vs $2/3 = 0.666667$ — deviation $-0.001\%$. Bare $S(23,10)$ (no back-reaction) gives $Q=0.66664$; the $+1/1680$ correction sharpens it.
-- Non-triviality: with $e,\mu$ fixed, $Q$ swings strongly with the tau index — $n{=}21{:}\,0.591$, $22{:}\,0.629$, $\mathbf{23{:}\,0.6667}$, $24{:}\,0.702$, $25{:}\,0.736$. The index that the generation-tower co-fixed-point selection picks **independently** (n=23) is the one that lands on $2/3$.
+- $Q_{\rm IDWT} = $0.666661$ vs $2/3 = $0.666667$ — deviation $-0.001\%$. Bare $S(23,10)$ (no back-reaction) gives $Q=$0.66664$; the $+1/1680$ correction sharpens it.
+- Non-triviality: with $e,\mu$ fixed, $Q$ swings strongly with the tau index — $n{=}21{:}\,$0.591$, $22{:}\,$0.629$, $\mathbf{23{:}\,$0.6667}$, $24{:}\,$0.702$, $25{:}\,$0.736$. The index that the generation-tower co-fixed-point selection picks **independently** ($n=23$) is the one that lands on $2/3$.
 
 **Result — two parts: a real positive reframing, and a PROVEN negative on the headline ("forced?") question.**
 
-*Positive (structural, holds):* because the $d{=}6$ and $d{=}10$ leptons share one mass scale ($m_{\rm scale,6}=m_{\rm scale,10}$), $Q$ is exactly scale-free and reduces to a relation among three cross-sector simplex integers. At the independently selected indices $(13,35,23)$, $Q=0.6666611$ — within $8.3$ ppm of $2/3$, where neighbouring tau indices miss by whole percent ($n{=}22{:}\,0.6290$, $n{=}24{:}\,0.7024$). A genuine "structural near-coincidence."
+*Positive (structural, holds):* because the $d{=}6$ and $d{=}10$ leptons share one mass scale ($m_{\rm scale,6}=m_{\rm scale,10}$), $Q$ is exactly scale-free and reduces to a relation among three cross-sector simplex integers. At the independently selected indices ($13,35,23$), $Q=$0.6666611$ — within $8.3$ ppm of $2/3$, where neighbouring tau indices miss by whole percent ($n{=}22{:}\,$0.6290$, $n{=}24{:}\,$0.7024$). A genuine "structural near-coincidence."
 
 *Negative (PROVEN, 2026-06-06): Koide $Q=2/3$ is NOT an algebraic identity of the simplex values.* Proof. Set $a=S(13,6),\,b=S(35,6),\,c=S(23,10)(1+\tfrac1{1680})$. Then
 $$Q=\tfrac23 \iff (\sqrt a+\sqrt b+\sqrt c)^2=\tfrac32(a+b+c)\iff \sqrt{ab}+\sqrt{bc}+\sqrt{ca}=\tfrac{a+b+c}{4}.\quad(*)$$
