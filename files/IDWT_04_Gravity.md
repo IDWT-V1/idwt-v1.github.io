@@ -8,7 +8,7 @@ Gravity is not a 3D phenomenon, and not a 10D phenomenon. It is a property of th
 
 Gravity is not a field. There are no gravitons, no spin-2 boson, no propagating gravitational degree of freedom, and no gravitational action separate from the geometry of $M_\infty$. Gravity is geometry responding to mass.
 
-IDWT's macroscopic sector dimensions are consistent with all known gravitational experiments, and the absence of any experimental bound on the sector length scale is a structural consequence, not a fine-tuning.
+IDWT's macroscopic sector dimensions are consistent with all known gravitational experiments: the absence of any experimental bound on the sector length scale follows structurally, because the experimental bounds presuppose a Kaluza-Klein tower that IDWT does not contain (§1b).
 
 ---
 
@@ -199,7 +199,7 @@ Values:
 - No deviation from $1/r^2$ gravity occurs at any accessible scale
 - The gravitational interaction appears standard to the observer: $G_{\mu\nu} = 8\pi G\, T_{\mu\nu}^{\rm eff}$ with $T_{\mu\nu}^{\rm eff}$ indistinguishable from a standard point mass
 
-The hydrogen spectroscopy bound of 6 mm was computed assuming KK modes modify the hydrogen energy levels. With no KK modes, no such bound exists. The bound evaporates entirely.
+The hydrogen spectroscopy bound of 6 mm was computed assuming KK modes modify the hydrogen energy levels. With no KK modes, no such bound exists.
 
 ## 3.9a The Physical Size of an Excitation — the Stiffness Well 🔵
 
@@ -209,7 +209,7 @@ $$R_{n,d} = \sqrt{N + d/2}\,(\mu\kappa)^{-1/4} = \sqrt{N+d/2}\; M^{-1/4}\, G_d^{
 
 with inertia $\mu = 1/\sqrt{G_d}$ (the rigidity *as a mass*, not a frequency) and well curvature $\kappa = M/G_d$ (curvature = mass $\times$ stiffness, linear in $M$). The per-dimension gravitational coupling $G_d$ is **derived, not free**: gravity is the one rigidity $1/G_\infty$ acting through the $d$-dimensional geometry, so the in-sector Newtonian coupling is $G_d = G_\infty/[(d-2)\,S_{d-1}]$ (the §3.12 in-sector Green's function, with $S_{d-1} = 2\pi^{d/2}/\Gamma(d/2)$ the unit $(d-1)$-sphere area). **At $d=3$ this is $G_\infty/4\pi = G_N$ exactly** — our measured 3D gravity is the anchor, so the absolute scale is fixed. The dimensionless kernel shape $\lambda_d$ **cancels** from the physical size, and the sector factor is the derived $s_d = [(d-2)\,S_{d-1}]^{3/2}$. (idwt.py STEP 121.)
 
-Numerically the electron (d=6/$\mathbb{CP}^3$) is $R_e \approx 1.0\times10^{-29}$ m, and **every** elementary mode lands at $10^{-29}$–$10^{-30}$ m: sub-Compton by ~16 orders, ~11 orders below the electron compositeness bound ($\sim10^{-18}$ m), heavier $\Rightarrow$ smaller ($M^{-1/4}$). So $G_\infty$ sets the scale — **$G_\infty$ does set elementary-particle size** — and every elementary particle is a deeply pointlike single mode, clearing all compositeness, $g\!-\!2$, and spectroscopy bounds. (The microscopic localization also *strengthens* §3.9: a mode confined to $10^{-29}$ m is even more invisible to a $d=3$ observer.)
+Numerically the electron (d=6/$\mathbb{CP}^3$) is $R_e \approx 1.0\times10^{-29}$ m, and **every** elementary mode lands at $10^{-29}$–$10^{-30}$ m: sub-Compton by ~16 orders, ~11 orders below the electron compositeness bound ($\sim10^{-18}$ m), heavier $\Rightarrow$ smaller ($M^{-1/4}$). So $G_\infty$ sets the scale — **$G_\infty$ does set elementary-particle size** — and every elementary particle is a pointlike single mode far below any resolved size, clearing all compositeness, $g\!-\!2$, and spectroscopy bounds. (The microscopic localization also *strengthens* §3.9: a mode confined to $10^{-29}$ m is even more invisible to a $d=3$ observer.)
 
 **Status — derived (🔵), modulo one founding premise.** With $G_d$ fixed by the universality of gravity across dimensions ($d=3$ is not special; gravity is the same in every direction, anchored to the measured $G_N$), both the sector-dependence $s_d = [(d-2)S_{d-1}]^{3/2}$ and the overall scale are *derived* — no free coefficient, no wall-blocked constant. What remains is one premise, the framework's own ontology: a particle is a stiffness-bound standing wave whose well curvature is linear in the mode mass, $\kappa = M/G_d$. (A purely scale-covariant action gives an $M$-independent size, so the $M^{-1/4}$ scaling is the physical content of "stiffness-bound standing wave," not a free input.) The competing branches are excluded by data: self-gravity ($\kappa \propto G_\infty M^2$) gives the electron $\sim10^{31}$ m, $\mu = M$ gives the wrong $M^{-1/2}$, and a Compton-scale size violates the compositeness bound.
 
@@ -582,6 +582,6 @@ The contribution of the dimensions beyond $d=10$ is fixed: it is zero. ✅ The c
 
 ## 5. Generation Tower Mode Selection
 
-Every integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ exists as a resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from $n_s=4$ — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
+The framework treats every admissible integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ as a candidate resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from $n_s=4$ — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
 
 In $d=3$, the co-fixed-point spectrum selects exactly $n=1$ (down) and $n=4$ (strange). The intermediate modes $n=2$, $3$ are not co-fixed-points — they are unoccupied resonances of $M_\infty$, predicted absent as stable distinct states (their $d=3$ masses would be 18.8 and 47 MeV). Modes $n\geq5$ in $d=3$ are likewise not selected.

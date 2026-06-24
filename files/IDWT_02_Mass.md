@@ -884,7 +884,7 @@ The l=0 scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the 
 **$d=6$/$d=10$ kernel symmetry:** $v_6 = v_{10} = 1/2$ exactly. The kernel cannot distinguish the charged lepton sector from the tau sector — both have identical coupling strength. The mass difference between muon and tau arises entirely from different sector geometry (S(35,6) vs S(23,10)), not from any coupling difference. This is a genuine symmetry of the kernel, broken only by the Hopf chain's sector manifold assignments.
 
 **Self-consistency derivation route:**
-The sector mass scales satisfy $m_{\rm scale,d}^2 = g_{dd}\times\langle|\Psi^{(d)}|^2\rangle$ — the kernel self-consistency fixed-point equation. Once $g_{dd}$ is computed from the sector geometry ($\mathbb{CP}^2$, $S^3$, $\mathbb{CP}^3$) for each sector, all mass scales become fully derived. $m_e$ is the sole unit reference. $m_W$ is derived from seeds at $+0.003\%$ (Part 2 §10). The framework has no free parameters beyond $m_e$.
+The sector mass scales satisfy $m_{\rm scale,d}^2 = g_{dd}\times\langle|\Psi^{(d)}|^2\rangle$ — the kernel self-consistency fixed-point equation. Once $g_{dd}$ is computed from the sector geometry ($\mathbb{CP}^2$, $S^3$, $\mathbb{CP}^3$) for each sector, all mass scales become fully derived. $m_e$ is the sole unit reference for the particle spectrum. $m_W$ is derived from seeds at $+0.003\%$ (Part 2 §10).
 
 **Current status by sector:**
 

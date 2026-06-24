@@ -373,7 +373,7 @@ All absolute scales are outputs of the same kernel + unoccupied-mode sums.
 
 ## 7. Cabibbo Angle
 
-See Part 3 §12 for the full derivation: $\sin\theta_C = 1/\sqrt{S(n_s,3)} = 1/\sqrt{20}$ from composite uniqueness, no free parameters. The structural coupling $g_{3,4}(n_s, n_c) = n_\tau = 23$ gives an independent route to the tau index from the same algebra.
+See Part 3 §12 for the full derivation: $\sin\theta_C = 1/\sqrt{S(n_s,3)} = 1/\sqrt{20}$, fixed by composite uniqueness and the mode indices. The structural coupling $g_{3,4}(n_s, n_c) = n_\tau = 23$ gives an independent route to the tau index from the same algebra.
 
 ---
 
