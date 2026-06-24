@@ -102,7 +102,7 @@ The question of cross-terms between different sector-space coordinates — $\del
 
 ### 3.5 Boundary Terms on Non-Compact $\Xi$
 
-For macroscopic (non-compact) Ξ, the variation of ∫_Ξ ... dμ_ξ by parts requires boundary conditions as |ξ| → ∞.
+For macroscopic (non-compact) $\Xi$, the variation of $\int_\Xi \cdots\, d\mu_\xi$ by parts requires boundary conditions as $|\xi| \to \infty$.
 
 Physical modes are bound states of the harmonic sector potential $V(\xi) = \lambda_d r^2$ (Part 4 §3.10). Bound states decay as a Gaussian: $|\chi_{n,d}(\xi)| \sim P(|\xi|)\exp(-\sqrt{\lambda_d}|\xi|^2/2)$ for $|\xi| \to \infty$ (polynomial $\times$ Gaussian). Boundary terms in the integration by parts that yields the field equations therefore vanish. The action integral is well-defined despite the non-compact domain.
 
@@ -191,7 +191,7 @@ Values:
 | 6 | 0.250 | 3.000 | 1.414 | 0.500 |
 | 10 | 0.250 | 5.000 | 1.414 | 0.500 |
 
-**Why experimental bounds do not apply.** All experimental constraints on macroscopic extra dimensions — Eöt-Wash torsion balance, precision spectroscopy, ISL tests — assume a Kaluza-Klein tower of modes with masses m_n = n/R and modified gravitational potential at distances r ~ R. In IDWT:
+**Why experimental bounds do not apply.** All experimental constraints on macroscopic extra dimensions — Eöt-Wash torsion balance, precision spectroscopy, ISL tests — assume a Kaluza-Klein tower of modes with masses $m_n = n/R$ and modified gravitational potential at distances r ~ R. In IDWT:
 
 - There is no KK tower (no periodic modes, no 1/R quantization)
 - The sector modes are exponentially localized bound states, not plane waves
@@ -322,7 +322,7 @@ Expanding $\Psi = \sum_n A_n\chi_n$ in the well's own modes (ground state $n=1$,
 
 $$E[\{A_n\}] = \sum_n\varepsilon_n|A_n|^2 + \frac{g_{dd}}{2}\sum_{N_1+N_2=N_3+N_4}K_{n_1n_2n_3n_4}\,A^*_{n_1}A^*_{n_2}A_{n_3}A_{n_4} \tag{2}$$
 
-with K the $(\xi\cdot\xi')^2$ overlap, nonzero only on the $l = 0 \oplus l = 2$ channel. Two features of (2) are exact and structural. The quartic term enforces the index resonance N1+N2 = N3+N4: the generation-tower production edges are four-wave-resonant in the mode index (⭐) — the spectrum is an index-locked four-wave comb on the condensate. Its l = 0 ⊕ l = 2 content is the l-parity rule: the ground mode connects only to even levels, so the conservative flow of (2) populates the even-level ladder and excludes the odd levels exactly (⭐, Part 7 §1.2).
+with K the $(\xi\cdot\xi')^2$ overlap, nonzero only on the $l = 0 \oplus l = 2$ channel. Two features of (2) are exact and structural. The quartic term enforces the index resonance N1+N2 = N3+N4: the generation-tower production edges are four-wave-resonant in the mode index (⭐) — the spectrum is an index-locked four-wave comb on the condensate. Its $l=0 \oplus l=2$ content is the l-parity rule: the ground mode connects only to even levels, so the conservative flow of (2) populates the even-level ladder and excludes the odd levels exactly (⭐, Part 7 §1.2).
 
 What the functional does **not** do is select the occupancy. Its stationary point fixes the well ($\lambda_d$); its quartic term fixes the four-wave comb structure; but the choice of which modes occupy the comb — the co-fixed-point selection (Part 9 T0.5) — is not a minimum of (1)/(2). The conservative Gross–Pitaevskii flow of (2) from the condensate reproduces the l-parity cut and the first injection (ground → up) and then spreads amplitude across the whole even ladder without isolating the tower (🔶/🔵). The even-level selection is therefore not a property of this vacuum functional; it is the radiative-stability statement of Part 7 §1.2 — which even modes are protected against decay through the downward kernel links. The functional (1) is the well closure and the comb kinematics; the occupancy selection is a separate, radiative question, and the sector-activation arbiter for Rule A is the distinct coupled ($\Psi_\infty$, $\{M_d\}$) fixed point of Part 6 Open Theorem A.
 
@@ -538,7 +538,7 @@ Numerical verification ($d=3$, $n=1$, l=0): $\chi_0 \propto \exp(-\sqrt{\lambda_
 
 **Proof.**
 
-*(→) Non-eigenfunction modes are non-normalizable.* Any mode that is not a discrete eigenfunction of H_d^harm either oscillates (plane-wave-like in the sector directions) or grows. For any such state, $\int|\chi|^2 d\xi$ diverges, so $\chi \notin L^2(\mathbb{R}^d)$ and it is not a bound state.
+*(→) Non-eigenfunction modes are non-normalizable.* Any mode that is not a discrete eigenfunction of $H_d^{\rm harm}$ either oscillates (plane-wave-like in the sector directions) or grows. For any such state, $\int|\chi|^2 d\xi$ diverges, so $\chi \notin L^2(\mathbb{R}^d)$ and it is not a bound state.
 
 *(←) Harmonic eigenstates are normalizable.* Every $\chi_{n,d} \in L^2(\mathbb{R}^d)$ by the corollary above, with a Gaussian envelope that decays exponentially — a genuine bound state. □
 
