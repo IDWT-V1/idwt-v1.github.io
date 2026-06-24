@@ -5207,9 +5207,10 @@ _dEel_au75 = _V0_au_SM75 - _dVnn75  # negative: electrons favour D3h
 # gravitate, no amplitude for any coupling, nothing to a d=3 observable by the
 # Coulomb projection theorem, Part 3). So the mean field's non-selectivity is
 # not a gap -- there is nothing to select. Rule A is 🔵. (The coupled
-# (Psi,{M_d}) fixed point / Open Theorem A bears on the DISTINCT positive
-# firing-set -- which modes occupy the already-fixed active sectors, MC-4 --
-# not on d=7. Backward-run record: Appendix §15, 2026-06-24.)
+# (Psi,{M_d}) fixed point bears on the DISTINCT positive firing-set -- which
+# modes occupy the already-fixed active sectors, MC-4 / T0.5 -- not on d=7,
+# and not the same object as Open Theorem A, the sector-covariance question.
+# Backward-run record: Appendix §15, 2026-06-24.)
 _g76 = {2: 722.5, 3: 8.0*math.sqrt(7.0), 4: 12.0/math.sqrt(7.0),
         5: 96.0/722.5, 6: 0.25, 10: 0.25}
 _D76 = [2, 3, 4, 5, 6, 10]
@@ -7715,7 +7716,7 @@ assert _shared_collide_119 and _pgNc_hits_119 == ["strange", "e"]
 # STEP 120 -- TIME-DYNAMICS PROGRAM CLOSURE: THE NATIVE RATE IS FIXED EXCEPT
 #            FOR ONE INACCESSIBLE Psi_inf AMPLITUDE (a_f^2 = rho_vac); THE
 #            PROGRAM'S TWO OPEN ENDS ARE ONE WALL (Part 6; on 97-110, 103,
-#            105, 35, 30; selection = Open Theorem A)
+#            105, 35, 30; positive selection = MC-4 firing-set)
 #            form/scale/dof/recoil: fixed  |  absolute magnitude: 🔶 (Psi_inf)
 # =============================================================================
 # Closes the transition-rate program (bricks 1-6, STEP 97-110). The native
@@ -7740,13 +7741,13 @@ assert _shared_collide_119 and _pgNc_hits_119 == ["strange", "e"]
 # the EW scale is (sqrt2 G_F)^{-1/2} from seeds, not a VEV), so it is not
 # merely uncomputed -- nothing short of Psi_inf's global amplitude fixes it,
 # and that amplitude is inaccessible (the same Psi_inf whose coupled fixed
-# point (Psi_inf,{M_d}) is the open selection firing, Open Theorem A; STEP 36
-# note). So the program's TWO open ends -- the absolute rate magnitude and the
-# positive member-selection firing -- are ONE wall: Psi_inf's global
-# amplitude. VERDICT: the rate formalism is COMPLETE -- form, scale, dof and
-# kinematics native and fixed; the absolute magnitude is irreducibly 🔶,
-# inaccessible (not pending), unless Psi_inf's amplitude is itself derived
-# (it is not). Nothing here computes or normalises an amplitude.
+# point (Psi_inf,{M_d}) is the open positive-selection firing, MC-4 / T0.5;
+# STEP 36 note). So the program's TWO open ends -- the absolute rate
+# magnitude and the positive member-selection firing -- are ONE wall:
+# Psi_inf's global amplitude. VERDICT: the rate formalism is COMPLETE --
+# form, scale, dof and kinematics native and fixed; the absolute magnitude
+# is irreducibly 🔶, inaccessible (not pending), unless Psi_inf's amplitude
+# is itself derived (it is not). Nothing here computes or normalises it.
 _Ndof_default_120 = 1                  # l=0 scalar channel, one polarisation
 # every input to the native width is DERIVED (no amplitude): masses
 # M=S(n,d)*m_scale_d, coupling ME (kernel overlaps x g_dd), scale m_scale_d;
@@ -11659,7 +11660,7 @@ print("  recoil = free 2-body, |p_c|=(M_i^2-M_f^2)/(2 M_i) (isolated mode)")
 print("lone open number: a_f^2 = rho_vac = seed amplitude^2 in Psi_inf;")
 print("  IDWT has no VEV/condensate amplitude to set it (Part 3 0.7), so it")
 print("  is the inaccessible Psi_inf global amplitude -- the SAME wall as the")
-print("  selection firing (Open Theorem A). => program COMPLETE; absolute")
+print("  positive selection firing (MC-4). => program COMPLETE; absolute")
 print("  magnitude irreducibly 🔶 (inaccessible), not pending.")
 
 
