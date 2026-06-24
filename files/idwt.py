@@ -8317,15 +8317,18 @@ def pred_uncorrected(name, d, n):
 
 def pred_corrected(name, d, n):
     """
-    Corrected IDWT prediction. The only mass correction now applied here is
-    the tau geometric back-reaction m * (1 + 1/1680). The former GTC
-    (1-epsilon)^k on the d=4 up-type quarks was REMOVED (2026-06-16): its
-    per-quark exponent was a fit, so the up-type masses are left BARE and
-    charm/top overshoot PDG (open residue). (Part 2 sections 11 and 9)
+    Corrected IDWT prediction. Two corrections applied:
+      1. tau geometric back-reaction: m * (1 + 1/1680).
+      2. Confinement-binding correction for colour sectors d=3,4 (STEP 127):
+         M_phys = M_bare * (1 - x_e_d * <k>); colour-silent sectors untouched.
+    The former GTC (1-epsilon)^k on d=4 up-type quarks was REMOVED (2026-06-16):
+    its per-quark exponent was a fit. (Part 2 sections 11.4, 11.9; STEP 127)
     """
     base = pred_uncorrected(name, d, n)
     if name == "tau":
         return base * back_reaction_factor
+    if n is not None and d in _xe_127:
+        return base * (1.0 - _xe_127[d] * _kbar_127(n, d))
     return base
 
 
@@ -8349,8 +8352,8 @@ for name, d, n, pdg in particles:
           f" {p:12.3f} {pdg:12.3f} {err:+7.2f}%")
 
 # STEP 4b -- Corrected table
-print("\n=== CORRECTED TABLE (tau back-reaction only; GTC removed) ===")
-print("  (tau: *(1+1/1680);  up-type quarks now BARE -- charm/top overshoot)")
+print("\n=== CORRECTED TABLE ===")
+print("  (tau: *(1+1/1680); d=3,4 quarks: M_phys=M_bare*(1-x_e*<k>) STEP 127)")
 print(hdr)
 print(sep)
 for name, d, n, pdg in particles:
@@ -11659,31 +11662,5 @@ print("  NOT applied as a correction.")
 
 
 # =============================================================================
-# STEP 127 -- OUTPUT: CONFINEMENT (COLOUR-FIELD) BINDING CORRECTION (d=3,4)
-# =============================================================================
-print("\n" + "=" * 70)
-print("=== STEP 127: CONFINEMENT BINDING CORRECTION (coloured d=3,4) ===")
-print("=" * 70)
-print("differentiator: d=3,4 are the ONLY colour sectors (has_SU3, N_c=3).")
-print("  STEP-126 structural overshoot = colour-field binding: the energy")
-print("  locked in because a coloured quark has no free state. M_phys =")
-print("  M_bare*(1 - x_e*<k>), x_e = 3/(16 N_b); coloured sectors only.")
-print(f"  x_e(d=3) = {_xe_127[3]:.3e}   N_b ~ {_Nb_127[3]:.0f}")
-print(f"  x_e(d=4) = {_xe_127[4]:.3e}   N_b ~ {_Nb_127[4]:.0f}")
-print(f"  ratio x_e(3)/x_e(4) = {_xe_ratio_127:.2f}  (~2 N_c=6, colour-like)")
-print("  mode      d   <k>     bare%   corrected%    sigma")
-for _nm127 in ("down", "strange", "up", "charm", "top"):
-    _n127, _d127 = _modes_127[_nm127]
-    print(f"  {_nm127:9}{_d127:>2}{_kbar_127(_n127, _d127):>7.2f}"
-          f"{_bare_resid_127[_nm127]:>+9.3f}"
-          f"{_corr_resid_127[_nm127][0]:>+12.3f}"
-          f"{_corr_resid_127[_nm127][1]:>+9.2f}")
-print("verdict: charm and top (bare +2.6, +13 sigma) brought within +-1")
-print("  sigma PDG stat; up/down/strange stay in margin; bosons and leptons")
-print("  untouched. Magnitude (x_e) is a colour-structural calibrated input;")
-print("  the absolute per-state deficit awaits a per-state colour law (STEP")
-print("  63 is hadron-scale).")
-
-
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
 print("https://fedgeno.github.io/")
