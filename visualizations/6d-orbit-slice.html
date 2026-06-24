@@ -135,7 +135,7 @@ html,body{ margin:0; height:100%; overflow:hidden; }
   <p style="margin-top:14px">Status: <span class="status-tag tag-id">🔶 motivated classical illustration</span> &nbsp;The geometric setting — \(\mathbb{CP}^3\) and its degree‑\(L\) monomial states — is correct, and the lobe counts from the \(\kappa=\omega_1\) resonance are verified. <span class="status-tag tag-open">open</span> whether this closed rose <em>is</em> the \(|Y_L^m|^2\) orbital surface or a faithful cousin carrying the same counts and sizes.</p>
 
   <h2>How to use</h2>
-  <p>Toggle <strong>s · p · d · f</strong> to show or hide each shell; <strong>⟲ reset view</strong> re‑centers the camera and turns them all back on. Drag to rotate, scroll to zoom.</p>
+  <p>Toggle <strong>s · p · d · f</strong> to show or hide each shell; <strong>⟲ Reset</strong> re‑centers the camera and turns them all back on. Drag to rotate, scroll to zoom.</p>
 </div>
 
 <!-- ══════════════════════ VIZ PANEL ══════════════════════ -->
@@ -201,12 +201,12 @@ SHELLS.forEach((sh,idx)=>{
   sh.visible=true;
   const deg=sh.exp.reduce((a,b)=>a+b,0); const lobes=(deg===0)?1:2*deg;
   const btn=document.createElement('div'); btn.className='shell-btn';
-  btn.innerHTML=`<span class="dot" style="color:#${sh.col.toString(16).padStart(6,'0')}"></span><span class="nm">${sh.name}</span><span class="ct">${lobes} lobe${lobes>1?'s':''}</span>`;
+  btn.innerHTML=`<span class="dot" style="color:#${sh.col.toString(16).padStart(6,'0')}"></span><span class="nm">${sh.name}</span>`;
   btn.addEventListener('click',()=>{ sh.visible=!sh.visible; sh.cloud.visible=sh.visible; sh.trail.visible=sh.visible; sh.electron.visible=sh.visible; btn.classList.toggle('off',!sh.visible); });
   ctr.appendChild(btn); sh.btn=btn;
 });
 
-const resetBtn=document.createElement('div'); resetBtn.className='reset-btn'; resetBtn.textContent='⟲ reset view';
+const resetBtn=document.createElement('div'); resetBtn.className='reset-btn'; resetBtn.textContent='⟲ Reset';
 resetBtn.addEventListener('click',()=>{
   for(const sh of SHELLS){ sh.visible=true; sh.cloud.visible=true; sh.trail.visible=true; sh.electron.visible=true; sh.btn.classList.remove('off'); }
   frameCamera();
