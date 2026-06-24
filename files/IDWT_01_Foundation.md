@@ -409,7 +409,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 |---|---|
 | $g_{22}$ | 722.5 |
 | $m_{\rm scale,2}$ | 27.47 MeV |
-| $L_2$ | 0.375 fm |
+| $L_2$ | 0.375 (sector units) |
 
 | Particle | $n$ | $S(n,2)$ | Predicted mass | PDG |
 |---|---|---|---|---|
@@ -441,7 +441,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 |---|---|
 | $g_{33}$ | $8\sqrt{7} \approx 21.17$ |
 | $m_{\rm scale,3}$ | 4.702 MeV |
-| $L_3$ | 0.675 fm |
+| $L_3$ | 0.675 (sector units) |
 
 | Particle | $n$ | $S(n,3)$ | Predicted mass | PDG |
 |---|---|---|---|---|
@@ -470,7 +470,7 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 |---|---|
 | $g_{44}$ | $12/\sqrt{7} \approx 4.536$ |
 | $m_{\rm scale,4}$ | 0.1451 MeV |
-| $L_4$ | 0.872 fm |
+| $L_4$ | 0.872 (sector units) |
 
 | Particle | $n$ | Predicted mass (bare) | PDG | error |
 |---|---|---|---|---|
@@ -499,7 +499,7 @@ Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare, with n
 |---|---|
 | $g_{55}$ | $96/722.5 \approx 0.1329$ |
 | $m_{\rm scale,5}$ | $\approx 7.4 \times 10^{-13}$ MeV |
-| $L_5$ | 1.571 fm |
+| $L_5$ | 1.571 (sector units) |
 
 $m_{\rm scale,5}$ is fully derived from the cross-sector constraint $m_{\rm scale,5} \times m_{\rm scale,4}^2 = (n_u/n_s) \times m_{\rm scale,6}^3$. No neutrino mass data enters.
 
@@ -532,7 +532,7 @@ Note: $S(n,5) = n(n+1)(n+2)(n+3)(n+4)/120$. $\Sigma m_\nu = 60.39$ meV (correcte
 |---|---|
 | $g_{66}$ | $1/4$ (composite ratio $1/n_s$) |
 | $m_{\rm scale,6}$ | $m_e / S(13,6) \approx 2.75 \times 10^{-5}$ MeV |
-| $L_6$ | 1.414 fm |
+| $L_6$ | 1.414 (sector units) |
 
 | Particle | $n$ | $S(n,6)$ | Predicted mass | PDG |
 |---|---|---|---|---|
@@ -566,7 +566,7 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 |---|---|
 | $g_{10,10}$ | 1/4 (same as $d=6$) |
 | $m_{\rm scale,10}$ | $= m_{\rm scale,6}$ (shared seed) |
-| $L_{10}$ | 1.414 fm |
+| $L_{10}$ | 1.414 (sector units) |
 
 | Particle | n | Back-reaction factor | Predicted mass | PDG |
 |---|---|---|---|---|
@@ -588,7 +588,7 @@ Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))
 
 ### 3e. Sector Summary Table
 
-| $d$ | Geometry | Particles | $g_{dd}$ | $m_{\rm scale,d}$ | $L_d$ (fm)\* | $\zeta_d(1)$ | $\zeta_d(0)$ | $a_{0,d}$ |
+| $d$ | Geometry | Particles | $g_{dd}$ | $m_{\rm scale,d}$ | $L_d$ (units)\* | $\zeta_d(1)$ | $\zeta_d(0)$ | $a_{0,d}$ |
 |---|---|---|---|---|---|---|---|---|
 | 2 | $\mathbb{CP}^1$ (EW/Hopf) | γ, W, Z, H | 722.5 | 27.47 MeV | 0.375 | 2 | −1 | 1.253 |
 | 3 | $S^3$ (hadronic) | d, s, b | $8\sqrt{7}$ | 4.702 MeV | 0.675 | 3/2 | −3/2 | 1.623 |
@@ -599,7 +599,7 @@ Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))
 
 $\zeta_d(1) = d/(d-1)$ and $\zeta_d(0) = -d/2$ are exact for all sectors (Part 9 T13–T14, Pascal telescoping and heat kernel). All 15 particle masses follow from $m_{\rm scale,d} \times S(n,d)$ plus two corrections (geometric back-reaction for tau, beat resonance for b quark) and the $d=4$ up-type overshoot left uncorrected (the former GTC was removed, Part 2 §11). No other free parameters once the six couplings $g_{dd}$ are fixed from seeds $\{n_d=1, n_u=3\}$ and composite $n_s = 4$.
 
-\***Two length scales — interaction versus intrinsic (Part 4 §3.9a).** The $L_d = \lambda_d^{-1/4}$ tabulated here is the dimensionless sector localization length, quoted at the *matter/interaction* scale (1 sector unit $\approx$ 1 fm). This is the contact/binding range that governs hadronic, nuclear and atomic physics — e.g. it reproduces the proton charge radius to 2% (Part 8 §11) and the hydrogen length scales (Part 8 §14). It is **not** the intrinsic size of a single excitation. A single elementary mode is far smaller: its stiffness-bound physical size is $R = \sqrt{N+d/2}\,M^{-1/4}\,G_d^{3/8} \approx 10^{-29}$ m (Part 4 §3.9a), set by gravity through the per-dimension coupling $G_d$. So every elementary particle is deeply pointlike ($\sim10^{-29}$ m); the $\sim$fm figures above are the *interaction* scale, and the $\sim$fm size of a hadron is the *composite* extent of its confined quark modes, not a single-mode width.
+\***Two length scales — interaction versus intrinsic (Part 4 §3.9a).** The $L_d = \lambda_d^{-1/4}$ tabulated here is the dimensionless sector-localization length (hence "units"); at the *matter/interaction* scale one sector unit $\approx$ 1 fm. This is the contact/binding range that governs hadronic, nuclear and atomic physics — e.g. it reproduces the proton charge radius to 2% (Part 8 §11) and the hydrogen length scales (Part 8 §14). It is **not** the intrinsic size of a single excitation. A single elementary mode is far smaller: its stiffness-bound physical size is $R = \sqrt{N+d/2}\,M^{-1/4}\,G_d^{3/8} \approx 10^{-29}$ m (Part 4 §3.9a), set by gravity through the per-dimension coupling $G_d$. So every elementary particle is deeply pointlike ($\sim10^{-29}$ m); the $\sim$fm figures above are the *interaction* scale, and the $\sim$fm size of a hadron is the *composite* extent of its confined quark modes, not a single-mode width.
 
 ### 3e-ii. The Particle Map — All Fifteen Modes
 
