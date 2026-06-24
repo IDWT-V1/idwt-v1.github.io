@@ -234,9 +234,9 @@ The three pieces have individual derivations:
 **Derivation of the consecutive matter quartet (🔵, 2026-06-01).**
 
 The complex Hopf chain $S^1 \to S^{2k+1} \to \mathbb{CP}^k$ produces Hopf pairs at each level $k$:
-- $k=1$: total space $S^3$ (d=3), base $\mathbb{CP}^1$ (d=2, the gauge sector)
-- $k=2$: total space $S^5$ (d=5), base $\mathbb{CP}^2$ (d=4)
-- $k=3$: total space $S^7$ (d=7, excluded), base $\mathbb{CP}^3$ (d=6, terminal)
+- $k=1$: total space $S^3$ ($d=3$), base $\mathbb{CP}^1$ ($d=2$, the gauge sector)
+- $k=2$: total space $S^5$ ($d=5$), base $\mathbb{CP}^2$ ($d=4$)
+- $k=3$: total space $S^7$ ($d=7$, excluded), base $\mathbb{CP}^3$ ($d=6$, terminal)
 
 The gauge sector $d=2$ ($\mathbb{CP}^1$ of the $k=1$ Hopf base) separates from the matter sectors. The matter quartet consists of all total spaces and non-terminal bases after $d=2$: $\{3, 4, 5, 6\}$.
 
