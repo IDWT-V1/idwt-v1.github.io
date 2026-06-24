@@ -151,10 +151,6 @@ html,body{ margin:0; height:100%; overflow:hidden; }
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
 const FREQS=[2,3,5,7], W1=FREQS[0], WB=4;            // commensurate -> closed orbit
 const PAIRS=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
@@ -169,12 +165,6 @@ container.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(45,W/H,0.1,200); camera.position.set(0,0,16);
 const controls=new OrbitControls(camera,renderer.domElement); controls.enableDamping=true; controls.dampingFactor=0.08;
-// subtle bloom over the whole scene — keeps the transparent background (clearAlpha 0)
-const composer=new EffectComposer(renderer); composer.setPixelRatio(Math.min(devicePixelRatio,2)); composer.setSize(W,H);
-composer.addPass(new RenderPass(scene,camera));
-const bloomPass=new UnrealBloomPass(new THREE.Vector2(W,H),0.5,0.5,0.12);  // strength, radius, threshold
-composer.addPass(bloomPass);
-composer.addPass(new OutputPass());
 scene.add(new THREE.AmbientLight(0x1a1f3a,0.4));
 const dirLight=new THREE.DirectionalLight(0xffffff,1.0); dirLight.position.set(1,2,3); scene.add(dirLight);
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(0.042,16,12),new THREE.MeshPhongMaterial({color:0xfff3d8,emissive:0xffc890,emissiveIntensity:1.4})));
@@ -203,7 +193,7 @@ SHELLS.forEach((sh,idx)=>{
   const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.BufferAttribute(sh.gpos,3)); gg.setAttribute('color',new THREE.BufferAttribute(sh.gcol,3));
   sh.glow=new THREE.Line(gg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
   scene.add(sh.glow);
-  sh.electron=new THREE.Mesh(new THREE.SphereGeometry(0.042,14,10),new THREE.MeshPhongMaterial({color:0xffffff,emissive:sh.col,emissiveIntensity:2.6}));
+  sh.electron=new THREE.Mesh(new THREE.SphereGeometry(0.05,16,12),new THREE.MeshBasicMaterial({color:sh.col}));
   scene.add(sh.electron);
   sh.visible=true;
   const deg=sh.exp.reduce((a,b)=>a+b,0); const lobes=(deg===0)?1:2*deg;
@@ -275,10 +265,10 @@ function animate(){
     sh.glow.geometry.attributes.position.needsUpdate=true; sh.glow.geometry.attributes.color.needsUpdate=true;
     const i=head*3; sh.electron.position.set(sh.pos[i],sh.pos[i+1],sh.pos[i+2]);
   }
-  composer.render();
+  renderer.render(scene,camera);
 }
 animate();
-window.addEventListener('resize',()=>{const w=container.clientWidth,h=container.clientHeight;if(w&&h){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);composer.setSize(w,h);bloomPass.setSize(w,h);frameCamera();}});
+window.addEventListener('resize',()=>{const w=container.clientWidth,h=container.clientHeight;if(w&&h){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);frameCamera();}});
 </script>
 </body>
 </html>
