@@ -787,11 +787,11 @@ Absolute up-type masses vs PDG 2024, quoted bare — no correction applied:
 |---|---|---|---|
 | up | 3 | 2.177 MeV | $+0.79\%$ ($0.2\sigma$, within the PDG light-quark margin) |
 | charm | 20 | 1284.9 MeV | $+0.93\%$ bare (corrected $+0.34\%$, $+0.9\sigma$ in §11.9) |
-| top | 72 | 176{,}365 MeV | $+2.20\%$ bare (corrected $-0.05\%$, $-0.3\sigma$ in §11.9) |
+| top | 72 | 176{,}365 MeV | $+2.20\%$ bare (corrected $-0.04\%$, $-0.2\sigma$ in §11.9) |
 
 The bare formula overshoots, growing with generation; the confinement-binding correction (§11.9) reduces all quark residuals to within ±1σ PDG stat. 🔶
 
-Up-type quark masses bare: $m = m_{\rm scale,4}\times S(n,4)$. Charm $= 1284.9\ \text{MeV}$ (+0.93% bare, corrected +0.34% in §11.9). Top $= 176{,}365\ \text{MeV}$ (+2.20% bare, corrected $-0.05\%$ in §11.9).
+Up-type quark masses bare: $m = m_{\rm scale,4}\times S(n,4)$. Charm $= 1284.9\ \text{MeV}$ (+0.93% bare, corrected +0.34% in §11.9). Top $= 176{,}365\ \text{MeV}$ (+2.20% bare, corrected $-0.04\%$ in §11.9).
 
 ### 11.6 Corrections Summary
 
@@ -812,7 +812,7 @@ Within the up-type sector the overshoot grows smoothly with generation, but the 
 
 First, its mode index is not a tower output. Every lepton, every neutrino, and the first- and second-generation quarks carry indices generated additively by the hockey-stick tower; the top's index $n=72$ is instead a product, $N_c\times n_s\times N_f = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$. The three factors are the Euler characteristics of the three highest-weight active-sector complex projective spaces — precisely the topological invariants that drive the sector chain — so the product form is structurally natural within the framework. What is not yet explained is the selection principle: why does the top's index equal this Euler product, while the rest of the spectrum is additive? The bottom's product index $n_s^2=16$ has a derivation as the $d=10$ Gegenbauer endpoint (§8); the top's $72$ does not. This is the leading open dynamical question of the framework (🔶).
 
-Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 value ($172{,}570 \pm 290$ MeV). The confinement-binding correction (§11.9) reduces this to $-0.05\%$ ($-0.3\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
+Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 value ($172{,}570 \pm 290$ MeV). The confinement-binding correction (§11.9) reduces this to $-0.04\%$ ($-0.2\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
 
 So one thing remains genuinely open at the top: the index $72$ is a product rather than a tower output, with no selecting condition yet found. The bare mass overshoot is corrected to within $1\sigma$ in §11.9 ($\textbf{🔶}$); the rule that generates the index itself is the remaining open item.
 
@@ -845,11 +845,17 @@ The form is derived two independent ways — cavity group-velocity dispersion an
 
 **Selector.** The correction applies only to the colour-carrying sectors $d=3$ and $d=4$ (`has_SU3`, `files/idwt.py` line 620) — the two sectors whose wells are occupied condensates with finite $N_b$ (anharmonic). The boson ($d=2$) and lepton ($d=6,10$) wells are effectively harmonic (large $N_b$), giving $x_e\approx0$. Colour is the differentiator.
 
-**Calibrated constants.** The per-sector $x_e$ is anchored on the deepest-tower datum in each sector (strange for $d=3$, top for $d=4$):
+**Occupation $N_b$ — $d=4$ derived, $d=3$ anchored.** For the $d=4$ sector — native colour ($\mathbb{CP}^2$, $N_c=\chi=3$) and the only sector with out-of-margin modes (charm, top) — the occupation follows from the STEP-63 colour energy law:
 
-$$x_e(d{=}3) = 2.553\times10^{-3}\ (N_b\approx73), \qquad x_e(d{=}4) = 3.871\times10^{-4}\ (N_b\approx484)$$
+$$N_b(d{=}4) = \frac{\lambda_c}{2N_c\,m_{\rm scale,4}} = \frac{\Lambda}{4\,m_{\rm scale,4}} = 486 \quad\Rightarrow\quad x_e(d{=}4) = 3.86\times10^{-4},$$
 
-The ratio $x_e(d3)/x_e(d4)\approx6.6\approx2N_c$. The absolute magnitude of $x_e$ is a colour-structural calibrated input — the hadron-scale colour energy law (STEP 63) operates at the composite scale, not the per-state level, so it does not fix $x_e$ from first principles. Label: 🔶.
+with $\Lambda = N_c f_\pi$ the confinement scale and $\lambda_c = N_c^2 f_\pi/2$ the colour energy coefficient (STEP 63). The coefficient $2N_c$ is the colour count times the $|\Delta N_{\rm vec}|=2$ colour-flip unit; equivalently the colour-well depth is $N_b\,m_{\rm scale,4} = \Lambda/4 = (n_u/n_s)\,f_\pi \approx 70.5$ MeV. This is $m_e$-free, introduces no new input, and reproduces the within-margin value to $0.4\%$.
+
+For $d=3$ — colour inherited via the $S^1\!\to S^5\!\to\mathbb{CP}^2$ Hopf map, with down and strange already within PDG margin bare (so no correction is required there) — the occupation is anchored on the strange datum:
+
+$$x_e(d{=}3) = 2.553\times10^{-3}\ (N_b\approx73).$$
+
+Its $S^3$ well is $\sim$5× deeper than the $d=4$ form would give and lacks a clean colour expression, so it remains an input. The ratio $x_e(d3)/x_e(d4)\approx6.6\approx2N_c$ stays colour-like. Label 🔶 now flags the $d=3$ anchor only; the $d=4$ occupation is derived.
 
 **Corrected masses.** (`files/idwt.py` STEP 127; PDG 2024 pole masses)
 
@@ -858,8 +864,8 @@ The ratio $x_e(d3)/x_e(d4)\approx6.6\approx2N_c$. The absolute magnitude of $x_e
 | down | 3 | +0.040% | +0.040% | +0.03 |
 | strange | 3 | +0.575% | −0.003% | 0 |
 | up | 4 | +0.766% | +0.703% | +0.22 |
-| charm | 4 | +0.933% | +0.339% | +0.94 |
-| top | 4 | +2.199% | −0.048% | −0.29 |
+| charm | 4 | +0.933% | +0.342% | +0.95 |
+| top | 4 | +2.199% | −0.040% | −0.24 |
 
 All quarks are within ±1σ PDG statistical errors after the correction. The $d=2$ boson and $d=6,10$ lepton sectors are untouched ($x_e\approx0$).
 

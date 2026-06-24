@@ -7978,8 +7978,8 @@ assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
 # with out-of-margin modes (charm, top), and
 #   N_b(4) = Lambda/(4*m_scale4) = lambda_c/(2*N_c*m_scale4),
 # coefficient 2*N_c = colour count x the |dN_vec|=2 colour-flip unit (STEP 63);
-# equivalently the well DEPTH N_b(4)*m_scale4 = Lambda/4 = (n_up/n_s)*f_pi ~ 70.5
-# MeV. m_e-free, no new input; matches the within-margin value to 0.4%.
+# equivalently the well depth N_b(4)*m_scale4 = Lambda/4 = (n_up/n_s)*f_pi,
+# ~70.5 MeV. m_e-free, no new input; matches the within-margin value to 0.4%.
 # d=3 (colour INHERITED via the S^1->S^5->CP^2 Hopf map; down,strange already
 # within PDG margin bare -> no correction is required there) keeps an anchored
 # occupation: its S^3 well is ~5x deeper and lacks a clean colour form. So d=4
