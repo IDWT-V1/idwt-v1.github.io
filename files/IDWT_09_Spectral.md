@@ -273,7 +273,7 @@ $$\boxed{\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu
 | $\sin^2\theta_{12}$ | $0.30856$ | $0.307$ | $+0.51\%$ |
 | $\sin^2\theta_{13}$ | $0.02211$ | $0.0220$ | $+0.51\%$ |
 
-The three PMNS angles depend only on $g_{55}$ and the four mode indices $n_{\nu_i}$, $n_\alpha$; no additional parameters enter and no loop diagrams are computed.
+The three PMNS angles depend only on $g_{55}$ and the four mode indices $n_{\nu_i}$, $n_\alpha$; $g_{55}=96/g_{22}$ and the indices are fixed by the seed structure (T9b, T0.5), so no quantity in the three formulas is adjusted to the measured angles.
 
 **Derivation key steps.**
 
@@ -868,7 +868,7 @@ evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, 
 | T3 | $D=\{2,3,4,5,6,10\}$ from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |
 | T4 | $n_s=4$ from double degeneracy $4/7$ | ✅ | Exact | Unique composite; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | $b=1/2$ exact | Chain terminates; $\tau$ is critical |
-| T6 | All three PMNS angles | 🔵 | $\leq0.51\%$ | All three angles derived from $S^5$ sector geometry and seed coupling $g_{55}$; zero fitted parameters |
+| T6 | All three PMNS angles | 🔵 | $\leq0.51\%$ | All three angles derived from $S^5$ sector geometry and seed coupling $g_{55}$; the inputs ($g_{55}$, four mode indices) are seed-fixed |
 | T7 | $\sqrt{\operatorname{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | $+0.82\%$ | EW scale self-consistency: spectral RMS vs derived $G_F$; same offset as $\sin^2\theta_W$, $g_1$ |
 | T8 | $\delta_{CP} = \pi + 2\theta_{13} = 197.11°$; $J = -0.00981$ | 🔶 | $+0.05°$, $+0.1\%$ | APS spectral flow across $\mathbb{CP}^3\to\mathbb{CP}^5$; $\Delta c_1 = -2$; derived in Part 10; three technical gaps before 🔵 |
 | T9a-d | All 6 coupling constants derived | ✅ | Exact | All six $g_{dd}$ from $\chi(\mathbb{CP}^{d/2})$ and seed ratio; §§2–4 |

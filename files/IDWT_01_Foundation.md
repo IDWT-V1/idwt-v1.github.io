@@ -414,9 +414,9 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 | Particle | $n$ | $S(n,2)$ | Predicted mass | PDG |
 |---|---|---|---|---|
 | γ (photon) | 0 | 0 | 0 (zero mode — exact) | 0 ✅ |
-| W boson | 76 | 2926 | 80.377 GeV | 80.377 GeV ✅ |
+| W boson | 76 | 2926 | 80.379 GeV | 80.369 GeV ($+0.01\%$) 🔵 |
 | Z boson | 81 | 3321 | 91.230 GeV | 91.188 GeV ($+0.05\%$) 🔵† |
-| Higgs H | 95 | 4560 | 125.25 GeV | 125.25 GeV ✅ |
+| Higgs H | 95 | 4560 | 125.27 GeV | 125.20 GeV ($+0.05\%$) 🔵 |
 
 Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode equation has no zero-eigenvalue force term.
 

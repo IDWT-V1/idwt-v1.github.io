@@ -82,13 +82,13 @@
 <header class="page-hero">
   <div class="eyebrow">Article · Math</div>
   <h1>The Simplex Number</h1>
-  <p class="sub">Why particle mass is a count of sector microstate configurations, and how a single binomial coefficient generates the entire particle spectrum.</p>
+  <p class="sub">Why particle mass is a simplex count \(S(n,d)\), and how a single binomial coefficient generates the entire particle spectrum.</p>
 </header>
 
 <main>
 <section>
 
-  <h2>Mass as a microstate count</h2>
+  <h2>Mass as a simplex count</h2>
   <div class="prose">
     <p>The IDWT mass formula is:</p>
   </div>
@@ -108,9 +108,9 @@
 
   <h2>Stars and bars</h2>
   <div class="prose">
-    <p>The simplest way to understand S(n,d) is the stars-and-bars combinatorial argument. How many ways can you place n identical objects into d labelled boxes? The answer is C(n+d−1, d), also written C(n+d−1, n−1). This is a standard result from combinatorics: represent the objects as stars (★) and the divisions between boxes as bars (|). A configuration of 3 quanta in 4 directions might look like ★★ | | ★ |, meaning 2 quanta in direction 1, 0 in direction 2, 1 in direction 3, 0 in direction 4. The total configurations of stars and bars across all boxes is C(n+d−1, d).</p>
-    <p>The same count has a geometric form: it is the number of lattice points inside a scaled d-dimensional simplex. Counting lattice points in a dilated polytope is precisely what the <strong>Ehrhart polynomial</strong> of that polytope does, so S(n,d) is the Ehrhart polynomial of the standard d-simplex. Stars-and-bars and Ehrhart's lattice-point count are the same combinatorics under two names — which is also why this same simplex number turns up as the integrated density of states and as the dimension of the degree-(n−1) symmetric tensors.</p>
-    <p>For the up quark \((n=3,\,d=4)\): \(S(3,4) = \binom{6}{4} = 15\). There are 15 ways to arrange 3 energy quanta across 4 sector directions. The up quark has 15 microstate configurations, so its mass is \(15 \times m_{\text{scale},4}\).</p>
+    <p>The simplest way to understand \(S(n,d)\) is the stars-and-bars combinatorial argument. How many ways can you place \(n\) identical objects into \(d\) labelled boxes? The answer is \(\binom{n+d-1}{d}\), also written \(\binom{n+d-1}{n-1}\). This is a standard result from combinatorics: represent the objects as stars (★) and the divisions between boxes as bars (|). A configuration of 3 quanta in 4 directions might look like ★★ | | ★ |, meaning 2 quanta in direction 1, 0 in direction 2, 1 in direction 3, 0 in direction 4. The total configurations of stars and bars across all boxes is \(\binom{n+d-1}{d}\).</p>
+    <p>The same count has a geometric form: it is the number of lattice points inside a scaled \(d\)-dimensional simplex. Counting lattice points in a dilated polytope is precisely what the <strong>Ehrhart polynomial</strong> of that polytope does, so \(S(n,d)\) is the Ehrhart polynomial of the standard \(d\)-simplex. Stars-and-bars and Ehrhart's lattice-point count are the same combinatorics under two names — which is also why this same simplex number turns up as the integrated density of states and as the dimension of the degree-\((n-1)\) symmetric tensors.</p>
+    <p>For the up quark \((n=3,\,d=4)\): \(S(3,4) = \binom{6}{4} = 15\). There are 15 ways to arrange 3 energy quanta across 4 sector directions. The up quark has \(S = 15\) simplex configurations, so its mass is \(15 \times m_{\text{scale},4}\).</p>
     <p>For the electron — a \(d=6\) \(\mathbb{CP}^3\) sector excitation of \(\Psi_\infty\), a genuine 6D object inhabiting six macroscopic spatial dimensions, whose 3D appearance is what a \(d=3\) observer measures of its six-dimensional sector activity — \((n=13,\,d=6)\): \(S(13,6) = \binom{18}{6} = 18{,}564\). There are 18,564 ways to arrange 13 quanta across 6 directions. The electron has 18,564 microstate configurations, giving \(m_e = 18{,}564 \times m_{\text{scale},6} = 0.511\) MeV.</p>
     <p>For the tau lepton \((n=23,\,d=10)\): \(S(23,10) = \binom{32}{10} = 64{,}512{,}240\). The tau spans ten sector directions and can arrange its quanta in over 64 million ways. Before the geometric back-reaction correction: \(m_\tau \approx S(23,10) \times m_{\text{scale},10}\). The back-reaction correction from the \(d=10\) Gegenbauer critical point brings this to 1776.84 MeV, within 0.005% of the PDG value.</p>
   </div>
@@ -120,9 +120,9 @@
       <thead>
         <tr>
           <th>Particle</th>
-          <th>n</th>
-          <th>d</th>
-          <th>S(n, d)</th>
+          <th>\(n\)</th>
+          <th>\(d\)</th>
+          <th>\(S(n, d)\)</th>
           <th>Mass</th>
         </tr>
       </thead>
@@ -163,7 +163,7 @@
   </div>
 
   <div class="prose">
-    <p>This Pascal recursion is the sector generation law. It says: the microstate count at (n, d) equals the microstate count at (n, d−1) plus the count at (n−1, d). In other words, adding one sector dimension adds exactly as many states as the sector just below has at the same mode index. The recursion applied at specific (n,d) pairs is what forces the <a href="/articles/three-generations.html">three-generation structure</a> of the particle spectrum.</p>
+    <p>This Pascal recursion is the sector generation law. It says: the simplex count \(S(n,d)\) equals \(S(n,d-1)\) plus \(S(n-1,d)\). In other words, adding one sector dimension adds exactly as many states as the sector just below has at the same mode index. The recursion applied at specific \((n,d)\) pairs is what forces the <a href="/articles/three-generations.html">three-generation structure</a> of the particle spectrum.</p>
   </div>
 
 </section>
@@ -179,7 +179,7 @@
   </div>
 
   <div class="prose">
-    <p>There is exactly one way to distribute 1 quantum across any number of directions — put it in one direction. This is the unique ground state of every sector. It is why <a href="/articles/down-quark.html">the down quark</a>, at \(n=1\) in \(d=3\), has \(S = 1\) and its mass equals the bare \(d=3\) scale. It is also why \(n_\text{down} = 1\) is required by the empirical absence of states below the down quark: any other starting index would imply particles beneath it in the spectrum — and they are not observed. The ground state is unique, and it is 1.</p>
+    <p>There is exactly one way to distribute 1 quantum across any number of directions — put it in one direction. This is the unique ground state of every sector \(d\). It is why <a href="/articles/down-quark.html">the down quark</a>, at \(n=1\) in \(d=3\), has \(S = 1\) and its mass equals the bare \(d=3\) scale. It is also why \(n_\text{down} = 1\) is required by the empirical absence of states below the down quark: any other starting index would imply particles beneath it in the spectrum — and they are not observed. The ground state is unique, and it is 1.</p>
     <p>The converse is also worth noting. For large \(d\) at fixed \(n\), \(S(n,d)\) grows rapidly with \(d\). The same mode index \(n\) gives vastly different masses in different sectors, purely because of how many sector directions are available. The electron (\(n=13\), \(d=6\)) with \(S = 18{,}564\) is far heavier than the lightest neutrino (\(n=10\), \(d=5\)) with \(S = 2{,}002\), even though the neutrino has a slightly lower mode index — because the electron has six sector directions available versus five for the neutrino.</p>
   </div>
 
@@ -196,8 +196,8 @@
   </div>
 
   <div class="prose">
-    <p>\(N_{D_{S^3}}(n-1)\) is the cumulative count of positive eigenvalues of the Dirac operator on \(S^3\) up to level \(n-1\). The mass formula for down-type quarks is therefore the statement that mass equals half the cumulative Dirac eigenvalue count on \(S^3\). This is not a consequence of fitting — it is what it means for the sector geometry to be \(S^3\). The same grounding holds for other sectors: the spectral counting function of the sector's harmonic oscillator gives the microstate count, and that count equals S(n,d) by the Weyl law for the sector geometry.</p>
-    <p>This is the sense in which IDWT mass predictions are theorems rather than fits: the Dirac eigenvalue spectrum of a geometric space is a mathematical fact, not adjustable by parameter choice. \(S(n,d)\) for the spectrum of \(S^3\) is determined by the geometry of \(S^3\), not by particle physics. That this geometric fact equals the observed particle mass ratios — thirteen of fifteen within 1% of PDG 2024, with charm and top as open residues — is the core empirical claim of the theory.</p>
+    <p>\(N_{D_{S^3}}(n-1)\) is the cumulative count of positive eigenvalues of the Dirac operator on \(S^3\) up to level \(n-1\). The mass formula for down-type quarks is therefore the statement that mass equals half the cumulative Dirac eigenvalue count on \(S^3\). This is not a consequence of fitting — it is what it means for the sector geometry to be \(S^3\). The same grounding holds for other sectors: the spectral counting function of the sector's harmonic oscillator gives the simplex count \(S(n,d)\), and that count equals \(S(n,d)\) by the Weyl law for the sector geometry.</p>
+    <p>This is the sense in which IDWT mass predictions are derived rather than fitted: the Dirac eigenvalue spectrum of a geometric space is a mathematical fact, not adjustable by parameter choice. \(S(n,d)\) for the spectrum of \(S^3\) is determined by the geometry of \(S^3\), not by particle physics. That this geometric fact equals the observed particle mass ratios — thirteen of fifteen within 1% of PDG 2024, with charm and top as open residues — is the core empirical claim of the theory.</p>
   </div>
 
 </section>

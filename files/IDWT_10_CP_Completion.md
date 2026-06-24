@@ -315,7 +315,7 @@ The open 🔶 physics items — the spectral triple operator T0 and the absolute
 
 ## §6. The Full Triangle: Mass–Coupling–Quantum Number–CP Phase
 
-The mass–coupling–quantum number triangle established in the pasted document (T8 source material) is now extended to a **quadrilateral** — adding CP phase as a fourth vertex, all connected to the same $(n, d)$ pair via $S(n,d)$:
+The mass–coupling–quantum number triangle extends to a **quadrilateral** — adding CP phase as a fourth vertex, all connected to the same $(n, d)$ pair via $S(n,d)$:
 
 The four quantities — mass ($m = S(n,d) \times m_{\rm scale,d}$), quantum number ($Q = d_\gamma/d_{\rm hadr}$, $Y_L = -\sqrt{g_{66}}$), coupling ($g_{dd}$, determined by the sector isometry dimension), and CP phase ($\delta_{\rm CP} = \pi + \Delta c_1(d)\,\theta_{13}$, with $\Delta c_1 = c_1(\mathbb{CP}^{d/2-1})$ differences) — are all determined by the same index pair $(n,d)$ via $S(n,d)$, forming a closed algebraic quadrilateral.
 
