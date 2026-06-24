@@ -28,9 +28,9 @@ where every factor is IDWT-derived: $\Lambda_{\rm QCD} = N_c f_\pi = 282.1\ {\rm
 | $D^0$ | $\bar{c}u$ | 1281.9 | 1901.7 | 1864.8 | +2.0% |
 | Ds | c̄s | 1373.7 | 1968.7 | 1968.4 | 0.0% |
 
-**Pattern:** The formula works precisely (< 3%) for cross-sector pseudoscalars (q from $d=3$, q̄ from $d=4$ or vice versa). It works at the leading-order ChPT level (5–6%) for kaons. It fails for same-sector vector mesons (φ, J/ψ) and B mesons: vector mesons are sector resonances (see §21a below), not GOR composites; B mesons require the heavy-quark formula; the b quark is a beat mode not a pure harmonic eigenmode.
+**Pattern:** The formula works precisely (< $3\%$) for cross-sector pseudoscalars (q from $d=3$, $\bar{q}$ from $d=4$ or vice versa). It works at the leading-order ChPT level ($5$–$6\%$) for kaons. It fails for same-sector vector mesons (φ, J/ψ) and B mesons: vector mesons are sector resonances (see §21a below), not GOR composites; B mesons require the heavy-quark formula; the b quark is a beat mode not a pure harmonic eigenmode.
 
-The Gell-Mann–Okubo relation 4m_K² − m_π² = 3m_η², applied to IDWT predictions, gives m_η = 596 MeV (PDG: 548, +9%) — consistent with leading-order SU(3) ChPT accuracy.
+The Gell-Mann–Okubo relation $4m_K^2 − m_\pi^2 = 3m_\eta^2$, applied to IDWT predictions, gives $m_\eta = 596$ MeV (PDG: 548, +$9\%$) — consistent with leading-order SU(3) ChPT accuracy.
 
 **Baryons (2026-05-31, `files/idwt.py`).** The correct formula is the $(N_c-1)$ colour-bond formula, not GOR. When one quark in a colour-singlet baryon is replaced by a heavier quark, each of the remaining $(N_c-1) = 2 = \chi(\mathbb{CP}^1)$ colour bonds contributes the mass difference:
 
@@ -38,9 +38,9 @@ $$m(\text{baryon}) = m_N + (N_c-1) \times \sum(m_s - m_{\rm replaced})$$
 
 Key structural identity discovered: $N_c \times \Lambda_{\rm QCD} / n_u^2 = m_s$ exactly ($94.04\ {\rm MeV}$), so $m_N = N_c \times \Lambda_{\rm QCD} + m_s$ — the nucleon mass is the colour confinement scale plus the strange quark mass, forced by seeds alone.
 
-Results: $\Lambda$ $+0.3\%$, $\Xi^0$ $-0.9\%$, $\Xi^-$ $-1.4\%$. The $\Sigma(uds)$ has identical quark content to $\Lambda$, so the formula gives both the same mass; the $77\ {\rm MeV}$ $\Sigma{-}\Lambda$ difference is a small same-type residual the formula does not resolve. The $\Omega(sss,\ J=3/2)$ is in the baryon decuplet, outside this formula's scope.
+Results: $\Lambda$ $+0.3\%$, $\Xi^0$ $-0.9\%$, $\Xi^-$ $-1.4\%$. The $\Sigma$ (uds) has identical quark content to $\Lambda$, so the formula gives both the same mass; the $77\ {\rm MeV}$ $\Sigma$–$\Lambda$ difference is a small same-type residual the formula does not resolve. The $\Omega$ (sss, $J=3/2$) is in the baryon decuplet, outside this formula's scope.
 
-**Status:** 🔵 (formula verified for $N$, $\Lambda$, $\Xi$). The small $\Sigma{-}\Lambda$ residual ($77\ {\rm MeV}$) is not resolved by the formula. Script: `files/idwt.py`.
+**Status:** 🔵 (formula verified for $N$, $\Lambda$, $\Xi$). The small $\Sigma$–$\Lambda$ residual ($77\ {\rm MeV}$) is not resolved by the formula. Script: `files/idwt.py`.
 
 **Two-formula picture and the bottom quark (2026-05-29, `files/idwt.py`).** There are two distinct mass formulas depending on whether $m_{\rm quark} \ll \Lambda_{\rm QCD}$ (chiral regime) or $m_{\rm quark} \gg \Lambda_{\rm QCD}$ (heavy-quark regime). The boundary is at $\Lambda_{\rm QCD} = 282\ {\rm MeV}$.
 
@@ -51,87 +51,87 @@ $$m_{\rm meson} = m_{q_1} + m_{q_2} + \sqrt{m_{\rm heavy} \times \Lambda_{\rm QC
 
 | Meson | Predicted | PDG | Error |
 |-------|-----------|-----|-------|
-| B+ | 5269.3 MeV | 5279.3 | −0.19% |
-| B⁰ | 5271.9 | 5279.7 | −0.15% |
-| Bs | 5361.2 | 5366.9 | −0.11% |
-| Υ(1S) | 9448.3 | 9460.3 | −0.13% |
-| J/ψ | 3160.3 | 3096.9 | +2.0% |
+| B+ | $5269.3$ MeV | $5279.3$ | $−0.19\%$ |
+| B⁰ | $5271.9$ | $5279.7$ | $−0.15\%$ |
+| Bs | $5361.2$ | $5366.9$ | $−0.11\%$ |
+| Υ(1S) | $9448.3$ | $9460.3$ | $−0.13\%$ |
+| J/ψ | $3160.3$ | $3096.9$ | $+2.0\%$ |
 
-D mesons sit at the crossover: both formulas give ~1% accuracy.
+D mesons sit at the crossover: both formulas give $\sim 1\%$ accuracy.
 
 **The $k_0 = n_s^2$ connection.** The binding energy of every B meson and bottomonium is:
 $$E_{\rm bind} = \sqrt{m_b \times \Lambda_{\rm QCD}} = m_{\rm scale,3} \times \sqrt{N_c \, S(n_s,3) \times \sqrt{S(n_s^2,3)\,S(n_s^2+1,3)}}$$
 
 The beat level $k_0 = n_s^2 = 16$ (already derived in Part 2 as the three-resonance coincidence) appears here again: the same structural fact that fixes $m_b$ also determines the binding energy of all B mesons. The binding energy is fully expressible in terms of $n_s$, $N_c$, and $m_{\rm scale,3}$ — no external input.
 
-**Remaining:** (a) J/ψ $+2.0\%$ — the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ makes the leading-order formula approximate; the J/ψ–η_c difference is a vector–pseudoscalar object-type distinction (as ρ vs π), not a single-formula correction. (b) $\Sigma{-}\Lambda$ ($77\ {\rm MeV}$): a small same-type residual. φ(1020) is handled as a $d=3$ sector resonance (§21a). Script: `files/idwt.py`.
+**Remaining:** (a) J/ψ $+2.0\%$ — the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ makes the leading-order formula approximate; the J/ψ–$\eta_c$ difference is a vector–pseudoscalar object-type distinction (as ρ vs π), not a single-formula correction. (b) $\Sigma$–$\Lambda$ ($77\ {\rm MeV}$): a small same-type residual. φ(1020) is handled as a $d=3$ sector resonance (§21a). Script: `files/idwt.py`.
 
 ### §21a. $d=3$ hadronic resonance spectrum — vector mesons as sector modes (🔵, 2026-05-31)
 
 The $d=3$ sector supports modes at $m = m_{\rm scale,3} \times S(n,3)$ for integer $n \geq 9$. These modes are not co-fixed-points and are therefore not stable particles; they appear as broad short-lived resonances. Unlike the pseudoscalar mesons (which are GOR composites), the vector mesons are identified with specific modes in this tower. The mode indices are forced by seed algebra alone ($n_{\rm up}=3$, $n_{\rm down}=1$, composite $n_s=n_{\rm strange}=4$):
 
-$$n_\rho = n_s + n_{\rm up} + 2n_{\rm down} = 4+3+1+1 = 9 \qquad ({\rm u\bar{u}/d\bar{d}\ nonet,\ J=1})$$
-$$n_\phi = 2n_s + 2n_{\rm down} = 4+4+1+1 = 10 \qquad ({\rm s\bar{s}\ nonet,\ J=1})$$
+$$n_\rho = n_s + n_{\rm up} + $2$n_{\rm down} = $4$+$3$+$1$+$1$ = $9$ \qquad ({\rm u\bar{u}/d\bar{d}\ nonet,\ J=1})$$
+$$n_\phi = $2$n_s + $2$n_{\rm down} = $4$+$4$+$1$+$1$ = $10$ \qquad ({\rm s\bar{s}\ nonet,\ J=1})$$
 
-The step $n_\phi - n_\rho = n_{\rm strange} - n_{\rm up} = 4 - 3 = 1$ reflects replacing one u quark by one s quark in the composite: each such replacement shifts n by exactly $\Delta n = n_{\rm strange} - n_{\rm up} = 1$.
+The step $n_\phi - n_\rho = n_{\rm strange} - n_{\rm up} = $4$ - $3$ = $1$ reflects replacing one u quark by one s quark in the composite: each such replacement shifts $n$ by exactly $\Delta n = n_{\rm strange} - n_{\rm up} = 1$.
 
-| n | S(n,3) | IDWT (MeV) | PDG (MeV) | Error | Resonance |
+| $n$ | $S(n,3)$ | IDWT (MeV) | PDG (MeV) | Error | Resonance |
 |---|--------|------------|-----------|-------|-----------|
-| 9 | 165 | 775.8 | 775.3 (ρ) / 782.7 (ω) | +0.1% | ρ/ω (uū/dd̄) |
-| 10 | 220 | 1034.4 | 1019.5 (φ) | +1.4% | φ (ss̄) |
-| 11 | 286 | 1344.8 | 1318.2 (a₂) | +2.0% | a₂(1320) tensor |
-| 12 | 364 | 1711.5 | 1720 (ρ(1700)) | −0.5% | ρ(1700) excited |
-| 18 | 1140 | 5360.3 | 5366.9 ($B_s$) | −0.1% | $B_s$ ($b\bar{s}$) |
-| 19 | 1330 | 6253.7 | 6274.5 ($B_c$) | −0.3% | $B_c$ ($b\bar{c}$) |
-| 22 | 2024 | 9516.8 | 9460.3 (Υ(1S)) | +0.6% | Υ(1S) (bb̄) |
+| $9$ | $165$ | $775.8$ | $775.3$ (ρ) / $782.7$ (ω) | $+0.1\%$ | ρ/ω ($\bar{u}u$/$\bar{d}d$) |
+| $10$ | $220$ | $1034.4$ | $1019.5$ (φ) | $+1.4\%$ | φ ($\bar{s}s$) |
+| $11$ | $286$ | $1344.8$ | $1318.2$ (a₂) | $+2.0\%$ | a₂(1320) tensor |
+| $12$ | $364$ | $1711.5$ | $1720$ (ρ(1700)) | $−0.5\%$ | ρ(1700) excited |
+| $18$ | $1140$ | $5360.3$ | $5366.9$ ($B_s$) | $−0.1\%$ | $B_s$ ($b\bar{s}$) |
+| $19$ | $1330$ | $6253.7$ | $6274.5$ ($B_c$) | $−0.3\%$ | $B_c$ ($b\bar{c}$) |
+| $22$ | $2024$ | $9516.8$ | $9460.3$ (Υ(1S)) | $+0.6\%$ | Υ(1S) ($b\bar{b}$) |
 
-The ρ is independently confirmed at +0.069% by the cross-sector filter $\Gamma_{346}$ (Part 2 §10). All other entries use the sector mode formula.
+The ρ is independently confirmed at $+0.069\%$ by the cross-sector filter $\Gamma_{346}$ (Part 2 §10). All other entries use the sector mode formula.
 
 Additional mode index identities (all exact from seeds):
 - $n=18 = n_{\rm charm} - n_{\rm up} + n_{\rm down} = 20-3+1$ ($B_s$: one $b$ + one $\bar{s}$)
 - $n=19 = n_{\rm charm} - n_{\rm down} = 20-1$ ($B_c$: one $b$ + one $\bar{c}$)
-- $n=22 = n_\tau - n_{\rm down} = 23-1$ (Υ(1S): bb̄ ground state)
+- $n=22 = n_\tau - n_{\rm down} = 23-1$ (Υ(1S): $b\bar{b}$ ground state)
 
 **Status: 🔵** (sector mode formula verified across 7 resonances). Script: `files/idwt.py` (hadronic resonance spectrum section).
 
-### §22. Co-fixed-point stability via l-parity selection (⭐ exact + 🔵 partial, 2026-05-31)
+### §22. Co-fixed-point stability via $l$-parity selection (⭐ exact + 🔵 partial, 2026-05-31)
 
-**The kernel angular structure.** The coupling $(ξ_d \cdot ξ_{d'})^2$ decomposes on $S^{d-1}$ into $l=0$ (scalar) and $l=2$ (tensor) components only. Each application of $V_{\rm kernel}$ changes the sector angular momentum quantum number by $0$ or $\pm 2$. Angular momentum parity (even vs odd $l$) is therefore an exact conserved quantity under all powers of $V_{\rm kernel}$.
+**The kernel angular structure.** The coupling $(\xi_d \cdot \xi_{d'})^2$ decomposes on $S^{d-1}$ into $l=0$ (scalar) and $l=2$ (tensor) components only. Each application of $V_{\rm kernel}$ changes the sector angular momentum quantum number by $0$ or $\pm 2$. Angular momentum parity (even vs odd $l$) is therefore an exact conserved quantity under all powers of $V_{\rm kernel}$.
 
 **$d=3$ level structure.** The $d=3$ sector has $d+1=4$ harmonic oscillator coordinates ($\mathbb{R}^4$ oscillator). Level $N = n-1$ contains angular momentum values $l = N, N-2, \ldots, 0$ or $1$ (same parity as $N$).
 
 | $n$ | Level $N$ | $l$ values | Parity | In $\Sigma_{\rm pairs}$? | Kernel-reachable from $l=0$ seed? |
 |---|---------|----------|--------|-------|----------------------------------|
-| 1 | 0 | {0} | even | ✓ | yes (seed) |
-| 2 | 1 | {1} | odd | — | **NO** (l-parity blocks) |
-| 3 | 2 | {0,2} | even | — | yes (l=0 and l=2 components) |
-| 4 | 3 | {1,3} | odd | ✓ | **NO** (l-parity blocks intra-sector) |
-| 5 | 4 | {0,2,4} | even | — | yes |
-| 6 | 5 | {1,3,5} | odd | — | **NO** |
+| $1$ | $0$ | {$0$} | even | ✓ | yes (seed) |
+| $2$ | $1$ | {$1$} | odd | — | **NO** ($l$-parity blocks) |
+| $3$ | $2$ | {$0,2$} | even | — | yes ($l=0$ and $l=2$ components) |
+| $4$ | $3$ | {$1,3$} | odd | ✓ | **NO** ($l$-parity blocks intra-sector) |
+| $5$ | $4$ | {$0,2,4$} | even | — | yes |
+| $6$ | $5$ | {$1,3,5$} | odd | — | **NO** |
 
 **Exact result (⭐).** All non-$\Sigma_{\rm pairs}$ modes at odd levels ($n=2,6,8,10,\ldots$ in $d=3$) are permanently disconnected from the $l=0$ seeds by $V_{\rm kernel}$. No power of the kernel can generate odd-$l$ modes from even-$l$ starting points. These modes cannot be excited from the vacuum and cannot be sustained by the coupling chain. Their exclusion from $\Sigma_{\rm pairs}$ is exact.
 
-**Strange quark (n=4) special case.** The strange quark sits at level $N=3$ (odd $l$ only). It is protected from intra-sector destabilisation by the same l-parity rule. Its stability comes instead from the cross-sector coupling $V_{34}$: the up quark ($n=3$, $d=4$) is at level $N=2$ in the $d=4$ oscillator, which has $l=0$ and $l=2$ components — making the cross-sector coupling from the $l=0$ seed allowed. The generation tower chain ($n=1,d=3$) $\to$ ($n=3,d=4$) $\to$ ($n=4,d=3$) then closes via the hockey-stick identity.
+**Strange quark ($n=4$) special case.** The strange quark sits at level $N=3$ (odd $l$ only). It is protected from intra-sector destabilisation by the same $l$-parity rule. Its stability comes instead from the cross-sector coupling $V_{34}$: the up quark ($n=3$, $d=4$) is at level $N=2$ in the $d=4$ oscillator, which has $l=0$ and $l=2$ components — making the cross-sector coupling from the $l=0$ seed allowed. The generation tower chain ($n=1,d=3$) $\to$ ($n=3,d=4$) $\to$ ($n=4,d=3$) then closes via the hockey-stick identity.
 
 **$l=0$ kernel matrix elements (numerical, $d=3$).** Computed from harmonic oscillator mode functions ($\lambda_3 = 4.820$, $w=\sqrt{\lambda_3}$):
 
 | $n_r$ | $n$ ($d=3$) | $I(n)$ | ME $\sim (g_{33}/3) \cdot I_{\rm seed} \cdot I(n)$ | In $\Sigma_{\rm pairs}$? |
 |-----|---------|------|------|-------|
-| 0 | 1 | 1.475 | 15.35 | ✓ (self) |
-| 1 | 3 | 0.602 | 6.27 | — |
-| 2 | 5 | 0.224 | 2.33 | — |
-| 3 | 7 | 0.081 | 0.84 | — |
-| 4 | 9 | 0.029 | 0.30 | — |
+| $0$ | $1$ | $1.475$ | $15.35$ | ✓ (self) |
+| $1$ | $3$ | $0.602$ | $6.27$ | — |
+| $2$ | $5$ | $0.224$ | $2.33$ | — |
+| $3$ | $7$ | $0.081$ | $0.84$ | — |
+| $4$ | $9$ | $0.029$ | $0.30$ | — |
 
 The matrix elements fall geometrically with $n_r$. The non-$\Sigma_{\rm pairs}$ even-level modes ($n=3,5,7,\ldots$) do couple to the seed, with matrix elements proportional to $I(n_r)$.
 
 **Cross-sector coupling ($n=1,d=3$) → ($n=3,d=4$).** The up quark level $N=2$ in $d=4$ has an $l=0$ component. Numerically: $I_4(n=3, l=0) = 0.389$, giving cross-sector matrix element $\sim 1.88$ in sector units (with $g_{34} = 4\sqrt{6}$). The coupling is non-zero, confirming the generation tower connection is active.
 
-**Self-energy of $n=3$ mode (numerical).** The $n=3$ mode at $m_{n=3} = S(3,3) \times m_{\rm scale,3} = 47.0$ MeV receives a 2nd-order self-energy correction from its coupling to the $n=1$ seed:
+**Self-energy of $n=3$ mode (numerical).** The $n=3$ mode at $m_{n=3} = S(3,3) \times m_{\rm scale,3} = $47.0$ MeV receives a $2$nd-order self-energy correction from its coupling to the $n=1$ seed:
 
 $$\delta E^{(2)}_{n=3} = \frac{|\langle n=3 | V_{33}^{l=0} | n=1 \rangle|^2}{m_{n=3} - m_{n=1}} = \frac{6.27^2}{47.0 - 4.7} \approx 0.93 \text{ sector units} \approx 16.4 \text{ MeV}$$
 
-Adding the 1st-order self-coupling ($\delta E^{(1)} = 2.56$ sector units $\approx 12.0$ MeV), the total shift is $\approx +16.4$ MeV, placing the mode at $\approx 63.4$ MeV. This is between the $\Sigma_{\rm pairs}$ modes (down quark at 4.7 MeV, strange at 94.0 MeV) and falls on no sector resonance. The mode is off-resonance with the self-consistent coupling structure.
+Adding the $1$st-order self-coupling ($\delta E^{(1)} = 2.56$ sector units $\approx 12.0$ MeV), the total shift is $\approx +16.4$ MeV, placing the mode at $\approx 63.4$ MeV. This is between the $\Sigma_{\rm pairs}$ modes (down quark at $4.7$ MeV, strange at $94.0$ MeV) and falls on no sector resonance. The mode is off-resonance with the self-consistent coupling structure.
 
 However: in a discrete harmonic oscillator spectrum, 2nd-order perturbation theory shifts eigenvalues but does not give them finite width. Exact irreversibility requires the mode to couple to a continuous spectrum. The multi-sector coupling chain ($d=3\to d=4\to\cdots\to d=10$) time-averages the return amplitude to zero via incommensurability (§15 ✅), but these $d\le 10$ towers are countable and discrete and cannot supply a continuous spectral measure. Nor can the $d>10$ free dimensions: although they carry absolutely continuous spectrum $[0,\infty)$, the kernel has no support beyond coordinate 10, so outer-momentum conservation gives exactly zero coupling width into them at all orders — they are dynamically closed (⭐, `files/idwt.py` STEP 64). The only absolutely continuous spectrum dynamically coupled to a sector excitation is the spacetime momentum of the propagation factor: exact irreversible loss, where it exists, is spatial radiation through the open downward kernel links (Part 7 §1.2).
 
