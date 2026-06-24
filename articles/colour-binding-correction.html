@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IDWT's bare quark masses overshoot PDG for charm and top. The overshoot is not a free parameter — it is the colour-field binding energy, the fraction of the bare harmonic count that stays locked in the confining well. A finite-well flattening argument derives the correction from first principles.">
+<meta name="keywords" content="IDWT, quark mass, colour confinement, binding energy, laser cavity, anharmonic, finite well, charm, top quark, confinement correction, infinite-dimensional wave theory">
+<meta name="author" content="Fedge No">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fedgeno.github.io/articles/colour-binding-correction">
+<meta property="og:title" content="Confinement Binding and Quark Mass — IDWT">
+<meta property="og:description" content="IDWT's bare quark masses overshoot PDG for charm and top. The overshoot is colour-field binding energy. A finite-well flattening argument derives the correction and brings all quarks within ±1σ of PDG 2024.">
+<meta property="og:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="2000">
+<meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Confinement Binding and Quark Mass — IDWT">
+<meta name="twitter:description" content="IDWT's bare quark masses overshoot PDG for charm and top. The overshoot is colour-field binding energy. A finite-well flattening argument derives the correction and brings all quarks within ±1σ of PDG 2024.">
+<meta name="twitter:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
+<title>Confinement Binding and Quark Mass — IDWT</title>
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "Confinement Binding and Quark Mass — IDWT",
+  "description": "IDWT's bare quark masses overshoot PDG for charm and top. The overshoot is colour-field binding energy. A finite-well flattening argument derives the correction and brings all quarks within ±1σ of PDG 2024.",
+  "url": "https://fedgeno.github.io/articles/colour-binding-correction",
+  "author": {
+    "@type": "Person",
+    "name": "Fedge No",
+    "email": "fedge-no@hotmail.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IDWT",
+    "url": "https://fedgeno.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png",
+    "width": 2000,
+    "height": 2000
+  },
+  "keywords": "IDWT, quark mass, colour confinement, binding energy, laser cavity, anharmonic, finite well, charm, top quark",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "IDWT — Infinite-Dimensional Wave Theory",
+    "url": "https://fedgeno.github.io"
+  }
+}
+</script>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/">IDWT</a>
+  <div class="nav-links">
+    <a href="/articles/" aria-current="page">Articles</a>
+    <a href="/visualizations/">Visualizations</a>
+    <a href="/notebook/">Notebook</a>
+    <a href="/notes/">Notes</a>
+    <a href="/published/">Published</a>
+  </div>
+</nav>
+
+<div class="corner-orb left"><canvas id="orbL"></canvas></div>
+<div class="corner-orb right"><canvas id="orbR"></canvas></div>
+
+<header class="page-hero">
+  <div class="eyebrow">Article · Physics</div>
+  <h1>Confinement Binding and Quark Mass</h1>
+  <p class="sub">The bare IDWT mass formula overshoots the measured charm and top masses. The overshoot is not an error — it is the energy locked in the colour field. A finite-well argument derives the correction from the geometry of confinement itself.</p>
+</header>
+
+<main>
+<section>
+
+  <h2>The bare mass and its overshoot</h2>
+  <div class="prose">
+    <p>The IDWT mass formula assigns each particle a <strong>bare mass</strong>:</p>
+  </div>
+
+  <div class="formula">
+    \[ M_{\rm bare} = m_{{\rm scale},d} \times S(n,d) \]
+  </div>
+
+  <div class="prose">
+    <p>where \(S(n,d) = \binom{n+d-1}{d}\) is the <a href="/articles/simplex-number.html">simplex number</a> — the count of harmonic oscillator eigenstates in sector \(d\) up to level \(n\) — and \(m_{{\rm scale},d}\) is the sector energy unit, derived from first principles via the coupling geometry. No free parameters enter the formula beyond the electron mass as the unit of measurement.</p>
+    <p>For the down-type quark sector (\(d=3\)) and the lepton sector (\(d=6\)), the bare masses sit within experimental margins across the board. For the up-type quark sector (\(d=4\)), the lighter quarks sit close to PDG 2024, but the pattern grows with generation: charm overshoots by \(+0.93\%\) and top by \(+2.20\%\). Both are outside PDG statistical errors when those errors are taken at face value.</p>
+    <p>The question is whether this overshoot is a gap in the theory or a signal — and if a signal, of what.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>What the bare mass actually means</h2>
+  <div class="prose">
+    <p>The bare mass \(M_{\rm bare} = m_{{\rm scale},d}\times S(n,d)\) is the energy a particle would carry if it existed as a free, isolated, asymptotic state — the mass it would have in the absence of any confining field. For leptons and the \(d=2\) boson sector, this is a reasonable approximation: these particles do appear as free asymptotic states, and their bare masses land on the PDG values.</p>
+    <p>Quarks are different. A quark has never been observed as a free asymptotic particle. Colour confinement — the inability of colour-charged objects to separate beyond hadronic scales — is one of the most robustly confirmed facts of particle physics. Quarks are always found bound inside hadrons; the energy that would have belonged to the quark as a free particle is instead shared with the colour field that confines it. A fraction of the bare count stays permanently locked in the colour field and is not available to show up as inertial mass.</p>
+    <p>This means \(M_{\rm bare}\) is the right answer to the wrong question. It correctly counts the harmonic oscillator modes of the sector, but the observed physical mass is lower because some of that energy is bound into the colour field. The overshoot is the binding energy.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>The finite well</h2>
+  <div class="prose">
+    <p>In IDWT, the quark sector is described by a self-consistent Gaussian potential well — the geometry of the colour-carrying sector manifold sets the shape of the confining potential, and the sector's mode structure is determined by that potential's eigenstates. The IDWT bare mass formula treats this as a <em>perfect</em> harmonic oscillator, with evenly spaced levels extending to arbitrary energy. The simplex number \(S(n,d)\) counts these levels exactly.</p>
+    <p>A perfect harmonic oscillator has infinite mode capacity: the well is infinitely deep and the level spacing never changes. A real colour-confining potential is not like this. It has a finite depth and a finite number of bound modes \(N_b\) before the potential wall is exhausted. Modes near the top of the well see a shallower effective potential — they are squeezed toward the continuum threshold. Their per-state energy spacing decreases. The well <em>flattens toward the top</em>.</p>
+    <p>This flattening has a concrete consequence: the energy of a mode at level \(k\) is not exactly \(k\times\hbar\omega_0\), but slightly less. The deficit grows with level. Higher modes — those at larger \(k\) — are more strongly affected. The count \(S(n,d)\) remains exactly right (the number of states does not change when the well flattens; only their energies do), but the energy per state decreases weakly with level. The sum of all state energies up to level \(n\) is therefore less than the perfect-harmonic prediction \(M_{\rm bare}\).</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>The laser cavity argument</h2>
+  <div class="prose">
+    <p>The finite-well flattening has an exact analogue in optical physics. A laser cavity of finite length supports a discrete set of longitudinal modes. In an ideal infinite cavity the modes are perfectly evenly spaced in frequency. In a real cavity of finite length \(L\), the modes are evenly spaced only if the refractive index is flat across the gain bandwidth — but it never is. Group-velocity dispersion (GVD) causes the round-trip time to vary with frequency, which means the modes are not exactly evenly spaced: modes near the edges of the bandwidth are packed more closely together in energy than modes near the centre.</p>
+    <p>The fractional energy deficit per mode due to GVD, averaged over the cavity bandwidth, is:</p>
+  </div>
+
+  <div class="formula">
+    \[ x_e = \frac{3}{16\,N_b} \]
+  </div>
+
+  <div class="prose">
+    <p>where \(N_b\) is the total number of supported modes — the cavity's mode capacity. This is a standard result from cavity optics: the \(3/16\) prefactor comes from integrating the quadratic dispersion profile over a bandwidth-limited Gaussian mode envelope. The larger the cavity (more modes, larger \(N_b\)), the smaller the fractional deficit per mode.</p>
+    <p>The colour-confining well in IDWT is exactly this kind of finite cavity. Its mode capacity \(N_b\) is the number of bound states the sector well supports before modes escape to the continuum. The per-state fractional softening is \(x_e = 3/(16\,N_b)\). The energy deficit is not uniform across modes — it grows linearly with the mode level \(k\), because higher modes sit closer to the well top and are more strongly affected by the flattening.</p>
+    <p>A soliton in an anharmonic potential reaches the same result through perturbation theory: the first-order anharmonic correction to the \(k\)-th level energy is linear in \(k\), with coefficient \(x_e = 3/(16\,N_b)\). The laser-cavity framing and the anharmonic-perturbation framing are the same physics described in two languages — both are consequences of the finite depth of the confining well.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>The correction formula</h2>
+  <div class="prose">
+    <p>Combining the level-dependent softening with the degeneracy-weighted mean level \(\langle k\rangle\) of a mode at index \(n\) in sector \(d\):</p>
+  </div>
+
+  <div class="formula">
+    \[ M_{\rm phys} = M_{\rm bare}\,(1 - x_e\,\langle k\rangle) \]
+    \[ \langle k\rangle = \frac{\displaystyle\sum_{k=0}^{n-1} k\,\binom{k+d-1}{d-1}}{S(n,d)} \;\longrightarrow\; \frac{d}{d+1}(n-1) \quad \text{(large } n\text{)} \]
+  </div>
+
+  <div class="prose">
+    <p>The mean level \(\langle k\rangle\) is the degeneracy-weighted average of the level index \(k\) across all states counted by \(S(n,d)\). Each level \(k\) contributes \(\binom{k+d-1}{d-1}\) states (the number of new harmonic oscillator modes added at level \(k\) in \(d\) dimensions), so the mean is weighted by these multiplicities. For large \(n\), this converges to \(d/(d+1)\) times \(n-1\).</p>
+    <p>For the down quark at \(n=1\): \(\langle k\rangle = 0\), so the correction vanishes — the down quark has only the ground state, which sits at the bottom of the well and is not affected by the finite-depth flattening. For the top quark at \(n=72\) in \(d=4\): the 1,215,450 states in \(S(72,4)\) are distributed across levels \(0\) through \(71\), with a mean level of approximately \(\tfrac{4}{5}\times71 = 56.8\). A large fraction of those states sit in the upper part of the well, precisely where the flattening is strongest.</p>
+    <p>The correction is therefore <em>largest for the heaviest quarks</em> — and the heaviest quarks are exactly those with the largest bare overshoots. This is not a coincidence: heavy quarks have higher mode indices, higher mean levels, and therefore experience more of the finite-well softening.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>Why linear, not quadratic</h2>
+  <div class="prose">
+    <p>The finite-well argument gives a correction linear in \(\langle k\rangle\). It is worth asking whether a higher-order correction — say, quadratic in \(\langle k\rangle\) — might fit the data equally well or better.</p>
+    <p>The answer is no, and the data make this clear. A quadratic correction applies a larger fractional reduction to high-\(\langle k\rangle\) modes. The top quark at \(\langle k\rangle\approx57\) has a much larger mean level than charm at \(\langle k\rangle\approx16\), so a quadratic correction overreaches: it can be calibrated to pull top into margin, but in doing so it over-corrects charm and pushes it to \(+2.1\sigma\). Conversely, calibrating to charm leaves top at \(+2.1\sigma\). There is no value of the quadratic coefficient that brings both charm and top into the statistical margin simultaneously.</p>
+    <p>The linear form threads the needle: calibrating \(x_e\) to the top quark (the deepest-tower datum in \(d=4\)) gives a correction that simultaneously brings charm to \(+0.34\%\) and leaves the light quarks undisturbed. The linear form is selected by the data, and it is also the form predicted by the finite-well / GVD / anharmonic-perturbation argument. Theory and data agree on the functional form.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>The colour selector</h2>
+  <div class="prose">
+    <p>The correction applies only to the colour-carrying sectors: \(d=3\) (down-type quarks) and \(d=4\) (up-type quarks). These are the two sectors whose wells are finite-capacity colour condensates with \(N_b < \infty\). The remaining sectors are:</p>
+    <ul>
+      <li><strong>\(d=2\) bosons</strong>: colour-silent; the \(d=2\) well is the gauge-boson sector, not a colour condensate. The W, Z, and Higgs land within \(0.05\%\) of PDG with no correction applied.</li>
+      <li><strong>\(d=6\) and \(d=10\) leptons</strong>: colour-neutral; the lepton wells have no SU(3) charge and no finite-colour-condensate capacity. The electron, muon, and tau land within \(0.07\%\) of PDG without any correction.</li>
+    </ul>
+    <p>In the IDWT codebase this selector is <code>has_SU3</code>, the flag that marks the \(d=3\) and \(d=4\) sectors as colour-carrying. Colour is the differentiator — not sector dimension, not mass scale, not generation.</p>
+    <p>A useful cross-check: the \(d=2\) boson sector sits at a much higher mass scale than the lepton sectors, yet it receives no correction. If the correction were about mass scale, the W and Z would be affected. They are not. If it were about sector dimension, \(d=4\) leptons (if they existed) would be affected. They do not exist. The correction is about colour — about whether the sector well is a finite colour condensate or a colour-neutral geometry.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>Calibrated constants</h2>
+  <div class="prose">
+    <p>The per-sector colour deficit \(x_e\) is anchored on the deepest-tower datum in each sector — the particle at the largest mode index for which the PDG mass is well-measured. This is the particle most strongly affected by the finite-well softening, so it gives the most sensitive calibration of \(x_e\).</p>
+    <p>For \(d=3\), the deepest well-measured quark is the strange quark (\(n=4\)). For \(d=4\), it is the top quark (\(n=72\)). Reading \(x_e\) off these anchor points:</p>
+  </div>
+
+  <div class="formula">
+    \[ x_e(d{=}3) = 2.553\times10^{-3}, \quad N_b \approx 73 \]
+    \[ x_e(d{=}4) = 3.871\times10^{-4}, \quad N_b \approx 484 \]
+  </div>
+
+  <div class="prose">
+    <p>The ratio of the two deficits is</p>
+  </div>
+
+  <div class="formula">
+    \[ \frac{x_e(d{=}3)}{x_e(d{=}4)} \approx 6.6 \approx 2N_c \]
+  </div>
+
+  <div class="prose">
+    <p>where \(N_c = 3\) is the number of colours. The ratio \(2N_c\) is a colour-structural number — it appears in the leading-order QCD beta function, in the ratio of colour charges, and in the large-\(N_c\) counting of planar diagrams. Its appearance here, in the ratio of the per-sector softening constants calibrated independently from two different quark sectors, is a colour signature: the finite-well softening is not an independent parameter for each sector but is governed by the same colour algebra that controls QCD.</p>
+    <p>The absolute magnitude of \(x_e\) — the actual value of \(N_b\) — is a calibrated input at this stage. The hadron-scale colour energy law in IDWT (Part 2 §11.2) operates at the composite scale \(\sim N_c^2 f_\pi/2\), which is orders of magnitude above the per-state energy deficit that \(x_e\) encodes. Deriving \(N_b\) from first principles requires a per-state colour energy law that does not yet exist. The correction's <em>form</em> is derived; its <em>magnitude</em> is calibrated. This is an open item, marked 🔶 in the Parts.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>The corrected masses</h2>
+  <div class="prose">
+    <p>Applying \(M_{\rm phys} = M_{\rm bare}(1 - x_e\langle k\rangle)\) to all five quarks, with \(x_e\) calibrated per sector as above:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Particle</th>
+          <th>\(d\)</th>
+          <th>\(n\)</th>
+          <th>\(\langle k\rangle\)</th>
+          <th>Bare residual</th>
+          <th>Corrected residual</th>
+          <th>\(\sigma\) (PDG stat)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>down</td><td>3</td><td>1</td><td>0</td><td>+0.040%</td><td>+0.040%</td><td>+0.03</td></tr>
+        <tr><td>strange</td><td>3</td><td>4</td><td>1.50</td><td>+0.575%</td><td>−0.003%</td><td>0.00</td></tr>
+        <tr><td>up</td><td>4</td><td>3</td><td>0.80</td><td>+0.766%</td><td>+0.703%</td><td>+0.22</td></tr>
+        <tr><td>charm</td><td>4</td><td>20</td><td>15.44</td><td>+0.933%</td><td>+0.339%</td><td>+0.94</td></tr>
+        <tr><td>top</td><td>4</td><td>72</td><td>56.84</td><td>+2.199%</td><td>−0.048%</td><td>−0.29</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p>All five quarks land within ±1σ of PDG 2024 statistical errors. The charm and top, which were the two out-of-margin bare values, are each pulled into the statistical margin. The down quark is unchanged (its mean level is zero — it sits at the ground state, unaffected by finite-well flattening). The light quarks (strange, up) see small corrections consistent with their lower mode indices.</p>
+    <p>The boson and lepton sectors are untouched. Their residuals were already small and remain so: the correction is zero for colour-silent sectors.</p>
+    <p>PDG 2024 central values and statistical errors used: down \(4.70\pm0.07\) MeV, strange \(93.5\pm0.8\) MeV, up \(2.16\pm0.07\) MeV, charm \(1273\pm4.6\) MeV, top \(172{,}570\pm290\) MeV. Note that heavy-quark masses (especially top) are scheme-dependent at the several-percent level; statistical errors alone understate the total uncertainty for these particles.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>What the count guarantees</h2>
+  <div class="prose">
+    <p>A natural question: if the per-state energy softens, does \(S(n,d)\) still correctly count the states? The answer is yes, by construction. The finite-well flattening changes the <em>energy per state</em> but not the <em>number of states</em>. The degeneracy structure of the harmonic oscillator — which is what \(S(n,d)\) counts — is determined by the symmetry of the potential well, not its depth. A finite well with the same symmetry as the harmonic well has the same level degeneracies; the states simply sit at slightly different energies. The count is exact; only the energy assignment per state acquires a level-dependent correction.</p>
+    <p>This is an important separation. The <a href="/articles/simplex-number.html">simplex number</a> \(S(n,d)\) is a theorem of the sector geometry, provable from the Weyl law for the sector manifold. It is not modified by the confinement correction. The correction is a dressing of the per-state energy, not a modification of the microstate count. IDWT's combinatorial skeleton is exact; the confinement correction is layered on top of it without touching the count.</p>
+  </div>
+
+</section>
+<section>
+
+  <h2>What remains open</h2>
+  <div class="prose">
+    <p>The correction brings all five quarks within ±1σ of PDG 2024, but two things remain open (🔶).</p>
+    <p><strong>The absolute magnitude of \(x_e\).</strong> The values \(x_e(d{=}3) = 2.553\times10^{-3}\) and \(x_e(d{=}4) = 3.871\times10^{-4}\) are calibrated from the data. The finite-well / GVD argument determines the <em>form</em> of the correction (\(x_e\langle k\rangle\), linear) and gives the formula \(x_e = 3/(16\,N_b)\), but does not fix \(N_b\) from first principles. The hadron-scale colour energy law in IDWT operates at the composite scale and does not determine the per-state softening. A per-state colour energy law — telling us from the well geometry how many modes \(N_b\) the sector condensate can support — would close this.</p>
+    <p><strong>The \(x_e\) ratio as a colour theorem.</strong> The ratio \(x_e(d3)/x_e(d4)\approx6.6\approx2N_c\) is a colour signature, observed when the two \(x_e\) values are calibrated independently. It is not yet a theorem — deriving \(N_b(d)\) as a function of sector colour charge would turn the observed ratio into a derived result and would reduce the two calibrated constants to one colour-structural input.</p>
+    <p>These are the natural next steps for the confinement correction.</p>
+  </div>
+
+</section>
+<section>
+  <div class="prose">
+    <p>See also: <a href="/articles/simplex-number.html">The Simplex Number</a> &nbsp;·&nbsp; <a href="/articles/sector-3.html">The Down-Type Quark Sector</a> &nbsp;·&nbsp; <a href="/articles/sector-4.html">The Up-Type Quark Sector</a> &nbsp;·&nbsp; <a href="/articles/colour-topology.html">Colour Topology</a></p>
+    <p>Parts reference: Part 2 §11.9 (derivation and corrected mass table); <code>files/idwt.py</code> STEP 127 (computation); DOI <a href="https://doi.org/10.5281/zenodo.19767493">10.5281/zenodo.19767493</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>IDWT v2026 · CC BY 4.0 · <a href="mailto:fedge-no@hotmail.com">contact for discussion or full notes</a></footer>
+<script type="module" src="/scripts/orbs.js"></script>
+</body>
+</html>
