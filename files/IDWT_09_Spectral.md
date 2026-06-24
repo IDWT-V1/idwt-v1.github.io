@@ -330,13 +330,13 @@ is identified as the candidate source of CP violation. It is non-zero because th
 
 **What the computation requires.** Whether $\Delta c_1 = -2$ produces a non-zero imaginary part in the mixing matrix requires integrating the Fubini-Study curvature 2-form $\omega_{\rm FS}$ around the effective loop area in **sector coupling parameter space** — the space of coupling constants $g_{dd'}$, not $|\Psi_\infty|$ amplitude space. The curvature integral must be expressed in terms of the dimensionless couplings $g_{5,6}$, $g_{5,10}$, and the Fubini-Study geometry of $\mathbb{CP}^3$ and $\mathbb{CP}^5$. This computation has not been performed.
 
-**Coupling parameter space and its metric.** Define the sector coupling state as the tensor product of sector eigenmodes evaluated at the IDWT coupling values:
+**Coupling parameter space and its metric. 🔶** Define the sector coupling state as the tensor product of sector eigenmodes evaluated at the IDWT coupling values:
 
 $$\Psi_{\rm sect}(\{g_{dd}\}) = \bigotimes_d \chi_{n_d,d}(\xi^0;\, g_{dd})$$
 
 where $\chi_{n_d,d}(\xi^0;\,g_{dd})$ is the leading occupied eigenmode of sector $d$ at the observer position $\xi^0$, regarded as a function of the self-coupling $g_{dd}$. At the physical point $g_{dd} = g_{dd}^{\rm(IDWT)}$, this is the ordinary IDWT mode function; allowing $g_{dd}$ to vary defines a smooth family of states on the coupling parameter space $\mathcal{M}$.
 
-The metric on $\mathcal{M}$ used here is the quantum information (Bures) metric, chosen because the eigenmodes $\chi_{n_d,d}$ are $L^2$-normalizable and vary smoothly with $g_{dd}$. **Open assumption:** the coupling space $\mathcal{M}$ is not a priori a quantum state space; the identification of the Fubini-Study pullback as the physically correct metric on $\mathcal{M}$ has not been derived from the IDWT action. An alternative is the Hessian metric $\partial^2 S/\partial g_{dd}^2$. Until either form is derived, the Bures metric should be understood as a convenient choice whose suitability for computing the CP phase is an open item.
+The metric on $\mathcal{M}$ used in the computations below is the quantum information (Bures) metric — a candidate choice, not a derived one. The eigenmodes $\chi_{n_d,d}$ are $L^2$-normalizable and vary smoothly with $g_{dd}$, making the Bures metric technically available; however, the coupling space $\mathcal{M}$ is not a priori a quantum state space, and the identification of the Fubini-Study pullback as the physically correct metric on $\mathcal{M}$ has not been derived from the IDWT action. An alternative is the Hessian metric $\partial^2 S/\partial g_{dd}^2$. Until either form is derived from the action, the Bures metric is a convenient choice whose suitability for computing the CP phase is open.
 
 $$G_{ij} = \operatorname{Re}\!\left[\langle \partial_i \Psi_{\rm sect} \mid \partial_j \Psi_{\rm sect}\rangle - \langle \partial_i \Psi_{\rm sect} \mid \Psi_{\rm sect}\rangle\langle \Psi_{\rm sect} \mid \partial_j \Psi_{\rm sect}\rangle\right]$$
 
