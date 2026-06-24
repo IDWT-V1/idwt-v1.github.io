@@ -8077,6 +8077,38 @@ assert max(_scale_pow_128[q] for q in _geom_128) \
 
 
 # =============================================================================
+# STEP 129 -- 6D-ORBIT ORBITAL SHAPES: ANGULAR + RADIAL RESONANCE LAWS
+# =============================================================================
+# Motivated classical illustration (illustrative status, NOT a first-principles
+# derivation).  The electron as ONE deterministic trajectory on CP^3 (degree-L
+# monomial z1^a z2^b z3^c z4^d), projected to three observed coordinates and
+# read as a depth map (brightness = nearness to the viewer), reproduces the
+# atomic-orbital shapes through two integer resonances.  Two laws are
+# kinematically derived; the absolute precession value is observed only.
+# (Part 8 section 14; visualization 6d-orbit-slice.)
+#
+# (1) ANGULAR LOBE LAW (derived).  For z1^L the displayed amplitude a0 = |v0| is
+#     the modulus of an SO(4) precession of v0 at rate L*kappa, so a0 modulates
+#     at 2*L*kappa; with orbital carrier omega1 the rose petal count is
+#     2*L*kappa/omega1 = 2L at the angular lock kappa = omega1.
+# (2) RADIAL RING LAW (verified).  On the spherically symmetric s-orbit the
+#     radius is swept by the breathing; locking the depth oscillation at
+#     omega2 = N*omega_breath gives N-1 concentric depth rings (projection
+#     caustics) = the n_s = N radial-node count.
+# (3) THE NUMBER (observed).  kappa = omega1 = 3/sqrt(2) = sqrt(9/2) =
+#     n_C/sqrt(d/n_C), n_C = 3 (complex dim CP^3), d = 6.  Deriving the lock
+#     from the CP^3 moment map is open.
+
+_nC_129 = 3                       # complex dimension of CP^3 (d = 2*n_C = 6)
+_d_129 = 6
+_kappa_129 = 3.0 / math.sqrt(2.0)                 # 3/sqrt(2) = 2.121320...
+assert abs(_kappa_129 - math.sqrt(9.0 / 2.0)) < 1e-12
+assert abs(_kappa_129 - _nC_129 / math.sqrt(_d_129 / _nC_129)) < 1e-12
+_lobes_129 = {L: (2 * L if L > 0 else 1) for L in range(4)}   # s1 p2 d4 f6 = 2L
+_rings_129 = {N: N - 1 for N in range(1, 5)}      # n_s 1..4 -> 0,1,2,3 rings
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11740,6 +11772,23 @@ print("  Under Psi->c Psi: geometry {G_d,M,R,lambda_d,A} invariant but")
 print("  rho_vac, Gamma -> c^2. Orthogonal c-sector: no metric principle")
 print("  fixes rho_vac; only one-quantum charge Q=1 (STEP 125) breaks it.")
 print("verdict: four scale walls collapse to ONE -- the quantum of action.")
+
+
+# =============================================================================
+# STEP 129 -- OUTPUT: 6D-ORBIT ORBITAL SHAPES (angular + radial resonance laws)
+# =============================================================================
+print("\n=== STEP 129: 6D-ORBIT ORBITAL SHAPES (illustration) ===")
+print("electron = one deterministic CP^3 orbit, projected to 3D, read as a")
+print("depth map; orbital shapes arise from two integer resonances.")
+print(f"  precession lock  kappa = omega1 = 3/sqrt2 = {_kappa_129:.6f}")
+print(f"  = sqrt(9/2) = n_C/sqrt(d/n_C), n_C={_nC_129}, d={_d_129} (obs.)")
+print("  angular lobe law (derived): petals = 2L   "
+      + " ".join(f"L{k}:{v}" for k, v in _lobes_129.items()))
+print("  radial ring law (verified): n_s=N -> N-1 rings   "
+      + " ".join(f"{k}:{v}" for k, v in _rings_129.items()))
+print("status: motivated classical illustration; lobe (2L) and ring (N-1)")
+print("laws derived/verified, kappa=3/sqrt2 observed; see Part 8 section 14")
+print("and visualization 6d-orbit-slice.")
 
 
 # =============================================================================
