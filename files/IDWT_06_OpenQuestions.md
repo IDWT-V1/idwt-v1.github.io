@@ -32,7 +32,7 @@ A systematic review of the labelled "open items" against PDG experimental uncert
 ## Open
 
 **$f_\pi$ and $\Lambda_{\rm QCD}$**
-The IDWT geometric dilution function gives $g_{\rm eff}(n) = g_{33}/S(n,3)$, with confinement at $g_{\rm eff} = 1$ (heuristic criterion by analogy with $\alpha_s \approx 1$; native derivation from the IDWT action is open) → $S(n_{\rm conf},3) = g_{33} = 8\sqrt{7} \approx 21.17$. The nearest integer solution is $n_{\rm conf} = n_s = 4$ (the composite itself). The confinement mass scale is:
+The IDWT geometric dilution function gives $g_{\rm eff}(n) = g_{33}/S(n,3)$, with confinement at $g_{\rm eff} = 1$ (heuristic criterion by analogy with $\alpha_s \approx 1$; native derivation from the IDWT action is open) $\to$ $S(n_{\rm conf},3) = g_{33} = 8\sqrt{7} \approx 21.17$. The nearest integer solution is $n_{\rm conf} = n_s = 4$ (the composite itself). The confinement mass scale is:
 
 $f_\pi = m_{\rm scale,3} \times S(n_s,3) = 4.702 \times 20 = 94.04$ MeV   (PDG: 92.1 MeV, +2.1%)
 
@@ -148,7 +148,7 @@ None of these questions is answered here. They are recorded because the framewor
 
 The complete falsification inventory is in Part 5 §9 — the canonical location for IDWT's testability, organized into hard binary falsifiers (Category A), precision quantitative thresholds (Category B), structural predictions without SM equivalent (Category C), and near-future experimental windows. Part 1 §8 gives a brief summary with a pointer to Part 5 §9.
 
-### The colour sector and $e^+e^-$ → 3-jet events 🔶
+### The colour sector and $e^+e^- \to$ 3-jet events 🔶
 
 IDWT forbids a propagating colour field. Colour is the $d=4$ kernel contact term, and the action carries no Yang–Mills kinetic term (Part 3 §0.2, §0.6), so there is no colour-octet vector mode and nothing for a quark to radiate. This is a structural commitment of the framework, and it meets the $e^+e^-$ annihilation data at a point that is currently unresolved.
 
@@ -161,7 +161,7 @@ Two-jet production sits comfortably inside IDWT: the $q\bar q$ angular distribut
 
 The contact terms $g_{dd'}$ and the sector geometry are the only structure available, and they are excluded as a source of the third jet *upstream of any amplitude calculation*: the contact vertex fails the soft/collinear scaling, a hidden-coordinate recoil fails kinematic balance, and the $d=3$ down-type quarks that also produce third jets have no extra coordinate to recoil into. This is a cross-framework comparison, not a derivation: the QCD reading is named to locate the gap, not imported.
 
-The honest statement of the tension: IDWT predicts no propagating colour-octet degree of freedom; the $e^+e^-$ → 3-jet soft/collinear scaling, flavour universality, and quark/gluon substructure differences are the strongest existing evidence for one. Reconciling them — either by deriving these four features from the contact-term and sector structure without a propagating octet mode, or by identifying what in the data the framework genuinely cannot accommodate — is open. If the three-jet phenomenology is shown to *require* a propagating colour-octet vector, that contradicts the IDWT colour sector as currently formulated.
+The honest statement of the tension: IDWT predicts no propagating colour-octet degree of freedom; the $e^+e^- \to$ 3-jet soft/collinear scaling, flavour universality, and quark/gluon substructure differences are the strongest existing evidence for one. Reconciling them — either by deriving these four features from the contact-term and sector structure without a propagating octet mode, or by identifying what in the data the framework genuinely cannot accommodate — is open. If the three-jet phenomenology is shown to *require* a propagating colour-octet vector, that contradicts the IDWT colour sector as currently formulated.
 
 ### A six-dimensional probe: anomalous beam diffusion in e–e scattering 🔶
 

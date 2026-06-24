@@ -231,7 +231,7 @@ Setting $b_n(3) = b_n(4)$ and cancelling the common factor $(n+2)(n+3)$ gives $2
 | down ($n=1$, seed) | $d+1$ singletons | $d+1$ | 0 |
 | strange ($n=4$, composite) | 1 block | 1 | $d$ (composite level) |
 | up ($n=3$, seed) | 3 blocks in $d=4$ | 3 | 1 |
-| charm ($n=20$) | 2 blocks in $d=4$ | 2 | 2→reduced to 1 by Hopf pairing |
+| charm ($n=20$) | 2 blocks in $d=4$ | 2 | $2\to$reduced to 1 by Hopf pairing |
 | electron ($n=13$) | partition $13=10+3$, 2 blocks | 2 | 3 joins from seeds |
 
 The noncrossing partition lattice has a known Möbius function and EL-labeling, which supplies canonical shortest paths between modes in the generation tower. Together with the Ferrers box count (Part 2 §1) and the cluster mutation distance (T1), this gives three independent combinatorial computations of generation depth that agree on every mode without running `idwt.py`.
