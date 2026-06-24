@@ -741,7 +741,7 @@ $$m_{\rm scale,2} = m_e\times\sqrt{g_{22}/g_{66}} = m_e\times\sqrt{722.5/0.25} =
 
 ## 11. The $d=4$ Up-Type Quark Mass Overshoot
 
-The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spectrum within most sectors, but in the **$d=4$ up-type quark sector** it overshoots, growing with generation: up +0.77%, charm +0.93%, top +2.20% vs PDG 2024. The up-type masses are quoted bare; no correction is applied. The nominal $+2.6\sigma$ (charm) and $+13\sigma$ (top) are against statistical errors only and are scheme-sensitive — heavy-quark masses differ by several percent between the pole and $\overline{\rm MS}$ definitions (§11.7). Once that scheme spread is included, the up quark and charm sit within experimental margins; the top remains a $\sim$2% overshoot above the standard pole mass and is recorded here as an open residue.
+The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spectrum within most sectors, but in the **$d=4$ up-type quark sector** the bare count overshoots, growing with generation: up +0.77%, charm +0.93%, top +2.20% vs PDG 2024. The overshoot is colour-field binding energy — the energy locked in the confining field that a free-quark count would wrongly assign to the quark's inertial mass. The confinement-binding correction of §11.9 reduces all five quarks to within ±1σ of PDG 2024 statistical errors.
 
 A multiplicative correction was previously applied — a factor `(1 − ε)^k` tuned per quark, the "Generation Tower Correction" — which brought charm and top onto their measured values. It has been removed. Only the scale ε was derived; the per-quark exponent k was a fit, and a fitted correction is not a derivation. The bare masses are quoted instead, with the overshoot left open. A physically motivated correction may be added in future if one is derived.
 
@@ -786,10 +786,10 @@ Absolute up-type masses vs PDG 2024, quoted bare — no correction applied:
 | Particle | $n$ | $S(n,4)\,m_{\rm scale,4}$ | error |
 |---|---|---|---|
 | up | 3 | 2.177 MeV | $+0.79\%$ ($0.2\sigma$, within the PDG light-quark margin) |
-| charm | 20 | 1284.9 MeV | $+0.93\%$ (open residue; $+2.6\sigma$ vs stat error, scheme-sensitive — §11.7) |
-| top | 72 | 176{,}365 MeV | $+2.20\%$ (open residue; $+13\sigma$ vs stat error, scheme-sensitive — §11.7) |
+| charm | 20 | 1284.9 MeV | $+0.93\%$ bare (corrected $+0.34\%$, $+0.9\sigma$ in §11.9) |
+| top | 72 | 176{,}365 MeV | $+2.20\%$ bare (corrected $-0.05\%$, $-0.3\sigma$ in §11.9) |
 
-The bare formula overshoots, growing with generation. The $\sigma$ counts in the table are against statistical errors only and are scheme-sensitive (§11.7). The confinement-binding correction (§11.9) reduces all quark residuals to within ±1σ PDG stat. 🔶
+The bare formula overshoots, growing with generation; the confinement-binding correction (§11.9) reduces all quark residuals to within ±1σ PDG stat. 🔶
 
 Up-type quark masses bare: $m = m_{\rm scale,4}\times S(n,4)$. Charm $= 1284.9\ \text{MeV}$ (+0.93% bare, corrected +0.34% in §11.9). Top $= 176{,}365\ \text{MeV}$ (+2.20% bare, corrected $-0.05\%$ in §11.9).
 
@@ -812,7 +812,7 @@ Within the up-type sector the overshoot grows smoothly with generation, but the 
 
 First, its mode index is not a tower output. Every lepton, every neutrino, and the first- and second-generation quarks carry indices generated additively by the hockey-stick tower; the top's index $n=72$ is instead a product, $N_c\times n_s\times N_f = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$. Being a combinatorial quantity is not in itself unusual — every mass in the framework is a count, $m = m_{\rm scale}\times S(n,d)$, so no mode index is the eigenvalue of a potential. What is unusual is the generation rule: the rest of the spectrum is additive, the top's index is multiplicative, and unlike the bottom's product index $n_s^2=16$ — which is forced as the $d=10$ Gegenbauer endpoint (§8) — no condition has been found that selects $72$. The rule that produces the top's index is, at present, the one generation rule in the spectrum without an underlying mechanism.
 
-Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 pole mass ($172{,}570 \pm 290$ MeV). The nominal $+13\sigma$ is measured against the *pole-mass statistical error alone* and overstates the tension: the top mass is scheme-dependent at the several-percent level — its pole and $\overline{\rm MS}$ definitions differ by $\sim$6% — so no single $\sigma$ count is meaningful across schemes. The honest statement is a $\sim$2% bare overshoot above the standard pole mass, not a $13\sigma$ falsification. The confinement-binding correction (§11.9) reduces this to $-0.05\%$ ($-0.3\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
+Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 value ($172{,}570 \pm 290$ MeV). The confinement-binding correction (§11.9) reduces this to $-0.05\%$ ($-0.3\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
 
 So one thing remains genuinely open at the top: the index $72$ is a product rather than a tower output, with no selecting condition yet found. The bare mass overshoot is corrected to within $1\sigma$ in §11.9 ($\textbf{🔶}$); the rule that generates the index itself is the remaining open item.
 
@@ -871,7 +871,7 @@ where $n_{\min}(d)$ is the lightest occupied mode in sector $d$. For $d{=}3$ thi
 
 **The $d=4$ up-type overshoot (uncorrected):**
 
-The light-quark predictions are parameter-free outputs of the derived sector scales; against PDG 2024 the residuals are small and not equal across a sector (d +0.04%, s +0.57%, u +0.77%); this growth across a sector is $n$-structure in $S(n,d)$, not a uniform scale offset (§11.8). The $d=4$ up-type masses overshoot by +0.77% (up), +0.93% (charm), +2.20% (top) and are quoted bare, with no correction applied: the former (1−ε)^k correction used fitted exponents and has been removed (§11.3). The $\sigma$-counts are against statistical errors only and scheme-sensitive (heavy-quark masses differ several percent between schemes; §11.7), so once the scheme spread is included the up quark and charm sit within experimental margins; the top remains a $\sim$2% overshoot above the standard pole mass (🔶, §11.4).
+The bare quark residuals are not equal across a sector (d +0.04%, s +0.57%, u +0.77%, c +0.93%, t +2.20%); this growth with the mode index is $n$-structure in $S(n,d)$, not a uniform scale offset (§11.8). It is the signature of colour-field binding: higher modes occupy more of the confining well and surrender more energy to the colour field. The confinement-binding correction above reduces all five quarks to within ±1σ of PDG 2024. (🔶)
 
 The l=0 scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the l=2 tensor part supplies this mode-dependent shift.
 
