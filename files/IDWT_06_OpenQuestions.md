@@ -57,7 +57,7 @@ Scalar covariance, spin-½ from the sector Dirac operator, chirality from Kähle
 
 **🎯 Sector set D as spectral gap structure of the IDWT ground state 🔶**
 
-The sector set D = {2,3,4,5,6,10} is currently derived from $M_\infty$'s topology and geometry: Gegenbauer criticality ($4k_0=(d-2)^2$, $k_0=16$), Hopf fibration pairing ($d=3$,4,5,6), Euler characteristic constraints, and the Gegenbauer fixed-point closure condition (Part 9 T3). These are properties of $M_\infty$ independent of any specific field configuration. Two open theorems follow from this structure.
+The sector set D = {2,3,4,5,6,10} is currently derived from $M_\infty$'s topology and geometry: Gegenbauer criticality ($4k_0=(d-2)^2$, $k_0=16$), Hopf fibration pairing ($d=3$, $4$, $5$, $6$), Euler characteristic constraints, and the Gegenbauer fixed-point closure condition (Part 9 T3). These are properties of $M_\infty$ independent of any specific field configuration. Two open theorems follow from this structure.
 
 **Open Theorem A.** Let $\Psi_\infty$ be the IDWT ground state and define the directional covariance operator $\hat{C} = \int |\partial\Psi_\infty\rangle\langle\partial\Psi_\infty|\, dv$. Does Ĉ have eigenvalue spectral gaps at exactly d = 2, 3, 4, 5, 6, 10 — and no others? If yes, the sector set D is recoverable as the set of stable spectral plateau indices of Ĉ, providing an operator-theoretic characterization that is independent of and complementary to the topological derivation via T3. This would constitute a self-consistency theorem: the sectors selected by $M_\infty$'s geometry are exactly the ones at which the ground-state field concentrates its directional activity.
 
