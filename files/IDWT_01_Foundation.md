@@ -491,9 +491,9 @@ Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare, with n
 
 ---
 
-#### d = 5 — Neutrino Sector
+#### $d = 5$ — Neutrino Sector
 
-**Geometry.** $S^5$ (round); isometry $SO(6) \cong SU(4)$. d mod 8 = 5 → spinor bundle on $S^5$ admits no real (Majorana) structure → Majorana mass terms forbidden.
+**Geometry.** $S^5$ (round); isometry $\mathrm{SO}(6) \cong \mathrm{SU}(4)$. $d \bmod 8 = 5$ → spinor bundle on $S^5$ admits no real (Majorana) structure → Majorana mass terms forbidden.
 
 | Parameter | Value |
 |---|---|
@@ -513,10 +513,10 @@ Note: $S(n,5) = n(n+1)(n+2)(n+3)(n+4)/120$. $\Sigma m_\nu = 60.39$ meV (correcte
 
 **Quantum properties.**
 - **Dirac (not Majorana):** $d \bmod 8 = 5$ → no real spinor → Majorana forbidden → **0νββ rate = 0** (hard prediction).
-- **Normal ordering:** $n_1 < n_2 < n_3$ and $S(n,5)$ monotone → $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ necessarily. Experiments prefer normal ordering at 3–4σ.
-- **PMNS angles:** $\theta_{12}$, $\theta_{23}$, $\theta_{13}$ determined by $g_{55} = 96/g_{22}$ and the four mode indices $(n_e, n_\mu, n_\tau, n_\nu)$; all three angles determined by sector geometry (Part 9 T6).
+- **Normal ordering:** $n_1 < n_2 < n_3$ and $S(n,5)$ monotone → $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$ necessarily. Experiments prefer normal ordering at $3$–$4\sigma$.
+- **PMNS angles:** $\theta_{12}, \theta_{23}, \theta_{13}$ determined by $g_{55} = 96/g_{22}$ and the four mode indices $(n_e, n_\mu, n_\tau, n_\nu)$; all three angles determined by sector geometry (Part 9 T6).
 - **No sterile neutrinos:** bulk-propagating modes are non-normalizable (not bound states) and do not appear; the co-fixed-point condition selects exactly three $d=5$ modes.
-- **Coupling filter:** Dirac condition — geometric prohibition of an entire class of interactions. The Clifford algebra of $S^5$ ($d \bmod 8 = 5$) cannot support the spinor structure required by Majorana mass terms, the see-saw mechanism, or any lepton-number-violating vertex. These interactions are not suppressed — they cannot be written down for $S^5$ modes. The $S^5$ Hopf fibration ($S^1 \to S^5 \to \mathbb{CP}^2$) additionally projects the color representation from $\mathbb{CP}^2$ onto its singlet component, giving color-neutral neutrinos despite their coordinate support inside $\Xi_4$. Positively, the $SO(6) \cong SU(4)$ sector gives neutrinos their $B-L$ charge.
+- **Coupling filter:** Dirac condition — geometric prohibition of an entire class of interactions. The Clifford algebra of $S^5$ ($d \bmod 8 = 5$) cannot support the spinor structure required by Majorana mass terms, the see-saw mechanism, or any lepton-number-violating vertex. These interactions are not suppressed — they cannot be written down for $S^5$ modes. The $S^5$ Hopf fibration ($S^1 \to S^5 \to \mathbb{CP}^2$) additionally projects the color representation from $\mathbb{CP}^2$ onto its singlet component, giving color-neutral neutrinos despite their coordinate support inside $\Xi_4$. Positively, the $\mathrm{SO}(6) \cong \mathrm{SU}(4)$ sector gives neutrinos their $B-L$ charge.
 
 **Spectral.** $\zeta_5(1) = 5/4$, $\zeta_5(0) = -5/2$, $a_{05} \approx 2.392$.
 
@@ -524,9 +524,9 @@ Note: $S(n,5) = n(n+1)(n+2)(n+3)(n+4)/120$. $\Sigma m_\nu = 60.39$ meV (correcte
 
 ---
 
-#### d = 6 — Charged Lepton Sector (e, μ)
+#### $d = 6$ — Charged Lepton Sector (e, μ)
 
-**Geometry.** $\mathbb{CP}^3$; local symmetry U(3). $\mathbb{CP}^3$ Kähler form → hypercharge assignment. Lepton number = $U(1)$ centre of U(3).
+**Geometry.** $\mathbb{CP}^3$; local symmetry $\mathrm{U}(3)$. $\mathbb{CP}^3$ Kähler form → hypercharge assignment. Lepton number = $\mathrm{U}(1)$ centre of $\mathrm{U}(3)$.
 
 | Parameter | Value |
 |---|---|
@@ -542,15 +542,15 @@ Note: $S(n,5) = n(n+1)(n+2)(n+3)(n+4)/120$. $\Sigma m_\nu = 60.39$ meV (correcte
 Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13,6) = 206.765$ (PDG: 206.768, −0.002%).
 
 **Quantum properties.**
-- **Lepton number L=1:** Topological $U(1)$ winding number of $\mathbb{CP}^3$ fibre.
-- **Electric charge −1:** From Kähler index of $\mathbb{CP}^3$ (Part 3 §5).
+- **Lepton number $L=1$:** Topological $\mathrm{U}(1)$ winding number of $\mathbb{CP}^3$ fibre.
+- **Electric charge $-1$:** From Kähler index of $\mathbb{CP}^3$ (Part 3 §5).
 - **Chirality:** $\mathbb{CP}^3$ Kähler $\gamma_5$ → left-handed W coupling (same mechanism as $d=4$).
-- **Hypercharge:** Y = −1/2 (left-handed), Y = −1 (right-handed); from U(3) centre.
-- **Coupling filter:** Total colour silence. $\chi(\mathbb{CP}^3) = 4$, not 3; colour contributions cancel in the $SU(4)$ representation. Zero strong coupling at any energy — not suppressed, geometrically absent. The $d=2$ photon sector ($\mathbb{CP}^1$) is a coordinate subspace of $d=6$ ($\mathbb{CP}^3$); the electron-photon coupling follows from coordinate containment and the rank-1 kernel, giving pure $U(1)$ EM coupling with the structure fixed by the $\mathbb{CP}^3$ isometry.
+- **Hypercharge:** $Y = -1/2$ (left-handed), $Y = -1$ (right-handed); from $\mathrm{U}(3)$ centre.
+- **Coupling filter:** Total colour silence. $\chi(\mathbb{CP}^3) = 4$, not $3$; colour contributions cancel in the $\mathrm{SU}(4)$ representation. Zero strong coupling at any energy — not suppressed, geometrically absent. The $d=2$ photon sector ($\mathbb{CP}^1$) is a coordinate subspace of $d=6$ ($\mathbb{CP}^3$); the electron-photon coupling follows from coordinate containment and the rank-1 kernel, giving pure $\mathrm{U}(1)$ EM coupling with the structure fixed by the $\mathbb{CP}^3$ isometry.
 
 **Lepton universality as a geometric theorem.** The electron and muon are both $d=6$ ($\mathbb{CP}^3$) modes — $n = 13$ and $n = 35$ in the same geometry. The coupling to any lower-d particle — photon, W, Z (all $d=2$) — depends only on the sector geometry, not on the mode index. Both are $d=6$ modes containing the same $\Xi_2$ coordinates, with the same contact structure; the mode index enters only the mass formula. Lepton universality is not measured and then explained — it is forced by both particles living in the same $\mathbb{CP}^3$. Any two modes in the same sector couple identically to everything outside it.
 
-**Orbit hybridization as a basis choice.** The sp, $sp^2$, $sp^3$ hybridization of chemistry is usually presented as a mixing of s and p orbitals that requires energy to set up. But the electron is a $d=6$ mode executing a 6D orbit, and s, p, d, f orbitals are different $d=3$ projections of that same 6-dimensional orbit — angular momentum eigenstates (L=0, 1, 2, 3) of the same $SU(4)$ angular momentum tower. The $\mathbb{CP}^3$ isometry group $SU(4)$ rotates between these $d=3$ projections exactly — there is no energy cost, no approximation, no mixing. What looks like ad hoc mixing to a $d=3$ observer is the electron settling into the lowest-energy angular momentum configuration of its 6D orbit for its bonding environment. Carbon's $sp^3$ bonds form a perfect tetrahedron because the $SU(4)$ isometry acting on the 6D orbit projects to the tetrahedral rotation group in $d=3$; the tetrahedral angle (arccos(−1/3) = 109.47°) is derivable from the $\mathbb{CP}^3$ geometry alone, with no empirical input.
+**Orbit hybridization as a basis choice.** The $sp$, $sp^2$, $sp^3$ hybridization of chemistry is usually presented as a mixing of $s$ and $p$ orbitals that requires energy to set up. But the electron is a $d=6$ mode executing a $6$D orbit, and $s, p, d, f$ orbitals are different $d=3$ projections of that same $6$-dimensional orbit — angular momentum eigenstates ($L=0, 1, 2, 3$) of the same $\mathrm{SU}(4)$ angular momentum tower. The $\mathbb{CP}^3$ isometry group $\mathrm{SU}(4)$ rotates between these $d=3$ projections exactly — there is no energy cost, no approximation, no mixing. What looks like ad hoc mixing to a $d=3$ observer is the electron settling into the lowest-energy angular momentum configuration of its $6$D orbit for its bonding environment. Carbon's $sp^3$ bonds form a perfect tetrahedron because the $\mathrm{SU}(4)$ isometry acting on the $6$D orbit projects to the tetrahedral rotation group in $d=3$; the tetrahedral angle ($\arccos(-1/3) = 109.47°$) is derivable from the $\mathbb{CP}^3$ geometry alone, with no empirical input.
 
 **The electron's apparent $d=3$ position is where its 6D orbit intersects our coordinates.** The electron executes a definite 6D orbit in $\mathbb{CP}^3$. A $d=3$ observer detects it only where that orbit intersects our three observable coordinates. The 6D orbit sweeps through our 3D slice carrying no confinement in the $d=3$ directions — only the $d=6$ sector potential localises the electron, and that localisation is in the 6D sector space, not in our 3D coordinates. The intersections of the 6D orbit with our 3D slice therefore fall anywhere across observable space. This is the IDWT reading of the standard quantum statement that the electron can be found anywhere in the universe: not uncertainty, not a smeared probability cloud, but the 3D shadow of the definite 6D orbit the electron follows — a shadow unlocalized by construction. The orbit is definite; the apparent position in $d=3$ is the shadow of that orbit in our three coordinates, and a shadow does not inherit the localization of the object that casts it.
 
@@ -558,9 +558,9 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 
 ---
 
-#### d = 10 — Tau Sector
+#### $d = 10$ — Tau Sector
 
-**Geometry.** $\mathbb{CP}^5$ = $SU(6)$/U(5); local symmetry U(5). $V_{10}(r)$ sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton composite coupling.
+**Geometry.** $\mathbb{CP}^5$ = $\mathrm{SU}(6)/\mathrm{U}(5)$; local symmetry $\mathrm{U}(5)$. $V_{10}(r)$ sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton composite coupling.
 
 | Parameter | Value |
 |---|---|
@@ -572,13 +572,13 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 |---|---|---|---|---|
 | τ (tau) | 23 | $\times (1+1/1680)$ | 1776.84 MeV | 1776.93 MeV ✅ |
 
-Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))$ from the Gegenbauer critical endpoint sector phase delay correction. Without it, m_τ is 0.06% low.
+Back-reaction factor $1+1/1680 = 1 + 1/(n_{\rm up} \times n_s^2 \times S(n_s,4))$ from the Gegenbauer critical endpoint sector phase delay correction. Without it, $m_\tau$ is $0.06\%$ low.
 
 **Quantum properties.**
-- **Lepton number L=1 and charge −1:** Shared with $d=6$ via joint g=1/4 coupling.
+- **Lepton number $L=1$ and charge $-1$:** Shared with $d=6$ via joint $g=1/4$ coupling.
 - **Gegenbauer critical-endpoint condition:** At the Gegenbauer critical point, the sector phase delay is exact — no higher-order corrections to the tau mass. Unique among all sectors.
-- **Lepton universality:** $m_{\rm scale,10} = m_{\rm scale,6}$ enforces identical mass unit for the heavy lepton family; mass splitting comes entirely from different mode indices (23 vs 13, 35).
-- **Coupling filter:** Gegenbauer-critical coupling. At the Gegenbauer critical endpoint (Jacobi threshold $b_{k_0} = 1/2$), modes sit at the Jacobi coupling boundary — coupling weight is distributed across many channels with no dominant mode. This is a critical-point property, not a fractal or self-similar structure. The tau's coordinate space $\Xi_{10}$ contains all other sectors; in principle it couples to everything, but at every specific channel the coupling is marginal. This explains the tau's decay pattern: no gap (short lifetime), but no dominant channel (broad decay distribution). The geometric back-reaction correction δ_τ = 1/1680 (required only at the critical point) is the mathematical signature of this critical-boundary coupling.
+- **Lepton universality:** $m_{\rm scale,10} = m_{\rm scale,6}$ enforces identical mass unit for the heavy lepton family; mass splitting comes entirely from different mode indices ($23$ vs $13, 35$).
+- **Coupling filter:** Gegenbauer-critical coupling. At the Gegenbauer critical endpoint (Jacobi threshold $b_{k_0} = 1/2$), modes sit at the Jacobi coupling boundary — coupling weight is distributed across many channels with no dominant mode. This is a critical-point property, not a fractal or self-similar structure. The tau's coordinate space $\Xi_{10}$ contains all other sectors; in principle it couples to everything, but at every specific channel the coupling is marginal. This explains the tau's decay pattern: no gap (short lifetime), but no dominant channel (broad decay distribution). The geometric back-reaction correction $\delta_\tau = 1/1680$ (required only at the critical point) is the mathematical signature of this critical-boundary coupling.
 
 **The tau is the only particle that touches everything (✅ structural, 2026-06-18).** The tau's $d=10$ sector contains all of $\Xi_2$ through $\Xi_{10}$; every other particle's coordinates are a subset of the tau's. The tau is the only particle where the contact condition — that one sector's coordinates overlap with the partner's — is trivially satisfied for every possible partner. In the ring language of the condensation front (Part 2 §15), the τ is identified with $\omega_2^2\omega_3^3$ — the unique top/volume class of the seed product $\mathbb{CP}^2\times\mathbb{CP}^3$ — the deposit that exhausts both generators simultaneously. This is forced by nilpotency ($\omega_2^3 = 0$, $\omega_3^4 = 0$) and the termination condition of $R = \mathbb{R}[\omega_2,\omega_3]/(\omega_2^3,\omega_3^4)$; it is a structural consequence of the proved Hypothesis H (`idwt.py` STEP 74). But the Gegenbauer criticality means coupling weight is distributed with no dominant channel. The tau's interaction pattern is the direct consequence: it decays to electrons, muons, pions, kaons, multiple neutrinos — every channel is open, none dominates. The electron ($d=6$) does not decay; the muon ($d=6$) decays almost entirely to an electron and neutrinos; the tau ($d=10$) distributes across every sector. The widening of the accessible channel tree with d is a readout of coordinate nesting depth, with the Gegenbauer criticality of $d=10$ preventing any single open channel from being selected.
 
