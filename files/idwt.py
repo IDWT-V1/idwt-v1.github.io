@@ -8100,9 +8100,15 @@ assert max(_scale_pow_128[q] for q in _geom_128) \
 #     radius is swept by the breathing; locking the depth oscillation at
 #     omega2 = N*omega_breath gives N-1 concentric depth rings (projection
 #     caustics) = the n_s = N radial-node count.
-# (3) THE NUMBER (observed).  kappa = omega1 = 3/sqrt(2) = sqrt(9/2) =
-#     n_C/sqrt(d/n_C), n_C = 3 (complex dim CP^3), d = 6.  Deriving the lock
-#     from the CP^3 moment map is open.
+# (3) THE NUMBER (normalization, not a geometric invariant).  The invariant
+#     content is the RESONANCE RATIO kappa/omega1 = 1: in toric moment/phase
+#     coordinates the Fubini-Study symplectic form is sum d(nu_j) ^ d(phi_j), so
+#     each phase frequency equals its moment-map Hamiltonian coefficient; the
+#     integer lobe counts follow from the moment polytope being INTEGRAL (the
+#     I_k = exponent+1 are the moment weights).  The absolute value
+#     kappa = omega1 = 3/sqrt(2) = sqrt(9/2) = n_C/sqrt(d/n_C), n_C=3, d=6, is
+#     the chosen FS time scale, NOT a CP^3 invariant (cross-checked by two
+#     independent reasoning models, 2026-06-24).
 
 _nC_129 = 3                       # complex dimension of CP^3 (d = 2*n_C = 6)
 _d_129 = 6
@@ -11786,8 +11792,10 @@ print("verdict: four scale walls collapse to ONE -- the quantum of action.")
 print("\n=== STEP 129: 6D-ORBIT ORBITAL SHAPES (illustration) ===")
 print("electron = one deterministic CP^3 orbit, projected to 3D, read as a")
 print("depth map; orbital shapes arise from two integer resonances.")
-print(f"  precession lock  kappa = omega1 = 3/sqrt2 = {_kappa_129:.6f}")
-print(f"  = sqrt(9/2) = n_C/sqrt(d/n_C), n_C={_nC_129}, d={_d_129} (obs.)")
+print("  resonance lock (invariant): kappa/omega1 = 1")
+print(f"  abs. value 3/sqrt2 = {_kappa_129:.6f} = n_C/sqrt(d/n_C),"
+      f" n_C={_nC_129}, d={_d_129}:")
+print("    FS time-scale normalization, NOT a CP^3 invariant")
 print("  angular lobe law (derived): petals = 2L   "
       + " ".join(f"L{k}:{v}" for k, v in _lobes_129.items()))
 print("  radial ring law (verified): n_s=N -> N-1 rings   "
