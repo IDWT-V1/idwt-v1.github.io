@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A visual exploration: rendering deterministic 6D electron orbits on CP³, projecting them to 3D, and seeing where the familiar s/p/d/f orbital shapes — and the concentric radial-node patterns — come from. A motivated classical illustration, not a first-principles derivation.">
+<meta name="keywords" content="IDWT, 6D orbit, CP3, atomic orbitals, precession, radial nodes, depth map, caustics, visualization">
+<meta name="author" content="Fedge No">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fedgeno.github.io/articles/orbital-shapes-from-orbits">
+<meta property="og:title" content="Drawing Orbitals from Orbits — IDWT">
+<meta property="og:description" content="A visual exploration of where the s/p/d/f shapes and concentric radial-node patterns come from when a deterministic 6D orbit is projected to 3D and rendered as a depth map.">
+<meta property="og:image" content="https://fedgeno.github.io/images/orbits/angular-shapes.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="860">
+<meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drawing Orbitals from Orbits — IDWT">
+<meta name="twitter:description" content="Where the s/p/d/f shapes and concentric radial-node patterns come from when a deterministic 6D orbit is projected to 3D.">
+<meta name="twitter:image" content="https://fedgeno.github.io/images/orbits/angular-shapes.png">
+<title>Drawing Orbitals from Orbits — IDWT</title>
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "Drawing Orbitals from Orbits — IDWT",
+  "description": "A visual exploration of where the s/p/d/f shapes and concentric radial-node patterns come from when a deterministic 6D orbit is projected to 3D and rendered as a depth map. A motivated classical illustration, not a first-principles derivation.",
+  "url": "https://fedgeno.github.io/articles/orbital-shapes-from-orbits",
+  "author": { "@type": "Person", "name": "Fedge No", "email": "fedge-no@hotmail.com" },
+  "publisher": {
+    "@type": "Organization", "name": "IDWT", "url": "https://fedgeno.github.io",
+    "logo": { "@type": "ImageObject", "url": "https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png" }
+  },
+  "image": { "@type": "ImageObject", "url": "https://fedgeno.github.io/images/orbits/angular-shapes.png", "width": 1600, "height": 860 },
+  "keywords": "IDWT, 6D orbit, CP3, atomic orbitals, precession, radial nodes, depth map, caustics, visualization",
+  "isPartOf": { "@type": "WebSite", "name": "IDWT — Infinite-Dimensional Wave Theory", "url": "https://fedgeno.github.io" }
+}
+</script>
+<style>
+  figure.orbit-fig { margin: 26px 0; }
+  figure.orbit-fig img {
+    width: 100%; height: auto; display: block; border-radius: 10px;
+    border: 1px solid rgba(139,156,255,0.18); background: #05060d;
+  }
+  figure.orbit-fig figcaption {
+    margin-top: 8px; font-size: 0.82rem; color: var(--muted, #9aa3b8); line-height: 1.55;
+  }
+  .status-line { margin-top: 18px; font-size: 0.86rem; }
+  .tag {
+    display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem;
+    border: 1px solid rgba(139,156,255,0.3); color: #b9c2e6; background: rgba(139,156,255,0.08);
+    letter-spacing: 0.02em; white-space: nowrap;
+  }
+  .viz-cta {
+    display: inline-block; margin: 6px 0 2px; padding: 9px 16px; border-radius: 9px;
+    border: 1px solid rgba(139,156,255,0.35); color: #cdd4f5; text-decoration: none;
+    background: rgba(139,156,255,0.10); font-size: 0.92rem; transition: all .2s;
+  }
+  .viz-cta:hover { border-color: #8b9cff; color: #eef1fb; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/">IDWT</a>
+  <div class="nav-links">
+    <a href="/articles/" aria-current="page">Articles</a>
+    <a href="/visualizations/">Visualizations</a>
+    <a href="/notebook/">Notebook</a>
+    <a href="/notes/">Notes</a>
+    <a href="/published/">Published</a>
+  </div>
+</nav>
+
+<div class="corner-orb left"><canvas id="orbL"></canvas></div>
+<div class="corner-orb right"><canvas id="orbR"></canvas></div>
+
+<header class="page-hero">
+  <div class="eyebrow">Article · Exploration</div>
+  <h1>Drawing Orbitals from Orbits</h1>
+  <p class="sub">In IDWT an electron is a single deterministic trajectory in six spatial dimensions, and a familiar atomic orbital is the 3D shadow of that path. This is a visual exploration of where those shapes come from — the angular lobes, the role of the viewing angle, and the concentric radial-node rings — built by rendering the orbits directly. It is a motivated classical illustration, not a first-principles derivation.</p>
+</header>
+
+<main>
+<section>
+  <h2>The setup</h2>
+  <div class="prose">
+    <p>The electron lives on \(\mathbb{CP}^3\), a six-real-dimensional space, and a state is a degree-\(L\) monomial \(z_1^a z_2^b z_3^c z_4^d\). The trajectory is one continuous path: each complex amplitude \(z_k\) turns at its own frequency while the amplitude vector slowly <em>precesses</em>, because the moments of inertia of the six directions are not equal. We plot the three coordinates we would experience as space, \((\mathrm{Re}\,z_1,\ \mathrm{Im}\,z_1,\ \mathrm{Re}\,z_2)\), and render the result as a <strong>depth map</strong>: brightness is nearness to the viewer (bright = close, dark = far). No probability cloud and no ensemble — one particle, one path, seen from a chosen direction.</p>
+    <p>Everything below is generated from that one construction. You can fly around the live version here:</p>
+    <p><a class="viz-cta" href="/visualizations/6d-orbit-slice.html">↗ Open the interactive 6D orbit visualization</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>The angular shapes</h2>
+  <div class="prose">
+    <p>The precession rate has one value that makes the projected shapes line up with the familiar shells. When the precession locks to the lead orbital frequency, \(\kappa = \omega_1 = \tfrac{3}{\sqrt2} \approx 2.1213\), a single monomial orbit projects to the right angular lobe count for every shell: a ring for \(s\), two lobes for \(p\), four for \(d\), six for \(f\) — that is \(2L\) lobes at degree \(L\). Away from that value the lobe counts come out wrong and the shape smears, so the value behaves like a resonance.</p>
+    <figure class="orbit-fig">
+      <img src="/images/orbits/angular-shapes.png" alt="s, p, d, f orbit shapes from the locked precession: a ring, a two-lobe figure, a four-lobe and six-lobe rosette, with their 3D point clouds below.">
+      <figcaption>Top row: face-on depth maps of the \(s, p, d, f\) orbits at \(\kappa = 3/\sqrt2\) — a ring, then 2-, 4-, and 6-lobe rosettes. Bottom row: the same orbits as 3D point clouds. The lobe counts \((1, 2, 4, 6 = 2L)\) fall out of the locked precession; brightness encodes depth toward the viewer.</figcaption>
+    </figure>
+    <p>The number itself is suggestive: \(\tfrac{3}{\sqrt2} = \sqrt{9/2}\) can be written \(n_{\mathbb C}/\sqrt{d/n_{\mathbb C}}\) with \(n_{\mathbb C}=3\) (the complex dimension of \(\mathbb{CP}^3\)) and \(d=6\). We treat that as an observation, not a derivation — deriving the lock from the geometry is left open.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The same orbit, from every side</h2>
+  <div class="prose">
+    <p>Because the picture is a depth map, what you recognize depends on where you stand. The clean orbital appears only when you look down the right axis; from other directions the very same trajectory reads as a three-dimensional body — a saddle, a barrel, a lantern. The shape is not in the orbit alone, it is in the orbit together with the viewing angle.</p>
+    <figure class="orbit-fig">
+      <img src="/images/orbits/viewing-angles.png" alt="The p-shell orbit rendered from a grid of viewing directions: the clean two-lobe shape appears only at low elevation; other angles show a twisted 3D surface.">
+      <figcaption>The \(p\)-shell orbit from a grid of viewing directions (elevation down the rows, azimuth across). The familiar two-lobe figure is legible only near face-on (top row); tilt the view and the same orbit becomes a 3D surface.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>The radial rings</h2>
+  <div class="prose">
+    <p>The lobes are the orbit's <em>angular</em> structure. The other half of the familiar picture — the concentric rings of a \(2s\), \(3s\), \(4s\) orbital, the "ring with a dot in the middle" — turns out to come from a <em>second</em> lock. On the spherically symmetric \(s\)-orbit, the radius is swept in and out by the orbit's breathing; when the depth oscillation is tuned to a whole-number multiple of that breathing, \(\omega_2 = N\,\omega_{\text{breath}}\), the depth map develops \(N-1\) concentric dark rings while staying circular. No extra ingredient is added — it is a second integer resonance among frequencies the orbit already has.</p>
+    <figure class="orbit-fig">
+      <img src="/images/orbits/radial-rings.png" alt="Concentric-ring depth maps: a filled disk, then one dark ring, then two, then three, labelled 1s through 4s.">
+      <figcaption>The \(s\)-orbit at successive radial locks \(\omega_2 = N\,\omega_{\text{breath}}\): \(N=2\) gives the \(2s\) (one dark ring), \(N=3\) the \(3s\) (two rings), \(N=4\) the \(4s\). The pattern is azimuthally clean because the orbit fills the disk uniformly while the depth corrugates with radius.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Why rings, exactly</h2>
+  <div class="prose">
+    <p>The concentric rings are projection <strong>caustics</strong> — the fold lines where a curved sheet, seen edge-on, piles up. When the depth oscillation and the radial sweep are locked at an integer \(N\), the brightest-depth envelope as a function of screen radius is a Chebyshev polynomial \(T_N\), whose oscillations are exactly the rings. Integer lock gives sharp rings; an irrational ratio smears them out. The same mechanism, run on a bare test curve, reproduces the ring counts cleanly:</p>
+    <figure class="orbit-fig">
+      <img src="/images/orbits/caustic-rings.png" alt="Four concentric-ring patterns from a test curve at integer frequency locks, with a smeared non-integer case.">
+      <figcaption>Concentric rings as caustic folds of a torus-like projection at integer frequency locks. The ring count tracks the lock; a non-integer ratio (right) loses the sharpness.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>What this is, and isn't</h2>
+  <div class="prose">
+    <p>This is an illustration of how much of the orbital picture a single deterministic 6D path can carry once you fix the precession and choose a viewing direction: the angular lobe counts, the strong dependence on viewing angle, and the concentric radial rings all appear from one construction, without a probability density. It is not a derivation. The precession value \(\kappa = 3/\sqrt2\) and the breathing frequency are chosen because they make the shapes come out, and several pieces are openly unfinished — why those frequencies, what selects \(N\) for a given orbital, and how to obtain the locks from the IDWT dynamics rather than imposing them. We keep the honest label.</p>
+    <p class="status-line"><span class="tag">🔶 motivated classical illustration — geometry correct, frequencies chosen to fit, derivations open</span></p>
+    <p>The interactive version, where you can rotate the orbits yourself, is here:
+      <a class="viz-cta" href="/visualizations/6d-orbit-slice.html">↗ 6D orbit visualization</a></p>
+  </div>
+</section>
+</main>
+
+<footer>IDWT v2026 · CC BY 4.0 · <a href="mailto:fedge-no@hotmail.com">contact for discussion or full notes</a></footer>
+<script type="module" src="/scripts/orbs.js"></script>
+</body>
+</html>
