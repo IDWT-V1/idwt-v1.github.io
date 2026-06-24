@@ -1,0 +1,82 @@
+# IDWT — Infinite-Dimensional Wave Theory
+
+> A unified physical framework by Fedge No (2026). Everything is a complex Dirac spinor wave (Ψ∞) on an infinite-dimensional manifold of macroscopic spatial dimensions. All Standard Model particles, masses, coupling constants, and mixing angles emerge from geometry — fixed by three integer seeds (n_d=1, n_u=3, n_s=4) and one mass unit (the electron mass). No free parameters. The observer lives at d=3, inside M_∞.
+
+Contact: fedge-no@hotmail.com
+Parts DOI: https://doi.org/10.5281/zenodo.19767493
+
+## Core Theory (the 11 Parts)
+
+The framework is developed across 11 Parts, available as markdown source and searchable via the Notebook.
+
+- [Notebook — search and read all 11 Parts](https://fedgeno.github.io/notebook/)
+- [Published documents](https://fedgeno.github.io/published/)
+- [README / executive summary](https://fedgeno.github.io/README.md)
+
+## Key Concepts
+
+- [What Is IDWT?](https://fedgeno.github.io/articles/what-is-idwt.html): Overview of the framework and its central claims.
+- [One Wave](https://fedgeno.github.io/articles/one-wave.html): The master spinor field Ψ∞ as the sole fundamental object.
+- [The Simplex Number](https://fedgeno.github.io/articles/simplex-number.html): The mass formula S(n,d) — mass as a count of hidden microstates.
+- [The Six Sectors](https://fedgeno.github.io/articles/sectors.html): How d=2,3,4,5,6,10 sector geometry generates the Standard Model families.
+- [The Prism](https://fedgeno.github.io/articles/prism.html): How a single wave refracts into the particle spectrum.
+- [The Particle Map](https://fedgeno.github.io/articles/particle-map.html): Every Standard Model particle placed in the sector structure.
+- [Predictions](https://fedgeno.github.io/articles/predictions.html): Falsifiable predictions, including Dirac neutrinos and zero neutrinoless double beta decay.
+- [What Would Falsify IDWT](https://fedgeno.github.io/articles/falsifiables.html): The theory's empirical commitments.
+
+## Sector Articles
+
+- [Sector 2 — Bosons](https://fedgeno.github.io/articles/sector-2.html)
+- [Sector 3 — Down-type Quarks](https://fedgeno.github.io/articles/sector-3.html)
+- [Sector 4 — Up-type Quarks](https://fedgeno.github.io/articles/sector-4.html)
+- [Sector 5 — Neutrinos](https://fedgeno.github.io/articles/sector-5.html)
+- [Sector 6 — Charged Leptons](https://fedgeno.github.io/articles/sector-6.html)
+- [Sector 10 — The Tau](https://fedgeno.github.io/articles/sector-10.html)
+
+## Structure and Geometry
+
+- [Inside the Manifold — Our Place in M_∞](https://fedgeno.github.io/articles/inside-the-manifold.html)
+- [Dimensions Accumulate](https://fedgeno.github.io/articles/dimensions.html)
+- [The Generation Tower](https://fedgeno.github.io/articles/generation-tower.html)
+- [Three Generations](https://fedgeno.github.io/articles/three-generations.html)
+- [The Combinatorial Skeleton](https://fedgeno.github.io/articles/combinatorial-skeleton.html)
+- [The Hockey-Stick Universe](https://fedgeno.github.io/articles/hockey-stick-universe.html)
+- [Inevitable Structure](https://fedgeno.github.io/articles/inevitable-structure.html)
+- [Why n_s = 4](https://fedgeno.github.io/articles/seed.html)
+- [Colour from Topology](https://fedgeno.github.io/articles/colour-topology.html)
+- [Quantum Numbers Are Coupling Filters](https://fedgeno.github.io/articles/sector-filters.html)
+- [The Coupling Grid](https://fedgeno.github.io/articles/coupling-grid.html)
+- [One Space, Six Depths](https://fedgeno.github.io/articles/shared-space.html)
+- [The Euler Characteristic Chain](https://fedgeno.github.io/articles/euler-characteristic-chain.html)
+
+## Forces and Gravity
+
+- [Gravity Is Not a Force](https://fedgeno.github.io/articles/gravity-weak.html): Gravity as emergent geometric curvature, no gravitons.
+- [Shields, Not Walls](https://fedgeno.github.io/articles/shields-not-walls.html)
+- [Hidden Sector Dimensions — The Electron's Hidden Orbit](https://fedgeno.github.io/articles/hidden-sector-dimensions.html)
+- [The Hidden Depths](https://fedgeno.github.io/articles/hidden-depths.html)
+
+## Quantum Phenomena
+
+- [Already Everywhere — The Path Integral in IDWT](https://fedgeno.github.io/articles/path-integral-already-everywhere.html)
+- [The Single-Electron Double Slit](https://fedgeno.github.io/articles/single-electron-double-slit.html)
+- [The Delayed-Choice Quantum Eraser](https://fedgeno.github.io/articles/delayed-choice-eraser.html)
+- [The Aharonov–Bohm Effect](https://fedgeno.github.io/articles/aharonov-bohm.html)
+- [The Aharonov–Casher Effect](https://fedgeno.github.io/articles/aharonov-casher.html)
+- [The Quantum Hall Effect and the Hopf Fiber](https://fedgeno.github.io/articles/quantum-hall-hopf.html)
+- [Gravitationally-Induced Quantum Phase and M_∞ Curvature](https://fedgeno.github.io/articles/cow-gravitational-phase.html)
+- [Photon vs Electron](https://fedgeno.github.io/articles/photon-vs-electron.html)
+- [Refraction Without Slowing](https://fedgeno.github.io/articles/speed-of-light.html)
+
+## Specific Particles
+
+- [The Down Quark](https://fedgeno.github.io/articles/down-quark.html)
+- [Mode Selection — Generation Tower](https://fedgeno.github.io/articles/mode-selection.html)
+- [The Proton Spin Crisis and Hidden-Sector Angular Momentum](https://fedgeno.github.io/articles/proton-spin-crisis.html)
+- [Is the Spectrum a Fit?](https://fedgeno.github.io/articles/spectrum-significance.html)
+
+## Chemistry
+
+- [Chemistry in Six Dimensions](https://fedgeno.github.io/articles/chemistry-6d-orbits.html)
+- [What 6D Chemistry Is (and Isn't)](https://fedgeno.github.io/articles/what-6d-chemistry-is.html)
+- [Where Bond Angles Come From](https://fedgeno.github.io/articles/bond-angles.html)
