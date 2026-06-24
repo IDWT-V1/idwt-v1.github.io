@@ -189,7 +189,7 @@ SHELLS.forEach((sh,idx)=>{
   sh.trailLen=(sh.name==='f')?TRAIL_F:TRAIL;
   sh.tpos=new Float32Array(sh.trailLen*3); sh.tcol=new Float32Array(sh.trailLen*3);
   const tg=new LineGeometry();
-  const tmat=new LineMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,worldUnits:false,linewidth:2});
+  const tmat=new LineMaterial({vertexColors:true,transparent:true,blending:THREE.NormalBlending,depthWrite:false,worldUnits:false,linewidth:2});
   tmat.resolution.set(W,H);
   sh.trail=new Line2(tg,tmat);
   scene.add(sh.trail);
