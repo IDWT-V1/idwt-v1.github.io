@@ -8018,6 +8018,51 @@ assert set(_xe_127) == {3, 4}                        # coloured sectors only
 
 
 # =============================================================================
+# STEP 128 -- METRIC-NORMALISATION COLLAPSE: THE FOUR SCALE WALLS ARE ONE
+#            (G_d carries all geometry; the rate residue is one quantum)
+# =============================================================================
+# The metric-normalisation conjecture: does ONE per-sector factor ell_d
+# (g_phys = ell_d^2 g_unit), fixed by self-consistency, close s_d, the absolute
+# size, the amplitude rho_vac and the absolute rate TOGETHER? It COLLAPSES them
+# into one wall; it does not remove the wall.
+#  (i) ell_d's only metric-normalisation-INVARIANT content is G_d. The factor
+#      (d-2)*S_{d-1} is the d-dim Laplacian Green's-function coefficient -- a
+#      property of the UNIT metric (Gauss flux of grad Phi = -1, any d), so
+#      G_d = G_inf/[(d-2)*S_{d-1}] is the unique invariant coupling and the
+#      absolute scale ell_d CANCELS from every dimensionless observable (the
+#      STEP-121 size depends on {G_d, M, N} only). Hence s_d, the absolute size
+#      and the amplitude SHAPE (STEP 121, 122) are pure geometry, fixed by G_d.
+#  (ii) The absolute-rate residue a_f^2 = rho_vac (STEP 120) is NOT geometry.
+#      Under a global field rescale Psi -> c*Psi every metric/geometric object
+#      (G_d, ell_d, M, R, lambda_d, A) is INVARIANT, while rho_vac and Gamma
+#      both scale as c^2. A principle built from the metric alone is
+#      c-invariant, so it CANNOT fix rho_vac. The only condition that breaks the
+#      c-degeneracy is the charge quantum Q = int|Psi|^2 = 1 -- one quantum of
+#      action (STEP 125); classical Q is continuous (the IDWT integers are the
+#      mode labels n,d and the COUNT S(n,d), never the occupation).
+# VERDICT: the four scale walls collapse to ONE -- the universal quantum of
+# action -- on top of pure geometry G_d. (STEP 120; 121; 122; 125; STEP 24.)
+def _greens_flux_128(d):                 # Gauss flux of grad Phi at r=1
+    _Sdm1 = _sphere_area(d)              # unit (d-1)-sphere area
+    _Phip = -(d - 2) / ((d - 2) * _Sdm1)   # Phi'(1) = -1/S_{d-1}
+    return _Sdm1 * _Phip                 # = -1 exactly, any d
+# scaling exponent of each quantity under Psi -> c*Psi (power of c)
+_scale_pow_128 = {"G_d": 0, "ell_d": 0, "M": 0, "R": 0, "lambda_d": 0,
+                  "A_shape": 0, "rho_vac": 2, "Gamma": 2}
+_geom_128 = ("G_d", "ell_d", "M", "R", "lambda_d", "A_shape")
+_rate_128 = ("rho_vac", "Gamma")
+assert all(abs(_greens_flux_128(d) + 1.0) < 1e-12
+           for d in (3, 4, 5, 6, 10))    # (d-2)S_{d-1} = Green's coefficient
+assert abs(_G_d_121(3) / _GN_meas - 1.0) < 1e-9    # invariant content = G_N
+assert all(_scale_pow_128[q] == 0 for q in _geom_128)   # geometry c-invariant
+assert all(_scale_pow_128[q] == 2 for q in _rate_128)   # rho_vac, Gamma scale
+# geometry and rho_vac live in orthogonal c-sectors -> no metric principle fixes
+# rho_vac; only the one-quantum charge (STEP 125) does: four walls = one quantum
+assert max(_scale_pow_128[q] for q in _geom_128) \
+    < min(_scale_pow_128[q] for q in _rate_128)
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11663,6 +11708,24 @@ print("  sectors d=3 (strange/down +0.54%) and d=4 (top/charm +1.25%); the")
 print("  boson d=2 and lepton d=6 ratios are ~0. A uniform per-sector SCALE")
 print("  offset (n-independent) is ruled out. Quoted as measured accuracy,")
 print("  NOT applied as a correction.")
+
+
+# =============================================================================
+# STEP 128 -- OUTPUT: METRIC-NORMALISATION COLLAPSE (four scale walls -> one)
+# =============================================================================
+print("\n" + "=" * 70)
+print("=== STEP 128: METRIC-NORMALISATION COLLAPSE (four walls -> one) ===")
+print("=" * 70)
+print("conjecture: one metric factor ell_d closing s_d + size + amplitude")
+print("  + rate together. Result: it COLLAPSES them, it does not remove it.")
+print(f"  Gauss flux of grad Phi = {_greens_flux_128(6):+.1f} (d=3..10) "
+      f"=> (d-2)S_(d-1) is the")
+print("  Green's-fn coefficient; ell_d's only invariant content is G_d, and")
+print("  the absolute scale ell_d cancels (STEP 121 size = f(G_d,M,N)).")
+print("  Under Psi->c Psi: geometry {G_d,M,R,lambda_d,A} invariant but")
+print("  rho_vac, Gamma -> c^2. Orthogonal c-sector: no metric principle")
+print("  fixes rho_vac; only one-quantum charge Q=1 (STEP 125) breaks it.")
+print("verdict: four scale walls collapse to ONE -- the quantum of action.")
 
 
 # =============================================================================

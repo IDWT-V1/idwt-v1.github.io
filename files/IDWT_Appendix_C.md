@@ -28,7 +28,7 @@ where every factor is IDWT-derived: $\Lambda_{\rm QCD} = N_c f_\pi = 282.1\ {\rm
 | $D^0$ | $\bar{c}u$ | 1281.9 | 1901.7 | 1864.8 | +2.0% |
 | Ds | c̄s | 1373.7 | 1968.7 | 1968.4 | 0.0% |
 
-**Pattern:** The formula works precisely (< 3%) for cross-sector pseudoscalars (q from d=3, q̄ from d=4 or vice versa). It works at the leading-order ChPT level (5–6%) for kaons. It fails for same-sector vector mesons (φ, J/ψ) and B mesons: vector mesons are sector resonances (see §21a below), not GOR composites; B mesons require the heavy-quark formula; the b quark is a beat mode not a pure harmonic eigenmode.
+**Pattern:** The formula works precisely (< 3%) for cross-sector pseudoscalars (q from $d=3$, q̄ from $d=4$ or vice versa). It works at the leading-order ChPT level (5–6%) for kaons. It fails for same-sector vector mesons (φ, J/ψ) and B mesons: vector mesons are sector resonances (see §21a below), not GOR composites; B mesons require the heavy-quark formula; the b quark is a beat mode not a pure harmonic eigenmode.
 
 The Gell-Mann–Okubo relation 4m_K² − m_π² = 3m_η², applied to IDWT predictions, gives m_η = 596 MeV (PDG: 548, +9%) — consistent with leading-order SU(3) ChPT accuracy.
 
@@ -66,9 +66,9 @@ The beat level $k_0 = n_s^2 = 16$ (already derived in Part 2 as the three-resona
 
 **Remaining:** (a) J/ψ $+2.0\%$ — the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ makes the leading-order formula approximate; the J/ψ–η_c difference is a vector–pseudoscalar object-type distinction (as ρ vs π), not a single-formula correction. (b) $\Sigma{-}\Lambda$ ($77\ {\rm MeV}$): a small same-type residual. φ(1020) is handled as a d=3 sector resonance (§21a). Script: `files/idwt.py`.
 
-### §21a. d=3 hadronic resonance spectrum — vector mesons as sector modes (🔵, 2026-05-31)
+### §21a. $d=3$ hadronic resonance spectrum — vector mesons as sector modes (🔵, 2026-05-31)
 
-The d=3 sector supports modes at $m = m_{\rm scale,3} \times S(n,3)$ for integer $n \geq 9$. These modes are not co-fixed-points and are therefore not stable particles; they appear as broad short-lived resonances. Unlike the pseudoscalar mesons (which are GOR composites), the vector mesons are identified with specific modes in this tower. The mode indices are forced by seed algebra alone ($n_{\rm up}=3$, $n_{\rm down}=1$, composite $n_s=n_{\rm strange}=4$):
+The $d=3$ sector supports modes at $m = m_{\rm scale,3} \times S(n,3)$ for integer $n \geq 9$. These modes are not co-fixed-points and are therefore not stable particles; they appear as broad short-lived resonances. Unlike the pseudoscalar mesons (which are GOR composites), the vector mesons are identified with specific modes in this tower. The mode indices are forced by seed algebra alone ($n_{\rm up}=3$, $n_{\rm down}=1$, composite $n_s=n_{\rm strange}=4$):
 
 $$n_\rho = n_s + n_{\rm up} + 2n_{\rm down} = 4+3+1+1 = 9 \qquad ({\rm u\bar{u}/d\bar{d}\ nonet,\ J=1})$$
 $$n_\phi = 2n_s + 2n_{\rm down} = 4+4+1+1 = 10 \qquad ({\rm s\bar{s}\ nonet,\ J=1})$$

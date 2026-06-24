@@ -13,7 +13,7 @@ $n_{\rm charm} \times N_c = n_{\nu_1} \times N_f = 4 \times n_{\nu_2}$
 
 **Charm–up spacing equals $p$:**  
 $n_{\rm charm} - n_{\rm up} = p$ (for all $n_s$)  
-✅ By definition: $p = S(n_s,3) - n_{\rm up} = n_{\rm charm} - n_{\rm up}$. Restated as a sector-spacing identity: the quark mode-index gap within d=4 from depth-0 to depth-1 equals the Dirac eigenstate count $p$ that enters $g_{22}$.
+✅ By definition: $p = S(n_s,3) - n_{\rm up} = n_{\rm charm} - n_{\rm up}$. Restated as a sector-spacing identity: the quark mode-index gap within $d=4$ from depth-0 to depth-1 equals the Dirac eigenstate count $p$ that enters $g_{22}$.
 
 **Neutrino spacing identity:**  
 $n_{\nu_3} - n_{\nu_2} = n_{\nu_1} - n_{\rm up}$ (for all $n_s$)  
@@ -24,11 +24,11 @@ $n_{\nu_3} - n_{\nu_2} = n_{\nu_1} - n_{\rm up}$ (for all $n_s$)
 $n_{\nu_2} - n_e = q - n_{\rm up}$  
 ✅ Proof: $n_{\nu_2} - n_e = [S(n_{\rm up},4)] - [S(n_{\rm up},3) + n_{\rm up}] = [S(n_{\rm up},4)-S(n_{\rm up},3)] - n_{\rm up} = q - n_{\rm up}$, using the definition $q = S(n_{\rm up},4)-S(n_{\rm up},3)$ and the tower identity $n_e = n_{\nu_1} + n_{\rm up}$. At $n_s=4$: $q-n_{\rm up} = 5-3 = 2$, so $n_{\nu_2} = n_e + 2$.
 
-**d=3 sector sum equals $q$:**  
+**$d=3$ sector sum equals $q$:**  
 $n_{\rm down} + n_{\rm strange} = 1 + 4 = \mathbf{5 = q}$ (for any $n_s$: $n_{\rm down} + n_s = n_s+1 = q$)  
 ✅ Immediate from $n_{\rm down} = 1$ and $n_{\rm strange} = n_s$.
 
-**d=4 sector sum equals Higgs:**  
+**$d=4$ sector sum equals Higgs:**  
 $n_{\rm up} + n_{\rm charm} + n_{\rm top} = \mathbf{n_H}$ (documented, §5)
 
 **Higgs as Z plus electron plus down:**  
@@ -53,10 +53,10 @@ $\mathbf{n_{\rm charm} = 2\cdot n_{\nu_1}}$ ❓ ($C(n_s+2,3)/C(n_s+1,3) = (n_s+2
 
 $\mathbf{n_{\rm top} - n_{\rm charm} = n_s\cdot n_e = 52}$ ❓ (fails at $n_s=5$: $231\neq120$)
 
-**Each massive d=2 boson pairs with one matter mode to the Hopf product $96 = N_c(N_c+1)^3/2 = g_{33}g_{44} = g_{22}g_{55}$** ❓ (2026-06-13):
-$n_W + n_{\rm charm} = 76 + 20 = 96$ (charm, d=4);
-$n_Z + n_{\nu_2} = 81 + 15 = 96$ ($\nu_2$, d=5);
-$n_H + n_{\rm down} = 95 + 1 = 96$ (down, d=3).
+**Each massive $d=2$ boson pairs with one matter mode to the Hopf product $96 = N_c(N_c+1)^3/2 = g_{33}g_{44} = g_{22}g_{55}$** ❓ (2026-06-13):
+$n_W + n_{\rm charm} = 76 + 20 = 96$ (charm, $d=4$);
+$n_Z + n_{\nu_2} = 81 + 15 = 96$ ($\nu_2$, $d=5$);
+$n_H + n_{\rm down} = 95 + 1 = 96$ (down, $d=3$).
 One matter primary from each of the three matter sectors d=3,4,5, reflected through the carrier 96, lands on a d=2 boson — ascending bosons W$<$Z$<$H pair with descending matter charm$>$$\nu_2$$>$down (the sideband-about-carrier reflection that surfaced in the modulational-comb run, §15 2026-06-13). All three are $n_s=4$ specific exactly as the single $n_Z+n_{\nu_2}$ case is (fails at $n_s=5$: $310\neq192$; the value $96=N_c(N_c+1)^3/2$ is fixed by $N_c$ while the indices scale with $n_s$). Honest caveat: 96 minus the seven primaries also produces four non-tower values {61,86,92,93}, so the pairing is an exact relation for {W,Z,H} but not a spurious-free generator. Not a structural identity; companion to the run #5 heavy-boson-off-top cascade (Part 3 §11) and the §13 Vandermonde forms, recorded here as the completed ❓ pattern. Do not promote to a Part document without an $n_s$-general derivation.
 
 **Tau identities at $n_s=4$:**  
@@ -82,7 +82,7 @@ Writing $n = n_s \cdot a + r$, the working set partitions into four residue clas
 | r | Members | Character |
 |---|---------|----------|
 | 0 | 0 ($\gamma$), 4 (s), 16 ($k_0$), 20 (c), 72 (t), 76 (W) | bosons and quark scale anchors; all divisible by $n_s$ |
-| 1 | 1 (d), 13 (e), 17 ($p$), 81 (Z) | d=3 ground state, d=6 ground state, $g_{22}$ parameter, Z boson |
+| 1 | 1 (d), 13 (e), 17 ($p$), 81 (Z) | $d=3$ ground state, $d=6$ ground state, $g_{22}$ parameter, Z boson |
 | 2 | 10 (ν₁), 22 (ν₃) | **exclusively ν₁ and ν₃** |
 | 3 | 3 (u), 15 (ν₂), 23 (τ), 35 (μ), 95 (H) | up quark plus lepton/Higgs cluster |
 
@@ -153,7 +153,7 @@ Using only the actual operations of the generation tower (Part 2 §6), the deriv
 
 | Particle | Derivation | Tower predecessors |
 |----------|------------|-------------------|
-| photon (0,2) | d=2 ground state (n=0 trivially) | none — always present |
+| photon (0,2) | $d=2$ ground state ($n=0$ trivially) | none — always present |
 | down (1,3) | SEED: S(1,d)=1 for all d | none |
 | strange (4,3) | COMPOSITE: $n_s = n_d + n_u = 1+3 = 4$ (🔶 MC-4.4); confirmed by muon fixed point $S(4,4)=35$ | \{down, up\} |
 | up (3,4) | SEED: $n_u = \chi(\mathbb{CP}^2) = N_c = 3$ (T15); unique $\Delta N=+2$ image of ground seed | none |
@@ -227,7 +227,7 @@ $D = \{2\} \cup \{n_s-1, n_s, n_s+1, n_s+2\} \cup \{2(n_s+1)\}$
 For $n_s=4$: $D = \{2\} \cup \{3,4,5,6\} \cup \{10\} = \{2,3,4,5,6,10\}$. ✓
 
 The three pieces have individual derivations:
-- $\{2\}$: the EM sector $\mathbb{CP}^1$, $\mathrm{U}(1)_{\rm EM}$; fixed as the reference sector (derived from T15 and the photon as the d=2 $n=0$ mode).
+- $\{2\}$: the EM sector $\mathbb{CP}^1$, $\mathrm{U}(1)_{\rm EM}$; fixed as the reference sector (derived from T15 and the photon as the $d=2$ $n=0$ mode).
 - $\{n_s-1, n_s, n_s+1, n_s+2\} = \{3,4,5,6\}$: the consecutive matter quartet — derived below.
 - $\{2(n_s+1)\} = \{10\}$: the Gegenbauer-critical terminal sector, $b_{k_0}=1/2$ exactly at $d=2(n_s+1)$ (T5). Derived.
 
