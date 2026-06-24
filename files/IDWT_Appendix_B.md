@@ -238,11 +238,11 @@ The complex Hopf chain $S^1 \to S^{2k+1} \to \mathbb{CP}^k$ produces Hopf pairs 
 - $k=2$: total space $S^5$ (d=5), base $\mathbb{CP}^2$ (d=4)
 - $k=3$: total space $S^7$ (d=7, excluded), base $\mathbb{CP}^3$ (d=6, terminal)
 
-The gauge sector d=2 (CP¹ of the k=1 Hopf base) separates from the matter sectors. The matter quartet consists of all total spaces and non-terminal bases after d=2: $\{3, 4, 5, 6\}$.
+The gauge sector $d=2$ ($\mathbb{CP}^1$ of the $k=1$ Hopf base) separates from the matter sectors. The matter quartet consists of all total spaces and non-terminal bases after $d=2$: $\{3, 4, 5, 6\}$.
 
 Rule A terminates the chain when the base sector $\mathbb{CP}^{n_s-1}$ appears (real dimension $d_{\rm term} = 2(n_s-1)$), because $\chi(\mathbb{CP}^{n_s-1}) = n_s$ forces $g_{d_{\rm term}} = 1/n_s = $ composite ratio. For $n_s=4$: $d_{\rm term} = 2\times3 = 6$ ($\mathbb{CP}^3$, $\chi=4=n_s$). ✓
 
-The matter quartet runs from d=3 (first total space, always fixed by the Hopf chain) to d=$2(n_s-1)$ (terminal base). Its length is:
+The matter quartet runs from $d=3$ (first total space, always fixed by the Hopf chain) to $d=2(n_s-1)$ (terminal base). Its length is:
 $$|{\rm quartet}| = 2(n_s-1) - 3 + 1 = 2n_s - 4.$$
 
 The **self-consistency requirement** is that the matter quartet has exactly $n_s$ members — the composite $n_s=4$ determines the number of matter sectors:
@@ -250,7 +250,7 @@ $$2n_s - 4 = n_s \quad\Longrightarrow\quad n_s = 4. \qquad \text{⭐}$$
 
 This is an independent derivation of $n_s=4$: the unique seed value for which the Hopf chain produces exactly $n_s$ consecutive matter sectors before Rule A termination. At $n_s=4$ the quartet is $\{3,4,5,6\} = \{n_s-1, n_s, n_s+1, n_s+2\}$, centered at $n_s + 1/2$ with $n_s-1=3$ (observable space) as the first element.
 
-The $n_s=4$ Hopf chain gives exactly 2 complete Hopf pairs for matter: $(d=3, d=4)$ = quark sectors and $(d=5, d=6)$ = lepton sectors. This 2+2 pairing is why there are two quark multiplets (down-type, up-type) and two lepton multiplets (neutrino, charged) — a structural consequence of $n_s=4$ rather than an independent input.
+The $n_s=4$ Hopf chain gives exactly 2 complete Hopf pairs for matter: ($d=3, d=4$) = quark sectors and ($d=5, d=6$) = lepton sectors. This 2+2 pairing is why there are two quark multiplets (down-type, up-type) and two lepton multiplets (neutrino, charged) — a structural consequence of $n_s=4$ rather than an independent input.
 
 **Status: 🔵** (quartet length = $n_s$ derivation from Hopf chain + Rule A; the self-consistency requirement is motivated but not yet a theorem — it needs a derivation of WHY the composite $n_s$ must equal the matter sector count). Verified for $n_s = 3,4,5,6$: only $n_s=4$ gives quartet length = $n_s$ while also placing observable space (d=3) as the first matter sector.
 
@@ -289,12 +289,12 @@ This is the explicit form requested by Task #1 for the monomial picture. The S(n
 
 | $d$ | $\lambda_d$ | $A=(d-1)(d-3)/4$ | $E_0^{\rm harm} = d\sqrt{\lambda_d}$ | deeply-bound $l=0$ states | overlap with harmonic ground |
 |---|------|----------------|------------------|------------------------|------------------------------|
-| 2 | 50.72 | −0.25 | 14.24 | 3 | 0.973 |
-| 3 | 4.82 | 0 | 6.59 | 1 | 0.778 |
-| 4 | 1.73 | 0.75 | 5.26 | 0 (one marginal threshold state) | 0.096 |
-| 5 | 0.164 | 2.00 | 2.02 | 0 | — |
-| 6 | 0.25 | 3.75 | 3.00 | 0 | — |
-| 10 | 0.25 | 15.75 | 5.00 | 0 | — |
+| $2$ | 50.72 | −0.25 | 14.24 | 3 | 0.973 |
+| $3$ | 4.82 | 0 | 6.59 | 1 | 0.778 |
+| $4$ | 1.73 | 0.75 | 5.26 | 0 (one marginal threshold state) | 0.096 |
+| $5$ | 0.164 | 2.00 | 2.02 | 0 | — |
+| $6$ | 0.25 | 3.75 | 3.00 | 0 | — |
+| $10$ | 0.25 | 15.75 | 5.00 | 0 | — |
 
 Three facts, in increasing severity:
 

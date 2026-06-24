@@ -64,7 +64,7 @@ $$E_{\rm bind} = \sqrt{m_b \times \Lambda_{\rm QCD}} = m_{\rm scale,3} \times \s
 
 The beat level $k_0 = n_s^2 = 16$ (already derived in Part 2 as the three-resonance coincidence) appears here again: the same structural fact that fixes $m_b$ also determines the binding energy of all B mesons. The binding energy is fully expressible in terms of $n_s$, $N_c$, and $m_{\rm scale,3}$ — no external input.
 
-**Remaining:** (a) J/ψ $+2.0\%$ — the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ makes the leading-order formula approximate; the J/ψ–η_c difference is a vector–pseudoscalar object-type distinction (as ρ vs π), not a single-formula correction. (b) $\Sigma{-}\Lambda$ ($77\ {\rm MeV}$): a small same-type residual. φ(1020) is handled as a d=3 sector resonance (§21a). Script: `files/idwt.py`.
+**Remaining:** (a) J/ψ $+2.0\%$ — the expansion parameter $\Lambda_{\rm QCD}/m_c = 0.22$ makes the leading-order formula approximate; the J/ψ–η_c difference is a vector–pseudoscalar object-type distinction (as ρ vs π), not a single-formula correction. (b) $\Sigma{-}\Lambda$ ($77\ {\rm MeV}$): a small same-type residual. φ(1020) is handled as a $d=3$ sector resonance (§21a). Script: `files/idwt.py`.
 
 ### §21a. $d=3$ hadronic resonance spectrum — vector mesons as sector modes (🔵, 2026-05-31)
 
@@ -113,7 +113,7 @@ Additional mode index identities (all exact from seeds):
 
 **Strange quark (n=4) special case.** The strange quark sits at level $N=3$ (odd $l$ only). It is protected from intra-sector destabilisation by the same l-parity rule. Its stability comes instead from the cross-sector coupling $V_{34}$: the up quark ($n=3$, $d=4$) is at level $N=2$ in the $d=4$ oscillator, which has $l=0$ and $l=2$ components — making the cross-sector coupling from the $l=0$ seed allowed. The generation tower chain ($n=1,d=3$) $\to$ ($n=3,d=4$) $\to$ ($n=4,d=3$) then closes via the hockey-stick identity.
 
-**l=0 kernel matrix elements (numerical, d=3).** Computed from harmonic oscillator mode functions ($\lambda_3 = 4.820$, $w=\sqrt{\lambda_3}$):
+**$l=0$ kernel matrix elements (numerical, $d=3$).** Computed from harmonic oscillator mode functions ($\lambda_3 = 4.820$, $w=\sqrt{\lambda_3}$):
 
 | $n_r$ | $n$ ($d=3$) | $I(n)$ | ME $\sim (g_{33}/3) \cdot I_{\rm seed} \cdot I(n)$ | In $\Sigma_{\rm pairs}$? |
 |-----|---------|------|------|-------|
@@ -125,9 +125,9 @@ Additional mode index identities (all exact from seeds):
 
 The matrix elements fall geometrically with $n_r$. The non-$\Sigma_{\rm pairs}$ even-level modes ($n=3,5,7,\ldots$) do couple to the seed, with matrix elements proportional to $I(n_r)$.
 
-**Cross-sector coupling (n=1,d=3) → (n=3,d=4).** The up quark level $N=2$ in $d=4$ has an $l=0$ component. Numerically: $I_4(n=3, l=0) = 0.389$, giving cross-sector matrix element $\sim 1.88$ in sector units (with $g_{34} = 4\sqrt{6}$). The coupling is non-zero, confirming the generation tower connection is active.
+**Cross-sector coupling ($n=1,d=3$) → ($n=3,d=4$).** The up quark level $N=2$ in $d=4$ has an $l=0$ component. Numerically: $I_4(n=3, l=0) = 0.389$, giving cross-sector matrix element $\sim 1.88$ in sector units (with $g_{34} = 4\sqrt{6}$). The coupling is non-zero, confirming the generation tower connection is active.
 
-**Self-energy of n=3 mode (numerical).** The n=3 mode at $m_{n=3} = S(3,3) \times m_{\rm scale,3} = 47.0$ MeV receives a 2nd-order self-energy correction from its coupling to the $n=1$ seed:
+**Self-energy of $n=3$ mode (numerical).** The $n=3$ mode at $m_{n=3} = S(3,3) \times m_{\rm scale,3} = 47.0$ MeV receives a 2nd-order self-energy correction from its coupling to the $n=1$ seed:
 
 $$\delta E^{(2)}_{n=3} = \frac{|\langle n=3 | V_{33}^{l=0} | n=1 \rangle|^2}{m_{n=3} - m_{n=1}} = \frac{6.27^2}{47.0 - 4.7} \approx 0.93 \text{ sector units} \approx 16.4 \text{ MeV}$$
 
@@ -151,12 +151,12 @@ The even-level exclusion is exact through the *width*, not a node: the seed-coup
 
 | Sector $d$ | $\sum_n (J/\Delta S)^2$ |
 |:---:|:---:|
-| 2 | $2.0\times10^{-5}$ |
-| 3 | $4.2\times10^{-4}$ |
-| 4 | $5.5\times10^{-5}$ |
-| 5 | $1.7\times10^{-7}$ |
-| 6 | $1.2\times10^{-10}$ |
-| 10 | $1.1\times10^{-17}$ |
+| $2$ | $2.0\times10^{-5}$ |
+| $3$ | $4.2\times10^{-4}$ |
+| $4$ | $5.5\times10^{-5}$ |
+| $5$ | $1.7\times10^{-7}$ |
+| $6$ | $1.2\times10^{-10}$ |
+| $10$ | $1.1\times10^{-17}$ |
 
 The worst case ($d=3$) bounds the coherent within-sector return amplitude at $\lesssim 2\%$; all other sectors are smaller by factors of $10^1$–$10^{13}$. Cross-sector revival is separately time-averaged to zero by the incommensurability lemma (✅, §15 STEP 40). Total return probability therefore $\lesssim 4\times10^{-4}$. This bounds only the *reversible* discrete-tower revival; it does not reach exact zero because the $d\le10$ towers are discrete and the $d>10$ band is dynamically closed (STEP 64). The exact irreversibility is supplied by the remaining channel — the strictly positive spatial-radiation width of every even-level non-member (✅, STEP 118) — so the even-level exclusion is exact, with this bound now read as the magnitude of the reversible component rather than the status ceiling.
 
