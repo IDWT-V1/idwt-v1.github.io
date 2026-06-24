@@ -892,8 +892,21 @@ A_wolf = Vcb * S(n_strange, 3)
 # generation-independent up-vs-down offset and rephases away -> J_CKM = 0
 # at leading order (Appendix A section 47). The leptonic phase is physical
 # only because charged leptons SPAN two Kahler sectors (CP3, CP5). Nonzero
-# quark CP is subleading: the holomorphic(CP2)-vs-real(S3) overlap mismatch
-# on |V_ub| (magnitude awaits CP2 mode functions). |V_td| = 0 at this order.
+# quark CP is subleading, now LOCALISED + order-of-mag DERIVED (2026-06-24,
+# App A section 47): (i) CHARGE SELECTION -- the kernel (xi.xi')^2 carries Hopf
+# charge in {-2,0,+2}, so a chiral up-mode O(k) overlaps a real S3 down-mode
+# only if k<=2; only u (k=2) couples (c,t at k=19,71 vanish) -> quark CP sits
+# on V_ub alone (derived, was asserted). (ii) REAL-BEAT THEOREM -- the bottom
+# beat (n=16) built from the framework's REAL couplings phase-locks (chi in
+# {0,pi}) -> J=0; a nonzero J needs a complex Fubini-Study holonomy phi_link
+# on the 16<->17 link, chi = pi - phi_link, sin(phi_ub) = sin(phi_link).
+# (iii) MAGNITUDE -- the FS holonomy = (transported degree k_u=2) x 2pi x
+# (enclosed area fraction); the clean node-cell reading f = 1/k0 gives
+# phi_link = k_u*2pi/k0 = 45 deg -> J = |Vus Vcb Vub Vcs|*sin = 2.36e-5, same
+# ORDER as PDG 3.08e-5 (~23% low), the smallness carried by the derived |V|
+# product (phi an O(1) Kahler angle). OPEN (🔶): the exact area fraction; the
+# PDG-matching 67.5 deg needs degree 3 (c1(CP2)=N_c), NOT the transported O(2)
+# section's k_u=2 -> a fit, rejected. |V_td| = 0 at this order.
 # lam here uses the sector-curvature-corrected sin_C.
 lam_W = sin_C
 A_W   = Vcb / lam_W**2
@@ -6206,6 +6219,22 @@ _nucleon_l1_94 = not (_even_rho94 and _even_lam94)   # False: no l=1
 # spectral mass). A Moshinsky-oscillator estimate gives the same P_L only
 # for omega/m ~ 0.021, which IDWT does not yet pin. Recorded as a lead
 # (open), not a correction to apply.
+# SHARPENED (2026-06-24, sector-Dirac analysis). NEW count identity (proved):
+# the cumulative PER-SIGN Dirac degeneracy on the round S3 up to level k is
+# sum_{j=0}^k (j+1)(j+2) = (k+1)(k+2)(k+3)/3 = 2*S(k+1,3); so cum to k=2 = 20
+# = S(4,3) and cum to k=4 = 70 = 2*S(5,3) -- a tuning-free bridge from the S3
+# Dirac tower to the simplex numbers. For any confined Dirac mode the small/
+# large norm ratio is exactly int f^2 / int g^2 = (E-m)/(E+m). The residual
+# then collapses to ONE ratio: P_L=1/35 <=> (E-m)/(E+m) = 1/(S(5,3)-1) = 1/34
+# <=> E/m = S(5,3)/(S(5,3)-2) = 35/33. The numerator S(5,3)=35 is forced by
+# the count identity; the "-2" is the lone un-derived piece (candidate: the
+# k=0 S3 Dirac ground degeneracy / spinor doubling = 2, NOT forced). NOTE
+# E/m=35/33 forces chi/m = 2*sqrt(34)/33 (irrational), which the half-integer
+# S3 Dirac spectrum (chi=k+3/2) does not naturally give -> 35/33 is the value
+# relabelled, not produced by the spectrum. REFUTED routes: the "1/35 spread
+# over S(5,3) states" counting (the local Dirac op on the l=0 nucleon makes a
+# single l=1 p-wave, deg 3, not 35); I(n_r=4,d=3)=0.0285643 vs 1/35 (0.025%)
+# is a dimensionful, wrong-mode accident. Stays a lead (🔶).
 _S43_95 = S(4, 3)
 _S53_95 = S(5, 3)
 _gA_lead_95 = math.sqrt(_S53_95 / _S43_95)
