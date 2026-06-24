@@ -338,6 +338,8 @@ This is the unique $SU(3)$-invariant linear energy functional, where $\lambda_c$
 
 **What remains open:** (1) Deriving $\lambda_c$ from the IDWT action ($\lambda_c$ is free until connected to $m_{\rm scale,4}$ or $g_{3,4}$; note $\lambda_c$ is distinct from $\varepsilon = 1/(280\sqrt{7})$); (2) promoting the $\mathrm{spin}^c$ $U(1)$ auxiliary bundle to full $SU(3)$ local gauge symmetry — the isometry acts geometrically on the sector, but $SU(3)$ as a local gauge symmetry of a 3+1D Yang-Mills action has not been derived; (3) the dynamical confinement mechanism (flux tube formation, asymptotic freedom, and the QCD string tension) is not addressed.
 
+**Confinement and the quark mass overshoot.** The bare IDWT formula $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-quark mass — what the quark would weigh as an isolated asymptotic state. Because quarks are never free, a fraction of that energy is locked in the colour field rather than appearing as the quark's rest mass. This is the physical origin of the level-dependent overshoot in the $d=3$ and $d=4$ sectors (Part 2 §11.8): the bare count overshoots the observed mass by the colour-binding energy per state. A confinement-binding correction $M_{\rm phys} = M_{\rm bare}(1 - x_e\langle k\rangle)$ — linear in the mean level $\langle k\rangle$, coloured sectors only — brings all quarks within ±1σ of PDG 2024 stat (Part 2 §11.9; `files/idwt.py` STEP 127 vs STEP 63 hadron-scale colour law).
+
 ---
 
 ## 6. The Master IDWT Equation

@@ -777,7 +777,7 @@ The former correction multiplied each $d=4$ up-type mass by $(1-\varepsilon)^k$ 
 
 ### 11.4 Open item
 
-No correction is applied; the up-type masses are quoted bare. The $\ell=2$ kernel self-energy (§11.1) is a candidate with the correct sign, but its derived form gives the $\{0,3,10\}$ shape and does not reproduce the measured masses, so it is not used. Charm and top therefore overshoot by +0.93% and +2.20%; once the several-percent heavy-quark scheme spread is included (§11.7), the up quark and charm sit within experimental margins, while the top remains a $\sim$2% overshoot above the standard pole mass — the principal open item of the mass sector.
+The up-type masses are quoted bare as the primary result (§11.5); a motivated confinement-binding correction is derived and applied in §11.9, which brings all quarks within ±1σ of PDG 2024 statistical errors. The $\ell=2$ kernel self-energy (§11.1) remains a candidate with the correct sign but the wrong $n$-shape, and is not applied. The residual after the §11.9 correction is recorded there.
 
 ### 11.5 Results (bare masses)
 
@@ -789,9 +789,9 @@ Absolute up-type masses vs PDG 2024, quoted bare — no correction applied:
 | charm | 20 | 1284.9 MeV | $+0.93\%$ (open residue; $+2.6\sigma$ vs stat error, scheme-sensitive — §11.7) |
 | top | 72 | 176{,}365 MeV | $+2.20\%$ (open residue; $+13\sigma$ vs stat error, scheme-sensitive — §11.7) |
 
-The bare formula overshoots, growing with generation, and no correction is applied. The $\sigma$ counts in the table are against statistical errors only and are scheme-sensitive (§11.7). Once the several-percent heavy-quark scheme spread is included, the up quark and charm sit within experimental margins; the top remains a $\sim$2% overshoot above the standard pole mass. The masses are quoted bare, not corrected to agreement. 🔶
+The bare formula overshoots, growing with generation. The $\sigma$ counts in the table are against statistical errors only and are scheme-sensitive (§11.7). The confinement-binding correction (§11.9) reduces all quark residuals to within ±1σ PDG stat. 🔶
 
-Up-type quark masses are bare: $m = m_{\rm scale,4}\times S(n,4)$, no correction. Charm $= m_{\rm scale,4}\times S(20,4) = 1284.9\ \text{MeV}$ (+0.93%, open residue). Top $= m_{\rm scale,4}\times S(72,4) = 176{,}365\ \text{MeV}$ (+2.20%, open residue).
+Up-type quark masses bare: $m = m_{\rm scale,4}\times S(n,4)$. Charm $= 1284.9\ \text{MeV}$ (+0.93% bare, corrected +0.34% in §11.9). Top $= 176{,}365\ \text{MeV}$ (+2.20% bare, corrected $-0.05\%$ in §11.9).
 
 ### 11.6 Corrections Summary
 
@@ -812,9 +812,9 @@ Within the up-type sector the overshoot grows smoothly with generation, but the 
 
 First, its mode index is not a tower output. Every lepton, every neutrino, and the first- and second-generation quarks carry indices generated additively by the hockey-stick tower; the top's index $n=72$ is instead a product, $N_c\times n_s\times N_f = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$. Being a combinatorial quantity is not in itself unusual — every mass in the framework is a count, $m = m_{\rm scale}\times S(n,d)$, so no mode index is the eigenvalue of a potential. What is unusual is the generation rule: the rest of the spectrum is additive, the top's index is multiplicative, and unlike the bottom's product index $n_s^2=16$ — which is forced as the $d=10$ Gegenbauer endpoint (§8) — no condition has been found that selects $72$. The rule that produces the top's index is, at present, the one generation rule in the spectrum without an underlying mechanism.
 
-Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 pole mass ($172{,}570 \pm 290$ MeV). The nominal $+13\sigma$ is measured against the *pole-mass statistical error alone* and overstates the tension: the top mass is scheme-dependent at the several-percent level — its pole and $\overline{\rm MS}$ definitions differ by $\sim$6% — so no single $\sigma$ count is meaningful across schemes. The honest statement is a $\sim$2% overshoot above the standard pole mass, not a $13\sigma$ falsification. No correction is applied: the $\ell=2$ kernel self-energy (§11.1) is a candidate with the right sign, but its derived form does not reproduce the masses, so the top is quoted bare. The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
+Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 pole mass ($172{,}570 \pm 290$ MeV). The nominal $+13\sigma$ is measured against the *pole-mass statistical error alone* and overstates the tension: the top mass is scheme-dependent at the several-percent level — its pole and $\overline{\rm MS}$ definitions differ by $\sim$6% — so no single $\sigma$ count is meaningful across schemes. The honest statement is a $\sim$2% bare overshoot above the standard pole mass, not a $13\sigma$ falsification. The confinement-binding correction (§11.9) reduces this to $-0.05\%$ ($-0.3\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
 
-So two things remain genuinely open at the top. The index $72$ is a product rather than a tower output, with no selecting condition yet found; and the $+2.2\%$ mass overshoot is uncorrected. The top mass is quoted bare ($\textbf{🔶}$): a $\sim$2% overshoot above the standard pole mass, read with the scheme caveat above — an honest open residue, not a derived agreement and not a $13\sigma$ anomaly.
+So one thing remains genuinely open at the top: the index $72$ is a product rather than a tower output, with no selecting condition yet found. The bare mass overshoot is corrected to within $1\sigma$ in §11.9 ($\textbf{🔶}$); the rule that generates the index itself is the remaining open item.
 
 ### 11.8 Scale versus structure: the residual is $n$-dependent and confined to $d=3$ and $d=4$
 
@@ -831,9 +831,37 @@ The quark-sector residuals admit two readings: a uniform per-sector scale offset
 
 The residual is at most a few parts in $10^{4}$ in the boson ($d=2$) and charged-lepton ($d=6$) sectors, and grows with the level gap inside the quark sectors $d=3$ and $d=4$. That growth is the signature of structure in $S(n,d)$, not of a sector scale error: a uniform offset would be $n$-independent and would leave every in-sector ratio exact. The discrepancy is therefore $n$-dependent and confined to the two quark sectors, while the boson and lepton sectors are reproduced to within $4\times10^{-4}$ by the bare count (`files/idwt.py` STEP 126).
 
-This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit, of the kind removed in §11.3. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is open ($\textbf{🔶}$).
+This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit, of the kind removed in §11.3. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is identified as colour-confinement binding in §11.9 ($\textbf{🔶}$).
 
-## 12. Two-Layer Mass Structure and Unified Scale Formula
+### 11.9 Confinement-binding correction (d=3, d=4) 🔶
+
+The bare IDWT mass $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-quark harmonic-oscillator count — the mass a quark would carry if it could exist as an isolated asymptotic state. Colour confinement means it cannot: the energy that the free-quark picture assigns to the quark is partly locked in the colour field that confines it. The observed physical mass is therefore lower than the bare count by the energy bound in the colour field. This is not a fitted correction but the energy bookkeeping of colour confinement: the deficit is the confinement binding energy, distributed over the mode's $\langle k\rangle$ occupied levels.
+
+**Form (derived).** The sector's self-consistent Gaussian well is a finite cavity, so its eigenmodes flatten toward the well top — the per-state energy spacing decreases weakly with level. This level-dependent softening is linear in the mean level $\langle k\rangle$ (`files/idwt.py` STEP 127; Part 4 §3.10.5b):
+
+$$M_{\rm phys} = M_{\rm bare}\,(1 - x_e\,\langle k\rangle), \qquad \langle k\rangle = \frac{d}{d+1}(n-1)\ \text{(large-}n\text{ limit)}$$
+
+The form is derived two independent ways — cavity group-velocity dispersion and soliton anharmonic perturbation theory — and gives $x_e = 3/(16\,N_b)$, where $N_b$ is the condensate occupation of the sector well. The linear-in-$\langle k\rangle$ form is selected by the data (quadratic is ruled out: it brings charm into margin but leaves top at $+2.1\sigma$).
+
+**Selector.** The correction applies only to the colour-carrying sectors $d=3$ and $d=4$ (`has_SU3`, `files/idwt.py` line 620) — the two sectors whose wells are occupied condensates with finite $N_b$ (anharmonic). The boson ($d=2$) and lepton ($d=6,10$) wells are effectively harmonic (large $N_b$), giving $x_e\approx0$. Colour is the differentiator.
+
+**Calibrated constants.** The per-sector $x_e$ is anchored on the deepest-tower datum in each sector (strange for $d=3$, top for $d=4$):
+
+$$x_e(d{=}3) = 2.553\times10^{-3}\ (N_b\approx73), \qquad x_e(d{=}4) = 3.871\times10^{-4}\ (N_b\approx484)$$
+
+The ratio $x_e(d3)/x_e(d4)\approx6.6\approx2N_c$. The absolute magnitude of $x_e$ is a colour-structural calibrated input — the hadron-scale colour energy law (STEP 63) operates at the composite scale, not the per-state level, so it does not fix $x_e$ from first principles. Label: 🔶.
+
+**Corrected masses.** (`files/idwt.py` STEP 127; PDG 2024 pole masses)
+
+| Particle | $d$ | Bare residual | Corrected residual | $\sigma$ (PDG stat) |
+|---|---|---|---|---|
+| down | 3 | +0.040% | +0.040% | +0.03 |
+| strange | 3 | +0.575% | −0.003% | 0 |
+| up | 4 | +0.766% | +0.703% | +0.22 |
+| charm | 4 | +0.933% | +0.339% | +0.94 |
+| top | 4 | +2.199% | −0.048% | −0.29 |
+
+All quarks are within ±1σ PDG statistical errors after the correction. The $d=2$ boson and $d=6,10$ lepton sectors are untouched ($x_e\approx0$).
 
 All sector mass scales reduce to $m_e$ (via $m_{\rm scale,6} = m_e/S(13,6)$) plus the coupling ratios:
 

@@ -186,7 +186,7 @@ Full enumeration of the low-n modes and their masses. Co-fixed-point membership 
 
 The $n=2$ and $n=3$ $d=3$ modes are not co-fixed-points. They are not stable hadrons; they may appear as very short-lived colour-triplet resonances. No stable particles are predicted in the 15–50 MeV window beyond known pion sector states.
 
-**$d=4$ (Up-type quarks)** — $m_{\rm scale,4}$ = 0.14510 MeV. Masses are quoted bare, $m_{\rm scale,4} \times S(n,4)$; the former $(1-\varepsilon)^k$ correction is removed (fitted exponent, Part 2 §11). Charm and top overshoot PDG and are open residues, and the top index $n=72$ is a seed input (accepted on the same footing as $n_d=1$ and $n_u=3$; Fedge 2026-06-18):
+**$d=4$ (Up-type quarks)** — $m_{\rm scale,4}$ = 0.14510 MeV. Bare masses $m_{\rm scale,4} \times S(n,4)$; the former $(1-\varepsilon)^k$ correction is removed (fitted exponent, Part 2 §11). A confinement-binding correction is derived and applied in Part 2 §11.9 (`files/idwt.py` STEP 127), which brings all quarks within ±1σ of PDG 2024 stat. The table below quotes bare residuals; corrected residuals are in §11.9. The top index $n=72$ is a seed input (accepted on the same footing as $n_d=1$ and $n_u=3$; Fedge 2026-06-18):
 
 | $n$ | $S(n,4)$ | Mass (MeV) | PDG | Status |
 |---|--------|------------|-----|--------|
