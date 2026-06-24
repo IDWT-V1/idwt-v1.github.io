@@ -98,7 +98,7 @@ Additional mode index identities (all exact from seeds):
 
 **The kernel angular structure.** The coupling $(ξ_d \cdot ξ_{d'})^2$ decomposes on $S^{d-1}$ into $l=0$ (scalar) and $l=2$ (tensor) components only. Each application of $V_{\rm kernel}$ changes the sector angular momentum quantum number by $0$ or $\pm 2$. Angular momentum parity (even vs odd $l$) is therefore an exact conserved quantity under all powers of $V_{\rm kernel}$.
 
-**d=3 level structure.** The d=3 sector has $d+1=4$ harmonic oscillator coordinates ($\mathbb{R}^4$ oscillator). Level $N = n-1$ contains angular momentum values $l = N, N-2, \ldots, 0$ or $1$ (same parity as $N$).
+**$d=3$ level structure.** The $d=3$ sector has $d+1=4$ harmonic oscillator coordinates ($\mathbb{R}^4$ oscillator). Level $N = n-1$ contains angular momentum values $l = N, N-2, \ldots, 0$ or $1$ (same parity as $N$).
 
 | $n$ | Level $N$ | $l$ values | Parity | In $\Sigma_{\rm pairs}$? | Kernel-reachable from $l=0$ seed? |
 |---|---------|----------|--------|-------|----------------------------------|

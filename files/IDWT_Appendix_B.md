@@ -99,7 +99,7 @@ The same $q$ appears in three further contexts (all polynomial identities or def
 - $n_{\rm down} + n_{\rm strange} = q$ ($= 1+n_s = n_s+1 = q$, trivially)
 - $n_Z - n_W = q$ (proved above)
 
-❓ Additional observation at $n_s=4$: $q = 5 = \chi(\mathbb{CP}^4)$, the Euler characteristic of the missing sector d=8. Whether the W–Z spacing equalling the missing sector's Euler characteristic is structural or coincidental at $n_s=4$ is unresolved.
+❓ Additional observation at $n_s=4$: $q = 5 = \chi(\mathbb{CP}^4)$, the Euler characteristic of the missing sector $d=8$. Whether the W–Z spacing equalling the missing sector's Euler characteristic is structural or coincidental at $n_s=4$ is unresolved.
 
 ### §13a. The Vandermonde g-rule transition graph on the mode set
 
@@ -107,22 +107,22 @@ Define $g(d, n) = d + n - 1$, the row index of mode $(n,d)$ in the Pascal triang
 
 **The 19 transitions, by sector:**
 
-| d | NS → NS transitions |
+| $d$ | NS → NS transitions |
 |---|--------------------|
-| 2 | 0→1, 3→4, 22→23 |
-| 3 | 1→3, 13→15, 20→22 |
-| 4 | 0→3, 1→4, 10→13, 20→23 |
-| 5 | 72→76 |
-| 6 | 10→15, 15→20, 76→81 |
-| 10 | 1→10, 4→13, 13→22, 72→81 |
+| $2$ | 0→1, 3→4, 22→23 |
+| $3$ | 1→3, 13→15, 20→22 |
+| $4$ | 0→3, 1→4, 10→13, 20→23 |
+| $5$ | 72→76 |
+| $6$ | 10→15, 15→20, 76→81 |
+| $10$ | 1→10, 4→13, 13→22, 72→81 |
 
 **Graph structure on NS:**  
 - **Sources** (no in-edge): **{0, 35, 72, 95}** = {photon, muon, top, Higgs}.  
 - **Component A** (reachable from photon via g-rule alone): {0, 1, 3, 4, 10, 13, 15, 20, 22, 23} — the ten lightest particles, equivalently the seeds plus depth-1 HS evaluations plus the electron and tau.  
-- **Component B** (reachable from top): {72, 76, 81} — top → W (d=5) and top → Z (d=10), W → Z (d=6).  
+- **Component B** (reachable from top): {72, 76, 81} — top → W ($d=5$) and top → Z ($d=10$), W → Z ($d=6$).  
 - **Isolated sources**: {35, 95} — muon and Higgs have no g-rule predecessor in NS.
 
-**Erratum (2026-06-18): the graph above omitted the bottom quark.** The NS set used here is the 15-element set with the photon indexed at 0 and the bottom quark **left out** — so it never tested 16. On the correct 15-mode set (photon at the d=2 ground state, bottom beat 16 included), 16 is g-reachable: $16 = 15 + 1$ (d=2, from $\nu_2$) and $16 = 13 + 3$ (d=4, from the electron), so 16 joins Component A. The bottom regime ($n < 72$) under the g-rule is then Component A $\cup$ {35}, with the muon the only g-isolated bottom member. This does not promote the g-rule to a generator: its forward closure from the seed $n=1$ covers every integer 1–71, so it is an adjacency relation, not a selector — the selective law on the bottom regime is the additive simplex tower of §13b, and 16 ($k_0 = n_s^2$) is an overlay beat on it, not a tower output (`files/idwt.py` STEP 91; Part 9 T0.5). The four-source count and Components A/B above describe the bottom-quark-omitted graph and are kept for the record.
+**Erratum (2026-06-18): the graph above omitted the bottom quark.** The NS set used here is the 15-element set with the photon indexed at 0 and the bottom quark **left out** — so it never tested 16. On the correct 15-mode set (photon at the $d=2$ ground state, bottom beat 16 included), 16 is g-reachable: $16 = 15 + 1$ ($d=2$, from $\nu_2$) and $16 = 13 + 3$ ($d=4$, from the electron), so 16 joins Component A. The bottom regime ($n < 72$) under the g-rule is then Component A $\cup$ {35}, with the muon the only g-isolated bottom member. This does not promote the g-rule to a generator: its forward closure from the seed $n=1$ covers every integer 1–71, so it is an adjacency relation, not a selector — the selective law on the bottom regime is the additive simplex tower of §13b, and 16 ($k_0 = n_s^2$) is an overlay beat on it, not a tower output (`files/idwt.py` STEP 91; Part 9 T0.5). The four-source count and Components A/B above describe the bottom-quark-omitted graph and are kept for the record.
 
 **Why the four sources.** For each source $s$, no $(d, n_j) \in D \times NS$ satisfies $d + n_j - 1 = s$ with $n_j \neq s$:
 
@@ -154,7 +154,7 @@ Using only the actual operations of the generation tower (Part 2 §6), the deriv
 | Particle | Derivation | Tower predecessors |
 |----------|------------|-------------------|
 | photon (0,2) | $d=2$ ground state ($n=0$ trivially) | none — always present |
-| down (1,3) | SEED: S(1,d)=1 for all d | none |
+| down (1,3) | SEED: $S(1,d)=1$ for all $d$ | none |
 | strange (4,3) | COMPOSITE: $n_s = n_d + n_u = 1+3 = 4$ (🔶 MC-4.4); confirmed by muon fixed point $S(4,4)=35$ | \{down, up\} |
 | up (3,4) | SEED: $n_u = \chi(\mathbb{CP}^2) = N_c = 3$ (T15); unique $\Delta N=+2$ image of ground seed | none |
 | nu1 (10,5) | $S(n_u,3) = 10$ | \{up\} |
@@ -171,13 +171,13 @@ Using only the actual operations of the generation tower (Part 2 §6), the deriv
 
 Derivation depths: down and up at 0 (seeds); strange, nu1, nu2 at 1; electron, charm, nu3 at 2; tau, muon, top at 3; W, Higgs at 4; Z at 5. All 13 derived particles (excluding photon ground state) reach {(1,3),(3,4)} in at most 5 backward steps. Verified: `all particles reduce to {down, up}`.
 
-**Seed minimality.** Neither single seed alone generates all NS via tower operations (down alone: 1/15; up alone: 2/15). Together, {down, up} generate all 14 non-photon particles (14/15), with strange as their offset-additive composite at depth 1. The photon (n=0, d=2 ground state) is always present independently of the seeds — it does not require derivation.
+**Seed minimality.** Neither single seed alone generates all NS via tower operations (down alone: 1/15; up alone: 2/15). Together, {down, up} generate all 14 non-photon particles (14/15), with strange as their offset-additive composite at depth 1. The photon ($n=0$, $d=2$ ground state) is always present independently of the seeds — it does not require derivation.
 
 **Why \{(1,3),(3,4)\} and not some other pair.** $n_{\rm down}=1$ is forced by $S(1,d)=1$ for all $d$ (the universal harmonic oscillator ground state); $n_u=3$ is forced by $\chi(\mathbb{CP}^2)=N_c=3$ (T15, ✅). The composite $n_s=4 = n_d+n_u$ is confirmed by T4 (Part 9) and $\chi(\mathbb{CP}^3)=4$.
 
 **Status.** The tower derivation is a finite acyclic DAG with unique source nodes {(1,3),(3,4)} (⭐, verified), composite (4,3) at depth 1. The general additive predecessor graph is cyclic with no source nodes (verified, §15 dead end).
 
-**Seed sector derivation (🔵, 2026-05-29).** The seed sector is d=3: it is the observable spacetime sector and the first total space $S^3$ of the complex Hopf chain, the natural starting point of the generation tower. The primitive seeds are $n_d=1$ (ground state $S(1,d)=1$ in d=3) and $n_u=3$ (forced by $\chi(\mathbb{CP}^2)=N_c=3$, T15). The composite $n_s=4 = n_d+n_u$ is confirmed by T4 (Part 9) and the muon fixed-point $S(4,4)=35$. Full sector assignments then propagate via the Hopf chain structure (d=3→4→5→6,10) and trivial automorphism group — see P8 update in Part 1.
+**Seed sector derivation (🔵, 2026-05-29).** The seed sector is $d=3$: it is the observable spacetime sector and the first total space $S^3$ of the complex Hopf chain, the natural starting point of the generation tower. The primitive seeds are $n_d=1$ (ground state $S(1,d)=1$ in $d=3$) and $n_u=3$ (forced by $\chi(\mathbb{CP}^2)=N_c=3$, T15). The composite $n_s=4 = n_d+n_u$ is confirmed by T4 (Part 9) and the muon fixed-point $S(4,4)=35$. Full sector assignments then propagate via the Hopf chain structure ($d=3\to 4\to 5\to 6,10$) and trivial automorphism group — see P8 update in Part 1.
 
 **DAG automorphism group is trivial (⭐, 2026-05-29).** The tower DAG has no non-trivial automorphisms. The only degree-compatible candidate swaps are \{down $\leftrightarrow$ strange\}, \{nu1 $\leftrightarrow$ nu2\}, and \{tau $\leftrightarrow$ muon\}; all three fail because they violate specific predecessor constraints:
 
@@ -207,7 +207,7 @@ The full backtracking search over all 15! possible permutations (with degree-pru
 
 ### §18. Adjacent-sector simplex ratio identity
 
-**Theorem (2026-05-29).** For any positive integer n and sector dimension d:
+**Theorem (2026-05-29).** For any positive integer $n$ and sector dimension $d$:
 
 $S(n,d) / S(n,d+1) = (d+1) / (n+d)$
 
