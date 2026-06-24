@@ -44,17 +44,17 @@ Result: treated as numerical coincidence. Recorded so the $27.5\ \mathrm{eV} \ap
 **Holonomy as a SELECTOR (not as the 72-generator) — sector-center grading is NULL; the operative holonomy is the universal $Z_2$ parity already proved (2026-06-16, Opus).** Distinct question from §46 (which killed holonomy as a route to *generate* 72). Here the holonomy idea is applied where the index-blindness result (Run 6b: the mass template is blind to its own index, so no pointwise $f(n,d)$ can select) actually points — at the T0.5 *selector*, which by that result must be a global/transport object, not a pointwise mark. The most IDWT-native global invariant is the center holonomy: $S(n,d)=\dim\operatorname{Sym}^{n-1}(\mathbb{C}^{d+1})$, so the center $Z_{d+1}\subset SU(d+1)$ acts on the mode $(n,d)$ by $\omega^{n-1}$, giving a geometrically-fixed center-charge $(n-1)\bmod(d+1)$ (grading B); the Kähler-manifold reading $\mathbb{CP}^{d/2}$ gives $(n-1)\bmod(d/2{+}1)$ (grading A). These are parameter-free (modulus fixed by the sector, special residue $=0$ = closure), unlike the free-$(m,c)$ congruence fishing already exhausted above. **Result: both gradings scatter across the spectrum** — neither center-charge $0$ (closure) nor any fixed residue separates {stable $e,u,\nu$, photon} from the unstable modes, nor isolates the two product-form quarks $\{16,72\}$. B-charge of the 15 modes spreads over residues $\{0,1,2,3,4,5,6\}$ with stable and unstable members sharing every nonempty class (e.g. charge 2 = {photon, up, $\nu_2$, Z}; charge 3 = {$\nu_1,\nu_3$, strange, bottom}). So the sector-specific center $Z_{d+1}$ (and $Z_{d/2+1}$) does **not** act as a selector. **The informative positive:** the one selection result IDWT has actually proved — "$l{=}0$ present iff $n$ odd" (⭐) — *is itself a holonomy*, namely the universal $Z_2$ parity (the $s$-wave/vacuum-overlap component is single-valued under the antipodal action iff $n$ is odd). That this operative holonomy is the **universal $Z_2$**, identical across all sectors, rather than the sector-dependent $Z_{d+1}$, is the lesson: holonomy is genuinely the *form* of IDWT's established selector, but the live one is the parity common to all spheres, and the finer center holonomy does not extend it. **Net verdict on "can holonomy be leveraged":** as a *generator* of the product indices — no (§46). As the *selector* — it already is the mechanism at the $Z_2$ parity / even-level-dephasing level (a global, recurrence-based statement, exactly the non-pointwise class index-blindness requires); the sector-center $Z_{d+1}$ extension is null. The one untested and conceptually correct home for nontrivial (non-$Z_2$) holonomy is **phases, not the spectrum** — the Hopf $U(1)$ connection on $S^{2m+1}\to\mathbb{CP}^m$ governing mixing angles / the CP phase $\delta$ / the $d=5$ neutrino sector (S⁵ is the Hopf total space over the $d=4$ base); recorded as a forward lead (claude-todo, ASK FEDGE), not run here. Recorded so the center-charge-grading selector is not re-attempted.
 
 **Pion mass from sector scale arithmetic**  
-Conjecture: m_π ≈ some geometric or arithmetic combination of sector scales or mode indices.  
+Conjecture: $m_\pi \approx$ some geometric or arithmetic combination of sector scales or mode indices.  
 Checked:  
-- $\sqrt{f_\pi \cdot \Lambda_{\rm QCD}} = \sqrt{94.04 \cdot 282} \approx 163\ \mathrm{MeV}$ — not pion mass  
-- $\sqrt{m_{\rm scale,3} \cdot S(n_s,3)} = \sqrt{4.702 \cdot 94.04} \approx 21\ \mathrm{MeV}$ — not pion mass  
-- m_scale₂ · S(n_down, 2) = 27.47 · 1 = 27.5 MeV — not pion mass  
-Result: no clean sector-scale formula reproduces 135–140 MeV. Pion is a composite; its mass involves chiral symmetry breaking not captured by bare index arithmetic.
+- $\sqrt{f_\pi \cdot \Lambda_{\rm QCD}} = \sqrt{$94.04$ \cdot $282$} \approx $163$ {\rm MeV}$ — not pion mass  
+- $\sqrt{m_{\rm scale,3} \cdot S(n_s,3)} = \sqrt{$4.702$ \cdot $94.04$} \approx $21$ {\rm MeV}$ — not pion mass  
+- $m_{\rm scale,2} \cdot S(n_{\rm down}, 2) = $27.47$ \cdot $1$ = $27.5$ MeV — not pion mass  
+Result: no clean sector-scale formula reproduces $135$–$140$ MeV. Pion is a composite; its mass involves chiral symmetry breaking not captured by bare index arithmetic.
 
-**"24 = dimension of $\mathbb{CP}^2 \times \mathbb{CP}^3$ isometry"**  
-Conjecture: 19 + q = 19 + 5 = 24 equals the dimension of the product isometry $\mathrm{SU}(3)\times\mathrm{SU}(4)$.  
-Checked: dim SU(3) = 8, dim SU(4) = 15, sum = 23. U(3)×U(4) gives 25. No standard reading gives 24.  
-Result: claim is incorrect. 24 does not appear to have a natural role here.
+**"$24 = $ dimension of $\mathbb{CP}^2 \times \mathbb{CP}^3$ isometry"**  
+Conjecture: $19 + q = $19$ + $5$ = $24$ equals the dimension of the product isometry $\mathrm{SU}(3)\times\mathrm{SU}(4)$.  
+Checked: $\dim \mathrm{SU}(3) = $8$, $\dim \mathrm{SU}(4) = $15$, sum $= $23$. $\mathrm{U}(3)\times\mathrm{U}(4)$ gives $25$. No standard reading gives $24$.  
+Result: claim is incorrect. $24$ does not appear to have a natural role here.
 
 **All three neutrino mode indices sharing residue $2 \bmod n_s$**  
 Conjecture: $n_{\nu_1}, n_{\nu_2}, n_{\nu_3}$ all $\equiv 2 \pmod{4}$.  
