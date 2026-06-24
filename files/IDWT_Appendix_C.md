@@ -21,12 +21,12 @@ where every factor is IDWT-derived: $\Lambda_{\rm QCD} = N_c f_\pi = 282.1\ {\rm
 
 | Meson | Content | $m_{q_1}+m_{q_2}$ (MeV) | Predicted (MeV) | PDG (MeV) | Error |
 |-------|---------|-----------------|-----------------|-----------|-------|
-| $\pi^\pm$ | $\bar{u}d$ | 6.88 | 139.3 | 139.6 | −0.2% |
-| $K^\pm$ | $\bar{u}s$ | 96.2 | 521.0 | 493.7 | +5.5% |
-| $K^0$ | $\bar{d}s$ | 98.7 | 527.8 | 497.6 | +6.1% |
-| $D^\pm$ | $\bar{c}d$ | 1284.4 | 1903.6 | 1869.7 | +1.8% |
-| $D^0$ | $\bar{c}u$ | 1281.9 | 1901.7 | 1864.8 | +2.0% |
-| Ds | c̄s | 1373.7 | 1968.7 | 1968.4 | 0.0% |
+| $\pi^\pm$ | $\bar{u}d$ | $6.88$ | $139.3$ | $139.6$ | $−0.2\%$ |
+| $K^\pm$ | $\bar{u}s$ | $96.2$ | $521.0$ | $493.7$ | $+5.5\%$ |
+| $K^0$ | $\bar{d}s$ | $98.7$ | $527.8$ | $497.6$ | $+6.1\%$ |
+| $D^\pm$ | $\bar{c}d$ | $1284.4$ | $1903.6$ | $1869.7$ | $+1.8\%$ |
+| $D^0$ | $\bar{c}u$ | $1281.9$ | $1901.7$ | $1864.8$ | $+2.0\%$ |
+| Ds | $\bar{c}s$ | $1373.7$ | $1968.7$ | $1968.4$ | $0.0\%$ |
 
 **Pattern:** The formula works precisely (< $3\%$) for cross-sector pseudoscalars (q from $d=3$, $\bar{q}$ from $d=4$ or vice versa). It works at the leading-order ChPT level ($5$–$6\%$) for kaons. It fails for same-sector vector mesons (φ, J/ψ) and B mesons: vector mesons are sector resonances (see §21a below), not GOR composites; B mesons require the heavy-quark formula; the b quark is a beat mode not a pure harmonic eigenmode.
 
@@ -226,10 +226,10 @@ The right side of $(*)$ is rational ($a,b\in\mathbb{Z}$; $c=451854481/7\in\mathb
 
 | quantity | IDWT | obs | $\varepsilon$ | grid $g$ | $L$ |
 |---|---|---|---|---|---|
-| $m_\mu/m_e=S(35,6)/S(13,6)$ | 206.7647 | 206.76828 | $1.7\times10^{-5}$ | 0.171 | $2.0\times10^{-4}$ |
-| $m_\tau/m_e=\tfrac{S(23,10)}{S(13,6)}(1{+}\tfrac1{1680})$ | 3477.19 | 3477.37 | $5.1\times10^{-5}$ | 0.435 | $2.3\times10^{-4}$ |
-| $m_Z/m_W=S(81,2)/S(76,2)$ | 1.13500 | 1.13461 | $3.4\times10^{-4}$ | 0.0247 | $2.7\times10^{-2}$ |
-| $m_H/m_W=S(95,2)/S(76,2)$ | 1.55844 | 1.55781 | $4.1\times10^{-4}$ | 0.0211 | $8.5\times10^{-2}$ |
+| $m_\mu/m_e=S(35,6)/S(13,6)$ | $206.7647$ | $206.76828$ | $1.7\times10^{-5}$ | $0.171$ | $2.0\times10^{-4}$ |
+| $m_\tau/m_e=\tfrac{S(23,10)}{S(13,6)}(1{+}\tfrac1{1680})$ | $3477.19$ | $3477.37$ | $5.1\times10^{-5}$ | $0.435$ | $2.3\times10^{-4}$ |
+| $m_Z/m_W=S(81,2)/S(76,2)$ | $1.13500$ | $1.13461$ | $3.4\times10^{-4}$ | $0.0247$ | $2.7\times10^{-2}$ |
+| $m_H/m_W=S(95,2)/S(76,2)$ | $1.55844$ | $1.55781$ | $4.1\times10^{-4}$ | $0.0211$ | $8.5\times10^{-2}$ |
 
 (τ row: PDG 2024, $m_\tau = 1776.93\pm0.09$ MeV; its $\varepsilon$ is the measurement floor, fit residual $4.9\times10^{-5}$.) Joint $\approx1.1\times10^{-10}$ ($\approx1$ in $9\times10^{9}$); even with a generous look-elsewhere ($\times100$ candidate quantities) $\sim10^{-8}$ (~$5\sigma$-scale). The two lepton ratios dominate because the $d=6,10$ grids are coarse — a sub-$10^{-4}$ hit on a 17–43% grid is the strong part.
 
@@ -257,8 +257,8 @@ Placement: the explicit gap-(ii) mechanism is recorded in Part 10 §2 (with the 
 
 | overlap | productions | reading |
 |---|---|---|
-| 0 | additive edges e, μ, τ, H-additive | one degree-1 condensate insertion above level addition (the ⭐ result above; the "+1 joint rung") |
-| 1 | every g-rule join: up-from-strange, W, Z, H | exact level addition — insertion-free; shares one rung |
+| $0$ | additive edges e, μ, τ, H-additive | one degree-1 condensate insertion above level addition (the ⭐ result above; the "+1 joint rung") |
+| $1$ | every g-rule join: up-from-strange, W, Z, H | exact level addition — insertion-free; shares one rung |
 | $n_u = 3$ | $\nu_3$ | shared-base inclusion-exclusion (documented above) |
 | $n_{\rm charm}-1 = 19$ | top ($S(n_e,2) - (n_{\rm charm}-1)$) | the §12 factor 19, appearing here as an overlap |
 
@@ -338,9 +338,9 @@ Nucleons are d=3 colour-singlet composites (Part 1 §2.4) → the N–N kernel g
 
 | gate | $R_c$ (fm) | $V_0$ (MeV) | $V_0/\Lambda$ ($\Lambda = N_c f_\pi = 282$ MeV) |
 |---|---|---|---|
-| N–N ($L_3$) | 0.675 | 154 | 0.55 |
-| q–q (3,4) | 0.780 | 120 | 0.42 |
-| N–N (measured $r_p$) | 0.687 | 150 | 0.53 |
+| N–N ($L_3$) | $0.675$ | $154$ | $0.55$ |
+| q–q ($3,4$) | $0.780$ | $120$ | $0.42$ |
+| N–N (measured $r_p$) | $0.687$ | $150$ | $0.53$ |
 
 The depth the kernel must supply is an order-unity fraction of the IDWT hadronic scale. The solved mode's rms half-separation is $1.79\ {\rm fm}$ vs the measured deuteron matter radius $\approx 1.97\ {\rm fm}$ (shallow-state universality). 🔵 Status: the range is fixed by the derived gate (✅-chain from §28); the depth $V_0$ is the open number — same class as the Part 8 §11 confinement-level problem. NOT an identification or a binding prediction; an inverse constraint that the kernel's eventual depth derivation must hit ($V_0 \approx 0.55\Lambda$ at the $L_3$ gate). 🔶
 
@@ -549,9 +549,9 @@ An SO(3) $\ell$ exists only when an external $d=3$ object — the nucleus — br
 
 | Observable | IDWT | PDG | Residual |
 |---|---|---|---|
-| $\tau_\mu$ | 2.19 μs | 2.197 μs | $\approx 0\%$ |
+| $\tau_\mu$ | $2.19$ μs | $2.197$ μs | $\approx 0\%$ |
 | $\tau_\tau$ | $\sim2.9\times10^{-13}$ s | $2.903\times10^{-13}$ s | $\approx 0\%$ |
-| $\tau_n$ | 918 s | 878.4 s | $+4.5\%$ |
+| $\tau_n$ | $918$ s | $878.4$ s | $+4.5\%$ |
 
 The neutron lifetime uses $G_F$ (STEP 5), $V_{ud}$ (Part 3 §12), $g_A=1.2725$ (STEP 95), and Fermi integral $f=1.6887$ (the $n$–$p$ $Q$-value, a non-IDWT input). The $+4.5\%$ residual is carried entirely by $f$ / the $Q$-value; all other couplings in the formula are IDWT-derived. Cross-reference: Part 8 §10.
 
