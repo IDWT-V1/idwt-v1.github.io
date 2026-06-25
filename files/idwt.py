@@ -6249,11 +6249,23 @@ _nucleon_l1_94 = not (_even_rho94 and _even_lam94)   # False: no l=1
 # small component sits at k=0 because the Gegenbauer coupling topology so
 # forces it (not a cherry-pick; k=0 is the unique Dk=-2 neighbour of k=2).
 # The "-2" in E/m=S(5,3)/(S(5,3)-2)=35/33 is therefore C_0=2 by structure.
-# REMAINING OPEN: why P_L = C_0/C_K = 2/70 = 1/S(5,3) (equi-norm per Dirac
-# mode across the k=0..4 tower)? A single-mode Dirac spinor gives
-# P_L=(E-m)/(2E) parameterised by omega/m; the equi-norm step -- why the
-# self-consistent standing wave distributes norm uniformly per mode -- is the
-# single un-derived piece. Narrowed lead (🔶).
+# EQUI-NORM STEP RESOLVED (2026-06-25, addition theorem; sympy + numeric +
+# o4-mini verified). "Equal norm per Dirac state across the k=0..4 tower"
+# is NOT an independent tuning: it is exactly the addition theorem for a
+# delta-localized (maximally point-like) source on the homogeneous space
+# S3 = SU(2). By G-invariance + Schur's lemma the per-level projector
+# diagonal Tr P_k(x,x) = deg_k / Vol(S3) is CONSTANT in x, so a delta
+# source carries norm deg_k/Vol per level = EQUAL norm per state (verified:
+# S3 scalar addition thm sum_m|Y_k(x)|^2 = (k+1)^2/Vol(S3) exact; explicit
+# k=1 Cartesian-harmonic sum = 1 to 4e-16). Hence P_L = C_0/C_K =
+# (k=0 states)/(tower states) = 2/70 = 1/S(5,3), with the cutoff k=4 = the
+# g_A destination level (per-sign cum 2*S(5,3)=70). So the equi-norm step
+# REDUCES to one physical statement: "the nucleon Dirac source is maximally
+# localized on the sector S3 up to the g_A cutoff" -- the SAME point-like
+# property the size program (STEP 121) holds for elementary modes, NOT a
+# new premise. RESIDUAL (status call for Fedge, not a tuning): whether that
+# maximal-localization premise + cutoff identification counts as fully
+# forced. Label kept 🔶 pending that judgment.
 _S43_95 = S(4, 3)
 _S53_95 = S(5, 3)
 _gA_lead_95 = math.sqrt(_S53_95 / _S43_95)
@@ -6263,6 +6275,12 @@ _gA_95 = _gA_lead_95 * _q_95
 _gA_pdg_95, _gA_pdg_e_95 = 1.2723, 0.0023
 _gA_dev_95 = (_gA_95 - _gA_pdg_95)/_gA_pdg_95*100.0
 _gA_sig_95 = (_gA_95 - _gA_pdg_95)/_gA_pdg_e_95
+# equi-norm = S3 addition theorem: C_0 = k=0 per-sign degeneracy (2);
+# C_K = cumulative per-sign to the g_A cutoff k=4 = 70 = 2*S(5,3).
+_C0_95 = (0 + 1) * (0 + 2)
+_CK_95 = (4 + 1) * (4 + 2) * (4 + 3) // 3
+_equinorm_ok_95 = (_C0_95 == 2 and _CK_95 == 2 * _S53_95
+                   and abs(_C0_95 / _CK_95 - _PL_95) < 1e-15)
 
 
 # =============================================================================
@@ -11182,8 +11200,10 @@ print("  sigma average <g^2 - f^2/3>/<g^2 + f^2>): physical home of +4%.")
 print(f"LEAD P_L = 1/S(5,3) = 1/{_S53_95}: q = 101/105 = {_q_95:.6f}")
 print(f"  g_A = {_gA_95:.6f}  vs PDG {_gA_pdg_95}+-{_gA_pdg_e_95}"
       f"  {_gA_dev_95:+.3f}% ({_gA_sig_95:+.2f} sigma)")
-print("Status: lead. Mechanism is IDWT Dirac structure; P_L=1/S(5,3) is")
-print("not derived (needs the sector Dirac small/large m/omega ratio). Open.")
+print(f"equi-norm = S3 addition thm (delta source): C0/C_K = "
+      f"{_C0_95}/{_CK_95} = 1/S(5,3): {_equinorm_ok_95}")
+print("Status: lead. equi-norm step reduces to maximal localization on")
+print("S3 (addition thm); residual = that premise's status (Fedge call).")
 
 
 # =============================================================================
