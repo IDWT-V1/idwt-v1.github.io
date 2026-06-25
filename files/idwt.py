@@ -6236,7 +6236,24 @@ _nucleon_l1_94 = not (_even_rho94 and _even_lam94)   # False: no l=1
 # relabelled, not produced by the spectrum. REFUTED routes: the "1/35 spread
 # over S(5,3) states" counting (the local Dirac op on the l=0 nucleon makes a
 # single l=1 p-wave, deg 3, not 35); I(n_r=4,d=3)=0.0285643 vs 1/35 (0.025%)
-# is a dimensionful, wrong-mode accident. Stays a lead (🔶).
+# is a dimensionful, wrong-mode accident.
+# GEGENBAUER COUPLING (2026-06-24, proved sympy): the sector kernel
+# (xi.xi')^2 on S3 expands in Chebyshev-U (Gegenbauer-1) polynomials as
+# t^2 = (C_2^1(t) + C_0^1(t))/4 (t = cos(geodesic)), verified:
+# C_0^1=1, C_2^1=4t^2-1, (C_2^1+C_0^1)/4 = t^2. Exactly two Gegenbauer
+# degrees: Dk=0 and Dk=2. Consequence: the kernel potential couples S3 Dirac
+# levels with Dk=0 (self-coupling, mass renorm) and Dk=2 only. The nucleon's
+# SOURCE level k=2 (per-sign count S(4,3)=20) couples DOWN Dk=-2 to k=0
+# (C_0=2 per-sign states) and UP Dk=+2 to DESTINATION k=4 (S(5,3)=35 per-
+# sign). This STRUCTURALLY IDENTIFIES "-2" = C_0 = k=0 per-sign count: the
+# small component sits at k=0 because the Gegenbauer coupling topology so
+# forces it (not a cherry-pick; k=0 is the unique Dk=-2 neighbour of k=2).
+# The "-2" in E/m=S(5,3)/(S(5,3)-2)=35/33 is therefore C_0=2 by structure.
+# REMAINING OPEN: why P_L = C_0/C_K = 2/70 = 1/S(5,3) (equi-norm per Dirac
+# mode across the k=0..4 tower)? A single-mode Dirac spinor gives
+# P_L=(E-m)/(2E) parameterised by omega/m; the equi-norm step -- why the
+# self-consistent standing wave distributes norm uniformly per mode -- is the
+# single un-derived piece. Narrowed lead (🔶).
 _S43_95 = S(4, 3)
 _S53_95 = S(5, 3)
 _gA_lead_95 = math.sqrt(_S53_95 / _S43_95)
