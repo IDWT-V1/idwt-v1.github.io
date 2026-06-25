@@ -6249,23 +6249,29 @@ _nucleon_l1_94 = not (_even_rho94 and _even_lam94)   # False: no l=1
 # small component sits at k=0 because the Gegenbauer coupling topology so
 # forces it (not a cherry-pick; k=0 is the unique Dk=-2 neighbour of k=2).
 # The "-2" in E/m=S(5,3)/(S(5,3)-2)=35/33 is therefore C_0=2 by structure.
-# EQUI-NORM STEP RESOLVED (2026-06-25, addition theorem; sympy + numeric +
-# o4-mini verified). "Equal norm per Dirac state across the k=0..4 tower"
-# is NOT an independent tuning: it is exactly the addition theorem for a
-# delta-localized (maximally point-like) source on the homogeneous space
-# S3 = SU(2). By G-invariance + Schur's lemma the per-level projector
-# diagonal Tr P_k(x,x) = deg_k / Vol(S3) is CONSTANT in x, so a delta
-# source carries norm deg_k/Vol per level = EQUAL norm per state (verified:
-# S3 scalar addition thm sum_m|Y_k(x)|^2 = (k+1)^2/Vol(S3) exact; explicit
-# k=1 Cartesian-harmonic sum = 1 to 4e-16). Hence P_L = C_0/C_K =
-# (k=0 states)/(tower states) = 2/70 = 1/S(5,3), with the cutoff k=4 = the
-# g_A destination level (per-sign cum 2*S(5,3)=70). So the equi-norm step
-# REDUCES to one physical statement: "the nucleon Dirac source is maximally
-# localized on the sector S3 up to the g_A cutoff" -- the SAME point-like
-# property the size program (STEP 121) holds for elementary modes, NOT a
-# new premise. RESIDUAL (status call for Fedge, not a tuning): whether that
-# maximal-localization premise + cutoff identification counts as fully
-# forced. Label kept 🔶 pending that judgment.
+# EQUI-NORM DENOMINATOR understood; NUMERATOR localization is the residual
+# (2026-06-25, referee pass; sympy + numeric + o4-mini). The denominator
+# C_K=70 (full k=0..4 tower) IS the addition theorem for a maximally
+# localized (delta) LARGE component on the homogeneous S3=SU(2): by
+# G-invariance + Schur's lemma the per-level projector diagonal
+# Tr P_k(x,x)=deg_k/Vol(S3) is CONSTANT, so a point-like source carries
+# equal norm per state (verified: scalar addition thm
+# sum_m|Y_k(x)|^2=(k+1)^2/Vol exact; k=1 harmonic sum=1 to 4e-16). That
+# fixes the 70 and is the SAME point-like character the size program
+# (STEP 121) holds -- real progress. BUT the NUMERATOR (small = the k=0
+# multiplet alone, C_0=2) is NOT uniquely forced: the Gamow-Teller quench
+# uses the Dirac LOWER component, which for a full-tower localized source
+# has support at EVERY k (a per-level weighted average), whereas the
+# "small=k=0" location comes from the kernel Gegenbauer Dk=-2 admixture --
+# a DIFFERENT object. Competing framework-natural assignments give
+# P_L = 1/35 (small=k0 / full 70), 1/22 (small=k0 / even chain 44), or
+# 13/35 (odd chain / 70); only 1/35 matches PDG (+0.08 sigma). So 1/35 is
+# correct and parameter-free GIVEN the small=k0-out-of-70 splice, but that
+# splice mixes two senses of "small component" and is not forced by one
+# mechanism. REFEREE VERDICT (2026-06-25): NOT a clean derivation -> label
+# stays 🔶. Residual = why the small component localizes entirely to the
+# k=0 multiplet (numerator) while the large component spreads over the full
+# tower (denominator).
 _S43_95 = S(4, 3)
 _S53_95 = S(5, 3)
 _gA_lead_95 = math.sqrt(_S53_95 / _S43_95)
@@ -11200,10 +11206,11 @@ print("  sigma average <g^2 - f^2/3>/<g^2 + f^2>): physical home of +4%.")
 print(f"LEAD P_L = 1/S(5,3) = 1/{_S53_95}: q = 101/105 = {_q_95:.6f}")
 print(f"  g_A = {_gA_95:.6f}  vs PDG {_gA_pdg_95}+-{_gA_pdg_e_95}"
       f"  {_gA_dev_95:+.3f}% ({_gA_sig_95:+.2f} sigma)")
-print(f"equi-norm = S3 addition thm (delta source): C0/C_K = "
-      f"{_C0_95}/{_CK_95} = 1/S(5,3): {_equinorm_ok_95}")
-print("Status: lead. equi-norm step reduces to maximal localization on")
-print("S3 (addition thm); residual = that premise's status (Fedge call).")
+print(f"denom C_K = full tower {_CK_95} = 2*S(5,3) = S3 addition thm")
+print(f"  (delta large comp): C0/C_K = {_C0_95}/{_CK_95} = 1/S(5,3): "
+      f"{_equinorm_ok_95}")
+print("Status: lead. denom 70 = addition thm; OPEN = why small comp sits")
+print("at k=0 only (numerator); competing assignments give 1/22, 13/35.")
 
 
 # =============================================================================
