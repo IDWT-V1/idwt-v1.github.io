@@ -900,14 +900,21 @@ A_wolf = Vcb * S(n_strange, 3)
 # beat (n=16) built from the framework's REAL couplings phase-locks (chi in
 # {0,pi}) -> J=0; a nonzero J needs a complex Fubini-Study holonomy phi_link
 # on the 16<->17 link, chi = pi - phi_link, sin(phi_ub) = sin(phi_link).
-# (iii) MAGNITUDE -- the b-beat phase phi_link on the 16<->17 link is the
-# residual. Framework-natural candidate: phi_link = N_c*2pi/k0
-# = c1(CP2)*2pi/n_s^2 = 3*2pi/16 = 67.5 deg (N_c=3 and k0=n_s^2=16 are IDWT
-# constants; N_c = c1(CP2) is the first Chern class of the up-sector; k0 is
-# the b-beat index = n_s^2). sin(67.5 deg)=0.924; J = 3.33e-5*0.924 = 3.08e-5
-# vs PDG 3.08e-5 (0.07%). The /k0 loop count (why the 16<->17 link picks up
-# 1/k0 of the c1 flux) is the single un-forced piece. FOR FEDGE: if the
-# c1-flux-per-k0-beat-link is forced, J closes to PDG at 0.07%.
+# (iii) PHASE phi_link -- the b-beat link phase is a spectral-flow holonomy,
+# the same determinant-bundle mechanism that fixes the lepton phase (Part 10
+# section 1.3): the RATE is c1(CP^n)=n+1 (anticanonical/Euler degree), NOT the
+# matter-section degree O(n-1). For the up-sector that rate is c1(CP^2)=N_c=3,
+# consistent with the committed leading-order result arg V^spec = c1(CP^2) -
+# c1(S^3) = 3-0 (Part 10 section 4.1). chi is the relative phase between the
+# two Dirac eigenmodes n=16,17 (a spectral-flow quantity), not transport of a
+# single O(2) section, so the O(2) reading (45 deg) is excluded. The 16<->17
+# link advances one node of the k0=n_s^2=16 beat: phi_link = c1(CP^2)*2pi/k0
+# = 3*2pi/16 = 67.5 deg = the predicted CKM angle gamma (PDG ~65.7 deg; +1.8
+# deg, ~3%). The one-node step f=1/k0 is the residual (lepton-T8 heuristic
+# rigor); f in {1/15,1/16,1/17} keeps J within +-3% of PDG. In J = |Vus Vcb
+# Vub Vcs|*sin gamma, Vus,Vcb are IDWT-derived but the |Vub| magnitude (apex
+# sqrt(rho^2+eta^2)) is PDG input (Part 5), so the IDWT prediction is the
+# PHASE gamma, not the full J. Open: the f=1/k0 step + the |Vub| magnitude.
 # |V_td| = 0 at this order.
 # lam here uses the sector-curvature-corrected sin_C.
 lam_W = sin_C
