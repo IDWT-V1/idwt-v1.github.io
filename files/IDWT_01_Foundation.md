@@ -601,13 +601,12 @@ $\zeta_d(1) = d/(d-1)$ and $\zeta_d(0) = -d/2$ are exact for all sectors (Part 9
 
 \***Two length scales — interaction versus intrinsic (Part 4 §3.9a).** The $L_d = \lambda_d^{-1/4}$ tabulated here is the dimensionless sector-localization length (hence "units"); at the *matter/interaction* scale one sector unit $\approx$ 1 fm. This is the contact/binding range that governs hadronic, nuclear and atomic physics — e.g. it reproduces the proton charge radius to 2% (Part 8 §11) and the hydrogen length scales (Part 8 §14). It is **not** the intrinsic size of a single excitation. A single elementary mode is far smaller: its stiffness-bound physical size is $R = \sqrt{N+d/2}\,M^{-1/4}\,G_d^{3/8} \approx 10^{-29}$ m (Part 4 §3.9a), set by gravity through the per-dimension coupling $G_d$. So every elementary particle is pointlike at $\sim10^{-29}$ m, far below any resolved size; the $\sim$fm figures above are the *interaction* scale, and the $\sim$fm size of a hadron is the *composite* extent of its confined quark modes, not a single-mode width.
 
-### 3e-ii. The Particle Map — All Members of $\Sigma_{\rm pairs}$
+### 3e-ii. The Particle Map — All 15 Members of $\Sigma_{\rm pairs}$
 
-Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector dimension $d$ and mode index $n$, with mass $m(n,d) = S(n,d) \times m_{\rm scale,d}$. The full spectrum (14 single-mode pairs + the bottom beat; the photon's tower status is noted below):
+$\Sigma_{\rm pairs}$ contains exactly 15 tower-derived stable objects: 14 single-mode pairs $(n,d)$ and the bottom beat resonance at $k_0 = n_s^2 = 16$. The photon ($n=0$, $d=2$) is the massless $d=2$ ground state — physically real, but $n=0$ is not a generation-tower output and the photon is therefore not in $\Sigma_{\rm pairs}$; it is listed separately below the table.
 
 | Particle | $d$ | Geometry | Isometry | $n$ | $S(n,d)$ | Mass |
 |----------|---|----------|----------|---|--------|------|
-| photon γ | 2 | $\mathbb{CP}^1$ | $SU(2)$ | 0 | 0 | 0 (exact) |
 | W | 2 | $\mathbb{CP}^1$ | $SU(2)$ | 76 | 2,926 | 80.38 GeV |
 | Z | 2 | $\mathbb{CP}^1$ | $SU(2)$ | 81 | 3,321 | 91.23 GeV |
 | Higgs | 2 | $\mathbb{CP}^1$ | $SU(2)$ | 95 | 4,560 | 125.27 GeV |
@@ -624,7 +623,7 @@ Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector d
 | muon | 6 | $\mathbb{CP}^3$ | $SU(4)$ | 35 | 3,838,380 | 105.7 MeV |
 | tau | 10 | $\mathbb{CP}^5$ | $SU(6)$ | 23 | 64,512,240 | 1776.84 MeV |
 
-The bottom quark is a tower-derived member of $\Sigma_{\rm pairs}$ but does not appear as a single $(n,d)$ row above: it is the geometric-mean beat between $n=16$ and $n=17$ in $d=3$ at the unique triple-coincidence site $k_0 = n_s^2 = 16$ (§3b), giving $m_b = \sqrt{S(16,3)\cdot S(17,3)} \times m_{\rm scale,3} \approx 4181$ MeV. Its beat index $k_0 = 16$ is a named generation-tower output — $k_0 = n_s^2 = n_e + n_u = S(n_s,3) - S(2,3)$ — and as such it is in $\Sigma_{\rm pairs}$, though as a composite beat resonance rather than a single-mode pair.
+**Photon** ($d=2$, $n=0$, $S(0,2)=0$, $m=0$ exact): the $d=2$ sector ground state. Massless because it carries zero excitations. Physically real and stable, but $n=0$ is not produced by any generation-tower operation (not a hockey-stick output, not an additive edge, not a $g$-rule output, not a beat site) — it is the vacuum of the $d=2$ sector, present because $d=2 \in D$. Not in $\Sigma_{\rm pairs}$.
 
 ---
 
