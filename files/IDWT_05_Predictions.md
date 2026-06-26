@@ -50,7 +50,7 @@ $$\rho = 1 \quad (\text{exact, derived})$$
 
 $$\mathrm{Im}[\Gamma_{346}(\omega)]_{\rm peak} = 775.8\text{ MeV} \quad (\text{PDG: }775.3\text{ MeV},\ +0.07\%)$$
 
-All inputs — $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, delays from $k_0=16$ — come from seeds $\{n_d=1,\,n_u=3\}$ and composite $n_s=4$, with $m_e$ alone. This is a cross-check of the coupling geometry, not an independent mass prediction.
+All inputs — $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, delays from $k_0=16$ — come from seeds $\{n_d=1,\,n_u=3\}$, with $m_e$ alone. This is a cross-check of the coupling geometry, not an independent mass prediction.
 
 **Cabibbo angle 🔵**
 
@@ -112,11 +112,11 @@ The coupling decreases as $1/S(n,3) \sim 1/n^3$ with mode index — this is not 
 
 $$S(n_{\rm conf}, 3) = g_{33} = 8\sqrt{7} = 21.166$$
 
-The unique integer $n$ satisfying this: $S(4,3) = 20$, $S(5,3) = 35$. The nearest mode is $n_{\rm conf} = n_s = 4$ — the composite itself. The coupling at the composite level:
+The unique integer $n$ satisfying this: $S(4,3) = 20$, $S(5,3) = 35$. The nearest mode is $n_{\rm conf} = n_s = 4$. The coupling at this level:
 
 $$g_{\rm eff}(n_s) = g_{33}/S(n_s,3) = 8\sqrt{7}/20 = 1.058$$
 
-just above 1 (confined). At $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The composite $n_s = 4$ is the mode where the QCD coupling crosses 1 — the physical meaning of the composite is that it is the confinement mode.
+just above 1 (confined). At $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). $n_s = 4$ is the mode where the QCD coupling crosses 1 — its physical meaning is that it is the confinement mode.
 
 **The pion decay constant:**
 
@@ -132,7 +132,7 @@ $N_c = 3$ comes from the $\mathbb{CP}^2$ Dirac index (Part 3 §2). The large-$N_
 
 $$g_A = \sqrt{S(n_s+1,3)/S(n_s,3)} = \sqrt{35/20} = \sqrt{7/4} = 1.3229 \quad (\text{PDG: }1.2723\pm 0.0023,\ +4.0\%)$$
 
-The ratio of successive $d=3$ mode counts at the composite level $n_s=4$ — the geometric mean of the mode density transition at the confinement boundary.
+The ratio of successive $d=3$ mode counts at the level $n_s=4$ — the geometric mean of the mode density transition at the confinement boundary.
 
 The $d=5$ sector has $d \bmod 8 = 5$, the unique Clifford class for which Majorana spinors are geometrically forbidden. More strongly: no charge-conjugation matrix $C$ exists on the $S^5$ spinor bundle ($d \bmod 8 = 5$ globally), so cross-sector couplings cannot construct $\psi^T C\psi$ at any loop order. $0\nu\beta\beta$ is forbidden at all orders. Current experiments (KamLAND-Zen 2023: $m_{\beta\beta} < 36$ meV) have seen no signal, consistent with this prediction. This is a qualitative, falsifiable prediction independent of the mass spectrum.
 
@@ -192,7 +192,7 @@ The $\tau$ row uses PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV); its $\varepsilon
 
 **Honest scope.** The $L = 2\varepsilon/g$ luck model treats each quantity separately; multiplying the four $L$ values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived, not refit (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist ($g_A$ +4%, $f_\pi$ +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. With the scales held fixed by $m_e$ and $n_s$, the spectrum has no continuous dial to fit.
 
-**Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from $n_s$ by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$, composite $n_s=4$, and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
+**Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from $n_s$ by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$ and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
 
 ### 2b. Joint p-value and random-theory Monte Carlo 🔵
 
@@ -340,11 +340,11 @@ In IDWT the Higgs is a confinement mode of the $d=2$ sector — there is no quar
 
 Hadrons — mesons and baryons — are composite bound states of the fundamental $d=3$ and $d=4$ sector eigenmodes. They are not sector eigenmodes and carry no IDWT mode indices. The correlation between hadronic masses and the $d=3$ sector scale has a direct explanation.
 
-**The confinement scale.** The $d=3$ geometric dilution function $g_{\rm eff}(n) = g_{33}/S(n,3)$ passes through $O(1)$ at the composite mode $n_s = 4$:
+**The confinement scale.** The $d=3$ geometric dilution function $g_{\rm eff}(n) = g_{33}/S(n,3)$ passes through $O(1)$ at $n_s = 4$:
 
 $$g_{\rm eff}(n_s) = \frac{g_{33}}{S(n_s,3)} = \frac{8\sqrt{7}}{20} = 1.058$$
 
-just above 1 (confined); at $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The $d=3$ coupling crosses the confinement threshold at the composite mode $n_s=4$. The energy scale there is:
+just above 1 (confined); at $n_s+1=5$, $g_{\rm eff} = 0.605$ (free). The $d=3$ coupling crosses the confinement threshold at $n_s=4$. The energy scale there is:
 
 $$f_\pi = m_{\rm scale,3}\times S(n_s,3) = 4.702\times 20 = 94.04\text{ MeV} \quad (\text{PDG: }92.1\text{ MeV},\ +2.1\%)$$
 $$\Lambda_{\rm QCD} = N_c\times f_\pi = 3\times 94.04 = 282\text{ MeV} \quad (\text{PDG: }276\text{ MeV},\ +2.1\%)$$
@@ -387,7 +387,7 @@ The J/ψ residual (+2.0%) reflects the expansion parameter $\Lambda_{\rm QCD}/m_
 
 ## 4. PMNS Mixing
 
-**The μ–τ interchange symmetry.** The $d=6$ (electron, muon) and $d=10$ (tau) sectors carry identical self-couplings: $g_{66} = g_{10,10} = 1/n_s = 1/4$ (shared composite coupling). Therefore $v_6 = \sqrt{g_{66}} = v_{10} = \sqrt{g_{10,10}} = 1/2$ **exactly**. The coupling of each charged lepton to the $d=5$ neutrino sector is:
+**The μ–τ interchange symmetry.** The $d=6$ (electron, muon) and $d=10$ (tau) sectors carry identical self-couplings: $g_{66} = g_{10,10} = 1/n_s = 1/4$ (shared coupling). Therefore $v_6 = \sqrt{g_{66}} = v_{10} = \sqrt{g_{10,10}} = 1/2$ **exactly**. The coupling of each charged lepton to the $d=5$ neutrino sector is:
 
 $$g_{5,6} = v_5 v_6 = \frac{v_5}{2}, \qquad g_{5,10} = v_5 v_{10} = \frac{v_5}{2}.$$
 

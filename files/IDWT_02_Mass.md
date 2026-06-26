@@ -140,7 +140,7 @@ $$S(n,d) = S(n,d-1) + S(n-1,d)$$
 
 Boundary conditions: $S(1,d)=1$ for all $d$ (universal ground state); $S(n,1)=n$ (linear sector).
 
-It says: the simplex number at $(n, d)$ equals its neighbour at $(n, d-1)$ plus its neighbour at $(n-1, d)$. **The Pascal recursion constrains the eigenmode selection rule:** any mode index assignment that violates $S(n,d) = S(n,d-1) + S(n-1,d)$ is rejected. The observed assignments are the unique set that simultaneously satisfies the recursion and the seed conditions $\{n_{\rm down}=1, n_{\rm up}=3\}$ (composite $n_{\rm strange}=4$). The recursion does not produce the assignments from scratch — but it makes the assignments rigid: there is no freedom to choose different mode indices once the seeds are fixed.
+It says: the simplex number at $(n, d)$ equals its neighbour at $(n, d-1)$ plus its neighbour at $(n-1, d)$. **The Pascal recursion constrains the eigenmode selection rule:** any mode index assignment that violates $S(n,d) = S(n,d-1) + S(n-1,d)$ is rejected. The observed assignments are the unique set that simultaneously satisfies the recursion and the seed conditions $\{n_{\rm down}=1, n_{\rm up}=3\}$. The recursion does not produce the assignments from scratch — but it makes the assignments rigid: there is no freedom to choose different mode indices once the seeds are fixed.
 
 **Generation 2 law — the clearest case:**
 
@@ -213,15 +213,15 @@ which terminates in $d$ steps for any integer $M = S(n,d)$. The Hopf algebra is 
 
 ---
 
-## 5. The seeds $n_d = 1$ and $n_u = 3$ (composite $n_s = 4$) — Hockey-Stick Forced
+## 5. The seeds $n_d = 1$ and $n_u = 3$ — Hockey-Stick Forced
 
-The seeds $n_d = 1$ and $n_u = 3$ are independently forced; the composite $n_s = n_u + n_d = 4$ follows.
+The seeds $n_d = 1$ and $n_u = 3$ are independently forced; $n_s = n_u + n_d = 4$ follows.
 
 **$n_{\rm down} = 1$** is forced because $S(1,d) = 1$ for every $d$. This is the base case of every hockey-stick sum — the first term in every cumulative count. It is simultaneously the ground state of every sector.
 
-**$n_{\rm strange} = 4$** (the composite $n_s$) is confirmed as the unique positive integer satisfying $S(n,4) = 35 = n_{\rm muon}$. The muon occupies mode 35 in $d=6$. Only $n=4$ maps there via the simplex function in $d=4$. Why is 35 the muon's mode? Because $35 = S(4,4) = 1+4+10+20$ — the hockey-stick sum of the $d=4$ simplex through level 3. The composite index $n_s = 4$ is the unique value for which the strange quark's hockey-stick image in $d=4$ lands on an occupied lepton mode. No other integer does this.
+**$n_{\rm strange} = 4$** is confirmed as the unique positive integer satisfying $S(n,4) = 35 = n_{\rm muon}$. The muon occupies mode 35 in $d=6$. Only $n=4$ maps there via the simplex function in $d=4$. Why is 35 the muon's mode? Because $35 = S(4,4) = 1+4+10+20$ — the hockey-stick sum of the $d=4$ simplex through level 3. $n_s = 4$ is the unique value for which the strange quark's hockey-stick image in $d=4$ lands on an occupied lepton mode. No other integer does this.
 
-Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3$. $S(1,d) = 1$ for every $d$ makes $n = 1$ the base case of every hockey-stick sum and the ground state of every sector (⭐). The composite $n_s = 4$ satisfies $S(4,3) = n(n+1) = 20$ — the unique index where the simplex number equals the Casimir number (⭐) — and the coupling $g_{33} = 8\sqrt{7}$ (derived in §9) places the effective coupling per mode $g_{33}/S(4,3) = 8\sqrt{7}/20 \approx 1$ at the confinement threshold (🔶). At level $N = 3$, $n = 4$ carries $l = 1$ and $l = 3$ only, giving it permanent $l$-parity protection from the $l = 0$ vacuum sector (⭐, Part 7 §1.2). These are structural selectors: the value $g_{33} = 8\sqrt{7}$ is fixed by the §9 gap construction from the seed integers (${\rm gap}_{d=3} = n_s^2$, $g_{\rm coeff} = 2/\sqrt{7}$), and $n = 1$ and $n = 4$ are picked out by the three conditions above — not as the minima of an effective energy over the mode index, a reading the documented vocabulary does not support. The seeds are not chosen — they are structurally forced.
+Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3$. $S(1,d) = 1$ for every $d$ makes $n = 1$ the base case of every hockey-stick sum and the ground state of every sector (⭐). $n_s = 4$ satisfies $S(4,3) = n(n+1) = 20$ — the unique index where the simplex number equals the Casimir number (⭐) — and the coupling $g_{33} = 8\sqrt{7}$ (derived in §9) places the effective coupling per mode $g_{33}/S(4,3) = 8\sqrt{7}/20 \approx 1$ at the confinement threshold (🔶). At level $N = 3$, $n = 4$ carries $l = 1$ and $l = 3$ only, giving it permanent $l$-parity protection from the $l = 0$ vacuum sector (⭐, Part 7 §1.2). These are structural selectors: the value $g_{33} = 8\sqrt{7}$ is fixed by the §9 gap construction from the seed integers (${\rm gap}_{d=3} = n_s^2$, $g_{\rm coeff} = 2/\sqrt{7}$), and $n = 1$ and $n = 4$ are picked out by the three conditions above — not as the minima of an effective energy over the mode index, a reading the documented vocabulary does not support. The seeds are not chosen — they are structurally forced.
 
 ⭐ **Kummer p-adic characterization of the seed.** Kummer's theorem states that the 2-adic valuation $v_2\!\bigl(\binom{n+d-1}{d}\bigr)$ equals the number of carries when adding $d$ and $n-1$ in binary. Applied to the two seed evaluations:
 
@@ -230,7 +230,7 @@ Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3
 | $S(n_s,3) = S(4,3) = 20 = 4\times5$ | $3+3$ (011+011) | **2** | $v_2(20)=2$ |
 | $S(n_u,4) = S(3,4) = 15 = 3\times5$ | $4+2$ (100+010) | **0** | $v_2(15)=0$ |
 
-The composite pair $(n_s=4,\,d=3)$ is the unique pair for which the $d=3$ evaluation has carry-count 2 (divisible by 4 but not 8) while the $d=4$ evaluation has carry-count 0 (odd). In $d=3$, the initial segment $n=1,2,3$ has strictly distinct $v_2$ values $\{0,2,1\}$; $n_s=4$ is the first index where $v_2$ repeats ($v_2(S(4,3))=2 = v_2(S(2,3))$), marking the composite as the boundary of the distinct-valuation segment. This gives a p-adic characterization of $n_s=4$ complementary to the topological route ($\chi(\mathbb{CP}^3)=4$) and the algebraic route ($S(n,4)=35$ unique solution). It also predicts which sector masses are odd: $m_u\propto S(3,4)=15$ (odd), $m_d\propto S(1,3)=1$ (odd), while $m_s\propto S(4,3)=20$ (divisible by 4), and $m_e\propto S(13,6)=18564$ (divisible by 4 since $v_2(18564)=2$).
+The pair $(n_s=4,\,d=3)$ is the unique pair for which the $d=3$ evaluation has carry-count 2 (divisible by 4 but not 8) while the $d=4$ evaluation has carry-count 0 (odd). In $d=3$, the initial segment $n=1,2,3$ has strictly distinct $v_2$ values $\{0,2,1\}$; $n_s=4$ is the first index where $v_2$ repeats ($v_2(S(4,3))=2 = v_2(S(2,3))$), marking $n_s$ as the boundary of the distinct-valuation segment. This gives a p-adic characterization of $n_s=4$ complementary to the topological route ($\chi(\mathbb{CP}^3)=4$) and the algebraic route ($S(n,4)=35$ unique solution). It also predicts which sector masses are odd: $m_u\propto S(3,4)=15$ (odd), $m_d\propto S(1,3)=1$ (odd), while $m_s\propto S(4,3)=20$ (divisible by 4), and $m_e\propto S(13,6)=18564$ (divisible by 4 since $v_2(18564)=2$).
 
 ---
 
@@ -255,7 +255,7 @@ The hockey-stick is the engine of the spectrum's backbone: the simplex modes are
 
 **Insertion parity of the productions. 🔶** In the condensate-vertex reading of the tower edges (§9c; `idwt.py` STEP 41), the additive fermion edges ($n_e$, $n_\mu$, $n_\tau$) each carry one degree-1 condensate insertion, every g-rule production landing in $d=2$ carries none, and the additive Higgs closure carries two. This is the even-insertion selection rule: the $d=2$ variable admits no odd condensate vertex (Part 3 §16.2, the same evenness that protects $m_\gamma = 0$), so a production landing on a $d=2$ mode carries an even insertion count. The additive Higgs closure and the g-rule route $n_H = g(n_{\nu_2}, n_Z)$ are two channels of one parity rule rather than competing derivations (mechanism and limits: Part 3 §11; `idwt.py` STEP 55).
 
-**Seed-pair grounding: $\{1, a=3\}$. 🔶** The mode indices 1 (ground seed; $n_d = 1$) and $a = n_u = 3$ are both seeds — inputs to the tower, not derived from $n_s$. $n_u = 3$ carries two independent groundings: (i) $\chi(\mathbb{CP}^2) = N_c = 3$ (T15, ✅-grade geometric anchor), and (ii) it is the unique single-kernel-image of the ground seed ($\Delta N = +2$). $n_s = 4$ is the composite of the seed pair $\{1, a=3\}$ via the offset-additive channel: $b = 1 + a = 4$ (⭐ ground-quantum forcing — the lower operand $n_d=1$ is the condensate ground, so the symmetric merge index equals the existing seed $n_u$ and the composite is forced to the antisymmetric channel by elimination; Part 7 §1.2a, `files/idwt.py` STEP 114). The identity $n_u = n_s-1$ holds as the $\chi$-consecutiveness relation $\chi(\mathbb{CP}^k) = k+1$ (T15) applied at $k=2$ and $k=3$ — a geometric consequence, not a mechanism selecting $n_u$ from $n_s$. The g-rule lattice closure, the T4 double-degeneracy exhaustion (an exact linear forcing $n+1=5$), the closed-form ratio crossing, the matter-quartet identity $2n_s-4 = n_s$, and the muon fixed point $S(4,4) = 35$ are uniqueness certificates confirming the composite $b = 4$. The composite $b = 1+a$ is ⭐ for $n_s$ by ground-quantum forcing; the general offset-additive reading remains 🔶 only for the charged-lepton edges $e,\mu$ (both operands non-ground), and the $\chi(\mathbb{CP}^2) = N_c$ anchor for $n_u = 3$ is ✅-grade.
+**Seed-pair grounding: $\{1, a=3\}$. 🔶** The mode indices 1 (ground seed; $n_d = 1$) and $a = n_u = 3$ are both seeds — inputs to the tower, not derived from $n_s$. $n_u = 3$ carries two independent groundings: (i) $\chi(\mathbb{CP}^2) = N_c = 3$ (T15, ✅-grade geometric anchor), and (ii) it is the unique single-kernel-image of the ground seed ($\Delta N = +2$). $n_s = 4$ is formed from the seed pair $\{1, a=3\}$ via the offset-additive channel: $b = 1 + a = 4$ (⭐ ground-quantum forcing — the lower operand $n_d=1$ is the condensate ground, so the symmetric merge index equals the existing seed $n_u$ and $n_s$ is forced to the antisymmetric channel by elimination; Part 7 §1.2a, `files/idwt.py` STEP 114). The identity $n_u = n_s-1$ holds as the $\chi$-consecutiveness relation $\chi(\mathbb{CP}^k) = k+1$ (T15) applied at $k=2$ and $k=3$ — a geometric consequence, not a mechanism selecting $n_u$ from $n_s$. The g-rule lattice closure, the T4 double-degeneracy exhaustion (an exact linear forcing $n+1=5$), the closed-form ratio crossing, the matter-quartet identity $2n_s-4 = n_s$, and the muon fixed point $S(4,4) = 35$ are uniqueness certificates confirming $b = 4$. $b = 1+a$ is ⭐ for $n_s$ by ground-quantum forcing; the general offset-additive reading remains 🔶 only for the charged-lepton edges $e,\mu$ (both operands non-ground), and the $\chi(\mathbb{CP}^2) = N_c$ anchor for $n_u = 3$ is ✅-grade.
 
 The physical claim this sharpens: **if mass is the cumulative microstate count $S(n,d)$, then the hockey-stick identity governs the simplex backbone exactly** — every simplex mode index is a forced hockey-stick evaluation, and where two simplex modes meet at a Pascal node (the generation-2 lepton $n_\mu = S(4,4) = S(4,3)+S(3,4)$, ✅) the selection rule is a theorem. The composite indices are the named exceptions where additional inputs enter: the top's Euler product, the generation-1 charged-lepton additive node ($n_e = n_{\nu_1}+n_u$, **not** a Pascal step — STEP 116), the inclusion-exclusion $\nu_3$, and the boson $g$-rule chain. The hockey-stick leaves no freedom in the backbone; the open content of the spectrum lives entirely in those named composite edges.
 
@@ -394,7 +394,7 @@ The coupling matrix $G$ has rank 1: $G_{dd'} = v_d\times v_{d'}$ where $v_d = \s
 
 ### $g_{33} = 8\sqrt{7}$ and $g_{44} = 12/\sqrt{7}$ — both from $n_s$ alone
 
-Both coupling constants are derived simultaneously from the seed pair $\{n_d=1, n_u=3\}$ and their composite $n_s=4$, using a single universal structure. Neither is primary.
+Both coupling constants are derived simultaneously from the seed pair $\{n_d=1, n_u=3\}$, using a single universal structure. Neither is primary.
 
 **The universal coupling coefficient** (same for both sectors by binomial symmetry $\binom{n}{k}=\binom{n}{n-k}$):
 
@@ -419,7 +419,7 @@ $$g_{33} = \frac{n_s^2\sqrt{n_s+n_u}}{2} = 8\sqrt{7}, \quad g_{44} = \frac{n_s n
 
 $$g_{33}\times g_{44} = \frac{n_s^3 n_u}{2} = \frac{64\times3}{2} = 96$$
 
-The rank-1 identity $g_{33}\times g_{44} = g_{34}^2$ follows from the seed structure alone. $g_{33}$, $g_{44}$, and $g_{34}$ are all theorems of the seed pair $\{n_d=1, n_u=3\}$ and composite $n_s=4$.
+The rank-1 identity $g_{33}\times g_{44} = g_{34}^2$ follows from the seed structure alone. $g_{33}$, $g_{44}$, and $g_{34}$ are all theorems of the seed pair $\{n_d=1, n_u=3\}$.
 
 **$g_{33}$ from $g_{44}$:** $g_{33}/g_{44} = n_s(n_s+n_u)/(2n_u) = 4\times7/6 = 14/3$. This ratio equals $(m_d/m_u)^2$ — the squared lightest-particle mass ratio between sectors — another consequence of the seed structure, not an independent assumption.
 
@@ -429,7 +429,7 @@ The rank-1 identity $g_{33}\times g_{44} = g_{34}^2$ follows from the seed struc
 
 The $d{=}6$ sector lives on $\mathbb{CP}^3$. Three independent geometric properties of $\mathbb{CP}^3$ all fix the same value:
 
-1. **Euler characteristic:** $\chi(\mathbb{CP}^3) = 4 = n_s$. The composite $n_s$ is confirmed by this same fact (Part 1 §3a). The sector coupling is $1/\chi(\mathbb{CP}^3) = 1/n_s = 1/4$.
+1. **Euler characteristic:** $\chi(\mathbb{CP}^3) = 4 = n_s$ (Part 1 §3a). The sector coupling is $1/\chi(\mathbb{CP}^3) = 1/n_s = 1/4$.
 
 2. **Fubini-Study curvature:** The minimum sectional curvature of $\mathbb{CP}^3$ with the Fubini-Study metric is $1/4$ (attained on totally real planes). This is the unique curvature scale invariant under the full $\mathrm{Sp}(2)$ isometry group of the sector, and it equals $1/n_s$.
 
@@ -445,7 +445,7 @@ This is exact and requires no mass input.
 
 ### $g_{10,10} = 1/4$ — from tau hypercharge
 
-The tau sector shares the same coupling $g_{10,10} = g_{66} = 1/n_s = 1/4$: both $d=6$ and $d=10$ are CP sectors with coupling set directly by the composite $n_s=4$, so the kernel cannot distinguish them. The mass difference between muon and tau arises entirely from the different sector geometry ($S(35,6)$ vs $S(23,10)$), not from any coupling difference.
+The tau sector shares the same coupling $g_{10,10} = g_{66} = 1/n_s = 1/4$: both $d=6$ and $d=10$ are CP sectors with coupling set directly by $n_s=4$, so the kernel cannot distinguish them. The mass difference between muon and tau arises entirely from the different sector geometry ($S(35,6)$ vs $S(23,10)$), not from any coupling difference.
 
 ---
 
@@ -489,7 +489,7 @@ $$g_{3,10} = \sqrt{g_{33}g_{10,10}} = \sqrt{2\sqrt{7}} \;[= g_{36}], \quad g_{4,
 
 $$g_{6,10} = \sqrt{g_{66}g_{10,10}} = \tfrac{1}{4} \;[= g_{66}]$$
 
-**Coupling algebra complete:** All six sector self-couplings are derived from $m_e$ and the seed pair $\{n_d=1, n_u=3\}$ and composite $n_s=4$. $g_{33}$ and $g_{44}$ from seed equations; $g_{66}$ and $g_{10,10}$ from $\mathbb{CP}^3$ complex geometry (§9c); $g_{22} = (S(n_s,3)-n_u)^2\times S(n_u-1,4)/2$ from seeds (§10); $g_{55} = 96/g_{22}$ from Hopf universality.
+**Coupling algebra complete:** All six sector self-couplings are derived from $m_e$ and the seed pair $\{n_d=1, n_u=3\}$. $g_{33}$ and $g_{44}$ from seed equations; $g_{66}$ and $g_{10,10}$ from $\mathbb{CP}^3$ complex geometry (§9c); $g_{22} = (S(n_s,3)-n_u)^2\times S(n_u-1,4)/2$ from seeds (§10); $g_{55} = 96/g_{22}$ from Hopf universality.
 
 ---
 
@@ -497,7 +497,7 @@ $$g_{6,10} = \sqrt{g_{66}g_{10,10}} = \tfrac{1}{4} \;[= g_{66}]$$
 
 The tau is the one lepton whose raw simplex prediction requires a correction at all. The mechanism is the isotropic back-reaction between the $d=6$ and $d=10$ sectors.
 
-**Setup.** The $d=6$ and $d=10$ sectors share the coupling $g_{6,6} = g_{6,10} = g_{10,10} = 1/n_s = 1/4$, derived from the composite $n_s=4$ (not from hypercharge). This isotropy — both sectors carry identical coupling $1/n_s$ — means the back-reaction from $d=6$ onto $d=10$ feeds back on itself via $g_{10,10}$.
+**Setup.** The $d=6$ and $d=10$ sectors share the coupling $g_{6,6} = g_{6,10} = g_{10,10} = 1/n_s = 1/4$, derived from $n_s=4$ (not from hypercharge). This isotropy — both sectors carry identical coupling $1/n_s$ — means the back-reaction from $d=6$ onto $d=10$ feeds back on itself via $g_{10,10}$.
 
 **Self-consistent equation.** The $d{=}6\to d{=}10$ back-reaction shift $\Delta m$ satisfies:
 
@@ -507,13 +507,13 @@ The second term is the self-feedback: the shifted tau mass feeds further back-re
 
 $$\Delta m = \frac{\varepsilon_{6\to10}\times m_\tau}{1-g_{10,10}}$$
 
-Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$. This ratio equals $n_u/n_s = 3/4$, with $n_u=3$ (seed) and $n_s=4$ (composite); it is not a free parameter.
+Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$. This ratio equals $n_u/n_s = 3/4$, with $n_u=3$ (seed) and $n_s=4$; it is not a free parameter.
 
 **The total correction.** The leading $d{=}6\to d{=}10$ kernel perturbation at the tau level is:
 
 $$\varepsilon_{6\to10} = \frac{1}{n_s^3\times S(n_s,4)} = \frac{1}{64\times35} = \frac{1}{2240}$$
 
-The factor $n_s^3 = k_0 \times n_s$ is the composite-resonance volume; $S(n_s,4) = n_\mu$ is the frequency normalization. Both are completely determined by $n_s = 4$.
+The factor $n_s^3 = k_0 \times n_s$ is the resonance volume; $S(n_s,4) = n_\mu$ is the frequency normalization. Both are completely determined by $n_s = 4$.
 
 Multiplied by the resummation factor $4/3$:
 
@@ -521,10 +521,10 @@ $$\varepsilon_{\rm total} = \frac{1}{2240}\times\frac{4}{3} = \frac{1}{1680} = \
 
 Equivalently: **$1680 = n_s \times n_u \times (n_s+n_u) \times S(n_s,3) = 4 \times 3 \times 7 \times 20$**
 
-Each factor has an independent meaning from the seed-and-composite structure:
-- $n_s = 4$: the composite $b = 1+3$ (Dirac index of the lepton sector, $\mathrm{ind}(D_{\mathbb{CP}^3}) = 4$)
+Each factor has an independent meaning from the seed structure:
+- $n_s = 4$: $b = 1+3$ (Dirac index of the lepton sector, $\mathrm{ind}(D_{\mathbb{CP}^3}) = 4$)
 - $n_u = 3$: seed ($\chi(\mathbb{CP}^2) = N_c = 3$, T15); $n_u = n_s-1$ by the χ-consecutiveness identity
-- $n_s + n_u = 7$: the sum of the composite and the seed
+- $n_s + n_u = 7$: the sum of $n_s$ and the seed $n_u$
 - $S(n_s,3) = 20$: the strange quark mode count (= $n_c$, the charm mode index)
 
 The product $n_s \times n_u \times (n_s+n_u) \times n_c$ is the canonical combinatorial invariant of the quark sector at the seed level. Its reciprocal is the subleading back-reaction correction.
@@ -533,7 +533,7 @@ The product $n_s \times n_u \times (n_s+n_u) \times n_c$ is the canonical combin
 
 $$m_\tau = m_e\times\frac{S(23,10)}{S(13,6)}\times\!\left(1+\frac{1}{1680}\right) = 1776.84\ \text{MeV} \quad (\text{PDG 2024: }1776.93\pm0.09\ \text{MeV},\ {-}1.0\sigma)$$
 
-No inputs beyond $m_e$ and the seed pair $\{n_d=1, n_u=3\}$ and composite $n_s = 4$.
+No inputs beyond $m_e$ and the seed pair $\{n_d=1, n_u=3\}$.
 
 ---
 
@@ -543,7 +543,7 @@ The $d=5$ sector ($S^5$) has Euler characteristic χ=0 — no self-confinement a
 
 $$m_{\rm scale,5}\times m_{\rm scale,4}^2 = \frac{n_u}{n_s}\times m_{\rm scale,6}^3$$
 
-This is the $d=5$ analog of the $d=2$ back-reaction equation $g_{22} = p^2q/2$: the neutrino scale is fixed by the balance between the $d=4$ quark scale (heavy, appearing squared in the denominator) and the $d=6$ lepton scale (light, appearing cubed). The ratio $n_u/n_s = 3/4$ is the Hopf chain geometric-seed-to-composite ratio.
+This is the $d=5$ analog of the $d=2$ back-reaction equation $g_{22} = p^2q/2$: the neutrino scale is fixed by the balance between the $d=4$ quark scale (heavy, appearing squared in the denominator) and the $d=6$ lepton scale (light, appearing cubed). The ratio $n_u/n_s = 3/4$ is the Hopf chain geometric ratio.
 
 **Explicit formula:**
 
@@ -698,7 +698,7 @@ The light-quark predictions are parameter-free outputs of the coupling self-cons
 
 **Status: 🔶 Structurally motivated (state-counting).** $g_{22} = p^2q/2 = 722.5$ is a multiplicity count: the product of available Dirac-eigenspace dimensions across the $d=3$ sector (two kernel legs → $p^2$) and the $d=4$ sector (one leg → q), with the 1/2 from the $\xi\leftrightarrow\xi'$ symmetry of the two-body kernel. It is not a kernel matrix element. Testing whether a genuine $(\xi\cdot\xi')^2$ trace yields $p^2q/2$ (`files/idwt.py` STEP 2d): the literal Tr[$G_{23}^2 + G_{24}^2$] is additive (∼ $p^2+q$, the wrong structure for a product), and the actual $(\xi\cdot\xi')^2$ overlap returns $\langle r^2\rangle$ magnitudes that scale as the mode index n — O(1), orders of magnitude below the multiplicity product. $p^2q$ appears only as a trace of the identity over rank-(p,p,q) eigenspaces, where the multiplicities are the input. So $g_{22}$ is a state-count (IDOS), on the same footing as the CKM formula: combinatorial, empirically exact, mechanism = counting. The 1/2 and the leg-counting are kernel-motivated; the magnitude is a count of eigenstates, not a dynamical overlap.
 
-The $d=3$ self-coupling $g_{33}$ is fixed by the intra-sector confinement condition $g_{\rm eff}(n_s,3) = g_{33}/S(n_s,3) \approx 1$ (Part 2 §8). The $d=2$ sector has no self-confinement — the W is massive but not confined in the quark sense. Its self-coupling $g_{22}$ is instead fixed by the **cross-sector back-reaction**: the requirement that the $d=2$ vacuum amplitude is consistent with the $d=3$ and $d=4$ quark sector structures at the composite level $n_s=4$.
+The $d=3$ self-coupling $g_{33}$ is fixed by the intra-sector confinement condition $g_{\rm eff}(n_s,3) = g_{33}/S(n_s,3) \approx 1$ (Part 2 §8). The $d=2$ sector has no self-confinement — the W is massive but not confined in the quark sense. Its self-coupling $g_{22}$ is instead fixed by the **cross-sector back-reaction**: the requirement that the $d=2$ vacuum amplitude is consistent with the $d=3$ and $d=4$ quark sector structures at the level $n_s=4$.
 
 **The derivation:**
 
@@ -733,7 +733,7 @@ $$m_{\rm scale,2} = m_e\times\sqrt{g_{22}/g_{66}} = m_e\times\sqrt{722.5/0.25} =
 | $m_Z$ | $m_{\rm scale,2} \times S(81,2) = 91{,}230$ MeV | 91,188.0 MeV | +0.046% |
 | $m_H$ | $m_{\rm scale,2} \times S(95,2) = 125{,}266$ MeV | 125,200 MeV | +0.053% |
 
-**IDWT has a sole unit reference $m_e = 0.511$ MeV.** All quarks, leptons, bosons, CKM angles, Fermi constant, Weinberg angle, and muon lifetime follow from $m_e$ and seeds $\{n_d=1, n_u=3\}$ (composite $n_s=4$). □
+**IDWT has a sole unit reference $m_e = 0.511$ MeV.** All quarks, leptons, bosons, CKM angles, Fermi constant, Weinberg angle, and muon lifetime follow from $m_e$ and seeds $\{n_d=1, n_u=3\}$. □
 
 
 
@@ -767,7 +767,7 @@ Combined with the critical resonance site $k_0 = n_s^2 = 16$ and the muon mode $
 
 $$\varepsilon = \frac{g_{\rm coeff}}{k_0\times n_\mu} = \frac{2/\sqrt{7}}{16\times35} = \frac{1}{280\sqrt{7}} \approx 0.001350$$
 
-$\varepsilon$ is fully derived from kernel geometry and seed combinatorics — no empirical masses enter. Only the seed pair $\{n_d=1, n_u=3\}$ and composite $n_s = 4$.
+$\varepsilon$ is fully derived from kernel geometry and seed combinatorics — no empirical masses enter. Only the seed pair $\{n_d=1, n_u=3\}$.
 
 Cross-check from c/u and t/u mass ratios: $\varepsilon \approx 0.001340$ (inferred from PDG). Derived value: 0.001350. Gap: 0.74% — within PDG light-quark uncertainties.
 
@@ -903,7 +903,7 @@ The sector mass scales satisfy $m_{\rm scale,d}^2 = g_{dd}\times\langle|\Psi^{(d
 
 The IDWT active sector set {2,3,4,5,6,10} terminates at $d=10$ for three independent reasons, the third being an algebraic consequence of the seed structure: Gegenbauer criticality. Note that $d=7$, $8$, $9$ exist as coordinates of $M_\infty$ but are absent from the active sector set — they are supercritical ($b_{k_0} > 1/2$) but Rule A eliminates them before the Gegenbauer criterion is reached. The criticality condition governs where the active chain terminates; the gap from $d=6$ to $d=10$ in the active set is produced by Rule A independently.
 
-**Definition.** The Gegenbauer polynomial coupling at the composite resonance site $k_0 = n_s^2 = 16$ in the d-dimensional Jacobi chain is:
+**Definition.** The Gegenbauer polynomial coupling at the resonance site $k_0 = n_s^2 = 16$ in the d-dimensional Jacobi chain is:
 
 $$b_{k_0}(d) = \frac{\sqrt{k_0(k_0+d-1)}}{2k_0+d-2}$$
 
@@ -920,7 +920,7 @@ For the six active IDWT sectors and the three inactive-but-present sectors: $b_{
 | Route | Origin | Statement |
 |---|---|---|
 | **Gegenbauer (algebra)** | **Jacobi chain criticality** | $b_{k_0}=1/2$ **iff $d=2(n_s+1)=10$** |
-| Composite coupling | $g_{10,10} = g_{66} = 1/n_s = 1/4$ from composite $n_s$ | Same coupling for both CP sectors |
+| Shared coupling | $g_{10,10} = g_{66} = 1/n_s = 1/4$ from $n_s$ | Same coupling for both CP sectors |
 
 ---
 

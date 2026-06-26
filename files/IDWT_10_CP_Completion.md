@@ -293,7 +293,7 @@ The following table consolidates the full theorem status after the T8 completion
 | T1 | $m = S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
 | T3 | D = {2,3,4,5,6,10} from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |
-| T4 | $n_s = 4$ from double degeneracy $4/7$ | ✅ | Exact | Unique composite; all indices follow |
+| T4 | $n_s = 4$ from double degeneracy $4/7$ | ✅ | Exact | Unique $n_s$; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | b=1/2 exact | Chain terminates; τ is critical |
 | T6 | All three PMNS angles | 🔵 | $\leq 0.51\%$ | Determined by $g_{55}$, $m_{\rm scale,5}$, and mode indices |
 | T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
@@ -433,4 +433,4 @@ Part 10 closes the T8 derivation of the CP-violating phase:
 
 - **§5** updates the master status table: 19 items ✅/🔵, 3 items 🔶 (T0, T8, and $G_N$), 0 items open.
 
-The IDWT lepton sector — three masses, three mixing angles, one CP phase, one CP-violation amplitude — is fully determined by seeds $\{n_d=1, n_u=3\}$ (composite $n_s=4$) and the single mass unit $m_e$.
+The IDWT lepton sector — three masses, three mixing angles, one CP phase, one CP-violation amplitude — is fully determined by seeds $\{n_d=1, n_u=3\}$ and the single mass unit $m_e$.

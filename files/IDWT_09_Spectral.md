@@ -44,7 +44,7 @@ Here $M_\infty = \mathbb{R}^{3,1}\times\prod_{d\in D}\Xi_d$ is the effective pro
 
 $$\sigma_{\rm phys}(|D|) = \bigl\{\,S(n,d)\times m_{\mathrm{scale},d}\;\big|\;(n,d)\in\Sigma_{\rm pairs}\,\bigr\}.$$
 
-The 15 elements of $\sigma_{\rm phys}(|D|)$ are exactly the SM particle masses. Every element is determined by seeds $\{n_d=1,\,n_u=3\}$ (composite $n_s=4$) and the single mass unit $m_e$. The index set $\Sigma_{\rm pairs}$ decomposes into three tiers (see the T0.5 scope): the eleven-mode lattice that T0.5 selects (photon $+$ hockey-stick fermions), the two product-form quark sites $\{16,72\}$, and the electroweak $g$-chain $\{76,81,95\}$ built additively off the top. The selection condition acts on the lattice; the product-form quark origin is the open piece.
+The 15 elements of $\sigma_{\rm phys}(|D|)$ are exactly the SM particle masses. Every element is determined by seeds $\{n_d=1,\,n_u=3\}$ and the single mass unit $m_e$. The index set $\Sigma_{\rm pairs}$ decomposes into three tiers (see the T0.5 scope): the eleven-mode lattice that T0.5 selects (photon $+$ hockey-stick fermions), the two product-form quark sites $\{16,72\}$, and the electroweak $g$-chain $\{76,81,95\}$ built additively off the top. The selection condition acts on the lattice; the product-form quark origin is the open piece.
 
 **Spectral action.** The asymptotic expansion of $\operatorname{Tr}(f(D/\Lambda))$ as $\Lambda\to\infty$ is the Seeley-DeWitt series:
 $$\operatorname{Tr}(f(D/\Lambda)) \sim f_4\Lambda^4\,a_0 + f_2\Lambda^2\,a_2 + f_0\,a_4 + O(\Lambda^{-2}),$$
@@ -92,7 +92,7 @@ $$\text{bosons/top: } T-q,\quad T-p,\quad T-r+1,\quad T+a+1$$
 
 Substituting $a=3,\,b=4$ gives $\{1,3,4,10,15,20,35,13,22,23,76,81,72,95\}$ — all 14 values exactly. The stepwise additions of the generation tower are Pascal evaluations; no iteration is required once the block position $(a,b)=(3,4)$ and the anchor $T$ are specified.
 
-This is a restatement of T0.5, not a derivation of it. It shows the tower has less free structure than the stepwise form suggests — the spectrum is a $2\times2$ Pascal block plus five complement formulas. The anchor $T=\binom{14}{2}$ and the $+1$ offsets on $n_{\rm top}$ and $n_H$ are artifacts of expressing two product-form sites in binomial terms. The top index $n_{\rm top}=72=N_c\,n_s\,N_f=\chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5)$ and the bottom beat site $k_0=n_s^2=16$ have no solution to $S(n,d)=72$ or $16$ (checked $d\le11$, $n\le200$, ⭐); among the six quarks they are the only two not given by a single $S(n,d)$ value (the others are $1,3,4,20$), and both take product closed forms. Several non-quark indices are also not single $S$-values — $13,22,23$ for the leptons/neutrinos and $76,81,95$ for the bosons — but those are additive simplex sums and $g$-steps, not products. Neither product site can be reached by the hockey-stick without an offset; the $W$ and $Z$ follow as Vandermonde $g$-steps off $n_{\rm top}$ ($76=g(5,72)$, $81=g(10,72)=g(6,76)$), while the Higgs $95=n_u+n_{\rm charm}+n_{\rm top}$ is the additive closure ($g$-isolated, `files/idwt.py` STEP 91). The $+1$ in $n_\tau=n_{\nu_3}+n_{\rm down}$ is the down seed, not an offset. What remains open is the origin of the composite $b=n_s=4$, which carries the 🔶. Both non-image sites are 3rd-generation quarks and both are divisible by 8, a consequence of $n_s=4$ carrying the even factors ($16=n_s^2$, $72=N_c n_s N_f$ with $n_s N_f=24$); this is an arithmetic observation about the factorizations and not a spinor selection rule, since no Clifford reality invariant singles out $n\equiv0\pmod 8$.
+This is a restatement of T0.5, not a derivation of it. It shows the tower has less free structure than the stepwise form suggests — the spectrum is a $2\times2$ Pascal block plus five complement formulas. The anchor $T=\binom{14}{2}$ and the $+1$ offsets on $n_{\rm top}$ and $n_H$ are artifacts of expressing two product-form sites in binomial terms. The top index $n_{\rm top}=72=N_c\,n_s\,N_f=\chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5)$ and the bottom beat site $k_0=n_s^2=16$ have no solution to $S(n,d)=72$ or $16$ (checked $d\le11$, $n\le200$, ⭐); among the six quarks they are the only two not given by a single $S(n,d)$ value (the others are $1,3,4,20$), and both take product closed forms. Several non-quark indices are also not single $S$-values — $13,22,23$ for the leptons/neutrinos and $76,81,95$ for the bosons — but those are additive simplex sums and $g$-steps, not products. Neither product site can be reached by the hockey-stick without an offset; the $W$ and $Z$ follow as Vandermonde $g$-steps off $n_{\rm top}$ ($76=g(5,72)$, $81=g(10,72)=g(6,76)$), while the Higgs $95=n_u+n_{\rm charm}+n_{\rm top}$ is the additive closure ($g$-isolated, `files/idwt.py` STEP 91). The $+1$ in $n_\tau=n_{\nu_3}+n_{\rm down}$ is the down seed, not an offset. What remains open is the origin of $b=n_s=4$, which carries the 🔶. Both non-image sites are 3rd-generation quarks and both are divisible by 8, a consequence of $n_s=4$ carrying the even factors ($16=n_s^2$, $72=N_c n_s N_f$ with $n_s N_f=24$); this is an arithmetic observation about the factorizations and not a spinor selection rule, since no Clifford reality invariant singles out $n\equiv0\pmod 8$.
 
 ---
 
@@ -167,7 +167,7 @@ The $d=6$ row covers the electron and muon — both are $d=6$ $\mathbb{CP}^3$ se
 **Theorem T3 (Sector set from complex Hopf chain).** The sector set $D=\{2,3,4,5,6,10\}$ is uniquely determined by two rules applied to the complex Hopf fibration chain $S^1\to S^{2n+1}\to\mathbb{CP}^n$ for $n=1,2,3,\ldots$:
 
 > **Rule A — Coupling termination at $d=6$, no re-entry before the Gegenbauer endpoint.** 🔵
-> A sector is active only if it carries a constructible self-coupling $g_{dd}$. The construction chain runs through the low Hopf sectors — kernel fixed points fix $g_{33}$ and $g_{44}$, and Hopf universality $v_3/v_2=v_5/v_4$ then fixes $g_{55}$ (T9b) — and terminates at $d=6$, where $\chi(\mathbb{CP}^3)=n_s$ forces $g_{66}=1/n_s$, the composite ratio $1/n_s$ rather than a fixed-point coupling. The band $d\in\{7,8,9\}$ acquires no coupling; the three cases stand on different footings:
+> A sector is active only if it carries a constructible self-coupling $g_{dd}$. The construction chain runs through the low Hopf sectors — kernel fixed points fix $g_{33}$ and $g_{44}$, and Hopf universality $v_3/v_2=v_5/v_4$ then fixes $g_{55}$ (T9b) — and terminates at $d=6$, where $\chi(\mathbb{CP}^3)=n_s$ forces $g_{66}=1/n_s$ rather than a fixed-point coupling. The band $d\in\{7,8,9\}$ acquires no coupling; the three cases stand on different footings:
 > - **$d=8$ ($\mathbb{CP}^4$, even base):** $\chi(\mathbb{CP}^4)=N_c+2=5$ is the gap in the Euler-characteristic sequence $\{2,3,4,\_,6\}$ of the active even sectors — there is no kernel fixed point for $g_{88}$ (T15b).
 > - **$d=9$ ($S^9$):** an active $S^9$ would carry, on the $S^1$-invariant block of $L^2(S^9)=\bigoplus_m L^2(\mathbb{CP}^4,\mathcal{O}(m))$, a $\mathbb{CP}^4$-symmetric kernel self-consistency problem with coupling proportional to $g_{99}$; that equation form has no seed-anchored solution (the $\chi=5$ gap, T15b), so no value of $g_{99}$ makes $S^9$ self-consistent, however the activation is attempted.
 > - **$d=7$ ($S^7$):** excluded by the deposit level-count (🔵; `idwt.py` STEP 100). The MC-2 deposit bijection (STEP 74e, ✅) places physical modes at sites $j=\alpha+\beta+2$ for $\alpha\in\{0,1,2\}$ (U(2) rank) and $\beta\in\{0,1,2,3\}$ (U(3) rank); the maximum total degree is $p=2+3=5$, giving exactly six deposit levels $j=2,\ldots,7$. The six elements of $D=\{2,3,4,5,6,10\}$ saturate all six levels; a seventh sector would require $p=6$, needing $\alpha\geq3$ or $\beta\geq4$ — impossible under U(2)$\times$U(3). Separately, $d=7$ cannot replace $d=10$ because the Gegenbauer endpoint is fixed at $d=10$ by Rule B independently. The two constraints close $d=7$.
@@ -206,7 +206,7 @@ Jacobi couplings at $k_0=16$ (all sectors in $D$ must have $b_{k_0}\geq1/2$, by 
 
 $$\boxed{\frac{n_s(n_s+1)}{S(n_s,4)} = \frac{n_u(n_u+1)}{S(n_u,5)} = \frac{4}{7} \approx 0.57143, \qquad n_u = n_s - 1 \;\text{[T15: consecutiveness]}}$$
 
-simultaneously in the $d=3$ sector (left) and the $d=4$ sector (right). The eigenvalue $4/7$ is the kernel algebraic fixed-point at resonance site $k_0=n_s^2=16$. T4 serves as a uniqueness certificate for the seed pair: $n_u = 3$ (seed, $\chi(\mathbb{CP}^2) = N_c = 3$) and $n_s = 1 + 3 = 4$ (composite, confirmed by this equation).
+simultaneously in the $d=3$ sector (left) and the $d=4$ sector (right). The eigenvalue $4/7$ is the kernel algebraic fixed-point at resonance site $k_0=n_s^2=16$. T4 serves as a uniqueness certificate for the seed pair: $n_u = 3$ (seed, $\chi(\mathbb{CP}^2) = N_c = 3$) and $n_s = 1 + 3 = 4$ (confirmed by this equation).
 
 **Proof by exhaustion.** $n_s=4$ is the only integer satisfying the coincidence; all others diverge. $\square$
 
@@ -229,7 +229,7 @@ Setting $b_n(3) = b_n(4)$ and cancelling the common factor $(n+2)(n+3)$ gives $2
 | Mode | Partition | Blocks | NC rank = depth |
 |------|-----------|--------|-----------------|
 | down ($n=1$, seed) | $d+1$ singletons | $d+1$ | 0 |
-| strange ($n=4$, composite) | 1 block | 1 | $d$ (composite level) |
+| strange ($n=4$) | 1 block | 1 | $d$ (composite level) |
 | up ($n=3$, seed) | 3 blocks in $d=4$ | 3 | 1 |
 | charm ($n=20$) | 2 blocks in $d=4$ | 2 | $2\to$reduced to 1 by Hopf pairing |
 | electron ($n=13$) | partition $13=10+3$, 2 blocks | 2 | 3 joins from seeds |
@@ -756,7 +756,7 @@ In particular: $\chi(\mathbb{CP}^1)=2$, $\chi(\mathbb{CP}^2)=3$, $\chi(\mathbb{C
 
 *Step 1 ($n_u = \chi(\mathbb{CP}^2)$, geometry-first).* The lemma gives $\chi(\mathbb{CP}^2) = 3$. This is the geometric anchor for the seed: $n_u = 3 = \chi(\mathbb{CP}^2) = N_c$. A second, independent route reaches the same value via the kernel dynamics (🔶): the ground seed $n_{\rm down}=1$ lies at oscillator level $N=0$; the quadratic kernel acts with $\Delta N = +2$, so one kernel application maps $N=0\to N=2$, giving $n = N+1 = 3$ — the unique mode index reachable by a single kernel step from the ground seed. The two routes (geometric via $\chi$, kernel-dynamical via $\Delta N=+2$) are independent; their agreement reinforces $n_u=3$ as a seed.
 
-*Step 2 ($n_s = \chi(\mathbb{CP}^3)$, composite certified by T4).* The lemma gives $\chi(\mathbb{CP}^3) = 4$. T4 certifies that the composite $n_s = 1 + n_u = 4$ uniquely satisfies the double $4/7$ self-consistency equation simultaneously with $n_u = 3$. Therefore $n_s = \chi(\mathbb{CP}^3) = 4$.
+*Step 2 ($n_s = \chi(\mathbb{CP}^3)$, certified by T4).* The lemma gives $\chi(\mathbb{CP}^3) = 4$. T4 certifies that $n_s = 1 + n_u = 4$ uniquely satisfies the double $4/7$ self-consistency equation simultaneously with $n_u = 3$. Therefore $n_s = \chi(\mathbb{CP}^3) = 4$.
 
 *Step 3 ($N_c = \chi(\mathbb{CP}^2)$).* $\mathbb{CP}^2$ has a CW structure with exactly one cell in each of dimensions 0, 2, 4, giving $\chi(\mathbb{CP}^2) = 1 - 0 + 1 - 0 + 1 = 3$. Therefore $N_c = \chi(\mathbb{CP}^2) = 3$.
 
@@ -866,7 +866,7 @@ evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, 
 | T1 | $m=S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
 | T3 | $D=\{2,3,4,5,6,10\}$ from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |
-| T4 | $n_s=4$ from double degeneracy $4/7$ | ✅ | Exact | Unique composite; all indices follow |
+| T4 | $n_s=4$ from double degeneracy $4/7$ | ✅ | Exact | Unique $n_s$; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | $b=1/2$ exact | Chain terminates; $\tau$ is critical |
 | T6 | All three PMNS angles | 🔵 | $\leq0.51\%$ | All three angles derived from $S^5$ sector geometry and seed coupling $g_{55}$; the inputs ($g_{55}$, four mode indices) are seed-fixed |
 | T7 | $\sqrt{\operatorname{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | $+0.82\%$ | EW scale self-consistency: spectral RMS vs derived $G_F$; same offset as $\sin^2\theta_W$, $g_1$ |

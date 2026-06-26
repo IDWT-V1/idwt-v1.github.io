@@ -33,11 +33,11 @@ $$\quad + \int_{\mathbb{R}^{3,1}\times\Xi} \bar\Psi_\infty\bigl(i\Gamma^\mu\nabl
 
 $$\quad + \frac{1}{2}\sum_{d,d'\in D} g_{dd'} \int_{\mathbb{R}^{3,1}\times\Xi\times\Xi} (\xi_d\cdot\xi_{d'})^2 \bigl[\bar\Psi_\infty P_d\Psi_\infty\bigr]\bigl[\bar\Psi_\infty P_{d'}\Psi_\infty\bigr]\,d\mu_4\,d\mu_\xi\,d\mu_{\xi'} \quad \text{[Kernel]}$$
 
-where $P_d$ is the projector onto sector $\Xi_d$, and $g_{dd'} = v_d \times v_{d'}$ is the rank-1 coupling matrix with $v_d = \sqrt{g_{dd}}$ determined by the seed pair $\{n_d{=}1,\, n_u{=}3\}$ and composite $n_s{=}4$.
+where $P_d$ is the projector onto sector $\Xi_d$, and $g_{dd'} = v_d \times v_{d'}$ is the rank-1 coupling matrix with $v_d = \sqrt{g_{dd}}$ determined by the seed pair $\{n_d{=}1,\, n_u{=}3\}$.
 
 The kernel term is the unique leading interaction invariant under $U(d) \times U(d')$ rotations of each sector (T2). Its quartic-in-$\Psi$ form gives confinement, mass, and inter-sector coupling from a single geometric term.
 
-**Note on $G_N$. 🔶** The Einstein--Hilbert coefficient $G_N$ appearing in the action as written is a second dimensional input — the one additional input beyond the seed pair $\{n_d{=}1,\, n_u{=}3\}$, composite $n_s{=}4$, and $m_e$. The framework fixes the *structure* of gravity (curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent) but not the absolute scale $G_\infty$, which is not derived from the combinatorics (Part 4 §3.12.4). The action above is therefore an effective description with $G_N$ as a measured input. **Particle physics predictions (masses, mixing angles, coupling constants) are independent of $G_N$** — they depend only on the seed pair $\{n_d{=}1,\, n_u{=}3\}$, composite $n_s{=}4$, $m_e$, and the kernel geometry.
+**Note on $G_N$. 🔶** The Einstein--Hilbert coefficient $G_N$ appearing in the action as written is a second dimensional input — the one additional input beyond the seed pair $\{n_d{=}1,\, n_u{=}3\}$ and $m_e$. The framework fixes the *structure* of gravity (curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent) but not the absolute scale $G_\infty$, which is not derived from the combinatorics (Part 4 §3.12.4). The action above is therefore an effective description with $G_N$ as a measured input. **Particle physics predictions (masses, mixing angles, coupling constants) are independent of $G_N$** — they depend only on the seed pair $\{n_d{=}1,\, n_u{=}3\}$, $m_e$, and the kernel geometry.
 
 ### 0.3 Equations of Motion
 
@@ -198,7 +198,7 @@ The table below consolidates, for each sector $d \in D$, the geometric, coupling
 | 6 | $\mathbb{CP}^3$ | $\mathrm{SU}(4)$ | 4 | $1/4$ | $2.75\times10^{-5}$ MeV | $e^-,\;\mu^-$ | Colour-silence filter: $\chi(\mathbb{CP}^3)=4\neq N_c$; colour contributions cancel in $\mathrm{SU}(4)$ representation; zero strong coupling at all energies |
 | 10 | $\mathbb{CP}^5$ | $\mathrm{SU}(6)$ | 6 | $1/4$ | $2.75\times10^{-5}$ MeV | $\tau^-$ | Gegenbauer-critical filter: $b_{k_0}(10)=1/2$ exactly (Part 9 T5); coupling weight distributed with no dominant decay channel; back-reaction correction $+1/1680$ required |
 
-**Column notes.** $\chi$ is the Euler characteristic of the compact local $\mathbb{CP}^k$ model; for odd-sphere sectors ($d=3,5$) the sphere has $\chi(S^d)=0$ and structural counting roles are carried by the CP sector in the Hopf pair. Specifically: $\chi(\mathbb{CP}^2)=N_c=3$, $\chi(\mathbb{CP}^3)=n_s=4$, $\chi(\mathbb{CP}^5)=N_f=6$ (Part 9 T15). The $g_{dd}$ values are exact from seeds $n_u=3$ (primitive) and composite $n_s=4$; derivations in §0.7 and Part 2 §9. The $m_{\rm scale}$ values use $m_e=0.511$ MeV as the unit reference (Part 2 §10).
+**Column notes.** $\chi$ is the Euler characteristic of the compact local $\mathbb{CP}^k$ model; for odd-sphere sectors ($d=3,5$) the sphere has $\chi(S^d)=0$ and structural counting roles are carried by the CP sector in the Hopf pair. Specifically: $\chi(\mathbb{CP}^2)=N_c=3$, $\chi(\mathbb{CP}^3)=n_s=4$, $\chi(\mathbb{CP}^5)=N_f=6$ (Part 9 T15). The $g_{dd}$ values are exact from the seed $n_u=3$ (primitive); derivations in §0.7 and Part 2 §9. The $m_{\rm scale}$ values use $m_e=0.511$ MeV as the unit reference (Part 2 §10).
 
 **Coordinate containment vs coupling filter.** These are two distinct necessary conditions. Coordinate containment (§0.8) governs which forces can reach a particle: a force couples to a particle only if the particle's sector contains that force's sector. The coupling filter governs what happens within that sector: even with support in the sector, the particle's own sector geometry may project the relevant representation to zero. Both must hold for coupling to occur. Neutrinos ($d=5$): coordinates are nested inside $\Xi_4$ (colour sector), but the $S^5$ Hopf projection selects only the colour singlet — they are colour-neutral despite spatial overlap with the colour sector. Electrons ($d=6$): $\chi(\mathbb{CP}^3)=4\neq 3$; colour contributions cancel in the $\mathrm{SU}(4)$ representation regardless of spatial overlap with $\Xi_4$.
 
@@ -491,7 +491,7 @@ For the $d=6$ lepton sector ($\mathbb{CP}^3$), the Kähler geometry splits the s
 
 ## 8. Hypercharges from Anomaly Cancellation
 
-With $N_c = 3$ from $\chi(\mathbb{CP}^2)$, and $g_{66} = 1/4$ established from $\mathbb{CP}^3$ complex geometry (Part 2 §9c), all SM hypercharges follow from anomaly cancellation. ✅ Full derivation in §13; result: $Y_Q = 1/6$, $Y_L = -1/2 = -\sqrt{g_{66}}$, $Q_u = 2/3$, $Q_d = -1/3$. Fractional charges are not inputs — they follow from three colours and the composite coupling $g_{66}=1/n_s$.
+With $N_c = 3$ from $\chi(\mathbb{CP}^2)$, and $g_{66} = 1/4$ established from $\mathbb{CP}^3$ complex geometry (Part 2 §9c), all SM hypercharges follow from anomaly cancellation. ✅ Full derivation in §13; result: $Y_Q = 1/6$, $Y_L = -1/2 = -\sqrt{g_{66}}$, $Q_u = 2/3$, $Q_d = -1/3$. Fractional charges are not inputs — they follow from three colours and the coupling $g_{66}=1/n_s$.
 
 **Note on derivation order.** The anomaly cancellation route works from $d=4$ geometry upward: $\chi(\mathbb{CP}^2) = 3$ gives $N_c = 3$, then $\mathbb{CP}^3$ complex geometry ($\chi(\mathbb{CP}^3) = n_s$) gives $g_{66} = 1/4$, and $N_c = 3$ together with $Y_L = -\sqrt{g_{66}} = -1/2$ force the remaining hypercharge assignments via $\mathrm{SU}(2)^2U(1)$ anomaly cancellation. Anomaly cancellation is the mechanism that propagates the geometric inputs into a complete hypercharge table — it is not the source of $g_{66}$.
 
@@ -577,7 +577,7 @@ Equivalently, from the Jacobi boundary identity $n_W + S(2,3) = n_s\times S(n_s,
 
 $$\sin^2\theta_C = \frac{S(2,3)}{S(2,3) + n_W} = \frac{4}{80} = \frac{1}{20}$$
 
-This is a theorem of the composite $n_s=4$ and the Vandermonde structure, determined entirely by the combinatorial fixed point.
+This is a theorem of $n_s=4$ and the Vandermonde structure, determined entirely by the combinatorial fixed point.
 
 ### Curvature Correction from the Mediating Sector
 

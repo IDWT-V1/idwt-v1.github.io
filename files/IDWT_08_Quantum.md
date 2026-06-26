@@ -275,26 +275,26 @@ $$m_u = m_{\rm scale,3}\times\sqrt{g_{44}/g_{33}},\qquad \frac{m_u}{m_d} = \sqrt
 
 **Meaning.** The first frequency in the $d=4$ sector and the first frequency in the $d=3$ sector differ by precisely the geometric mean of their coupling constants. The ratio
 $$\sqrt{g_{44}/g_{33}} = \sqrt{\frac{2N_c}{(N_c+1)(2N_c+1)}} = \sqrt{\frac{3}{14}}$$
-is $N_c$-determined: it is a direct consequence of $N_c = \chi(\mathbb{CP}^2) = 3 = n_u$, the Euler characteristic of the color sector (T15). The composite $n_s = \chi(\mathbb{CP}^3) = N_c+1 = 4$ is the next Euler characteristic in the chain. The ratio follows algebraically from the coupling formulas with no additional inputs.
+is $N_c$-determined: it is a direct consequence of $N_c = \chi(\mathbb{CP}^2) = 3 = n_u$, the Euler characteristic of the color sector (T15). $n_s = \chi(\mathbb{CP}^3) = N_c+1 = 4$ is the next Euler characteristic in the chain. The ratio follows algebraically from the coupling formulas with no additional inputs.
 
 ---
 
 ### 5.3 Theorem S3 — g22 is a Dirac Multiplicity Product
 
-**Theorem.** The $d=2$ EW self-coupling $g_{22} = 722.5$ equals the product of Dirac eigenvalue multiplicities at the composite level $n_s=4$ across the $d=3$ and $d=4$ sectors, divided by the two-body kernel symmetry factor:
+**Theorem.** The $d=2$ EW self-coupling $g_{22} = 722.5$ equals the product of Dirac eigenvalue multiplicities at the level $n_s=4$ across the $d=3$ and $d=4$ sectors, divided by the two-body kernel symmetry factor:
 
 $$g_{22} = \frac{p^2\times q}{2} = \frac{17^2\times 5}{2} = 722.5$$
 
 where $p$ and $q$ are eigenvalue multiplicities [$p$ replaces $\alpha$ to avoid collision with the fine structure constant; $q$ replaces $\beta$ to avoid collision with the QCD $\beta$-function]:
 
-- **$p = S(n_s,3) - n_u = 20 - 3 = 17$**: the $d=3$ Dirac multiplicity at composite level $n_s=4$ (which is $S(4,3)=20$), less the $n_u=3$ modes already accounted for by the up-sector boundary.
+- **$p = S(n_s,3) - n_u = 20 - 3 = 17$**: the $d=3$ Dirac multiplicity at level $n_s=4$ (which is $S(4,3)=20$), less the $n_u=3$ modes already accounted for by the up-sector boundary.
 - **$q = S(n_u-1, 4) = S(2,4) = 5$**: the $d=4$ Dirac eigenvalue count at level $n_u-1=2$ (modes below the up-quark threshold). Equal to $S(n_u,4)-S(n_u,3)=5$ by the hockey-stick identity.
 
-**Structure.** The two-body kernel $(\xi\cdot\xi')^2$ couples two copies of the $d=3$ current $J$ to one copy of the $d=4$ current. Each $d=3$ insertion contributes $p$ available modes at composite level $n_s=4$, giving $p^2$ for two insertions. The $d=4$ insertion contributes $q$. The kernel is symmetric under exchange of the two $d=3$ currents, giving the $\tfrac{1}{2}$ symmetry factor. Therefore:
+**Structure.** The two-body kernel $(\xi\cdot\xi')^2$ couples two copies of the $d=3$ current $J$ to one copy of the $d=4$ current. Each $d=3$ insertion contributes $p$ available modes at level $n_s=4$, giving $p^2$ for two insertions. The $d=4$ insertion contributes $q$. The kernel is symmetric under exchange of the two $d=3$ currents, giving the $\tfrac{1}{2}$ symmetry factor. Therefore:
 
 $$g_{22} = \tfrac12\times p^2\times q = \tfrac12\times17^2\times5 = 722.5$$
 
-**Consequence.** The W boson mass $m_W = m_{\rm scale,2} \times S(76,2) = 80{,}379$ MeV follows from $m_e$ alone. The entire EW sector — $\sin^2\theta_W$, $G_F$, $g_2$, $v = 246$ GeV, $\Gamma_W$, $\Gamma_Z$ — is determined by counting Dirac eigenvalues on $S^3$ and the $d=4$ sector at composite level $n_s=4$.
+**Consequence.** The W boson mass $m_W = m_{\rm scale,2} \times S(76,2) = 80{,}379$ MeV follows from $m_e$ alone. The entire EW sector — $\sin^2\theta_W$, $G_F$, $g_2$, $v = 246$ GeV, $\Gamma_W$, $\Gamma_Z$ — is determined by counting Dirac eigenvalues on $S^3$ and the $d=4$ sector at level $n_s=4$.
 
 ---
 
@@ -373,7 +373,7 @@ All absolute scales are outputs of the same kernel + unoccupied-mode sums.
 
 ## 7. Cabibbo Angle
 
-See Part 3 §12 for the full derivation: $\sin\theta_C = 1/\sqrt{S(n_s,3)} = 1/\sqrt{20}$, fixed by composite uniqueness and the mode indices. The structural coupling $g_{3,4}(n_s, n_c) = n_\tau = 23$ gives an independent route to the tau index from the same algebra.
+See Part 3 §12 for the full derivation: $\sin\theta_C = 1/\sqrt{S(n_s,3)} = 1/\sqrt{20}$, fixed by the uniqueness of $n_s$ and the mode indices. The structural coupling $g_{3,4}(n_s, n_c) = n_\tau = 23$ gives an independent route to the tau index from the same algebra.
 
 ---
 
@@ -479,7 +479,7 @@ The colour singlet carries no orbital $l=1$ admixture from the contact kernel. O
 
 **Axial coupling $g_A$:**
 
-The ratio of successive $d=3$ mode counts at the composite level $n_s=4$ gives the IDWT prediction:
+The ratio of successive $d=3$ mode counts at the level $n_s=4$ gives the IDWT prediction:
 
 $$g_A = \sqrt{S(n_s{+}1,3)/S(n_s,3)} = \sqrt{35/20} = \sqrt{7/4} = 1.3229 \quad(\text{PDG: }1.2723\pm0.0023,\ {+4.0\%})$$
 
