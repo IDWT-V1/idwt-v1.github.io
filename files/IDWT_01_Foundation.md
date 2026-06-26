@@ -601,9 +601,9 @@ $\zeta_d(1) = d/(d-1)$ and $\zeta_d(0) = -d/2$ are exact for all sectors (Part 9
 
 \***Two length scales — interaction versus intrinsic (Part 4 §3.9a).** The $L_d = \lambda_d^{-1/4}$ tabulated here is the dimensionless sector-localization length (hence "units"); at the *matter/interaction* scale one sector unit $\approx$ 1 fm. This is the contact/binding range that governs hadronic, nuclear and atomic physics — e.g. it reproduces the proton charge radius to 2% (Part 8 §11) and the hydrogen length scales (Part 8 §14). It is **not** the intrinsic size of a single excitation. A single elementary mode is far smaller: its stiffness-bound physical size is $R = \sqrt{N+d/2}\,M^{-1/4}\,G_d^{3/8} \approx 10^{-29}$ m (Part 4 §3.9a), set by gravity through the per-dimension coupling $G_d$. So every elementary particle is pointlike at $\sim10^{-29}$ m, far below any resolved size; the $\sim$fm figures above are the *interaction* scale, and the $\sim$fm size of a hadron is the *composite* extent of its confined quark modes, not a single-mode width.
 
-### 3e-ii. The Particle Map — All Fifteen Modes
+### 3e-ii. The Particle Map — All Members of $\Sigma_{\rm pairs}$
 
-Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector dimension $d$ and mode index $n$, with mass $m(n,d) = S(n,d) \times m_{\rm scale,d}$. The full spectrum:
+Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector dimension $d$ and mode index $n$, with mass $m(n,d) = S(n,d) \times m_{\rm scale,d}$. The full spectrum (14 single-mode pairs + the bottom beat; the photon's tower status is noted below):
 
 | Particle | $d$ | Geometry | Isometry | $n$ | $S(n,d)$ | Mass |
 |----------|---|----------|----------|---|--------|------|
@@ -613,6 +613,7 @@ Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector d
 | Higgs | 2 | $\mathbb{CP}^1$ | $SU(2)$ | 95 | 4,560 | 125.27 GeV |
 | down | 3 | $S^3$ | SO(4) | 1 | 1 | 4.70 MeV |
 | strange | 3 | $S^3$ | SO(4) | 4 | 20 | 94.0 MeV |
+| bottom (beat) | 3 | $S^3$ | SO(4) | beat $k_0=16$ | $\sqrt{S(16,3)S(17,3)}$ | 4181 MeV |
 | up | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 3 | 15 | 2.18 MeV |
 | charm | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 20 | 8,855 | 1285 MeV (bare, +0.93% 🔶) |
 | top | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 72 | 1,215,450 | 176.4 GeV (bare, +2.20% 🔶) |
@@ -623,7 +624,7 @@ Each Standard Model particle is one mode of $\Psi_\infty$, fixed by its sector d
 | muon | 6 | $\mathbb{CP}^3$ | $SU(4)$ | 35 | 3,838,380 | 105.7 MeV |
 | tau | 10 | $\mathbb{CP}^5$ | $SU(6)$ | 23 | 64,512,240 | 1776.84 MeV |
 
-The bottom quark is not in the table: it is not a single (n,d) mode but the geometric-mean beat between $n=16$ and $n=17$ in $d=3$ at the resonance site $k_0 = n_s^2 = 16$, $m_b = \sqrt{S(16,3)\cdot S(17,3)} \times m_{\rm scale,3} \approx 4181$ MeV. It is a stable $d=3$ resonance, not one of the 15 co-fixed-point pairs $\Sigma_{\rm pairs}$ (§3b, §5).
+The bottom quark is a tower-derived member of $\Sigma_{\rm pairs}$ but does not appear as a single $(n,d)$ row above: it is the geometric-mean beat between $n=16$ and $n=17$ in $d=3$ at the unique triple-coincidence site $k_0 = n_s^2 = 16$ (§3b), giving $m_b = \sqrt{S(16,3)\cdot S(17,3)} \times m_{\rm scale,3} \approx 4181$ MeV. Its beat index $k_0 = 16$ is a named generation-tower output — $k_0 = n_s^2 = n_e + n_u = S(n_s,3) - S(2,3)$ — and as such it is in $\Sigma_{\rm pairs}$, though as a composite beat resonance rather than a single-mode pair.
 
 ---
 
