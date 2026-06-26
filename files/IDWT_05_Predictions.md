@@ -265,7 +265,7 @@ $$g_2 = (2/3)\sqrt{2g_{44}/\pi^2} = 0.65275 \quad (\text{PDG: }0.65270,\ +0.008\
 $$\sqrt{\mathrm{Tr}(D^2)} = 248.3\text{ GeV} \quad (\text{SM }v\approx 246\text{ GeV},\ +0.93\%)$$
 $$1/\alpha\text{ (at }d=2\text{ sector scale }\approx m_W) = 131.8 \quad (\text{PDG }\alpha(m_Z)=1/127.9,\ +3.1\%)$$
 
-$\sqrt{\text{Tr}(D^2)} = 248.3$ GeV is the IDWT-native electroweak scale — the RMS of the mass spectrum. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the $d=2$ sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
+$\sqrt{\text{Tr}(D^2)} = 248.3$ GeV is the IDWT-native electroweak scale — the RMS of the mass spectrum — and is a **self-consistency check** (the IDWT RMS mass scale matches the SM Fermi scale), not an independent prediction (Part 9 T7; cf. +0.93% vs SM $v\approx246$ GeV, or +0.82% vs $(\sqrt{2}\,G_F)^{-1/2}=246.3$ GeV). The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the $d=2$ sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
 
 ---
 
@@ -323,12 +323,13 @@ $\Sigma m_\nu = 60.39$ meV is a concrete, falsifiable prediction within reach of
 
 ## 3c. Deep Predictions
 
-**No hierarchy problem ✅**
+**No hierarchy problem ✅** *(integer factor only; see scope note below)*
 
 $$m_H/m_e = \sqrt{g_{22}/g_{66}}\times S(95,2) = 53.76\times 4560 = 245\,140 \quad (\text{exact integer-determined ratio})$$
 
 In IDWT, $m_H$ is a confinement mass from the sector spectrum, not a Higgs VEV.
 Radiative corrections cannot shift integer mode indices $n$ (Mode Index Stability Theorem, Part 8 §3a). The hierarchy is fixed by combinatorics, not cancellations.
+**Scope:** the theorem proves that the integer factor $S(n,d)$ is technically natural (topological invariant, preserved under any bounded perturbation). The stability of the mass scale $m_{\rm scale,d}$ under quantum corrections is a separate, open question (Part 8 §3a Remark; 🔶).
 Unit references: IDWT = **1** ($m_e$, to set the MeV scale) vs SM = 19 free parameters.
 
 **Higgs vacuum stability**
@@ -528,7 +529,7 @@ These predictions have specific numerical values from mode indices and sector ge
 
 These follow from the IDWT framework geometry and differ qualitatively from Standard Model assumptions. They are not numerical point predictions but predict the absence of certain phenomena or physical mechanisms.
 
-**C1 — No hierarchy problem. ✅** The ratio $m_H/m_e = \sqrt{g_{22}/g_{66}} \times S(95,2) = 245{,}140$ is determined by integer mode indices $n_H = 95$ and $n_e = 13$. The Mode Index Stability Theorem (Part 8 §3a) proves that radiative corrections cannot shift integer mode indices: $n$ is the rank of an eigenvalue in a purely discrete spectrum, a topological invariant preserved under any bounded perturbation. The Higgs mass is technically natural without supersymmetry — not because corrections cancel, but because the integer $S(95,2) = 4560$ cannot receive a fractional additive renormalization. The hierarchy problem does not arise; it presupposes that mass is an action coefficient, which it is not in IDWT. If supersymmetric partners, WIMPs, or other hierarchy-solving particles are discovered, they are absent from the IDWT closed spectrum (F3, F6) — their existence would simultaneously require reopening the spectrum and explaining why the Uniqueness Theorem is wrong.
+**C1 — No hierarchy problem. ✅** *(integer factor only — see scope note)* The ratio $m_H/m_e = \sqrt{g_{22}/g_{66}} \times S(95,2) = 245{,}140$ is determined by integer mode indices $n_H = 95$ and $n_e = 13$. The Mode Index Stability Theorem (Part 8 §3a) proves that radiative corrections cannot shift integer mode indices: $n$ is the rank of an eigenvalue in a purely discrete spectrum, a topological invariant preserved under any bounded perturbation. The Higgs mass is technically natural without supersymmetry — not because corrections cancel, but because the integer $S(95,2) = 4560$ cannot receive a fractional additive renormalization. The hierarchy problem does not arise; it presupposes that mass is an action coefficient, which it is not in IDWT. **Scope:** the ✅ applies to the integer factor $S(n,d)$; the stability of the mass scale $m_{\rm scale,d}$ under quantum corrections is a separate, open question (Part 8 §3a Remark; 🔶). If supersymmetric partners, WIMPs, or other hierarchy-solving particles are discovered, they are absent from the IDWT closed spectrum (F3, F6) — their existence would simultaneously require reopening the spectrum and explaining why the Uniqueness Theorem is wrong.
 
 **C2 — Higgs is a confinement mode, not a condensate.** In IDWT the Higgs is mode $n=95$ of the $d=2$ sector potential $V_2(r) = \lambda_2 r^2$. There is no quartic scalar self-coupling, no Higgs VEV, no spontaneous symmetry breaking, and no vacuum metastability from RG running of λ_H. If vacuum instability is established at high confidence — the electroweak vacuum confirmed metastable with a cosmologically short lifetime — this contradicts the IDWT Higgs interpretation, since there is no λ_H to run negative.
 

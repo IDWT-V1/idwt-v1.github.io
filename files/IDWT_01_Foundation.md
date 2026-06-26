@@ -896,7 +896,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Spin-½ of all fermions | Dirac operator on $M_\infty$; spinor bundle of $\Psi_\infty$ (Part 8 §2) | ✅ |
 | CKM Cabibbo angle | $\sin\theta_C = (1+1/240)/\sqrt{S(n_s,3)} = 0.22454$ — seed + $\mathbb{CP}^1$ sector curvature correction | ✅ |
 | Neutrino oscillations | $d=5$ sector, normal ordering | ✅ |
-| Leptonic CP phase δ_CP | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, J = −0.00981 via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^5) - c_1(\mathbb{CP}^3) = -2$ (T8 🔶, Part 10) | 🔶 |
+| Leptonic CP phase δ_CP | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, J = −0.00981 via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^3) - c_1(\mathbb{CP}^5) = -2$ (T8 🔶, Part 10) | 🔶 |
 | Dirac neutrinos | $d=5$ has d mod 8=5: Majorana forbidden → 0νββ rate = 0 predicted | ✅ |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (Part 3 §8, §13) | ✅ |
 | Confinement | Colour-neutrality condition $|\vec{N}|=0$ from $\mathbb{CP}^2$ isometry geometry; $\lambda_c$ is an open item; full QCD confinement mechanism (flux tubes, asymptotic freedom) not derived | 🔵 |
