@@ -237,7 +237,7 @@
     <span style="color:#ffdd00">&#9632; \(d=10\) Tau</span>
     <span style="color:#00aaff">&#9632; \(d=2\) Bosons</span>
     <span style="color:rgba(139,156,255,0.5)">&#9135;&#9135; dashed arrow = long-range dependency</span>
-    <span style="color:rgba(0,255,68,0.5)">&#9633; dashed border = no tower connections</span>
+    <span style="color:rgba(0,255,68,0.5)">&#9633; dashed border = off-tower input (no additive predecessor)</span>
   </div>
 
 </section>
@@ -267,7 +267,7 @@
     <dd>The second neutrino mode index: the up quark seed imaged into \(d=4\). \(S(3,4) = \binom{6}{4} = 15\). By binomial symmetry \(\binom{6}{4} = \binom{6}{2}\), this index is also connected to the W boson: \(n_W = S(n_e, 2) - n_{\nu_2} = 91 - 15 = 76\). The neutrino and the W boson share a combinatorial root.</dd>
 
     <dt class="d6">\(n_e = n_{\nu_1} + n_{\text{up}} = 10 + 3 = 13\)</dt>
-    <dd>The electron mode index. The eigenmode selection rule — a lepton mode index equals the corresponding neutrino mode index plus the quark partner mode index — is the <a href="/articles/simplex-number.html">hockey-stick identity</a> \(S(n,d) = S(n,d-1) + S(n-1,d)\) applied at generation 1. The electron is the unique \(d=6\) (\(\mathbb{CP}^3\)) mode consistent with the <a href="/articles/mode-selection.html">sector comb filtration</a> at this stage — a sector excitation of \(\Psi_\infty\) inhabiting six macroscopic spatial dimensions, whose 3D appearance is what a \(d=3\) observer measures of its \(d=6\) sector activity.</dd>
+    <dd>The electron mode index. The eigenmode selection rule — a lepton mode index equals the corresponding neutrino mode index plus the quark partner mode index — here adds the up seed to the first neutrino. Unlike generation 2, this is an additive attachment rather than a <a href="/articles/simplex-number.html">hockey-stick</a> theorem: \(13\) is not itself a simplex value \(S(n,d)\) and \(\{10, 3\}\) are not Pascal-adjacent, so the step is forced by the selection rule but is not the Pascal identity. The electron is the unique \(d=6\) (\(\mathbb{CP}^3\)) mode consistent with the <a href="/articles/mode-selection.html">sector comb filtration</a> at this stage — a sector excitation of \(\Psi_\infty\) inhabiting six macroscopic spatial dimensions, whose 3D appearance is what a \(d=3\) observer measures of its \(d=6\) sector activity.</dd>
 
     <dt class="d4">\(n_{\text{charm}} = S(n_s,\, 3) = S(4,3) = 20\)</dt>
     <dd>The charm quark mode index: the composite \(n_s = 4\) imaged into \(d=3\). \(S(4,3) = \binom{6}{3} = 20\). The charm quark is the second rung of the \(d=4\) (\(\mathbb{CP}^2\)) tower, selected by the <a href="/articles/mode-selection.html">sector comb</a> at the second comb step. Its index is forced by the same composite that defines the strange quark.</dd>
@@ -331,14 +331,14 @@
       </tbody>
     </table>
   </div>
-  <p class="note">The top index is a product form, \(N_c n_s N_f\) — an off-tower input with open origin. The bottom quark (\(d=3\)) has beat index \(k_0 = n_s^2 = 16\) (the Gegenbauer-critical endpoint of the \(d=3\) sector); its mass is \(\sqrt{S(16,3)\times S(17,3)}\times m_{\text{scale},3}\). Neither is an additive-tower output, and neither feeds into anything else in the tower — they appear in the diagram without connections.</p>
+  <p class="note">The top index is a product form, \(N_c n_s N_f\) — an off-tower input with open origin. The bottom quark (\(d=3\)) has beat index \(k_0 = n_s^2 = 16\) (the Gegenbauer-critical endpoint of the \(d=3\) sector); its mass is \(\sqrt{S(16,3)\times S(17,3)}\times m_{\text{scale},3}\). Neither is an additive-tower output. The bottom beat feeds nothing else; the top seeds the weak-boson chain (\(n_W = n_{\text{top}} + 5 - 1\)), so in the diagram it has an outgoing arrow but no incoming one.</p>
 
 </section>
 <section>
 
   <h2>The structure of the tower</h2>
   <div class="prose">
-    <p>The tower is not a list of coincidences. Every additive step is a consequence of either the <a href="/articles/simplex-number.html">hockey-stick identity</a> or the Vandermonde coupling rule, applied to the indices already established. The derivation is one-directional: once the two seeds \(n_d=1\) and \(n_u=3\) are fixed, every additive entry is forced — including the composite \(n_s = n_d + n_u = 4\). The exceptions are the two product-form quark indices: the top (\(N_c n_s N_f = 72\), an off-tower input of open origin) and the bottom (a geometric-mean beat). These are not additive-tower outputs, and each carries its own open question.</p>
+    <p>The tower is not a list of coincidences, but it is not a single rule either. The simplex backbone — \(n_{\nu_1}, n_{\nu_2}, n_{\text{charm}}, n_\mu\) — are <a href="/articles/simplex-number.html">hockey-stick</a> evaluations of the seeds, and the muon sits at a true Pascal node \((S(4,4) = S(4,3) + S(3,4))\), so generation 2 is a combinatorial theorem. The other entries use their own named operations: the composite \(n_s\) is the sum of the two seeds, \(n_{\nu_3}\) is an inclusion–exclusion of two simplex images, the electron and tau attach a seed to an already-established index, and the weak bosons are Vandermonde \(g\)-steps off the top. The derivation is one-directional: once the two seeds \(n_d=1\) and \(n_u=3\) are fixed, every additive entry is forced — including the composite \(n_s = n_d + n_u = 4\). The exceptions are the two product-form quark indices: the top (\(N_c n_s N_f = 72\), an off-tower input of open origin) and the bottom (a geometric-mean beat). These are not additive-tower outputs, and each carries its own open question.</p>
     <p>The tower is also self-consistent in a non-trivial way. The muon equation \(S(4,4) = 35\) is both a step in the tower (generating \(n_\mu\)) and the fixed-point condition that confirms \(n_s = 4\). The tower closes on itself: the equation that confirms the composite is the same equation that uses it.</p>
     <p>A final cross-check: the Higgs mode index satisfies \(n_H = n_u + n_c + n_t = 3 + 20 + 72 = 95\) and simultaneously \(n_H = n_Z + n_{\nu_2} - 1\). The Vandermonde construction and the sum of up-type modes are two descriptions of the same combinatorial fact. The tower is not a sequence of separate results — it is one interlocking structure.</p>
   </div>
@@ -349,7 +349,7 @@
   <h2>Why "generation tower"</h2>
   <div class="prose">
     <p>The name reflects the layered structure: <a href="/articles/three-generations.html">generation 1</a> leptons and neutrinos are built from the up quark seed; generation 2 from the strange quark seed imaged through the Pascal recursion; generation 3 by closing the inclusion-exclusion mode back onto the ground state. Each generation sits above the one before it, and no generation can be constructed without first constructing the ones below. The tower grows upward from the two seeds, and the particle spectrum is what you find at the top.</p>
-    <p>A correction once named for this structure — the "Generation Tower Correction," a small multiplicative factor \((1-\varepsilon)^k\) applied to the heavier up-type quark masses — has been removed. Only its scale \(\varepsilon = 1/(280\sqrt{7})\) was derived; the per-quark exponent \(k\) was a fit, and a fitted correction is not a derivation. The up-type quark masses are now quoted bare, and charm and top overshoot PDG as open residues (see <a href="/articles/sector-4.html">Sector 4</a>).</p>
+    <p>The heavier up-type quark masses carry one physical correction: the colour-field (confinement) binding energy. A coloured quark is never free, so part of its bare harmonic-count mass \(m(n,d) = m_{\text{scale},d}\,S(n,d)\) stays locked in the colour field and the realised mass is lower, \(m_{\text{phys}} = m(n,d)\,(1 - x_e\langle k\rangle)\). This applies only in the two colour sectors (\(d=3\) and \(d=4\)), with \(\langle k\rangle = d(n-1)/(d+1)\) the degeneracy-weighted mean excitation level and \(x_e = 3/(16 N_b)\) the per-state softening of a finite confining well; the \(d=4\) well occupation \(N_b\) is fixed by the colour energy law, not fitted. With it, charm and top land within \(\pm1\sigma\) of PDG. (An earlier multiplicative \((1-\varepsilon)^k\) factor with a fitted exponent was discarded — a fit is not a derivation — and replaced by this derived correction. See <a href="/articles/sector-4.html">Sector 4</a>.)</p>
   </div>
 
 </section>
