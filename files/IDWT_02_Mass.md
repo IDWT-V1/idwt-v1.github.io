@@ -654,7 +654,7 @@ $S(1,3) = 1$ makes the normalization factor trivially 1 for $d=3$.
 **$d=4$ (up-type quarks):** $n_{\min}=n_u=3$ (postulate; see Part 2 §5 note), $S(3,4)=15$.
 
 $$m_{\rm scale,4} = \frac{m_e\sqrt{g_{44}/g_{66}}}{S(3,4)} = \frac{0.511\times\sqrt{12/(\sqrt{7}\times0.25)}}{15} = 0.1451\ \text{MeV}$$
-The lightest occupied mode is the up quark: $m_u = m_{\rm scale,4} \times S(3,4) = m_e \times \sqrt{g_{44}/g_{66}} = 2.177$ MeV. The fixed-point requires $m_u^2 = (g_{44}/g_{66}) \times m_e^2$ — i.e. the up quark mass satisfies the same fixed-point equation that the down quark satisfies, with $g_{44}$ in place of $g_{33}$. The factor $/S(3,4)$ = $/15$ is the fixed-point condition applied consistently to a sector whose lowest occupied mode is not $n=1$.
+The lightest occupied mode is the up quark: $m_u = m_{\rm scale,4} \times S(3,4) = m_e \times \sqrt{g_{44}/g_{66}} = 2.177$ MeV. The fixed-point requires $m_u^2 = (g_{44}/g_{66}) \times m_e^2$ — i.e. the up quark mass satisfies the same fixed-point equation that the down quark satisfies, with $g_{44}$ in place of $g_{33}$. The factor $/S(3,4) = /15$ is the fixed-point condition applied consistently to a sector whose lowest occupied mode is not $n=1$.
 
 **Unified check:** $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{(12/\sqrt{7}) \div 8\sqrt{7}} = \sqrt{3/14} = 0.4629$. PDG: 0.462 ± ~0.10. Error: +0.20%.
 

@@ -141,10 +141,10 @@ Define $g(d, n) = d + n - 1$, the row index of mode $(n,d)$ in the Pascal triang
 
 **GENERAL additive predecessor: cyclic graph, no source nodes.**
 Under any $a+b-c=n$ ($a,b \in NS$, $c \in \{0,1,3,4\}$), ALL $15$ NS particles have predecessors in NS. Specifically:
-- Photon ($0,2$): ($1,3$)+($3,4$)−$4$ = $0$ — predecessors: down and up.
-- Down ($1,3$): ($0,2$)+($4,3$)−$3$ = $1$ — predecessors: photon and strange.
-- Up ($3,4$): ($0,2$)+($4,3$)−$1$ = $3$ — predecessors: photon and strange.
-- Strange ($4,3$): ($1,3$)+($3,4$)−$0$ = $4$ — predecessors: down and up.
+- Photon ($0,2$): $(1,3)+(3,4)-4 = 0$ — predecessors: down and up.
+- Down ($1,3$): $(0,2)+(4,3)-3 = 1$ — predecessors: photon and strange.
+- Up ($3,4$): $(0,2)+(4,3)-1 = 3$ — predecessors: photon and strange.
+- Strange ($4,3$): $(1,3)+(3,4)-0 = 4$ — predecessors: down and up.
 
 The L-particles form a cycle: photon $\leftrightarrow$ {down,up}; strange $\leftrightarrow$ {down,up}. There are **no source nodes** under the general relation. The original §13b claim "seeds have no predecessors" was a verification gap: Test $5$ hardcoded {($1,3$),($4,3$)} as seeds and skipped computing their predecessors.
 

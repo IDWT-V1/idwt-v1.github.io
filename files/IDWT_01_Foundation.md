@@ -317,7 +317,7 @@ These sector dimensions are not chosen. They are the unique sequence produced by
 
 $d=6$ arises as $\mathbb{CP}^3$, the base space of the next complex Hopf fibration $S^1\to S^7\to\mathbb{CP}^3$. $\mathbb{CP}^3$ has real dimension 6. $d=7$ (the total space $S^7$) carries no matter, for two consistent reasons: (i) geometrically, $S^7$ is the total space of the quaternionic Hopf fibration $S^3\to S^7\to S^4$ and is fully accounted for by the $d=4$ and $d=3$ sectors already present; (ii) by the deposit level-count, $d=7$ is not a corner of the $\mathbb{C}^2\times\mathbb{C}^3$ deposit grid whose six corners are exactly $D$ (Part 9 T3 Rule A; `idwt.py` STEP 100), so no matter mode is sited there. A matter-empty sector is inert — like every inactive dimension of $M_\infty$, it contributes nothing observable (Part 3) — so there is nothing further to settle about $d=7$.
 
-$d=10$ arises as $\mathbb{CP}^5$ = $\mathrm{SU}(6)/\mathrm{U}(5)$, the next step in the complex projective chain beyond $\mathbb{CP}^3$. Its sector dimension $d=10$ is fixed by the Sector Set Theorem (§3a) — $d=10 = 2(N_f-1)$ where $N_f = n_{\rm top}/(N_c \times n_s) = 6$ — and confirmed independently by the Gegenbauer criticality condition (§3b), which shows that $b_{k_0}(d) = 1/2$ is achieved uniquely at $d=10$.
+$d=10$ arises as $\mathbb{CP}^5 = \mathrm{SU}(6)/\mathrm{U}(5)$, the next step in the complex projective chain beyond $\mathbb{CP}^3$. Its sector dimension $d=10$ is fixed by the Sector Set Theorem (§3a) — $d=10 = 2(N_f-1)$ where $N_f = n_{\rm top}/(N_c \times n_s) = 6$ — and confirmed independently by the Gegenbauer criticality condition (§3b), which shows that $b_{k_0}(d) = 1/2$ is achieved uniquely at $d=10$.
 
 The sequence terminates at $d=10$ because any $d > 10$ puts the resonance site $k_0 = n_s^2$ in the evanescent (subcritical) regime — stable eigenmodes cannot form.
 
@@ -403,7 +403,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 
 #### $d = 2$ — Electroweak Sector
 
-**Geometry.** $\mathbb{CP}^1$ = $S^2$ (globally); $S^3$ Hopf fibration over $S^2$ with $U(1)$ fiber. Hopf fiber phase → electromagnetic potential $A_\mu = \partial_\mu\theta$, curvature $\to F_{\mu\nu}$. $SU(2)_L$ acts on the base $\mathbb{CP}^1$.
+**Geometry.** $\mathbb{CP}^1 = S^2$ (globally); $S^3$ Hopf fibration over $S^2$ with $U(1)$ fiber. Hopf fiber phase → electromagnetic potential $A_\mu = \partial_\mu\theta$, curvature $\to F_{\mu\nu}$. $SU(2)_L$ acts on the base $\mathbb{CP}^1$.
 
 | Parameter | Value |
 |---|---|
@@ -560,7 +560,7 @@ Note: $S(n,6) = n(n+1)(n+2)(n+3)(n+4)(n+5)/720$. Ratio $m_\mu/m_e = S(35,6)/S(13
 
 #### $d = 10$ — Tau Sector
 
-**Geometry.** $\mathbb{CP}^5$ = $\mathrm{SU}(6)/\mathrm{U}(5)$; local symmetry $\mathrm{U}(5)$. $V_{10}(r)$ sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton coupling.
+**Geometry.** $\mathbb{CP}^5 = \mathrm{SU}(6)/\mathrm{U}(5)$; local symmetry $\mathrm{U}(5)$. $V_{10}(r)$ sits at the Gegenbauer critical endpoint ($b_{k_0}=1/2$), making the sector phase delay exact. Shares coupling $g=1/n_s$ and mass scale with $d=6$ — unified lepton coupling.
 
 | Parameter | Value |
 |---|---|

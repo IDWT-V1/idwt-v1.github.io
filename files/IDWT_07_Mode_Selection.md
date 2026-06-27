@@ -209,7 +209,7 @@ The $n=2$ and $n=3$ $d=3$ modes are not co-fixed-points. They are not stable had
 | 13 | 18,564 | 0.511 | **Occupied (e)** |
 | 35 | 3,838,380 | 105.657 | **Occupied (μ)** |
 
-**$d=10$ (Tau sector)** — $m_{\rm scale,10}$ = $m_{\rm scale,6}$:
+**$d=10$ (Tau sector)** — $m_{\rm scale,10} = m_{\rm scale,6}$:
 
 | $n$ | $S(n,10)$ | Mass (MeV) | Status |
 |---|---------|------------|--------|
