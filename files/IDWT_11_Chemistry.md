@@ -26,7 +26,7 @@ Hybridisation in IDWT is a basis choice, not a mixing process: the $SU(4)$ isome
 
 $$V = \operatorname{span}\{|s\rangle,|p_x\rangle,|p_y\rangle,|p_z\rangle\} \qquad (\text{four orbit states})$$
 
-Every state in V is a full 6D orbit state of the $d=6$ electron — the labels s, p refer to its observable harmonics, not to a 3D object. The L=1 level also contains one $\mathbb{CP}^3$-hidden state (the $z_4$ direction, Part 8 §14.3); it is excluded from V not by neglect but by Lemma 2: the nuclear potential that shapes the bonding environment is a $d=3$ structure, and no $d=3$ operator connects the hidden state to the observable ones, so it takes no part in selecting bond directions.
+Every state in $V$ is a full 6D orbit state of the $d=6$ electron — the labels s, p refer to its observable harmonics, not to a 3D object. The $L=1$ level also contains one $\mathbb{CP}^3$-hidden state (the $z_4$ direction, Part 8 §14.3); it is excluded from $V$ not by neglect but by Lemma 2: the nuclear potential that shapes the bonding environment is a $d=3$ structure, and no $d=3$ operator connects the hidden state to the observable ones, so it takes no part in selecting bond directions.
 
 A hybrid orbit state along the unit direction $\mathbf{n}_i \in \mathbb{R}^3$ is
 
@@ -58,7 +58,7 @@ The identity is pure linear algebra — it holds for any states of this form, wi
 
 The sp$^3$ entry is the tetrahedral angle arccos(−1/3) = 109.47° of Part 1 §3d, obtained here from the orbit state space with no input beyond P1–P3.
 
-⭐ **Capacity remark.** V holds four mutually orthogonal states in all, so a center bonding through $L \leq 1$ orbit states supports at most four σ bonds. Larger coordination requires $L=2$ orbit states (the d-shell), which enlarges the available state set; the six-coordinate case is worked out in §1.6.
+⭐ **Capacity remark.** $V$ holds four mutually orthogonal states in all, so a center bonding through $L \leq 1$ orbit states supports at most four σ bonds. Larger coordination requires $L=2$ orbit states (the d-shell), which enlarges the available state set; the six-coordinate case is worked out in §1.6.
 
 ### 1.3 Numerical verification
 
@@ -119,7 +119,7 @@ The directions this Part is intended to develop, all currently open:
 
 ### 3.1 The Hamiltonian
 
-The $d=3$ marginal Hamiltonian for two electrons at a Z=2 nucleus is established in Part 8 §16.1:
+The $d=3$ marginal Hamiltonian for two electrons at a $Z=2$ nucleus is established in Part 8 §16.1:
 
 $$H = \sum_{i=1,2}\!\left[-\frac{\nabla_i^2}{2m_e} - \frac{Z\alpha}{r_i}\right] + \frac{\alpha}{r_{12}}.$$
 
@@ -216,9 +216,9 @@ which increases as the bond angle closes with $\delta$. Computed at the observed
 
 ## §5. Aromatic Ring Current: Closed-Shell Scaling 🔶
 
-Part 8 §17a establishes the benzene π system as one 6D orbit coupling to all six centers, with the 4n+2 closed-shell rule as a structural consequence, and names the ring current as its direct experimental signature. This section adds the leading quantitative scaling, in the rigid-ring model.
+Part 8 §17a establishes the benzene π system as one 6D orbit coupling to all six centers, with the $4n+2$ closed-shell rule as a structural consequence, and names the ring current as its direct experimental signature. This section adds the leading quantitative scaling, in the rigid-ring model.
 
-⭐ **Within the model.** The angular modes of the ring orbit on a ring of radius R, threaded by applied flux φ, have energies $\varepsilon_m = (m - \varphi/\varphi_0)^2 E_R$ with $E_R = \hbar^2/(2m_e R^2)$; the level current is $I_m = -\partial\varepsilon_m/\partial\varphi$, linear in $(m - \varphi/\varphi_0)$. For a closed shell — $m = -n \ldots n$, doubly occupied — the m-linear parts cancel in the sum and the field-induced parts add over all 2(2n+1) electrons:
+⭐ **Within the model.** The angular modes of the ring orbit on a ring of radius $R$, threaded by applied flux $\varphi$, have energies $\varepsilon_m = (m - \varphi/\varphi_0)^2 E_R$ with $E_R = \hbar^2/(2m_e R^2)$; the level current is $I_m = -\partial\varepsilon_m/\partial\varphi$, linear in $(m - \varphi/\varphi_0)$. For a closed shell — $m = -n \ldots n$, doubly occupied — the $m$-linear parts cancel in the sum and the field-induced parts add over all $2(2n+1)$ electrons:
 
 $$I_{\rm induced} \propto 2(2n+1) = N_\pi,$$
 
@@ -237,7 +237,7 @@ where $B_z(R, \rho)$ is the $\hat{z}$-component of the unit-current field from t
 - **$\rho > R$ (outer proton):** $B_z < 0 \to \sigma_{\rm ring} < 0$ → deshielded (downfield). ✓
 - **$\rho < R$ (inner proton):** $B_z > 0 \to \sigma_{\rm ring} > 0$ → shielded (upfield). ✓
 
-For [18]annulene (N_π = 18, R = 3.98 Å, outer and inner proton each 1.09 Å from the ring edge), the rigid-ring calculation (STEP 50) gives:
+For [18]annulene ($N_\pi = 18$, $R = 3.98$ Å, outer and inner proton each 1.09 Å from the ring edge), the rigid-ring calculation (STEP 50) gives:
 
 $$\begin{aligned}
 \sigma_{\rm outer} &= -44~\text{ppm} \quad (\text{observed: }{-}9.3~\text{ppm, deshielded})\\

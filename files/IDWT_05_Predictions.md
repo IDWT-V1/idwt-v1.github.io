@@ -518,10 +518,10 @@ These predictions have specific numerical values from mode indices and sector ge
 | **F16** | Cabibbo angle $\sin\theta_C$ | 0.22454 (PDG +0.09σ) | $\sin^2\theta_C = 1/S(n_s,3)$ + $\mathbb{CP}^1$ sector curvature correction | Outside 0.2237–0.2254 at > 3σ |
 | **F17** | $\rho$ parameter at tree level | $\rho = 1.00000$ exactly | $m_W^2/(m_Z^2 \cos^2\theta_W)$ from mode indices 76, 81 | $\rho \neq 1$ at tree level beyond radiative corrections (~0.4%) |
 | **F18** | Number of light neutrino species | $N_\nu = 3$ exactly | Three $d=5$ modes; no sterile neutrinos; closed spectrum | Z invisible width implying $N_\nu \neq 3$ |
-| **F19** | 0νββ effective Majorana mass | $m_{\beta\beta} = 0$ at all orders | $d=5$ Clifford structure: no C on $S^5$ $\to$ no Majorana operator at any order (see F1) | Any detection $m_{\beta\beta} > 0$ with > 3σ significance |
+| **F19** | 0νββ effective Majorana mass | $m_{\beta\beta} = 0$ at all orders | $d=5$ Clifford structure: no $C$ on $S^5$ $\to$ no Majorana operator at any order (see F1) | Any detection $m_{\beta\beta} > 0$ with > 3σ significance |
 | **F20** | Beta-decay effective neutrino mass | $m_\beta \approx 8.77$ meV | PMNS mixing + neutrino mass spectrum from mode indices | $m_\beta$ measured $> 50$ meV (KATRIN 5-year sensitivity $\sim 200$ meV; Project 8 targets $\sim 40$ meV) |
 | **F21** | W/Z mass ratio | $m_W/m_Z = \sqrt{S(76,2)/S(81,2)} = 0.93896$ | Mode indices 76, 81 | Measured ratio outside 0.9386–0.9394 |
-| **F22** | Leptonic CP phase $\delta_{CP}$ | 197.11° (PDG NH best fit: $197^\circ \pm 27^\circ$, +0.05°; J = −0.00981) | $\delta_{CP} = \pi + 2\theta_{13}$; APS spectral flow $\Delta c_1 = -2$ (T8 🔶, Part 10 §4) | $\delta_{CP}$ outside 185°–210° at 5σ, or $\delta$–$\theta_{13}$ correlation violated by > 5° at fixed $\theta_{13}$ |
+| **F22** | Leptonic CP phase $\delta_{CP}$ | 197.11° (PDG NH best fit: $197^\circ \pm 27^\circ$, +0.05°; $J = -0.00981$) | $\delta_{CP} = \pi + 2\theta_{13}$; APS spectral flow $\Delta c_1 = -2$ (T8 🔶, Part 10 §4) | $\delta_{CP}$ outside 185°–210° at 5σ, or $\delta$–$\theta_{13}$ correlation violated by > 5° at fixed $\theta_{13}$ |
 
 ---
 

@@ -519,7 +519,7 @@ where $P_L$ is the small-component probability and $\tfrac{1}{3}$ is the angular
 
 $$V_0 = \frac{\kappa^2}{\Delta} = \frac{N_c\Lambda^2}{N_c\Lambda} = \Lambda \qquad \text{(exact in large-}N_c\text{)}$$
 
-This also fixes the colour energy scale: $\lambda_c = N_c\,\Lambda/2 = N_c^2\, f_\pi/2 \approx 423$ MeV. The O(1) coefficients in $\kappa$ and $\Delta$ are fixed by the leading large-$N_c$ structure; exact kernel matrix elements require identifying the collective $d=3 \oplus d=4$ mode of the colour-singlet baryon — the same open problem as §5.3. (`files/idwt.py` STEP 63.)
+This also fixes the colour energy scale: $\lambda_c = N_c\,\Lambda/2 = N_c^2\, f_\pi/2 \approx 423$ MeV. The $O(1)$ coefficients in $\kappa$ and $\Delta$ are fixed by the leading large-$N_c$ structure; exact kernel matrix elements require identifying the collective $d=3 \oplus d=4$ mode of the colour-singlet baryon — the same open problem as §5.3. (`files/idwt.py` STEP 63.)
 
 *Spin-tensor channel. 🔶* The deuteron has spin-1 ($^3S_1$–$^3D_1$ channel); this section checks only the central s-wave. The tensor component of the N–N kernel and the resulting $^3S_1$–$^3D_1$ mixing are spin observables, and the spin-independent contact kernel cannot generate them (`files/idwt.py` STEP 94); they are not reachable from the scalar collective mode. They live in the Dirac spin-orbit structure of the sector — the same open computation as the nucleon moments and $g_A$ (§10). (`files/idwt.py` STEP 61–62.)
 
@@ -537,7 +537,7 @@ The same kernel that selects {1,4}, locks the bottom beat, confines colour, and 
 
 ### 14.1 Setup
 
-The proton is a $d=3$/$d=4$ composite with total charge Q=+1 (from anomaly cancellation, Part 3 §13). At atomic energy scales its internal structure is unresolved — it acts as a static point charge. The electron is a $d=6$ sector resonance with Q=−1 (Part 3 §15–16), executing a single orbit in its sector space $\Xi_6 = \mathbb{CP}^3$.
+The proton is a $d=3$/$d=4$ composite with total charge $Q=+1$ (from anomaly cancellation, Part 3 §13). At atomic energy scales its internal structure is unresolved — it acts as a static point charge. The electron is a $d=6$ sector resonance with $Q=-1$ (Part 3 §15–16), executing a single orbit in its sector space $\Xi_6 = \mathbb{CP}^3$.
 
 The electron-photon coupling is established via the covariant derivative $\nabla_\mu = \partial_\mu - iA_\mu\hat{Q}$ (Part 3 §16.1), where $A_\mu$ is the $d=2$ zero-mode (photon) field. The fine structure constant $\alpha = e^2/(4\pi)$ is derived in Part 3 §16.
 
@@ -583,7 +583,7 @@ Under the subgroup chain $SU(4) \supset SU(3) \supset SO(3)$, these states split
 | $\xi$-states | $L(L+1)(L+2)/6$ | States with $z_4$ factors — angular momentum in the $\mathbb{CP}^3$ fibre direction |
 | Lower-j | $L(L-1)/2$ | Non-harmonic polynomials in $(z_1, z_2, z_3)$; already counted in lower shells |
 
-**Counting Theorem. ⭐** The observable count 2L+1 is a pure combinatorial identity — the harmonic component of $\mathrm{Sym}^L(\mathbb{C}^4)$ under $SO(3)$. It requires no dynamics.
+**Counting Theorem. ⭐** The observable count $2L+1$ is a pure combinatorial identity — the harmonic component of $\mathrm{Sym}^L(\mathbb{C}^4)$ under $SO(3)$. It requires no dynamics.
 
 **Lemma 2 — $\xi$-Orthogonality. ✅** For any 3D operator $O(r,\nabla_r)$ and any $\xi$-state $|\xi\rangle$ carrying $z_4$-direction angular momentum:
 
@@ -592,7 +592,7 @@ $$\langle\xi|O|\text{obs}\rangle = 0$$
 The $z_4$ factor integrates to zero over the $\mathbb{CP}^3$ fibre by spherical harmonic orthogonality. This single result derives, as structural consequences with no additional input:
 
 - All EM selection rules at every multipole order (E1, E2, M1, M2, …)
-- Zeeman splitting: exactly 2L+1 energy levels per shell, no hidden-state admixture
+- Zeeman splitting: exactly $2L+1$ energy levels per shell, no hidden-state admixture
 - Stark selection rules: $\Delta L = \pm 1$ exactly
 - Fine structure: standard Dirac corrections unmodified by sector geometry
 - Hyperfine structure: standard result unmodified
@@ -767,7 +767,7 @@ The equilibrium geometry $R_{\text{eq}}$ and full 6D character of the bond orbit
 
 **Opens:**
 - **Heteronuclear bonds and bond angles** (HF, CO, $H_2O$): same Coulomb framework, nuclei with $Z \neq Z'$. Bond polarity follows from asymmetric nuclear potentials selecting asymmetric angular momentum configurations. Bond angles (H–O–H = 104.5°, H–N–H = 107°, etc.) are not set by VSEPR repulsion — they are the 3D projections of which 6D angular momentum states are occupied: bonding states project toward nuclei, lone-pair states project away, and the angle between bonding projections is determined by the angular momentum structure of all occupied states together. This is derived from the 6D orbit picture; the detailed calculation is open. 🔶
-- **π bonds and aromaticity**: molecular orbits built from the $L=1$ ($p$) states of the $SO(3)$ chain. Benzene's ring orbit is a single 6D orbit coupling to all six nuclear centers simultaneously — not a delocalized superposition of local orbitals, but one orbit that naturally goes around the ring (see §17a). Hückel's rule (4n+2 closed shells) is the condition for closed angular momentum shells of the ring orbit.
+- **π bonds and aromaticity**: molecular orbits built from the $L=1$ ($p$) states of the $SO(3)$ chain. Benzene's ring orbit is a single 6D orbit coupling to all six nuclear centers simultaneously — not a delocalized superposition of local orbitals, but one orbit that naturally goes around the ring (see §17a). Hückel's rule ($4n+2$ closed shells) is the condition for closed angular momentum shells of the ring orbit.
 - **Van der Waals forces**: second-order dipole-dipole correlation between charge-neutral molecules. In IDWT: second order in the $d=2$ $U(1)$ self-coupling between two neutral $d=6$ systems — the same vertex as Coulomb (§14), correlating charge-density fluctuations rather than exchanging a quantum — giving an attractive potential $\sim -C_6/R^6$. The $R^{-6}$ power follows from the two dipole-dipole factors and dipole selection rules — see §17b. The $C_6$ coefficient is open.
 - **Woodward–Hoffmann rules**: thermal pericyclic reactions conserve hidden-sector angular momentum ($\Delta L=0$); photochemical reactions require a photon to supply $\Delta L=1$. The condition $L_{\text{HOMO}_1} \equiv L_{\text{LUMO}_2}$ (mod 2) for thermal allowedness follows from 6D angular momentum conservation across the transition state. This reduces all pericyclic selection rules to one conservation law. Detailed derivation open. 🔶
 - **Molecular spectra**: vibrational and rotational energy levels of $H_2$. The vibrational frequency $\omega_{\rm vib}$ and rotational constant $B_{\rm rot}$ follow from $E(R)$ near its minimum, which is fully determined by the Coulomb Hamiltonian. These are IDWT structural predictions with no new input.
@@ -790,7 +790,7 @@ Benzene has six carbon atoms in a regular hexagon, each contributing one $p_z$ o
 
 **The 6D picture.** The Fourier modes $\psi_k$ are not a superposition of six separate atomic orbitals — they are the angular momentum eigenstates of a single 6D electron orbit that simultaneously couples to all six nuclear centers. An orbit that couples to six potentials arranged in a hexagon is an orbit that goes around the ring. The $k=0$ and $k=\pm 1$ bonding modes correspond to closed angular momentum shells of this ring orbit. The aromatic ring current — a circulating current induced by a perpendicular magnetic field, measurable in NMR as the anomalous chemical shift of aromatic protons — is the direct experimental signature of this: it is exactly what you expect from an electron executing a closed-loop orbit around the ring, not a superposition of Kekulé configurations. Antiaromaticity ($4n$ electrons) is a half-filled angular momentum shell — an orbit that cannot close and distorts to escape the frustrated state.
 
-### 17a.3 4n+2 Rule as Closed $SO(3)$ Shell ✅
+### 17a.3 $4n+2$ Rule as Closed $SO(3)$ Shell ✅
 
 The Hückel rule states that a cyclic π system with $4n+2$ π electrons ($n=0$,1,2,...) is aromatic — anomalously stable. The IDWT reading:
 

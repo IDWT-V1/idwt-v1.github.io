@@ -374,7 +374,7 @@ $$|\chi_0^d(\xi^0)|^2 \equiv |\chi_0^d(0)|^2$$
 
 $$|\chi_0^d(0)|^2 \propto L_d^{-d}$$
 
-This is exact for the Gaussian ground state; corrections for the actual sector potential are O(1) numerical factors.
+This is exact for the Gaussian ground state; corrections for the actual sector potential are $O(1)$ numerical factors.
 
 ### 3.11.2 The Effective Newton's Constant
 
@@ -532,7 +532,7 @@ $$\|\chi_{n,d}\|^2_{\mathbb{R}^d} = \int_{\mathbb{R}^d}|\chi_{n,d}(\xi)|^2\,d\xi
 
 for all $d\geq 1$ and all $n\geq 1$. Compactness of $\Xi_d$ is not required — confinement follows from the harmonic potential growing without bound. $\square$
 
-Numerical verification ($d=3$, $n=1$, l=0): $\chi_0 \propto \exp(-\sqrt{\lambda_3} r^2/2)$; $\int_0^\infty r^2 e^{-2\sqrt{\lambda_3} r^2/2} dr = \int_0^\infty r^2 e^{-\sqrt{4.82}\, r^2} dr = (\sqrt{\pi}/4)(\sqrt{4.82})^{-3/2} < \infty$. ✓
+Numerical verification ($d=3$, $n=1$, $l=0$): $\chi_0 \propto \exp(-\sqrt{\lambda_3} r^2/2)$; $\int_0^\infty r^2 e^{-2\sqrt{\lambda_3} r^2/2} dr = \int_0^\infty r^2 e^{-\sqrt{4.82}\, r^2} dr = (\sqrt{\pi}/4)(\sqrt{4.82})^{-3/2} < \infty$. ✓
 
 **Theorem (Physical mode $\leftrightarrow L^2$).** For macroscopic non-compact $\Xi_d$, a mode $\chi$ is a physical mode — a normalised eigenfunction of $H_d^{\rm harm}$ (i.e. $\chi \in L^2(\mathbb{R}^d)$) — if and only if it is an exponentially localised bound state of the sector potential. Existence as a physical mode is a normalizability condition, independent of whether the mode is visible to a $d=3$ observer.
 

@@ -18,7 +18,7 @@ $$S(n,d) = N_d(n-1) = \#\{\text{eigenvalues of }H_d\text{ at level }k < n,\text{
 
 (proved in Part 8 §3)
 
-Given this single definition, the three applications are different functionals on S:
+Given this single definition, the three applications are different functionals on $S$:
 
 | Role | Functional | Physical meaning |
 |---|---|---|
@@ -227,8 +227,8 @@ Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3
 
 | Seed evaluation | Binary addition | Carries | $v_2$ |
 |---|---|---|---|
-| $S(n_s,3) = S(4,3) = 20 = 4\times5$ | $3+3$ (011+011) | **2** | $v_2(20)=2$ |
-| $S(n_u,4) = S(3,4) = 15 = 3\times5$ | $4+2$ (100+010) | **0** | $v_2(15)=0$ |
+| $S(n_s,3) = S(4,3) = 20 = 4\times5$ | $3+3$ ($011+011$) | **2** | $v_2(20)=2$ |
+| $S(n_u,4) = S(3,4) = 15 = 3\times5$ | $4+2$ ($100+010$) | **0** | $v_2(15)=0$ |
 
 The pair $(n_s=4,\,d=3)$ is the unique pair for which the $d=3$ evaluation has carry-count 2 (divisible by 4 but not 8) while the $d=4$ evaluation has carry-count 0 (odd). In $d=3$, the initial segment $n=1,2,3$ has strictly distinct $v_2$ values $\{0,2,1\}$; $n_s=4$ is the first index where $v_2$ repeats ($v_2(S(4,3))=2 = v_2(S(2,3))$), marking $n_s$ as the boundary of the distinct-valuation segment. This gives a p-adic characterization of $n_s=4$ complementary to the topological route ($\chi(\mathbb{CP}^3)=4$) and the algebraic route ($S(n,4)=35$ unique solution). It also predicts which sector masses are odd: $m_u\propto S(3,4)=15$ (odd), $m_d\propto S(1,3)=1$ (odd), while $m_s\propto S(4,3)=20$ (divisible by 4), and $m_e\propto S(13,6)=18564$ (divisible by 4 since $v_2(18564)=2$).
 
@@ -382,7 +382,7 @@ $$\boxed{m(\text{baryon}) = m_N + (N_c-1)\sum_{\text{replaced}} (m_s - m_{\rm re
 | $\Xi^0$ | uss | $m_N + 2[(m_s-m_u)+(m_s-m_d)] = 1303$ | 1314.9 | −0.9% |
 | $\Xi^-$ | dss | $m_N + 2[(m_s-m_u)+(m_s-m_d)] = 1303$ | 1321.7 | −1.4% |
 
-The $\Sigma$(uds) has identical quark content to the $\Lambda$, so the formula gives the same prediction for both; the 77 MeV $\Sigma$–$\Lambda$ difference is a small same-type residual the formula does not resolve. The $\Omega$(sss, J=3/2) is in the baryon decuplet, outside this formula's scope. Script: `files/idwt.py`.
+The $\Sigma$(uds) has identical quark content to the $\Lambda$, so the formula gives the same prediction for both; the 77 MeV $\Sigma$–$\Lambda$ difference is a small same-type residual the formula does not resolve. The $\Omega$(sss, $J=3/2$) is in the baryon decuplet, outside this formula's scope. Script: `files/idwt.py`.
 
 ---
 
@@ -833,7 +833,7 @@ The residual is at most a few parts in $10^{4}$ in the boson ($d=2$) and charged
 
 This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit, of the kind removed in §11.3. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is identified as colour-confinement binding in §11.9 ($\textbf{🔶}$).
 
-### 11.9 Confinement-binding correction (d=3, d=4) 🔶
+### 11.9 Confinement-binding correction ($d=3$, $d=4$) 🔶
 
 The bare IDWT mass $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-quark harmonic-oscillator count — the mass a quark would carry if it could exist as an isolated asymptotic state. Colour confinement means it cannot: the energy that the free-quark picture assigns to the quark is partly locked in the colour field that confines it. The observed physical mass is therefore lower than the bare count by the energy bound in the colour field. This is not a fitted correction but the energy bookkeeping of colour confinement: the deficit is the confinement binding energy, distributed over the mode's $\langle k\rangle$ occupied levels.
 
@@ -879,7 +879,7 @@ where $n_{\min}(d)$ is the lightest occupied mode in sector $d$. For $d{=}3$ thi
 
 The bare quark residuals are not equal across a sector (d +0.04%, s +0.57%, u +0.77%, c +0.93%, t +2.20%); this growth with the mode index is $n$-structure in $S(n,d)$, not a uniform scale offset (§11.8). It is the signature of colour-field binding: higher modes occupy more of the confining well and surrender more energy to the colour field. The confinement-binding correction above reduces all five quarks to within ±1σ of PDG 2024. (🔶)
 
-The l=0 scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the l=2 tensor part supplies this mode-dependent shift.
+The $l=0$ scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the $l=2$ tensor part supplies this mode-dependent shift.
 
 **$d=6$/$d=10$ kernel symmetry:** $v_6 = v_{10} = 1/2$ exactly. The kernel cannot distinguish the charged lepton sector from the tau sector — both have identical coupling strength. The mass difference between muon and tau arises entirely from different sector geometry ($S(35,6)$ vs $S(23,10)$), not from any coupling difference. This is a genuine symmetry of the kernel, broken only by the Hopf chain's sector manifold assignments.
 

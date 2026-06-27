@@ -299,7 +299,7 @@ The two uniqueness results are parallel:
 | Uniqueness result | Algebraic condition | Consequence |
 |---|---|---|
 | Seeds $\{1,4\}$ | $S(n,4)=35$ has unique solution $n=4$ | No other spectra |
-| Sectors D | Three joint constraints on $d$ | No other families |
+| Sectors $D$ | Three joint constraints on $d$ | No other families |
 
 
 
@@ -327,7 +327,7 @@ The sequence terminates at $d=10$ because any $d > 10$ puts the resonance site $
 
 | Rule | Sector | Particles | IDWT derivation |
 |------|--------|-----------|-----------------|
-| R0 | $d=2$ | photon, W, Z, H | $d=2$ is the reference sector ($\mathbb{CP}^1$, U(1)_EM) by construction; g-rule maps fermion combinations to $d=2$ |
+| R0 | $d=2$ | photon, W, Z, H | $d=2$ is the reference sector ($\mathbb{CP}^1$, $U(1)_{\rm EM}$) by construction; g-rule maps fermion combinations to $d=2$ |
 | R1 | $d=3$ | down, strange | $d=3$ is observable spacetime and the first Hopf total space $S^3$; seeds start the tower here |
 | R2 | $d=4$ | up, charm, top | $n_u = \chi(\mathbb{CP}^2) = N_c = 3$ (T15, ✅); $n_{\rm top} = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 72$ (⭐ value identity — top Chern number; seed input, §3a) |
 | R3 | $d=5$ | $\nu_1$, $\nu_2$, $\nu_3$ | Hopf pair $\{4,5\}$: $S^5$ is the Hopf total space over $\mathbb{CP}^2$; $g_{55} = g_{33}g_{44}/g_{22}$ (✅) |
@@ -336,7 +336,7 @@ The sequence terminates at $d=10$ because any $d > 10$ puts the resonance site $
 
 **Proof sketch for each rule:**
 
-**R0.** The $d=2$ sector is the reference sector ($\mathbb{CP}^1$, carrying U(1)_EM; the photon is the $d=2$ $n=0$ ground state). Bosons (W, Z, H) land in $d=2$ via the Vandermonde g-rule: $g(d_\nu=5, n_{\rm top}) = 5+72-1 = 76 = n_W$; $g(d_\ell=6, n_W) = 6+76-1 = 81 = n_Z$. No SM particle names needed — only the sector dimensions $d=5$ and $d=6$ (derived below) and the already-derived mode indices.
+**R0.** The $d=2$ sector is the reference sector ($\mathbb{CP}^1$, carrying $U(1)_{\rm EM}$; the photon is the $d=2$ $n=0$ ground state). Bosons (W, Z, H) land in $d=2$ via the Vandermonde g-rule: $g(d_\nu=5, n_{\rm top}) = 5+72-1 = 76 = n_W$; $g(d_\ell=6, n_W) = 6+76-1 = 81 = n_Z$. No SM particle names needed — only the sector dimensions $d=5$ and $d=6$ (derived below) and the already-derived mode indices.
 
 **R1.** The seed sector is $d=3$: it is the observable spacetime sector and the first total space $S^3$ of the complex Hopf chain (§3a), the natural starting point of the generation tower. Both seeds share $d=3$: the down seed $n_{\rm down}=1$ is the universal ground state $S(1,d)=1$; the up seed $n_u=3$ has $\chi(\mathbb{CP}^2)=N_c=3$ (T15, ✅) and lands in $d=4$ via R2. $n_s=1+3=4$ is confirmed by T4 and $S(4,4)=35$; it sits in $d=3$ as the strange quark. The $\chi$-consecutiveness identity $n_u=n_s-1$ (T15) records a geometric fact about the Hopf chain, not a derivation from $n_s$.
 
@@ -426,7 +426,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 - **Electromagnetism:** $U(1)$ Hopf fiber holonomy → gauge field $A_\mu$; photon is the connection 1-form.
 - **Weak isospin:** $SU(2)_L$ acts only on holomorphic half of $d=2$ spinor → left-handedness of W coupling.
 - **$\sin^2\theta_W = 1 - (S(76,2)/S(81,2))^2 = 0.2237$** (PDG: 0.2229, +0.37% — within 1-loop EW corrections).
-- **EW scale:** $\sqrt{\mathrm{Tr}(D^2)} \approx 248.3$ GeV is the spectral RMS of |D| across all sectors. IDWT does not use spontaneous symmetry breaking; the Higgs is mode $n=95$, not a condensate. The EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3$ GeV from the IDWT-derived $G_F$ (§0, Part 5 §3c).
+- **EW scale:** $\sqrt{\mathrm{Tr}(D^2)} \approx 248.3$ GeV is the spectral RMS of $|D|$ across all sectors. IDWT does not use spontaneous symmetry breaking; the Higgs is mode $n=95$, not a condensate. The EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3$ GeV from the IDWT-derived $G_F$ (§0, Part 5 §3c).
 - **Coupling filter:** Orientation/phase alignment. The photon couples only to currents aligned with its polarization vector $\varepsilon_\mu$; perpendicular currents receive zero coupling, not suppression. This is the $U(1)$ geometry of $\mathbb{CP}^1$ expressing itself as a coupling structure — polarization is not a label on the photon but the geometry's stamp on what the photon can do.
 
 **Spectral.** $\zeta_2(1) = 2$, $\zeta_2(0) = -1$, $a_{02} \approx 1.253$.
@@ -464,7 +464,7 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 
 #### $d = 4$ — Up-Type Quark Sector
 
-**Geometry.** $\mathbb{CP}^2$ (complex projective plane); local symmetry U(2). Kähler structure provides $\gamma_5$ for left-handed chirality. The $l=2$ kernel scale $\varepsilon = 1/(280\sqrt{7})$ arises from the $\mathbb{CP}^2$ geometry; it is no longer applied as an up-type quark mass correction (Part 2 §11).
+**Geometry.** $\mathbb{CP}^2$ (complex projective plane); local symmetry $U(2)$. Kähler structure provides $\gamma_5$ for left-handed chirality. The $l=2$ kernel scale $\varepsilon = 1/(280\sqrt{7})$ arises from the $\mathbb{CP}^2$ geometry; it is no longer applied as an up-type quark mass correction (Part 2 §11).
 
 | Parameter | Value |
 |---|---|
@@ -896,7 +896,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Spin-½ of all fermions | Dirac operator on $M_\infty$; spinor bundle of $\Psi_\infty$ (Part 8 §2) | ✅ |
 | CKM Cabibbo angle | $\sin\theta_C = (1+1/240)/\sqrt{S(n_s,3)} = 0.22454$ — seed + $\mathbb{CP}^1$ sector curvature correction | ✅ |
 | Neutrino oscillations | $d=5$ sector, normal ordering | ✅ |
-| Leptonic CP phase $\delta_{CP}$ | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, J = −0.00981 via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^3) - c_1(\mathbb{CP}^5) = -2$ (T8 🔶, Part 10) | 🔶 |
+| Leptonic CP phase $\delta_{CP}$ | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, $J = -0.00981$ via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^3) - c_1(\mathbb{CP}^5) = -2$ (T8 🔶, Part 10) | 🔶 |
 | Dirac neutrinos | $d=5$ has $d \bmod 8 = 5$: Majorana forbidden → 0νββ rate = 0 predicted | ✅ |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (Part 3 §8, §13) | ✅ |
 | Confinement | Colour-neutrality condition $|\vec{N}|=0$ from $\mathbb{CP}^2$ isometry geometry; $\lambda_c$ is an open item; full QCD confinement mechanism (flux tubes, asymptotic freedom) not derived | 🔵 |

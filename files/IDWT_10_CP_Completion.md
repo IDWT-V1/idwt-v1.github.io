@@ -292,12 +292,12 @@ The following table consolidates the full theorem status after the T8 completion
 | T0.5 | Co-fixed-point selection condition | 🔶 | Exact outcomes | Selects the 11-mode lattice (photon + hockey-stick fermions); the 2 product-form quarks {16,72} and the EW g-chain {76,81,95} are tiers 2–3 (Part 9 T0.5 scope); decoherence mechanism not yet derived from EOM |
 | T1 | $m = S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
-| T3 | D = {2,3,4,5,6,10} from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |
+| T3 | $D = \{2,3,4,5,6,10\}$ from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |
 | T4 | $n_s = 4$ from double degeneracy $4/7$ | ✅ | Exact | Unique $n_s$; all indices follow |
-| T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | b=1/2 exact | Chain terminates; τ is critical |
+| T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | $b=1/2$ exact | Chain terminates; τ is critical |
 | T6 | All three PMNS angles | 🔵 | $\leq 0.51\%$ | Determined by $g_{55}$, $m_{\rm scale,5}$, and mode indices |
 | T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
-| **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; J = −0.00981** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
+| **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; $J = -0.00981$** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
 | T9a–d | All 6 coupling constants derived | ✅ | Exact | No free coupling parameters |
 | T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$; former $(1-\varepsilon)^k$ quark correction removed 2026-06-16 |
 | T10b | Geometric back-reaction correction +1/1680 for τ | ✅ | 0.001% | Critical-sector regularisation |
@@ -306,7 +306,7 @@ The following table consolidates the full theorem status after the T8 completion
 | T14a | Heat kernel Weyl term $K_d(t) \sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = $d$ |
 | T14b | Constant term $-d/2$ and $\zeta_d(0) = -d/2$ | ✅ | Exact | Sector functional determinant anchored |
 | T13b | Mode spacing $S(n+1,d)-S(n,d) = S(n+1,d-1)$ | ✅ | Exact | Source of all mode-index chains |
-| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer S; $d=4$ up-type bare (GTC removed) |
+| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer $S$; $d=4$ up-type bare (GTC removed) |
 | T15 | $N_c = \chi(\mathbb{CP}^2) = n_u$; all couplings/indices from one Euler characteristic | ✅ | Exact | Coupling filter and mass hierarchy share one root |
 | $\sin^2\theta_W$ | $1-(S(76,2)/S(81,2))^2 = 0.2237$; +0.37% from PDG on-shell | ✅ | +0.37% | Within EW radiative corrections |
 | $G_N$ | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |
@@ -349,7 +349,7 @@ The CP-violating phase in the lepton sector is $N_c - 1$ reactor angles above $\
 | Prediction | Value | Experiment | Timeline | Falsification threshold |
 |---|---|---|---|---|
 | $\delta_{CP}$ | **197.11°** | DUNE, Hyper-K | ~2028–2030 | Outside 185°–210° falsifies $\pi+2\theta_{13}$ at 5σ |
-| $J_{\rm PMNS}$ | **−0.009813** | DUNE + Hyper-K | ~2030 | J > −0.007 or J < −0.013 falsifies |
+| $J_{\rm PMNS}$ | **−0.009813** | DUNE + Hyper-K | ~2030 | $J > -0.007$ or $J < -0.013$ falsifies |
 | $\delta$-$\theta_{13}$ correlation: $\delta = 180^\circ + 2\theta_{13}$ | tested as both improve | NOvA+T2K+DUNE | Running–2030 | Violation by >5° at fixed $\theta_{13}$ falsifies |
 | Inverted ordering excluded | NH only | JUNO | ~2027 | IH detection falsifies entire IDWT lepton sector |
 | 0νββ rate | **0 at all orders**$^1$ | KamLAND-Zen, nEXO | Running–2028 | Any signal at any sensitivity falsifies |
@@ -429,7 +429,7 @@ Part 10 closes the T8 derivation of the CP-violating phase:
 
 - **§3** confirmed the factor-of-2 normalization: the T2 kernel perturbs $D_{\mathbb{CP}^n}$ with amplitude $\sin\theta_{13}$, the Dirac spectral period in this parameter is $\pi$, and mode function norms are 1 for zero-crossing counts (topological). The spectral phase is $\phi_{\mathrm{spec}}^{\det} = -2\theta_{13}$, giving $\delta_{CP} = \pi + 2\theta_{13}$.
 
-- **§4** states T8 as a structural derivation (status 🔶): $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, J = −0.00981, both matching PDG NH best fit to <1%.
+- **§4** states T8 as a structural derivation (status 🔶): $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, $J = -0.00981$, both matching PDG NH best fit to <1%.
 
 - **§5** updates the master status table: 19 items ✅/🔵, 3 items 🔶 (T0, T8, and $G_N$), 0 items open.
 

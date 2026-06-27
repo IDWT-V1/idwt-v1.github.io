@@ -135,7 +135,7 @@ Each force couples to a particle through the sector coordinates the particle occ
 | Force | Sector | Dimensions | Coupling structure |
 |---|---|---|---|
 | Electromagnetic | $d=2$ | 2 | $U(1)$ phase from shared $d=2$ coordinates |
-| Weak | $d=2$ | 2 | $SU(2)_L$ = the $SU(2)$ factor of the U(2) holonomy of $\mathbb{CP}^2$ (§6); acts on the holomorphic (left) spinor half via the Kähler chirality split (§7) |
+| Weak | $d=2$ | 2 | $SU(2)_L$ = the $SU(2)$ factor of the $U(2)$ holonomy of $\mathbb{CP}^2$ (§6); acts on the holomorphic (left) spinor half via the Kähler chirality split (§7) |
 | Strong | $d=3$, $d=4$ | 3–4 | $SU(3)$ contact coupling via $\mathbb{CP}^2$ isometry |
 | Gravity | all | 10 | Curvature of $M_\infty$; no sector boundary |
 
@@ -480,12 +480,12 @@ For the $d=6$ lepton sector ($\mathbb{CP}^3$), the Kähler geometry splits the s
 
 | Sector | Kähler? | $\gamma_5^{\text{Kähler}}$ | L/R split | Physical |
 |--------|---------|-----------|-----------|---------|
-| $d=2$ ($\mathbb{CP}^1$) | ✓ | exists | 1L + 1R | $W^\pm$ polarisation |
+| $d=2$ ($\mathbb{CP}^1$) | ✓ | exists | $1L + 1R$ | $W^\pm$ polarisation |
 | $d=3$ ($S^3$) | ✗ | none | vector-like | Colour inherited from $d=4$ |
-| $d=4$ ($\mathbb{CP}^2$) | ✓ (spin${}^c$) | exists | 2L + 2R | $u_L,d_L$ vs $u_R,d_R$ |
+| $d=4$ ($\mathbb{CP}^2$) | ✓ (spin${}^c$) | exists | $2L + 2R$ | $u_L,d_L$ vs $u_R,d_R$ |
 | $d=5$ ($S^5$) | ✗ | none | Dirac only | $\nu_L + \nu_R$ (Dirac neutrinos) |
-| $d=6$ ($\mathbb{CP}^3$) | ✓ | exists | 4L + 4R | $\nu_L,e_L,\nu_{\mu L},\mu_L$ vs right-handed |
-| $d=10$ ($\mathbb{CP}^5$) | ✓ | exists | 16L + 16R | $d\bmod 8=2$ Maj-Weyl |
+| $d=6$ ($\mathbb{CP}^3$) | ✓ | exists | $4L + 4R$ | $\nu_L,e_L,\nu_{\mu L},\mu_L$ vs right-handed |
+| $d=10$ ($\mathbb{CP}^5$) | ✓ | exists | $16L + 16R$ | $d\bmod 8=2$ Maj-Weyl |
 
 ---
 
@@ -746,8 +746,8 @@ The spinor structure of $\Psi_\infty$ means the quantum number structure of the 
 | Fermi statistics | Spinor anticommutation relations | Clifford algebra |
 | Particle/antiparticle | Conjugate spinor $\bar\Psi_\infty$ | Complex spinor field |
 | Left-handed weak coupling | Kähler $\gamma_5$ selects holomorphic half of each sector spinor | §7 above |
-| Quark chirality ($u_L \neq u_R$) | $\mathbb{CP}^2$ Kähler chirality splits 4-spinor into 2L + 2R | §7 above |
-| Lepton chirality ($e_L \neq e_R$) | $\mathbb{CP}^3$ Kähler chirality splits 8-spinor into 4L + 4R | §7 above |
+| Quark chirality ($u_L \neq u_R$) | $\mathbb{CP}^2$ Kähler chirality splits 4-spinor into $2L + 2R$ | §7 above |
+| Lepton chirality ($e_L \neq e_R$) | $\mathbb{CP}^3$ Kähler chirality splits 8-spinor into $4L + 4R$ | §7 above |
 | Neutrinos are Dirac | $d=5$ has $d \bmod 8 = 5$; Majorana spinors forbidden | Clifford periodicity |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (§8, §13) | ✅ |
 | 0νββ rate = 0 | Follows from Dirac neutrino prediction | Falsifiable |
@@ -808,7 +808,7 @@ The photon mass $m_\gamma^2 = \Pi_{\rm kernel}(0) = 0$ exactly, to all orders in
 
 This is stronger than gauge invariance alone (which only requires $\Pi(q^2)$ to be transverse). The L-parity argument shows the kernel CANNOT produce a photon mass even if gauge invariance were broken — the photon is protected by the parity of the coupling tensor.
 
-Condensate-linearized vertices — the degree-1 effective terms produced when the quartic kernel is expanded about a non-zero sector condensate $\langle\xi_{d'}\rangle \neq 0$ (Part 1 P6) — are odd only in the fluctuation leg $\delta\xi_{d'}$ and remain even (degree 2) in the photon's own $d=2$ variable $\xi$. The L=1 component in the photon's own variable remains exactly zero, so $m_\gamma = 0$ survives in the presence of condensate backgrounds without modification to this proof.
+Condensate-linearized vertices — the degree-1 effective terms produced when the quartic kernel is expanded about a non-zero sector condensate $\langle\xi_{d'}\rangle \neq 0$ (Part 1 P6) — are odd only in the fluctuation leg $\delta\xi_{d'}$ and remain even (degree 2) in the photon's own $d=2$ variable $\xi$. The $L=1$ component in the photon's own variable remains exactly zero, so $m_\gamma = 0$ survives in the presence of condensate backgrounds without modification to this proof.
 
 The same evenness acts on the production side: with no odd condensate vertex available in the $d=2$ variable, a generation-tower production landing on a $d=2$ mode carries an even number of degree-1 insertions — zero for the W, Z, H g-rule joins, two for the additive Higgs closure (🔶, the even-insertion selection rule, §11; `idwt.py` STEP 55).
 
