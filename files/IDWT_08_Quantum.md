@@ -94,14 +94,14 @@ The non-Kähler sectors ($d=3$, $d=5$) have no chirality operator and are intrin
 
 The net count of left-chiral zero modes (the holomorphic Euler characteristic) agrees with the SM fermion count:
 
-| Sector | Geometry | Hopf flux k | Index | SM match |
+| Sector | Geometry | Hopf flux $k$ | Index | SM match |
 |--------|----------|------------|-------|---------|
-| $d=2$ | $\mathbb{CP}^1$ | 1 | C(2,1) = 2 | 2 gauge polarizations (photon/$W^\pm$); gauge sector — index counts polarizations, not fermionic zero modes |
+| $d=2$ | $\mathbb{CP}^1$ | 1 | $C(2,1) = 2$ | 2 gauge polarizations (photon/$W^\pm$); gauge sector — index counts polarizations, not fermionic zero modes |
 | $d=3$ | $S^3$ | via $g_{3,4}$ | 0 | Colour inherited from $d=4$ |
-| $d=4$ | $\mathbb{CP}^2$ | 1 | C(3,2) = 3 | Three quark colours ✅ |
+| $d=4$ | $\mathbb{CP}^2$ | 1 | $C(3,2) = 3$ | Three quark colours ✅ |
 | $d=5$ | $S^5$ | — | 0 | Dirac neutrino sector ✅ |
-| $d=6$ | $\mathbb{CP}^3$ | 1 | C(4,3) = 4 | 4 lepton states per generation ✅ |
-| $d=10$ | $\mathbb{CP}^5$ | 1 | C(6,5) = 6 | Tau lepton sector ✅ |
+| $d=6$ | $\mathbb{CP}^3$ | 1 | $C(4,3) = 4$ | 4 lepton states per generation ✅ |
+| $d=10$ | $\mathbb{CP}^5$ | 1 | $C(6,5) = 6$ | Tau lepton sector ✅ |
 
 **What remains open:**
 - Explicit $D_\Xi$ spectrum on $\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$ and whether eigenvalues match $m_{\rm scale,d} \times f(S(n,d))$
@@ -129,7 +129,7 @@ Then the cumulative eigenstate count at levels $k = 0,1,\ldots,n-1$ is:
 
 $$N_d(n-1) = \sum_{k=0}^{n-1}\mu_d(k) = \binom{n+d-1}{d} = S(n,d)$$
 
-**Proof.** By induction on n using Pascal's rule.
+**Proof.** By induction on $n$ using Pascal's rule.
 
 *Base ($n=1$):* $\sum_{k=0}^{0} \binom{d-1}{d-1} = 1 = \binom{d}{d} = S(1,d)$.
 
@@ -419,7 +419,7 @@ since $S(1,d-1) = 1$ and $S(N+1,d-1)\to\infty$. $\square$
 
 **Values for all IDWT sectors:**
 
-| d | 2 | 3 | 4 | 5 | 6 | 10 |
+| $d$ | 2 | 3 | 4 | 5 | 6 | 10 |
 |---|---|---|---|---|---|---|
 | $\sum 1/S(n,d)$ | 2 | $3/2$ | $4/3$ | $5/4$ | $6/5$ | $10/9$ |
 
@@ -579,13 +579,13 @@ Under the subgroup chain $SU(4) \supset SU(3) \supset SO(3)$, these states split
 
 | Class | Count | Description |
 |---|---|---|
-| Observable | 2L+1 | Harmonic degree-L polynomials in $(z_1, z_2, z_3)$ — the standard s, p, d, f orbitals |
-| ξ-states | L(L+1)(L+2)/6 | States with $z_4$ factors — angular momentum in the $\mathbb{CP}^3$ fibre direction |
-| Lower-j | L(L−1)/2 | Non-harmonic polynomials in $(z_1, z_2, z_3)$; already counted in lower shells |
+| Observable | $2L+1$ | Harmonic degree-$L$ polynomials in $(z_1, z_2, z_3)$ — the standard s, p, d, f orbitals |
+| $\xi$-states | $L(L+1)(L+2)/6$ | States with $z_4$ factors — angular momentum in the $\mathbb{CP}^3$ fibre direction |
+| Lower-j | $L(L-1)/2$ | Non-harmonic polynomials in $(z_1, z_2, z_3)$; already counted in lower shells |
 
-**Counting Theorem. ⭐** The observable count 2L+1 is a pure combinatorial identity — the harmonic component of $\mathrm{Sym}^L(\mathbb{C}^4)$ under SO(3). It requires no dynamics.
+**Counting Theorem. ⭐** The observable count 2L+1 is a pure combinatorial identity — the harmonic component of $\mathrm{Sym}^L(\mathbb{C}^4)$ under $SO(3)$. It requires no dynamics.
 
-**Lemma 2 — ξ-Orthogonality. ✅** For any 3D operator $O(r,\nabla_r)$ and any ξ-state $|\xi\rangle$ carrying $z_4$-direction angular momentum:
+**Lemma 2 — $\xi$-Orthogonality. ✅** For any 3D operator $O(r,\nabla_r)$ and any $\xi$-state $|\xi\rangle$ carrying $z_4$-direction angular momentum:
 
 $$\langle\xi|O|\text{obs}\rangle = 0$$
 
@@ -597,7 +597,7 @@ The $z_4$ factor integrates to zero over the $\mathbb{CP}^3$ fibre by spherical 
 - Fine structure: standard Dirac corrections unmodified by sector geometry
 - Hyperfine structure: standard result unmodified
 
-**E1 selection rules — explicit derivation. ✅** The electric-dipole operator $H_{E1} = -e\,\mathbf{r}\cdot\hat{\boldsymbol{\varepsilon}}$ is a rank-1 SO(3) tensor $T^{(1)}_q$ with parity $-1$ under $\mathbf{r} \to -\mathbf{r}$. By Marginal Exactness (Part 11 §6.1), every matrix element of a 3D operator between $d=6$ electron states reduces to the 3D orbital matrix element; the ξ-state coordinates integrate to zero by Lemma 2. The Wigner–Eckart theorem for SO(3) then gives:
+**E1 selection rules — explicit derivation. ✅** The electric-dipole operator $H_{E1} = -e\,\mathbf{r}\cdot\hat{\boldsymbol{\varepsilon}}$ is a rank-1 $SO(3)$ tensor $T^{(1)}_q$ with parity $-1$ under $\mathbf{r} \to -\mathbf{r}$. By Marginal Exactness (Part 11 §6.1), every matrix element of a 3D operator between $d=6$ electron states reduces to the 3D orbital matrix element; the $\xi$-state coordinates integrate to zero by Lemma 2. The Wigner–Eckart theorem for $SO(3)$ then gives:
 
 $$\langle L', M' | T^{(1)}_q | L, M \rangle = \langle L, M; 1, q | L', M' \rangle \, \langle L' \| T^{(1)} \| L \rangle$$
 
@@ -609,11 +609,11 @@ $\Delta L = 0$ is forbidden by parity for all $L$. This is verified numerically 
 
 **Status: ✅** The Bohr spectrum, orbit degeneracies, and all selection rules are structural consequences of the $\mathbb{CP}^3$ geometry and the exact potential separability of Lemma 1. No new parameters beyond $\alpha$ and $m_e$ (both derived). The explicit $SU(4)$ bases through the f-shell, the Simplex Identity, and interactive orbit visualisations are in the companion page *Atomic Orbitals as Resonant $\mathbb{CP}^3$ Orbits* (visualizations/6d-orbit-slice.html).
 
-**ξ-states — falsifiable prediction. ✅** ξ-states exist at every shell $L \geq 1$ (one in the p-shell, four in the d-shell, ten in the f-shell, …). Every electron in a ξ-state has a nonzero 3D charge density $\rho(r) = \int |\Psi(r,\xi)|^2\,d\xi \geq 0$ — a definite location in ordinary space. What Lemma 2 establishes is that the off-diagonal matrix element $\langle\xi|O|\text{obs}\rangle = 0$ for any 3D operator $O$: ξ-states decouple from the standard orbitals, adding no spectral lines, no perturbations to fine/hyperfine structure, and no admixture into Zeeman or Stark splittings. The electrons are always visible; only the $z_4$-direction angular momentum is not accessible to 3D apparatus. Any measured coupling of a 3D operator to a $z_4$-direction state — a new spectral line sourced by ξ-state admixture — would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
+**$\xi$-states — falsifiable prediction. ✅** $\xi$-states exist at every shell $L \geq 1$ (one in the p-shell, four in the d-shell, ten in the f-shell, …). Every electron in a $\xi$-state has a nonzero 3D charge density $\rho(r) = \int |\Psi(r,\xi)|^2\,d\xi \geq 0$ — a definite location in ordinary space. What Lemma 2 establishes is that the off-diagonal matrix element $\langle\xi|O|\text{obs}\rangle = 0$ for any 3D operator $O$: $\xi$-states decouple from the standard orbitals, adding no spectral lines, no perturbations to fine/hyperfine structure, and no admixture into Zeeman or Stark splittings. The electrons are always visible; only the $z_4$-direction angular momentum is not accessible to 3D apparatus. Any measured coupling of a 3D operator to a $z_4$-direction state — a new spectral line sourced by $\xi$-state admixture — would falsify the $\mathbb{CP}^3$ identification of the $d=6$ sector.
 
 ### 14.4 What Opens From Here
 
-**The full orbit geometry in $\mathbb{CP}^3$.** The orbit structure — quantum numbers, energy spectrum, degeneracy counts, selection rules, and the existence and decoupling of ξ-states — is fully derived from the $\mathbb{CP}^3$ geometry. The deterministic trajectory itself, projected to three observable coordinates and rendered by depth (nearness to the viewer), reproduces the familiar orbital shapes through two integer resonances. **Angular:** when the precession locks to the orbital frequency ($\kappa = \omega_1$), the monomial orbit $z_1^L$ closes into a rose with exactly $2L$ petals — degree $L$ entering once as the moment-of-inertia gap (precession rate $L\omega_1$) and once as the lobe count — reproducing the s/p/d/f petal counts 0/2/4/6 and the shell nesting $1:4:9:16$. **Radial:** on the spherically symmetric $s$-orbit a second integer lock $\omega_2 = N\,\omega_{\rm breath}$ produces $N-1$ concentric depth rings — the $2s$/$3s$ "ring with a dot" pattern — with $N$ a free radial quantum number (only the integer ratio matters; the breathing frequency's value is irrelevant). The lobe counts come out as integers because the $\mathbb{CP}^3$ moment polytope is integral (the weights $I_k =$ exponent $+1$ are the moment-map values). The absolute value $\kappa = \omega_1 = 3/\sqrt2 = \sqrt{9/2} = n_C/\sqrt{d/n_C}$ ($n_C = 3$, $d = 6$) is merely the Fubini–Study time scale; the only invariant content is the resonance ratio $\kappa/\omega_1 = 1$. Whether the dynamics *forces* the lock — rather than it being a tuning that selects clean orbitals — is open. (`files/idwt.py` STEP 129; companion article *Drawing Orbitals from Orbits*.) 🔶
+**The full orbit geometry in $\mathbb{CP}^3$.** The orbit structure — quantum numbers, energy spectrum, degeneracy counts, selection rules, and the existence and decoupling of $\xi$-states — is fully derived from the $\mathbb{CP}^3$ geometry. The deterministic trajectory itself, projected to three observable coordinates and rendered by depth (nearness to the viewer), reproduces the familiar orbital shapes through two integer resonances. **Angular:** when the precession locks to the orbital frequency ($\kappa = \omega_1$), the monomial orbit $z_1^L$ closes into a rose with exactly $2L$ petals — degree $L$ entering once as the moment-of-inertia gap (precession rate $L\omega_1$) and once as the lobe count — reproducing the s/p/d/f petal counts 0/2/4/6 and the shell nesting $1:4:9:16$. **Radial:** on the spherically symmetric $s$-orbit a second integer lock $\omega_2 = N\,\omega_{\rm breath}$ produces $N-1$ concentric depth rings — the $2s$/$3s$ "ring with a dot" pattern — with $N$ a free radial quantum number (only the integer ratio matters; the breathing frequency's value is irrelevant). The lobe counts come out as integers because the $\mathbb{CP}^3$ moment polytope is integral (the weights $I_k =$ exponent $+1$ are the moment-map values). The absolute value $\kappa = \omega_1 = 3/\sqrt2 = \sqrt{9/2} = n_C/\sqrt{d/n_C}$ ($n_C = 3$, $d = 6$) is merely the Fubini–Study time scale; the only invariant content is the resonance ratio $\kappa/\omega_1 = 1$. Whether the dynamics *forces* the lock — rather than it being a tuning that selects clean orbitals — is open. (`files/idwt.py` STEP 129; companion article *Drawing Orbitals from Orbits*.) 🔶
 
 **The generating Hamiltonian.** The orbit is not a kinematic recipe but the flow of a conserved Hamiltonian on $(\mathbb{CP}^3, \omega_{\rm FS})$: for any Hermitian $4\times4$ matrix $M$, the function $H(z) = \langle z|M|z\rangle / \langle z|z\rangle$ generates $z(t) = e^{-iMt}\,z(0)$ — a Bloch/coadjoint precession — along which $H$ is exactly conserved. The angular rose is the two-level block $M = \omega(-\mathbb{1} + L\,\sigma_x)$, which gives $z_1(t) = e^{i\omega t}\cos(L\omega t)$ exactly; the lobe count is then the **eigenvalue gap** of $M$ — its eigenvalues are $-(L+1)\omega$ and $(L-1)\omega$, gap $2L\omega$ — and the radial rings are a second commuting two-level block. So the construction is a closed, conserved Hamiltonian system, i.e. honest dynamics rather than a recipe. What remains open is *which* generator $M$ the theory should single out: the matrix entries encoding a given orbital are still chosen to match, not derived from a variational principle. (`files/idwt.py` STEP 130.) 🔶
 
@@ -669,7 +669,7 @@ $$H_{\rm He} = H_1^{(Z=2)} + H_2^{(Z=2)} + V_{12}$$
 
 where $H_i^{(Z)} = -\frac{\hbar^2}{2m_e}\nabla_i^2 - \frac{Z\alpha}{r_i}$ [single-electron Coulomb, $Z=2$] and $V_{12} = +\alpha/r_{12}$ [electron-electron repulsion].
 
-The repulsion $V_{12}$ is the wave's $U(1)$ self-coupling on the shared $d=2$ coordinates of the two $d=6$ resonances — exactly the same vertex as the electron-nucleus attraction, with the same coupling α, but both sources carry Q=−1 so the force is repulsive. This is not an additional coupling; it is the same one.
+The repulsion $V_{12}$ is the wave's $U(1)$ self-coupling on the shared $d=2$ coordinates of the two $d=6$ resonances — exactly the same vertex as the electron-nucleus attraction, with the same coupling $\alpha$, but both sources carry $Q=-1$ so the force is repulsive. This is not an additional coupling; it is the same one.
 
 ### 16.2 Pauli Exclusion from Spinor Anticommutation
 
@@ -704,12 +704,12 @@ Each additional electron beyond helium occupies the lowest available orbit consi
 
 The orbit filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, ... — the Aufbau principle — is the sequence of $(n, l)$ pairs sorted by $E(n,l,Z_{\rm eff})$, where $Z_{\rm eff}$ accounts for shielding. In IDWT this is the sequence in which the angular momentum levels of the $SO(3) \subset SU(4)$ chain are filled by $d=6$ resonances subject to Pauli exclusion.
 
-**Shell structure.** Each value of n accommodates $2n^2$ electrons (factor of 2 from spin). This count is:
+**Shell structure.** Each value of $n$ accommodates $2n^2$ electrons (factor of 2 from spin). This count is:
 - $n=1$ (1s): 2 states → He fills the first shell
 - $n=2$ (2s + 2p): 8 states → Ne fills the second shell
 - $n=3$ (3s + 3p): 8 states (+ 3d shifts to $n=4$ shell due to screening) → Ar fills the third shell
 
-The shell counts 2, 8, 8, 18, 18, 32, ... are not empirical — they are the degeneracy counts $2(2l+1)$ summed over $l$ at each principal quantum number $n$, dictated by the SO(3) angular momentum structure established in §14.4. The periodic table is the filling sequence of Coulomb quantum number levels under Pauli exclusion, which is a theorem of the $d=6$ sector spinor geometry.
+The shell counts 2, 8, 8, 18, 18, 32, ... are not empirical — they are the degeneracy counts $2(2l+1)$ summed over $l$ at each principal quantum number $n$, dictated by the $SO(3)$ angular momentum structure established in §14.4. The periodic table is the filling sequence of Coulomb quantum number levels under Pauli exclusion, which is a theorem of the $d=6$ sector spinor geometry.
 
 ---
 
@@ -761,13 +761,13 @@ $$D_e(\text{IDWT}) = 5.131\,\text{eV}$$
 The experimental value is $D_e(\text{expt}) = 4.747\,\text{eV}$. The +8.1% error is
 inherited from the IDWT fine-structure constant ($1/\alpha_{\text{IDWT}} = 131.8$ vs
 PDG 137.04) and tracks the same +8.1% offset seen in $H_2^+$ (§15, STEP 69). It is not a
-failure of the bond mechanism — it is the same systematic α error throughout. (STEP 72)
+failure of the bond mechanism — it is the same systematic $\alpha$ error throughout. (STEP 72)
 
 The equilibrium geometry $R_{\text{eq}}$ and full 6D character of the bond orbit are open.
 
 **Opens:**
 - **Heteronuclear bonds and bond angles** (HF, CO, $H_2O$): same Coulomb framework, nuclei with $Z \neq Z'$. Bond polarity follows from asymmetric nuclear potentials selecting asymmetric angular momentum configurations. Bond angles (H–O–H = 104.5°, H–N–H = 107°, etc.) are not set by VSEPR repulsion — they are the 3D projections of which 6D angular momentum states are occupied: bonding states project toward nuclei, lone-pair states project away, and the angle between bonding projections is determined by the angular momentum structure of all occupied states together. This is derived from the 6D orbit picture; the detailed calculation is open. 🔶
-- **π bonds and aromaticity**: molecular orbits built from the $L=1$ ($p$) states of the SO(3) chain. Benzene's ring orbit is a single 6D orbit coupling to all six nuclear centers simultaneously — not a delocalized superposition of local orbitals, but one orbit that naturally goes around the ring (see §17a). Hückel's rule (4n+2 closed shells) is the condition for closed angular momentum shells of the ring orbit.
+- **π bonds and aromaticity**: molecular orbits built from the $L=1$ ($p$) states of the $SO(3)$ chain. Benzene's ring orbit is a single 6D orbit coupling to all six nuclear centers simultaneously — not a delocalized superposition of local orbitals, but one orbit that naturally goes around the ring (see §17a). Hückel's rule (4n+2 closed shells) is the condition for closed angular momentum shells of the ring orbit.
 - **Van der Waals forces**: second-order dipole-dipole correlation between charge-neutral molecules. In IDWT: second order in the $d=2$ $U(1)$ self-coupling between two neutral $d=6$ systems — the same vertex as Coulomb (§14), correlating charge-density fluctuations rather than exchanging a quantum — giving an attractive potential $\sim -C_6/R^6$. The $R^{-6}$ power follows from the two dipole-dipole factors and dipole selection rules — see §17b. The $C_6$ coefficient is open.
 - **Woodward–Hoffmann rules**: thermal pericyclic reactions conserve hidden-sector angular momentum ($\Delta L=0$); photochemical reactions require a photon to supply $\Delta L=1$. The condition $L_{\text{HOMO}_1} \equiv L_{\text{LUMO}_2}$ (mod 2) for thermal allowedness follows from 6D angular momentum conservation across the transition state. This reduces all pericyclic selection rules to one conservation law. Detailed derivation open. 🔶
 - **Molecular spectra**: vibrational and rotational energy levels of $H_2$. The vibrational frequency $\omega_{\rm vib}$ and rotational constant $B_{\rm rot}$ follow from $E(R)$ near its minimum, which is fully determined by the Coulomb Hamiltonian. These are IDWT structural predictions with no new input.
@@ -790,21 +790,21 @@ Benzene has six carbon atoms in a regular hexagon, each contributing one $p_z$ o
 
 **The 6D picture.** The Fourier modes $\psi_k$ are not a superposition of six separate atomic orbitals — they are the angular momentum eigenstates of a single 6D electron orbit that simultaneously couples to all six nuclear centers. An orbit that couples to six potentials arranged in a hexagon is an orbit that goes around the ring. The $k=0$ and $k=\pm 1$ bonding modes correspond to closed angular momentum shells of this ring orbit. The aromatic ring current — a circulating current induced by a perpendicular magnetic field, measurable in NMR as the anomalous chemical shift of aromatic protons — is the direct experimental signature of this: it is exactly what you expect from an electron executing a closed-loop orbit around the ring, not a superposition of Kekulé configurations. Antiaromaticity ($4n$ electrons) is a half-filled angular momentum shell — an orbit that cannot close and distorts to escape the frustrated state.
 
-### 17a.3 4n+2 Rule as Closed SO(3) Shell ✅
+### 17a.3 4n+2 Rule as Closed $SO(3)$ Shell ✅
 
 The Hückel rule states that a cyclic π system with $4n+2$ π electrons ($n=0$,1,2,...) is aromatic — anomalously stable. The IDWT reading:
 
-For a regular $N$-gon ring, the MO energies are $E_k = \alpha - 2\beta\cos(2\pi k/N)$, $k = 0, 1, \ldots, N-1$. The k=0 orbital is always non-degenerate; all higher levels come in degenerate pairs $(k, N-k)$ until the top orbital at $k=N/2$ (for even N), which is also non-degenerate.
+For a regular $N$-gon ring, the MO energies are $E_k = \alpha - 2\beta\cos(2\pi k/N)$, $k = 0, 1, \ldots, N-1$. The $k=0$ orbital is always non-degenerate; all higher levels come in degenerate pairs $(k, N-k)$ until the top orbital at $k=N/2$ (for even $N$), which is also non-degenerate.
 
 To fill a *closed shell* — every bonding MO doubly occupied, no partially filled level — requires filling the non-degenerate bottom level (2 electrons) plus $n$ complete degenerate pairs (4 electrons each):
 
 $$N_\pi = 2 + 4n = 2(2n+1) = 4n+2$$
 
-This is the Hückel rule. In IDWT language: $4n+2$ is the condition that the $\ell$-th shell of the SO(3) angular-momentum chain is completely filled at level $\ell = n$. The degeneracy pattern — one non-degenerate ground level, then degenerate pairs — is exactly the SO(3) angular momentum shell sequence, with the ring providing the effective SO(3) symmetry in the molecular plane. Benzene satisfies $n=1$: $4(1)+2=6$ $\pi$ electrons filling one complete set of degenerate bonding MOs. Naphthalene ($n=2$, 10 electrons), anthracene ($n=3$, 14 electrons) follow.
+This is the Hückel rule. In IDWT language: $4n+2$ is the condition that the $\ell$-th shell of the $SO(3)$ angular-momentum chain is completely filled at level $\ell = n$. The degeneracy pattern — one non-degenerate ground level, then degenerate pairs — is exactly the $SO(3)$ angular momentum shell sequence, with the ring providing the effective $SO(3)$ symmetry in the molecular plane. Benzene satisfies $n=1$: $4(1)+2=6$ $\pi$ electrons filling one complete set of degenerate bonding MOs. Naphthalene ($n=2$, 10 electrons), anthracene ($n=3$, 14 electrons) follow.
 
-Anti-aromatic systems ($4n$ electrons, e.g. cyclobutadiene with $n=1$, 4 electrons) have a half-filled degenerate level — an open SO(3) shell — which is geometrically unstable (Jahn-Teller distortion breaks the ring symmetry).
+Anti-aromatic systems ($4n$ electrons, e.g. cyclobutadiene with $n=1$, 4 electrons) have a half-filled degenerate level — an open $SO(3)$ shell — which is geometrically unstable (Jahn-Teller distortion breaks the ring symmetry).
 
-**Status: ✅ structural consequence.** The $4n+2$ rule is a combinatorial consequence of the cyclic group structure of the ring: one non-degenerate bottom level, then degenerate pairs, so a closed shell requires $2 + 4n$ electrons. The degeneracy pattern is the SO(3) angular-momentum shell sequence, with the ring providing the effective SO(3) symmetry in the molecular plane. This counting is parameter-free.
+**Status: ✅ structural consequence.** The $4n+2$ rule is a combinatorial consequence of the cyclic group structure of the ring: one non-degenerate bottom level, then degenerate pairs, so a closed shell requires $2 + 4n$ electrons. The degeneracy pattern is the $SO(3)$ angular-momentum shell sequence, with the ring providing the effective $SO(3)$ symmetry in the molecular plane. This counting is parameter-free.
 
 ---
 

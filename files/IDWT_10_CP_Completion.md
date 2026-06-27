@@ -10,7 +10,7 @@ Part 10 closes the three technical open items identified at the end of the T8 co
 
 1. **Open Item 1 (§1):** The spectral flow coefficient from the IDWT T2 kernel perturbation — establishing $\mathrm{sf}(D_{\mathbb{CP}^n}; 0\to\theta_{13}) = c_1(\mathbb{CP}^n) \times \theta_{13}/\pi$ from the cross-sector kernel structure, not by assertion from the APS theorem.
 
-2. **Open Item 2 (§2):** The sign of $U_{e3}$ at the μ–τ symmetric limit from the explicit T6 formula — deriving the CP phase δ = π in that limit from the mode index ordering rather than from the general lepton triangle orientation argument.
+2. **Open Item 2 (§2):** The sign of $U_{e3}$ at the μ–τ symmetric limit from the explicit T6 formula — deriving the CP phase $\delta = \pi$ in that limit from the mode index ordering rather than from the general lepton triangle orientation argument.
 
 3. **Open Item 3 (§3):** The factor-of-2 normalization — confirming that $\theta_{13}$ (not $\theta_{13}/2$) is the correct spectral flow parameter via the mode function inner products in the IDWT weighted norm.
 
@@ -56,7 +56,7 @@ The PMNS matrix element $U_{e3} = \sin\theta_{13}\,e^{-i\delta}$ is the overlap 
 
 $$U_{e3} = \sum_{d \in \{6,10\}} \langle \chi_{n_e, d} \,|\, K_{d,5}(\theta_{13}) \,|\, \chi_{n_{\nu_1}, 5} \rangle$$
 
-where $K_{d,5}(\theta_{13})$ is the kernel matrix element between sector d and the neutrino sector at coupling parameter $\theta_{13}$. The phase of $U_{e3}$ is the phase of this overlap integral as a function of $\theta_{13}$.
+where $K_{d,5}(\theta_{13})$ is the kernel matrix element between sector $d$ and the neutrino sector at coupling parameter $\theta_{13}$. The phase of $U_{e3}$ is the phase of this overlap integral as a function of $\theta_{13}$.
 
 The **determinant line bundle** of $U_{\rm PMNS}$ is the complex line bundle $L^{\det} \to [0, \theta_{13}^{\mathrm{phys}}]$ whose fiber at $\theta_{13}$ is the complex number $\det U_{\mathrm{PMNS}}(\theta_{13})$. The first Chern class $c_1(L^{\det})$ is the total phase winding of $\det U_{\mathrm{PMNS}}$ as $\theta_{13}$ traverses the physical interval — this is the CP phase.
 
@@ -84,7 +84,7 @@ The coupling derivative at $\theta_{13} = 0$ is $dv/d\theta_{13} = v_0\cos\theta
 
 $$\frac{d}{d\theta_{13}} \mathrm{sf}(D_{\mathbb{CP}^n}; \theta_{13}) = v_0 \times c_1(\mathbb{CP}^n) \times 1 = v_0 \times (n+1).$$
 
-Integrating from 0 to $\theta_{13}$ and accounting for the periodicity of the Dirac spectrum on $\mathbb{CP}^n$ (period π in coupling angle, not 2π — see §3 for the derivation of this factor), the total spectral flow is:
+Integrating from 0 to $\theta_{13}$ and accounting for the periodicity of the Dirac spectrum on $\mathbb{CP}^n$ (period $\pi$ in coupling angle, not $2\pi$ — see §3 for the derivation of this factor), the total spectral flow is:
 
 $$\mathrm{sf}(D_{\mathbb{CP}^n}; 0 \to \theta_{13}) = c_1(\mathbb{CP}^n) \times \frac{\theta_{13}}{\pi}.$$
 
@@ -132,7 +132,7 @@ The T6 derivation proceeds via the rank-1 coupling structure (T2 Step 1 of T6):
 
 $$W[\alpha, i] \propto \sqrt{S(n_\alpha, d_\alpha)} \cdot \sqrt{S(n_{\nu_i}, 5)},$$
 
-where α labels the charged lepton flavor and i labels the neutrino mass eigenstate. The PMNS matrix in the basis of mass eigenstates is:
+where $\alpha$ labels the charged lepton flavor and $i$ labels the neutrino mass eigenstate. The PMNS matrix in the basis of mass eigenstates is:
 
 $$U_{\alpha i} = W[\alpha, i] / \left(\sum_j |W[\alpha, j]|^2\right)^{1/2}.$$
 
@@ -154,7 +154,7 @@ A negative real perturbation to $U_{e3}$, combined with the PDG convention $U_{e
 
 $$\mathrm{arg}(U_{e3}) \to \pi \quad \text{as } \theta_{13} \to 0^+$$
 
-i.e., δ = π in the μ–τ symmetric limit. ✅
+i.e., $\delta = \pi$ in the μ–τ symmetric limit. ✅
 
 ### 2.3 Cross-check via Neutrino Mass Ordering
 
@@ -168,7 +168,7 @@ The inclusion-exclusion sign can be cross-checked against the mass ordering. The
 
 The spectral flow formula $\mathrm{sf}(D_{\mathbb{CP}^n}; 0\to\theta_{13}) = c_1(\mathbb{CP}^n) \times \theta_{13}/\pi$ uses $\theta_{13}$ in units where a full rotation of the coupling matrix is $2\pi$, but the Dirac spectral period is $\pi$. The question: is the natural parameter in the T2 kernel perturbation the full angle $\theta_{13}$, or $\theta_{13}/2$?
 
-This matters because it determines whether the spectral phase correction to δ_{CP} is $2\theta_{13}$ or $\theta_{13}$:
+This matters because it determines whether the spectral phase correction to $\delta_{CP}$ is $2\theta_{13}$ or $\theta_{13}$:
 
 $$\phi_{\mathrm{spec}}^{\mathrm{det}} = -\pi \times \Delta\eta = -\pi \times \frac{2\theta_{13}}{\pi} = -2\theta_{13}$$
 
@@ -196,7 +196,7 @@ The T2 kernel coupling amplitude between the $\nu_1$ mode and the τ mode, as a 
 
 $$g_{5,10}(\theta_{13}) = v_5 \cdot v_{10} \cdot \sin\theta_{13} = \frac{1}{2}\sqrt{g_{55}} \cdot \sin\theta_{13}.$$
 
-Under the APS theorem, the spectral flow is sensitive to the **half-angle** of the rotation in the mode function space, not the rotation angle itself — this is the standard spectral phase doubling. Specifically, a Dirac operator $D(\theta) = D_0 + \sin\theta \cdot V$ with weighted L² inner product $(\cdot,\cdot)_w$ returns to $D_0$ at $\theta = \pi$ (not $2\pi$), because $\sin\pi = 0$. The Dirac spectral period is therefore π in the coupling angle θ.
+Under the APS theorem, the spectral flow is sensitive to the **half-angle** of the rotation in the mode function space, not the rotation angle itself — this is the standard spectral phase doubling. Specifically, a Dirac operator $D(\theta) = D_0 + \sin\theta \cdot V$ with weighted L² inner product $(\cdot,\cdot)_w$ returns to $D_0$ at $\theta = \pi$ (not $2\pi$), because $\sin\pi = 0$. The Dirac spectral period is therefore $\pi$ in the coupling angle $\theta$.
 
 **The identification:** The coupling angle $\theta$ in $D(\theta) = D_{\mathbb{CP}^n}^{(0)} + \sin\theta \cdot \Pi_n$ is exactly the PMNS reactor angle $\theta_{13}$ — not $\theta_{13}/2$. This follows from the T2 kernel structure: the kernel perturbs $D_{\mathbb{CP}^n}$ with amplitude $\sin\theta_{13}$, and the spectral flow counts crossings as $\theta_{13}$ increases from 0 to $\pi$. The physical value $\theta_{13}^{\mathrm{phys}} \approx 8.55^\circ \ll \pi/2$, so the coupling parameter is linearly in the small-angle regime.
 
@@ -212,7 +212,7 @@ The factor of 2 is $c_1(\mathbb{CP}^5) - c_1(\mathbb{CP}^3) = \Delta c_1$ revers
 
 ### 3.4 Mode Function Inner Product Consistency Check
 
-**Verification that the mode norm is 1 in the relevant computation.** The IDWT inner product weight S(n,d) cancels in the spectral flow computation because the spectral flow counts **zero-mode crossings** of the Dirac operator, which are normalization-independent. Explicitly: a zero crossing occurs when $D_{\mathbb{CP}^n}(\theta_{13})$ has an eigenvalue that passes through zero. This is a topological count, invariant under rescaling of the mode functions. Therefore the factor $\|\Pi_n\|^2 = 1$ used in §1.3 is consistent with the IDWT weighted norm — both are equal to 1 because zero crossings are topological. ✅
+**Verification that the mode norm is 1 in the relevant computation.** The IDWT inner product weight $S(n,d)$ cancels in the spectral flow computation because the spectral flow counts **zero-mode crossings** of the Dirac operator, which are normalization-independent. Explicitly: a zero crossing occurs when $D_{\mathbb{CP}^n}(\theta_{13})$ has an eigenvalue that passes through zero. This is a topological count, invariant under rescaling of the mode functions. Therefore the factor $\|\Pi_n\|^2 = 1$ used in §1.3 is consistent with the IDWT weighted norm — both are equal to 1 because zero crossings are topological. ✅
 
 ---
 
@@ -226,7 +226,7 @@ $$\boxed{\delta_{CP} = \pi + (N_c - 1)\,\theta_{13} = \pi + 2\theta_{13}}$$
 
 where $\theta_{13}$ is the reactor angle, $N_c = \chi(\mathbb{CP}^2) = 3$ is the number of quark colors, and the formula holds to leading order in $\theta_{13}$ in the APS spectral flow of the one-parameter family $D_{\mathbb{CP}^n}(\theta_{13})$.
 
-**Basis-dependence note.** The derivation uses the PDG standard parameterization with phase convention $e^{-i\delta}$ in $U_{e3}$, the μ–τ reflection symmetry as the zero-phase reference, and the specific orientation $\partial U_{e3}^{(\mathrm{real})}/\partial\theta_{13} < 0$ from the inclusion-exclusion sign of $n_{\nu_3}$. These choices select one of the two physically equivalent phase branches (δ and 2π−δ). The IDWT prediction $\delta = \pi + 2\theta_{13}$ is structural in the sense that the combination $\pi + 2\theta_{13}$ arises from $\Delta c_1 = -2$ and the μ–τ symmetric-limit boundary; however, the overall sign of the $2\theta_{13}$ shift (which branch) depends on the sign convention for the perturbation in §2. A basis-independent statement: $|\delta - \pi| = 2|\theta_{13}|$; the prediction is which branch IDWT selects.
+**Basis-dependence note.** The derivation uses the PDG standard parameterization with phase convention $e^{-i\delta}$ in $U_{e3}$, the μ–τ reflection symmetry as the zero-phase reference, and the specific orientation $\partial U_{e3}^{(\mathrm{real})}/\partial\theta_{13} < 0$ from the inclusion-exclusion sign of $n_{\nu_3}$. These choices select one of the two physically equivalent phase branches ($\delta$ and $2\pi-\delta$). The IDWT prediction $\delta = \pi + 2\theta_{13}$ is structural in the sense that the combination $\pi + 2\theta_{13}$ arises from $\Delta c_1 = -2$ and the μ–τ symmetric-limit boundary; however, the overall sign of the $2\theta_{13}$ shift (which branch) depends on the sign convention for the perturbation in §2. A basis-independent statement: $|\delta - \pi| = 2|\theta_{13}|$; the prediction is which branch IDWT selects.
 
 **Proof summary.** The CP phase is the argument of the PMNS matrix element $U_{e3} = \sin\theta_{13}\,e^{-i\delta}$. It has two contributions:
 
@@ -299,25 +299,25 @@ The following table consolidates the full theorem status after the T8 completion
 | T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
 | **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; J = −0.00981** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
 | T9a–d | All 6 coupling constants derived | ✅ | Exact | No free coupling parameters |
-| T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$; former (1−ε)^k quark correction removed 2026-06-16 |
+| T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$; former $(1-\varepsilon)^k$ quark correction removed 2026-06-16 |
 | T10b | Geometric back-reaction correction +1/1680 for τ | ✅ | 0.001% | Critical-sector regularisation |
 | T11a–d | Neutrino masses; Dirac; $\Sigma m_\nu = 60.39$ meV | ✅ | <0.05% | 0νββ = 0 at all orders |
-| T13a | Spectral sum rule ζ_d(1) = d/(d-1) | ✅ | Exact | Total inverse-mass weight is pure Pascal |
-| T14a | Heat kernel Weyl term $K_d(t) \sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = d |
-| T14b | Constant term −d/2 and ζ_d(0) = −d/2 | ✅ | Exact | Sector functional determinant anchored |
+| T13a | Spectral sum rule $\zeta_d(1) = d/(d-1)$ | ✅ | Exact | Total inverse-mass weight is pure Pascal |
+| T14a | Heat kernel Weyl term $K_d(t) \sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = $d$ |
+| T14b | Constant term $-d/2$ and $\zeta_d(0) = -d/2$ | ✅ | Exact | Sector functional determinant anchored |
 | T13b | Mode spacing $S(n+1,d)-S(n,d) = S(n+1,d-1)$ | ✅ | Exact | Source of all mode-index chains |
 | T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer S; $d=4$ up-type bare (GTC removed) |
 | T15 | $N_c = \chi(\mathbb{CP}^2) = n_u$; all couplings/indices from one Euler characteristic | ✅ | Exact | Coupling filter and mass hierarchy share one root |
 | $\sin^2\theta_W$ | $1-(S(76,2)/S(81,2))^2 = 0.2237$; +0.37% from PDG on-shell | ✅ | +0.37% | Within EW radiative corrections |
-| G_N | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |
+| $G_N$ | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |
 
 **Count:**
 - ✅ Proved: 17 items
 - 🔵 Numerically verified (derivation complete): 2 items (T6 and T7)
-- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: δ_CP formula with three derivation gaps; G_N: G_∞ absolute scale a second dimensional input, not derived)
+- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
 - □ Open: 0 items
 
-The open 🔶 physics items — the spectral triple operator T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 (δ_CP) is a structural derivation with three technical gaps noted in §4.
+The open 🔶 physics items — the spectral triple operator T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 ($\delta_{CP}$) is a structural derivation with three technical gaps noted in §4.
 
 ---
 
@@ -332,7 +332,7 @@ The four identities that close the quadrilateral:
 1. **$Y_L = -\sqrt{g_{66}}$** — hypercharge is the square root of the sector coupling [needs verification against Part 3 §13 and Part 8 §2]
 2. **$g_2 = Q_u \cdot \sqrt{g_s}$** — weak coupling is the up-quark charge times the strong coupling square root [$Q_u$ and $g_s$ need definition; needs verification against Part 3]
 3. **$n_Z - n_W = q$** — a mode index gap IS a coupling-defining parameter [$q$ needs definition; needs verification]
-4. **$\delta_{CP} = \pi + (N_c - 1)\theta_{13}$** — the CP phase is π corrected by the number-of-colors minus one, times the reactor angle (T8, Part 10)
+4. **$\delta_{CP} = \pi + (N_c - 1)\theta_{13}$** — the CP phase is $\pi$ corrected by the number-of-colors minus one, times the reactor angle (T8, Part 10)
 
 Equation 4 is the cleanest expression of the unified structure: the CP phase is not a free parameter measured empirically. It is determined by $N_c$ (the number of quark colors, which is the Euler characteristic of the $d=4$ sector $\mathbb{CP}^2$) and by $\theta_{13}$ (which is itself determined by the mode indices $n_\tau$ and $n_\mu$ and the sector coupling $g_{55}$). Both $N_c$ and $\theta_{13}$ enter T8 through exactly the same topological/combinatorial machinery that determines every other observable in IDWT.
 
@@ -348,17 +348,17 @@ The CP-violating phase in the lepton sector is $N_c - 1$ reactor angles above $\
 
 | Prediction | Value | Experiment | Timeline | Falsification threshold |
 |---|---|---|---|---|
-| δ_CP | **197.11°** | DUNE, Hyper-K | ~2028–2030 | Outside 185°–210° falsifies $\pi+2\theta_{13}$ at 5σ |
-| J_PMNS | **−0.009813** | DUNE + Hyper-K | ~2030 | J > −0.007 or J < −0.013 falsifies |
-| δ-$\theta_{13}$ correlation: $\delta = 180^\circ + 2\theta_{13}$ | tested as both improve | NOvA+T2K+DUNE | Running–2030 | Violation by >5° at fixed $\theta_{13}$ falsifies |
+| $\delta_{CP}$ | **197.11°** | DUNE, Hyper-K | ~2028–2030 | Outside 185°–210° falsifies $\pi+2\theta_{13}$ at 5σ |
+| $J_{\rm PMNS}$ | **−0.009813** | DUNE + Hyper-K | ~2030 | J > −0.007 or J < −0.013 falsifies |
+| $\delta$-$\theta_{13}$ correlation: $\delta = 180^\circ + 2\theta_{13}$ | tested as both improve | NOvA+T2K+DUNE | Running–2030 | Violation by >5° at fixed $\theta_{13}$ falsifies |
 | Inverted ordering excluded | NH only | JUNO | ~2027 | IH detection falsifies entire IDWT lepton sector |
 | 0νββ rate | **0 at all orders**$^1$ | KamLAND-Zen, nEXO | Running–2028 | Any signal at any sensitivity falsifies |
 
-### 7.2 The $\theta_{13}$-δ Correlation Table
+### 7.2 The $\theta_{13}$-$\delta$ Correlation Table
 
 Since $\delta = \pi + 2\theta_{13}$ and both are determined by the same sector structure, they must track each other as experimental precision improves:
 
-| $\sin^2\theta_{13}$ (measured) | $\theta_{13}$ | IDWT predicts δ |
+| $\sin^2\theta_{13}$ (measured) | $\theta_{13}$ | IDWT predicts $\delta$ |
 |---|---|---|
 | 0.0218 | 8.49° | 196.98° |
 | 0.0220 | 8.53° | 197.06° |
@@ -366,9 +366,9 @@ Since $\delta = \pi + 2\theta_{13}$ and both are determined by the same sector s
 | 0.0222 | 8.57° | 197.14° |
 | 0.0225 | 8.63° | 197.26° |
 
-If future experiments find the $(\theta_{13}, \delta)$ values to be decorrelated — i.e., δ tracks a different line in this plane — T8 is falsified. This is a one-parameter prediction curve in the experimental $(\theta_{13}, \delta)$ plane, determined entirely by the spectral flow of the Dirac operator across the $\mathbb{CP}^3\to\mathbb{CP}^5$ mismatch.
+If future experiments find the $(\theta_{13}, \delta)$ values to be decorrelated — i.e., $\delta$ tracks a different line in this plane — T8 is falsified. This is a one-parameter prediction curve in the experimental $(\theta_{13}, \delta)$ plane, determined entirely by the spectral flow of the Dirac operator across the $\mathbb{CP}^3\to\mathbb{CP}^5$ mismatch.
 
-$^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix C exists on the $S^5$ spinor bundle (d mod 8 = 5), so cross-sector couplings cannot construct ψ^T C ψ at any loop order.
+$^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix $C$ exists on the $S^5$ spinor bundle ($d \bmod 8 = 5$), so cross-sector couplings cannot construct $\psi^T C \psi$ at any loop order.
 
 ---
 
@@ -377,7 +377,7 @@ $^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix C exists o
 **Status after Part 10: all Part 6 items resolved, reclassified, or advanced:**
 
 **Advanced in Part 10 (status 🔶):**
-- **CP-violating phase δ (APS spectral flow):** Structural derivation complete. $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$. Source: Chern class mismatch $\Delta c_1 = -2$ between $\mathbb{CP}^3$ and $\mathbb{CP}^5$, accumulated as APS spectral flow of the Dirac family on the charged-lepton sectors. Status remains 🔶 — three technical gaps prevent elevation to 🔵 (see §4 status note): (i) spectral flow coefficient needs rigorous derivation beyond Weyl-density heuristic; (ii) sign $\partial U_{e3}/\partial\theta_{13}|_{0^+}$ not explicitly computed from T6 coupling matrix; (iii) equivalence with Part 9 coupling-space integral not proved formally.
+- **CP-violating phase $\delta$ (APS spectral flow):** Structural derivation complete. $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$. Source: Chern class mismatch $\Delta c_1 = -2$ between $\mathbb{CP}^3$ and $\mathbb{CP}^5$, accumulated as APS spectral flow of the Dirac family on the charged-lepton sectors. Status remains 🔶 — three technical gaps prevent elevation to 🔵 (see §4 status note): (i) spectral flow coefficient needs rigorous derivation beyond Weyl-density heuristic; (ii) sign $\partial U_{e3}/\partial\theta_{13}|_{0^+}$ not explicitly computed from T6 coupling matrix; (iii) equivalence with Part 9 coupling-space integral not proved formally.
 
 **Remaining genuine open item:**
 - **$G_\infty$ is a second dimensional input:** The single open item is the absolute gravitational scale $G_\infty$ (hence $G_N = G_\infty/(4\pi)$), which is not derived from the sector combinatorics. Fixing it would require an independent geometric determination — a problem analogous to deriving the overall mass unit from the sector structure (currently $m_e$ is the unit input).
@@ -425,9 +425,9 @@ Part 10 closes the T8 derivation of the CP-violating phase:
 
 - **§1** established the spectral flow coefficient from the T2 kernel structure: $\mathrm{sf}(D_{\mathbb{CP}^n}; 0\to\theta_{13}) = c_1(\mathbb{CP}^n) \times \theta_{13}/\pi$. The coefficient 2 in $\Delta\eta = 2\theta_{13}/\pi$ is the Chern class difference $c_1(\mathbb{CP}^5) - c_1(\mathbb{CP}^3) = (N_c+3) - (N_c+1) = 2$, determined by the sector chain (T15a) and the Hopf chain step (T3).
 
-- **§2** derived δ = π in the μ–τ symmetric limit from the T6 coupling matrix: the inclusion-exclusion origin of $n_{\nu_3}$ forces $\partial U_{e3}/\partial\theta_{13}|_{0^+} < 0$, placing the CP phase at π in that limit. This is consistent with and derivable from the same mode index structure that gives $\delta_{\nu_3} = +1/35$.
+- **§2** derived $\delta = \pi$ in the μ–τ symmetric limit from the T6 coupling matrix: the inclusion-exclusion origin of $n_{\nu_3}$ forces $\partial U_{e3}/\partial\theta_{13}|_{0^+} < 0$, placing the CP phase at $\pi$ in that limit. This is consistent with and derivable from the same mode index structure that gives $\delta_{\nu_3} = +1/35$.
 
-- **§3** confirmed the factor-of-2 normalization: the T2 kernel perturbs $D_{\mathbb{CP}^n}$ with amplitude $\sin\theta_{13}$, the Dirac spectral period in this parameter is π, and mode function norms are 1 for zero-crossing counts (topological). The spectral phase is $\phi_{\mathrm{spec}}^{\det} = -2\theta_{13}$, giving $\delta_{CP} = \pi + 2\theta_{13}$.
+- **§3** confirmed the factor-of-2 normalization: the T2 kernel perturbs $D_{\mathbb{CP}^n}$ with amplitude $\sin\theta_{13}$, the Dirac spectral period in this parameter is $\pi$, and mode function norms are 1 for zero-crossing counts (topological). The spectral phase is $\phi_{\mathrm{spec}}^{\det} = -2\theta_{13}$, giving $\delta_{CP} = \pi + 2\theta_{13}$.
 
 - **§4** states T8 as a structural derivation (status 🔶): $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, J = −0.00981, both matching PDG NH best fit to <1%.
 

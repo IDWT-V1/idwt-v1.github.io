@@ -120,7 +120,7 @@ $$(\xi_d\cdot\xi_{d'})^2 = \tfrac{1}{3}\;[$l{=}0$,\text{ scalar}] \;+\; \tfrac{2
 
 For general $d$, the $l=0$ coefficient is $1/d$ and the $l=2$ coefficient involves the Gegenbauer polynomial $C_2^{(d-2)/2}$. The $d=3$ formula is given because the $d=3$ quark sector is the primary source of the corrections discussed here.
 
-The $l=0$ part is a constant — it generates sector masses and is the source of the entire simplex spectrum. The $l=2$ part depends on the relative orientation of $\xi_d$ and $\xi_{d'}$ and is responsible for the non-trivial spatial corrections in the theory: the even-$l$ correlations of the $d=3$ colour singlet that set nucleon size and confinement energy, and the $n$-dependent frequency precession behind the $d=4$ up-type overshoot (§11). Both come from the same tensor term. (The nucleon spin observables μ_p, μ_n, and g_A are not from this term — being spin-independent it cannot source a spin observable; they belong to the Dirac spin-orbit sector, Part 8 §10.)
+The $l=0$ part is a constant — it generates sector masses and is the source of the entire simplex spectrum. The $l=2$ part depends on the relative orientation of $\xi_d$ and $\xi_{d'}$ and is responsible for the non-trivial spatial corrections in the theory: the even-$l$ correlations of the $d=3$ colour singlet that set nucleon size and confinement energy, and the $n$-dependent frequency precession behind the $d=4$ up-type overshoot (§11). Both come from the same tensor term. (The nucleon spin observables $\mu_p$, $\mu_n$, and $g_A$ are not from this term — being spin-independent it cannot source a spin observable; they belong to the Dirac spin-orbit sector, Part 8 §10.)
 
 For the self-coupling ($d=d'$), $\xi=\xi'$ so $(\xi\cdot\xi)^2=|\xi|^4=1$ on the unit sphere. The Gegenbauer $l=2$ component is present but averages to zero over the rotationally symmetric vacuum (Gegenbauer orthogonality): only the $l=0$ piece contributes to the sector self-energy after vacuum averaging. Cross-sector angular mixing is absent in the vacuum expectation value of the self-coupling.
 
@@ -148,7 +148,7 @@ Evaluate $S(4,4)$ two ways:
 
 $$S(4,4) = S(4,3) + S(3,4) \;\Longrightarrow\; 35 = 20 + 15 \;\Longrightarrow\; n_\mu = n_c + n_{\nu_2}$$
 
-It is Pascal's recursion applied to S(4,4) = 35. The generation-2 lepton mode index equals the sum of the charm quark index and the second neutrino index because that is what the hockey-stick identity requires at ($n=4$, $d=4$). The eigenmode selection rule for generation 2 is a combinatorial theorem.
+It is Pascal's recursion applied to $S(4,4) = 35$. The generation-2 lepton mode index equals the sum of the charm quark index and the second neutrino index because that is what the hockey-stick identity requires at ($n=4$, $d=4$). The eigenmode selection rule for generation 2 is a combinatorial theorem.
 
 **Generation 1 law:**
 
@@ -287,7 +287,7 @@ The neutrino gaps are themselves sums of quark seeds:
 
 $$n_{\nu_2}-n_{\nu_1} = 5 = n_s+n_d, \qquad n_{\nu_3}-n_{\nu_2} = 7 = n_u+n_s$$
 
-**Normal mass ordering predicted:** S(n,5) is strictly increasing, so $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$. Consistent with current experimental preference at 3–4σ.
+**Normal mass ordering predicted:** $S(n,5)$ is strictly increasing, so $m_{\nu_1} < m_{\nu_2} < m_{\nu_3}$. Consistent with current experimental preference at 3–4σ.
 
 **Spectral grounding (sector spectral counting theorem, T-S1):** $S(n,5) = \frac{1}{2}N_{D_{S^5}}(n-1)$. Neutrino masses obey the same sector spectral counting law as down-type quark masses: mass equals half the cumulative Dirac eigenvalue count on $S^5$ below the mode's level. The three neutrino modes ($n=10, 15, 22$) correspond to $2\times S(10,5)=4004$, $2\times S(15,5)=23256$, and $2\times S(22,5)=131560$ cumulative Dirac eigenstates on $S^5$.
 
@@ -315,7 +315,7 @@ $$m_b = \sqrt{S(16,3)\times S(17,3)}\times m_{\rm scale,3} = \sqrt{816\times969}
 
 ### 8a. Composite Hadron Masses from the Beat Structure
 
-Mesons and baryons are composite bound states — not sector eigenmodes and not assigned mode indices (n,d). Their masses depend on the constituent quark masses and the binding dynamics. Two regimes apply, with the boundary at $m_{\rm quark} \sim \Lambda_{\rm QCD} = 282$ MeV.
+Mesons and baryons are composite bound states — not sector eigenmodes and not assigned mode indices $(n,d)$. Their masses depend on the constituent quark masses and the binding dynamics. Two regimes apply, with the boundary at $m_{\rm quark} \sim \Lambda_{\rm QCD} = 282$ MeV.
 
 **Chiral regime** ($m_{\rm quark} \ll \Lambda_{\rm QCD}$): the Gell-Mann–Oakes–Renner (GOR) relation with IDWT-derived chiral condensate parameter $B_0$:
 
@@ -523,7 +523,7 @@ Equivalently: **$1680 = n_s \times n_u \times (n_s+n_u) \times S(n_s,3) = 4 \tim
 
 Each factor has an independent meaning from the seed structure:
 - $n_s = 4$: $b = 1+3$ (Dirac index of the lepton sector, $\mathrm{ind}(D_{\mathbb{CP}^3}) = 4$)
-- $n_u = 3$: seed ($\chi(\mathbb{CP}^2) = N_c = 3$, T15); $n_u = n_s-1$ by the χ-consecutiveness identity
+- $n_u = 3$: seed ($\chi(\mathbb{CP}^2) = N_c = 3$, T15); $n_u = n_s-1$ by the $\chi$-consecutiveness identity
 - $n_s + n_u = 7$: the sum of $n_s$ and the seed $n_u$
 - $S(n_s,3) = 20$: the strange quark mode count (= $n_c$, the charm mode index)
 
@@ -539,7 +539,7 @@ No inputs beyond $m_e$ and the seed pair $\{n_d=1, n_u=3\}$.
 
 ## 9c. Neutrino Mass Scale — Cross-Sector Fixed Point
 
-The $d=5$ sector ($S^5$) has Euler characteristic χ=0 — no self-confinement and no direct eigenmode selection from within the sector potential. The neutrino mass scale is set instead by the **three-sector cross-scale consistency equation** linking $d=4$, $d=5$, and $d=6$:
+The $d=5$ sector ($S^5$) has Euler characteristic $\chi=0$ — no self-confinement and no direct eigenmode selection from within the sector potential. The neutrino mass scale is set instead by the **three-sector cross-scale consistency equation** linking $d=4$, $d=5$, and $d=6$:
 
 $$m_{\rm scale,5}\times m_{\rm scale,4}^2 = \frac{n_u}{n_s}\times m_{\rm scale,6}^3$$
 
@@ -577,7 +577,7 @@ The corrected $\Sigma m_\nu = 1.487 + 8.639 + 50.267 = 60.393$ meV; bare 59.00 m
 
 - $\Sigma m_\nu = 60.39$ meV: detectable by Simons Observatory (CMB-S4 sensitivity ~30 meV — within a factor 2)
 - $m_\beta \approx 8.77\ \mathrm{meV}$: below KATRIN bound (< 450 meV) and below Project 8's long-term goal (~40 meV) — not accessible in near-term beta-decay experiments
-- m_ββ = 0 exactly: 0νββ decay is forbidden (Majorana mass forbidden in $d=5$ by spin structure)
+- $m_{\beta\beta} = 0$ exactly: 0νββ decay is forbidden (Majorana mass forbidden in $d=5$ by spin structure)
 - Normal hierarchy: $m_{\nu_1} \ll m_{\nu_2} \ll m_{\nu_3}$
 
 
@@ -654,7 +654,7 @@ $S(1,3) = 1$ makes the normalization factor trivially 1 for $d=3$.
 **$d=4$ (up-type quarks):** $n_{\min}=n_u=3$ (postulate; see Part 2 §5 note), $S(3,4)=15$.
 
 $$m_{\rm scale,4} = \frac{m_e\sqrt{g_{44}/g_{66}}}{S(3,4)} = \frac{0.511\times\sqrt{12/(\sqrt{7}\times0.25)}}{15} = 0.1451\ \text{MeV}$$
-The lightest occupied mode is the up quark: $m_u = m_{\rm scale,4} \times S(3,4) = m_e \times \sqrt{g_{44}/g_{66}} = 2.177$ MeV. The fixed-point requires $m_u^2 = (g_{44}/g_{66}) \times m_e^2$ — i.e. the up quark mass satisfies the same fixed-point equation that the down quark satisfies, with $g_{44}$ in place of $g_{33}$. The factor /S(3,4) = /15 is the fixed-point condition applied consistently to a sector whose lowest occupied mode is not $n=1$.
+The lightest occupied mode is the up quark: $m_u = m_{\rm scale,4} \times S(3,4) = m_e \times \sqrt{g_{44}/g_{66}} = 2.177$ MeV. The fixed-point requires $m_u^2 = (g_{44}/g_{66}) \times m_e^2$ — i.e. the up quark mass satisfies the same fixed-point equation that the down quark satisfies, with $g_{44}$ in place of $g_{33}$. The factor $/S(3,4)$ = $/15$ is the fixed-point condition applied consistently to a sector whose lowest occupied mode is not $n=1$.
 
 **Unified check:** $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{(12/\sqrt{7}) \div 8\sqrt{7}} = \sqrt{3/14} = 0.4629$. PDG: 0.462 ± ~0.10. Error: +0.20%.
 
@@ -666,7 +666,7 @@ The inter-sector comb filter $\mathrm{Im}[\Gamma_{346}(\omega)]$ predicts the $\
 
 $$m_{\rho^*} = \arg\max\,\mathrm{Im}[\Gamma_{346}(\omega)] = 775.794\ \text{MeV} \quad (\text{PDG: }775.260\pm0.250\ \text{MeV},\ {+}0.069\%)$$
 
-No direct mass input is used. The 0.534 MeV residual reflects the accuracy of the comb filter at this order; contributing open items include: (a) isospin breaking absent from the $SU(3)$-symmetric kernel (open item, Part 2 §11), and (b) the leading-order sector phase delay approximation in τ_d being exact only for $d=10$ (see Part 1 §3b). The agreement is a consistency check of the coupling geometry at the 0.069% level.
+No direct mass input is used. The 0.534 MeV residual reflects the accuracy of the comb filter at this order; contributing open items include: (a) isospin breaking absent from the $SU(3)$-symmetric kernel (open item, Part 2 §11), and (b) the leading-order sector phase delay approximation in $\tau_d$ being exact only for $d=10$ (see Part 1 §3b). The agreement is a consistency check of the coupling geometry at the 0.069% level.
 
 Note: $\tau_d = 1/(2\sqrt{k_0+d})$ is a valid description of the inter-sector phase delay at the resonance site $k_0$, where both $d=3$ and $d=6$ modes are evaluated at the same resonance frequency scale set by $k_0=n_s^2=16$. The delay formula does not assume comparable mass scales between sectors — it depends only on the Jacobi chain structure at $k_0$, which is a geometric property of the manifold, not the sector mass scale.
 
@@ -696,7 +696,7 @@ The light-quark predictions are parameter-free outputs of the coupling self-cons
 
 ### 10b. $g_{22}$ — the kernel back-reaction fixed-point 🔶
 
-**Status: 🔶 Structurally motivated (state-counting).** $g_{22} = p^2q/2 = 722.5$ is a multiplicity count: the product of available Dirac-eigenspace dimensions across the $d=3$ sector (two kernel legs → $p^2$) and the $d=4$ sector (one leg → q), with the 1/2 from the $\xi\leftrightarrow\xi'$ symmetry of the two-body kernel. It is not a kernel matrix element. Testing whether a genuine $(\xi\cdot\xi')^2$ trace yields $p^2q/2$ (`files/idwt.py` STEP 2d): the literal Tr[$G_{23}^2 + G_{24}^2$] is additive (∼ $p^2+q$, the wrong structure for a product), and the actual $(\xi\cdot\xi')^2$ overlap returns $\langle r^2\rangle$ magnitudes that scale as the mode index n — O(1), orders of magnitude below the multiplicity product. $p^2q$ appears only as a trace of the identity over rank-(p,p,q) eigenspaces, where the multiplicities are the input. So $g_{22}$ is a state-count (IDOS), on the same footing as the CKM formula: combinatorial, empirically exact, mechanism = counting. The 1/2 and the leg-counting are kernel-motivated; the magnitude is a count of eigenstates, not a dynamical overlap.
+**Status: 🔶 Structurally motivated (state-counting).** $g_{22} = p^2q/2 = 722.5$ is a multiplicity count: the product of available Dirac-eigenspace dimensions across the $d=3$ sector (two kernel legs → $p^2$) and the $d=4$ sector (one leg → q), with the 1/2 from the $\xi\leftrightarrow\xi'$ symmetry of the two-body kernel. It is not a kernel matrix element. Testing whether a genuine $(\xi\cdot\xi')^2$ trace yields $p^2q/2$ (`files/idwt.py` STEP 2d): the literal Tr[$G_{23}^2 + G_{24}^2$] is additive (∼ $p^2+q$, the wrong structure for a product), and the actual $(\xi\cdot\xi')^2$ overlap returns $\langle r^2\rangle$ magnitudes that scale as the mode index $n$ — O(1), orders of magnitude below the multiplicity product. $p^2q$ appears only as a trace of the identity over rank-(p,p,q) eigenspaces, where the multiplicities are the input. So $g_{22}$ is a state-count (IDOS), on the same footing as the CKM formula: combinatorial, empirically exact, mechanism = counting. The 1/2 and the leg-counting are kernel-motivated; the magnitude is a count of eigenstates, not a dynamical overlap.
 
 The $d=3$ self-coupling $g_{33}$ is fixed by the intra-sector confinement condition $g_{\rm eff}(n_s,3) = g_{33}/S(n_s,3) \approx 1$ (Part 2 §8). The $d=2$ sector has no self-confinement — the W is massive but not confined in the quark sense. Its self-coupling $g_{22}$ is instead fixed by the **cross-sector back-reaction**: the requirement that the $d=2$ vacuum amplitude is consistent with the $d=3$ and $d=4$ quark sector structures at the level $n_s=4$.
 
@@ -705,9 +705,9 @@ The $d=3$ self-coupling $g_{33}$ is fixed by the intra-sector confinement condit
 **Step 1.** The positive Dirac eigenvalue $\lambda_{l=3} = 7/2$ on $S^3$ has multiplicity $M_3 = (3+1)(3+2) = 20 = S(n_s,3)$ (Theorem S1, Part 8 §5). Of these 20 eigenstates, $n_u = 3$ are already accounted for by the up-quark sector boundary (Theorem S2, Part 8 §5). The remaining
 
 $$p = M_3^{S^3} - n_u = S(n_s,3) - n_u = 20 - 3 = 17$$
-[Notation: **p** is used here rather than α to avoid collision with the fine structure constant $\alpha = e^2/4\pi \approx 1/137$, which is a separately derived quantity in Part 3 §8.]
+[Notation: **p** is used here rather than $\alpha$ to avoid collision with the fine structure constant $\alpha = e^2/4\pi \approx 1/137$, which is a separately derived quantity in Part 3 §8.]
 
-eigenstates are available to couple to the $d=2$ sector through $G_{23}$. The kernel is two-body — $(\xi\cdot\xi')^2$ couples two copies of J^{$d=3$} — so both legs contribute, giving $p^2$.
+eigenstates are available to couple to the $d=2$ sector through $G_{23}$. The kernel is two-body — $(\xi\cdot\xi')^2$ couples two copies of $J^{d=3}$ — so both legs contribute, giving $p^2$.
 
 **Step 2.** The hockey-stick identity $S(n,d)-S(n,d-1)=S(n-1,d)$ gives the $d{=}4$ eigenstate increment at the up-quark threshold:
 
@@ -743,15 +743,15 @@ $$m_{\rm scale,2} = m_e\times\sqrt{g_{22}/g_{66}} = m_e\times\sqrt{722.5/0.25} =
 
 The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spectrum within most sectors, but in the **$d=4$ up-type quark sector** the bare count overshoots, growing with generation: up +0.77%, charm +0.93%, top +2.20% vs PDG 2024. The overshoot is colour-field binding energy — the energy locked in the confining field that a free-quark count would wrongly assign to the quark's inertial mass. The confinement-binding correction of §11.9 reduces all five quarks to within ±1σ of PDG 2024 statistical errors.
 
-A multiplicative correction was previously applied — a factor `(1 − ε)^k` tuned per quark, the "Generation Tower Correction" — which brought charm and top onto their measured values. It has been removed. Only the scale ε was derived; the per-quark exponent k was a fit, and a fitted correction is not a derivation. The bare masses are quoted instead, with the overshoot left open. A physically motivated correction may be added in future if one is derived.
+A multiplicative correction was previously applied — a factor `(1 − ε)^k` tuned per quark, the "Generation Tower Correction" — which brought charm and top onto their measured values. It has been removed. Only the scale $\varepsilon$ was derived; the per-quark exponent $k$ was a fit, and a fitted correction is not a derivation. The bare masses are quoted instead, with the overshoot left open. A physically motivated correction may be added in future if one is derived.
 
 ### 11.1 The candidate mechanism (open)
 
 The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part, which shifts each mode by a second-order self-energy (`files/idwt.py` STEP 86). That self-energy has the correct sign — it pulls the masses down, growing with the mode index — so it is a candidate source for the overshoot. It is **not applied**: with the derived scale $\varepsilon$ its shape is the combinatorial set $\{0,3,10\}$, which does not reproduce the measured masses (only the fitted $\{0,7,16\}$ did, §11.3). The up-type masses are therefore quoted bare and the overshoot left open (🔶).
 
-### 11.2 Derivation of ε (retained for $\delta_{\nu_3}$, no longer applied to quarks)
+### 11.2 Derivation of $\varepsilon$ (retained for $\delta_{\nu_3}$, no longer applied to quarks)
 
-The scale ε below is a genuinely derived quantity. It is no longer applied to the up-type quark masses (§11.3); it is retained only because the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§9d) depends on it.
+The scale $\varepsilon$ below is a genuinely derived quantity. It is no longer applied to the up-type quark masses (§11.3); it is retained only because the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§9d) depends on it.
 
 **$g_{\rm coeff} = 2/\sqrt{7}$ from the kernel self-consistency eigenvalue.**
 
@@ -881,7 +881,7 @@ The bare quark residuals are not equal across a sector (d +0.04%, s +0.57%, u +0
 
 The l=0 scalar part of $(\xi_d\cdot\xi_{d'})^2$ sets the sector mass scale; the l=2 tensor part supplies this mode-dependent shift.
 
-**$d=6$/$d=10$ kernel symmetry:** $v_6 = v_{10} = 1/2$ exactly. The kernel cannot distinguish the charged lepton sector from the tau sector — both have identical coupling strength. The mass difference between muon and tau arises entirely from different sector geometry (S(35,6) vs S(23,10)), not from any coupling difference. This is a genuine symmetry of the kernel, broken only by the Hopf chain's sector manifold assignments.
+**$d=6$/$d=10$ kernel symmetry:** $v_6 = v_{10} = 1/2$ exactly. The kernel cannot distinguish the charged lepton sector from the tau sector — both have identical coupling strength. The mass difference between muon and tau arises entirely from different sector geometry ($S(35,6)$ vs $S(23,10)$), not from any coupling difference. This is a genuine symmetry of the kernel, broken only by the Hopf chain's sector manifold assignments.
 
 **Self-consistency derivation route:**
 The sector mass scales satisfy $m_{\rm scale,d}^2 = g_{dd}\times\langle|\Psi^{(d)}|^2\rangle$ — the kernel self-consistency fixed-point equation. Once $g_{dd}$ is computed from the sector geometry ($\mathbb{CP}^2$, $S^3$, $\mathbb{CP}^3$) for each sector, all mass scales become fully derived. $m_e$ is the sole unit reference for the particle spectrum. $m_W$ is derived from seeds at $+0.003\%$ (Part 2 §10).

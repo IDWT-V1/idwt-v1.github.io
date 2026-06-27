@@ -4,7 +4,7 @@
 
 ---
 
-**Where we are.** We are inside $M_\infty$ at the $d=3$ coordinate level — not external observers viewing a projection from a separate space. Every mode of $\Psi_\infty$ is a feature of the same manifold we occupy. The question this document addresses is which resonances of $M_\infty$ are stable — which mode-sector pairs (n,d) persist as physical particles rather than dispersing. That is an intrinsic property of the modes and of $M_\infty$, not a property of an observer.
+**Where we are.** We are inside $M_\infty$ at the $d=3$ coordinate level — not external observers viewing a projection from a separate space. Every mode of $\Psi_\infty$ is a feature of the same manifold we occupy. The question this document addresses is which resonances of $M_\infty$ are stable — which mode-sector pairs $(n,d)$ persist as physical particles rather than dispersing. That is an intrinsic property of the modes and of $M_\infty$, not a property of an observer.
 
 ---
 
@@ -131,7 +131,7 @@ The exact cross-coupling $g_{3,4} = 4\sqrt{6}$ is fully derived from seed struct
 
 ### 1.4 Cross-Sector Two-Delay Beats
 
-The (d,d') sector pairs give additional predicted resonances:
+The $(d,d')$ sector pairs give additional predicted resonances:
 
 | Pair | Beat (MeV) | Nearest state | Mass error |
 |------|-----------|----------------|-------|
@@ -144,7 +144,7 @@ The (3,4) beat at 2163 MeV and the (6,10) beat at 736 MeV do not have clean hadr
 
 The formula $\text{beat}(n,n+1) = \sqrt{S(n,3) \times S(n+1,3)} \times m_{\rm scale,3}$ produces a full tower:
 
-| n, n+1 | Beat (MeV) | Nearest state | Mass error |
+| $n$, $n+1$ | Beat (MeV) | Nearest state | Mass error |
 |--------|------------|---------------|-------|
 | 4, 5 | 124.4 | (no identification — pion is a collective excitation, absent from sector spectrum; §3d Part 5) | — |
 | 11, 12 | 1517.1 | mass consistent with $f_2(1525)$; quantum numbers and decay channels not yet verified | −0.5% |

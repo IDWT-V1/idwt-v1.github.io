@@ -117,7 +117,7 @@ Both carry the same sector normalisation factor $\|\chi\|^2_\Xi$. For normalised
 
 $$m_{\rm inertial} = m_{\rm grav} = m_{\rm scale,d}\times S(n,d)$$
 
-This holds for all modes with the same (n,d) regardless of $\xi^0$. The sector mode-function normalization $W_S = |\chi(\xi^0)|^2/\|\chi\|^2_\Xi$ cancels from the inertial-to-gravitational mass ratio. All particle species have $m_{\rm grav}/m_{\rm inertial} = 1$. No fifth force. No composition-dependent gravitational coupling.
+This holds for all modes with the same $(n,d)$ regardless of $\xi^0$. The sector mode-function normalization $W_S = |\chi(\xi^0)|^2/\|\chi\|^2_\Xi$ cancels from the inertial-to-gravitational mass ratio. All particle species have $m_{\rm grav}/m_{\rm inertial} = 1$. No fifth force. No composition-dependent gravitational coupling.
 
 ### 3.7 Status of Formal Items
 
@@ -191,7 +191,7 @@ Values:
 | 6 | 0.250 | 3.000 | 1.414 | 0.500 |
 | 10 | 0.250 | 5.000 | 1.414 | 0.500 |
 
-**Why experimental bounds do not apply.** All experimental constraints on macroscopic extra dimensions — Eöt-Wash torsion balance, precision spectroscopy, ISL tests — assume a Kaluza-Klein tower of modes with masses $m_n = n/R$ and modified gravitational potential at distances r ~ R. In IDWT:
+**Why experimental bounds do not apply.** All experimental constraints on macroscopic extra dimensions — Eöt-Wash torsion balance, precision spectroscopy, ISL tests — assume a Kaluza-Klein tower of modes with masses $m_n = n/R$ and modified gravitational potential at distances $r \sim R$. In IDWT:
 
 - There is no KK tower (no periodic modes, no 1/R quantization)
 - The sector modes are exponentially localized bound states, not plane waves
@@ -209,7 +209,7 @@ $$R_{n,d} = \sqrt{N + d/2}\,(\mu\kappa)^{-1/4} = \sqrt{N+d/2}\; M^{-1/4}\, G_d^{
 
 with inertia $\mu = 1/\sqrt{G_d}$ (the rigidity *as a mass*, not a frequency) and well curvature $\kappa = M/G_d$ (curvature = mass $\times$ stiffness, linear in $M$). The per-dimension gravitational coupling $G_d$ is **derived, not free**: gravity is the one rigidity $1/G_\infty$ acting through the $d$-dimensional geometry, so the in-sector Newtonian coupling is $G_d = G_\infty/[(d-2)\,S_{d-1}]$ (the §3.12 in-sector Green's function, with $S_{d-1} = 2\pi^{d/2}/\Gamma(d/2)$ the unit $(d-1)$-sphere area). **At $d=3$ this is $G_\infty/4\pi = G_N$ exactly** — our measured 3D gravity is the anchor, so the absolute scale is fixed. The dimensionless kernel shape $\lambda_d$ **cancels** from the physical size, and the sector factor is the derived $s_d = [(d-2)\,S_{d-1}]^{3/2}$. (idwt.py STEP 121.)
 
-Numerically the electron (d=6/$\mathbb{CP}^3$) is $R_e \approx 1.0\times10^{-29}$ m, and **every** elementary mode lands at $10^{-29}$–$10^{-30}$ m: sub-Compton by ~16 orders, ~11 orders below the electron compositeness bound ($\sim10^{-18}$ m), heavier $\Rightarrow$ smaller ($M^{-1/4}$). So $G_\infty$ sets the scale — **$G_\infty$ does set elementary-particle size** — and every elementary particle is a pointlike single mode far below any resolved size, clearing all compositeness, $g\!-\!2$, and spectroscopy bounds. (The microscopic localization also *strengthens* §3.9: a mode confined to $10^{-29}$ m is even more invisible to a $d=3$ observer.)
+Numerically the electron ($d=6$/$\mathbb{CP}^3$) is $R_e \approx 1.0\times10^{-29}$ m, and **every** elementary mode lands at $10^{-29}$–$10^{-30}$ m: sub-Compton by ~16 orders, ~11 orders below the electron compositeness bound ($\sim10^{-18}$ m), heavier $\Rightarrow$ smaller ($M^{-1/4}$). So $G_\infty$ sets the scale — **$G_\infty$ does set elementary-particle size** — and every elementary particle is a pointlike single mode far below any resolved size, clearing all compositeness, $g\!-\!2$, and spectroscopy bounds. (The microscopic localization also *strengthens* §3.9: a mode confined to $10^{-29}$ m is even more invisible to a $d=3$ observer.)
 
 **Status — derived (🔵), modulo one founding premise.** With $G_d$ fixed by the universality of gravity across dimensions ($d=3$ is not special; gravity is the same in every direction, anchored to the measured $G_N$), both the sector-dependence $s_d = [(d-2)S_{d-1}]^{3/2}$ and the overall scale are *derived* — no free coefficient, no wall-blocked constant. What remains is one premise, the framework's own ontology: a particle is a stiffness-bound standing wave whose well curvature is linear in the mode mass, $\kappa = M/G_d$. (A purely scale-covariant action gives an $M$-independent size, so the $M^{-1/4}$ scaling is the physical content of "stiffness-bound standing wave," not a free input.) The competing branches are excluded by data: self-gravity ($\kappa \propto G_\infty M^2$) gives the electron $\sim10^{31}$ m, $\mu = M$ gives the wrong $M^{-1/2}$, and a Compton-scale size violates the compositeness bound.
 
@@ -247,7 +247,7 @@ $$U_1/g = |R/2|^4 + (a^2+b^2)|R/2|^2 + d_{\rm sh}a^2b^2 \quad\text{[mutual quart
 *Each-own frame:*
 $$U_2/g = d_{\rm sh}a^2b^2 \quad\text{[R-independent: clustering fails]}$$
 
-The absolute reading is not a function of the separation at all; the pair-centroid reading would give the electron–proton pair a kernel energy $\sim10^{18}$ in sector units at R = $a_0$, against the observed Coulomb-only interaction; the each-own-frame reading leaves every pair in the universe coupled at full contact strength at any distance. The only covariant reading that survives is contact-gated:
+The absolute reading is not a function of the separation at all; the pair-centroid reading would give the electron–proton pair a kernel energy $\sim10^{18}$ in sector units at $R = a_0$, against the observed Coulomb-only interaction; the each-own-frame reading leaves every pair in the universe coupled at full contact strength at any distance. The only covariant reading that survives is contact-gated:
 
 $$U(R) = g_{dd'}\times\Omega(R)\times d_{\rm sh}\,a^2b^2, \qquad \Omega(0)=1,\quad\Omega\ \text{decaying on the mode-width scale}$$
 
@@ -257,7 +257,7 @@ The gate profile follows from the established structure as well ✅. Three input
 
 $$\Omega(R) = \frac{[\rho_A\star\tilde\rho_B](R)}{[\rho_A\star\tilde\rho_B](0)}$$
 
-For Gaussian sector ground modes, $\Omega(R) = \exp(-R^2/(2(a^2+b^2)))$, contact range $\sqrt{a^2+b^2}$. Corollary, exact: a same-sector pair has contact range $\sqrt{2\sigma_d^2} = \lambda_d^{-1/4} = L_d$ — the sector localization length is the same-sector contact range (e–e: $L_6$, the range of Part 11 §6.3; nucleon–nucleon at $d=3$: $L_3 = 0.675$, taken up quantitatively in Part 8 §11). The $d=3$–$d=4$ quark pair has range 0.78 in sector units, the sub-femtometre strong-force scale. Long-range physics is untouched: electromagnetism is carried by the massless, non-compact $d=2$ zero mode (Part 3 §16, §0.8a), to which no width gate applies, and gravity is $M_\infty$ curvature (§1). At A = B, R = 0 the gated form reduces to the §3.10.2 self-term. (`files/idwt.py` STEP 59, STEP 60.)
+For Gaussian sector ground modes, $\Omega(R) = \exp(-R^2/(2(a^2+b^2)))$, contact range $\sqrt{a^2+b^2}$. Corollary, exact: a same-sector pair has contact range $\sqrt{2\sigma_d^2} = \lambda_d^{-1/4} = L_d$ — the sector localization length is the same-sector contact range (e–e: $L_6$, the range of Part 11 §6.3; nucleon–nucleon at $d=3$: $L_3 = 0.675$, taken up quantitatively in Part 8 §11). The $d=3$–$d=4$ quark pair has range 0.78 in sector units, the sub-femtometre strong-force scale. Long-range physics is untouched: electromagnetism is carried by the massless, non-compact $d=2$ zero mode (Part 3 §16, §0.8a), to which no width gate applies, and gravity is $M_\infty$ curvature (§1). At $A = B$, $R = 0$ the gated form reduces to the §3.10.2 self-term. (`files/idwt.py` STEP 59, STEP 60.)
 
 ### 3.10.2 Evaluating the Self-Coupling
 
@@ -271,7 +271,7 @@ $$V_{\rm self}(r) = g_{dd}\times\frac{\langle r'^2\rangle_d}{d}\times r^2$$
 
 where $r = |\xi_d|$ and $\langle r'^2\rangle_d = \int_{\Xi_d} r'^2|\chi_d(\xi')|^2\,d\mu_{\xi'}$ is the mean-square sector radius of the ground-state mode. This gives a harmonic potential $V_{\rm self}\propto r^2$ — which is the confining potential itself, $V_d = \lambda_d r^2$ (the saturating form once posited here is dropped; see the note below), with:
 
-**Note on the potential functional form (MC-2, resolved).** The kernel self-energy derives the $r^2$ coefficient (above). The earlier saturating form $\lambda_d r^2/(1+r^2)$ is dropped: it supports no localized bound state in $d=5$, $6$, $10$ — the neutrino, charged-lepton, and tau sectors — so it cannot host the spectrum. The adopted potential is the **pure harmonic** $V_d(r) = \lambda_d r^2$, which is confining (purely discrete spectrum, $\sigma_{\rm ess} = \emptyset$), reproduces the IDOS $S(n,d)$ exactly in every sector, and makes the §3.10.3 self-consistency exact rather than circular. The narrow residual: the kernel fixes the $r^2$ coefficient near a localized source, and extending the pure-harmonic form to all r is adopted on these grounds rather than derived term-by-term from the action.
+**Note on the potential functional form (MC-2, resolved).** The kernel self-energy derives the $r^2$ coefficient (above). The earlier saturating form $\lambda_d r^2/(1+r^2)$ is dropped: it supports no localized bound state in $d=5$, $6$, $10$ — the neutrino, charged-lepton, and tau sectors — so it cannot host the spectrum. The adopted potential is the **pure harmonic** $V_d(r) = \lambda_d r^2$, which is confining (purely discrete spectrum, $\sigma_{\rm ess} = \emptyset$), reproduces the IDOS $S(n,d)$ exactly in every sector, and makes the §3.10.3 self-consistency exact rather than circular. The narrow residual: the kernel fixes the $r^2$ coefficient near a localized source, and extending the pure-harmonic form to all $r$ is adopted on these grounds rather than derived term-by-term from the action.
 
 $$\lambda_d = g_{dd}\times\frac{\langle r'^2\rangle_d}{d}$$
 
@@ -283,7 +283,7 @@ $$\frac{U_A(X)}{g_{dd}} = |X|^4 + \frac{2s^2}{d}|X|^2 + \frac{s^4}{d}$$
 
 $$V_{\rm self}(\xi) = g_{dd}\int|\chi_d(\xi')|^2\bigl((\xi-X)\cdot(\xi'-X)\bigr)^2\,d\mu_{\xi'}, \qquad X = \text{mode centroid}$$
 
-This is the minimal covariant completion of the kernel's written form 🔶. It leaves the derivation above and every number in §3.10.3–§3.10.4 unchanged — the computation in this section is carried out at X = 0, in the mode frame, so all published values are frame-local — while restoring translation covariance on the flat sector space. The well then travels with the excitation: the displacement energy is $U_B = g_{dd} s^4/d$, independent of X, the centroid propagates freely with $E^2 = P^2 + m^2$ (Part 1 §3i), and a boosted self-bound mode translates rigidly with the well co-moving (verified dynamically; the absolute-kernel counterpart oscillates pinned about the origin). Bound within, free without (Part 1 §3i) accordingly reads: bound about its center in all d sector dimensions; the center free in all of them. The compact internal structure corrects the point-center hydrogen Hamiltonian only through its smearing, $\Delta E/|E_{1s}| = 4(L_6/a_0)^2 \approx 2.9\times10^{-9}$ — the order of the proton-finite-size items of Part 8 §14.4. (`files/idwt.py` STEP 58.)
+This is the minimal covariant completion of the kernel's written form 🔶. It leaves the derivation above and every number in §3.10.3–§3.10.4 unchanged — the computation in this section is carried out at X = 0, in the mode frame, so all published values are frame-local — while restoring translation covariance on the flat sector space. The well then travels with the excitation: the displacement energy is $U_B = g_{dd} s^4/d$, independent of X, the centroid propagates freely with $E^2 = P^2 + m^2$ (Part 1 §3i), and a boosted self-bound mode translates rigidly with the well co-moving (verified dynamically; the absolute-kernel counterpart oscillates pinned about the origin). Bound within, free without (Part 1 §3i) accordingly reads: bound about its center in all $d$ sector dimensions; the center free in all of them. The compact internal structure corrects the point-center hydrogen Hamiltonian only through its smearing, $\Delta E/|E_{1s}| = 4(L_6/a_0)^2 \approx 2.9\times10^{-9}$ — the order of the proton-finite-size items of Part 8 §14.4. (`files/idwt.py` STEP 58.)
 
 ### 3.10.3 The Self-Consistency Equation
 
@@ -422,7 +422,7 @@ $$\frac{\delta}{\delta g_{\mu\nu}}\mathrm{Tr}_\Xi[\log O_\Xi] = 0 \quad\text{[ex
 
 $\Gamma_\Xi$ is a constant with respect to $g_{\mu\nu}$ — it contributes a fixed cosmological term (already absorbed into $\Lambda_{\rm eff}$) but no correction to $G_N$.
 
-**Why IDWT differs from Kaluza-Klein.** In KK theories, the higher-dimensional metric G_{MN} is a single dynamical object. Its spacetime and extra-dimensional components mix through moduli fields — the compact space fluctuates and gravitons propagate into the sector space. Integrating out these fluctuations produces the observed Planck mass, and the resulting KK excitation tower is excluded by Eöt-Wash and LHC searches.
+**Why IDWT differs from Kaluza-Klein.** In KK theories, the higher-dimensional metric $G_{MN}$ is a single dynamical object. Its spacetime and extra-dimensional components mix through moduli fields — the compact space fluctuates and gravitons propagate into the sector space. Integrating out these fluctuations produces the observed Planck mass, and the resulting KK excitation tower is excluded by Eöt-Wash and LHC searches.
 
 In IDWT, there is no graviton propagating anywhere. Gravity is curvature of $M_\infty$ caused by mass — not a field with quanta. The sector manifolds $\Xi_d$ are macroscopic spatial dimensions in which $\Psi_\infty$ vibrates; $h_{ab}(\xi)$ is a fixed classical background metric, has no equation of motion, and does not mix with the 3D observer's metric. There are no moduli, no metric fluctuations in $\Xi_d$, and no KK graviton tower. All KK-exclusion bounds presuppose graviton propagation into the sector space; they do not apply to IDWT.
 
@@ -432,13 +432,13 @@ In IDWT, there is no graviton propagating anywhere. Gravity is curvature of $M_\
 
 ### 3.12.2 $G_N$ as the 3D Measurement of Infinite-Dimensional Gravity
 
-The previous subsections show that G_N is sector-independent (§3.11) and not corrected by sector fluctuations (§3.12.1). Neither addresses the causal origin of G_N. This section establishes the correct logical direction: gravity is a phenomenon of the full $M_\infty$, not a 3D or 10D field appended to the particle physics. G_N is what a 3D observer at $\xi^0$ measures of it.
+The previous subsections show that $G_N$ is sector-independent (§3.11) and not corrected by sector fluctuations (§3.12.1). Neither addresses the causal origin of $G_N$. This section establishes the correct logical direction: gravity is a phenomenon of the full $M_\infty$, not a 3D or 10D field appended to the particle physics. $G_N$ is what a 3D observer at $\xi^0$ measures of it.
 
 **Gravity has no sector boundary.** Every other force acts within a specific sector (EM and weak in $d=2$, strong in $d=4$). Gravity is the unique exception — it has no sector confinement because it is curvature of $M_\infty$ itself, the space in which all sectors live. A force confined to $d=4$ cannot reach a $d=2$ particle. Gravity reaches everything because everything lives in $M_\infty$.
 
 **Mass encodes dimensional complexity; gravity couples through it.** The mass formula $m(n,d)=S(n,d)\times m_{\rm scale,d}$ assigns mass proportional to the count of sector microstates in sector $d$. More dimensions means exponentially more microstates: the photon ($d=2$, ground-state massless — two transverse polarisations, no excited microstates) barely couples to gravity; the tau ($d=10$, $S(23,10)=64\,512\,240$) couples strongly. Gravity couples to each particle through that particle's dimensional complexity, which is encoded in its mass. There is no separate gravitational rule per sector — the mass formula already carries the dimensional structure, and gravity couples to mass.
 
-**G_N as a measurement.** A 3D observer measures the $M_\infty$ curvature sourced by a particle of sector $d$. By bound-within, free-without (Part 1 §3h–3i), the observer is uniform in the $k=d-3$ hidden coordinates of that source, so it does not sample the source's field at a single hidden point — it samples the field integrated over all of them. For the $d$-dimensional potential $\sim 1/R^{d-2}$ of a localized mass (with $R^2 = r^2 + \rho^2$, $r$ the observable distance and $\rho$ the hidden distance), the integral over the $k$ hidden coordinates is
+**$G_N$ as a measurement.** A 3D observer measures the $M_\infty$ curvature sourced by a particle of sector $d$. By bound-within, free-without (Part 1 §3h–3i), the observer is uniform in the $k=d-3$ hidden coordinates of that source, so it does not sample the source's field at a single hidden point — it samples the field integrated over all of them. For the $d$-dimensional potential $\sim 1/R^{d-2}$ of a localized mass (with $R^2 = r^2 + \rho^2$, $r$ the observable distance and $\rho$ the hidden distance), the integral over the $k$ hidden coordinates is
 
 $$\int_{\mathbb{R}^k}\frac{d^k\rho}{(r^2+\rho^2)^{(d-2)/2}} = \frac{C_k}{r}, \qquad C_k = \frac{\pi^{(d-2)/2}}{\Gamma\!\left(\tfrac{d-2}{2}\right)}.$$
 
@@ -582,6 +582,6 @@ The contribution of the dimensions beyond $d=10$ is fixed: it is zero. ✅ The c
 
 ## 5. Generation Tower Mode Selection
 
-The framework treats every admissible integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ as a candidate resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index n must be a co-fixed-point of the sector comb filtration from $n_s=4$ — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
+The framework treats every admissible integer pair $(n,d)$ with $d \in \{2,3,4,5,6,10\}$ as a candidate resonance of $\Psi_\infty$. The physical particles are those selected by the co-fixed-point condition: the mode index $n$ must be a co-fixed-point of the sector comb filtration from $n_s=4$ — the generation tower. Modes not in the co-fixed-point set are not stable resonances of $M_\infty$, regardless of sector.
 
 In $d=3$, the co-fixed-point spectrum selects exactly $n=1$ (down) and $n=4$ (strange). The intermediate modes $n=2$, $3$ are not co-fixed-points — they are unoccupied resonances of $M_\infty$, predicted absent as stable distinct states (their $d=3$ masses would be 18.8 and 47 MeV). Modes $n\geq5$ in $d=3$ are likewise not selected.

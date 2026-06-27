@@ -510,8 +510,8 @@ With the $d=2$ sector scale $m_{{\rm scale},2} = 27.47$ MeV: 🔵
 | Observable | IDWT | Observed | Error |
 |---|---|---|---|
 | $m_\gamma$ | 0 (exact) | 0 | — |
-| m_Z | 91,230 MeV | 91,188 MeV | +0.047% |
-| m_Higgs | 125,266 MeV | 125,200 MeV | +0.053% |
+| $m_Z$ | 91,230 MeV | 91,188 MeV | +0.047% |
+| $m_{\rm Higgs}$ | 125,266 MeV | 125,200 MeV | +0.053% |
 | $\sin^2\theta_W$ | 0.2237 | 0.22290 (on-shell) | +0.37% |
 | ρ parameter | 1 (exact) | 1.002 | −0.2% |
 
@@ -522,7 +522,7 @@ $$\sin^2\theta_W = 1 - \bigl(S(76,2)/S(81,2)\bigr)^2 = 0.2237$$
 
 The $Z$--$W$ mode gap equals $q$ — the same Dirac eigenstate increment that enters $g_{22}$ (Theorem S3, Part 8 §5). Both arise from the $d=4$ sector's eigenvalue count at the up-quark level. $n_Z - n_W = q$ links the $W$--$Z$ mass ratio to the EW coupling constant through a single spectral identity.
 
-**ρ = 1 is derived:** W and Z live in the same sector → custodial $SU(2)$ is automatic.
+**$\rho = 1$ is derived:** W and Z live in the same sector → custodial $SU(2)$ is automatic.
 
 ---
 
@@ -730,7 +730,7 @@ Both gravity and electromagnetism are curvature 2-forms in IDWT:
 
 The statement from P4 — all physics follows from the geometry of $M_\infty$ — is concrete for both forces.
 
-**Electric charge is derived.** The electromagnetic coupling is $e = g_2 \sin\theta_W$, where $g_2 = (2/3)\sqrt{g_s}$ follows from the $\mathbb{CP}^2$ kernel volume integral (§4) and $\sin\theta_W = \sqrt{1-(S(76,2)/S(81,2))^2}$ follows from the mode indices. The fine structure constant at the $d=2$ sector scale — the natural coupling scale of the $d=2$ sector, ≈m_W, where the IDWT couplings are defined as fixed geometric numbers — is $\alpha = e^2/(4\pi)$, giving $1/\alpha = 131.8$. Translating to $q\to0$ with the SM 1-loop vacuum-polarisation formula applied to the IDWT inputs (a cross-framework comparison; IDWT couplings themselves do not run), $1/\alpha(0) \approx 133.1$ (−2.9% from PDG 137.036); the residual traces to the $\sin^2\theta_W$ +0.37% gap, not a separate parameter.
+**Electric charge is derived.** The electromagnetic coupling is $e = g_2 \sin\theta_W$, where $g_2 = (2/3)\sqrt{g_s}$ follows from the $\mathbb{CP}^2$ kernel volume integral (§4) and $\sin\theta_W = \sqrt{1-(S(76,2)/S(81,2))^2}$ follows from the mode indices. The fine structure constant at the $d=2$ sector scale — the natural coupling scale of the $d=2$ sector, $\approx m_W$, where the IDWT couplings are defined as fixed geometric numbers — is $\alpha = e^2/(4\pi)$, giving $1/\alpha = 131.8$. Translating to $q\to0$ with the SM 1-loop vacuum-polarisation formula applied to the IDWT inputs (a cross-framework comparison; IDWT couplings themselves do not run), $1/\alpha(0) \approx 133.1$ (−2.9% from PDG 137.036); the residual traces to the $\sin^2\theta_W$ +0.37% gap, not a separate parameter.
 
 **Open item — charge quantization from fiber topology.** The derivation above computes the numerical value of $e$ from $g_2$ and $\sin\theta_W$. A separate question is why charge is quantized — why all observable charges are rational multiples of $e$. The $U(1)$ Hopf fiber $S^1 \to S^3 \to S^2$ has integer first Chern class (winding number), which naturally produces quantized couplings to the fiber. The Chern–Weil integral $\int_{\mathbb{CP}^1} c_1(O(n)) = n$ is exact for every line bundle degree $n$ (⭐ Identity, pure topology; `files/idwt.py` STEP 78), so the integer labelling the $d=2$ Hopf bundle is rigid — this is the topological origin of the integer structure. Whether this topological integer structure is the IDWT mechanism for charge quantization — and how it yields the fractional quark charges $e/3$, $2e/3$ alongside the integer lepton charges — has not been shown in closed form. The fractional values follow from anomaly cancellation (§13), but the connection between the integer Chern class of the Hopf bundle and the observed charge spectrum is an open derivation.
 
@@ -808,11 +808,11 @@ The photon mass $m_\gamma^2 = \Pi_{\rm kernel}(0) = 0$ exactly, to all orders in
 
 This is stronger than gauge invariance alone (which only requires $\Pi(q^2)$ to be transverse). The L-parity argument shows the kernel CANNOT produce a photon mass even if gauge invariance were broken — the photon is protected by the parity of the coupling tensor.
 
-Condensate-linearized vertices — the degree-1 effective terms produced when the quartic kernel is expanded about a non-zero sector condensate ⟨ξ_{d'}⟩ ≠ 0 (Part 1 P6) — are odd only in the fluctuation leg δξ_{d'} and remain even (degree 2) in the photon's own $d=2$ variable ξ. The L=1 component in the photon's own variable remains exactly zero, so m_γ = 0 survives in the presence of condensate backgrounds without modification to this proof.
+Condensate-linearized vertices — the degree-1 effective terms produced when the quartic kernel is expanded about a non-zero sector condensate $\langle\xi_{d'}\rangle \neq 0$ (Part 1 P6) — are odd only in the fluctuation leg $\delta\xi_{d'}$ and remain even (degree 2) in the photon's own $d=2$ variable $\xi$. The L=1 component in the photon's own variable remains exactly zero, so $m_\gamma = 0$ survives in the presence of condensate backgrounds without modification to this proof.
 
 The same evenness acts on the production side: with no odd condensate vertex available in the $d=2$ variable, a generation-tower production landing on a $d=2$ mode carries an even number of degree-1 insertions — zero for the W, Z, H g-rule joins, two for the additive Higgs closure (🔶, the even-insertion selection rule, §11; `idwt.py` STEP 55).
 
-### 16.3 Scale Dependence of α — Cross-Framework Comparison
+### 16.3 Scale Dependence of $\alpha$ — Cross-Framework Comparison
 
 IDWT assigns $\alpha$ a single fixed geometric value at the $d=2$ sector scale; couplings do not run in IDWT — the IDWT scale-dependence mechanism is geometric dilution, $g_{\rm eff} = g_{dd}/S(n,d)$ (Part 5). The kernel does not contribute to the photon self-energy (§16.2). The PDG quotes $\alpha$ at $q^2 = m_Z^2$ under the SM prescription, where the scale dependence is vacuum polarisation from fermion loops. The comparison below is therefore the SM 1-loop formula with the IDWT fermion content as input — a cross-framework comparison, not an IDWT derivation: 🔵
 
