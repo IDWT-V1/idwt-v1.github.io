@@ -140,8 +140,7 @@ html,body{ margin:0; height:100%; overflow:hidden; }
 
 <!-- ══════════════════════ VIZ PANEL ══════════════════════ -->
 <div class="viz-panel" id="vizPanel">
-  <div class="viz-info" id="vizInfo"><div class="vi-title">Resonant orbits · κ = ω₁</div>nested 1s · 2p · 3d · 4f at one nucleus</div>
-  <div class="drag-hint">drag to rotate · scroll to zoom</div>
+  <div class="drag-hint">Drag to rotate. Scroll to Zoom</div>
   <div class="shell-bar" id="controls"></div>
 </div>
 
@@ -242,7 +241,7 @@ frameCamera();
 let head=0, elapsed=0;
 function animate(){
   requestAnimationFrame(animate); controls.update();
-  head=(head+8)%NPTS; elapsed+=8;
+  head=(head+32)%NPTS; elapsed+=32;
   for(const sh of SHELLS){
     if(!sh.visible) continue;
     const span=Math.min(elapsed,sh.trailLen-1);   // trail grows from the electron, not pre-drawn
