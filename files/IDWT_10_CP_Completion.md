@@ -289,7 +289,7 @@ The following table consolidates the full theorem status after the T8 completion
 | Theorem | Content | Status | Accuracy | Physical consequence |
 |---|---|---|---|---|
 | T0 | Spectral triple; physical spectrum | 🔶 | — | All SM masses from one operator; 7 open items (Part 9) |
-| T0.5 | Co-fixed-point selection condition | 🔶 | Exact outcomes | Selects the 11-mode lattice (photon + hockey-stick fermions); the 2 product-form quarks {16,72} and the EW g-chain {76,81,95} are tiers 2–3 (Part 9 T0.5 scope); decoherence mechanism not yet derived from EOM |
+| T0.5 | Co-fixed-point selection condition | 🔶 | Exact outcomes | Selects the 11-mode lattice (photon + hockey-stick fermions); the 2 product-form quarks {16,72} and the EW $g$-chain {76,81,95} are tiers 2–3 (Part 9 T0.5 scope); decoherence mechanism not yet derived from EOM |
 | T1 | $m = S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
 | T3 | $D = \{2,3,4,5,6,10\}$ from Hopf chain | ✅ | Exact | 6 sectors, no more, no fewer |

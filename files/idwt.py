@@ -169,7 +169,7 @@ n_strange = n_up + n_down   # = 4  (composite, derived)
 
 # n_nu1 = S(n_up, 3) = S(3, 3) = C(5,3) = 10
 # The first neutrino mode index is the image of the up quark seed under the
-# d=3 simplex map. The d=5 sector couples to d=3 via the Vandermonde rule,
+# d=3 simplex map. The d=5 sector couples to d=3 via the g-rule,
 # and the lightest d=5 mode resonates at the d=3 simplex value of the up quark.
 n_nu1 = S(n_up, 3)    # = 10
 
@@ -251,10 +251,10 @@ n_tau = n_nu3 + n_down    # = 23
 # (Appendix A s43 addendum, 2026-06-15.)
 n_top = 3 * n_strange * 6          # = N_c * n_s * N_f = 72
 
-# --- Boson mode indices (Vandermonde rule) ------------------------------------
-# The Vandermonde coupling rule: sectors d and d' couple when d+d' is itself
+# --- Boson mode indices (g-rule) ------------------------------------
+# The g-rule (sector-coupling rule): sectors d and d' couple when d+d' is itself
 # a sector dimension, and the combined mode index is g(a, b) = a + b - 1.
-# Each boson mode index is the Vandermonde combination of a fermion sector
+# Each boson mode index is the g-rule combination of a fermion sector
 # dimension and an occupied fermion mode index. (Part 3 section 11)
 
 # n_W = g(d=5, n_top) = n_top + 5 - 1 = 76
@@ -323,7 +323,7 @@ n_H = n_Z + n_nu2 - 1  # = 95
 # beat k0 = n_s^2 = 16 (the two non-image product sites); 10,15,20,35 the
 # hockey-stick 2x2 block S({3,4},{3,4}); 13,22,23 hockey-stick sums (23 =
 # n_nu3 + n_down, the +1 is the down seed, not a fudge); 76,81,95 the
-# Vandermonde g-steps off 72. (Part 9 T0.5; Appendix A s43 addendum.)
+# g-steps off 72. (Part 9 T0.5; Appendix A s43 addendum.)
 # Note: seed status is generative (tower root), not dynamical -- it does
 # not by itself confer stability (STEP 64: the ground seed is protected
 # by having no downward channel, not by seedhood).
@@ -347,7 +347,7 @@ product_form_quarks = {n_strange**2, n_top}    # {16, 72}
 
 # --- Spectrum partition (s43 reframe; Part 9 T0.5) ---------------------------
 # The spectrum splits into three tiers by HOW each index is generated. One
-# additive operation (simplex sums / Vandermonde g-steps) runs from two
+# additive operation (simplex sums / g-steps) runs from two
 # starting points: the seeds give the lattice (tier 1), the external top
 # gives the boson chain (tier 3). The only non-additive objects are the two
 # product-form quarks (tier 2).
@@ -2012,7 +2012,7 @@ t9a_err_25  = abs(t9a_prod_25 - 96.0)
 #   n must be a co-fixed-point of the sector comb filtration generated from
 #   seeds {n_u=3, n_d=1}, composite n_s=4, by the hockey-stick recursion
 #     S(n+1, d) = S(n, d) + S(n, d-1)
-#   and the Vandermonde coupling rule (STEP 1); d must be the sector assigned
+#   and the g-rule (STEP 1); d must be the sector assigned
 #   to that family by the Hopf-chain structure (Part 1 section 3). The physical
 #   (n,d) pairs Sigma_pairs are exactly the 15 particles derived in STEP 1.
 #   Their membership is not a postulate: it follows entirely from the two seed
@@ -5941,7 +5941,7 @@ _excluded_90 = all(
 #   into a BOTTOM regime (n<72, matter) and a TOP regime (n>=72, the top
 #   quark plus the gauge/Higgs bosons, all d=2). Tests three facts behind
 #   the recast.
-#   (a) The Vandermonde g-rule g(d,n)=n+d-1 (active sectors d in D) is an
+#   (a) The g-rule g(d,n)=n+d-1 (active sectors d in D) is an
 #       ADJACENCY relation, not a generator: forward-closed from the seed
 #       n=1 it covers EVERY integer in 1..71, so it cannot by itself select
 #       a subset. The selective law is the additive simplex tower (the
@@ -7751,7 +7751,7 @@ assert (_evl_all_pos_118 and _Id_nonode_118 and _mem_all_decoupled_118
 #       framework target forces the open cell;
 #   (b) downstream back-forcing: n_e feeds T = S(n_e,2) = 91 (boson anchor)
 #       and k0 = n_e+n_u = 16 (bottom beat), but BOTH are derived
-#       independently of n_e (Vandermonde g-steps off n_top; n_s^2
+#       independently of n_e (g-steps off n_top; n_s^2
 #       resonance), so neither pins it -- the "16 = n_e+n_u" reading is
 #       post-hoc (STEP 7 fixes the beat by n_s^2, the d=3 modes 16,17);
 #   (c) no Pascal recursion val(a,b)=val(a-1,b)+val(a,b-1) holds anywhere

@@ -188,7 +188,7 @@ The factorisation $n_{\rm top} = \chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(
 
 ## 4. Mode Index Tower
 
-Every mode index is fixed by the seeds through a small set of named operations — hockey-stick (Pascal) evaluations, additive and inclusion–exclusion edges, the Vandermonde $g$-rule, and the top's Euler product — with no index chosen to match a mass. The hockey-stick is the engine for the simplex backbone; the composite indices (the top, the charged-lepton edges, the bosons, the Higgs) enter through the other operations:
+Every mode index is fixed by the seeds through a small set of named operations — hockey-stick (Pascal) evaluations, additive and inclusion–exclusion edges, the $g$-rule, and the top's Euler product — with no index chosen to match a mass. The hockey-stick is the engine for the simplex backbone; the composite indices (the top, the charged-lepton edges, the bosons, the Higgs) enter through the other operations:
 
 | Particle | $d$ | $n$ | Derivation |
 |---|---|---|---|
@@ -204,7 +204,7 @@ Every mode index is fixed by the seeds through a small set of named operations �
 | $e^-$ | 6 | 13 | $n_{\nu_1} + n_u = 10+3$ (generation law) |
 | $\mu^-$ | 6 | 35 | $S(n_s,4)$ (seed fixed point) |
 | $\tau^-$ | 10 | 23 | $n_c + n_u = 20+3$ |
-| $W^\pm$ | 2 | 76 | $d_\nu + n_{\rm top} - 1 = 5+72-1$ (g-rule) |
+| $W^\pm$ | 2 | 76 | $d_\nu + n_{\rm top} - 1 = 5+72-1$ ($g$-rule) |
 | $Z^0$ | 2 | 81 | $n_W + \beta = 76+5$ |
 | $H$ | 2 | 95 | $n_u + n_c + n_t = 3+20+72$ [open] |
 

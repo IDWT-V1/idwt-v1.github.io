@@ -113,7 +113,7 @@ The net count of left-chiral zero modes (the holomorphic Euler characteristic) a
 
 ### 3.1 Spectral Independence
 
-The occupied mode indices $\{n_d, n_s, n_u, n_c, n_e, n_\mu, n_\tau, n_{\nu_1}, n_{\nu_2}, n_{\nu_3}, n_{\rm top}, n_W, n_Z, n_H\}$ are **spectrally independent**: the occupied S-values within each sector form a sum-free set — no S-value equals the sum of two (not necessarily distinct) other occupied S-values from the same sector — and no cross-sector simplex identities hold beyond those forced by the Vandermonde coupling and the eigenmode selection rule.
+The occupied mode indices $\{n_d, n_s, n_u, n_c, n_e, n_\mu, n_\tau, n_{\nu_1}, n_{\nu_2}, n_{\nu_3}, n_{\rm top}, n_W, n_Z, n_H\}$ are **spectrally independent**: the occupied S-values within each sector form a sum-free set — no S-value equals the sum of two (not necessarily distinct) other occupied S-values from the same sector — and no cross-sector simplex identities hold beyond those forced by the $g$-rule sector coupling and the eigenmode selection rule.
 
 This was verified computationally for all pairwise and triple combinations. The independence theorem rules out redundancy in the spectrum — every assigned mode index carries independent physical content.
 
@@ -352,7 +352,7 @@ with unified geometric kernel:
 
 $$V_{\rm kernel} = \sum_{\text{allowed }(d,d')} g_{d,d'}(\xi)\,(ξ_d\cdot\xi_{d'})^2\,|\Psi^{(d)}|^2\,|\Psi^{(d')}|^2$$
 
-where the sum runs over Vandermonde-allowed pairs ($d+d' \in \{2,3,4,5,6,10\}$), and $V_{\rm harmonic}(\xi) = \sum_d \tfrac{1}{2} m_{\rm scale,d}\, \omega_d^2 |\xi_d|^2$.
+where the sum runs over $g$-rule-allowed pairs ($d+d' \in \{2,3,4,5,6,10\}$), and $V_{\rm harmonic}(\xi) = \sum_d \tfrac{1}{2} m_{\rm scale,d}\, \omega_d^2 |\xi_d|^2$.
 
 **Relation to the fundamental EOM.** The equation above is the squared spectral reduction of the fundamental first-order nonlinear Dirac equation declared in Part 1 P1 and Part 9 T0: $(i\gamma^\mu\partial_\mu + \Sigma_d D_d)\Psi_\infty = V_{\rm kernel}[\Psi_\infty]\cdot\Psi_\infty$, where $D_d$ is the sector Dirac operator with $D_d^2 = H_d^{\rm harm}$ (§3.4). The two forms share the same spectrum $\{(2N+d)\sqrt{\lambda_d}\}$ and the same kernel matrix elements; the Schrödinger form is used here because it makes the harmonic sector structure and the mode counting $S(n,d)$ transparent. The Dirac form is the physically fundamental object — it carries the spinor structure (chirality, particle/antiparticle, the all-orders $0\nu\beta\beta$ prohibition from the absence of $C$ on $S^5$) that the scalar reduction loses.
 

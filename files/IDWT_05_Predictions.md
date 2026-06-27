@@ -56,7 +56,7 @@ All inputs — $g_{33}=8\sqrt{7}$, $g_{44}=12/\sqrt{7}$, $g_{66}=1/4$, delays fr
 
 $$\sin\theta_C = (1+1/240)/\sqrt{20} = 0.22454 \quad (\text{PDG: }0.22450\pm 0.00044,\ +0.09\sigma)$$
 
-Derived from the Vandermonde $d=3\leftrightarrow d=4$ coupling: $\sin^2\theta_C = 1/S(n_s,3) = 1/20$, equivalently $S(2,3)/(S(2,3)+n_W) = 4/80 = 1/20$. Determined entirely by the seed structure and mode indices. Curvature correction from $\mathbb{CP}^1$ holonomy ($\mathbb{CP}^1$ sector curvature correction): $+1/240$ shift — see Part 3 §12.
+Derived from the $g$-rule $d=3\leftrightarrow d=4$ coupling: $\sin^2\theta_C = 1/S(n_s,3) = 1/20$, equivalently $S(2,3)/(S(2,3)+n_W) = 4/80 = 1/20$. Determined entirely by the seed structure and mode indices. Curvature correction from $\mathbb{CP}^1$ holonomy ($\mathbb{CP}^1$ sector curvature correction): $+1/240$ shift — see Part 3 §12.
 
 **Up/down quark mass ratio ✅ (Theorem S2, Part 8 §5)**
 

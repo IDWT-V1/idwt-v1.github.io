@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and Vandermonde coupling rule (the top and bottom quarks excepted).">
-<meta name="keywords" content="IDWT, generation tower, mode indices, hockey-stick identity, simplex number, particle spectrum, Pascal recursion, Vandermonde coupling, sector modes">
+<meta name="description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and g-rule (the top and bottom quarks excepted).">
+<meta name="keywords" content="IDWT, generation tower, mode indices, hockey-stick identity, simplex number, particle spectrum, Pascal recursion, g-rule coupling, sector modes">
 <meta name="author" content="Fedge No">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fedgeno.github.io/articles/generation-tower">
 <meta property="og:title" content="The Generation Tower — IDWT">
-<meta property="og:description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and Vandermonde coupling rule (the top and bottom quarks excepted).">
+<meta property="og:description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and g-rule (the top and bottom quarks excepted).">
 <meta property="og:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
 <meta property="og:image:width" content="2000">
 <meta property="og:image:height" content="2000">
 <meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Generation Tower — IDWT">
-<meta name="twitter:description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and Vandermonde coupling rule (the top and bottom quarks excepted).">
+<meta name="twitter:description" content="The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and g-rule (the top and bottom quarks excepted).">
 <meta name="twitter:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
 <title>The Generation Tower — IDWT</title>
 <link rel="stylesheet" href="/styles/main.css">
@@ -31,7 +31,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "name": "The Generation Tower — IDWT",
-  "description": "The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and Vandermonde coupling rule (the top and bottom quarks excepted).",
+  "description": "The IDWT generation tower shows how all 15 Standard Model particle mode indices follow from two forced seed integers via the hockey-stick identity and g-rule (the top and bottom quarks excepted).",
   "url": "https://fedgeno.github.io/articles/generation-tower",
   "author": {
     "@type": "Person",
@@ -53,7 +53,7 @@
     "width": 2000,
     "height": 2000
   },
-  "keywords": "IDWT, generation tower, mode indices, hockey-stick identity, simplex number, particle spectrum, Pascal recursion, Vandermonde coupling, sector modes",
+  "keywords": "IDWT, generation tower, mode indices, hockey-stick identity, simplex number, particle spectrum, Pascal recursion, g-rule coupling, sector modes",
   "isPartOf": {
     "@type": "WebSite",
     "name": "IDWT — Infinite-Dimensional Wave Theory",
@@ -261,7 +261,7 @@
     <dd>The strange quark — the composite \(n_s = n_{\rm down} + n_u = 1 + 3 = 4\). Certified by the self-referential fixed point: the muon mode index must satisfy \(n_\mu = S(n_s, 4)\). Only \(n_s = 4\) works, because \(S(4,4) = \binom{7}{4} = 35\) and \(S(n,4) = 35\) has no other positive-integer solution. \(S(4,4) = 35\) is a uniqueness certificate of the composite — it does not define the value. See <a href="/articles/seed.html">Why \(n_s = 4\)</a> for the full argument.</dd>
 
     <dt class="d5">\(n_{\nu_1} = S(n_{\text{up}},\, 3) = S(3,3) = 10\)</dt>
-    <dd>The first neutrino mode index. Neutrinos live in the \(d=5\) sector (\(S^5\)), which couples to \(d=3\) via the Vandermonde rule. The lightest \(d=5\) resonance lands at the \(d=3\) <a href="/articles/simplex-number.html">simplex image</a> of the up quark seed: \(S(3,3) = \binom{5}{3} = 10\). The first neutrino is entirely determined by \(n_{\text{up}}\).</dd>
+    <dd>The first neutrino mode index. Neutrinos live in the \(d=5\) sector (\(S^5\)), which couples to \(d=3\) via the \(g\)-rule. The lightest \(d=5\) resonance lands at the \(d=3\) <a href="/articles/simplex-number.html">simplex image</a> of the up quark seed: \(S(3,3) = \binom{5}{3} = 10\). The first neutrino is entirely determined by \(n_{\text{up}}\).</dd>
 
     <dt class="d5">\(n_{\nu_2} = S(n_{\text{up}},\, 4) = S(3,4) = 15\)</dt>
     <dd>The second neutrino mode index: the up quark seed imaged into \(d=4\). \(S(3,4) = \binom{6}{4} = 15\). By binomial symmetry \(\binom{6}{4} = \binom{6}{2}\), this index is also connected to the W boson: \(n_W = S(n_e, 2) - n_{\nu_2} = 91 - 15 = 76\). The neutrino and the W boson share a combinatorial root.</dd>
@@ -285,13 +285,13 @@
     <dd>The top is the one quark index the additive tower does <em>not</em> generate. Its value is a product, \(n_{\text{top}} = N_c\,n_s\,N_f = 3\cdot4\cdot6 = 72\), equal to the product of the <a href="/articles/euler-characteristic-chain.html">Euler characteristics</a> of the three complex projective sectors \(\chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)\). But this is an arithmetic identity in the seed integers, not a derivation: unlike every additive-tower index, no condition has been found that selects 72 as a resonance, so it stands as a tier-2 input with an open origin. (It can also be written \(S(n_e,2) - n_{\text{charm}} + 1 = 91 - 20 + 1\), but that binomial form carries a \(+1\) offset and is a restatement, not the source.)</dd>
 
     <dt class="d2">\(n_W = n_{\text{top}} + 5 - 1 = 76\)</dt>
-    <dd>The W boson mode index. Bosons are derived by the Vandermonde coupling rule: when sectors \(d\) and \(d'\) combine, the mode index is \(g(a,b) = a + b - 1\). The W couples the neutrino sector (\(d=5\)) to the top quark mode: \(76 = 72 + 5 - 1\). Cross-check: \(n_W = S(n_e,2) - n_{\nu_2} = 91 - 15 = 76\) — two independent routes to the same integer.</dd>
+    <dd>The W boson mode index. Bosons are derived by the \(g\)-rule (sector-coupling rule): when sectors \(d\) and \(d'\) combine, the mode index is \(g(a,b) = a + b - 1\). The W couples the neutrino sector (\(d=5\)) to the top quark mode: \(76 = 72 + 5 - 1\). Cross-check: \(n_W = S(n_e,2) - n_{\nu_2} = 91 - 15 = 76\) — two independent routes to the same integer.</dd>
 
     <dt class="d2">\(n_Z = n_W + 6 - 1 = 81\)</dt>
-    <dd>The Z boson mode index. The lepton sector (\(d=6\)) coupled to the W mode via the Vandermonde rule. The increment \(n_Z - n_W = 5 = S(n_{\text{up}},4) - S(n_{\text{up}},3)\) is the <a href="/articles/simplex-number.html">hockey-stick step</a> at the up quark threshold — the same \(q\) that enters the photon coupling \(g_{22}\).</dd>
+    <dd>The Z boson mode index. The lepton sector (\(d=6\)) coupled to the W mode via the \(g\)-rule. The increment \(n_Z - n_W = 5 = S(n_{\text{up}},4) - S(n_{\text{up}},3)\) is the <a href="/articles/simplex-number.html">hockey-stick step</a> at the up quark threshold — the same \(q\) that enters the photon coupling \(g_{22}\).</dd>
 
     <dt class="d2">\(n_H = n_Z + n_{\nu_2} - 1 = 95\)</dt>
-    <dd>The Higgs boson mode index: the second neutrino mode coupled to the Z. Cross-check: \(n_H = n_{\text{up}} + n_{\text{charm}} + n_{\text{top}} = 3 + 20 + 72 = 95\). The Higgs mode index equals the sum of all three up-type quark mode indices simultaneously — it encodes all three generations of up-type quarks in a single integer. The Vandermonde construction and the up-type sum are two descriptions of the same combinatorial fact.</dd>
+    <dd>The Higgs boson mode index: the second neutrino mode coupled to the Z. Cross-check: \(n_H = n_{\text{up}} + n_{\text{charm}} + n_{\text{top}} = 3 + 20 + 72 = 95\). The Higgs mode index equals the sum of all three up-type quark mode indices simultaneously — it encodes all three generations of up-type quarks in a single integer. The \(g\)-rule construction and the up-type sum are two descriptions of the same combinatorial fact.</dd>
 
   </dl>
   </div>
@@ -325,8 +325,8 @@
         <tr><td>tau</td><td>23</td><td>10</td><td>\(\mathbb{CP}^5\)</td><td>\(n_{\nu_3} + n_{\text{down}}\)</td></tr>
         <tr><td>bottom</td><td>—</td><td>3</td><td>\(S^3\)</td><td>Beat index \(k_0 = n_s^2 = 16\); mass \(= \sqrt{S(16,3)\times S(17,3)}\times m_{\text{scale},3}\) — no tower connections</td></tr>
         <tr><td>top</td><td>72</td><td>4</td><td>\(\mathbb{CP}^2\)</td><td>\(N_c\, n_s\, N_f\) — product-form input, off-tower (open origin)</td></tr>
-        <tr><td>W</td><td>76</td><td>2</td><td>\(\mathbb{CP}^1\)</td><td>\(n_{\text{top}} + 5 - 1\) (Vandermonde, \(d=5\))</td></tr>
-        <tr><td>Z</td><td>81</td><td>2</td><td>\(\mathbb{CP}^1\)</td><td>\(n_W + 6 - 1\) (Vandermonde, \(d=6\))</td></tr>
+        <tr><td>W</td><td>76</td><td>2</td><td>\(\mathbb{CP}^1\)</td><td>\(n_{\text{top}} + 5 - 1\) (\(g\)-rule, \(d=5\))</td></tr>
+        <tr><td>Z</td><td>81</td><td>2</td><td>\(\mathbb{CP}^1\)</td><td>\(n_W + 6 - 1\) (\(g\)-rule, \(d=6\))</td></tr>
         <tr><td>H</td><td>95</td><td>2</td><td>\(\mathbb{CP}^1\)</td><td>\(n_Z + n_{\nu_2} - 1 = n_u + n_c + n_t\)</td></tr>
       </tbody>
     </table>
@@ -338,9 +338,9 @@
 
   <h2>The structure of the tower</h2>
   <div class="prose">
-    <p>The tower is not a list of coincidences, but it is not a single rule either. The simplex backbone — \(n_{\nu_1}, n_{\nu_2}, n_{\text{charm}}, n_\mu\) — are <a href="/articles/simplex-number.html">hockey-stick</a> evaluations of the seeds, and the muon sits at a true Pascal node \((S(4,4) = S(4,3) + S(3,4))\), so generation 2 is a combinatorial theorem. The other entries use their own named operations: the composite \(n_s\) is the sum of the two seeds, \(n_{\nu_3}\) is an inclusion–exclusion of two simplex images, the electron and tau attach a seed to an already-established index, and the weak bosons are Vandermonde \(g\)-steps off the top. The derivation is one-directional: once the two seeds \(n_d=1\) and \(n_u=3\) are fixed, every additive entry is forced — including the composite \(n_s = n_d + n_u = 4\). The exceptions are the two product-form quark indices: the top (\(N_c n_s N_f = 72\), an off-tower input of open origin) and the bottom (a geometric-mean beat). These are not additive-tower outputs, and each carries its own open question.</p>
+    <p>The tower is not a list of coincidences, but it is not a single rule either. The simplex backbone — \(n_{\nu_1}, n_{\nu_2}, n_{\text{charm}}, n_\mu\) — are <a href="/articles/simplex-number.html">hockey-stick</a> evaluations of the seeds, and the muon sits at a true Pascal node \((S(4,4) = S(4,3) + S(3,4))\), so generation 2 is a combinatorial theorem. The other entries use their own named operations: the composite \(n_s\) is the sum of the two seeds, \(n_{\nu_3}\) is an inclusion–exclusion of two simplex images, the electron and tau attach a seed to an already-established index, and the weak bosons are \(g\)-steps off the top. The derivation is one-directional: once the two seeds \(n_d=1\) and \(n_u=3\) are fixed, every additive entry is forced — including the composite \(n_s = n_d + n_u = 4\). The exceptions are the two product-form quark indices: the top (\(N_c n_s N_f = 72\), an off-tower input of open origin) and the bottom (a geometric-mean beat). These are not additive-tower outputs, and each carries its own open question.</p>
     <p>The tower is also self-consistent in a non-trivial way. The muon equation \(S(4,4) = 35\) is both a step in the tower (generating \(n_\mu\)) and the fixed-point condition that confirms \(n_s = 4\). The tower closes on itself: the equation that confirms the composite is the same equation that uses it.</p>
-    <p>A final cross-check: the Higgs mode index satisfies \(n_H = n_u + n_c + n_t = 3 + 20 + 72 = 95\) and simultaneously \(n_H = n_Z + n_{\nu_2} - 1\). The Vandermonde construction and the sum of up-type modes are two descriptions of the same combinatorial fact. The tower is not a sequence of separate results — it is one interlocking structure.</p>
+    <p>A final cross-check: the Higgs mode index satisfies \(n_H = n_u + n_c + n_t = 3 + 20 + 72 = 95\) and simultaneously \(n_H = n_Z + n_{\nu_2} - 1\). The \(g\)-rule construction and the sum of up-type modes are two descriptions of the same combinatorial fact. The tower is not a sequence of separate results — it is one interlocking structure.</p>
   </div>
 
 </section>
