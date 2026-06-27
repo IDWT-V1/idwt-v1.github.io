@@ -105,9 +105,9 @@
         <tr>
           <th>Particle</th>
           <th>Mode index \(n\)</th>
-          <th>Mass (IDWT)</th>
+          <th>Mass (IDWT, bare)</th>
           <th>Mass (PDG)</th>
-          <th>Error</th>
+          <th>Error (bare)</th>
         </tr>
       </thead>
       <tbody>
@@ -137,8 +137,8 @@
   </div>
 
   <div class="prose">
-    <p>The up quark sits +0.77% above PDG — a parameter-free output of the derived \(d=4\) sector scale, well within the sizable PDG up-quark uncertainty. The charm and top masses are quoted bare and overshoot, growing with generation: charm +0.93%, top +2.20%; no correction is applied. The nominal +2.6σ / +13σ these represent are against statistical errors only and are scheme-sensitive — heavy-quark masses differ by several percent between the pole and \(\overline{\text{MS}}\) schemes. Once that spread is included, the up quark and charm sit within experimental margins; the top remains a ~2% overshoot above the standard pole mass, not a 13σ falsification.</p>
-    <p>A former correction (the "Generation Tower Correction") multiplied the charm and top masses by \((1-\varepsilon)^k\), with \(\varepsilon = 1/(280\sqrt{7})\) derived but the per-quark exponent \(k\) a fit. A fitted correction is not a derivation, so it has been removed. The \(\ell=2\) component of the sector kernel is a candidate source for the overshoot — it has the correct sign — but it is not applied: its derived form gives the \(\{0,3,10\}\) shape, which does not reproduce the measured masses. The clean, scale-independent comparison is the ratio \(m_t/m_c = S(72,4)/S(20,4) = 137.26\), which matches the conventional ratio to ~1%.</p>
+    <p>The table lists the <em>bare</em> combinatorial mass \(m = m_{\text{scale},4}\,S(n,4)\) — the free-quark count, before confinement. The up quark sits +0.77% above PDG, well within the sizable up-quark uncertainty. The bare charm and top overshoot, growing with generation (+0.93%, +2.20%), because a coloured quark is never free: part of that bare count is colour-field binding energy that is not present in the physical mass.</p>
+    <p>The derived confinement correction supplies exactly that: \(m_{\text{phys}} = m\,(1 - x_e\langle k\rangle)\), applied only in the two colour sectors (\(d=3, 4\)), with \(\langle k\rangle = d(n-1)/(d+1)\) the degeneracy-weighted mean excitation level and \(x_e = 3/(16 N_b)\) the per-state softening of a finite confining well — the \(d=4\) well occupation \(N_b\) fixed by the colour energy law, not fitted. It brings every up-type quark within \(\pm1\sigma\) of PDG: up +0.70% (+0.2σ), charm +0.34% (+0.9σ), top −0.05% (−0.3σ). (An earlier multiplicative \((1-\varepsilon)^k\) factor with a fitted exponent was discarded — a fit is not a derivation — and replaced by this derived correction.)</p>
     <p>The top mode index \(n = 72 = N_c \cdot n_s \cdot N_f = 3 \cdot 4 \cdot 6\) equals the product of the three Kähler sector Euler characteristics \(\chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)\) — but this is an arithmetic identity in the seed integers, not a derivation. Unlike the additive-tower indices, no condition has been found that selects 72 as a resonance; it is a tier-2 input with an open origin.</p>
   </div>
 
