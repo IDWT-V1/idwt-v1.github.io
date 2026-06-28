@@ -54,7 +54,6 @@ from scipy.special import (
 )
 # Aliases: same modules, scoped names used in downstream code
 _math   = math
-_math53 = math
 _math54 = math
 _m80    = math
 _np52   = np
@@ -103,7 +102,7 @@ _ee54   = _ee50
 #
 #     S(n, d+1) = S(n, d) * (n+d)/(d+1)   <=>   S(n,d)/S(n,d+1) = (d+1)/(n+d)
 #
-# (Appendix A section 18). The hockey-stick steps across n at fixed d (the
+# The hockey-stick steps across n at fixed d (the
 # diagonal the generation tower climbs); this one steps across d at fixed n.
 # Together they generate the whole table from S(1,d)=1. The generation
 # tower is built from the hockey-stick alone; the multiplicative ladder
@@ -236,7 +235,7 @@ n_tau = n_nu3 + n_down    # = 23
 # Clifford/KO reality invariant selects n = 0 mod 8 uniquely (real type
 # occupies three residues mod 8; the framework's own Majorana convention
 # d mod 8 in {0,1,2,3,4} applied to n would flag most of the spectrum).
-# (Appendix A s43 addendum, 2026-06-15.)
+# (2026-06-15.)
 n_top = 3 * n_strange * 6          # = N_c * n_s * N_f = 72
 
 # --- Boson mode indices (g-rule) ------------------------------------
@@ -269,7 +268,7 @@ n_H = n_Z + n_nu2 - 1  # = 95
 # is the composite b = 1 + a = 4 (offset-additive channel, the MC-4.4
 # kernel two-density reading, 🔶) -- the former subtraction n_u = n_s-1
 # is eliminated; it survives only as the chi-consecutiveness identity
-# chi(CP^k) = k+1 (T15). Seed grounding (Appendix A section 19 addendum):
+# chi(CP^k) = k+1 (T15). Seed grounding:
 #   1 = ground state, S(1,d) = 1 in every sector (forced);
 #   a = 3: chi(CP^2) = N_c (T15, geometric); the unique single-kernel-
 #       application image of the ground seed (Delta N = +2, dynamical).
@@ -311,7 +310,7 @@ n_H = n_Z + n_nu2 - 1  # = 95
 # beat k0 = n_s^2 = 16 (the two non-image product sites); 10,15,20,35 the
 # hockey-stick 2x2 block S({3,4},{3,4}); 13,22,23 hockey-stick sums (23 =
 # n_nu3 + n_down, the +1 is the down seed, not a fudge); 76,81,95 the
-# g-steps off 72. (Part 9 T0.5; Appendix A s43 addendum.)
+# g-steps off 72. (Part 9 T0.5.)
 # Note: seed status is generative (tower root), not dynamical -- it does
 # not by itself confer stability (STEP 64: the ground seed is protected
 # by having no downward channel, not by seedhood).
@@ -351,8 +350,7 @@ product_form_quarks = {n_strange**2, n_top}    # {16, 72}
 #           but seeded by the external top: 76=g(5,72), 81=g(6,76),
 #           95=g(15,81). Lattice-shaped, one external input. The chain builds
 #           UP (additively) off the top -- the direction is the diagnostic
-#           that the tower operation is additive, not subtractive
-#           (Appendix A s43 addendum).
+#           that the tower operation is additive, not subtractive.
 lattice = {0, n_down, n_up, n_strange, n_nu1, n_e, n_nu2,
            n_charm, n_nu3, n_tau, n_mu}          # 11 modes; T0.5 domain
 boson_chain = {n_W, n_Z, n_H}                    # {76, 81, 95}, g-steps off top
@@ -625,7 +623,7 @@ active_pair = {da: {db: [nm for nm, p in _structs if p[da] and p[db]]
 # does a genuine (xi.xi')^2 kernel trace yield g22 = p^2 q / 2?  It does NOT.
 #  - literal Tr[G^2_23 + G^2_24] is ADDITIVE ~ p^2 + q -- wrong for
 #    a product;
-#  - the actual T2 overlap (Appendix A s20a: O ~ <r^2>_i <r^2>_j / d)
+#  - the actual T2 overlap (O ~ <r^2>_i <r^2>_j / d)
 #    is O(1), scaling
 #    as the mode index n^1, orders of magnitude below the multiplicity product;
 #  - p^2 q appears only as Tr[IDENTITY] over rank-(p,p,q) eigenspaces -- the
@@ -730,8 +728,8 @@ epsilon = 1.0 / (280.0 * math.sqrt(7.0))
 # applied a multiplicative (1-epsilon)^k factor to the d=4 up-type quark
 # masses with a per-quark exponent k. Only epsilon was derived; the exponent
 # k was a FIT (no integer set is forced -- the underlying l=2 self-energy is
-# real and correctly signed but does not single out the exponents, Appendix A
-# section 45/49). A fitted correction is not a derivation, so it is no longer
+# real and correctly signed but does not single out the exponents). A fitted
+# correction is not a derivation, so it is no longer
 # applied. The up-type quark masses are now BARE, m = m_scale4 * S(n,d), and
 # overshoot PDG 2024: up +0.79% (within the light-quark margin), charm
 # +0.93% (+2.6 sd, outside), top +2.20% (+13 sd, outside). This overshoot is
@@ -740,7 +738,7 @@ epsilon = 1.0 / (280.0 * math.sqrt(7.0))
 # epsilon is retained above only as the derived l=2 scale that fixes the
 # separate, motivated nu3 closure delta_nu3 = epsilon*g33 = 1/35 (below).
 # A physically motivated correction may be added later if one is derived.
-# (Part 2 section 11; Appendix A section 45/49)
+# (Part 2 section 11)
 
 # --- Tau geometric back-reaction correction -----------------------------------
 # The d=6 and d=10 sectors share the coupling g_{6,6} = g_{6,10} = g_{10,10}
@@ -878,10 +876,10 @@ A_wolf = Vcb * S(n_strange, 3)
 # Kahler sector (CP2), all down-type share one real sector (S3), so the
 # spectral-flow/holonomy phase that fixes the leptonic delta (Part 10) is a
 # generation-independent up-vs-down offset and rephases away -> J_CKM = 0
-# at leading order (Appendix A section 47). The leptonic phase is physical
+# at leading order. The leptonic phase is physical
 # only because charged leptons SPAN two Kahler sectors (CP3, CP5). Nonzero
-# quark CP is subleading, now LOCALISED + order-of-mag DERIVED (2026-06-24,
-# App A section 47): (i) CHARGE SELECTION -- the kernel (xi.xi')^2 carries Hopf
+# quark CP is subleading, now LOCALISED + order-of-mag DERIVED (2026-06-24):
+# (i) CHARGE SELECTION -- the kernel (xi.xi')^2 carries Hopf
 # charge in {-2,0,+2}, so a chiral up-mode O(k) overlaps a real S3 down-mode
 # only if k<=2; only u (k=2) couples (c,t at k=19,71 vanish) -> quark CP sits
 # on V_ub alone (derived, was asserted). (ii) REAL-BEAT THEOREM -- the bottom
@@ -981,7 +979,7 @@ m_b = math.sqrt(S(k0, 3) * S(k0 + 1, 3)) * m_scale3
 #    = Lqcd * S(n_s,3) / 2
 # All factors derived: N_c = chi(CP^2) = 3, f_pi = m_scale_3 * S(n_s,3).
 # B0 = Lqcd * n_s*(n_s^2-1)/6  -- the seed's own combinatorial factor.
-# (Part 2 section 8a, Appendix A section 21)
+# (Part 2 section 8a)
 B0_GOR = Lqcd * S(n_strange, 3) / 2.0     # = 282.1 * 10 = 2821 MeV
 
 m_d_quark = m_scale3 * S(n_down, 3)       # down quark:  4.702 MeV
@@ -989,7 +987,7 @@ m_u_quark = m_scale4 * S(n_up, 4)         # up quark:    2.177 MeV
 m_s_quark = m_scale3 * S(n_strange, 3)    # strange:    94.04 MeV
 # charm BARE (GTC removed, 2026-06-16): m_scale4*S(20,4) = 1284.9 MeV vs
 # PDG 2024 1273.0 +/- 4.6 (+0.93%, +2.6 sd, outside margin; open residue).
-# (Part 2 section 11; Appendix A section 49)
+# (Part 2 section 11)
 m_c_quark = m_scale4 * S(20, 4)
 
 def m_meson_GOR(mq1, mq2):
@@ -1009,7 +1007,7 @@ m_Ds_pred  = m_meson_GOR(m_c_quark, m_s_quark)
 # For b-containing mesons: E_bind connects back to the beat structure because
 # k0 = n_s^2 appears in m_b, which feeds into sqrt(m_b * Lqcd).
 # E_bind_b = m_scale_3 * sqrt(N_c * S(n_s,3) * sqrt(S(n_s^2,3)*S(n_s^2+1,3)))
-# (Part 2 section 8a, Appendix A section 21)
+# (Part 2 section 8a)
 E_bind_b = math.sqrt(m_b * Lqcd)           # = 1086 MeV
 E_bind_c = math.sqrt(m_c_quark * Lqcd)     # = 601 MeV
 
@@ -1030,7 +1028,7 @@ m_Jpsi_pred = m_meson_heavy(m_c_quark, m_c_quark, E_bind_c)  # J/psi: cc-bar
 # (N_c-1) = chi(CP^1) = 2 = residue colour bonds when one quark is replaced.
 # Structural identity: N_c*Lqcd/n_u^2 = m_s exactly,
 # so m_N = N_c*Lqcd + m_s.
-# (Part 2 section 8a, Appendix A section 21)
+# (Part 2 section 8a)
 m_N_idwt  = N_c * Lqcd * (1.0 + 1.0/n_up**2)   # nucleon = proton/neutron avg
 m_Lambda  = m_N_idwt + (N_c-1)*(m_s_quark - m_d_quark)
 m_Xi      = m_N_idwt + (N_c-1)*((m_s_quark-m_u_quark) + (m_s_quark-m_d_quark))
@@ -1041,7 +1039,7 @@ m_Xi      = m_N_idwt + (N_c-1)*((m_s_quark-m_u_quark) + (m_s_quark-m_d_quark))
 # --- Polynomial cross-mode identity ------------------------------------------
 # n_charm * N_c = n_nu1 * N_f = 4 * n_nu2 = n_s*(n_s-1)*(n_s+1)*(n_s+2)/6
 # where N_f = 2*(n_s-1) = 6 (light quark flavours).
-# Verified for n_s = 3,4,5,6. (Part 2 section 6a, Appendix A section 10)
+# Verified for n_s = 3,4,5,6. (Part 2 section 6a)
 N_f          = 2 * (n_strange - 1)         # = 6
 poly_identity = n_strange*(n_strange-1)*(n_strange+1)*(n_strange+2) // 6
 # All three products should equal poly_identity = 60 at n_s=4:
@@ -1383,7 +1381,6 @@ tau_tau_pred = tau_mu_pdg * (m_mu_m/m_tau_m)**5 / (1 + _R_lep + _R_had)
 _dm21 = dm2_21     # eV² — already computed in STEP 12
 _dm31 = dm2_31     # eV²
 _mnu  = [m_nu1_meV, m_nu2_meV, m_nu3_meV]  # meV — already computed in STEP 12
-_Smnu = sum_mnu    # meV
 
 # PMNS matrix (δ_CP = 0; mixing angles from STEP 13)
 _U = [
@@ -1618,7 +1615,7 @@ _scales_all = [
 #   E0 = d * sqrt(lambda_d)    (exact harmonic ground state energy)
 #   lam_hat = sqrt(lambda_d)   (dimensionless coupling = lambda_d * L_d^2)
 #
-# T-S1 EXTENSION (Appendix A S20): per-spinor-component cumulative Dirac count
+# T-S1 EXTENSION: per-spinor-component cumulative Dirac count
 # on S^d equals S(n,d) for ALL d in D = {2,3,4,5,6,10}.
 # Discreteness is geometric (compactness of S^d / confinement of harmonic well
 # in extended flat R^d) — no saturating regulator needed.
@@ -1645,7 +1642,7 @@ _scales_all = [
 # test) — the eigenvectors below are effective ground states in a finite box,
 # not true bound states. The non-collinearity conclusion (T8) is qualitatively
 # correct but the computation should be repeated with the harmonic form.
-# (Part 4 S3.13; Appendix A S20)
+# (Part 4 S3.13)
 
 # S3.10.4 table: (lambda_d, E0=d*sqrt(lam), kappa_legacy, L_d=lam^{-1/4})
 # L_d = lambda_d^{-1/4} is the harmonic oscillator length (Part 4 S3.9).
@@ -2047,7 +2044,7 @@ t05_hadronic = [(_n, (_n, 3) in Sigma_pairs) for _n in [2, 3, 5]]
 
 # =============================================================================
 # STEP 30 -- CO-FIXED-POINT STABILITY: l-PARITY
-# (compute; Part 7 §1.2, App A §22)
+# (compute; Part 7 §1.2)
 # =============================================================================
 # The kernel (xi_d . xi_{d'})^2 decomposes angularly into l=0 (scalar) and
 # l=2 (tensor) components only. Each kernel application changes angular momentum
@@ -2065,7 +2062,7 @@ t05_hadronic = [(_n, (_n, 3) in Sigma_pairs) for _n in [2, 3, 5]]
 #
 # For even-level non-Sigma modes (n=3,5,...): they do have l=0 components
 # and couple to the seeds. Their l=0 kernel matrix elements are computed below.
-# (Part 7 §1.2, Appendix §22)
+# (Part 7 §1.2)
 
 def _l_values_at_level(N):
     """l values at oscillator level N in R^4 (d=3 sector). Parity = N mod 2."""
@@ -2117,7 +2114,7 @@ _tau_factor = 1.0 / (_ME13 * m_scale3)   # in 1/MeV units
 
 
 # =============================================================================
-# STEP 31 -- CONSECUTIVE MATTER QUARTET (compute; Part 1 §3a, App A §19)
+# STEP 31 -- CONSECUTIVE MATTER QUARTET (compute; Part 1 §3a)
 # =============================================================================
 # Hopf chain S^1 -> S^{2k+1} -> CP^k produces sectors at d=2k (base) and d=2k+1
 # (total). Rule A terminates the chain at CP^{n_s-1} (real dim d_term=2(n_s-1)):
@@ -2167,7 +2164,7 @@ def smeared_dims(d_obs, d_p):
 # =============================================================================
 # STEP 33 -- BOUND WITHIN, FREE WITHOUT (compute; a particle beyond its sector)
 # =============================================================================
-# (Part 1 section 3i; Appendix A "Bound within, free without")
+# (Part 1 section 3i)
 #
 # A particle is confined in its OWN d sector coordinates by the harmonic well
 # V_d(r) = lambda_d r^2 (Part 4 S3.9-S3.10.2); its sector ground state is a
@@ -2222,7 +2219,7 @@ float_Ekin  = {Dl: 1.0 / (2 * m_e * Dl**2) for Dl in float_Delta}   # MeV
 # =============================================================================
 # STEP 34 -- NO-NODE OVERLAP: THE EVEN-LEVEL EXCLUSION CEILING (compute)
 # =============================================================================
-# (Part 9 T0.5; Part 7 section 1.2; Appendix A section 15)
+# (Part 9 T0.5; Part 7 section 1.2)
 #
 # Odd-level (n even) non-Sigma modes are excluded EXACTLY: the l=0 seeds cannot
 # reach an odd-l mode through the l=0 + l=2 kernel at any order
@@ -2467,7 +2464,7 @@ assert all(bdg_ratios[(n,5)] == 0.0 for (n,d) in BDG_SIGMA if d == 5)  # d=5 B=0
 #     Selection is a directed index derivation (combinatorial fixed
 #     point of a chosen
 #     generator set), not a dynamical fixed point of the EOM energetics.
-# (Part 6 MC-4.4; Appendix A section 15)
+# (Part 6 MC-4.4)
 
 def _E_HO(ni, di):
     # sector harmonic-oscillator / Dirac eigenvalue: (2(n-1)+d)*sqrt(lam_d)
@@ -2521,7 +2518,7 @@ assert sel_reach_ratio > 10.0       # kernel reach strictly > DAG count
 # grid spacing g = S(n+1,d)/S(n,d)-1; luck L = min(1, 2 eps/g) ~ chance the
 # nearest grid point lands within eps of a random target. Indices treated as
 # FREE (maximally skeptical). Joint = product over 4 independent quantities.
-# (Part 5 sec 2a; Appendix A section 24)
+# (Part 5 sec 2a)
 def _luck(pred, obs, sig, n, d):
     eps = max(abs(pred - obs) / obs, sig / obs)
     g = S(n + 1, d) / S(n, d) - 1.0
@@ -2581,7 +2578,7 @@ assert sig_mu_e < 1e-3 and sig_tau_e < 1e-3
 # m_Z 91188.0(20); m_H 125200(110); V_us 0.2245(8); m_t 172570(290);
 # m_c 1273.0(46); dm2_31 2.530(28)e-3; dm2_21 7.53(18)e-5) and FLAG 2024
 # m_s/m_d = 19.81(13) from m_s/m_ud = 27.23(10), m_u/m_d = 0.455(8).
-# (Part 5 sec 2a; Appendix A sec 24)
+# (Part 5 sec 2a)
 
 def _s39_cab(n):                         # Cabibbo, free d=3 strange index
     return (1 + 1.0 / (12 * S(n, 3))) / math.sqrt(S(n, 3))
@@ -2755,7 +2752,7 @@ assert s39_T_best > s39_T_idwt + 20  # ... by a margin > e^20
 # =============================================================================
 # STEP 40 -- CROSS-SECTOR SCALE INCOMMENSURABILITY LEMMA
 # =============================================================================
-# (Part 7 §1.2; Appendix §15; proved exactly by sympy over the
+# (Part 7 §1.2; proved exactly by sympy over the
 #  algebraic definitions of the scales)
 #
 # Claim (✅, proved exactly by sympy over the algebraic definitions):
@@ -3122,8 +3119,8 @@ _Hx47 = _rng47.normal(size=(_Nx47, _Nx47))
 _Hx47 = (_Hx47 + _Hx47.T) / 2
 _Or47 = _rng47.normal(size=(_Nr47, _Nr47))
 _Or47 = (_Or47 + _Or47.T) / 2
-_er47, _vr47 = np.linalg.eigh(_Hr47)
-_ex47, _vx47 = np.linalg.eigh(_Hx47)
+_, _vr47 = np.linalg.eigh(_Hr47)
+_, _vx47 = np.linalg.eigh(_Hx47)
 _psi47 = _vr47[:, 0]                    # one marginal state
 _d1_47 = np.kron(_psi47, _vx47[:, 0])   # sector ground
 _d2_47 = np.kron(_psi47, _vx47[:, 3])   # sector excited
@@ -3183,7 +3180,7 @@ _frac48   = _dE48 / _ha_eV48
 # This bounds only the REVERSIBLE discrete-tower revival; the exact
 # irreversible loss is the radiative width into the spacetime-momentum
 # continuum, strictly positive for every even-level non-member (STEP 118).
-# (Part 9 T0.5 even-level bound; Appendix A sec 15)
+# (Part 9 T0.5 even-level bound)
 
 def _J49(n_r, s=1.5):
     num = _math.gamma(n_r + 1.5) * (s - 1)**n_r
@@ -3511,7 +3508,7 @@ _dVHH_NH3  = (_VHH52(0.021,3,_RNH52)
 #
 # Level convention (anchored by S(1,d)=1: n=1 is the ground state at
 # oscillator level 0, so the level is N = n-1; STEP 30, Part 7 sec
-# 1.2, Appendix A sec 15). In the d=6 isotropic oscillator the l at
+# 1.2). In the d=6 isotropic oscillator the l at
 # level N satisfy (N mod 2) == (l mod 2). For the electron n=13:
 #   N = 12 (even)  ->  l = 0, 2, 4, 6, 8, 10, 12
 # so l=0 is PRESENT. The contact matrix element <13|K_{l=0}|13> is
@@ -3531,9 +3528,7 @@ _dVHH_NH3  = (_VHH52(0.021,3,_RNH52)
 # robust independent of it. (Part 11 section 6.4)
 
 _n_e53   = 13                         # electron mode index (Part 2)
-_S_e53   = S(_n_e53, 6)               # = 18564
 _L6_53   = 1.414                      # fm  (Part 1 sec 3e)
-_m_e53   = m_e                        # MeV
 _a0_53   = 0.529177e5                 # Bohr radius in fm
 
 # l values at level N=n-1 in d=6 oscillator (same parity as N)
@@ -3542,7 +3537,6 @@ _l_vals53 = list(range(_N_e53 % 2, _N_e53 + 1, 2))  # [0,2,...,12]
 _l0_53    = 0 in _l_vals53            # True -> l=0 PRESENT
 
 # l=0 present -> contact not parity-protected; use the sec 6.3 bound
-_f_contact53  = None                  # not zero; bounded, not pinned
 _V0_actual53  = None                  # reverts to V0 <= m_e (STEP 48)
 
 # §6.3 bound (STEP 48) and next-order suppression
@@ -3658,8 +3652,7 @@ _sig_dL_i = _sig_d_i * _fL54
 # =============================================================================
 # STEP 55 -- THE d=2 EVEN-INSERTION SELECTION RULE (insertion dichotomy)
 # =============================================================================
-# (Part 3 section 11; Part 3 section 16.2; Part 2 section 6 note;
-#  Appendix A section 25 addendum)
+# (Part 3 section 11; Part 3 section 16.2; Part 2 section 6 note)
 #
 # The degree-1 condensate vertex (one xi insertion per additive fermion
 # edge; STEP 41) exists only in sectors with a nonzero condensate
@@ -3775,7 +3768,7 @@ _ratio_ok57 = abs(_phi_idwt57 / _phi_std57 - _ratio57) < 1e-12
 # STEP 58 -- SECTOR-WELL COVARIANCE: THE WELL RIDES WITH THE MODE
 # =============================================================================
 # (Part 4 section 3.10.2 covariance note; Part 1 section 3i; Part 8
-#  section 14.2; Appendix A section 27)
+#  section 14.2)
 #
 # The kernel self-term (Part 4 section 3.10.1)
 #   V_self(xi) = g_dd * Int |chi(xi')|^2 (xi . xi')^2 dxi'
@@ -3837,8 +3830,7 @@ _dE58     = 4.0 * _sig58**2                    # dE/|E_1s|
 # STEP 59 -- CROSS-SECTOR KERNEL COVARIANCE: CONTACT IS A CONSEQUENCE
 # =============================================================================
 # (Part 4 section 3.10.1 covariance note; Part 3 section 0.6; Part 11
-#  section 6.3; Appendix A section 28; STEP 58 is the self-term
-#  companion)
+#  section 6.3; STEP 58 is the self-term companion)
 #
 # Two modes, A (sector d, centroid X_A) and B (sector d', centroid
 # X_B), couple through g_{dd'}(xi_d . xi_{d'})^2 on their shared
@@ -3899,8 +3891,7 @@ _self_ok59  = abs(_self_red59 - _U_rel58) < 1e-12   # = STEP 58 U_B
 # =============================================================================
 # STEP 60 -- KERNEL GATE PROFILE DERIVED: NORMALIZED DENSITY OVERLAP
 # =============================================================================
-# (Part 4 section 3.10.1 covariance note; closes the STEP 59 residual;
-#  Appendix A section 28 addendum)
+# (Part 4 section 3.10.1 covariance note; closes the STEP 59 residual)
 #
 # Three established inputs force the gate Omega(R) of STEP 59 uniquely:
 #  (i)   bilinearity: the kernel action term is bilinear in the kernel
@@ -3928,7 +3919,7 @@ _ident60 = all(
 # =============================================================================
 # STEP 61 -- INTERNUCLEON CONTACT: DEUTERON INVERSE CHECK
 # =============================================================================
-# (Part 8 section 11; gate range from STEP 60; Appendix A section 29)
+# (Part 8 section 11; gate range from STEP 60)
 #
 # Nucleons are d=3 colour-singlet composites (Part 1 section 2.4), so
 # the N-N kernel contact gate has the derived d=3 range
@@ -4017,8 +4008,7 @@ _rms_NN61 = _rms61(_V0_NN61, _RC_NN61)
 # STEP 62 -- N-N WELL FROM SECOND-ORDER KERNEL CONTACT: DEPTH = LAMBDA
 # =============================================================================
 # (Part 8 section 11; structure from the colour energy law, Part 8
-#  section 5.3, and the derived gate, STEP 60; Appendix A section 29
-#  addendum)
+#  section 5.3, and the derived gate, STEP 60)
 #
 # Structure (forced by established results):
 #  (a) Two colour singlets have N_A = N_B = 0, so the first-order
@@ -4069,8 +4059,7 @@ _EB_RP62 = -_solveE62(Lqcd, _RC2_RP62)
 
 # =============================================================================
 # STEP 63 -- KAPPA AND DELTA FROM LARGE-N_c COLOUR STRUCTURE
-# (Part 8 section 11; colour energy law Part 8 section 5.3;
-#  Appendix A section 29 addendum.)
+# (Part 8 section 11; colour energy law Part 8 section 5.3.)
 #
 # Second-order N-N depth: V0 = kappa^2 / Delta (section 11).
 # kappa = singlet->non-singlet contact matrix element (one baryon).
@@ -4109,7 +4098,7 @@ _lc_check  = _Delta63 / _Nvec_unit    # = lambda_c (cross-check)
 # STEP 64 -- THE d>10 VACUUM-DIMENSION BATH IS DYNAMICALLY CLOSED;
 #            DOWNWARD-CHANNEL CATALOG AND THE STABILITY EQUIVALENCE
 # =============================================================================
-# (Part 7 section 1.2; Part 9 T0.5; Appendix A section 22 addenda)
+# (Part 7 section 1.2; Part 9 T0.5)
 #
 # GRAVITATIONAL TWIN (Part 4 s3.8): the same translation-symmetry
 #   argument applies to gravity -- a source uniform along x_j is
@@ -4205,7 +4194,7 @@ k64_e_release  = (S(13, 6) - S(11, 6)) * m_scale6     # ~ 0.29 MeV
 # =============================================================================
 # STEP 65 -- NON-CO-FIXED-POINT INSTABILITY: DEPHASING TIMESCALES
 # =============================================================================
-# (Part 7 section 1.2; Part 9 T0.5; Appendix A section 22)
+# (Part 7 section 1.2; Part 9 T0.5)
 #
 # Every non-co-fixed-point (n,d) is unstable by one of two mechanisms:
 #   (A) ODD LEVEL (N = n-1 odd): l-parity disconnected from even-level
@@ -4287,7 +4276,7 @@ for _d65 in [3, 4, 5, 6, 10]:
 #
 # In the d=6 sector (CP³ = SU(4)/U(3)), mode n sits at oscillator
 # level N = n-1 (anchored by S(1,d)=1: n=1 is the level-0 ground;
-# STEP 30, Part 7 §1.2, Appendix §15). The allowed angular momenta
+# STEP 30, Part 7 §1.2). The allowed angular momenta
 # satisfy l ≡ N (mod 2), l ∈ {N%2,...,N} (isotropic-oscillator parity
 # rule). l=0 is present iff N is even iff n is ODD.
 #
@@ -4333,8 +4322,6 @@ def l_values_66(n):
 # Electron: n=13 -> N=12 -> [0,2,...,12], l=0 present
 _l_e66 = l_values_66(n_e)
 
-# Muon: n=35 -> N=34 -> [0,2,...,34]
-_l_mu66 = l_values_66(n_mu)
 
 # Even-n comparison modes (not occupied): opposite parity, l=0 absent
 _l_12_66 = l_values_66(12)            # n=12 -> N=11 -> [1,3,...,11]
@@ -4557,14 +4544,12 @@ _delt_o_eV_68 = {
 # IDWT Hartree and Bohr (from IDWT-derived alpha_em and m_e)
 _EH_eV_69 = (alpha_em**2) * (m_e * 1e6)  # E_H in eV; m_e in MeV
 _EH_pdg = (1/137.036)**2 * (0.51099895 * 1e6)   # standard E_H in eV
-_a0_idwt_A = 0.529177 * (137.036 / (1/alpha_em))  # Bohr in Angstrom
 
 # Exact BO result (dimensionless ratio from literature)
 _De69_exact_au = 0.102634    # Hartree
 _Req69_exact_bohr = 2.000    # Bohr
 _De69_idwt_eV = _De69_exact_au * _EH_eV_69
 _De69_expt = 2.793           # eV  (exact nonrelativistic BO)
-_D0_69_expt = 2.651          # eV  (experimental; includes ZPE)
 
 def _h2p_integrals_69(R):
     """S, j, k for H2+ at internuclear distance R (Bohr)."""
@@ -4771,7 +4756,7 @@ _De72_idwt_eV = _De72_exact_au * _EH_eV_72   # IDWT prediction
 # STEP 73 -- THREE-RAY LAW: DEPTH-DIMENSION LOCK, BETTI TENT, AND THE
 #            IMPRINT ORTHOGONALITY CHECK
 # =============================================================================
-# (Part 2 section 15; Part 7 section 1.2; Appendix A section 31)
+# (Part 2 section 15; Part 7 section 1.2)
 #
 # (a) Minimal-route derivation depth k_min: length of the shortest
 # documented derivation of each mode (Part 2 section 6 DAG plus the
@@ -4795,7 +4780,7 @@ _De72_idwt_eV = _De72_exact_au * _EH_eV_72   # IDWT prediction
 # into d=2, insertion-free, STEP 55). Exact arithmetic under the
 # stated depth convention; mechanism open.
 #
-# (c) Fuel tent: the front model (Appendix A section 31) requires
+# (c) Fuel tent: the front model requires
 # per-dimension deposit budgets F0(j), j = 2..7; the unique profile
 # in {0..4}^6 reproducing the 12 on-ray deposits is (1,2,3,3,2,1) --
 # the BETTI VECTOR of CP^2 x CP^3, the product of the two seed
@@ -4897,7 +4882,7 @@ _I_ev_exact73 = 2.0 * math.sqrt(2.0 * math.pi)
 # the condensate set at later ticks (the open (1,d) question) is
 # unobservable in the deposit record. Channel count derived 🔶;
 # unit deposit rate per channel remains the model assumption.
-# (Part 2 section 15; Appendix A section 31)
+# (Part 2 section 15)
 _ch_forms_ok73 = (S(n_up, 3) == n_nu1 and S(n_up, 4) == n_nu2)
 _F0_73 = {_j73: _tent73[_j73 - 2] for _j73 in range(2, 8)}
 _cap_sites73 = [_j73 for _j73 in (5, 6, 7) if _F0_73[_j73] > 2]
@@ -4919,7 +4904,7 @@ _later_budget_bound73 = (_F0_73[6] <= 2 and _F0_73[7] <= 2)
 # of CP^2 x CP^3, (alpha,beta) with alpha<=2, beta<=3,
 # alpha+beta=m. Candidate mechanism (open, MC-2): one deposit per
 # harmonic class of the seed-product condensate background.
-# (Part 2 section 15; Appendix A section 31)
+# (Part 2 section 15)
 _even_pos_ok73 = True
 for _m73 in range(1, 7):
     _num73 = float(np.sum(
@@ -4942,7 +4927,7 @@ _bideg_ok73 = all(
 # tent); depletion = nilpotency; termination = top class w2^2 w3^3
 # (H^12 = 0). Forced dictionary: photon <-> 1, tau <-> top/volume
 # class ("the tau touches everything", cohomological face).
-# (Part 2 section 15; Appendix A section 31)
+# (Part 2 section 15)
 _mono73 = [(_a73, _b73) for _a73 in range(3) for _b73 in range(4)]
 _ring_dim_ok73 = (len(_mono73) == 12)
 _top73 = (2, 3)
@@ -4956,8 +4941,7 @@ _ring_term_ok73 = all(
 # STEP 74 -- MC-2 PROVED CORE: THE MARGINAL DIRECTIONS OF THE SEED-PRODUCT
 #            CONDENSATE ARE THE HODGE-HARMONIC (p,p)-CLASSES OF CP^2 x CP^3
 # =============================================================================
-# (Part 2 section 15; Part 4 section 3.10; Appendix A section 31;
-#  Appendix A section 31)
+# (Part 2 section 15; Part 4 section 3.10)
 #
 # Hypothesis H (STEP 73 g) splits into a PROVED core and one named
 # residual. PROVED here:
@@ -4974,7 +4958,7 @@ _ring_term_ok73 = all(
 #
 # (b) (p,p)-only from the Hopf U(1). The condensate is U(1)-invariant
 # (charge 0): the m=0 block of L^2(S^{2k+1}) = sum_m L^2(CP^k, O(m))
-# -- the induced-base lemma of the Rule A closure (Appendix A s3).
+# -- the induced-base lemma of the Rule A closure.
 # A (p,q) Dolbeault class carries Hopf charge p - q; charge 0 forces
 # p = q. So the only marginal directions compatible with the
 # condensate are the (p,p) classes = omega^p. Product diamond of
@@ -5080,7 +5064,7 @@ _mc2_core_ok74 = (_parallel_ok74 and _pponly_ok74
 # (0,q)-forms on a Kahler manifold, so the precise operator is the
 # Dolbeault/Witten Laplacian; the contractible-vs-compact dichotomy holds
 # in that setting.) The "minima at {1,4}" reading of the Part 2 s5
-# functional is separately null (Appendix A s15, two searches: kernel
+# functional is separately null (two searches: kernel
 # positivity forbids interior minima) -- a different object from this one.
 _flat_kernel74 = {_d74: 1 + sum(0 for _ in range(_d74))
                   for _d74 in (4, 6)}          # de Rham R^d: b_0=1 only
@@ -5112,7 +5096,7 @@ _radial_reframe_ok74 = (_flat_no_leak74 and _compact_kernel74 == 12)
 # d=4 (k=2): p in {0,1,2}: 3 channels. Nilpotency omega_2^3 = 0 (p>k).
 # d=6 (k=3): p in {0,1,2,3}: 4 channels. Nilpotency omega_3^4 = 0 (p>k).
 # Product: 3 * 4 = 12 = dim R. No other U(k)-invariant (p,p) direction
-# exists on flat C^k. MC-2 COMPLETENESS PROVED. ✅ (Part 2 s15; App A s31)
+# exists on flat C^k. MC-2 COMPLETENESS PROVED. ✅ (Part 2 s15)
 # Note: prior compact-CP^k Hodge route was rejected (2026-06-18) as
 # framework creep. This proof uses only flat C^k + Schur's lemma.
 
@@ -5232,7 +5216,7 @@ _dEel_au75 = _V0_au_SM75 - _dVnn75  # negative: electrons favour D3h
 # (Psi,{M_d}) fixed point bears on the DISTINCT positive firing-set -- which
 # modes occupy the already-fixed active sectors, MC-4 / T0.5 -- not on d=7,
 # and not the same object as Open Theorem A, the sector-covariance question.
-# Backward-run record: Appendix §15, 2026-06-24.)
+# Backward-run record: 2026-06-24.)
 _g76 = {2: 722.5, 3: 8.0*math.sqrt(7.0), 4: 12.0/math.sqrt(7.0),
         5: 96.0/722.5, 6: 0.25, 10: 0.25}
 _D76 = [2, 3, 4, 5, 6, 10]
@@ -5272,7 +5256,7 @@ _quartet_with_d7 = _quartet_len76 + 1       # active d=7 -> 5, breaks 2n_s-4=n_s
 
 # =============================================================================
 # STEP 77 -- CP3 HIDDEN-STATE SELF-ENERGY: FINE STRUCTURE PROTECTED
-#            (Part 11 §6.4 strengthening; Appendix §33)
+#            (Part 11 §6.4 strengthening)
 # =============================================================================
 # Do the 4 CP3 hidden d-states shift observable fine structure via the
 # kernel self-coupling? The 2nd-order self-energy of an observable state
@@ -5310,7 +5294,7 @@ _mixed_scale77 = _eps_contact77**2      # (L6/a0)^2 ~ 7.1e-10 relative
 
 # =============================================================================
 # STEP 78 -- d=2 HOPF-BUNDLE FIRST CHERN NUMBER (Chern-Weil integrality)
-#            (Part 3 §14 charge-quantization open item; Appendix §32)
+#            (Part 3 §14 charge-quantization open item)
 # =============================================================================
 # IDWT-native content: the d=2 EM sector is the U(1) Hopf base CP^1 = S^2
 # (Part 3 §14). The first Chern class of the degree-n line bundle O(n) has
@@ -5318,9 +5302,7 @@ _mixed_scale77 = _eps_contact77**2      # (L6/a0)^2 ~ 7.1e-10 relative
 #     \int_{S^2} c_1(O(n)) = (1/2pi) \int_{S^2} F = n   in Z   (⭐ Identity)
 # This rigid integer is the topological origin of the integer labelling of
 # the d=2 Hopf bundle -- the same integer underlying charge quantisation
-# (Part 3 §14) and the massless photon. (The QHE transport identification
-# via TKNN is a cross-framework import; it is NOT placed in the public
-# documents and is recorded only in Appendix §32.)
+# (Part 3 §14) and the massless photon.
 def _chern78(n, N=2000):
     """Numerically integrate c_1 = F/2pi over S^2, charge-n monopole."""
     thetas = (np.arange(N) + 0.5) * np.pi / N
@@ -5491,7 +5473,7 @@ _tot_mu81 = sum((2*l + 1) * sum(_mlN81(l, N) for N in range(l, 35))
 # STEP 82 -- d=6 FREE-MODE CLASSIFICATION UNDER THE SECTOR ROTATION GROUP
 #            SO(6) ~ Spin(6) ~ SU(4): NO INTRINSIC SO(3) (frame-free)
 # =============================================================================
-# (Part 8 section 14.2; Appendix A section 35.)
+# (Part 8 section 14.2.)
 #
 # The d=6 sector space is flat R^6 (the CP^3 label is the LOCAL symmetry of
 # the potential minimum near r=0, not the global topology -- CLAUDE.md). The
@@ -5535,7 +5517,6 @@ def _mult82(m, n):
     """# of levels N in 0..n-1 with N >= m and N == m (mod 2)."""
     return 0 if m > n - 1 else (n - 1 - m) // 2 + 1
 
-_so6_e82 = {m: _mult82(m, n_e) for m in range(0, n_e)}
 _tot_e82 = sum(_mult82(m, n_e) * _Hdim82(m) for m in range(0, n_e))
 _tot_mu82 = sum(_mult82(m, n_mu) * _Hdim82(m) for m in range(0, n_mu))
 _singlet_present82 = (n_e % 2 == 1)        # SO(6) singlet H_0 iff n odd
@@ -5544,7 +5525,7 @@ _singlet_present82 = (n_e % 2 == 1)        # SO(6) singlet H_0 iff n odd
 # =============================================================================
 # STEP 83 -- 6D PROBE: e-e SCATTERING, THE HIDDEN-COORDINATE MOMENTUM
 # =============================================================================
-# CHANNEL (falsifiable; Part 6; Appendix A s36)
+# CHANNEL (falsifiable; Part 6)
 #   The electron is a d=6 object -- six equal macroscopic dimensions, none
 #   special (Part 1 ontology). Two electrons scatter conserving 6-momentum;
 #   a d=3 detector resolves only 3 of the 6 momentum components. A 3D source
@@ -5583,7 +5564,7 @@ _sig83_mb  = _sig83_fm2 * 10.0             # mb (1 fm^2 = 10 mb)
 
 # =============================================================================
 # STEP 84 -- 6D PROBE f_hid: HIDDEN-COORDINATE OVERLAP FACTOR
-#   (Appendix A s36 addendum; resolves "where 3D matter sits in 4,5,6")
+#   (resolves "where 3D matter sits in 4,5,6")
 #   The d=6 electron has a hidden-coord profile of width L_6 = lam_6^{-1/4}.
 #   Two electrons separated by dX in coords 4,5,6 overlap (amplitude) as
 #       f_hid(dX) = exp(-dX^2 / (4 L_6^2))      (exact Gaussian overlap)
@@ -5610,7 +5591,7 @@ _fhid_vol_84  = [(s, _fhid_avg_84(s * _L6sec_84, _L6sec_84)) for s in (5, 100)]
 
 # =============================================================================
 # STEP 85 -- PRE-PRISM FOUR-WAVE LEVEL BALANCE; THE PRISM FREEZES THE TOWER
-#   (Appendix A s22 addendum; the late-prism Layer-1 -> Layer-2 bridge)
+#   (the late-prism Layer-1 -> Layer-2 bridge)
 #   The kernel four-wave term couples modes by index: n_i+n_j = n_k+n_l.
 #   IDENTITY (pure combinatorics): with the harmonic oscillator level
 #   N = n-1 (pre-prism, common omega), index conservation is EXACTLY
@@ -5656,7 +5637,7 @@ _photo_ok_85 = all(
 # =============================================================================
 # STEP 86 -- l=2 SECOND-ORDER SELF-ENERGY: d=4 UP-TYPE QUARK MASS SHIFTS
 # =============================================================================
-#   (Part 2 §11.4; Appendix E §45; companion first-order: STEP 90)
+#   (Part 2 §11.4; companion first-order: STEP 90)
 #   The kernel coupling (xi.xi')^2 decomposes into l=0 (scalar) + l=2
 #   (traceless tensor) channels on d=4 (CP^2). The l=0 channel contributes
 #   a uniform sector-wide shift (Level-1, open). The l=2 channel is
@@ -5672,7 +5653,7 @@ _photo_ok_85 = all(
 #   fit hits PDG. GTC REMOVED 2026-06-16 (the fitted (1-eps)^k is no longer
 #   applied); this l=2 self-energy is kept as the real-but-underived
 #   candidate explanation for the now-uncorrected overshoot, recorded for a
-#   future physically-motivated correction. (Appendix E §45/§49.)
+#   future physically-motivated correction.
 # --------------------------------------------------------------------------
 def _S86(n, d):
     return _comb(n + d - 1, d)
@@ -5765,7 +5746,7 @@ _id_ok_87 = (_total_87 == _T5_87 ** 2 == _stable_87 ** 2 == 225)
 
 # =============================================================================
 # STEP 88 -- NO-LATENCY: LINEAR DRIVE ON A FLAT DIRECTION (Part 2 §15,
-#            Appendix §31; 2026-06-18)
+#            2026-06-18)
 # =============================================================================
 # MC-2 Hypothesis H (STEP 74): (p,p)-form directions are exact zero-
 # eigenvalue modes of the second variation. No-latency: deposits along
@@ -5786,7 +5767,7 @@ _id_ok_87 = (_total_87 == _T5_87 ** 2 == _stable_87 ** 2 == 225)
 # No-latency is a structural consequence of:
 #   (a) H (zero second-variation barrier, STEP 74) — ✅
 #   (b) P6 linear insertion drive — ✅ (Part 1 §3a)
-# Status: ✅ (2026-06-18). (Part 2 §15, Appendix §31)
+# Status: ✅ (2026-06-18). (Part 2 §15)
 #
 # Numerical verification: for V_bg = c4*phi^4 (generic leading term
 # when the quadratic vanishes), V_eff = c4*phi^4 - h*phi. Check that
@@ -5827,7 +5808,7 @@ _no_latency_ok_88 = (
 
 # =============================================================================
 # STEP 89 -- RING MONOMIAL -> PARTICLE ASSIGNMENT: n INCREASES WITH alpha
-#            (Part 2 §15, Appendix §31; 2026-06-18)
+#            (Part 2 §15; 2026-06-18)
 # =============================================================================
 # H proved: 12 on-ray deposits biject with monomials of
 #   R = R[omega2, omega3] / (omega2^3, omega3^4).
@@ -5889,7 +5870,7 @@ _cp2_higher_89 = _s_d4_89 > _s_d3_89
 # =============================================================================
 # STEP 90 -- l=2 FIRST-ORDER QUADRUPOLE OF THE STRETCHED d=4 MODE
 # =============================================================================
-#   (Part 2 section 11; Appendix E section 45)
+#   (Part 2 section 11)
 #   Companion to STEP 86 (the 2nd-order shell-mixing self-energy). The
 #   d=4 modes are degree-(n-1) monomials (Part 2 section 1). The "stretched"
 #   single-plane mode chi_n ~ z1^(n-1) exp(-sqrt(lam4) r^2 / 2),
@@ -5907,7 +5888,7 @@ _cp2_higher_89 = _s_d4_89 > _s_d3_89
 #   diagonal first-order piece must (near-)cancel, leaving only the
 #   2nd-order N<->N+/-2 shell mixing of STEP 86. This is the magnitude
 #   exclusion of the polarized-state route -- distinct from the trace
-#   (level-average) argument of Appendix E section 45, which only kills the
+#   (level-average) argument, which only kills the
 #   first-order shift averaged over a degenerate shell, not this single
 #   state. STATUS: identity (the moment) + null result (the route).
 # --------------------------------------------------------------------------
@@ -6298,7 +6279,7 @@ _equinorm_ok_95 = (_C0_95 == 2 and _CK_95 == 2 * _S53_95
 
 # =============================================================================
 # STEP 96 -- THREE GENERATIONS FROM THE MC-2 DEPOSIT CHANNELS, AND THE
-#            alpha-ORDER DRIVER (Part 7; Appendix B; builds on STEP 74e)
+#            alpha-ORDER DRIVER (Part 7; builds on STEP 74e)
 # =============================================================================
 # STEP 74(e) proved MC-2 completeness on FLAT C^k (k=d/2) + U(k) Schur:
 # =============================================================================
@@ -6380,8 +6361,6 @@ _ME15_97 = _ME_native3(1, 5)
 # the un-normalised dE^2 reading here is dimensionally incomplete (energy^4)
 # and is superseded by STEP 103. No numeric width is asserted in THIS step.
 _dE_31_97 = m_scale3 * (S(3, 3) - S(1, 3))     # 42.3 MeV release, n=3->1
-_ME_phys_31_97 = _ME_native3(3, 1) * m_scale3
-_rate_form_97 = "Gamma ∝ |ME*m_scale|^2 * dE^2 (rho_rad norm open)"
 
 
 # =============================================================================
@@ -6415,7 +6394,7 @@ _rate_form_97 = "Gamma ∝ |ME*m_scale|^2 * dE^2 (rho_rad norm open)"
 # therefore irreducibly SPECTRAL/index: transition-rate dynamics does not, and
 # by the exact conserved charge CANNOT, generate the additive member edges.
 # UNIFORM READING (refines the per-edge case analysis above; ties STEP
-# 37B/C to App B 51a). With N=n-1 every BINARY index-add k=a+b has
+# 37B/C). With N=n-1 every BINARY index-add k=a+b has
 # N_k=N_a+N_b+1: one unit ABOVE the kernel level cap (N_c<=N_a+N_b) and
 # a parity flip -- so n_s,e,mu,tau are forbidden uniformly, not by a
 # 4-operand coincidence. The +1 is the ground offset S(1,d)=1 (STEP 37B)
@@ -6541,7 +6520,7 @@ assert _required_99 == {n_strange, n_nu1, n_e, n_nu2, n_charm, n_nu3,
 
 
 # =============================================================================
-# STEP 100 -- d=7 EXCLUSION FROM DEPOSIT LEVEL COUNT (Appendix §15)
+# STEP 100 -- d=7 EXCLUSION FROM DEPOSIT LEVEL COUNT
 # =============================================================================
 # The U(2)xU(3)-invariant (p,p) deposits on flat C^2xC^3 are parameterised
 # by (alpha,beta) with alpha in {0,1,2} (rank of U(2)) and beta in {0,1,2,3}
@@ -6552,7 +6531,7 @@ assert _required_99 == {n_strange, n_nu1, n_e, n_nu2, n_charm, n_nu3,
 # would require either: (a) a 7th deposit level (p=6, needing alpha>=3 or
 # beta>=4 -- impossible with U(2) rank 2 and U(3) rank 3); or (b) replacing
 # d=10, which Gegenbauer criticality (STEP 26) independently fixes. Neither
-# is possible. Therefore d=7 is excluded. (🔵; Appendix §15.)
+# is possible. Therefore d=7 is excluded. (🔵)
 #
 # Corner form: omega_2^2 ^ omega_3^3 is the top form on C^2xC^3=R^10,
 # real degree 2*2+2*3=10 = dim_R(d=10 coordinate space C^5). The deposit
@@ -6607,7 +6586,7 @@ assert not any(
 # This derives the Slater empirical rule "d/f electrons see all
 # inner electrons at weight 1.00" from the d=3 mode functions
 # (Marginal Exactness), with no empirical parameters.
-# The TF continuum density (Appendix §31 addendum, τ=0.906, 8
+# The TF continuum density (τ=0.906, 8
 # mismatches) averages over the centrifugal barrier rather than
 # resolving it shell by shell; the shell-structure deficit is exactly
 # the centrifugal-barrier penetration effect missing in TF.
@@ -6902,16 +6881,8 @@ _muon_kernel_stable_104 = _tau_kernel_mu_104/_tau_weak_mu_104 > 1e6
 # So: rate LAW, linear-dE scaling, and prefactor STRUCTURE are native; the lone
 # open number is the rho_vac/coupling normalisation. (Full simulation lives in
 # the working log, not here -- it is not part of the canonical value set.)
-def _ww_law_105(g, D, w0):                 # classical WW rate law (verified)
-    return math.pi * g**2 * D / (2.0 * w0**2)
-
-
 # analytic classical 3-component rate (lattice form, slowly-varying envelope):
 #   Gamma = (3 pi/16) lambda^2 a_f^2 dE / (M_i * wmax^3)   [lattice DOS norm]
-def _Gamma_native_105(M_i, dE, lam, a_f, wmax):
-    return 3.0*math.pi*lam**2*a_f**2*dE/(16.0*M_i*wmax**3)
-
-
 # recorded structural facts (from the verified simulation; see working log):
 _native_linear_in_dE_105 = True            # Gamma ~ dE   (NOT dE^2, NOT const)
 _native_inv_Mi_105 = True                  # Gamma ~ 1/M_i (classical-L^2)
@@ -6954,9 +6925,8 @@ _qft_daughter_norm_diff_105 = "1/M_f (rel.) vs rho_vac seed (classical)"
 # normalisation is the open EW-coupling/chi-reduction piece (as elsewhere).
 _ps3_power_bare_106 = 5            # bare 3-body PS ~ E^5 (MC 4.91)
 _ps3_power_native_106 = 2         # native (x 1/2w per leg) ~ E^2 (MC 2.00, =s)
-# physical-power bookkeeping for the muon (dE ~ m): Gamma ~ (1/m)|M|^2 PS3
-_m5_needs_chiral_106 = (1 + 4 + _ps3_power_native_106 - 1) == 6 - 1  # 5 == 5
-# i.e. m^5 = m^{-1}(init) * m^4(|M|^2 V-A) * m^2(PS3); scalar (|M|^2~m^0)
+# physical-power bookkeeping for the muon (dE ~ m): Gamma ~ (1/m)|M|^2 PS3:
+# m^5 = m^{-1}(init) * m^4(|M|^2 V-A) * m^2(PS3); scalar (|M|^2~m^0)
 # would give m^{-1+0+2} = m^1, not m^5.
 _scalar_contact_power_106 = -1 + 0 + _ps3_power_native_106    # = 1 (wrong)
 _va_chiral_power_106 = -1 + 4 + _ps3_power_native_106         # = 5 (Fermi)
@@ -7003,8 +6973,8 @@ _va_chiral_power_106 = -1 + 4 + _ps3_power_native_106         # = 5 (Fermi)
 # Status 🔶: the connection->vector-current step is standard sector-Dirac
 # geometry; a fully explicit QFT-free derivation of the vertex normalisation on
 # M_inf is not carried out here (the residual coefficient piece).
-_vertex_is_vector_107 = True        # gamma^a A_a: vector current (V-A, P_L)
-_kernel_is_scalar_107 = True        # (xi.xi')^2 l=0 : scalar contact -> kernel
+# EW vertex gamma^a A_a is a vector current (V-A, P_L); the kernel
+# (xi.xi')^2 l=0 is a scalar contact -> kernel.
 # the m-power split that distinguishes the two channels (cf STEP 106):
 _weak_channel_mpow_107 = -1 + 4 + 2          # = 5  (holonomy vector, Fermi)
 _kernel_channel_mpow_107 = -1 + 0 + 2        # = 1  (scalar kernel, sub-Fermi)
@@ -7224,7 +7194,7 @@ _t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
 #      theorem: the operand "up-type, same generation" is motivated, the why
 #      is not proved).
 #  - nu3 AND tau ARE DIFFERENT KINDS OF EDGE (narrowed-target re-run,
-#      App D 15, 2026-06-20). nu3=22 has NO index-addition route from tower
+#      2026-06-20). nu3=22 has NO index-addition route from tower
 #      members: no pair of {1,3,4,10,13,15,20} sums to 22, and 22=S(3,5)+1
 #      is not an index-sum -- it is IE-FORCED (nu1+nu2-n_u, or the level-add
 #      3+20-1 / 10+13-1). tau=23 DOES carry index-addition routes (1+22,
@@ -7237,7 +7207,7 @@ _t8_gaps_closed_111 = 0     # honest: this observation closes none of the 3 gaps
 #      node); it is spectral, NOT a time-dynamics object -- the member
 #      edges are kernel-forbidden (STEP 98/108).
 # CAVEAT on the App 15 null battery -- NOW CLOSED on the narrowed target
-# (App D 15, 2026-06-20): the battery was re-run with 16,72 pulled OUT as
+# (2026-06-20): the battery was re-run with 16,72 pulled OUT as
 # free anchors (route-multiplicity, closure, per-mode operand uniqueness).
 # Removing them rescues no selector (FP 74->69; closure still fills [1,100];
 # only ONE IE route per 3rd-gen mode is killed, 6-7 survive), so the
@@ -7297,7 +7267,7 @@ _level_add_112 = (10 + 3) - 1            # e via level-addition = 12
 _index_add_112 = 10 + 3                  # e via index-addition = 13
 _plus_one_offset_112 = _index_add_112 - _level_add_112   # = 1 = n_d
 assert _nu3_disp_112 == 22 and _plus_one_offset_112 == 1
-# nu3 vs tau edge-type split (narrowed-target re-run, App D 15): index-add
+# nu3 vs tau edge-type split (narrowed-target re-run): index-add
 # routes a+b (a<=b, both < target) from the lower tower co-fixed set.
 _tower_112 = (1, 3, 4, 10, 13, 15, 20, 22)
 _idx_routes_112 = lambda t: sorted(
@@ -7485,7 +7455,7 @@ assert _gnd_force_114
 # isolated coincidence, not a grid-wide law, so the e/mu value
 # identification is NOT upgraded -- the bidegree OPERATION is structural,
 # the value ADDITION is not (yet) derived. No blind search is added here
-# (value-pattern searches are exhausted-NULL, App D 15); this records the
+# (value-pattern searches are exhausted-NULL); this records the
 # positional reframing and pins the residual to one coincidence.
 _grid_115 = {(0, 0): 0, (0, 1): 1, (1, 0): 4, (0, 2): 3, (1, 1): 20,
              (2, 0): 72, (0, 3): 10, (1, 2): 15, (2, 1): 22, (1, 3): 13,
@@ -8272,7 +8242,7 @@ print(f"         [binomial S(n_e,2)-n_charm+1 = {S(n_e,2)}-{n_charm}+1"
       f" needs a +1 offset]")
 print(f"product-form quarks = {{16, 72}}: the only quarks not a single")
 print(f"  S-value (others 1,3,4,20); 16=n_s^2, 72=N_c*n_s*N_f; both")
-print(f"  3rd-gen; both div by 8 (factorization, not Bott -- App A s43)")
+print(f"  3rd-gen; both div by 8 (factorization, not Bott)")
 print(f"n_W     = S(n_e,2) - n_nu2 = {S(n_e,2)} - {n_nu2} = {n_W}")
 print(f"n_Z     = n_W + q = {n_W} + {S(n_up,4)-S(n_up,3)} = {n_Z}")
 print(f"         [q = S(n_up,4)-S(n_up,3) = 5]")
@@ -8411,7 +8381,7 @@ print(f"  g22 = p^2 q / 2 = {int(g22_p)}^2 * {int(g22_q)} / 2"
       f" = {g22_count}  (Dirac-eigenspace multiplicity)")
 print(f"  representative (xi.xi')^2 ground-state overlap"
       f" = {g22_kernel_overlap:.3f}  (O(1), not the count)")
-print("  => state-count (IDOS), like the CKM formula (Appendix s20a);")
+print("  => state-count (IDOS), like the CKM formula;")
 print("     only the 1/2 is kernel-derived.")
 
 
@@ -9393,12 +9363,12 @@ print(f"  -> Both chains yield 96: genuine internal consistency test. ✓")
 
 
 # =============================================================================
-# STEP 31 -- OUTPUT: CONSECUTIVE MATTER QUARTET (Part 1 §3a, App A §19)
+# STEP 31 -- OUTPUT: CONSECUTIVE MATTER QUARTET (Part 1 §3a)
 # =============================================================================
 
 print("\n" + "=" * 70)
 print("=== STEP 31: CONSECUTIVE MATTER QUARTET DERIVATION"
-      " (Part 1 §3a, App A §19) ===")
+      " (Part 1 §3a) ===")
 print("=" * 70)
 print(f"  n_s = {n_strange},"
       f"  Rule A terminates at d_term = 2*(n_s-1) = {_d_term}"
@@ -9458,11 +9428,11 @@ print("  each sector follows from the l-parity and"
 
 
 # =============================================================================
-# STEP 30 -- OUTPUT: CO-FIXED-POINT STABILITY l-PARITY (Part 7 §1.2, App A §22)
+# STEP 30 -- OUTPUT: CO-FIXED-POINT STABILITY l-PARITY (Part 7 §1.2)
 # =============================================================================
 print("\n" + "=" * 70)
 print("=== STEP 30: CO-FIXED-POINT l-PARITY SELECTION"
-      " (Part 7 §1.2, App A §22) ===")
+      " (Part 7 §1.2) ===")
 print("=" * 70)
 print("  Kernel (xi.xi')^2 = l=0 + l=2 only  =>  parity of l is conserved.")
 print("  Seeds are l=0 (even). Odd-l modes are permanently unreachable.")
@@ -9501,7 +9471,7 @@ print(f"    Perturbed m(n=3) ~ {_m_n3_pert:.1f} MeV"
       f"  (between Sigma modes {_m_n1:.1f} and {m_scale3*S(4,3):.1f} MeV)")
 print(f"  => n=3 is off-resonance with any Sigma_pairs mode.")
 print()
-print(f"  Dephasing argument (Part 7 §1.2, App A §22):")
+print(f"  Dephasing argument (Part 7 §1.2):")
 print(f"    Off-diagonal ME(n=3,d=3 -> n=1,d=3) = {_ME13:.2f} sector units")
 print(f"    Dephasing time tau ~ 1/(ME * m_scale3)"
       f" = 1/({_ME13:.2f} * {m_scale3:.3f})")
@@ -10344,7 +10314,7 @@ print("      continuum = 0 at all orders, members and non-members")
 print("      alike. All active wells are purely discrete, so the only")
 print("      a.c. spectrum coupled to sector excitations is spacetime")
 print("      momentum: irreversible loss is spatial radiation into")
-print("      lighter kernel-linked configurations. (Appendix A s22) ✅")
+print("      lighter kernel-linked configurations. ✅")
 print("  (c) downward same-sector links (Delta N = -2, all")
 print("      parity-allowed):")
 for _nm64, _src64, _tgt64, _in64, _dS64 in k64_channels:
@@ -10592,7 +10562,7 @@ print(f"  tau ray slot = k+4 = {_tau_slot73} (S^7, excluded T3);")
 print(f"  7,8,9 all inadmissible: {_gap_ok73} "
       f"-> tau = band-edge mode at d=10")
 print()
-print("  fuel tent F0(j), j=2..7 (front model, Appendix A s31):")
+print("  fuel tent F0(j), j=2..7 (front model):")
 print(f"    tent = {_tent73}")
 print(f"    = Betti vector of CP^2 x CP^3 "
       f"(cell convolution): {_tent_betti_ok73}")
@@ -10609,7 +10579,7 @@ print("     channel, geometrically suppressed (1/3)^n_r, STEP 34)")
 print(f"    one-new-coordinate vertex channel: {_I_vert73:.6f}  "
       f"(nonzero: front advances)")
 print("  => Delta(d) <= 1 per insertion EXACT in the odd channel;")
-print("     status 🔶 (Part 2 s15; Appendix A s31)")
+print("     status 🔶 (Part 2 s15)")
 print()
 print("  two-channel advance (derived from the seed condensates):")
 print(f"    channel forms S(n_u,3)=nu1, S(n_u,4)=nu2: "
@@ -10640,7 +10610,7 @@ print("    forced: photon <-> 1; tau <-> top/volume class")
 print("    MC-2 proved core in STEP 74: the (p,p) Hodge classes")
 print("    ARE marginal and the product is CP^2 x CP^3; the open")
 print("    residual is completeness (no other zero modes) plus")
-print("    no-latency. (Part 2 s15; Appendix A s31)")
+print("    no-latency. (Part 2 s15)")
 
 
 # =============================================================================
@@ -10676,7 +10646,7 @@ print(f"    radial adds no marginal direction (no leak): "
       f"{_radial_reframe_ok74}")
 print("    => residual is the flat-R^d vs compact-CP^k reconciliation,")
 print("       NOT a radial gap; the 'minima at {1,4}' reading is")
-print("       separately null (Appendix A s15, kernel positivity)")
+print("       separately null (kernel positivity)")
 print("(e) COMPLETENESS via U(k) rep theory on flat C^k (2026-06-18):")
 print("    Condensate and kernel (Re<z,w>)^2 are U(k)-invariant.")
 print("    Scalar deposit channels = U(k)-invariant (p,p)-forms.")
@@ -10782,8 +10752,6 @@ for _n78 in range(-3, 6):
 print(f"  max |error| over n in [-3,5] = {_chern_maxerr78:.2e}")
 print("Integer labelling of the d=2 Hopf bundle is rigid -- the topological")
 print("origin of charge quantisation (Part 3 §14) and the massless photon.")
-print("(QHE/TKNN transport identification is cross-framework: Appendix §32,")
-print(" not placed in the public documents.)")
 
 
 # =============================================================================
@@ -10994,7 +10962,7 @@ print(
     "with C=eps reproduces PDG-excluded set."
 )
 print("GTC REMOVED 2026-06-16 (fitted exponent); l=2 kept as the")
-print("real-but-underived candidate. Record: Appendix E s45/s49.")
+print("real-but-underived candidate.")
 
 
 # =============================================================================
@@ -11041,7 +11009,7 @@ print(
     + str(_no_latency_ok_88)
 )
 print("Status: ✅ from H (zero barrier, STEP 74) + P6 (linear drive).")
-print("(Part 2 §15, Appendix §31)")
+print("(Part 2 §15)")
 
 
 # =============================================================================
@@ -11071,7 +11039,7 @@ print(
     "Status: ❓ — holds for all 10 non-forced deposits; "
     "no derivation."
 )
-print("(Part 2 §15, Appendix §31)")
+print("(Part 2 §15)")
 
 
 # =============================================================================
@@ -11097,7 +11065,7 @@ print(
 )
 print("=> up-type quark is NOT a pure polarized stretched state;")
 print("   diagonal piece cancels, leaving STEP 86 2nd-order mixing.")
-print("Status: identity (moment) + null (route). Appendix E §45.")
+print("Status: identity (moment) + null (route).")
 
 
 # =============================================================================
@@ -11334,7 +11302,7 @@ print(f"    = dim_R(C^2 x C^3) = dim of d=10 coordinate space C^5")
 print(f"  Sector set |D| = 6 = {_n_levels_100} levels: saturated.")
 print(f"  d=7 as 7th sector: needs p=6 level -- impossible (rank cap 2+3=5)")
 print(f"  d=7 as replacement for d=10: excluded by Gegenbauer (STEP 26).")
-print(f"  Conclusion: d=7 excluded from D. (🔵; Appendix S15)")
+print(f"  Conclusion: d=7 excluded from D. (🔵)")
 
 
 # =============================================================================
@@ -11605,7 +11573,7 @@ print(f"  IE-forced); tau=23 index-add routes={_tau_idx_112}.")
 print("Open core = index-vs-level (+n_d) addition at tau (and e,mu); nu3 is")
 print("IE-forced (S(3,5)+1 is not an index-sum). Ties to time-dynamics")
 print("(STEP 85). CAVEAT NOW CLOSED: narrowed-target re-run (16,72 pulled out")
-print("as free anchors) rescues no static selector (App D 15, 2026-06-20).")
+print("as free anchors) rescues no static selector (2026-06-20).")
 
 
 # =============================================================================
