@@ -37,7 +37,7 @@
 
 import math
 import numpy as np
-import sympy as _sp41
+from fractions import Fraction as _Fr41
 from itertools import groupby as _gb89
 from math import (
     gamma as _gamma,
@@ -51,18 +51,6 @@ from scipy.special import (
     eval_genlaguerre as _genlaguerre,
     ellipk as _ek50,
     ellipe as _ee50,
-)
-from sympy import (
-    hermite as _herm41,
-    integrate as _intg41,
-    exp as _exp41,
-    oo as _oo41,
-    sqrt as _sqrt41,
-    pi as _pi41,
-    symbols as _sym41,
-    factorial as _fact41,
-    simplify as _simp41,
-    expand as _xpd41,
 )
 # Aliases: same modules, scoped names used in downstream code
 _math   = math
@@ -2816,20 +2804,34 @@ _ds = [2, 3, 4, 5, 6, 10]
 # (the convention-independent content of T8 gap (ii); the overall
 # branch is the PDG-convention bracket of Part 10 §4).
 
-# Exact symbolic verification via sympy Hermite overlap integrals.
-# For each additive edge, compute c_{kc} = <x H_{ka} H_{kb}, H_{kc}>_w
-# / <H_{kc}, H_{kc}>_w  (weight w = exp(-x^2)).
-# Proved: c_{kc} = 1/2  for all three edges; c_{kc+1} = 0 (no leakage).
-_x41 = _sym41('x', real=True)
+# Exact verification via the Hermite triple-product closed form
+# (replaces the slow symbolic integration; values are bit-identical).
+# Physicists' Hermite linearization integral:
+#   T(i,j,k) = int H_i H_j H_k exp(-x^2) dx
+#            = sqrt(pi) 2^s i! j! k!/((s-i)!(s-j)!(s-k)!), s=(i+j+k)/2,
+#   nonzero only when i+j+k is even and s >= max(i,j,k); else 0.
+# With x H_a = (1/2) H_{a+1} + a H_{a-1}, the edge coefficient is
+#   c_m = <x H_ka H_kb, H_m>_w / <H_m, H_m>_w
+#       = [ (1/2) T(ka+1,kb,m) + ka T(ka-1,kb,m) ] / (2^m m!)
+# (the sqrt(pi) cancels). Exact rational arithmetic via Fraction.
 
 
-def _h41_coeff(P, m):
-    """c_m = <P, H_m>_w / <H_m, H_m>_w, weight w = exp(-x^2)."""
-    num = _intg41(
-        P * _herm41(m, _x41) * _exp41(-_x41**2),
-        (_x41, -_oo41, _oo41))
-    den = _sqrt41(_pi41) * 2**m * _fact41(m)
-    return _simp41(num / den)
+def _tHHH41(i, j, k):
+    """int H_i H_j H_k exp(-x^2) dx, as a multiple of sqrt(pi)."""
+    _tot = i + j + k
+    if _tot % 2 or _tot // 2 < max(i, j, k):
+        return _Fr41(0)
+    _s = _tot // 2
+    return _Fr41(2**_s * _fact(i) * _fact(j) * _fact(k),
+                 _fact(_s - i) * _fact(_s - j) * _fact(_s - k))
+
+
+def _h41_coeff(ka, kb, m):
+    """c_m = <x H_ka H_kb, H_m>_w / <H_m, H_m>_w (exact Fraction)."""
+    _num = _Fr41(1, 2) * _tHHH41(ka + 1, kb, m)
+    if ka >= 1:
+        _num += ka * _tHHH41(ka - 1, kb, m)
+    return _num / _Fr41(2**m * _fact(m))
 
 
 _edges41 = [
@@ -2842,10 +2844,8 @@ for _nm41, _na41, _nb41, _nc41 in _edges41:
     _ka41 = _na41 - 1
     _kb41 = _nb41 - 1
     _kc41 = _nc41 - 1
-    _P41 = _xpd41(
-        _x41 * _herm41(_ka41, _x41) * _herm41(_kb41, _x41))
-    _ctop41  = _h41_coeff(_P41, _kc41)
-    _cabove41 = _h41_coeff(_P41, _kc41 + 1)
+    _ctop41 = _h41_coeff(_ka41, _kb41, _kc41)
+    _cabove41 = _h41_coeff(_ka41, _kb41, _kc41 + 1)
     _ok41 = ((_nc41 == _na41 + _nb41)
              and (_ctop41 != 0) and (_cabove41 == 0)
              and bool(_ctop41 > 0))
