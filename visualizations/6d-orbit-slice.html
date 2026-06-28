@@ -107,6 +107,9 @@ html,body{ margin:0; height:100%; overflow:hidden; }
   <h1>Atomic Orbitals as Resonant CP³ Orbits</h1>
   <p class="sub">In IDWT the electron is not a probability cloud — it is a single deterministic wave tracing one definite path. Drawn here is that path for the first orbital of each family — <span class="dot-s"><span class="swatch"></span></span>1s, <span class="dot-p"><span class="swatch"></span></span>2p, <span class="dot-d"><span class="swatch"></span></span>3d, <span class="dot-f"><span class="swatch"></span></span>4f — nested at a common nucleus. The familiar s, p, d, f lobe shapes are not put in by hand; they fall out of one closed trajectory in the electron's six-dimensional sector, \(\mathbb{CP}^3\).</p>
 
+  <h2>How to use</h2>
+  <p>Toggle <strong>s · p · d · f</strong> to show or hide each shell; <strong>⟲ Reset</strong> re‑centers the camera. Drag to rotate, scroll to zoom.</p>
+
   <h2>What you are looking at</h2>
   <p>The electron lives in \(\mathbb{CP}^3\), a macroscopic 6‑real‑dimensional space — the \(d=6\) sector of \(M_\infty\). Its state at shell \(L\) is the degree‑\(L\) monomial \(z_1^a z_2^b z_3^c z_4^d\) with \(a+b+c+d=L\). The electron orbits, and the three coordinates we experience as space, \((\mathrm{Re}\,z_1,\ \mathrm{Im}\,z_1,\ \mathrm{Re}\,z_2)\), are plotted directly. Each colored curve is one electron's closed orbit; the bright point is the electron, the fading tail its recent path. No probability, no ensemble — one particle, one trajectory.</p>
 
@@ -134,8 +137,6 @@ html,body{ margin:0; height:100%; overflow:hidden; }
 
   <p style="margin-top:14px">Status: <span class="status-tag tag-id">🔶 motivated classical illustration</span> &nbsp;The geometric setting — \(\mathbb{CP}^3\) and its degree‑\(L\) monomial states — is correct, and the lobe counts from the \(\kappa=\omega_1\) resonance are verified. <span class="status-tag tag-open">open</span> whether this closed rose <em>is</em> the \(|Y_L^m|^2\) orbital surface or a faithful cousin carrying the same counts and sizes.</p>
 
-  <h2>How to use</h2>
-  <p>Toggle <strong>s · p · d · f</strong> to show or hide each shell; <strong>⟲ Reset</strong> re‑centers the camera and turns them all back on. Drag to rotate, scroll to zoom.</p>
 </div>
 
 <!-- ══════════════════════ VIZ PANEL ══════════════════════ -->
@@ -205,7 +206,6 @@ SHELLS.forEach((sh,idx)=>{
 
 const resetBtn=document.createElement('div'); resetBtn.className='reset-btn'; resetBtn.textContent='⟲ Reset';
 resetBtn.addEventListener('click',()=>{
-  for(const sh of SHELLS){ sh.visible=true; sh.trail.visible=true; sh.electron.visible=true; sh.btn.classList.remove('off'); }
   frameCamera();
 });
 ctr.appendChild(resetBtn);
