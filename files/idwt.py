@@ -2570,9 +2570,10 @@ assert sig_mu_e < 1e-3 and sig_tau_e < 1e-3
 # window (all n with sector mass <= 1 TeV at the seed-chain scales;
 # d=5: <= 1 eV); all 12 quantities recomputed per draw (g55 fixed by the
 # seeds); score T = sum ln eps_eff and count draws doing at least as
-# well as IDWT.  Fixed seed, 10^6 draws here; 8x10^6 total draws
-# give p_B < 5e-7 (95% CL) and best random T = -29.8 vs IDWT -65.7,
-# robust to halving/doubling the windows.
+# well as IDWT.  Fixed seed (20260609).  10^6 in-script draws: best
+# random T = -24.7 vs IDWT -65.6 (gap 40.9).  Full 8.4x10^6 draws
+# (6e6 stated + halved/doubled): 0 hits, p_B < 5e-7 (95% CL), best
+# random ~ -31 (gap ~35 ln units, factor ~1e15).
 #
 # Measured inputs: PDG 2024 (m_tau 1776.93(9); m_W 80369.2(133);
 # m_Z 91188.0(20); m_H 125200(110); V_us 0.2245(8); m_t 172570(290);
@@ -9695,8 +9696,8 @@ print(f"  draws = {s39_NB:.0e} (fixed seed);"
       f" T <= T_IDWT: {s39_nB_hits}  => p_B < {3.0/s39_NB:.0e}")
 print(f"  best random T = {s39_T_best:.1f} vs T_IDWT = {s39_T_idwt:.1f}"
       f"  (gap {s39_T_best - s39_T_idwt:.1f} ln units)")
-print("  8e6 draws: p_B < 5e-7 (95% CL),")
-print("  robust to halving/doubling the index windows.")
+print("  8.4e6 draws (stated+halved+doubled): 0 hits, p_B < 5e-7,")
+print("  best random ~ -31 (gap ~35 ln units, factor ~1e15).")
 print("  => no random index assignment reproduces the measured set;")
 print("     the residual question is index-FORCING (T0.5), not fit.")
 
