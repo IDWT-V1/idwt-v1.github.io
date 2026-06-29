@@ -502,7 +502,7 @@ g55 = 96.0 / g22
 # The full tree-level PMNS is at the mu-tau symmetric limit:
 #   sin^2(theta_12) = 1/3 = 0.3333   (PDG: 0.307,  delta = -0.026)
 #   sin^2(theta_23) = 1/2 = 0.5000   (PDG 2024: 0.553,  delta = +0.053)
-#   sin^2(theta_13) = 0              (PDG: 0.022,  delta = +0.022)
+#   sin^2(theta_13) = 0              (PDG: 0.0219,  delta = +0.0219)
 #
 # Deviations from the mu-tau symmetric limit come from the neutrino
 # mass splittings and the mu-tau mass difference. They are suppressed
@@ -1583,7 +1583,7 @@ _mass_ratios = [
      _Ss["n3"]/_Ss["n2"], None,
      f"S(n_ν3,5)/S(n_ν2,5) = {_Ss['n3']}/{_Ss['n2']}"),
     ("m_Z  / m_W",
-     _Ss["Z"]/_Ss["W"], 1.13450,
+     _Ss["Z"]/_Ss["W"], 1.13461,
      f"S(n_Z,2)/S(n_W,2) = {_Ss['Z']}/{_Ss['W']}"),
 ]
 
@@ -2672,7 +2672,7 @@ _s39_cu = S(20, 4) / S(3, 4)
 _s39_checks = [
     ("sin2th23", _s39_s23, 0.553, 0.020),
     ("sin2th12", _s39_s12, 0.307, 0.012),
-    ("sin2th13", _s39_s13, 0.0220, 0.0006),
+    ("sin2th13", _s39_s13, 0.0219, 0.0007),
     ("m_c/m_u ", _s39_cu, 1273.0 / 2.16,
      (1273.0 / 2.16) * math.hypot(4.6 / 1273.0, 0.38 / 2.16)),
 ]
@@ -8739,7 +8739,7 @@ print(f"  g_{{56}}^2 = g_{{55}}*g_{{66}} = (96/g_22)/n_s = {g56_sq:.6f}")
 mu_tau_sym = [("sin^2(theta_12)", 1.0/3, 0.307, "solar"),
               ("sin^2(theta_23)", 1.0/2, 0.553,
                "atmospheric, exact from mu-tau symmetry"),
-              ("sin^2(theta_13)", 0.0,   0.022,
+              ("sin^2(theta_13)", 0.0,   0.0219,
                "reactor; mu-tau sym=0; spectral geom 0.02211 (Step 19)")]
 print(f"\n  {'Angle':>18}  {'μτ-sym':>8}  {'PDG':>8}  {'delta':>8}")
 for name, sym_val, pdg_val, note in mu_tau_sym:

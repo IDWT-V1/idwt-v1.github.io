@@ -271,7 +271,7 @@ $$\boxed{\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu
 |---|---|---|---|
 | $\sin^2\theta_{23}$ | $0.55897$ | $0.553$ | $+1.07\%$ |
 | $\sin^2\theta_{12}$ | $0.30856$ | $0.307$ | $+0.51\%$ |
-| $\sin^2\theta_{13}$ | $0.02211$ | $0.0220$ | $+0.51\%$ |
+| $\sin^2\theta_{13}$ | $0.02211$ | $0.0219$ | $+0.96\%$ |
 
 The three PMNS angles depend only on $g_{55}$ and the four mode indices $n_{\nu_i}$, $n_\alpha$; $g_{55}=96/g_{22}$ and the indices are fixed by the seed structure (T9b, T0.5), so no quantity in the three formulas is adjusted to the measured angles.
 
@@ -648,7 +648,7 @@ Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios 
 | $m_{\nu_3}/m_{\nu_1}$ | $S(22,5)/S(10,5)=65780/2002$ | 32.857 | — | — |
 | $m_{\nu_2}/m_{\nu_1}$ | $S(15,5)/S(10,5)=11628/2002$ | 5.808 | — | — |
 | $m_{\nu_3}/m_{\nu_2}$ | $S(22,5)/S(15,5)=65780/11628$ | 5.657 | — | — |
-| $m_Z/m_W$ | $S(81,2)/S(76,2)=3321/2926$ | 1.1350 | 1.1345 | +0.044% |
+| $m_Z/m_W$ | $S(81,2)/S(76,2)=3321/2926$ | 1.1350 | 1.1346 | +0.034% |
 
 $D=1+1/(n_{\rm up}\cdot n_s^2\cdot S(n_s,4))=1+1/1680$ is the back-reaction factor (T10b). Note $m_{\rm scale}_{10}=m_{\rm scale}_6$ so the $\tau/\mu$ and $\tau/e$ ratios are cross-sector only in dimension, not in coupling. Neutrino ratios have no direct PDG comparand because oscillation experiments measure $\Delta m^2$ differences, not absolute ratios; the IDWT predictions are falsifiable once $m_{\nu_1}$ is measured by CMB-S4 or tritium endpoint experiments.
 

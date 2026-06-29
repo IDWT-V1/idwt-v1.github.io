@@ -785,7 +785,7 @@ Absolute up-type masses vs PDG 2024, quoted bare — no correction applied:
 
 | Particle | $n$ | $S(n,4)\,m_{\rm scale,4}$ | error |
 |---|---|---|---|
-| up | 3 | 2.177 MeV | $+0.79\%$ ($0.2\sigma$, within the PDG light-quark margin) |
+| up | 3 | 2.177 MeV | $+0.77\%$ ($0.2\sigma$, within the PDG light-quark margin) |
 | charm | 20 | 1284.9 MeV | $+0.93\%$ bare (corrected $+0.34\%$, $+0.9\sigma$ in §11.9) |
 | top | 72 | 176{,}365 MeV | $+2.20\%$ bare (corrected $-0.04\%$, $-0.2\sigma$ in §11.9) |
 

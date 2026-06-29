@@ -446,7 +446,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 | Particle | $n$ | $S(n,3)$ | Predicted mass | PDG |
 |---|---|---|---|---|
 | d quark | 1 | 1 | 4.702 MeV | ~4.7 MeV ✅ |
-| s quark | 4 | 20 | 94.04 MeV | 93.4 MeV ✅ |
+| s quark | 4 | 20 | 94.04 MeV | 93.5 MeV ✅ |
 | b quark | beat $k_0=16$ | $\sqrt{S(16,3)\cdot S(17,3)}$ | 4181 MeV | 4183 MeV ✅ |
 
 Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the unique triple-coincidence site $k_0 = n_s^2 = 16$.

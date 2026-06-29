@@ -282,7 +282,7 @@ PDG $\cos\theta_W = 0.88108$.
 **Sector mass ratios: ⭐**
 
 $$m_\mu/m_e = S(n_\mu,6)/S(n_e,6) = 3{,}838{,}380/18{,}564 = 206.7647 \quad \text{(PDG } 206.7683,\;{-}0.002\text{\%)}$$
-$$m_H/m_Z = S(n_H,2)/S(n_Z,2) = 4560/3321 = 1.37308 \quad \text{(PDG } 1.37354,\;{-}0.033\text{\%)}$$
+$$m_H/m_Z = S(n_H,2)/S(n_Z,2) = 4560/3321 = 1.37308 \quad \text{(PDG } 1.37299,\;{+}0.007\text{\%)}$$
 
 **The $d=2$ coupling $g_{22} = 722.5$ and what it determines. ✅** The Hopf chain constraint $g_{25} = \sqrt{g_{22}}\times\sqrt{g_{55}} = \sqrt{96} = 4\sqrt{6}$ is automatically satisfied for any $g_{22}$ with $g_{55} = 96/g_{22}$ — $g_{22}$ cancels. Its value is fixed instead by the depth of the $d=2$ sector potential: $\lambda_2 = (g_{22}/2)^{2/3} = 50.72$, localization length $L_2 = 0.14$. The large $\lambda_2$ ensures $W$, $Z$, $H$ are tightly confined and do not propagate as bulk KK modes.
 

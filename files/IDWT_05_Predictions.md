@@ -217,9 +217,9 @@ Measured inputs: PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV; $m_W = 80369.2 \pm 1
 
 The result: $X_{\rm obs} = 31.54$, joint $p = 2.35\times10^{-10}$ (6.2σ) exact; $1.57\times10^{-7}$ (5.1σ) under the conservative Fisher treatment; a $\times100$ look-elsewhere allowance leaves $2.4\times10^{-8}$ (5.5σ). The §2a core set alone gives $3.84\times10^{-7}$ (4.9σ) under the same combination. The exact convolution was validated against Monte Carlo at every tail depth the simulation can resolve.
 
-The three PMNS angles and $m_c/m_u$ fail the resolution rule — their effective grids are finer than current measurement errors, so under Null A they cannot carry evidence either way. As consistency checks they sit at +0.30σ ($\sin^2\theta_{23}$), +0.13σ ($\sin^2\theta_{12}$), +0.19σ ($\sin^2\theta_{13}$), and −0.04σ ($m_c/m_u$).
+The three PMNS angles and $m_c/m_u$ fail the resolution rule — their effective grids are finer than current measurement errors, so under Null A they cannot carry evidence either way. As consistency checks they sit at +0.30σ ($\sin^2\theta_{23}$), +0.13σ ($\sin^2\theta_{12}$), +0.30σ ($\sin^2\theta_{13}$), and −0.04σ ($m_c/m_u$).
 
-**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all $n$ placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for $d=5$), recompute all twelve quantities — the eight above plus the PMNS angles and $m_c/m_u$, with $g_{55}$ fixed by the seeds — and score each random theory by $T = \sum \ln \varepsilon_{{\rm eff},i}$ against the same measured set. No random index assignment in $8.4\times10^6$ draws ($6\times10^6$ at the stated windows, the rest at halved and doubled windows) scored as well as IDWT; at the stated windows this gives $p_B < 5\times10^{-7}$ (95% CL). The best random theory fell short by 41.0 ln-units (a factor $\sim10^{18}$ in joint residual). Per quantity, random draws match the lepton ratios essentially never ($m_\mu/m_e$: $\sim3\times10^{-5}$ per draw; $m_\tau/m_e$: zero in all draws) and the remaining quantities at the $10^{-4}$–$10^{-2}$ level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
+**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all $n$ placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for $d=5$), recompute all twelve quantities — the eight above plus the PMNS angles and $m_c/m_u$, with $g_{55}$ fixed by the seeds — and score each random theory by $T = \sum \ln \varepsilon_{{\rm eff},i}$ against the same measured set. No random index assignment in $8.4\times10^6$ draws ($6\times10^6$ at the stated windows, the rest at halved and doubled windows) scored as well as IDWT; at the stated windows this gives $p_B < 5\times10^{-7}$ (95% CL). The best random theory fell short by 40.9 ln-units (a factor $\sim10^{18}$ in joint residual). Per quantity, random draws match the lepton ratios essentially never ($m_\mu/m_e$: $\sim3\times10^{-5}$ per draw; $m_\tau/m_e$: zero in all draws) and the remaining quantities at the $10^{-4}$–$10^{-2}$ level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
 
 Both nulls leave the conclusion of §2a in place with the arithmetic now rigorous: the spectrum is not a flexible fit, and the open question that carries the remaining evidential weight is the index-forcing (T0.5, Part 9), not the statistics.
 
@@ -399,7 +399,7 @@ These are identical regardless of which charged-lepton sector ($d=6$ or $d=10$) 
 |---|---|---|---|
 | $\sin^2\theta_{12}$ | $1/3 = 0.3333$ | $0.307$ | $-0.026$ |
 | $\sin^2\theta_{23}$ | $1/2 = 0.5000$ | $0.553$ | $+0.053$ |
-| $\sin^2\theta_{13}$ | $0$ | $0.0220$ | $+0.022$ |
+| $\sin^2\theta_{13}$ | $0$ | $0.0219$ | $+0.022$ |
 
 **Spectral geometry formulas for all three PMNS angles.** The rank-1 coupling matrix $W[\alpha,i] \propto \sqrt{S(n_\alpha,d_\alpha)}\sqrt{S(n_{\nu_i},5)}$ gives the PMNS as a weighted average of the $\mu$–$\tau$ symmetric limit (weight $1-g_{55}$) and simplex-ratio structure (weight $g_{55}$), where $g_{55}=96/g_{22}=0.1329$:
 
@@ -407,7 +407,7 @@ $$\sin^2\theta_{23} = \frac{1-g_{55}}{2} + g_{55}\frac{S(n_\tau,10)}{S(n_\mu,6)+
 
 $$\sin^2\theta_{12} = \frac{1-g_{55}}{3} + g_{55}\frac{S(n_{\nu_1},5)}{S(n_{\nu_1},5)+S(n_{\nu_2},5)} = 0.3086 \quad (\text{PDG: }0.307, +0.51\%)$$
 
-$$\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu,6)} = 0.02211 \quad (\text{PDG: }0.022, +0.51\%)$$
+$$\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu,6)} = 0.02211 \quad (\text{PDG: }0.0219, +0.96\%)$$
 
 where $\delta_{23} = \sin^2\theta_{23}-1/2$. All three angles are determined by $g_{55}$ and four mode indices, with no additional parameters beyond those fixed by the mass sector.
 
@@ -514,7 +514,7 @@ These predictions have specific numerical values from mode indices and sector ge
 | **F12** | Neutrino mass ratio $m_{\nu_3}/m_{\nu_1}$ | 32.86 (exact) | $S(22,5)/S(10,5) = 65780/2002$ | Ratio measured outside 30–36 |
 | **F13** | Atmospheric mixing angle $\sin^2\theta_{23}$ | 0.5590 (PDG 2024: 0.553, +1.07%) | PMNS spectral geometry (§4) | Outside 0.554–0.564 at > 3σ |
 | **F14** | Solar mixing angle $\sin^2\theta_{12}$ | 0.3086 (PDG 0.307, +0.51%) | PMNS spectral geometry (§4) | Outside 0.302–0.315 at > 3σ |
-| **F15** | Reactor mixing angle $\sin^2\theta_{13}$ | 0.02211 (PDG 0.022, +0.51%) | PMNS spectral geometry (§4) | Outside 0.020–0.025 at > 3σ |
+| **F15** | Reactor mixing angle $\sin^2\theta_{13}$ | 0.02211 (PDG 0.0219, +0.96%) | PMNS spectral geometry (§4) | Outside 0.020–0.025 at > 3σ |
 | **F16** | Cabibbo angle $\sin\theta_C$ | 0.22454 (PDG +0.09σ) | $\sin^2\theta_C = 1/S(n_s,3)$ + $\mathbb{CP}^1$ sector curvature correction | Outside 0.2237–0.2254 at > 3σ |
 | **F17** | $\rho$ parameter at tree level | $\rho = 1.00000$ exactly | $m_W^2/(m_Z^2 \cos^2\theta_W)$ from mode indices 76, 81 | $\rho \neq 1$ at tree level beyond radiative corrections (~0.4%) |
 | **F18** | Number of light neutrino species | $N_\nu = 3$ exactly | Three $d=5$ modes; no sterile neutrinos; closed spectrum | Z invisible width implying $N_\nu \neq 3$ |
