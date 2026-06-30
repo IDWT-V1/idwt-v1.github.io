@@ -4096,6 +4096,29 @@ _lc_check  = _Delta63 / _Nvec_unit    # = lambda_c (cross-check)
 
 
 # =============================================================================
+# STEP 63a -- lambda_c IS THE CONFINEMENT SCALE: sigma = lambda_c^2
+# =============================================================================
+# Numerical connection only; NOT a derivation of confinement (mechanism open,
+# Part 6; Part 3 s5; Part 8 s8). The derived colour scale lambda_c (STEP 63)
+# squared equals the QCD string tension, and that one scale reproduces three
+# confinement observables. Addresses part of "lambda_c free until connected".
+
+_lam_c_GeV  = _lambda_c / 1000.0      # lambda_c in GeV (STEP 63)
+_sigma_conf = _lam_c_GeV ** 2         # string tension = lambda_c^2 (GeV^2)
+_sqrt_sigma = _lam_c_GeV              # sqrt(sigma) = lambda_c
+_regge_ap   = 1.0 / (2.0 * math.pi * _sigma_conf)   # Regge slope alpha'
+_Tc_deconf  = 0.629 * _sqrt_sigma     # pure-gauge T_c = 0.629 sqrt(sigma)
+_ss_regge   = 0.421                   # measured sqrt(sigma), Regge (GeV)
+_ss_latt    = 0.440                   # measured sqrt(sigma), lattice (GeV)
+_ap_meas    = 0.90                    # measured Regge alpha' (GeV^-2)
+_Tc_pg      = 0.265                   # measured pure-gauge T_c (GeV)
+_ss_dev_rg  = (_sqrt_sigma / _ss_regge - 1.0) * 100.0
+_ss_dev_lt  = (_sqrt_sigma / _ss_latt  - 1.0) * 100.0
+_ap_dev     = (_regge_ap   / _ap_meas  - 1.0) * 100.0
+_Tc_dev     = (_Tc_deconf  / _Tc_pg    - 1.0) * 100.0
+
+
+# =============================================================================
 # STEP 64 -- THE d>10 VACUUM-DIMENSION BATH IS DYNAMICALLY CLOSED;
 #            DOWNWARD-CHANNEL CATALOG AND THE STABILITY EQUIVALENCE
 # =============================================================================
@@ -10293,6 +10316,26 @@ print("  Status: large-N_c power counting; O(1) coefficients fixed")
 print("  by leading large-N_c structure. Exact kernel matrix elements")
 print("  require collective-mode ID of colour-singlet baryon (s5.3).")
 print("  Spin-tensor channel (^3S_1-^3D_1 for J=1 deuteron): open.")
+
+
+# =============================================================================
+# STEP 63a -- OUTPUT: lambda_c IS THE CONFINEMENT SCALE (sigma = lambda_c^2)
+# =============================================================================
+
+print("\n" + "=" * 70)
+print("=== STEP 63a: lambda_c AS THE CONFINEMENT SCALE ===")
+print("=" * 70)
+print("  Numerical connection only; the confinement MECHANISM is NOT")
+print("  derived here (open: Part 6; Part 3 s5; Part 8 s8).")
+print(f"  lambda_c = {_lambda_c:.1f} MeV (STEP 63); sigma = lambda_c^2.")
+print(f"  sqrt(sigma) = {_sqrt_sigma*1000:.0f} MeV vs"
+      f" {_ss_regge*1000:.0f} Regge ({_ss_dev_rg:+.1f}%),"
+      f" {_ss_latt*1000:.0f} latt ({_ss_dev_lt:+.1f}%)")
+print(f"  Regge alpha' = 1/(2 pi sigma) = {_regge_ap:.3f} GeV^-2"
+      f" vs {_ap_meas:.2f} ({_ap_dev:+.1f}%)")
+print(f"  pure-gauge T_c = 0.629 sqrt(sigma) = {_Tc_deconf*1000:.0f}"
+      f" MeV vs {_Tc_pg*1000:.0f} ({_Tc_dev:+.1f}%)")
+print("  One derived scale, three confinement observables. 🔵")
 
 
 # =============================================================================
