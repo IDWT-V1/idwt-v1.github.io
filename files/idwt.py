@@ -5659,82 +5659,15 @@ _photo_ok_85 = all(
 
 
 # =============================================================================
-# STEP 86 -- l=2 SECOND-ORDER SELF-ENERGY: d=4 UP-TYPE QUARK MASS SHIFTS
+# STEP 86 -- REMOVED: l=2 quark self-energy candidate (withdrawn 2026-06-29)
 # =============================================================================
-#   (Part 2 §11.4; companion first-order: STEP 90)
-#   The kernel coupling (xi.xi')^2 decomposes into l=0 (scalar) + l=2
-#   (traceless tensor) channels on d=4 (CP^2). The l=0 channel contributes
-#   a uniform sector-wide shift (Level-1, open). The l=2 channel is
-#   traceless: its first-order level-average is zero; the real shift is
-#   SECOND ORDER, connecting shells N <-> N+/-2 via
-#       delta_n ~ |<N+/-2|V_2|N>|^2 / DeltaE.
-#   This gives a monotonically growing, correctly signed (negative)
-#   fractional mass shift dm/m -- the candidate mechanism for the d=4
-#   up-type overshoot. STATUS: mechanism real (right sign, near-linear
-#   growth, prefactor within factor 1.12 of derived eps). Does NOT close
-#   the derivation: (a) shape p~0.96 matches {0,3,10} (PDG-EXCLUDED), not
-#   {0,7,16}; (b) with C=eps it reproduces the excluded set; only a 2-param
-#   fit hits PDG. GTC REMOVED 2026-06-16 (the fitted (1-eps)^k is no longer
-#   applied); this l=2 self-energy is kept as the real-but-underived
-#   candidate explanation for the now-uncorrected overshoot, recorded for a
-#   future physically-motivated correction.
-# --------------------------------------------------------------------------
-def _S86(n, d):
-    return _comb(n + d - 1, d)
-_n_up86, _n_s86 = 3, 4
-_g3386 = (_n_s86**2) * _sqrt(_n_s86 + _n_up86) / 2.0
-_g4486 = (_n_s86 * _n_up86) / _sqrt(_n_s86 + _n_up86)
-_g6686 = 0.25
-_ms386 = m_e * _sqrt(_g3386 / _g6686)
-_ms486 = _ms386 * _sqrt(_g4486 / _g3386) / _S86(_n_up86, 4)
-_eps86 = 1.0 / (280.0 * _sqrt(7.0))
-_lam486 = (_g4486 / 2.0) ** (2.0 / 3.0)
-_w486 = _sqrt(_lam486)
-_lam386 = (_g3386 / 2.0) ** (2.0 / 3.0)
-_w386 = _sqrt(_lam386)
-_DE386 = 2.0 * _w386                   # cross-sector gap (prism Jacobian)
-
-def _g86(n):
-    """l=2 HO self-energy shape: harmonic denominators + prism Jacobian."""
-    N = n; nr = N // 2; l = N - 2 * nr
-    dE = ((nr + 1) * (nr + l + 4 / 2.0)) / _w486**2 \
-        / (-(2 * _w486) - _DE386)
-    if nr >= 1:
-        dE += (nr * (nr - 1 + l + 4 / 2.0)) / _w486**2 \
-            / ((2 * _w486) - _DE386)
-    dSdn = (_S86(n + 1, 4) - _S86(n - 1, 4)) / 2.0
-    return (dSdn / _S86(n, 4)) * (dE / (2.0 * _w486))
-
-_modes86 = {'up': 3, 'charm': 20, 'top': 72}
-_PDG86 = {
-    'up':    (2.16, 0.07),
-    'charm': (1273.0, 4.6),
-    'top':   (172570.0, 290.0),
-}
-_g86v = {k: _g86(_modes86[k]) for k in _modes86}
-_raw86 = {k: _S86(_modes86[k], 4) * _ms486 for k in _modes86}
-# Apply self-energy with derived prefactor C = eps (no free parameter)
-_corr86 = {k: _raw86[k] * (1.0 + _eps86 * _g86v[k]) for k in _modes86}
-_err86  = {
-    k: (_corr86[k] - _PDG86[k][0]) / _PDG86[k][0] * 100
-    for k in _modes86
-}
-_sig86  = {
-    k: (_corr86[k] - _PDG86[k][0]) / _PDG86[k][1]
-    for k in _modes86
-}
-# Scatter of residuals (max - min fractional error)
-_errs86_list = [_err86[k] for k in ('up', 'charm', 'top')]
-_scatter86 = max(_errs86_list) - min(_errs86_list)
-# Raw scatter for comparison
-_raw_errs = [
-    (_raw86[k] - _PDG86[k][0]) / _PDG86[k][0] * 100
-    for k in ('up', 'charm', 'top')
-]
-_raw_scatter = max(_raw_errs) - min(_raw_errs)
-# shape exponent from charm->top
-_shape_exp86 = _log(abs(_g86v['top'] / _g86v['charm'])) \
-    / _log(72 / 20)
+# The l=2 second-order self-energy was a candidate for the d=4 up-type
+# overshoot. REMOVED (Fedge 2026-06-29): right sign, but its shape matched
+# only the PDG-EXCLUDED {0,3,10} set and never closed; the operative
+# correction is the confinement-binding deficit (STEP 127). The l=2 kernel
+# SCALE epsilon = 1/(280*sqrt(7)) is UNAFFECTED -- derived in its own block
+# above and live as the nu3 closure scale (delta_nu3 = epsilon*g33 = 1/35,
+# STEP 4).
 
 
 # =============================================================================
@@ -5892,52 +5825,14 @@ _cp2_higher_89 = _s_d4_89 > _s_d3_89
 
 
 # =============================================================================
-# STEP 90 -- l=2 FIRST-ORDER QUADRUPOLE OF THE STRETCHED d=4 MODE
+# STEP 90 -- REMOVED: l=2 first-order quadrupole (withdrawn 2026-06-29)
 # =============================================================================
-#   (Part 2 section 11)
-#   Companion to STEP 86 (the 2nd-order shell-mixing self-energy). The
-#   d=4 modes are degree-(n-1) monomials (Part 2 section 1). The "stretched"
-#   single-plane mode chi_n ~ z1^(n-1) exp(-sqrt(lam4) r^2 / 2),
-#   z1 = xi1 + i xi2, is the polarized state a colour/spin-aligned quark
-#   would occupy. Its density |chi_n|^2 ~ |z1|^(2(n-1)) exp(-lam4^.5 r^2) is
-#   NOT spherical, so it carries a nonzero FIRST-ORDER traceless quadrupole
-#   Q_ij = <xi_i xi_j - (1/4) delta_ij r^2>. Closed form (verified by direct
-#   Gaussian moments and by Monte Carlo):
-#       Q = (n-1)/(4 sqrt(lam4)) * diag(1, 1, -1, -1),
-#       ||Q||^2 = (n-1)^2 / (4 lam4).
-#   First-order mean-field shift dm/m = -(g44 / 8 lam4) ((n-1)/(n+1))^2.
-#   RESULT: this gives 8-31% (saturating in n), vs the observed 0.8-2.2%
-#   that GROWS near-linearly -- EXCLUDED by both magnitude and shape. So the
-#   physical up-type quark is NOT in a pure polarized stretched state; the
-#   diagonal first-order piece must (near-)cancel, leaving only the
-#   2nd-order N<->N+/-2 shell mixing of STEP 86. This is the magnitude
-#   exclusion of the polarized-state route -- distinct from the trace
-#   (level-average) argument, which only kills the
-#   first-order shift averaged over a degenerate shell, not this single
-#   state. STATUS: identity (the moment) + null result (the route).
-# --------------------------------------------------------------------------
-def _Q2_stretch_90(n, lam4):
-    """||Q||^2 of the stretched mode z1^(n-1): exact (n-1)^2/(4 lam4)."""
-    return (n - 1) ** 2 / (4.0 * lam4)
-
-def _dm_first_order_90(n, g44, lam4):
-    """First-order mean-field fractional shift (negative)."""
-    return -(g44 / (8.0 * lam4)) * ((n - 1) / (n + 1)) ** 2
-
-_g44_90 = (_n_s86 * _n_up86) / _sqrt(_n_s86 + _n_up86)
-_lam4_90 = (_g44_90 / 2.0) ** (2.0 / 3.0)
-_modes_90 = {'up': 3, 'charm': 20, 'top': 72}
-_Q2_90 = {k: _Q2_stretch_90(n, _lam4_90) for k, n in _modes_90.items()}
-_dm1_90 = {
-    k: _dm_first_order_90(n, _g44_90, _lam4_90) * 100.0
-    for k, n in _modes_90.items()
-}
-# Required downward shifts (overshoot to remove), PDG 2024, percent:
-_req_90 = {'up': -0.79, 'charm': -0.93, 'top': -2.20}
-# Excluded: |first-order| is 10-30x too big and saturates instead of growing
-_excluded_90 = all(
-    abs(_dm1_90[k]) > 10.0 * abs(_req_90[k]) for k in _modes_90
-)
+# Companion to STEP 86: the first-order l=2 quadrupole of the polarized
+# "stretched" d=4 mode. NULL RESULT (the route is EXCLUDED: the first-order
+# shift is 10-30x too big and saturates, vs the observed near-linear 0.8-2.2%).
+# REMOVED with STEP 86 (Fedge 2026-06-29: remove the l=2 stuff -- a failed
+# correction no longer in IDWT). The operative up-type correction is the
+# confinement-binding deficit (STEP 127).
 
 
 # =============================================================================
@@ -10947,65 +10842,10 @@ print(f"  all exact: {_photo_ok_85}  (not selective: n_out=n_a+n_b is generic)")
 
 
 # =============================================================================
-# STEP 86 -- OUTPUT: l=2 SECOND-ORDER SELF-ENERGY, d=4 MASSES
+# STEP 86 -- OUTPUT: REMOVED (l=2 quark-mass self-energy withdrawn 2026-06-29)
 # =============================================================================
-print("\n" + "=" * 70)
-print("=== STEP 86: l=2 SECOND-ORDER SELF-ENERGY (d=4 UP-TYPE QUARKS) ===")
-print("=" * 70)
-print(
-    f"m_scale4 = {_ms486:.7f} MeV  "
-    f"eps = {_eps86:.6e}"
-)
-print(
-    f"w4 = {_w486:.4f}  w3 = {_w386:.4f}  "
-    f"cross-sector gap DE3 = {_DE386:.4f}"
-)
-print(f"shape exponent p (charm->top) = {_shape_exp86:.3f}")
-print("  compare {0,3,10} p~0.94, {0,7,16} p~0.65")
-print()
-print(
-    f"{'quark':6} {'n':>3} {'g(n)':>8} "
-    f"{'raw MeV':>11} {'corr MeV':>11} "
-    f"{'PDG MeV':>11} {'err%':>7} {'sigma':>7}"
-)
-for k in ('up', 'charm', 'top'):
-    n = _modes86[k]
-    print(
-        f"{k:6} {n:3d} {_g86v[k]:+8.4f} "
-        f"{_raw86[k]:11.3f} {_corr86[k]:11.3f} "
-        f"{_PDG86[k][0]:11.3f} "
-        f"{_err86[k]:+7.3f}% {_sig86[k]:+7.2f}s"
-    )
-print(
-    f"raw scatter (max-min err%): {_raw_scatter:.3f}%"
-    f"  -> after l=2 C=eps: {_scatter86:.3f}%"
-)
-print(
-    "=> generation-dependent scatter collapses "
-    f"{_raw_scatter:.2f}%-->{_scatter86:.2f}%."
-)
-print(
-    "   Residuals quasi-uniform (~+0.5 to +0.7%);"
-)
-print(
-    "   consistent with Level-1 +0.77% offset."
-)
-print(
-    "   Top +3.7s: ~12% HO underestimate of"
-    " CP2 l=2 matrix element (prefactor open)."
-)
-print(
-    "Status: mechanism real (right sign, near-linear,"
-)
-print(
-    "prefactor within ~12% of eps). 🔶"
-)
-print(
-    "Shape p~0.96 matches excluded {0,3,10}; "
-    "with C=eps reproduces PDG-excluded set."
-)
-print("GTC REMOVED 2026-06-16 (fitted exponent); l=2 kept as the")
-print("real-but-underived candidate.")
+# No output: the l=2 quark-mass self-energy candidate was removed (STEP 127 is
+# the operative up-type correction; epsilon / nu3 are unaffected).
 
 
 # =============================================================================
@@ -11086,29 +10926,10 @@ print("(Part 2 §15)")
 
 
 # =============================================================================
-# STEP 90 -- OUTPUT: l=2 FIRST-ORDER QUADRUPOLE OF STRETCHED d=4 MODE
+# STEP 90 -- OUTPUT: REMOVED (l=2 first-order quadrupole withdrawn 2026-06-29)
 # =============================================================================
-print("\n" + "=" * 70)
-print("=== STEP 90: l=2 FIRST-ORDER QUADRUPOLE (stretched d=4 mode) ===")
-print("=" * 70)
-print("Stretched mode chi_n ~ z1^(n-1) exp(-sqrt(lam4) r^2/2):")
-print("  ||Q||^2 = (n-1)^2/(4 lam4)   [exact; verified analytic + MC]")
-print("  dm/m = -(g44/8 lam4) ((n-1)/(n+1))^2   [first order]")
-print(f"  g44={_g44_90:.4f}  lam4={_lam4_90:.4f}")
-for _k90 in ('up', 'charm', 'top'):
-    print(
-        f"  {_k90:<6} n={_modes_90[_k90]:>2}  "
-        f"||Q||^2={_Q2_90[_k90]:8.2f}  "
-        f"dm/m={_dm1_90[_k90]:7.2f}%  "
-        f"(req {_req_90[_k90]:+.2f}%)"
-    )
-print(
-    "First-order route EXCLUDED (10-30x too big, saturates): "
-    + str(_excluded_90)
-)
-print("=> up-type quark is NOT a pure polarized stretched state;")
-print("   diagonal piece cancels, leaving STEP 86 2nd-order mixing.")
-print("Status: identity (moment) + null (route).")
+# No output: the l=2 first-order quadrupole was removed with STEP 86 (the
+# operative up-type correction is STEP 127).
 
 
 # =============================================================================
