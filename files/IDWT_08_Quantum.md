@@ -361,9 +361,9 @@ where the sum runs over $g$-rule-allowed pairs ($d+d' \in \{2,3,4,5,6,10\}$), an
 **What this single equation yields (all derived, no extra terms):**
 
 - **Particle spectrum:** Local minima after projection select exactly the seeds ($n_d=1$, $n_u=3$) and, through the co-fixed-point tower, the full observed set (co-fixed-point uniqueness proved — Part 1 §5)
-- **Bottom quark:** Quartic bifurcation at $k_0 = n_s^2 = 16$ → geometric-mean beat (Part 7 §49.4)
+- **Bottom quark:** Quartic bifurcation at $k_0 = n_s^2 = 16$ → geometric-mean beat (Part 7 §1.3)
 - **Confinement:** Colour-singlet states have $|\sum \vec{n}| = 0$ → zero extra energy from $V_{\rm kernel}$ (§8)
-- **Meson masses:** Binding shifts from kernel overlap integrals (derivation open — §12 not yet written)
+- **Meson masses:** Binding shifts from kernel overlap integrals (Part 2 §8a, Part 5 §3d; mechanism open)
 - **Nucleon spin observables:** $g_A$ from the $d=3$ mode-count ratio (§10); moment signs and ratio from the colour-singlet projector; absolute magnitudes and tensor channel are the open Dirac spin-orbit computation (§10)
 - **Coupling dilution:** $g_{\rm eff}(n,d) = g_{dd}/S(n,d)$ — the geometric power-law decrease of the effective coupling across mode indices (Part 5 §1; IDWT couplings do not run and there is no $\beta$-function)
 - **Cosmological constant:** $\Lambda_{\rm eff}$ from $V_{\rm kernel}$ vacuum expectation over unoccupied modes — smallness is an open problem (§13; Part 4 §4)

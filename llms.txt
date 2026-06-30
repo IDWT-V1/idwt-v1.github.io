@@ -1,6 +1,6 @@
 # IDWT — Infinite-Dimensional Wave Theory
 
-> A unified physical framework by Fedge No (2026). Everything is a complex Dirac spinor wave (Ψ∞) on an infinite-dimensional manifold of macroscopic spatial dimensions. All Standard Model particles, masses, coupling constants, and mixing angles emerge from geometry — fixed by three integer seeds (n_d=1, n_u=3, n_s=4) and one mass unit (the electron mass). No free parameters. The observer lives at d=3, inside M_∞.
+> A unified physical framework by Fedge No (2026). Everything is a complex Dirac spinor wave (Ψ∞) on an infinite-dimensional manifold of macroscopic spatial dimensions. All Standard Model particles, masses, coupling constants, and mixing angles emerge from geometry — fixed by three integer seeds {n_d=1, n_u=3, n_top=72} (composite n_s=4) and two dimensional inputs (the electron mass m_e and gravitational constant G_∞=4πG_N). The observer lives at d=3, inside M_∞.
 
 Contact: fedge-no@hotmail.com
 Parts DOI: https://doi.org/10.5281/zenodo.19767493

@@ -794,7 +794,7 @@ As a uniqueness verification, the generation map was run over all $1,600$ pairs 
 
 ---
 
-### Theorem: Uniqueness of the Occupied Mode Index Set
+### 5c. Theorem: Uniqueness of the Occupied Mode Index Set
 
 **Statement.** Let $\Sigma = \{1,3,4,10,13,15,20,22,23,35,72,76,81,95\}$ be the set of IDWT mode indices. $\Sigma$ is the unique set of positive integers satisfying all of the following simultaneously:
 
@@ -894,7 +894,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Standard Model leptons | $d=6$ (e,μ), $d=10$ (τ) — masses from simplex formula | ✅ |
 | Chiral weak force | Kähler $\gamma_5$ on $\mathbb{CP}^2$,$\mathbb{CP}^3$ selects left-handed components; W couples to holomorphic half only | ✅ |
 | Spin-½ of all fermions | Dirac operator on $M_\infty$; spinor bundle of $\Psi_\infty$ (Part 8 §2) | ✅ |
-| CKM Cabibbo angle | $\sin\theta_C = (1+1/240)/\sqrt{S(n_s,3)} = 0.22454$ — seed + $\mathbb{CP}^1$ sector curvature correction | ✅ |
+| CKM Cabibbo angle | $\sin\theta_C = (1+1/240)/\sqrt{S(n_s,3)} = 0.22454$ — seed + $\mathbb{CP}^1$ sector curvature correction | 🔵 |
 | Neutrino oscillations | $d=5$ sector, normal ordering | ✅ |
 | Leptonic CP phase $\delta_{CP}$ | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, $J = -0.00981$ via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^3) - c_1(\mathbb{CP}^5) = -2$ (T8 🔶, Part 10) | 🔶 |
 | Dirac neutrinos | $d=5$ has $d \bmod 8 = 5$: Majorana forbidden → 0νββ rate = 0 predicted | ✅ |

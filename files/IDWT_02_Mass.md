@@ -934,7 +934,7 @@ $$\zeta_d(1) = \frac{d}{d-1} \quad\text{(total inverse-mass weight; Part 9 T13a)
 
 3. **Spectral dimension equals sector dimension.** The heat kernel of sector $d$ satisfies $K_d(t)=\sum_{n\geq1}e^{-tS(n,d)}\sim\Gamma(1+1/d)(d!)^{1/d}\,t^{-1/d}$ as $t\to0^+$. The leading power $t^{-1/d}$ establishes spectral dimension $= d$, consistent with the identification of each sector as a resonance tower in $d$-dimensional sector space (§§3, 9–10 above).
 
-These results follow from $S(n,d)=\binom{n+d-1}{d}$ by Pascal's identity and Euler-Maclaurin. The mass formula is the spectrum of a well-defined spectral triple (Part 1 §0, Part 9 T0).
+These results follow from $S(n,d)=\binom{n+d-1}{d}$ by Pascal's identity and Euler-Maclaurin. The mass formula is the spectrum of a well-defined spectral triple (Part 9 T0).
 
 ## 15. The Three-Ray Law — Depth and Dimension Locked
 
