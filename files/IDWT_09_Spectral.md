@@ -142,7 +142,7 @@ Sector $d$ Hilbert series — first seven coefficients:
 1. **Non-trivial sector mixing**: cannot be written as a product of sector-local terms.
 2. **$\ell=0\oplus\ell=2$ decomposition**: on $S^{d-1}$,
 $$(\xi\cdot\xi')^2 = \underbrace{\tfrac{1}{d}|\xi|^2|\xi'|^2}_{\ell=0,\;\rm mass\;scale} + \underbrace{\tfrac{d-1}{d}|\xi|^2|\xi'|^2 P_2(\cos\theta)}_{\ell=2,\;\text{self-energy}},$$
-with the $\ell=0$ part generating sector mass scales (T9) and the $\ell=2$ part generating the second-order self-energy of scale $\varepsilon=1/(280\sqrt{7})$ (T10a). This $\varepsilon$ enters the $\nu_3$ closure ($\delta_{\nu_3}=\varepsilon\cdot g_{33}=1/35$, T11d); the $\ell=2$ self-energy is a candidate source for the $d=4$ up-type overshoot but is not applied as a quark mass correction (the former $(1-\varepsilon)^k$ correction it once parameterized is removed — fitted exponent, Part 2 §11). The up-type masses are quoted bare.
+with the $\ell=0$ part generating sector mass scales (T9) and the $\ell=2$ part generating the second-order self-energy of scale $\varepsilon=1/(280\sqrt{7})$ (T10a). This $\varepsilon$ enters the $\nu_3$ closure ($\delta_{\nu_3}=\varepsilon\cdot g_{33}=1/35$, T11d). (The $\ell=2$ self-energy was once a candidate for the $d=4$ up-type overshoot but is withdrawn — wrong $n$-shape; the up-type masses carry the confinement-binding correction of Part 2 §11.9, and the former $(1-\varepsilon)^k$ correction is removed.)
 3. **Rank-1 factorisation**: the coupling matrix $g_{dd'}=v_d v_{d'}$ is rank-one, as required by the bi-invariant structure under $U(d)\times U(d')$.
 
 **Proof sketch.** The $U(d)\times U(d')$-invariant degree-4 ring on $(\xi_d,\xi_{d'})$ has four generators: $|\xi_d|^4$, $|\xi_{d'}|^4$, $|\xi_d|^2|\xi_{d'}|^2$, and $(\xi_d\cdot\xi_{d'})^2$. The first three either fail condition 1 (sector-local) or condition 2 (diagonal in the $\ell$-basis). The fourth satisfies all three. $\square$
@@ -415,11 +415,11 @@ All six sector self-couplings are derived from $n_s=4$, $n_u=3$:
 
 ## T10. The Perturbative Correction Theorems
 
-**T10a** ($d=4$ up-type overshoot — open). The $\ell=2$ kernel component (T2, condition 2) is a traceless tensor whose second-order self-energy shifts $d=4$ up-type modes downward by an amount growing with the mode index — the candidate source of the observed up-type overshoot. Its scale is
+**T10a** ($\ell=2$ self-energy scale $\varepsilon$). The $\ell=2$ kernel component (T2, condition 2) is a traceless tensor whose second-order self-energy has scale
 
 $$\boxed{\varepsilon = \frac{g_{\rm coeff}}{k_0\times n_{\rm mu}} = \frac{2/\sqrt{7}}{16\times35} = \frac{1}{280\sqrt{7}} \approx 0.001350.}$$
 
-A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so it is **removed**. In its place, the derived confinement-binding correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ — linear in the mean level, a single derived coefficient $x_e=3/(16N_b)$ applied universally to the coloured $d=3,4$ quarks — is the physical result (Part 2 §11.9; `files/idwt.py` STEP 127), bringing all five quarks within ±1σ PDG 2024 stat (charm $+0.34\%$, top $-0.04\%$, 🔶). The bare combinatorial counts (charm $1{,}284.9$ MeV, top $176{,}365$ MeV) are recorded in §11.5. The $\ell=2$ kernel self-energy (STEP 86) is a candidate with the right sign but the wrong $n$-shape and is not applied. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
+A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so it is **removed**. In its place, the derived confinement-binding correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ — linear in the mean level, a single derived coefficient $x_e=3/(16N_b)$ applied universally to the coloured $d=3,4$ quarks — is the physical result (Part 2 §11.9; `files/idwt.py` STEP 127), bringing all five quarks within ±1σ PDG 2024 stat (charm $+0.34\%$, top $-0.04\%$, 🔶). The bare combinatorial counts (charm $1{,}284.9$ MeV, top $176{,}365$ MeV) are recorded in §11.5. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
 
 **T10b** (Geometric back-reaction correction for $\tau$). At the Gegenbauer critical endpoint (T5), the $d=10$ eigenvalue admits an infinite-series correction resummed through $g_{10,10}=1/n_s$:
 

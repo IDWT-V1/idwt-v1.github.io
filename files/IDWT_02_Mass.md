@@ -745,9 +745,9 @@ The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spe
 
 A multiplicative correction was previously applied — a factor `(1 − ε)^k` tuned per quark, the "Generation Tower Correction" — which brought charm and top onto their measured values. It has been removed. Only the scale $\varepsilon$ was derived; the per-quark exponent $k$ was a fit, and a fitted correction is not a derivation. The bare masses are quoted instead, with the overshoot left open. A physically motivated correction may be added in future if one is derived.
 
-### 11.1 The candidate mechanism (open)
+### 11.1 The l=2 self-energy (former candidate, withdrawn)
 
-The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part, which shifts each mode by a second-order self-energy (`files/idwt.py` STEP 86). That self-energy has the correct sign — it pulls the masses down, growing with the mode index — so it is a candidate source for the overshoot. It is **not applied**: with the derived scale $\varepsilon$ its shape is the combinatorial set $\{0,3,10\}$, which does not reproduce the measured masses (only the fitted $\{0,7,16\}$ did, §11.3). The up-type masses are therefore quoted bare and the overshoot left open (🔶).
+The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part. The l=2 second-order self-energy was once a candidate for the up-type overshoot — correct sign, growing with the mode index — but its shape matched only the PDG-excluded set $\{0,3,10\}$ (not the measured masses, $\{0,7,16\}$, §11.3), so it has been withdrawn. The operative up-type correction is the confinement-binding deficit of §11.9, which brings all five quarks within ±1σ of PDG 2024. (The l=2 scale $\varepsilon = 1/(280\sqrt{7})$ is retained for the separate $\nu_3$ closure, §9d.)
 
 ### 11.2 Derivation of $\varepsilon$ (retained for $\delta_{\nu_3}$, no longer applied to quarks)
 
@@ -777,7 +777,7 @@ The former correction multiplied each $d=4$ up-type mass by $(1-\varepsilon)^k$ 
 
 ### 11.4 Open item
 
-The up-type masses are quoted bare as the primary result (§11.5); a motivated confinement-binding correction is derived and applied in §11.9, which brings all quarks within ±1σ of PDG 2024 statistical errors. The $\ell=2$ kernel self-energy (§11.1) remains a candidate with the correct sign but the wrong $n$-shape, and is not applied. The residual after the §11.9 correction is recorded there.
+The confinement-binding correction is derived and applied in §11.9, bringing all five quarks within ±1σ of PDG 2024 statistical errors; the bare combinatorial counts are recorded in §11.5. The $\ell=2$ kernel self-energy (§11.1) was a candidate but is withdrawn (wrong $n$-shape). The residual after the §11.9 correction is recorded there.
 
 ### 11.5 Results (bare masses)
 
