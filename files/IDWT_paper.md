@@ -292,16 +292,16 @@ PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \
 | $Z^0$ | 2 | 81 | 3,321 | 91,230 | 91,188.0 | $+0.05\%$ |
 | $H$ | 2 | 95 | 4,560 | 125,266 | 125,200(110) | $+0.05\%$ |
 | $d$ | 3 | 1 | 1 | 4.702 | 4.70(7) | $+0.04\%^\dagger$ |
-| $s$ | 3 | 4 | 20 | 94.04 | 93.5(8) | $+0.57\%^\dagger$ |
+| $s$ | 3 | 4 | 20 | 93.96 | 93.5(8) | $+0.49\%^\dagger$ |
 | $b$ | 3 | beat | — | 4,181 | 4,183(7) | $-0.05\%$ |
-| $u$ | 4 | 3 | 15 | 2.177 | 2.16(7) | $+0.77\%^\dagger$ |
-| $c$ | 4 | 20 | 8,855 | 1,284.9 | 1,273.0(46) | $+0.93\%$ (+2.6$\sigma$, open) |
-| $t$ | 4 | 72 | 1,215,450 | 176,365 | 172,570(290) | $+2.20\%$ (+13$\sigma$, open) |
+| $u$ | 4 | 3 | 15 | 2.175 | 2.16(7) | $+0.70\%^\dagger$ |
+| $c$ | 4 | 20 | 8,855 | 1,277.3 | 1,273.0(46) | $+0.34\%$ (+0.9$\sigma$) |
+| $t$ | 4 | 72 | 1,215,450 | 172,500 | 172,570(290) | $-0.04\%$ (−0.2$\sigma$) |
 | $e^-$ | 6 | 13 | 18,564 | 0.51100 | 0.51100 | unit ref. |
 | $\mu^-$ | 6 | 35 | 3,838,380 | 105.657 | 105.6584 | $-0.001\%$ |
 | $\tau^-$ | 10 | 23 | 64,512,240 | 1,776.84 | 1,776.93(12) | $-1.0\sigma$ |
 
-$^\dagger$ The light quarks ($d$, $s$, $u$) sit within the sizable PDG $\overline{\rm MS}$ uncertainties; the overall sector scale is compatible with a scheme/scale offset between the IDWT confinement scale and $\overline{\rm MS}$ at $\mu = 2$ GeV, but the scale-free in-sector ratios carry a small $n$-dependent residual that a uniform offset cannot produce (Section 13). The charm and top **bare** masses overshoot by $+0.93\%$ and $+2.20\%$, with no correction applied; the nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and are scheme-sensitive (heavy-quark masses differ several percent between schemes). Once that spread is included, charm sits within experimental margins; the top remains a $\sim$2\% overshoot above the standard pole mass. A former $(1-\varepsilon)^k$ correction reproduced PDG but used a fitted exponent and is removed (§7.1).
+$^\dagger$ The light quarks ($d$, $s$, $u$) carry the universal confinement-binding correction (§7.1; down has $\langle k\rangle = 0$ and is unshifted) and sit within the sizable PDG uncertainties: $d$ $+0.04\%$, $s$ $+0.49\%$, $u$ $+0.70\%$. The scale-free in-sector ratios carry a small $n$-dependent residual that a uniform offset cannot produce (Section 13). The charm and top **bare** counts overshoot by $+0.93\%$ and $+2.20\%$ (their nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and are scheme-sensitive); the same correction brings them to $+0.34\%$ and $-0.04\%$, within $\pm1\sigma$ (Table 1, §7.1). A former $(1-\varepsilon)^k$ correction reproduced PDG but used a fitted exponent and is removed.
 
 ---
 
@@ -323,7 +323,7 @@ $$g_{\rm coeff} = \sqrt{n_s(n_s+1)/S(n_s,4)} = \sqrt{4/7} = 2/\sqrt{7}, \qquad \
 
 Every factor is forced ($g_{\rm coeff}$ from the double self-consistency condition, $k_0$ from the seed $n_s$, $n_\mu$ from $S(n_s,4)$), so $\varepsilon$ is a genuinely derived quantity. It is retained as the scale of the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§7.2).
 
-**No correction is applied.** A former "Generation Tower Correction" multiplied the up-type masses by $(1-\varepsilon)^k$ with a per-quark exponent $k$ tuned to reproduce the data. Only $\varepsilon$ was derived; the exponent was a fit, and a fitted correction is not a derivation, so it has been removed. The up-type masses are quoted bare. Once the heavy-quark scheme spread is included, the up quark and charm sit within experimental margins; the top remains a $\sim$2\% overshoot above the standard pole mass, with its index $72$ (a product-form $N_c n_s N_f$, off the additive tower) also of open origin. The clean, scale-independent comparison is the ratio $m_t/m_c = S(72,4)/S(20,4) = 137.26$, which matches the conventional ratio to $\sim$1\%.
+**The confinement-binding correction.** The bare count $m_{\rm scale,4}\times S(n,4)$ is the free-quark mass; because a coloured quark is never asymptotically free, part of that energy stays locked in the colour field, so the realised mass is lower by $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$. The deficit carries a single derived coefficient $x_e = 3/(16 N_b)$, $N_b = \Lambda/(4\,m_{\rm scale,4})$ from the colour energy law, applied **universally** to the coloured $d=3,4$ quarks (d=3 colour is inherited from $d=4$ via the Hopf map); see §7.1 and `files/idwt.py` STEP 127. This brings all five quarks within $\pm1\sigma$ of PDG 2024 (Table 1), with no fitted parameter. A former $(1-\varepsilon)^k$ "Generation Tower Correction" with per-quark exponents tuned to the data was removed because that exponent was a fit (only $\varepsilon$ was derived). The scale-independent ratio $m_t/m_c = S(72,4)/S(20,4) = 137.26$ matches the conventional ratio to $\sim$1\%; the top index $72$ (a product form $N_c n_s N_f$, off the additive tower) is of open origin.
 
 ### 7.2 Tau Lepton Geometric Back-reaction Correction — Complete Derivation
 
@@ -453,7 +453,7 @@ The coordinate containment principle (Section 11) answers which forces can reach
 
 ## 13. Light-Quark Scale Offset and In-Sector Structure
 
-PDG reports light-quark masses in $\overline{\rm MS}$ at $\mu = 2$ GeV; IDWT computes them from the sector scale $m_{\mathrm{scale},d}$, fixed at the confinement scale $\Lambda_{\rm QCD} \approx N_c f_\pi = 3 \times 94 = 282$ MeV. The bare predictions sit within the sizable PDG $\overline{\rm MS}$ uncertainties ($d$ $+0.04\%$, $s$ $+0.57\%$, $u$ $+0.77\%$; $b$ $-0.05\%$), so the overall sector scale is compatible with the data up to a possible scheme/scale offset between the IDWT confinement scale and $\overline{\rm MS}$ at $\mu = 2$ GeV.
+PDG reports light-quark masses in $\overline{\rm MS}$ at $\mu = 2$ GeV; IDWT computes them from the sector scale $m_{\mathrm{scale},d}$, fixed at the confinement scale $\Lambda_{\rm QCD} \approx N_c f_\pi = 3 \times 94 = 282$ MeV. The bare-count predictions already sit within the sizable PDG $\overline{\rm MS}$ uncertainties ($d$ $+0.04\%$, $s$ $+0.57\%$, $u$ $+0.77\%$; $b$ $-0.05\%$) even before the §7.1 confinement-binding correction (which brings $s$, $u$ to $+0.49\%$, $+0.70\%$), so the overall sector scale is compatible with the data up to a possible scheme/scale offset between the IDWT confinement scale and $\overline{\rm MS}$ at $\mu = 2$ GeV.
 
 That offset does not account for the whole residual, and the residual is not uniform within a sector. A scheme or scale shift multiplies $m_{\mathrm{scale},d}$ by one common factor for every mode in sector $d$ (the kernel is rank-1), so it cancels identically in the scale-free **in-sector ratio** $S(n_{\rm hi},d)/S(n_{\rm lo},d)$. Those ratios are not exact: $s/d = 20.000$ against $19.894$ ($+0.54\%$), $c/u = 590.33$ against $589.35$ ($+0.17\%$), and $t/c = 137.26$ against $135.56$ ($+1.25\%$), whereas the boson ($Z/W$, $H/W$) and charged-lepton ($\mu/e$) in-sector ratios agree to a few parts in $10^4$. The residual therefore grows with the level gap and is confined to the quark sectors $d=3$ and $d=4$: it is $n$-dependent structure in the combinatorial count $S(n,d)$, not a uniform sector scale error. It is reported as measured accuracy and not absorbed as a correction (§7.1).
 

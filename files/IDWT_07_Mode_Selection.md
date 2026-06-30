@@ -186,13 +186,13 @@ Full enumeration of the low-n modes and their masses. Co-fixed-point membership 
 
 The $n=2$ and $n=3$ $d=3$ modes are not co-fixed-points. They are not stable hadrons; they may appear as very short-lived colour-triplet resonances. No stable particles are predicted in the 15–50 MeV window beyond known pion sector states.
 
-**$d=4$ (Up-type quarks)** — $m_{\rm scale,4}$ = 0.14510 MeV. Bare masses $m_{\rm scale,4} \times S(n,4)$; the former $(1-\varepsilon)^k$ correction is removed (fitted exponent, Part 2 §11). A confinement-binding correction is derived and applied in Part 2 §11.9 (`files/idwt.py` STEP 127), which brings all quarks within ±1σ of PDG 2024 stat. The table below quotes bare residuals; corrected residuals are in §11.9. The top index $n=72$ is a seed input (accepted on the same footing as $n_d=1$ and $n_u=3$; Fedge 2026-06-18):
+**$d=4$ (Up-type quarks)** — $m_{\rm scale,4}$ = 0.14510 MeV. Bare masses $m_{\rm scale,4} \times S(n,4)$; the former $(1-\varepsilon)^k$ correction is removed (fitted exponent, Part 2 §11). A confinement-binding correction is derived and applied in Part 2 §11.9 (`files/idwt.py` STEP 127), which brings all quarks within ±1σ of PDG 2024 stat. The table below quotes the confinement-corrected physical masses (§11.9, one universal coefficient for the coloured $d=3,4$ quarks); the bare counts are in §11.5. The top index $n=72$ is a seed input (accepted on the same footing as $n_d=1$ and $n_u=3$; Fedge 2026-06-18):
 
 | $n$ | $S(n,4)$ | Mass (MeV) | PDG | Status |
 |---|--------|------------|-----|--------|
-| 3 | 15 | 2.177 | 2.16 (+0.77%) | **Occupied (up)** |
-| 20 | 8,855 | 1,284.9 | 1273.0 (+$2.6\sigma$) | **Occupied (charm)** 🔶 |
-| 72 | 1,215,450 | 176,365 | 172570 (+$13\sigma$) | **Occupied (top)** 🔶 |
+| 3 | 15 | 2.175 | 2.16 (+0.70%) | **Occupied (up)** |
+| 20 | 8,855 | 1,277.3 | 1273.0 (+0.34%, +$0.9\sigma$) | **Occupied (charm)** 🔶 |
+| 72 | 1,215,450 | 172,500 | 172570 (−0.04%, −$0.2\sigma$) | **Occupied (top)** 🔶 |
 
 **$d=5$ (Neutrinos)** — $m_{\mathrm{scale},5} = 7.429 \times 10^{-13}$ MeV:
 

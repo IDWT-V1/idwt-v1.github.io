@@ -503,7 +503,7 @@ where $P_L$ is the small-component probability and $\tfrac{1}{3}$ is the angular
 - Total: ~938 MeV (matches observed 938.3 MeV)
 
 **N-P mass difference:**
-- $m_d - m_u \approx 2.53$ MeV (from IDWT sector predictions: 4.702 − 2.177)
+- $m_d - m_u \approx 2.53$ MeV (from IDWT sector predictions: 4.702 − 2.175)
 - EM self-energy (proton charged, neutron neutral) adds $\approx -1.29$ MeV shift
 - Computed $\Delta m_{N-P} \approx 1.29$ MeV (observed: 1.293 MeV)
 

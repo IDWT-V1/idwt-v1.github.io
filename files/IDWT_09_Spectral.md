@@ -419,7 +419,7 @@ All six sector self-couplings are derived from $n_s=4$, $n_u=3$:
 
 $$\boxed{\varepsilon = \frac{g_{\rm coeff}}{k_0\times n_{\rm mu}} = \frac{2/\sqrt{7}}{16\times35} = \frac{1}{280\sqrt{7}} \approx 0.001350.}$$
 
-A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so the correction is **removed**; the up-type masses are quoted bare as the primary result (charm $1{,}284.9$ MeV, $+0.93\%$; top $176{,}365$ MeV, $+2.20\%$). A derived confinement-binding correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ — linear in the mean level, coloured sectors $d=3,4$ only, $x_e=3/(16N_b)$ — is applied in Part 2 §11.9 (`files/idwt.py` STEP 127) and brings all quarks within ±1σ PDG 2024 stat (charm $+0.34\%$, top $-0.05\%$, 🔶). The $\ell=2$ kernel self-energy (STEP 86) is a candidate with the right sign but the wrong $n$-shape and is not applied. See Part 2 §11. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
+A former correction multiplied each up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$. That exponent was a fit, not derived, so it is **removed**. In its place, the derived confinement-binding correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ — linear in the mean level, a single derived coefficient $x_e=3/(16N_b)$ applied universally to the coloured $d=3,4$ quarks — is the physical result (Part 2 §11.9; `files/idwt.py` STEP 127), bringing all five quarks within ±1σ PDG 2024 stat (charm $+0.34\%$, top $-0.04\%$, 🔶). The bare combinatorial counts (charm $1{,}284.9$ MeV, top $176{,}365$ MeV) are recorded in §11.5. The $\ell=2$ kernel self-energy (STEP 86) is a candidate with the right sign but the wrong $n$-shape and is not applied. ($\varepsilon$ is retained as the derived scale of the separate $\nu_3$ closure, T11d.)
 
 **T10b** (Geometric back-reaction correction for $\tau$). At the Gegenbauer critical endpoint (T5), the $d=10$ eigenvalue admits an infinite-series correction resummed through $g_{10,10}=1/n_s$:
 
@@ -635,7 +635,7 @@ $$\binom{n+d}{d}-\binom{n+d-1}{d}=\binom{n+d-1}{d-1}=S(n+1,d-1).\quad\square$$
 
 ### T13c. Exact Mass Ratios
 
-Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. For $d=4$ up-type quarks the ratios are bare (the former GTC factor $(1-\varepsilon)^k$ has been removed — its per-quark exponent was a fit, Part 2 §11.3); charm and top overshoot PDG and are open residues. For the tau the back-reaction factor (T10b) is algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$, hence also parameter-free.
+Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. For $d=4$ up-type quarks these are the **bare** combinatorial ratios — exact identities, and the confinement-binding correction of §11.9 (an absolute-mass effect) largely cancels in a ratio; they already match PDG to $+0.16\%$ ($m_c/m_u$) and $+1.4\%$ ($m_t/m_u$). For the tau the back-reaction factor (T10b) is algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$, hence also parameter-free.
 
 | Ratio | IDWT exact form | IDWT value | PDG | Error |
 |---|---|---|---|---|

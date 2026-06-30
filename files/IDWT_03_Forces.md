@@ -288,7 +288,9 @@ $$m_H/m_Z = S(n_H,2)/S(n_Z,2) = 4560/3321 = 1.37308 \quad \text{(PDG } 1.37299,\
 
 **Neutron-proton mass difference, leading order: 🔵**
 
-$$m_n - m_p \approx m_d - m_u = m_{\rm scale,3}\times S(1,3) - m_{\rm scale,4}\times S(3,4) = 4.702 - 2.177 = 2.525\;\mathrm{MeV}$$
+$$m_n - m_p \approx m_d - m_u = 4.702 - 2.175 = 2.527\;\mathrm{MeV}$$
+
+(down $= m_{\rm scale,3}\,S(1,3)$, parameter-free; up confinement-corrected, Part 2 §11.9.)
 
 PDG: $1.293$ MeV (factor $\sim 2$; uncomputed QED + isospin corrections). The correct order of magnitude emerges from pure sector masses with no parameters. The factor of 2 is the uncomputed electromagnetic correction (proton self-energy $\approx 0.6$ MeV) plus isospin breaking from the $d=3\leftrightarrow d=4$ sector coupling asymmetry.
 

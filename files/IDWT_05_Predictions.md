@@ -150,7 +150,7 @@ The results here apply large-$N_c$ QCD scaling relations with IDWT-derived input
 $$m_p = N_c\times\Lambda_{\rm QCD}\times(1+1/n_u^2) = 3\times 282.1\times(1+1/9) = 940.4\text{ MeV} \quad (\text{PDG: }938.272,\ +0.22\%)$$
 $$m_n = m_p + (m_d - m_u) = 940.4 + 2.5 = 942.9\text{ MeV} \quad (\text{PDG: }939.565,\ +0.35\%)$$
 
-The large-$N_c$ QCD scaling law $m_{\rm baryon} \approx N_c\times\Lambda_{\rm QCD}$ is applied here with IDWT-derived inputs ($N_c = 3$ from $\chi(\mathbb{CP}^2)$, $\Lambda_{\rm QCD} = N_c\times f_\pi = 282.1$ MeV from the IDWT geometric dilution function). The Fermi-momentum correction $(1+1/n_u^2) = 10/9$ uses $n_u = 3$ from IDWT. Native derivation from kernel binding energy for a colour-singlet $uud$ state (Part 8 §11, flagged as open) is pending and should replace the large-$N_c$ scaling law. The $n$–$p$ splitting 2.5 MeV is $2\times$ the PDG value (1.293 MeV); the discrepancy is the **electromagnetic self-energy of the proton**: the current IDWT calculation uses quark masses only ($m_d - m_u = 4.702 - 2.203 = 2.499$ MeV), whereas the observed splitting $m_n - m_p = 1.293$ MeV includes the Cottingham EM correction $\Delta m_{\rm EM} \approx -1.2$ MeV (proton EM self-energy is positive, reducing the splitting). Since $\alpha$ and $\Lambda_{\rm QCD}$ are both IDWT-derived, this correction is in principle computable from the IDWT framework once the hadronic form factor (Cottingham integral) is evaluated; it is not a structural failure but an omitted calculation.
+The large-$N_c$ QCD scaling law $m_{\rm baryon} \approx N_c\times\Lambda_{\rm QCD}$ is applied here with IDWT-derived inputs ($N_c = 3$ from $\chi(\mathbb{CP}^2)$, $\Lambda_{\rm QCD} = N_c\times f_\pi = 282.1$ MeV from the IDWT geometric dilution function). The Fermi-momentum correction $(1+1/n_u^2) = 10/9$ uses $n_u = 3$ from IDWT. Native derivation from kernel binding energy for a colour-singlet $uud$ state (Part 8 §11, flagged as open) is pending and should replace the large-$N_c$ scaling law. The $n$–$p$ splitting 2.5 MeV is $2\times$ the PDG value (1.293 MeV); the discrepancy is the **electromagnetic self-energy of the proton**: the current IDWT calculation uses quark masses only ($m_d - m_u = 4.702 - 2.175 = 2.527$ MeV), whereas the observed splitting $m_n - m_p = 1.293$ MeV includes the Cottingham EM correction $\Delta m_{\rm EM} \approx -1.2$ MeV (proton EM self-energy is positive, reducing the splitting). Since $\alpha$ and $\Lambda_{\rm QCD}$ are both IDWT-derived, this correction is in principle computable from the IDWT framework once the hadronic form factor (Cottingham integral) is evaluated; it is not a structural failure but an omitted calculation.
 
 ---
 
@@ -164,10 +164,10 @@ Using $m_e = 0.511$ MeV as the sole unit reference:
 | μ | 105.657 | 105.658 | −0.001% | — |
 | τ | 1776.84 | 1776.93 | −1.0σ† | — |
 | d | 4.702 | 4.70 | +0.04% | parameter-free output |
-| s | 94.04 | 93.5 | +0.57% | parameter-free output |
-| u | 2.177 | 2.160 | +0.77% | parameter-free output |
-| c (bare) | 1284.9 | 1273.0 | +0.93% (+2.6σ) | open residue (§11) |
-| t (bare) | 176,365 | 172,570 | +2.20% (+13σ) | open residue (§11) |
+| s | 93.96 | 93.5 | +0.49% | confinement-corrected (§11.9) |
+| u | 2.175 | 2.160 | +0.70% | confinement-corrected (§11.9) |
+| c | 1277.3 | 1273.0 | +0.34% | confinement-corrected (§11.9) |
+| t | 172,500 | 172,570 | −0.04% | confinement-corrected (§11.9) |
 | b | 4,181 | 4,183 | −0.05% | — |
 | W | 80,379 | 80,369 | +0.012% | — |
 | Z | 91,230 | 91,188 | +0.047% | — |
@@ -225,17 +225,17 @@ Both nulls leave the conclusion of §2a in place with the arithmetic now rigorou
 
 ---
 
-## 3. $d=4$ Sector: Up-Type Overshoot (uncorrected, open)
+## 3. $d=4$ Sector: Up-Type Masses (confinement-corrected)
 
-The $d=4$ up-type masses are quoted bare and overshoot PDG, growing with generation:
+The bare $d=4$ count $S(n,4)\,m_{\rm scale,4}$ — the parameter-free free-quark mass — overshoots PDG, growing with generation (bare: up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$). The derived confinement-binding correction (Part 2 §11.9; `files/idwt.py` STEP 127) removes the colour-field binding energy a free-quark count wrongly assigns to the rest mass, bringing all three within $\pm1\sigma$ of PDG 2024:
 
-| Particle | $n$ | Bare $S(n,4)\,m_{\rm scale,4}$ | Error vs PDG |
+| Particle | $n$ | Physical $M_{\rm phys}$ (§11.9) | Error vs PDG |
 |---|---|---|---|
-| u | 3 | 2.177 MeV | +0.77% (within light-quark margin) |
-| c | 20 | 1284.9 MeV | +0.93% (open; +2.6σ vs stat err, scheme-sensitive) |
-| t | 72 | 176,365 MeV | +2.20% (open; +13σ vs stat err, scheme-sensitive) |
+| u | 3 | 2.175 MeV | $+0.70\%$ ($+0.2\sigma$) |
+| c | 20 | 1277.3 MeV | $+0.34\%$ ($+0.9\sigma$) |
+| t | 72 | 172,500 MeV | $-0.04\%$ ($-0.2\sigma$) |
 
-No correction is applied; the up-type masses are quoted bare. A former correction (the "Generation Tower Correction," $(1-\varepsilon)^k$ with $\varepsilon = 1/(280\sqrt{7})$ derived and per-quark exponents $\{0,7,16\}$) brought charm and top onto PDG, but the exponents were a fit, not derived (§11.3), so it has been removed. The $\sigma$-counts above are against statistical errors only and are scheme-sensitive (heavy-quark masses differ several percent between the pole and $\overline{\rm MS}$ schemes; Part 2 §11.7): once that spread is included the up quark and charm sit within experimental margins, while the top remains a $\sim$2% overshoot above the standard pole mass (🔶, §11.4). (Scale-versus-structure decomposition: the residual is $n$-structure confined to the $d=3$ and $d=4$ quark sectors — Part 2 §11.8.)
+The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). A former $(1-\varepsilon)^k$ "Generation Tower Correction" (per-quark exponents $\{0,7,16\}$) was removed because its exponent was a fit, not derived (§11.3); the present correction is not a fit. The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 

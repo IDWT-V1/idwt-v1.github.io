@@ -8059,13 +8059,13 @@ assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
 # coefficient 2*N_c = colour count x the |dN_vec|=2 colour-flip unit (STEP 63);
 # equivalently the well depth N_b(4)*m_scale4 = Lambda/4 = (n_up/n_s)*f_pi,
 # ~70.5 MeV. m_e-free, no new input; matches the within-margin value to 0.4%.
-# d=3 (colour INHERITED via the S^1->S^5->CP^2 Hopf map; down,strange already
-# within PDG margin bare -> no correction is required there) keeps an anchored
-# occupation: its S^3 well is ~5x deeper and lacks a clean colour form. So d=4
-# is DERIVED and d=3 a margin-safe input; 🔶 now flags the d=3 anchor only. The
-# ratio x_e(3)/x_e(4) ~ 6.6 ~ 2 N_c stays colour-like. Colour-silent sectors
-# (d=2,6,10) get no correction. (STEP 126; STEP 123; STEP 63; has_SU3; Part 2
-# sec 11.9.)
+# d=3 colour is INHERITED from d=4 (Hopf S^1->S^5->CP^2): the binding colour
+# lives in CP^2 (d=4), so d=3 quarks take the SAME derived d=4 deficit x_e. The
+# correction is UNIVERSAL across coloured quarks (one x_e for d=3 and d=4), and
+# strange becomes a genuine prediction (+0.49%, +0.6 sigma), not an anchor.
+# (Fedge 2026-06-29: same correction for all quarks; strange-anchor removed.)
+# Colour-silent sectors (d=2,6,10) get no correction. (STEP 126; STEP 123;
+# STEP 63; has_SU3; Part 2 sec 11.9.)
 def _kbar_127(n, d):                      # degeneracy-weighted mean HO level
     result = d * (n - 1) / (d + 1)       # exact closed form (see header)
     assert abs(result - sum(k * math.comb(k + d - 1, d - 1)
@@ -8078,16 +8078,14 @@ _modes_127 = {"down": (1, 3), "strange": (4, 3),
               "up": (3, 4), "charm": (20, 4), "top": (72, 4)}
 # per-sector colour-well occupation N_b -> deficit x_e = 3/(16 N_b).
 # d=4 DERIVED from the STEP-63 colour law (native colour; the only out-of-margin
-# sector); d=3 anchored on strange (inherited colour, no clean form, in margin).
+# sector); d=3 inherits the same derived d=4 deficit (universal, no fit).
 _Nb_127 = {}
 _Nb_127[4] = Lqcd / (4.0 * m_scale4)            # = lambda_c/(2 N_c m_scale4)
 _xe_127 = {4: 3.0 / (16.0 * _Nb_127[4])}
-_na127_s = _modes_127["strange"][0]             # d=3 anchor datum (strange)
-_mb127_s = scales[3] * S(_na127_s, 3)
-_xe_127[3] = (_mb127_s / _pdg_127["strange"][0] - 1.0) \
-    / _kbar_127(_na127_s, 3)
-_Nb_127[3] = 3.0 / (16.0 * _xe_127[3])
-_xe_ratio_127 = _xe_127[3] / _xe_127[4]                       # ~6.6 ~ 2 N_c
+# UNIVERSAL: d=3 inherits the derived d=4 colour deficit (no per-sector fit).
+_xe_127[3] = _xe_127[4]
+_Nb_127[3] = _Nb_127[4]
+_xe_ratio_127 = _xe_127[3] / _xe_127[4]                       # = 1 (universal)
 # the derived d=4 occupation: colour-well depth = Lambda/4, coeff = 2 N_c
 assert abs(Lqcd / (_Nb_127[4] * m_scale4) - 4.0) < 1e-9
 assert abs(_Nb_127[4] - 486.06) < 0.1
@@ -8103,10 +8101,11 @@ for _nm127, (_n127, _d127) in _modes_127.items():
                                (_mp127 - _pc127) / _pe127)
 # the two bare out-of-margin modes (charm, top) are pulled into the stat margin;
 # the correction only sharpens, never worsens; only coloured sectors are touched
-assert abs(_corr_resid_127["top"][0]) < 0.1          # top anchored ~ 0
+assert abs(_corr_resid_127["top"][0]) < 0.1          # top -> ~ 0
 assert _corr_resid_127["charm"][0] < _bare_resid_127["charm"]
 assert abs(_corr_resid_127["charm"][0]) < 0.5        # into heavy-quark spread
-assert 5.5 < _xe_ratio_127 < 7.0                     # colour-like ~ 2 N_c
+assert abs(_xe_ratio_127 - 1.0) < 1e-9               # universal coefficient
+assert abs(_corr_resid_127["strange"][0]) < 1.0      # strange now a prediction
 assert set(_xe_127) == {3, 4}                        # coloured sectors only
 
 

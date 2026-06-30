@@ -121,7 +121,7 @@ P8 as a postulate remains 🔶 until the EOM derives co-fixed-point stability. T
 | 95 | Higgs | 3 | $n_u+n_c+n_{\rm top}$: sum of up-type, max constituent depth 2 |
 | 81 | $Z$ | 2 | $g$-rule on $W$ (depth 1) |
 
-The gauge bosons sit at depths 1–3, built from the product-form seed via the $g$-rule chain and the up-type sum. Tau (depth 3) and Higgs (depth 3) are co-deepest; the top quark is a depth-0 seed. (A former per-quark up-type mass correction $(1-\varepsilon)^k$ has been removed — its exponent was a fit, not derived; the up-type masses are now quoted bare and overshoot PDG. See Part 2 §11.)
+The gauge bosons sit at depths 1–3, built from the product-form seed via the $g$-rule chain and the up-type sum. Tau (depth 3) and Higgs (depth 3) are co-deepest; the top quark is a depth-0 seed. (A former per-quark $(1-\varepsilon)^k$ up-type correction has been removed — its exponent was a fit; the up-type masses now carry the derived confinement-binding correction of Part 2 §11.9, which brings charm and top within ±1σ of PDG. See Part 2 §11.)
 
 ⭐ **Generation tower as a finitely presented semigroup.** The generation tower is the action of a finitely presented semigroup on the binomial lattice of pairs $(n,d)$. The **generators** are three families: hockey-stick operators $H_{d\to d\pm1}$ (the two Pascal directions $S(n,d)=S(n,d-1)+S(n-1,d)$), additive eigenmode operators $A$ (the selection rule $n_{\rm lepton}=n_{\rm neutrino}+n_{\rm quark}$), and $g$-rule operators $G_d$ for bosons. The **relations** are the full hockey-stick identities, distributive lattice commutativity, spectral independence (the occupied $S$-values form a sum-free set), and co-fixed-point closure. The **seeds** $\{(1,3),(3,4),(72,4)\}$ are the unique minimal generators, with $(4,3)$ derived at depth 1. The **physical spectrum** $\Sigma_{\rm pairs}$ is the minimal closed orbit of the seeds under this semigroup. The derivation depth of each mode (table above) is the minimal word length in the semigroup from the seeds. This framing makes the generation tower's rigidity explicit: $\Sigma_{\rm pairs}$ is not a collection of algebraic choices but the unique closed orbit of three seed elements under three families of forced operations.
 
@@ -472,19 +472,19 @@ Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the un
 | $m_{\rm scale,4}$ | 0.1451 MeV |
 | $L_4$ | 0.872 (sector units) |
 
-| Particle | $n$ | Predicted mass (bare) | PDG | error |
+| Particle | $n$ | Predicted mass | PDG | error |
 |---|---|---|---|---|
-| u quark | 3 | $m_{\rm scale,4} \times S(3,4) = 2.177$ MeV | 2.16 MeV | +0.77% (within light-quark error) 🔵 |
-| c quark | 20 | $m_{\rm scale,4} \times S(20,4) = 1284.9$ MeV | 1273.0 MeV | +0.93% (open residue; σ scheme-sensitive) 🔶 |
-| t quark | 72 | $m_{\rm scale,4} \times S(72,4) = 176.36$ GeV | 172.57 GeV | +2.20% (open residue; σ scheme-sensitive) 🔶 |
+| u quark | 3 | $2.175$ MeV (confinement-corrected, §11.9) | 2.16 MeV | +0.70% (+0.2σ) 🔵 |
+| c quark | 20 | $1277.3$ MeV (confinement-corrected, §11.9) | 1273.0 MeV | +0.34% (+0.9σ) 🔶 |
+| t quark | 72 | $172.50$ GeV (confinement-corrected, §11.9) | 172.57 GeV | −0.04% (−0.2σ) 🔶 |
 
-Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. The up-type masses are quoted bare, with no correction applied. A former $(1-\varepsilon)^k$ correction (the "GTC") brought charm and top onto PDG, but its per-quark exponent was a fit, so it has been removed (Part 2 §11.3). The nominal $+2.6\sigma$/$+13\sigma$ for charm and top are against statistical errors only and scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7); once that scheme spread is included, the up quark and charm sit within experimental margins, while the top remains a $\sim$2% overshoot above the standard pole mass.
+Note: $S(n,4) = n(n+1)(n+2)(n+3)/24$. Charm and top are shown with the derived confinement-binding correction (Part 2 §11.9), which brings them within ±1σ of PDG; the up quark is a parameter-free output within light-quark error. The bare combinatorial counts ($m_{\rm scale,4}\times S(n,4)$) and the full derivation are in Part 2 §11. (The former $(1-\varepsilon)^k$ "GTC" is removed — its per-quark exponent was a fit, §11.3.)
 
 **Quantum properties.**
 - **$\mathrm{SU}(3)$ color:** Up-type quarks share color with $d=3$ via the cross-sector tower coupling $g_{33} \times g_{44}$.
 - **Electric charge $+2/3$:** From Kähler index and $\mathrm{U}(2)$ representation theory (Part 3 §4).
 - **Chirality:** $\mathbb{CP}^2$ Kähler $\gamma_5$ → W couples to left-handed component only.
-- **Up-type overshoot (open):** the bare up-type masses run high, growing with generation (charm $+0.93\%$, top $+2.20\%$); no correction is applied. A former $(1-\varepsilon)^k$ correction is removed — its exponent was a fit (Part 2 §11.3). The $\sigma$-counts are scheme-sensitive (heavy-quark masses differ several percent between schemes; Part 2 §11.7): once that spread is included the up quark and charm sit within experimental margins, while the top remains a $\sim 2\%$ overshoot above the standard pole mass. Charm and top are quoted bare.
+- **Up-type masses:** charm and top are within ±1σ of PDG after the derived confinement-binding correction (Part 2 §11.9); the colour-field binding accounts for the bare-count overshoot (derivation and bare values in §11). The former $(1-\varepsilon)^k$ correction is removed — its exponent was a fit (Part 2 §11.3).
 - **Coupling filter:** Color conservation. $\chi(\mathbb{CP}^2) = 3$ gives $N_c = 3$ — the number of independent color coupling handles. All processes must conserve color; isolated color-nonsinglet states are geometrically forbidden. Confinement is this filter operating at the level of which asymptotic states can be constructed, not a dynamical suppression.
 
 **Spectral.** $\zeta_4(1) = 4/3$, $\zeta_4(0) = -2$, $a_{04} \approx 2.006$.
@@ -772,21 +772,21 @@ The constraint $g_{25} = g_{34} = 4\sqrt{6}$ (equal cross-coupling for both $U(1
 | muon | 35 | 6 | 105.657 | 105.658 | −0.001% |
 | tau | 23 | 10 | 1,776.84†† | 1,776.93 | −1.0σ |
 | down | 1 | 3 | 4.702 | 4.70 | +0.04%† |
-| strange | 4 | 3 | 94.04 | 93.5 | +0.57%† |
-| up | 3 | 4 | 2.177 | 2.160 | +0.77%† |
-| charm | 20 | 4 | 1,284.9‡ | 1,273.0 | +0.93%‡ |
-| top | 72 | 4 | 176,365‡ | 172,570 | +2.20%‡ |
+| strange | 4 | 3 | 93.96 | 93.5 | +0.49%† |
+| up | 3 | 4 | 2.175 | 2.160 | +0.70%† |
+| charm | 20 | 4 | 1,277.3‡ | 1,273.0 | +0.34%‡ |
+| top | 72 | 4 | 172,500‡ | 172,570 | −0.04%‡ |
 | bottom | — | 3 | 4,181 | 4,183 | −0.05% |
 | photon | 0 | 2 | 0 | 0 | exact |
 | W | 76 | 2 | 80,379 | 80,369 | +0.012% |
 | Z | 81 | 2 | 91,230 | 91,188 | +0.047% |
 | Higgs | 95 | 2 | 125,266 | 125,200 | +0.053% |
 
-† The light-quark masses are parameter-free outputs of the coupling self-consistency derivation of $m_{\rm scale,3}$ (and $m_{\rm scale,4}$ for the up); no quark-mass data enters. Against PDG 2024 they sit at $d$ +0.04%, $s$ +0.57%, $u$ +0.77%, all within the light-quark mass uncertainties (~10%).
+† The light-quark masses are parameter-free: down is the $m_{\rm scale,3}$ self-consistency output with no correction ($\langle k\rangle = 0$ ground mode), and strange and up carry the universal confinement-binding correction (one derived $d=4$ coefficient, no fit; Part 2 §11.9). Against PDG 2024 they sit at $d$ +0.04%, $s$ +0.49%, $u$ +0.70%, all within the light-quark mass uncertainties (~10%). Their bare combinatorial counts ($s$ 94.04, $u$ 2.177 MeV) are in Part 2 §11.5.
 
 †† Tau: **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: 1776.93 ± 0.09 MeV; −1.0σ, inside 1σ).** The factor $1/1680 = 1/(n_u \times n_s^2 \times S(n_s,4))$ is the geometric back-reaction resummation of the $d=6$→$d=10$ coupling. The isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/n_s=1/4$ (from the seed) means the leading correction $1/2240$ feeds back via $g_{10,10}=1/n_s$, multiplying by $n_s/(n_s-1) = n_s/n_u = 4/3$. Combined: $1/2240 \times 4/3 = 1/1680$.
 
-‡ Charm and top are quoted bare ($m_{\rm scale,4} \times S(n,4)$) and overshoot PDG 2024 by +0.93% and +2.20% — open residues (🔶). The nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and are scheme-sensitive: heavy-quark masses differ by several percent between the pole and $\overline{\rm MS}$ schemes, so the top's $+2.2\%$ is a $\sim$2% overshoot above the standard pole mass, not a $13\sigma$ falsification (Part 2 §11.7). No correction is applied. A former $(1-\varepsilon)^k$ correction (the "Generation Tower Correction," Part 2 §11) landed them on PDG, but its per-quark exponent was a fit, so it has been removed. Once the scheme spread is included the up quark and charm sit within experimental margins; the top remains a $\sim$2% overshoot above the standard pole mass. The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%. (For the scale-versus-structure decomposition that localizes the residual to the $d=3$ and $d=4$ quark sectors, see Part 2 §11.8.)
+‡ Charm and top are shown with the confinement-binding correction of Part 2 §11.9, which brings both within ±1σ of PDG 2024 (charm $+0.34\%$, $+0.9\sigma$; top $-0.04\%$, $-0.2\sigma$). Their bare combinatorial counts are $m_{\rm scale,4}\times S(n,4) = 1{,}284.9$ MeV (charm, $+0.93\%$) and $176{,}365$ MeV (top, $+2.20\%$); colour-field binding $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ — derived for the $d=4$ colour sector from the STEP-63 colour law with no free parameter — locks the difference permanently in the confining field. The bare $\sigma$-counts ($+2.6\sigma$/$+13\sigma$) would be against statistical errors only and are scheme-sensitive (heavy-quark masses differ several percent between the pole and $\overline{\rm MS}$ schemes; Part 2 §11.7). The former per-quark $(1-\varepsilon)^k$ "Generation Tower Correction" is removed — its exponent was a fit (§11.3); the §11.9 correction replaces it. The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%. Full derivation: Part 2 §11.
 
 **Co-fixed-point uniqueness**
 
