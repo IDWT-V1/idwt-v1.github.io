@@ -245,13 +245,15 @@ The $d=2$ sector hosts $\gamma,\,W^\pm,\,Z^0,\,H$ — themselves sector excitati
 
 ### 0.9 CKM Matrix from the Kernel
 
-The mode amplitude at the $d=3$ coordinate level scales as $|\chi_n(\xi^0)| \propto 1/\sqrt{S(n,d)}$ from $L^2$ normalisation (Part 1 §2.2), so heavier modes (larger $S$) carry less weight at our coordinate level relative to lighter modes. The intra-sector kernel matrix element between modes $n_i$ (lighter) and $n_j$ (heavier) is proportional to the amplitude of the heavier mode at $\xi_0$ relative to the lighter: ✅
+The mode amplitude at the $d=3$ coordinate level scales as $|\chi_n(\xi^0)| \propto 1/\sqrt{S(n,d)}$ from $L^2$ normalisation (Part 1 §2.2), so heavier modes (larger $S$) carry less weight at our coordinate level relative to lighter modes. ✅ The mixing weight between modes $n_i$ (lighter) and $n_j$ (heavier) within a sector is the relative amplitude of the heavier mode at the shared coordinate level: 🔶
 
-$$|\langle\chi_{n_{\rm lighter}}|K_{dd}|\chi_{n_{\rm heavier}}\rangle| \propto \frac{|\chi_{n_{\rm heavier}}(\xi_0)|}{|\chi_{n_{\rm lighter}}(\xi_0)|} = \sqrt{\frac{S(n_{\rm lighter},d)}{S(n_{\rm heavier},d)}}$$
+$$A_{i\to j} = \frac{|\chi_{n_{\rm heavier}}(\xi_0)|}{|\chi_{n_{\rm lighter}}(\xi_0)|} = \sqrt{\frac{S(n_{\rm lighter},d)}{S(n_{\rm heavier},d)}}$$
 
-The mixing probability is the square of this ratio: ✅
+The mixing probability is the square of this ratio — the same relative-intensity form as the derived Born rule (Part 1 §2.3), where observable weights are ratios of local $|\Psi|^2$: 🔶
 
 $$|V_{i\to j}|^2 = \frac{S(n_{\rm lighter},d)}{S(n_{\rm heavier},d)} \qquad \text{[within sector } d\text{]}$$
+
+This is a state-count (IDOS) ratio — the framework's native currency, on the same footing as the mass law, which is itself the integrated density of states (Part 8 §5, Theorem S1). It is not the $T2$ kernel overlap $\langle\chi|K_{dd}|\chi\rangle$, which scales as $n^1$ and is not the object that sets mixing (Part 6). The open step (🔶) is the EOM-level derivation that a mode transition weight equals this relative intensity — the counting theorem.
 
 **Application to CKM elements:**
 
@@ -286,7 +288,7 @@ $$m_H/m_Z = S(n_H,2)/S(n_Z,2) = 4560/3321 = 1.37308 \quad \text{(PDG } 1.37299,\
 
 **The $d=2$ coupling $g_{22} = 722.5$ and what it determines. ✅** The Hopf chain constraint $g_{25} = \sqrt{g_{22}}\times\sqrt{g_{55}} = \sqrt{96} = 4\sqrt{6}$ is automatically satisfied for any $g_{22}$ with $g_{55} = 96/g_{22}$ — $g_{22}$ cancels. Its value is fixed instead by the depth of the $d=2$ sector potential: $\lambda_2 = (g_{22}/2)^{2/3} = 50.72$, localization length $L_2 = 0.14$. The large $\lambda_2$ ensures $W$, $Z$, $H$ are tightly confined and do not propagate as bulk KK modes.
 
-**Neutron-proton mass difference, leading order: 🔵**
+**Neutron-proton mass difference, leading order: 🔶**
 
 $$m_n - m_p \approx m_d - m_u = 4.702 - 2.175 = 2.527\;\mathrm{MeV}$$
 
