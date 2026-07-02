@@ -143,13 +143,19 @@ For particles with $d > 3$, the mode vibrates across $d$ dimensions, of which on
 
 What an observer at $\xi^0$ can resolve does not affect what the particle is. Mass and coupling are eigenvalues of each particle's sector manifold (T0, Part 9) — intrinsic, and independent of observer position.
 
-### 2.3 The Observable Probability Density from $\Psi_\infty$
+### 2.3 The Born Rule, Derived 🔶
 
-$$\rho(r, t) = \int |\Psi_\infty(r, \xi, t)|^2\,d\xi$$
+The Born rule is not an independent postulate in IDWT; it reduces to the master field (P1) and the density–density kernel (P4), with probability read as a relative frequency. No amplitude is ever needed.
 
-The observable probability density at position $r$ is the marginal of $|\Psi_\infty|^2$ over the sector coordinates. Since our measurements are mediated by $d=3$ interactions and we cannot independently access the sector-space coordinates, the density we measure is the integral of $|\Psi_\infty|^2$ over $\xi$ — the sector-space marginal, not the full function.
+**1. $|\Psi|^2$ is the conserved density.** $\Psi_\infty$ is a complex Dirac spinor (P1), so its $\mathrm{U}(1)$ phase symmetry carries a conserved Noether current whose density is $\Psi^\dagger\Psi=|\Psi_\infty|^2$. The squared modulus is therefore the physical *amount of wave* at each point, fixed by the field's own conservation law — not a choice of which functional to square.
 
-This is not a separate postulate; it follows from the fact that our measurements access only the $d=3$ coordinate marginal. An electron is not a cloud in 3D — it is a structured mode orbiting a nucleus in 6 dimensions whose orbit's $d=3$ marginal appears as a diffuse probability density. Entangled particles are features of $\Psi_\infty$ that are close in the sector-space coordinates even when their $d=3$ marginals are far apart.
+**2. Detection rate $\propto$ local intensity.** Every interaction in IDWT is the quartic kernel $V=\sum g_{dd'}(\xi_d\cdot\xi_{d'})^2\,|\Psi^{(d)}|^2|\Psi^{(d')}|^2$ — density against density. A detection *is* such an interaction, so the rate at which a detector registers the system at a point goes as the local intensity $|\Psi|^2$ there. The $|\Psi|^2$ that governs detection frequency is the density the kernel already couples to; nothing of the form "square the amplitude to get a probability" is added by hand.
+
+**3. Probability is a ratio, so the amplitude drops out.** Only the *relative* rate across outcomes is observable, $\rho(r)=|\Psi(r)|^2\big/\!\int|\Psi|^2$, and this is invariant under $\Psi\to c\Psi$. The absolute amplitude never enters — which is why it need not, and cannot, be known: the framework's result that the global amplitude is inaccessible (the amplitude wall, Part 4 §3.10.5) and the observability of Born probabilities are the same fact seen twice. Only intensity *ratios* survive.
+
+The three-dimensional appearance is a corollary of the same coupling, not a separate projection. An observer is itself a mode of $\Psi_\infty$ and interacts only through the coordinates it shares (§3g); it does not resolve the hidden $\xi$, so the observed intensity at $r$ sums the unresolved interaction channels, $\int|\Psi_\infty(r,\xi)|^2\,d\xi$. An electron is then not a fundamentally random cloud but a structured mode whose shared-coordinate intensity a $d=3$ observer samples; entangled particles are features of $\Psi_\infty$ close in the sector coordinates even when their observed intensities are far apart.
+
+**Status 🔶.** The density (position) case above is complete and postulate-free. The general-observable form — where the measurement basis is set by what the detector couples to and each outcome's probability is its relative interaction rate — follows by the same argument but is not separately worked in full generality.
 
 ### 2.4 Why $d=3$ Is the Observer Level — A Theorem ✅
 
