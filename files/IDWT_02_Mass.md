@@ -79,7 +79,7 @@ the exact $q$-lift of the hockey-stick identity $S(n,d)=S(n,d-1)+S(n-1,d)$. Sett
 - **charm** ($n=20$, $d=4$): one hockey-stick extension of the $d=3$ seed column → depth $k=n_u=3$
 - **top** ($n=72$, $d=4$): Hopf depth-2 extension, $k=S(n_u,3)=10$ boxes → depth $k=10$
 
-The sequence $\{0,n_u,S(n_u,3)\}=\{0,3,10\}$ emerges combinatorially from $n_u=3$ alone. It was once a candidate exponent set for the per-quark up-type correction $(1-\varepsilon)^k$ (the "Generation Tower Correction"), but that correction has been removed — its exponent was a fit, not derived (§11.3) — so no per-quark exponent is applied: the $d=4$ up-type masses are quoted bare, and charm and top overshoot PDG 2024 as open residues. The Ferrers counting identifies the combinatorially natural depth sequence; it is recorded here as a structural observation, not a mass correction.
+The sequence $\{0,n_u,S(n_u,3)\}=\{0,3,10\}$ emerges combinatorially from $n_u=3$ alone. The $d=4$ up-type masses are quoted bare, and charm and top overshoot PDG 2024 as open residues. The Ferrers counting identifies the combinatorially natural depth sequence; it is recorded here as a structural observation, not a mass correction.
 
 ⭐ **Large-n asymptotic (proved by Stirling's approximation):**
 
@@ -743,15 +743,13 @@ $$m_{\rm scale,2} = m_e\times\sqrt{g_{22}/g_{66}} = m_e\times\sqrt{722.5/0.25} =
 
 The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spectrum within most sectors, but in the **$d=4$ up-type quark sector** the bare count overshoots, growing with generation: up +0.77%, charm +0.93%, top +2.20% vs PDG 2024. The overshoot is colour-field binding energy — the energy locked in the confining field that a free-quark count would wrongly assign to the quark's inertial mass. The confinement-binding correction of §11.9 reduces all five quarks to within ±1σ of PDG 2024 statistical errors.
 
-A multiplicative correction was previously applied — a factor `(1 − ε)^k` tuned per quark, the "Generation Tower Correction" — which brought charm and top onto their measured values. It has been removed. Only the scale $\varepsilon$ was derived; the per-quark exponent $k$ was a fit, and a fitted correction is not a derivation. The bare masses are quoted instead, with the overshoot left open. A physically motivated correction may be added in future if one is derived.
-
 ### 11.1 The l=2 self-energy (former candidate, withdrawn)
 
-The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part. The l=2 second-order self-energy was once a candidate for the up-type overshoot — correct sign, growing with the mode index — but its shape matched only the PDG-excluded set $\{0,3,10\}$ (not the measured masses, $\{0,7,16\}$, §11.3), so it has been withdrawn. The operative up-type correction is the confinement-binding deficit of §11.9, which brings all five quarks within ±1σ of PDG 2024. (The l=2 scale $\varepsilon = 1/(280\sqrt{7})$ is retained for the separate $\nu_3$ closure, §9d.)
+The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part. The l=2 second-order self-energy was once a candidate for the up-type overshoot — correct sign, growing with the mode index — but its $n$-shape did not match the measured up-type masses, so it has been withdrawn. The operative up-type correction is the confinement-binding deficit of §11.9, which brings all five quarks within ±1σ of PDG 2024. (The l=2 scale $\varepsilon = 1/(280\sqrt{7})$ is retained for the separate $\nu_3$ closure, §9d.)
 
-### 11.2 Derivation of $\varepsilon$ (retained for $\delta_{\nu_3}$, no longer applied to quarks)
+### 11.2 Derivation of $\varepsilon$ (used in the $\delta_{\nu_3}$ closure)
 
-The scale $\varepsilon$ below is a genuinely derived quantity. It is no longer applied to the up-type quark masses (§11.3); it is retained only because the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§9d) depends on it.
+The scale $\varepsilon$ below is a genuinely derived quantity. It enters the separate, motivated $\nu_3$ closure $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (§9d).
 
 **$g_{\rm coeff} = 2/\sqrt{7}$ from the kernel self-consistency eigenvalue.**
 
@@ -770,10 +768,6 @@ $$\varepsilon = \frac{g_{\rm coeff}}{k_0\times n_\mu} = \frac{2/\sqrt{7}}{16\tim
 $\varepsilon$ is fully derived from kernel geometry and seed combinatorics — no empirical masses enter. Only the seed pair $\{n_d=1, n_u=3\}$.
 
 Cross-check from c/u and t/u mass ratios: $\varepsilon \approx 0.001340$ (inferred from PDG). Derived value: 0.001350. Gap: 0.74% — within PDG light-quark uncertainties.
-
-### 11.3 The per-quark correction is removed
-
-The former correction multiplied each $d=4$ up-type mass by $(1-\varepsilon)^k$ with a per-quark exponent $k$ (up 0, charm 7, top 16). Only $\varepsilon$ was derived; the exponents were fixed by requiring charm and top to land on their PDG masses given the derived scale — that is, tuned to the data, not predicted. The closed-form labels the exponents happen to carry ($k_c = 7 = n_s + n_u$, $k_t = 16 = n_s^2$) are recognised after the fact, not derived. A correction whose only free choice is set to reproduce the answer is a parameterization, not a derivation, so it is removed. The up-type masses are quoted bare (§11.5), and the overshoot is left as the open residue described in §11.1 and §11.4.
 
 ### 11.4 Open item
 
@@ -795,16 +789,16 @@ Up-type quark masses bare: $m = m_{\rm scale,4}\times S(n,4)$. Charm $= 1284.9\ 
 
 ### 11.6 Corrections Summary
 
-Two perturbative corrections sit on top of the bare mass formula $m = m_{\rm scale} \times S(n,d)$ — the former GTC having been removed (§11.3). The back-reaction $\delta_\tau$ is derived; $\delta_{\nu_3}$ is motivated. Each applies to exactly one particle or family; they are structurally orthogonal.
+Two perturbative corrections sit on top of the bare mass formula $m = m_{\rm scale} \times S(n,d)$. The back-reaction $\delta_\tau$ is derived; $\delta_{\nu_3}$ is motivated. Each applies to exactly one particle or family; they are structurally orthogonal.
 
 | Correction | Symbol | Formula | Derivation | Applies to | Status |
 |---|---|---|---|---|---|
 | Geometric back-reaction | $\delta_\tau$ | $+1/1680$ | $d=6\to d=10$ geometric series; $1/(1-g_{10,10})$ resummation; $1680 = n_s n_u(n_s+n_u)S(n_s,3)$ (§9b) | $\tau$ only: $m_\tau \to m_\tau(1+1/1680)$ | ✅ |
 | $\nu_3$ closure relation | $\delta_{\nu_3}$ | $+1/35$ | Cross-sector $\ell=2 \times d=3$ interference; $\varepsilon \times g_{33} = [1/(280\sqrt{7})]\times[8\sqrt{7}] = 8/280$ (§9d) | $\nu_3$ only: $m_{\nu_3} \to m_{\nu_3}(36/35)$ | 🔶 |
 
-**The scale $\varepsilon$.** $\delta_{\nu_3} = \varepsilon \times g_{33}$ exactly; the $\sqrt{7}$ factors cancel and the result $1/35 = 1/n_\mu$ is rational. The $\ell=2$ scale $\varepsilon = 1/(280\sqrt{7})$ (§11.2) is a derived quantity; it no longer corrects the up-type quark masses (§11.3), but it remains the derived scale of this single, motivated $\nu_3$ shift via $g_{33}$.
+**The scale $\varepsilon$.** $\delta_{\nu_3} = \varepsilon \times g_{33}$ exactly; the $\sqrt{7}$ factors cancel and the result $1/35 = 1/n_\mu$ is rational. The $\ell=2$ scale $\varepsilon = 1/(280\sqrt{7})$ (§11.2) is a derived quantity; it is the derived scale of this single, motivated $\nu_3$ shift via $g_{33}$.
 
-**No particle carries more than one correction.** The bottom quark uses the geometric-mean rule (§8), not these perturbative corrections. The up-type quark masses are quoted bare (§11.3); only $\tau$ (back-reaction) and $\nu_3$ (closure) carry a correction.
+**No particle carries more than one correction.** The bottom quark uses the geometric-mean rule (§8), not these perturbative corrections. The up-type quark masses are quoted bare (§11.5); only $\tau$ (back-reaction) and $\nu_3$ (closure) carry a correction.
 
 ### 11.7 The top quark: a correction that is required but not earned 🔶
 
@@ -831,11 +825,11 @@ The quark-sector residuals admit two readings: a uniform per-sector scale offset
 
 The residual is at most a few parts in $10^{4}$ in the boson ($d=2$) and charged-lepton ($d=6$) sectors, and grows with the level gap inside the quark sectors $d=3$ and $d=4$. That growth is the signature of structure in $S(n,d)$, not of a sector scale error: a uniform offset would be $n$-independent and would leave every in-sector ratio exact. The discrepancy is therefore $n$-dependent and confined to the two quark sectors, while the boson and lepton sectors are reproduced to within $4\times10^{-4}$ by the bare count (`files/idwt.py` STEP 126).
 
-This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit, of the kind removed in §11.3. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is identified as colour-confinement binding in §11.9 ($\textbf{🔶}$).
+This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is identified as colour-confinement binding in §11.9 ($\textbf{🔶}$).
 
 ### 11.9 Confinement-binding correction ($d=3$, $d=4$) 🔶
 
-The bare IDWT mass $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-quark harmonic-oscillator count — the mass a quark would carry if it could exist as an isolated asymptotic state. Colour confinement means it cannot: the energy that the free-quark picture assigns to the quark is partly locked in the colour field that confines it. The observed physical mass is therefore lower than the bare count by the energy bound in the colour field. This is not a fitted correction but the energy bookkeeping of colour confinement: the deficit is the confinement binding energy, distributed over the mode's $\langle k\rangle$ occupied levels.
+The bare IDWT mass $M_{\rm bare} = m_{\rm scale,d}\times S(n,d)$ is the free-quark harmonic-oscillator count — the mass a quark would carry if it could exist as an isolated asymptotic state. Colour confinement means it cannot: the energy that the free-quark picture assigns to the quark is partly locked in the colour field that confines it. The observed physical mass is therefore lower than the bare count by the energy bound in the colour field. This is the energy bookkeeping of colour confinement: the deficit is the confinement binding energy, distributed over the mode's $\langle k\rangle$ occupied levels.
 
 **Form (derived).** The sector's self-consistent Gaussian well is a finite cavity, so its eigenmodes flatten toward the well top — the per-state energy spacing decreases weakly with level. This level-dependent softening is linear in the mean level $\langle k\rangle$ (`files/idwt.py` STEP 127; Part 4 §3.10.5b):
 
@@ -938,7 +932,7 @@ These results follow from $S(n,d)=\binom{n+d-1}{d}$ by Pascal's identity and Eul
 
 ## 15. The Three-Ray Law — Depth and Dimension Locked
 
-The generation tower carries a second coordinate besides the mode index: the **minimal-route derivation depth** $k_{\min}$, the length of the shortest documented derivation of a mode from the seeds (the §6 DAG together with its cross-check routes), computed by relaxation. The seeds and the photon sit at depth 0; the T15 Euler product $n_{\rm top} = \chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)$ is a depth-1 production from geometric constants, since the top index is an irreducible input not derived from lighter modes. This depth is a different object from the per-quark exponent $k$ of the former GTC (§11.3, removed) — the two should not be conflated.
+The generation tower carries a second coordinate besides the mode index: the **minimal-route derivation depth** $k_{\min}$, the length of the shortest documented derivation of a mode from the seeds (the §6 DAG together with its cross-check routes), computed by relaxation. The seeds and the photon sit at depth 0; the T15 Euler product $n_{\rm top} = \chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)$ is a depth-1 production from geometric constants, since the top index is an irreducible input not derived from lighter modes.
 
 **The law (🔶).** Every matter mode and the photon — 12 of the 15 — satisfies
 

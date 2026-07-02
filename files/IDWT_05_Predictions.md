@@ -4,7 +4,7 @@
 
 ## 1. Confirmed Predictions
 
-The mass ratios below are not fitted. Within each sector, $S(n,d)/S(m,d)$ is a ratio of binomial coefficients — fixed the moment the mode indices are assigned. The eigenmode selection rule identities (muon $=$ charm $+\nu_2$, etc.) are consequences of the Pascal recursion $S(n,d) = S(n,d{-}1) + S(n{-}1,d)$, not separate postulates.
+Within each sector, $S(n,d)/S(m,d)$ is a ratio of binomial coefficients — fixed the moment the mode indices are assigned. The eigenmode selection rule identities (muon $=$ charm $+\nu_2$, etc.) are consequences of the Pascal recursion $S(n,d) = S(n,d{-}1) + S(n{-}1,d)$, not separate postulates.
 
 The absolute scale for the $d=3$ sector is fixed by the kernel vacuum fixed-point: $m_{\rm scale,3} = m_e \times \sqrt{g_{33}/g_{66}} = 4.702$ MeV, with $g_{33} = 8\sqrt{7}$ and $g_{66} = 1/4$ derived from seed pair $\{n_u=3,\,n_s=4\}$ and anomaly cancellation respectively. Full derivation in Part 2 §10.
 
@@ -24,7 +24,7 @@ $$S(23,10)/S(13,6) = 64\,512\,240/18\,564 = 3\,475.126 \quad (\text{PDG: }3\,477
 
 **Up-type quark mass ratios (bare) 🔵**
 
-The $d=4$ up-type mass ratios are quoted bare; the former Generation Tower Correction is removed (its per-quark exponent was a fit — Part 2 §11). The ratios run high because charm and top overshoot:
+The $d=4$ up-type mass ratios are quoted bare (Part 2 §11). The ratios run high because charm and top overshoot:
 
 $$S(20,4)/S(3,4) = 590.33 \quad (\text{PDG} \approx 589.4,\ +0.16\%)$$
 $$S(72,4)/S(3,4) = 81\,030 \quad (\text{PDG} \approx 79\,893,\ +1.42\%)$$
@@ -177,7 +177,7 @@ Using $m_e = 0.511$ MeV as the sole unit reference:
 
 ### 2a. Is the spectrum a fit? — null-model significance 🔵
 
-The standard objection to any mass formula built from integers is that integers are flexible: with a tunable integer per particle and an adjustable scale, almost any spectrum can be reached. Two facts of the IDWT construction answer it quantitatively. First, the sector scales are not free — each is fixed by $m_e$ and $n_s$ through the coupling chain (Part 2 §10), not refit per sector — so once they are set, predicting a mass is choosing one integer on a fixed ladder, with no continuous dial. Second, the simplex ladder is coarse: neighbouring rungs differ by $S(n+1,d)/S(n,d) - 1$, which is $\approx 17\%$ at the muon ($d=6$) and $\approx 43\%$ at the tau ($d=10$). A measured value at a random position between rungs would put the nearest rung off by ~¼ of the gap; landing within parts per million is not generic.
+The standard objection to any mass formula built from integers is that integers are flexible: with a tunable integer per particle and an adjustable scale, almost any spectrum can be reached. Two facts of the IDWT construction answer it quantitatively. First, the sector scales are not free — each is fixed by $m_e$ and $n_s$ through the coupling chain (Part 2 §10) — so once they are set, predicting a mass is choosing one integer on a fixed ladder, with no continuous dial. Second, the simplex ladder is coarse: neighbouring rungs differ by $S(n+1,d)/S(n,d) - 1$, which is $\approx 17\%$ at the muon ($d=6$) and $\approx 43\%$ at the tau ($d=10$). A measured value at a random position between rungs would put the nearest rung off by ~¼ of the gap; landing within parts per million is not generic.
 
 This scores each prediction. For a parameter-free dimensionless ratio (sector scale cancels) fixed by one mode index, let $\varepsilon = |\text{IDWT} - \text{obs}|/\text{obs}$, floored at the relative measurement error (a fit cannot be claimed tighter than the measurement resolves), and let $g = S(n+1,d)/S(n,d) - 1$ be the grid spacing at that rung; the luck factor $L = \min(1, 2\varepsilon/g)$ estimates the chance the nearest available integer lands within $\varepsilon$ of a randomly placed target. Every mode index is treated as a free integer — the maximally conservative stance, granting nothing to the claim that the indices are forced.
 
@@ -190,7 +190,7 @@ This scores each prediction. For a parameter-free dimensionless ratio (sector sc
 
 The $\tau$ row uses PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV); its $\varepsilon$ is the measurement floor — the fit residual is $4.9\times10^{-5}$ (−0.9σ). The four independent luck factors multiply to $\approx 1.1\times10^{-10}$ ($\approx$ 1 in $9\times10^9$). The lepton ratios dominate: a sub-$10^{-4}$ hit on a 17–43% grid. (Computed in `idwt.py` STEP 38.)
 
-**Honest scope.** The $L = 2\varepsilon/g$ luck model treats each quantity separately; multiplying the four $L$ values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived, not refit (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist ($g_A$ +4%, $f_\pi$ +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. With the scales held fixed by $m_e$ and $n_s$, the spectrum has no continuous dial to fit.
+**Honest scope.** The $L = 2\varepsilon/g$ luck model treats each quantity separately; multiplying the four $L$ values overstates the joint significance because a proper combination must account for the many ways a set of quantities can be jointly "this lucky." §2b does the combination properly and adds the Monte-Carlo null over random index sets. The figure is conditional on the scales being derived (they are). The quantities were selected by a principled rule — precisely measured and parameter-free — not by closeness; looser predictions exist ($g_A$ +4%, $f_\pi$ +2.1%, nucleon moments using fitted parameters, §3) and stand alongside these. With the scales held fixed by $m_e$ and $n_s$, the spectrum has no continuous dial.
 
 **Where the weight sits.** The estimate above treats every mode index as free. IDWT's actual claim is that the indices are forced from $n_s$ by the generation-tower arithmetic (Part 9). If that forcing holds, the accounting collapses to the seed pair $\{n_d=1, n_u=3\}$ and $m_e$ producing the whole spectrum and the significance becomes essentially total; if it does not, the masses are a constrained fit and only the tight grid hits carry weight (the joint improbability quantified in §2b). Either way, the index-forcing — the one piece still marked open (T0.5, Part 9) — is where the entire evidential weight funnels, and closing it converts an already-improbable postdiction into a near-parameter-free account of the spectrum.
 
@@ -235,7 +235,7 @@ The bare $d=4$ count $S(n,4)\,m_{\rm scale,4}$ — the parameter-free free-quark
 | c | 20 | 1277.3 MeV | $+0.34\%$ ($+0.9\sigma$) |
 | t | 72 | 172,500 MeV | $-0.04\%$ ($-0.2\sigma$) |
 
-The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). A former $(1-\varepsilon)^k$ "Generation Tower Correction" (per-quark exponents $\{0,7,16\}$) was removed because its exponent was a fit, not derived (§11.3); the present correction is not a fit. The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
+The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 
@@ -297,9 +297,9 @@ Three active neutrino species from the $d=5$ sector structure (three co-fixed-po
 | $m_b/m_s$ | 44.461 | 44.8 | −0.76% |
 | $m_u/m_d$ | 0.463 | 0.474 | −2.3% † |
 
-† $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is derived, not fitted.
+† $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is the exact geometric value above.
 
-‡ The $d=4$ up-type ratios are quoted **bare**: the former $(1-\varepsilon)^k$ correction (the GTC) is removed (Part 2 §11.3), so charm and top overshoot PDG as open residues (§3). These match Part 9 T13c and `files/idwt.py`.
+‡ The $d=4$ up-type ratios are quoted **bare**, so charm and top overshoot PDG as open residues (§3). These match Part 9 T13c and `files/idwt.py`.
 
 **Neutrino masses — absolute prediction, no oscillation data used**
 

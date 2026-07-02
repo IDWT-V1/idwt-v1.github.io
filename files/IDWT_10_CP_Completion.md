@@ -299,14 +299,14 @@ The following table consolidates the full theorem status after the T8 completion
 | T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
 | **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; $J = -0.00981$** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
 | T9a–d | All 6 coupling constants derived | ✅ | Exact | No free coupling parameters |
-| T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$; former $(1-\varepsilon)^k$ quark correction removed 2026-06-16 |
+| T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$ |
 | T10b | Geometric back-reaction correction +1/1680 for τ | ✅ | 0.001% | Critical-sector regularisation |
 | T11a–d | Neutrino masses; Dirac; $\Sigma m_\nu = 60.39$ meV | ✅ | <0.05% | 0νββ = 0 at all orders |
 | T13a | Spectral sum rule $\zeta_d(1) = d/(d-1)$ | ✅ | Exact | Total inverse-mass weight is pure Pascal |
 | T14a | Heat kernel Weyl term $K_d(t) \sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = $d$ |
 | T14b | Constant term $-d/2$ and $\zeta_d(0) = -d/2$ | ✅ | Exact | Sector functional determinant anchored |
 | T13b | Mode spacing $S(n+1,d)-S(n,d) = S(n+1,d-1)$ | ✅ | Exact | Source of all mode-index chains |
-| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer $S$; $d=4$ up-type bare (GTC removed) |
+| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer $S$; $d=4$ up-type bare |
 | T15 | $N_c = \chi(\mathbb{CP}^2) = n_u$; all couplings/indices from one Euler characteristic | ✅ | Exact | Coupling filter and mass hierarchy share one root |
 | $\sin^2\theta_W$ | $1-(S(76,2)/S(81,2))^2 = 0.2237$; +0.37% from PDG on-shell | ✅ | +0.37% | Within EW radiative corrections |
 | $G_N$ | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |

@@ -219,7 +219,7 @@ Checked: (i) species-scale mechanism M_Pl² = N·μ² for every candidate fundam
 
 $$M_{\rm Pl} = \frac{m_e^3}{C'\,m_{{\rm scale},5}^2}.$$
 
-**The power law is uniquely selected, not fitted:** among integer $M_{\rm Pl}=C\,m_e^{a}\,m_{{\rm scale},5}^{b}$ with $a+b=1$ (mass dimension), only $(a,b)=(3,-2)$ gives a coefficient of order $1$–$100$ ($C'=19.80$); every other integer power gives $C$ of order $10^{\pm(10\text{–}34)}$. The demanded $C'=19.800$ matches **$2\pi^2=\mathrm{Vol}(S^3)$** — the volume of the $d=3$ observer sector — to **+0.31%** (next: $S(n_s,3)=20$ at $-1.0\%$). So
+**The power law is uniquely selected:** among integer $M_{\rm Pl}=C\,m_e^{a}\,m_{{\rm scale},5}^{b}$ with $a+b=1$ (mass dimension), only $(a,b)=(3,-2)$ gives a coefficient of order $1$–$100$ ($C'=19.80$); every other integer power gives $C$ of order $10^{\pm(10\text{–}34)}$. The demanded $C'=19.800$ matches **$2\pi^2=\mathrm{Vol}(S^3)$** — the volume of the $d=3$ observer sector — to **+0.31%** (next: $S(n_s,3)=20$ at $-1.0\%$). So
 
 $$M_{\rm Pl}\approx \frac{m_e^3}{\mathrm{Vol}(S^3)\,m_{{\rm scale},5}^2},$$
 
