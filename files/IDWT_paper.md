@@ -48,7 +48,7 @@ We show this interpretation exists and is grounded in the Dirac spectra of infin
 
 ### 1.1 What IDWT Is and Is Not
 
-IDWT does not add new spacetime dimensions in the Kaluza-Klein sense. The sector manifolds $\Xi_d$ are infinite Riemannian spaces — not compact extra dimensions, not accessible to gravitons or KK excitations. They are macroscopic, non-compact spatial dimensions — real geometric spaces in which $\Psi_\infty$ vibrates. They differ from KK compact extra dimensions in that they are non-compact, mode localization is set by the sector localization length $L_d$ (not by periodic boundary conditions), and there is no KK graviton tower. All IDWT predictions concern the mass spectrum and coupling structure of existing particles, not new KK towers. Gravity in IDWT is the back-reaction of $|\Psi_\infty|^2$ on the spacetime metric — purely geometric, with no graviton propagation into the sector space. See Technical Volume 4 [11] for the full derivation of the effective Einstein equations.
+IDWT does not add new spacetime dimensions in the Kaluza-Klein sense. The sector manifolds $\Xi_d$ are infinite Riemannian spaces — not compact extra dimensions, not accessible to gravitons or KK excitations. They are macroscopic, non-compact spatial dimensions — real geometric spaces in which $\Psi_\infty$ vibrates. They differ from KK compact extra dimensions in that they are non-compact, mode localization is set by the sector localization length $L_d$ (not by periodic boundary conditions), and there is no KK graviton tower. All IDWT predictions concern the mass spectrum and coupling structure of existing particles, not new KK towers. Gravity in IDWT is the back-reaction of $|\Psi_\infty|^2$ on the spacetime metric — purely geometric, with no graviton propagation into the sector space. See Part 4 §3.11.2 [11] for the full derivation of the effective Einstein equations.
 
 This framework does not employ Higgs fields, Yukawa couplings, or spontaneous symmetry breaking to generate masses. The $W$ and $Z$ masses are confinement masses of the $d=2$ sector — analogous to the $\rho$ meson mass in QCD — not consequences of a Higgs mechanism. The mass formula $m \propto S(n,d)$ holds for all particles simultaneously.
 
@@ -66,9 +66,9 @@ The sector manifolds $\Xi_d$ are the complex projective spaces $\mathbb{CP}^{(d/
 
 The mode spectrum is discrete because the bound states of $V_d$ are discrete — just as bound states of the hydrogen potential are discrete even though $\mathbb{R}^3$ is infinite. The sectors are not compactified extra dimensions in any sense. The observable 3D universe does not couple to gravitational modes propagating through $\Xi_d$; the back-reaction of $|\Psi_\infty|^2$ on the spacetime metric enters only through the $d=3$-coordinate component of the energy-momentum tensor $T_{\mu\nu}^{\rm obs} = \int |\Psi_\infty|^2 d\xi$.
 
-**How $\xi^0$ selects the observable SM sector.** The fixed internal address $\xi^0$ does not determine which particles exist — the occupied mode set $\Sigma$ is fixed by the seed $n_s = 4$ independently of $\xi^0$. What $\xi^0$ determines is the projection amplitude with which each mode $(n,d)$ appears to an observer at that address: modes with large $\Omega_{\log}(n,d) = \ln(S(n,d)/S(n,2))$ are suppressed exponentially in the Stage-1 filter (Section 11). The SM spectrum is the set of modes that survive both the Stage-1 visibility filter (small $\Omega_{\log}$) and Stage-2 co-fixed-point stability for all $\xi^0$ simultaneously — it is the spectrum common to every observer address in $\mathcal{M}_\infty$. The choice of $\xi^0$ therefore affects only the relative intensities of already-existing modes, not the identity of the particle spectrum. A full derivation of the $\xi^0$-independence of $\Sigma$ is in Technical Volume 1 §2 [11].
+**The observer address $\xi^0$ and the particle spectrum.** The fixed internal address $\xi^0$ does not determine which particles exist: the occupied mode set $\Sigma$ is fixed by the seeds through the co-fixed-point condition (Part 1 §3b), independently of $\xi^0$. The spectrum is therefore common to every observer address in $\mathcal{M}_\infty$; the choice of $\xi^0$ fixes only where the observable 3D slice is taken, not the identity of the spectrum.
 
-**Core postulates.** (P1) $\Psi_\infty$ satisfies a wave equation on $\mathcal{M}_\infty$ with a quartic cross-sector kernel (Section 2.4). (P2) Mass is the resonant frequency of a mode: $m(n,d) = m_{\mathrm{scale},d} \times S(n,d)$. (P3) The sector set $D = \{2,3,4,5,6,10\}$ is determined by $n_s = 4$ (Theorem S4). Full derivation of the kernel from the spinor geometry is in Technical Volume 8 [11].
+**Core postulates.** (P1) $\Psi_\infty$ satisfies a wave equation on $\mathcal{M}_\infty$ with a quartic cross-sector kernel (Section 2.4). (P2) Mass is the resonant frequency of a mode: $m(n,d) = m_{\mathrm{scale},d} \times S(n,d)$. (P3) The sector set $D = \{2,3,4,5,6,10\}$ is determined by $n_s = 4$ (Theorem S4). Full derivation of the kernel from the spinor geometry is in Part 3 §0.2 [11].
 
 ### 2.2 The Mass Formula
 
@@ -111,7 +111,7 @@ $$\mathcal{L} = \bar{\Psi}_\infty(i\gamma^\mu \partial_\mu - \sum_d \sqrt{V_d(\x
 
 where $V_d(\xi) = \lambda_d |\xi|^2/(1+|\xi|^2)$ is the sector potential (harmonic for small $|\xi|$, saturating at $\lambda_d$ for large $|\xi|$) and $g_{dd'} = v_d v_{d'}$ is the rank-1 coupling matrix with $v_d = \sqrt{g_{dd}}$.
 
-The kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the leading quartic term consistent with $U(d) \times U(d')$ symmetry on the sector pair. It decomposes by angular momentum on the sector sphere as $(\xi \cdot \xi')^2 = \frac{1}{d}[\ell=0] + \frac{d-1}{d}\cdot C_2^{(d-2)/2}(\cos\theta)[\ell=2]$, where the $\ell=0$ part generates sector mass scales (Section 5) and the $\ell=2$ part generates the derived scale $\varepsilon$ that enters the $\nu_3$ closure and is the candidate mechanism for the $d=4$ up-type overshoot (Section 7.1). The rank-1 structure $g_{dd'}g_{d''d'''} = g_{dd'''}g_{d'd''}$ — equivalently $g_{dd'}^2 = g_{dd}g_{d'd'}$ — is not assumed; it follows from $g_{33}g_{44} = g_{34}^2 = 96$ (verified in Section 5.1). Full derivation in Technical Volume 3 [11].
+The kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the leading quartic term consistent with $U(d) \times U(d')$ symmetry on the sector pair. It decomposes by angular momentum on the sector sphere as $(\xi \cdot \xi')^2 = \frac{1}{d}[\ell=0] + \frac{d-1}{d}\cdot C_2^{(d-2)/2}(\cos\theta)[\ell=2]$, where the $\ell=0$ part generates sector mass scales (Section 5) and the $\ell=2$ part generates the derived scale $\varepsilon$ that enters the $\nu_3$ closure (Section 7.1). The rank-1 structure $g_{dd'}g_{d''d'''} = g_{dd'''}g_{d'd''}$ — equivalently $g_{dd'}^2 = g_{dd}g_{d'd'}$ — is not assumed; it follows from $g_{33}g_{44} = g_{34}^2 = 96$ (verified in Section 5.1). Full derivation in Part 1 §4 [11].
 
 ### 2.5 Spectral Infrastructure: Heat Kernel and Zeta Anchors
 
@@ -180,7 +180,7 @@ $$\chi(\mathbb{CP}^{N_c-1}) = 3,\; d=4. \quad \chi(\mathbb{CP}^{n_s-1}) = 4,\; d
 
 **Step 4.** $d=7$ carries no matter: it is not a corner of the $\mathbb{C}^2\times\mathbb{C}^3$ deposit grid whose six corners are exactly $D$ (STEP 100), so no mode is sited there (a matter-empty sector is inert). $d=8$: $\chi(\mathbb{CP}^4) = 5 \notin \{N_c, n_s, N_f\}$. $d \geq 11$: no mode index in the occupied range. $\square$
 
-The factorisation $n_{\rm top} = \chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5) = 72$ is a characteristic-class identity (Technical Volume 9 T15b): among all characteristic numbers of $\mathbb{CP}^2\times\mathbb{CP}^3\times\mathbb{CP}^5$ the Euler number $72$ is the unique nonzero, non-trivial, purely topological one, so $n_{\rm top}=72$ is structurally natural rather than arbitrary. What this theorem does *not* supply is the dynamical reason this Euler product is selected as the top mode index in the first place; that selection is the framework's leading open question (Section 16, item 5).
+The factorisation $n_{\rm top} = \chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5) = 72$ is a characteristic-class identity (Part 9 T15b): among all characteristic numbers of $\mathbb{CP}^2\times\mathbb{CP}^3\times\mathbb{CP}^5$ the Euler number $72$ is the unique nonzero, non-trivial, purely topological one, so $n_{\rm top}=72$ is structurally natural rather than arbitrary. What this theorem does *not* supply is the dynamical reason this Euler product is selected as the top mode index in the first place; that selection is the framework's leading open question (Section 16, item 5).
 
 **Completeness Theorem.** The IDWT spectrum consists of exactly 15 states ($\Sigma \cup \{b\text{-quark}\}$). Any new stable particle requires either a new sector (excluded by S4) or a new derivable mode index (excluded by the uniqueness theorem). No such states exist. Any new particle discovery at any energy falsifies IDWT immediately.
 
@@ -211,7 +211,7 @@ Every mode index is fixed by the seeds through a small set of named operations �
 **Algebraic cross-checks** (exact consequences of the chain, independently verified):
 $n_e = k_0 - n_u = 13$; $\;\; n_\tau = n_c + n_u = 23$; $\;\; n_H = n_Z + 2(n_s+n_u) = 95$; $\;\; n_{\rm top} = \chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5) = 72$; $\;\; n_Z - n_W = \beta = 5$ (same $\beta$ as in $g_{22}$).
 
-[Open] The Higgs mode index $n_H = n_u + n_c + n_t = 95$ satisfies two independent cross-sector closure relations and is numerically verified, but the dynamical derivation of why scalar excitation indices close under this sum is an open item (Technical Volume 2 §6).
+[Open] The Higgs mode index $n_H = n_u + n_c + n_t = 95$ satisfies two independent cross-sector closure relations and is numerically verified, but the dynamical derivation of why scalar excitation indices close under this sum is an open item (Part 2 §6).
 
 **Spectral independence:** The 14 occupied $S$-values $\{1$, $15$, $20$, $8855$, $2002$, $2926$, $3321$, $4560$, $11628$, $18564$, $65780$, $1215450$, $3838380$, $64512240\}$ form a Sidon-like set: no three satisfy $S_i + S_j = S_k$ (all 91 pairs verified). Any perturbation of a mode index breaking this property would immediately produce an inconsistency.
 
@@ -259,7 +259,7 @@ The $\mathrm{SU}(2)_L$ coupling is then the charge of the fundamental quark doub
 
 $$g_2 = Q_u\sqrt{g_s} = \frac{2}{3}\sqrt{g_s} = \frac{2}{3}\left(\frac{2g_{44}}{\pi^2}\right)^{1/4} = 0.65275 \quad (\text{PDG } 0.65270, +0.008\%).$$
 
-Full derivation of the $\mathbb{CP}^2$ integration measure and the $Q_u = 2/3$ charge assignment from the spin^c index: Technical Volume 3 §7 [11].
+Full derivation of the $\mathbb{CP}^2$ integration measure and the $Q_u = 2/3$ charge assignment from the spin^c index: Part 3 §13 [11].
 
 ### 5.3 Bottom Quark: Resonance and Geometric Mean
 
@@ -275,7 +275,7 @@ where $b_n = \sqrt{n(n+d-1)}/(2n+d-2)$ is the Jacobi coupling at level $n$ in se
 
 $$m_b = \sqrt{S(16,3) \times S(17,3)} \times m_{\mathrm{scale},3} = \sqrt{816 \times 969} \times 4.7019 = 4181 \text{ MeV}.$$
 
-Why the geometric mean rather than arithmetic? The kernel bilinear $|\Psi^{(n)}|^2|\Psi^{(n+1)}|^2$ at equal occupation $|\Psi^{(n)}| = |\Psi^{(n+1)}|$ has energy $\sqrt{E_n E_{n+1}}$ by the AM-GM relation applied to the quadratic fixed-point equation $E^2 = E_n E_{n+1}$ — the unique positive solution when both mode contributions are equal. The geometric mean is forced by the equal-weight condition, not chosen for fit. Full derivation in Technical Volume 2 §5.3 [11]; `idwt.py` lines 220–245.
+Why the geometric mean rather than arithmetic? The kernel bilinear $|\Psi^{(n)}|^2|\Psi^{(n+1)}|^2$ at equal occupation $|\Psi^{(n)}| = |\Psi^{(n+1)}|$ has energy $\sqrt{E_n E_{n+1}}$ by the AM-GM relation applied to the quadratic fixed-point equation $E^2 = E_n E_{n+1}$ — the unique positive solution when both mode contributions are equal. The geometric mean is forced by the equal-weight condition, not chosen for fit. Full derivation in Part 2 §8 [11] (`idwt.py` STEP 7a).
 
 PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \leq 200$, $d \in D$ finds no other triple-coincidence site — the bottom quark beat is unique.
 
@@ -283,7 +283,7 @@ PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \
 
 ## 6. Mass Predictions
 
-**Table 1.** All masses from $m_e$ and $n_s = 4$ alone (PDG 2024). Up-type quark masses are quoted **bare** (confinement-binding correction in §7.1 brings all quarks within $\pm 1\sigma$ PDG). The $\tau$ carries the geometric back-reaction; the $b$ quark is a geometric-mean beat.
+**Table 1.** All masses from $m_e$ and $n_s = 4$ alone (PDG 2024). The coloured quarks ($d$, $s$, $u$, $c$, $t$) carry the confinement-binding correction of §7.1 (down has $\langle k\rangle = 0$ and is unshifted); the masses shown are the corrected, physical values, all within $\pm 1\sigma$ of PDG. The $\tau$ carries the geometric back-reaction; the $b$ quark is a geometric-mean beat.
 
 | Particle | $d$ | $n$ | $S(n,d)$ | IDWT (MeV) | PDG (MeV) | Error |
 |---|---|---|---|---|---|---|
@@ -309,15 +309,15 @@ $^\dagger$ The light quarks ($d$, $s$, $u$) carry the universal confinement-bind
 
 ### 7.1 The $d=4$ Up-Type Overshoot (open)
 
-The bare mass formula overshoots in the $d=4$ up-type sector, growing with generation: up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$. The overshoot is colour-field binding energy — the fraction of the free-quark harmonic count permanently locked in the confining colour field. Applying the confinement-binding correction $M_{\rm phys} = M_{\rm bare}(1 - x_e\,d(n-1)/(d+1))$ (where $\langle k\rangle = d(n-1)/(d+1)$ is an exact identity, not a large-$n$ approximation) brings all five quarks within $\pm1\sigma$ of PDG 2024 statistical errors. Up-type masses are quoted bare in Table 1; corrected values are in §7.1.
+The bare mass formula overshoots in the $d=4$ up-type sector, growing with generation: up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$. The overshoot is colour-field binding energy — the fraction of the free-quark harmonic count permanently locked in the confining colour field. Applying the confinement-binding correction $M_{\rm phys} = M_{\rm bare}(1 - x_e\,d(n-1)/(d+1))$ (where $\langle k\rangle = d(n-1)/(d+1)$ is an exact identity, not a large-$n$ approximation) brings all five quarks within $\pm1\sigma$ of PDG 2024 statistical errors.
 
-**The $\ell=2$ kernel component (a candidate, not applied).** The $\ell=2$ tensor component of the kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is a candidate source for the overshoot. For $d=3$ on $S^2$,
+**The $\ell=2$ kernel component.** The $\ell=2$ tensor component of the kernel $({\xi}_d \cdot {\xi}_{d'})^2$ fixes the derived scale $\varepsilon$. For $d=3$ on $S^2$,
 
 $$(\xi \cdot \xi')^2 = \tfrac{1}{3}[\ell=0] + \tfrac{2}{3}P_2(\cos\theta)[\ell=2].$$
 
-The $\ell=0$ piece sets the sector mass scale; the $\ell=2$ piece is traceless and once offered a candidate self-energy for the overshoot (correct sign, growing with the mode index), but its shape matched only the $\{0,3,10\}$ set (not the measured masses) and is withdrawn. The operative up-type correction is the confinement-binding deficit (§7.1); the $\ell=2$ scale $\varepsilon$ is retained for the $\nu_3$ closure.
+The $\ell=0$ piece sets the sector mass scale; the traceless $\ell=2$ piece fixes the derived scale $\varepsilon$, which enters the $\nu_3$ closure. The up-type overshoot is corrected by the confinement-binding deficit derived below.
 
-**The scale $\varepsilon$ (retained for $\delta_{\nu_3}$, not applied to quarks).** The $\ell=2$ coupling amplitude at the resonance site $k_0 = n_s^2 = 16$, normalised at the muon mode $n_\mu = S(n_s,4) = 35$, is
+**The derived scale $\varepsilon$.** The $\ell=2$ coupling amplitude at the resonance site $k_0 = n_s^2 = 16$, normalised at the muon mode $n_\mu = S(n_s,4) = 35$, is
 
 $$g_{\rm coeff} = \sqrt{n_s(n_s+1)/S(n_s,4)} = \sqrt{4/7} = 2/\sqrt{7}, \qquad \varepsilon = \frac{g_{\rm coeff}}{k_0 \times n_\mu} = \frac{2/\sqrt{7}}{16 \times 35} = \frac{1}{280\sqrt{7}} \approx 0.001350.$$
 
@@ -421,11 +421,13 @@ The $m_{\beta\beta} = 0$ prediction holds at all orders: the $d=5$ sector has $d
 
 ## 11. Dynamical Picture: How Sector Geometry Determines Observable Physics
 
-The $\ell=0$ part of the kernel sets the sector scales (mass formula). The $\ell=2$ part generates the derived scale $\varepsilon$ (used for the $\nu_3$ closure) and, at loop level, contributes to boson self-energies. The emergent gauge symmetries arise from the isometry groups of the sector manifolds: $\mathrm{SU}(3)_c$ from the isometry of $\mathbb{CP}^2$; $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the isometry of $\mathbb{CP}^1 \cong S^2$.
+The $\ell=0$ part of the kernel sets the sector scales (mass formula). The $\ell=2$ part generates the derived scale $\varepsilon$ (used for the $\nu_3$ closure) and, at loop level, contributes to boson self-energies. The emergent gauge symmetries arise from the isometry groups of the sector manifolds: $\mathrm{SU}(3)_c$ from the isometry $\mathrm{SU}(3)$ of $\mathbb{CP}^2$, and the electroweak $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the $\mathrm{U}(2) \subset \mathrm{SU}(3)$ holonomy of $\mathbb{CP}^2$ (hypercharge $Y$ from its $T_8$).
 
-Colour confinement emerges from the two-stage observability filter. A mode $(n,d)$ is observable only if: (1) $\Omega_{\log}(n,d) = \ln(S(n,d)/S(n,2)) \lesssim \ln 2$ (Stage-1 dimensional visibility passes); and (2) the mode belongs to the co-fixed-point spectrum of the filtration chain (Stage-2 co-fixed-point condition). The $d=3$ modes at $n=2$ (18.8 MeV) and $n=3$ (47.0 MeV) pass Stage 1 but fail Stage 2 — they are not stable particles, consistent with observation.
+The physical particle spectrum is the co-fixed-point spectrum of the seed-driven filtration chain — the modes that are simultaneous self-consistent solutions of the coupled sector equations (Part 1 §3b; Part 7 §1.1). A mode that is not a co-fixed point does not form a stable particle: the $d=3$ modes at $n=2$ and $n=3$ are such non-fixed points, consistent with the Completeness Theorem and with observation.
 
-Gravity: variation of the master action with respect to $g_{\mu\nu}$ yields the observer's Einstein equations $G_{\mu\nu} = 8\pi G_N T_{\mu\nu}^{\rm eff}$, where $T_{\mu\nu}^{\rm eff} = \int_\Xi T_{\mu\nu}^{\rm Dirac}\,d\mu_\xi$ is the sector-space integral of the matter stress-energy. $G_N$ is a measured constant of spacetime; the sector geometry $\Xi$ is a fixed background and contributes no gravitational degrees of freedom. Full treatment in Technical Volume 4 [11].
+Coordinate containment: whether a force can reach a given particle is fixed by the nesting of their sectors. The sector coordinates form a single chain, $\Xi_2 \subset \Xi_3 \subset \cdots$, so any two sectors share the coordinates of the smaller, and a force couples to a mode on those shared coordinates. The $d=2$ photon's coordinates lie inside every sector, so it reaches every charged mode; a force seated in a larger sector reaches a mode only through whatever coordinates the two share. This fixes which interactions are possible; the coupling structure of those interactions is the subject of Section 12.
+
+Gravity: variation of the master action with respect to $g_{\mu\nu}$ yields the observer's Einstein equations $G_{\mu\nu} = 8\pi G_N T_{\mu\nu}^{\rm eff}$, where $T_{\mu\nu}^{\rm eff} = \int_\Xi T_{\mu\nu}^{\rm Dirac}\,d\mu_\xi$ is the sector-space integral of the matter stress-energy. $G_N$ is a measured constant of spacetime; the sector geometry $\Xi$ is a fixed background and contributes no gravitational degrees of freedom. Full treatment in Part 4 §3.11.2 [11].
 
 ---
 
@@ -482,7 +484,7 @@ IDWT is distinctive in providing: (a) masses for all 15 predicted particles, (b)
 3. **$m_u/m_d = \sqrt{3/14} = 0.46291$ exactly (Theorem S2).** A ratio outside $[0.40, 0.55]$ falsifies the coupling derivation.
 4. **No new stable particles at any energy (Completeness Theorem).** Any new particle discovery falsifies IDWT.
 5. **Normal neutrino hierarchy.** Inverted hierarchy is excluded by mode ordering.
-6. **No stable states at 18.807 MeV or 47.019 MeV.** These $d=3$ modes pass Stage 1 but fail Stage 2; they may appear as broad resonances only.
+6. **No stable states at 18.807 MeV or 47.019 MeV.** These $d=3$ modes ($n=2$, $n=3$) are not co-fixed points, so no stable particle forms; they may appear as broad resonances only.
 
 ---
 
@@ -493,8 +495,8 @@ IDWT is distinctive in providing: (a) masses for all 15 predicted particles, (b)
 3. **$\Delta m^2_{31}$ discrepancy.** Closed by $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (cross-sector constructive interference, exact). Corrected $\Delta m^2_{31} = 2.525\times10^{-3}$ eV$^2$ (PDG 2024: $2.530\times10^{-3}$, $-0.2\%$).
 4. **$g_1$ residual $-1.88\%$.** After 1-loop U(1)$_Y$ running from $m_W$ to $m_Z$. Remaining gap consistent with 2-loop QED threshold matching between IDWT fiber scheme and $\overline{\rm MS}$.
 5. **Top index $n_{\rm top} = 72$.** The product form $\chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$ is structurally natural but the selecting condition — why this Euler product and not another combination — has no derivation. This is the leading open dynamical question of the framework.
-6. **The gravitational input $G_\infty$.** Gravity in IDWT is the back-reaction of $|\Psi_\infty|^2$ on the spacetime metric (Technical Volume 4 [11]); the in-sector Green's function fixes the per-dimension coupling $G_d = G_\infty/[(d-2)S_{d-1}]$, equal to the measured $G_N$ at $d=3$. $G_\infty$ (equivalently $G_N$) is a second dimensional input alongside $m_e$ and is not derived from the sector combinatorics. It is not commensurable with the active-force couplings: gravity in IDWT is the curvature of $M_\infty$ sourced by $|\Psi_\infty|^2$, whereas the active forces are the wave's kernel self-coupling on shared sector coordinates — geometry versus coupling, not two forces of the same kind. There is therefore no ratio between gravity and the active forces to fine-tune, and the dimensionless $G_\infty m_e^2 \approx 2.2\times10^{-44}$ is simply an input, not a prediction. No fine-tuning is hidden anywhere else either: IDWT masses are discrete spectral ranks $S(n,d)$, not action coefficients, so they receive no additive UV renormalisation and the Higgs-style hierarchy problem does not arise (Technical Volume 8 [11]). The genuinely open question is narrower — whether $G_\infty$ could instead be fixed geometrically, reducing the two dimensional inputs to one — which the present construction does not achieve.
-7. **Spectral action EW scale.** The spectral action gives $\sqrt{\operatorname{Tr}(D^2)}=248.3$ GeV, within $+0.82\%$ of $v_{\rm Higgs}$; both are spectral quantities built from the same seeds, so the residual is a spectral-normalisation artefact (Technical Volume 9 [11]), not an independent confirmation. $G_N$ enters the Einstein–Hilbert term as a measured input.
+6. **The gravitational input $G_\infty$.** Gravity in IDWT is the back-reaction of $|\Psi_\infty|^2$ on the spacetime metric (Part 4 §3.12.2 [11]); the in-sector Green's function fixes the per-dimension coupling $G_d = G_\infty/[(d-2)S_{d-1}]$, equal to the measured $G_N$ at $d=3$. $G_\infty$ (equivalently $G_N$) is a second dimensional input alongside $m_e$ and is not derived from the sector combinatorics. It is not commensurable with the active-force couplings: gravity in IDWT is the curvature of $M_\infty$ sourced by $|\Psi_\infty|^2$, whereas the active forces are the wave's kernel self-coupling on shared sector coordinates — geometry versus coupling, not two forces of the same kind. There is therefore no ratio between gravity and the active forces to fine-tune, and the dimensionless $G_\infty m_e^2 \approx 2.2\times10^{-44}$ is simply an input, not a prediction. No fine-tuning is hidden anywhere else either: IDWT masses are discrete spectral ranks $S(n,d)$, not action coefficients, so they receive no additive UV renormalisation and the Higgs-style hierarchy problem does not arise (Part 8 §3a [11]). The genuinely open question is narrower — whether $G_\infty$ could instead be fixed geometrically, reducing the two dimensional inputs to one — which the present construction does not achieve.
+7. **Spectral action EW scale.** The spectral action gives $\sqrt{\operatorname{Tr}(D^2)}=248.3$ GeV, within $+0.82\%$ of $v_{\rm Higgs}$; both are spectral quantities built from the same seeds, so the residual is a spectral-normalisation artefact (Part 9 §T7 [11]), not an independent confirmation. $G_N$ enters the Einstein–Hilbert term as a measured input.
 
 ---
 
