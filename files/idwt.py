@@ -896,11 +896,13 @@ A_wolf = Vcb * S(n_strange, 3)
 # single O(2) section, so the O(2) reading (45 deg) is excluded. The 16<->17
 # link advances one node of the k0=n_s^2=16 beat: phi_link = c1(CP^2)*2pi/k0
 # = 3*2pi/16 = 67.5 deg = the predicted CKM angle gamma (PDG ~65.7 deg; +1.8
-# deg, ~3%). The one-node step f=1/k0 is the residual (lepton-T8 heuristic
-# rigor); f in {1/15,1/16,1/17} keeps J within +-3% of PDG. In J = |Vus Vcb
-# Vub Vcs|*sin gamma, Vus,Vcb are IDWT-derived but the |Vub| magnitude (apex
-# sqrt(rho^2+eta^2)) is PDG input (Part 5), so the IDWT prediction is the
-# PHASE gamma, not the full J. Open: the f=1/k0 step + the |Vub| magnitude.
+# deg, ~3%). The rate c1 = 3 is the exact zero-mode count dim H0(O(1)) on
+# CP^2, gap-protected (STEP 132); the one-node step f=1/k0 is derived from
+# the node-lock structure (adjacent-lock homogeneous transport, Part 10
+# section 4.1); f in {1/15,1/16,1/17} keeps J within +-3% of PDG. In J =
+# |Vus Vcb Vub Vcs|*sin gamma, Vus,Vcb are IDWT-derived but the |Vub|
+# magnitude (apex sqrt(rho^2+eta^2)) is PDG input (Part 5), so the IDWT
+# prediction is the PHASE gamma, not the full J. Open: |Vub| magnitude.
 # |V_td| = 0 at this order.
 # lam here uses the sector-curvature-corrected sin_C.
 lam_W = sin_C
@@ -8202,6 +8204,51 @@ assert _pullB_131 < -5.0                        # normalized reading excluded
 
 
 # =============================================================================
+# STEP 132 -- CP^n O(k) TOWER SPECTRUM + ZERO-MODE-COUNT FLOW COEFFICIENT
+# =============================================================================
+# Closes T8 content gap (i) (Part 10 sections 1.3, 4): the spectral-flow
+# coefficient is the EXACT zero-mode count, not a Weyl-density estimate.
+# (a) TOWER SPECTRUM (exact, SU(n+1) Casimir): on CP^n, the O(k) holomorphic
+#     tower carries reps (l+k)w1 + l w_n with dbar-Laplacian eigenvalues
+#         lambda_l^2 = C2((l+k)w1 + l w_n) - C2(k w1) = l (l + k + n),
+#     verified below by exact Fraction arithmetic for n in {1,2,3,5},
+#     k in 0..3, l in 0..5.  Zero modes: l=0 only = H0(CP^n, O(k)),
+#     dim C(n+k, n); strictly positive gap lambda_1^2 = k + n + 1.
+# (b) FLOW COEFFICIENT = ZERO-MODE COUNT: each O(1) zero mode carries unit
+#     charge under the loop U(1) (the central U(1) of U(n+1) = the O(1)
+#     grading), so the determinant line of the zero-mode bundle -- whose
+#     phase is the CP phase (Part 10 section 1.2) -- winds
+#         dim H0(CP^n, O(1)) = n + 1 = c1(CP^n)
+#     times the base loop.  The gap lambda_1^2 = n+2 keeps the count stable
+#     for any sub-gap perturbation, so the gapped tower contributes zero net
+#     flow.  Reproduces the committed rates: CP^3 -> 4, CP^5 -> 6 (lepton,
+#     difference 2 -> delta_CP = pi + 2 theta13) and CP^2 -> 3 (quark).
+# (c) QUARK PHASE: gamma = c1(CP^2) * 2pi / k0 = 3 * 360/16 = 67.5 deg with
+#     the one-node step f = 1/k0 from adjacent-lock homogeneous transport
+#     (Part 10 section 4.1).  |Vub| apex remains the open input (STEP 6).
+
+def _C2su_132(N, a, b):
+    """SU(N) quadratic Casimir of rep a*w1 + b*w_{N-1} (C2(fund)=(N^2-1)/2N)."""
+    _q = _Fr41(N - 1, N) * (a * a + b * b) + _Fr41(2, N) * a * b
+    return _q / 2 + _Fr41(a + b) * _Fr41(N - 1, 2)
+
+for _n in (1, 2, 3, 5):                         # (a) tower spectrum, exact
+    for _k in range(4):
+        for _l in range(6):
+            _lam2 = _C2su_132(_n + 1, _l + _k, _l) - _C2su_132(_n + 1, _k, 0)
+            assert _lam2 == _Fr41(_l * (_l + _k + _n))
+    assert _C2su_132(_n + 1, 1, 0) == _Fr41((_n + 1)**2 - 1, 2 * (_n + 1))
+
+_zm_132 = {_n: _comb49(_n + 1, _n) for _n in (1, 2, 3, 5)}   # dim H0(O(1))
+assert all(_zm_132[_n] == _n + 1 for _n in _zm_132)          # (b) = c1(CP^n)
+_gap_132 = {_n: _n + 2 for _n in _zm_132}                    # lambda_1^2, k=1
+assert _zm_132[5] - _zm_132[3] == 2             # lepton difference (T8)
+
+_gamma_132 = _zm_132[2] * 360.0 / 16.0          # (c) quark gamma, degrees
+assert abs(_gamma_132 - 67.5) < 1e-12
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11872,6 +11919,23 @@ print(f"  normalized  sin = {_sinB_131:.5f}  pull {_pullB_131:+.1f} sigma"
 print("=> the T2 single-state overlap (STEP 2d) is the wrong object, not a")
 print("failed mechanism; residual = EOM-level derivation of the conditional")
 print("normalization + CP^k write-out + g_22. See Part 3 section 0.9, Part 6.")
+
+
+# =============================================================================
+# STEP 132 -- OUTPUT: CP^n TOWER SPECTRUM + ZERO-MODE FLOW COEFFICIENT
+# =============================================================================
+print("\n=== STEP 132: CP^n O(k) TOWER + ZERO-MODE-COUNT FLOW COEFFICIENT ===")
+print("O(k) tower on CP^n: lambda_l^2 = l(l+k+n) EXACT (SU(n+1) Casimir),")
+print("zero modes = H0(O(k)) dim C(n+k,n), gap lambda_1^2 = k+n+1 > 0.")
+print("Flow coefficient = dim H0(O(1)) = n+1 = c1(CP^n), gap-protected:")
+print("  " + "  ".join(f"CP^{n}: {_zm_132[n]} (gap {_gap_132[n]})"
+                       for n in sorted(_zm_132)))
+print(f"lepton difference c1(CP^5)-c1(CP^3) = {_zm_132[5]-_zm_132[3]}"
+      "  -> delta_CP = pi + 2*theta13 (T8)")
+print(f"quark gamma = c1(CP^2)*2pi/k0 = {_gamma_132} deg (PDG ~65.7)")
+print("closes T8 gap (i): exact zero-mode counting replaces the Weyl-density")
+print("estimate; loop identification folds into gap (vi). f=1/k0 from")
+print("adjacent-lock transport. See Part 10 sections 1.3, 4, 4.1.")
 
 
 # =============================================================================
