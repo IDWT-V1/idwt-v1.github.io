@@ -184,17 +184,18 @@
 
     <p><strong>Example:</strong> The electron has \(n=13\), \(d=6\). So \(S(13,6) = \binom{18}{6} = 18{,}564\). The tau has \(n=23\), \(d=10\). \(S(23,10) = \binom{32}{10} = 64{,}512{,}240\). The \(d=10\) sector shares the same mass scale as the \(d=6\) charged-lepton sector, so \(64{,}512{,}240 \times m_{\text{scale},10} \times (1 + 1/1680) = 1776.84\) MeV — the geometric back-reaction correction from the Gegenbauer critical point closes it to within 1σ of the PDG 2024 value of 1776.93 MeV.</p>
 
-    <p>The mass scales \(m_{\text{scale},d}\) are derived from one another by consistency conditions between sectors. The entire derivation runs from one mass unit and three integer seeds:</p>
+    <p>The mass scales \(m_{\text{scale},d}\) are derived from one another by consistency conditions between sectors. The entire derivation runs from one mass unit, a primitive seed pair, and one Euler-product index:</p>
   </div>
 
   <div class="formula">
     \[ \text{Mass unit:} \quad m_e = 0.511\text{ MeV} \quad \text{(electron mass — the single dimensional anchor)} \]
-    \[ \text{Seeds:} \quad n_d = 1,\; n_u = 3,\; n_{\rm top} = 72 \quad \text{(three integer seeds)} \]
+    \[ \text{Seeds:} \quad n_d = 1,\; n_u = 3 \quad \text{(primitive seed pair; composite } n_s = 4\text{)} \]
+    \[ \text{Top anchor:} \quad n_{\rm top} = 72 = \chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5) \quad \text{(Euler-product index; resonance origin open)} \]
   </div>
 
   <div class="prose">
-    <p>Why \(n_u = 3\)? It equals \(\chi(\mathbb{CP}^2) = N_c = 3\), the Euler characteristic of the colour sector — a topological invariant, not a choice. Their sum \(n_s = n_d + n_u = 4\) satisfies a unique fixed-point condition: two different cross-sector ratios are equal if and only if \(n_s = 4\). No other value works. The third seed, \(n_{\rm top} = 72\), is the top quark's mode index — a product-form site (\(72 = N_c \times n_s \times N_f\) as a value identity) whose origin is open — it is taken as a seed input.</p>
-    <p>From this mass unit and these three seeds, IDWT derives all six sector mass scales and all fifteen Standard Model particle masses. The derivation is closed — no additional parameters enter.</p>
+    <p>Why \(n_u = 3\)? It equals \(\chi(\mathbb{CP}^2) = N_c = 3\), the Euler characteristic of the colour sector — a topological invariant, not a choice. Their sum \(n_s = n_d + n_u = 4\) satisfies a unique fixed-point condition: two different cross-sector ratios are equal if and only if \(n_s = 4\). No other value works. The top index \(n_{\rm top} = 72\) is the top quark's mode index — an Euler-product site \(72 = \chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5) = 3\cdot4\cdot6\) (structurally distinct from the primitive seeds; why the top occupies this mode is the leading open input).</p>
+    <p>From this mass unit and these integer inputs, IDWT derives all six sector mass scales and all fifteen Standard Model particle masses. The derivation is closed — no additional parameters enter.</p>
   </div>
 
 </section>
@@ -278,7 +279,7 @@
 
   <h2>What Comes Out</h2>
   <div class="prose">
-    <p>From the three integer seeds \(\{n_d=1,\,n_u=3,\,n_{\rm top}=72\}\) and \(m_e = 0.511\) MeV:</p>
+    <p>From the seed pair \(\{n_d=1,\,n_u=3\}\), the Euler-product index \(n_{\rm top}=72\), and \(m_e = 0.511\) MeV:</p>
     <ul>
       <li><strong>All 15 particle masses</strong> — electron, muon, tau, three neutrinos, six quarks, W, Z, Higgs — reproduced at tree level with no fitted parameters. Thirteen of the fifteen are within 1% of PDG 2024 values; the charm quark overshoots by +0.93% (+2.6σ) and the top by +2.20% (+13σ), both open residues under active investigation.</li>
       <li><strong>The number of quark colors</strong> \(N_c = 3\) is derived, not assumed. It equals the Euler characteristic \(\chi(\mathbb{CP}^2) = 3\).</li>
