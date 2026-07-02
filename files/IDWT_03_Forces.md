@@ -704,7 +704,7 @@ The $d=5$ neutrino sector ($S^5$) is the total space of this fibration. The base
 
 | Fibration | Total space | Base | Fibre | Vertex |
 |-----------|-------------|------|-------|--------|
-| $S^1 \to S^3 \to S^2$ | $d=3$ (down quarks) | $d=2$ (gauge / $\mathbb{CP}^1$) | $S^1$ | EM: $\gamma$ couples $d=3 \leftrightarrow d=2$ |
+| $S^1 \to S^3 \to S^2$ | $d=3$ (down quarks) | $d=2$ (boson / $\mathbb{CP}^1$) | $S^1$ | EM: $\gamma$ couples $d=3 \leftrightarrow d=2$ |
 | $S^1 \to S^5 \to \mathbb{CP}^2$ | $d=5$ (neutrinos) | $d=4$ (up quarks) | $S^1$ | Weak: $W$ couples $d=5 \leftrightarrow d=4$ along $S^1$ fibre |
 
 Both are instances of the complex Hopf fibration $S^1 \to S^{2n+1} \to \mathbb{CP}^n$ at $n=1$ and $n=2$. The same $S^1$ fibre appears in both; the difference is which fermion sector sits at the base.

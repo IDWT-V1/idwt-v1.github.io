@@ -383,7 +383,7 @@ $^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix $C$ exists
 - **$G_\infty$ is a second dimensional input:** The single open item is the absolute gravitational scale $G_\infty$ (hence $G_N = G_\infty/(4\pi)$), which is not derived from the sector combinatorics. Fixing it would require an independent geometric determination — a problem analogous to deriving the overall mass unit from the sector structure (currently $m_e$ is the unit input).
 
 **Not open (reclassified):**
-- $\sin^2\theta_W$ (+0.37%): Within EW loop corrections. Not a structural failure.
+- $\sin^2\theta_W$ (+0.37%): A genuine small structural residual — IDWT produces one geometric value and does not run couplings; not attributed to EW loop corrections the framework does not compute. Not a structural failure.
 - $g_1$ (−1.88%): Traces entirely to $\sin^2\theta_W$ structural gap. 2-loop running computed and closes 0.0014 pp; residual is structural.
 - $m_{\nu_3}$ shortfall: Resolved by $\delta_{\nu_3} = 1/35$ (Part 2 §9d).
 - $\Lambda_{\rm QCD}$ (−9% label): Against ill-defined target. IDWT value 282 MeV matches $3f_\pi$ within +2.1%.

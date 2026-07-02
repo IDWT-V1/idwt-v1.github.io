@@ -121,7 +121,7 @@ P8 as a postulate remains 🔶 until the EOM derives co-fixed-point stability. T
 | 95 | Higgs | 3 | $n_u+n_c+n_{\rm top}$: sum of up-type, max constituent depth 2 |
 | 81 | $Z$ | 2 | $g$-rule on $W$ (depth 1) |
 
-The gauge bosons sit at depths 1–3, built from the product-form seed via the $g$-rule chain and the up-type sum. Tau (depth 3) and Higgs (depth 3) are co-deepest; the top quark is a depth-0 seed. (A former per-quark $(1-\varepsilon)^k$ up-type correction has been removed — its exponent was a fit; the up-type masses now carry the derived confinement-binding correction of Part 2 §11.9, which brings charm and top within ±1σ of PDG. See Part 2 §11.)
+The bosons sit at depths 1–3, built from the product-form seed via the $g$-rule chain and the up-type sum. Tau (depth 3) and Higgs (depth 3) are co-deepest; the top quark is a depth-0 seed. (A former per-quark $(1-\varepsilon)^k$ up-type correction has been removed — its exponent was a fit; the up-type masses now carry the derived confinement-binding correction of Part 2 §11.9, which brings charm and top within ±1σ of PDG. See Part 2 §11.)
 
 ⭐ **Generation tower as a finitely presented semigroup.** The generation tower is the action of a finitely presented semigroup on the binomial lattice of pairs $(n,d)$. The **generators** are three families: hockey-stick operators $H_{d\to d\pm1}$ (the two Pascal directions $S(n,d)=S(n,d-1)+S(n-1,d)$), additive eigenmode operators $A$ (the selection rule $n_{\rm lepton}=n_{\rm neutrino}+n_{\rm quark}$), and $g$-rule operators $G_d$ for bosons. The **relations** are the full hockey-stick identities, distributive lattice commutativity, spectral independence (the occupied $S$-values form a sum-free set), and co-fixed-point closure. The **seeds** $\{(1,3),(3,4),(72,4)\}$ are the unique minimal generators, with $(4,3)$ derived at depth 1. The **physical spectrum** $\Sigma_{\rm pairs}$ is the minimal closed orbit of the seeds under this semigroup. The derivation depth of each mode (table above) is the minimal word length in the semigroup from the seeds. This framing makes the generation tower's rigidity explicit: $\Sigma_{\rm pairs}$ is not a collection of algebraic choices but the unique closed orbit of three seed elements under three families of forced operations.
 
@@ -155,7 +155,7 @@ This is not a separate postulate; it follows from the fact that our measurements
 
 The assertion "we are at $d=3$" has not yet been justified — it has only been named. It is not a postulate. It follows from the sector structure of stable matter.
 
-The lightest stable composite objects in IDWT are colour-singlet baryons: the proton and neutron, built from $d=3$ (down-type) and $d=4$ (up-type) quarks. Colour confinement forces any gauge-singlet composite to project out its $d=4$ $\mathbb{CP}^2$ index entirely. The Euler characteristic $\chi(\mathbb{CP}^2) = 3$ gives three colour charges ($N_c = 3$); a colour singlet is the unique combination with zero net colour charge — which means the $d=4$ $\mathbb{CP}^2$ index cancels completely from the composite. What remains is a pure $d=3$ object: a baryon is a $d=3$ excitation of $M_\infty$ with no residual $d=4$ coordinate dependence.
+The lightest stable composite objects in IDWT are colour-singlet baryons: the proton and neutron, built from $d=3$ (down-type) and $d=4$ (up-type) quarks. Colour confinement forces any colour-singlet composite to project out its $d=4$ $\mathbb{CP}^2$ index entirely. The Euler characteristic $\chi(\mathbb{CP}^2) = 3$ gives three colour charges ($N_c = 3$); a colour singlet is the unique combination with zero net colour charge — which means the $d=4$ $\mathbb{CP}^2$ index cancels completely from the composite. What remains is a pure $d=3$ object: a baryon is a $d=3$ excitation of $M_\infty$ with no residual $d=4$ coordinate dependence.
 
 All chemistry — every atom, every molecule — is built from such nuclei. Every macroscopic measuring device, every observer, every experimental apparatus that can exist within this theory is an assembly of $d=3$ nuclear matter. An observer constructed from $d=3$ objects measures physics at the $d=3$ coordinate level by construction: their instruments have no coordinate support in $d=4$, $d=5$, $d=6$, or $d=10$, so the physics they access is the restriction of $\Psi_\infty$ to $d=3$. No measurement protocol built from $d=3$ matter can return coordinates outside $d=3$.
 
@@ -277,7 +277,7 @@ The top quark mode index encodes all three quantum numbers of QCD simultaneously
 
 **Spin structure alternation.** $\mathbb{CP}^n$ admits a spin structure iff $n$ is odd ($c_1(\mathbb{CP}^n) = n+1$ must be even):
 
-- $d=2$ ($\mathbb{CP}^1$): **spin** — gauge sector (photon has exact spin-1)
+- $d=2$ ($\mathbb{CP}^1$): **spin** — boson sector (photon has exact spin-1)
 - $d=4$ ($\mathbb{CP}^2$): **spinᶜ** — quarks must carry a $U(1)$ factor = colour hypercharge ✓
 - $d=6$ ($\mathbb{CP}^3$): **spin** — leptons have genuine spin structure (no forced $U(1)$ coupling) ✓
 - $d=10$ ($\mathbb{CP}^5$): **spin** — tau sector has genuine spin structure ✓
@@ -389,7 +389,7 @@ For the IDWT sectors with $k_0 = n_s^2 = 16$ this evaluates to:
 | Route | Condition | Result |
 |---|---|---|
 | **Gegenbauer (algebra)** | **$b_{k_0}(d) = 1/2 \Leftrightarrow d = 2(n_s+1)$** | **$d = 10$** |
-| Hypercharge (gauge) | $g_{10,10} = g_{6,6} = 1/n_s = 1/4$ | $d = 10$ |
+| Hypercharge | $g_{10,10} = g_{6,6} = 1/n_s = 1/4$ | $d = 10$ |
 
 Two routes, one answer. The IDWT framework is over-determined on the terminal sector.
 
@@ -423,9 +423,9 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 † The absolute $m_Z$ prediction is $+0.05\%$ (42 MeV) above the measured $91{,}188.0 \pm 2.0$ MeV — a small but genuine overshoot ($+21\sigma$ against that error). It is a sharp prediction: $m_Z = m_{\rm scale,2}\,S(81,2)$ with $m_{\rm scale,2} = m_e\sqrt{g_{22}/g_{66}}$ an exact multiple of $m_e$, so there is no scale uncertainty to absorb the residual. The framework's clean, scale-independent comparison is the ratio $m_Z/m_W = S(81,2)/S(76,2) = 3321/2926 = 1.13500$ — a pure combinatorial identity (⭐) — which matches PDG ($1.13461 \pm 0.00019$) to 0.03%, $\approx 2\sigma$ (the ratio error dominated by $m_W$, $\pm13$ MeV).
 
 **Quantum properties.**
-- **Electromagnetism:** $U(1)$ Hopf fiber holonomy → gauge field $A_\mu$; photon is the connection 1-form.
+- **Electromagnetism:** $U(1)$ Hopf fiber holonomy → connection 1-form $A_\mu$; the photon is that connection.
 - **Weak isospin:** $SU(2)_L$ acts only on holomorphic half of $d=2$ spinor → left-handedness of W coupling.
-- **$\sin^2\theta_W = 1 - (S(76,2)/S(81,2))^2 = 0.2237$** (PDG: 0.2229, +0.37% — within 1-loop EW corrections).
+- **$\sin^2\theta_W = 1 - (S(76,2)/S(81,2))^2 = 0.2237$** (PDG on-shell: 0.2229, +0.37% — a genuine small structural residual; IDWT gives one geometric value at the $d=2$ sector scale and does not run couplings).
 - **EW scale:** $\sqrt{\mathrm{Tr}(D^2)} \approx 248.3$ GeV is the spectral RMS of $|D|$ across all sectors. IDWT does not use spontaneous symmetry breaking; the Higgs is mode $n=95$, not a condensate. The EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3$ GeV from the IDWT-derived $G_F$ (§0, Part 5 §3c).
 - **Coupling filter:** Orientation/phase alignment. The photon couples only to currents aligned with its polarization vector $\varepsilon_\mu$; perpendicular currents receive zero coupling, not suppression. This is the $U(1)$ geometry of $\mathbb{CP}^1$ expressing itself as a coupling structure — polarization is not a label on the photon but the geometry's stamp on what the photon can do.
 
@@ -899,7 +899,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Leptonic CP phase $\delta_{CP}$ | $\delta_{CP} = \pi + 2\theta_{13} = 197.11^\circ$, $J = -0.00981$ via APS spectral flow $\Delta c_1 = c_1(\mathbb{CP}^3) - c_1(\mathbb{CP}^5) = -2$ (T8 🔶, Part 10) | 🔶 |
 | Dirac neutrinos | $d=5$ has $d \bmod 8 = 5$: Majorana forbidden → 0νββ rate = 0 predicted | ✅ |
 | Tau hypercharges | $Y(\tau)=-1$ from anomaly cancellation with $N_c=3$ and $g_{66}=1/n_s$ (Part 3 §8, §13) | ✅ |
-| Confinement | Colour-neutrality condition $|\vec{N}|=0$ from $\mathbb{CP}^2$ isometry geometry; $\lambda_c$ is an open item; full QCD confinement mechanism (flux tubes, asymptotic freedom) not derived | 🔵 |
+| Confinement | Colour-neutrality selection rule $|\vec{N}|=0$ from $\mathbb{CP}^2$ isometry geometry (Route A superselection); derived scale $\lambda_c$ matches $\sqrt{\sigma}$/Regge/$T_c$. No propagating colour field, so flux tubes / asymptotic freedom / a fundamental string tension are not IDWT features — absent by construction, not a gap | 🔵 |
 | Cosmological constant | $\Lambda_{\rm eff}$ from unoccupied-mode vacuum energy; suppression mechanism not derived | 🔶 |
 | Dark matter | Spectrum is complete at 15 particles; IDWT offers no dark matter candidate at present | ❓ |
 

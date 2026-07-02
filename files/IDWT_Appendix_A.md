@@ -128,7 +128,7 @@ The table below records both derivation chains side by side. The $d$-source colu
 | tau | $n_{\nu_3} + n_{\rm down}$ | 23 | 10 | $d=10$ is the Gegenbauer-critical sector; tau defined as the $d=10$ family; $b_{k_0}=\tfrac12$ at $d=2(N_c+2)=10$ (Part 1 T5) |
 | top | $S(n_e,2) - n_{\rm charm} + 1$ | $72 = N_c\cdot n_s\cdot N_f$ | 4 | up-type quark family (same sector as up and charm) |
 | photon | $n=0$ universal $S(0,d)=0$ | 0 | 2 | $d=2$ is the EM sector $\mathbb{CP}^1$; $\mathrm{U}(1)_{\rm EM}$ isometry (Part 1 §3) |
-| W | $g(d_\nu, n_{\rm top}) = d_\nu+n_{\rm top}-1$ | 76 | 2 | $g$-rule produces gauge-sector modes in $d=2$ (Part 3 §11) |
+| W | $g(d_\nu, n_{\rm top}) = d_\nu+n_{\rm top}-1$ | 76 | 2 | $g$-rule produces boson-sector modes in $d=2$ (Part 3 §11) |
 | Z | $g(d_\ell, n_W) = d_\ell+n_W-1$ | 81 | 2 | same |
 | Higgs | $n_Z + n_{\nu_2} - 1$ | $95 = n_{\rm up}+n_{\rm charm}+n_{\rm top}$ | 2 | same |
 
