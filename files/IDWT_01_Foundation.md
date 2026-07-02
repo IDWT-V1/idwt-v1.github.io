@@ -823,7 +823,7 @@ $$n_H = n_u + n_c + n_{\rm top} = 95$$
 
 3. **Seed uniqueness.** The primitive seeds are $n_d = 1$ and $n_u = 3$. $n_s = 4 = 1+3$ is the unique positive integer solving $S(n_s, 4) = n_\mu$, i.e.\ $\binom{n_s+3}{4} = 35$ — exactly one solution — confirming $n_s = 4$.
 
-⭐ **Tropical geometry remark.** The tropical Grassmannian $\mathrm{Trop}\,\mathrm{Gr}(2,n)$ parametrises ultrametrics on $n$ points and, for $n=4$, is a 1-dimensional fan equivalent to the space of phylogenetic trees on 4 labeled leaves. This space has exactly **3 maximal cones** — one for each trivalent tree topology on 4 leaves. The number 3 is the number of quark/lepton generations. $n_s = 4$ is thus the smallest value of $n$ for which $\mathrm{Trop}\,\mathrm{Gr}(2,n)$ is a 1-dimensional trivalent fan with exactly 3 maximal regions; for $n < 4$ the fan is either trivial or has fewer regions. This is an independent combinatorial coincidence consistent with the generation structure, not a separate derivation of it.
+**Tropical geometry remark (numerical coincidence, not a derivation or evidence).** The tropical Grassmannian $\mathrm{Trop}\,\mathrm{Gr}(2,n)$ parametrises ultrametrics on $n$ points and, for $n=4$, is a 1-dimensional fan equivalent to the space of phylogenetic trees on 4 labeled leaves, with exactly **3 maximal cones** — one per trivalent tree topology on 4 leaves, matching the 3 generations. This is an independent combinatorial coincidence consistent with the generation structure; it is not a derivation and carries no derivational weight.
 
 **Proof sketch.**
 
