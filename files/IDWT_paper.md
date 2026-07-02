@@ -213,7 +213,7 @@ $n_e = k_0 - n_u = 13$; $\;\; n_\tau = n_c + n_u = 23$; $\;\; n_H = n_Z + 2(n_s+
 
 [Open] The Higgs mode index $n_H = n_u + n_c + n_t = 95$ satisfies two independent cross-sector closure relations and is numerically verified, but the dynamical derivation of why scalar excitation indices close under this sum is an open item (Technical Volume 2 §6).
 
-**Spectral independence:** The 14 occupied $S$-values $\{1, 15, 20, 8855, 2002, 2926, 3321, 4560, 11628, 18564, 65780, 1215450, 3838380, 64512240\}$ form a Sidon-like set: no three satisfy $S_i + S_j = S_k$ (all 91 pairs verified). Any perturbation of a mode index breaking this property would immediately produce an inconsistency.
+**Spectral independence:** The 14 occupied $S$-values $\{1$, $15$, $20$, $8855$, $2002$, $2926$, $3321$, $4560$, $11628$, $18564$, $65780$, $1215450$, $3838380$, $64512240\}$ form a Sidon-like set: no three satisfy $S_i + S_j = S_k$ (all 91 pairs verified). Any perturbation of a mode index breaking this property would immediately produce an inconsistency.
 
 ---
 
