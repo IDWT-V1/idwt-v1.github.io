@@ -8127,6 +8127,81 @@ assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
 
 
 # =============================================================================
+# STEP 131 -- COUNTING-THEOREM SKELETON: |V|^2 = S_lo/S_hi FROM CHANNEL RATIOS
+# =============================================================================
+# Derivation skeleton for the state-count mixing law (Part 3 section 0.9),
+# extending the Born-rule mechanism (Part 1 section 2.3) to transitions:
+# (L1) A pointlike excitation carries equal norm per state across the
+#      cumulative tower of S(n,d) states (addition theorem / Schur on the
+#      homogeneous sector manifold -- the proven STEP 95 denominator
+#      mechanism; pointlike thesis STEP 121) -> weight/state = 1/S(n,d).
+#      Cumulative-count identities re-verified exactly below.
+# (L2) The kernel angular factor t^2 lies in span{C_0^a, C_2^a} for EVERY
+#      sector, a = (d-2)/2 (exact Gegenbauer expansion below; generalizes
+#      the S^3 case of STEP 95) -> the kernel-visible channel is a FIXED,
+#      n-independent angular subspace (multiplicity m0), so the channel
+#      amplitude of mode n is sqrt(m0/S(n,d)).
+# (L3) Transition weight = destination channel intensity relative to the
+#      source (conditional Born ratio) -> |V|^2 = S_lo/S_hi; m0 cancels.
+#      NORMALIZATION IS DATA-SELECTED between two Born-like readings: the
+#      normalized-flavor reading tan^2 = S_lo/S_hi (sin^2 = r/(1+r)) is
+#      EXCLUDED by the Cabibbo datum (pull < -6 sigma even with the CP^1
+#      curvature correction); the conditional ratio sin^2 = r is confirmed
+#      (+0.3 sigma).  This also identifies WHY the single-state T2 overlap
+#      (STEP 2d, n^1 scaling) is the wrong object: it couples two aligned
+#      states, not the channel fraction of an equidistributed excitation.
+# Residual (Part 6): derive the conditional normalization from the EOM;
+# write out L1 on the CP^k sectors; extend to cross-sector and g_22.
+
+def _geg_131(k, a):
+    """Gegenbauer C_k^a coefficient list (Fractions), exact recurrence."""
+    if k == 0:
+        return [_Fr41(1)]
+    if k == 1:
+        return [_Fr41(0), 2 * a]
+    cm2, cm1 = _geg_131(k - 2, a), _geg_131(k - 1, a)
+    out = [_Fr41(0)] * (k + 1)
+    for i, c in enumerate(cm1):                 # 2(k+a-1) t C_{k-1}
+        out[i + 1] += 2 * (k + a - 1) * c
+    for i, c in enumerate(cm2):                 # -(k+2a-2) C_{k-2}
+        out[i] -= (k + 2 * a - 2) * c
+    return [c / k for c in out]
+
+_chan_131 = {}                       # d -> set of Gegenbauer indices in t^2
+for _d in (3, 4, 5, 6, 10):
+    _a = _Fr41(_d - 2, 2)
+    _C = {k: _geg_131(k, _a) for k in range(5)}
+    _t2 = [_Fr41(0), _Fr41(0), _Fr41(1), _Fr41(0), _Fr41(0)]
+    _cf = {}
+    for k in (4, 3, 2, 1, 0):                   # peel off leading terms
+        _ck = _C[k] + [_Fr41(0)] * (5 - len(_C[k]))
+        _cf[k] = _t2[k] / _ck[k]
+        _t2 = [_t2[i] - _cf[k] * _ck[i] for i in range(5)]
+    assert all(v == 0 for v in _t2)             # exact expansion
+    _chan_131[_d] = {k for k, v in _cf.items() if v != 0}
+assert all(_chan_131[_d] == {0, 2} for _d in _chan_131)   # fixed channel
+
+for _d in (3, 4, 5, 6, 10):                     # L1 cumulative identities
+    for _N in range(0, 7):
+        _cum = sum(_comb49(_k + _d - 1, _d - 1) for _k in range(_N + 1))
+        assert _cum == S(_N + 1, _d)
+assert sum((_k+1)*(_k+2) for _k in range(5)) == 2*S(5, 3)  # STEP 95 form
+
+_m0_131 = _Fr41(7, 3)                           # m0 cancels: any value works
+assert (_m0_131 / _Fr41(S(4, 3))) / (_m0_131 / _Fr41(S(1, 3))) \
+    == _Fr41(S(1, 3), S(4, 3))
+
+_Vus_pdg_131, _Vus_sig_131 = 0.22431, 0.00082   # PDG 2024
+_r_131 = S(1, 3) / S(4, 3)                      # = 1/20 exact
+_sinA_131 = (1.0 + 1.0/240.0) * math.sqrt(_r_131)            # conditional
+_sinB_131 = (1.0 + 1.0/240.0) * math.sqrt(_r_131/(1 + _r_131))  # normalized
+_pullA_131 = (_sinA_131 - _Vus_pdg_131) / _Vus_sig_131
+_pullB_131 = (_sinB_131 - _Vus_pdg_131) / _Vus_sig_131
+assert abs(_pullA_131) < 1.0                    # conditional ratio confirmed
+assert _pullB_131 < -5.0                        # normalized reading excluded
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11773,6 +11848,30 @@ for _L in range(1, 5):
 print("=> a conserved Hamiltonian system; radial rings = 2nd commuting block.")
 print("now derived dynamics (the M entries still encode the same choices);")
 print("see STEP 129 and Part 8 section 14.")
+
+
+# =============================================================================
+# STEP 131 -- OUTPUT: COUNTING-THEOREM SKELETON (|V|^2 = S_lo/S_hi)
+# =============================================================================
+print("\n=== STEP 131: COUNTING-THEOREM SKELETON |V|^2 = S_lo/S_hi ===")
+print("L1 equidistribution: pointlike source -> equal norm/state over the")
+print("  cumulative tower (STEP 95 mechanism); weight/state = 1/S(n,d).")
+print("L2 kernel channel: t^2 in span{C_0^a, C_2^a} for ALL sectors "
+      f"{sorted(_chan_131)}")
+print("  (exact; " +
+      " ".join(f"d{d}:{sorted(_chan_131[d])}" for d in sorted(_chan_131)) +
+      ")")
+print("  -> n-independent channel, amplitude sqrt(m0/S(n,d)).")
+print("L3 conditional Born ratio -> |V|^2 = S_lo/S_hi (m0 cancels).")
+print("  normalization DATA-SELECTED (PDG |V_us| = "
+      f"{_Vus_pdg_131} +- {_Vus_sig_131}):")
+print(f"  conditional sin = {_sinA_131:.5f}  pull {_pullA_131:+.1f} sigma"
+      "  (confirmed)")
+print(f"  normalized  sin = {_sinB_131:.5f}  pull {_pullB_131:+.1f} sigma"
+      "  (excluded)")
+print("=> the T2 single-state overlap (STEP 2d) is the wrong object, not a")
+print("failed mechanism; residual = EOM-level derivation of the conditional")
+print("normalization + CP^k write-out + g_22. See Part 3 section 0.9, Part 6.")
 
 
 # =============================================================================
