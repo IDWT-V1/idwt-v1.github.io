@@ -388,7 +388,7 @@ The $\Sigma$(uds) has identical quark content to the $\Lambda$, so the formula g
 
 ## 9. Coupling Constants — Complete Derived Set
 
-The coupling matrix $G$ has rank 1: $G_{dd'} = v_d\times v_{d'}$ where $v_d = \sqrt{g_{dd}}$. All cross-sector couplings follow from the six sector self-couplings, which reduce to five distinct values ($g_{66} = g_{10,10}$). $g_{33}$ and $g_{44}$ from seed pair $\{n_u=3, n_s=4\}$ ($n_u=3$ grounded by $\chi(\mathbb{CP}^2)=N_c=3$, T15); $g_{66}$ and $g_{10,10}$ from $\mathbb{CP}^3$ complex geometry (§9c); $g_{22}$ from the cross-sector back-reaction fixed-point (§10); $g_{55} = 96/g_{22}$ from Hopf universality. All six sector self-couplings are derived from $m_e$ and seeds.
+The coupling matrix $G$ has rank 1: $G_{dd'} = v_d\times v_{d'}$ where $v_d = \sqrt{g_{dd}}$. All cross-sector couplings follow from the six sector self-couplings, which reduce to five distinct values ($g_{66} = g_{10,10}$). $g_{33}$ and $g_{44}$ from the seeds $\{n_d=1, n_u=3\}$ (via the composite $n_s = n_d+n_u = 4$; $n_u=3$ grounded by $\chi(\mathbb{CP}^2)=N_c=3$, T15); $g_{66}$ and $g_{10,10}$ from $\mathbb{CP}^3$ complex geometry (§9c); $g_{22}$ from the cross-sector back-reaction fixed-point (§10); $g_{55} = 96/g_{22}$ from Hopf universality. All six sector self-couplings are derived from $m_e$ and seeds.
 
 ---
 

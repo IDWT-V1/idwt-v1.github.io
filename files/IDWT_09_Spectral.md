@@ -208,7 +208,7 @@ Jacobi couplings at $k_0=16$ (all sectors in $D$ must have $b_{k_0}\geq1/2$, by 
 
 $$\boxed{\frac{n_s(n_s+1)}{S(n_s,4)} = \frac{n_u(n_u+1)}{S(n_u,5)} = \frac{4}{7} \approx 0.57143, \qquad n_u = n_s - 1 \;\text{[T15: consecutiveness]}}$$
 
-simultaneously in the $d=3$ sector (left) and the $d=4$ sector (right). The eigenvalue $4/7$ is the kernel algebraic fixed-point at resonance site $k_0=n_s^2=16$. T4 serves as a uniqueness certificate for the seed pair: $n_u = 3$ (seed, $\chi(\mathbb{CP}^2) = N_c = 3$) and $n_s = 1 + 3 = 4$ (confirmed by this equation).
+simultaneously in the $d=3$ sector (left) and the $d=4$ sector (right). The eigenvalue $4/7$ is the kernel algebraic fixed-point at resonance site $k_0=n_s^2=16$. T4 serves as a uniqueness certificate for the seed $n_u = 3$ ($\chi(\mathbb{CP}^2) = N_c = 3$) and the composite $n_s = 1 + 3 = 4$ (confirmed by this equation).
 
 **Proof by exhaustion.** $n_s=4$ is the only integer satisfying the coincidence; all others diverge. $\square$
 

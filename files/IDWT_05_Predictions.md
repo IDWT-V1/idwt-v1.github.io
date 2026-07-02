@@ -6,7 +6,7 @@
 
 Within each sector, $S(n,d)/S(m,d)$ is a ratio of binomial coefficients — fixed the moment the mode indices are assigned. The eigenmode selection rule identities (muon $=$ charm $+\nu_2$, etc.) are consequences of the Pascal recursion $S(n,d) = S(n,d{-}1) + S(n{-}1,d)$, not separate postulates.
 
-The absolute scale for the $d=3$ sector is fixed by the kernel vacuum fixed-point: $m_{\rm scale,3} = m_e \times \sqrt{g_{33}/g_{66}} = 4.702$ MeV, with $g_{33} = 8\sqrt{7}$ and $g_{66} = 1/4$ derived from seed pair $\{n_u=3,\,n_s=4\}$ and anomaly cancellation respectively. Full derivation in Part 2 §10.
+The absolute scale for the $d=3$ sector is fixed by the kernel vacuum fixed-point: $m_{\rm scale,3} = m_e \times \sqrt{g_{33}/g_{66}} = 4.702$ MeV, with $g_{33} = 8\sqrt{7}$ and $g_{66} = 1/4$ derived from the seeds $\{n_d=1,\,n_u=3\}$ (via $n_s = n_d+n_u = 4$) and anomaly cancellation respectively. Full derivation in Part 2 §10.
 
 **Strange/down ratio = 20 exactly ⭐**
 
@@ -173,7 +173,7 @@ Using $m_e = 0.511$ MeV as the sole unit reference:
 | Z | 91,230 | 91,188 | +0.047% | — |
 | H | 125,266 | 125,200 | +0.053% | — |
 
-† **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: $1776.93 \pm 0.09$ MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/($n_u \times n_s^2 \times S(n_s,4)$) is the geometric back-reaction resummation of the $d=6\to d=10$ coupling. Physical mechanism: (1) $g_{6,10}/(k_0\times n_{\rm mu}) = 1/2240$ is the leading back-reaction from the isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/4$; (2) the correction feeds back via the $d=10$ self-coupling $g_{10,10}=1/n_s$, giving resummation factor $n_s/(n_s-1) = n_s/n_u$ (since $n_u = n_s-1$ by T15). Combined: $1/2240 \times 4/3 = 1/1680$. No inputs beyond $m_e$ and seed pair $\{n_u=3, n_s=4\}$.
+† **$m_\tau = m_e \times S(23,10)/S(13,6) \times (1 + 1/1680) = 1776.84$ MeV (PDG 2024: $1776.93 \pm 0.09$ MeV; −1.0σ, inside 1σ).** The correction 1/1680 = 1/($n_u \times n_s^2 \times S(n_s,4)$) is the geometric back-reaction resummation of the $d=6\to d=10$ coupling. Physical mechanism: (1) $g_{6,10}/(k_0\times n_{\rm mu}) = 1/2240$ is the leading back-reaction from the isotropic coupling $g_{6,6}=g_{6,10}=g_{10,10}=1/4$; (2) the correction feeds back via the $d=10$ self-coupling $g_{10,10}=1/n_s$, giving resummation factor $n_s/(n_s-1) = n_s/n_u$ (since $n_u = n_s-1$ by T15). Combined: $1/2240 \times 4/3 = 1/1680$. No inputs beyond $m_e$ and the seeds $\{n_d=1, n_u=3\}$.
 
 ### 2a. Is the spectrum a fit? — null-model significance 🔵
 
