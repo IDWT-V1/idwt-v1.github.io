@@ -3,7 +3,7 @@ title: "A Combinatorial-Geometric Derivation of the Standard Model Spectrum"
 author:
   - name: Fedge No
     email: fedge-no@hotmail.com
-date: 18 June 2026
+date: 2 July 2026
 keywords:
   - Standard Model mass spectrum
   - simplex number
@@ -13,7 +13,7 @@ keywords:
   - hockey-stick identity
   - Dirac spectral counting
 msc: "81V05, 58J50, 53C27, 11B65"
-doi: "10.5281/zenodo.20784573"
+doi: "10.5281/zenodo.21135111"
 header-includes:
   - |
     \let\oldabstract\abstract
@@ -25,7 +25,7 @@ header-includes:
       \par\medskip
       \noindent\textbf{MSC 2020:} 81V05 $\cdot$ 58J50 $\cdot$ 53C27 $\cdot$ 11B65\par
       \noindent\textbf{Keywords:} Standard Model mass spectrum; simplex number; sector manifolds; neutrino mass prediction; coupling filter; hockey-stick identity; Dirac spectral counting\par
-      \noindent\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.20784573}{10.5281/zenodo.20784573}\par
+      \noindent\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.21135111}{10.5281/zenodo.21135111}\par
     }
 abstract: |
   We present Infinite-Dimensional Wave Theory (IDWT), a framework that provides a combinatorial derivation of the complete Standard Model mass spectrum, to high accuracy, from three integer seeds $\{n_d = 1,\, n_u = 3,\, n_{\rm top} = 72\}$ — whose composite $n_s = n_d + n_u = 4$ drives the fermion tower — together with a single dimensional reference $m_e$ (the electron mass, used only to convert dimensionless ratios to MeV). The mass of each particle is
@@ -283,7 +283,7 @@ PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \
 
 ## 6. Mass Predictions
 
-**Table 1.** All masses from $m_e$ and $n_s = 4$ alone (PDG 2024). Up-type quark masses are quoted **bare** (confinement-binding correction in §7.1 brings all quarks within ±1σ PDG). The $\tau$ carries the geometric back-reaction; the $b$ quark is a geometric-mean beat.
+**Table 1.** All masses from $m_e$ and $n_s = 4$ alone (PDG 2024). Up-type quark masses are quoted **bare** (confinement-binding correction in §7.1 brings all quarks within $\pm 1\sigma$ PDG). The $\tau$ carries the geometric back-reaction; the $b$ quark is a geometric-mean beat.
 
 | Particle | $d$ | $n$ | $S(n,d)$ | IDWT (MeV) | PDG (MeV) | Error |
 |---|---|---|---|---|---|---|
