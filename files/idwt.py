@@ -8208,17 +8208,20 @@ assert _pullB_131 < -5.0                        # normalized reading excluded
 # =============================================================================
 # Closes T8 content gap (i) (Part 10 sections 1.3, 4): the spectral-flow
 # coefficient is the EXACT zero-mode count, not a Weyl-density estimate.
-# (a) TOWER SPECTRUM (exact, SU(n+1) Casimir): on CP^n, the O(k) holomorphic
-#     tower carries reps (l+k)w1 + l w_n with dbar-Laplacian eigenvalues
+# (a) TOWER SPECTRUM (exact, SU(n+1) isometry Casimir): the charge-k mode
+#     tower on CP^n -- the sector's own modes, reps (l+k)w1 + l w_n --
+#     has eigenvalues
 #         lambda_l^2 = C2((l+k)w1 + l w_n) - C2(k w1) = l (l + k + n),
 #     verified below by exact Fraction arithmetic for n in {1,2,3,5},
-#     k in 0..3, l in 0..5.  Zero modes: l=0 only = H0(CP^n, O(k)),
+#     k in 0..3, l in 0..5.  Ground level l=0 only, at lambda = 0,
 #     dim C(n+k, n); strictly positive gap lambda_1^2 = k + n + 1.
-# (b) FLOW COEFFICIENT = ZERO-MODE COUNT: each O(1) zero mode carries unit
-#     charge under the loop U(1) (the central U(1) of U(n+1) = the O(1)
-#     grading), so the determinant line of the zero-mode bundle -- whose
-#     phase is the CP phase (Part 10 section 1.2) -- winds
-#         dim H0(CP^n, O(1)) = n + 1 = c1(CP^n)
+#     (Bundle dictionary, reference only: ground level = H0(CP^n, O(k)).)
+# (b) FLOW COEFFICIENT = GROUND-MODE COUNT: each charge-1 ground mode
+#     advances its phase by the base loop once per cycle (unit charge =
+#     the mode's grading under the loop U(1), the overall phase of the
+#     sector coordinates), so the combined phase of the n+1 ground modes
+#     -- the CP-phase object (Part 10 section 1.2) -- advances
+#         (n + 1) = c1(CP^n)
 #     times the base loop.  The gap lambda_1^2 = n+2 keeps the count stable
 #     for any sub-gap perturbation, so the gapped tower contributes zero net
 #     flow.  Reproduces the committed rates: CP^3 -> 4, CP^5 -> 6 (lepton,
@@ -11924,10 +11927,11 @@ print("normalization + CP^k write-out + g_22. See Part 3 section 0.9, Part 6.")
 # =============================================================================
 # STEP 132 -- OUTPUT: CP^n TOWER SPECTRUM + ZERO-MODE FLOW COEFFICIENT
 # =============================================================================
-print("\n=== STEP 132: CP^n O(k) TOWER + ZERO-MODE-COUNT FLOW COEFFICIENT ===")
-print("O(k) tower on CP^n: lambda_l^2 = l(l+k+n) EXACT (SU(n+1) Casimir),")
-print("zero modes = H0(O(k)) dim C(n+k,n), gap lambda_1^2 = k+n+1 > 0.")
-print("Flow coefficient = dim H0(O(1)) = n+1 = c1(CP^n), gap-protected:")
+print("\n=== STEP 132: CP^n MODE TOWER + GROUND-MODE-COUNT FLOW COEFF ===")
+print("charge-k mode tower on CP^n (the sector's own modes): lambda_l^2 =")
+print("l(l+k+n) EXACT (isometry Casimir); ground level dim C(n+k,n) at 0,")
+print("gap lambda_1^2 = k+n+1 > 0. Flow coefficient = ground-mode count")
+print("n+1 (= c1(CP^n) in the bundle dictionary), gap-protected:")
 print("  " + "  ".join(f"CP^{n}: {_zm_132[n]} (gap {_gap_132[n]})"
                        for n in sorted(_zm_132)))
 print(f"lepton difference c1(CP^5)-c1(CP^3) = {_zm_132[5]-_zm_132[3]}"
