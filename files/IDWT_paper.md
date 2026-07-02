@@ -1,5 +1,5 @@
 ---
-title: "A Combinatorial-Geometric Derivation of the Standard Model Spectrum from a Single Integer"
+title: "A Combinatorial-Geometric Derivation of the Standard Model Spectrum"
 author:
   - name: Fedge No
     email: fedge-no@hotmail.com
