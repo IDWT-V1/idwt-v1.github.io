@@ -265,7 +265,7 @@ The Euler characteristics of the IDWT sectors are:
 | $d=6$ | $\mathbb{CP}^3$ | 4 | **$n_s = 4$** (index = $n_s = n_u + n_d$; $n_u = 3$ is the primitive seed) |
 | $d=10$ | $\mathbb{CP}^5$ | 6 | **$N_f = 6$ flavours** (index = quark family count) |
 
-**$n_s = 4$ matches the $\mathbb{CP}^3$ Euler characteristic.** The $d=6$ lepton sector lives on $\mathbb{CP}^3$, with $\chi(\mathbb{CP}^3) = 4$ (cells in dimensions 0, 2, 4, 6). $n_s = n_u + n_d$ must equal this Euler characteristic for the $d=6$ spectrum to be self-consistent — it counts the available topological modes before gauge fixing removes one, leaving three generations (e, μ, τ). The Euler characteristic independently gives $n_s = \chi(\mathbb{CP}^3) = 4$.
+**$n_s = 4$ matches the $\mathbb{CP}^3$ Euler characteristic.** The $d=6$ lepton sector lives on $\mathbb{CP}^3$, with $\chi(\mathbb{CP}^3) = 4$ (cells in dimensions 0, 2, 4, 6). $n_s = n_u + n_d$ must equal this Euler characteristic for the $d=6$ spectrum to be self-consistent — it counts the four $\mathbb{CP}^3$ cohomology classes $\{1, \omega, \omega^2, \omega^3\}$ (powers of the Kähler class). The identity class $1$ is the trivial constant/vacuum mode — the same role the unit/empty-product class plays in the Kähler-ring deposit structure (Part 2 §15) — so it is not a physical generation, leaving the three non-trivial Kähler powers $\{\omega, \omega^2, \omega^3\}$ as the three generations (e, μ, τ). The Euler characteristic independently gives $n_s = \chi(\mathbb{CP}^3) = 4$, so $N_{\rm gen} = n_s - 1 = 3$.
 
 **The top quark mode index from geometry:**
 
