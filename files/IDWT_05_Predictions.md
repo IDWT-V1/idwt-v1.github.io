@@ -480,7 +480,7 @@ is a **spectral counting theorem**: the mass equals the total spectral weight be
 
 ## 9. Falsification Criteria — Complete Reference
 
-Every prediction derives from one integer ($n_s = 4$) and one unit of mass ($m_e = 0.511$ MeV). The following inventory is organized from the most decisive tests — single observations that directly falsify the framework — through precision quantitative thresholds, structural qualitative predictions differing from SM assumptions, and near-future experimental windows.
+Every prediction in the particle sector derives from three integer seeds $\{n_d=1,\,n_u=3,\,n_{\rm top}=72\}$ (composite $n_s = 4$) and one unit of mass ($m_e = 0.511$ MeV); gravity adds a second dimensional input, the scale $G_\infty = 4\pi G_N$ (Part 4 §3.12.4). The following inventory is organized from the most decisive tests — single observations that directly falsify the framework — through precision quantitative thresholds, structural qualitative predictions differing from SM assumptions, and near-future experimental windows.
 
 The distinction between a *falsifier* and a *residual* is sharpness. IDWT residuals are small ($\leq 0.51\%$ for PMNS angles, $\leq 0.003\%$ for W mass), structurally explained by identified open items (CP phase, $G_N$ derivation), and lie within PDG measurement uncertainties. A falsifier is a prediction where IDWT has no adjustment available: either the geometric argument holds or it does not.
 

@@ -489,7 +489,7 @@ IDWT is distinctive in providing: (a) masses for all 15 predicted particles, (b)
 ## 16. Open Items
 
 1. **CP-violating phase $\delta$.** Requires loop-level computation of the Hopf Chern-Simons integral.
-2. **PMNS mixing angles.** Derived via spectral geometry (Part 9 T6): $\sin^2\theta_{23}=0.5590$ (PDG 2024: 0.553, $+1.07\%$), $\sin^2\theta_{12}=0.3086$ (PDG 0.307, $+0.51\%$), $\sin^2\theta_{13}=0.02211$ (PDG 0.022, $+0.51\%$). All three from $g_{55}=96/g_{22}$ and four mode indices. CP phase $\delta$ remains open (requires spectral phase integral).
+2. **PMNS mixing angles.** Derived via spectral geometry (Part 9 T6): $\sin^2\theta_{23}=0.5590$ (PDG 2024: 0.553, $+1.07\%$), $\sin^2\theta_{12}=0.3086$ (PDG 0.307, $+0.51\%$), $\sin^2\theta_{13}=0.02211$ (PDG 0.0219, $+0.96\%$). All three from $g_{55}=96/g_{22}$ and four mode indices. CP phase $\delta$ remains open (requires spectral phase integral).
 3. **$\Delta m^2_{31}$ discrepancy.** Closed by $\delta_{\nu_3} = \varepsilon \times g_{33} = 1/35$ (cross-sector constructive interference, exact). Corrected $\Delta m^2_{31} = 2.525\times10^{-3}$ eV$^2$ (PDG 2024: $2.530\times10^{-3}$, $-0.2\%$).
 4. **$g_1$ residual $-1.88\%$.** After 1-loop U(1)$_Y$ running from $m_W$ to $m_Z$. Remaining gap consistent with 2-loop QED threshold matching between IDWT fiber scheme and $\overline{\rm MS}$.
 5. **Top index $n_{\rm top} = 72$.** The product form $\chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$ is structurally natural but the selecting condition — why this Euler product and not another combination — has no derivation. This is the leading open dynamical question of the framework.

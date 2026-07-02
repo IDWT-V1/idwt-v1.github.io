@@ -397,9 +397,9 @@ These are secondary computations that do not affect the primary spectral predict
 
 ---
 
-## §9. What One Integer Determines
+## §9. What $N_c = 3$ Determines
 
-The entire observable content of IDWT — every particle mass, every coupling constant, every mixing angle, every CP phase — traces to the single integer $N_c = 3$, the Euler characteristic of $\mathbb{CP}^2$:
+A large fraction of the observable content of IDWT — every coupling constant, the sector set, most mode indices, all masses (given the mass scale), every mixing angle, and the CP phase — traces to the single integer $N_c = 3$, the Euler characteristic of $\mathbb{CP}^2$ (equivalently the non-trivial seed $n_u = 3$). What $N_c$ does *not* fix on its own — the top site $n_{\rm top}$ and the absolute scales — is set out in the honest accounting below the table:
 
 | From $N_c = 3$ | Derivation chain | Result |
 |---|---|---|
@@ -415,7 +415,12 @@ The entire observable content of IDWT — every particle mass, every coupling co
 | $G_F$ | $g_2^2/(4\sqrt{2}\,m_W^2)$ | $1.1658\times10^{-5}\ \mathrm{GeV}^{-2}$ |
 | Neutrino mass scale | T11a cross-sector fixed point | $\Sigma m_\nu = 60.39\ \mathrm{meV}$ |
 
-The one open dimensional input is $G_N$ — equivalently, the absolute gravitational scale $G_\infty$. All dimensionless quantities are determined by $N_c$ and the combinatorial structure alone. All masses are determined by $N_c$ and $m_e$. Deriving $G_\infty$ would make IDWT fully parameter-free.
+**Honest input accounting.** The table shows what follows from $N_c$, but $N_c$ is not the whole input set. Fully accounted, IDWT rests on **three integer seeds** and **two dimensional inputs**:
+
+- **Integer seeds** $\{n_d = 1,\ n_u = 3,\ n_{\rm top} = 72\}$. The non-trivial seed is $n_u = N_c = \chi(\mathbb{CP}^2) = 3$, which drives the table; $n_d = 1$ is the ground seed. The top site $n_{\rm top} = 72$ is a **separate** integer seed — expressible as the Euler product $\chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5) = 3\cdot4\cdot6$, but not forced from $N_c$ by any established selection principle (open; Part 6). The resonance beat $k_0 = n_s^2 = 16$ and the Higgs index $n_H = 95$ are likewise expressed through named operations whose selection rationale is still open.
+- **Dimensional inputs** $m_e$ and $G_\infty = 4\pi G_N$. The mass unit $m_e$ sets the absolute mass scale; $G_\infty$ is a second dimensional input of a different kind — the curvature-per-unit-mass of $M_\infty$, not fixed by the combinatorics (Part 4 §3.12.4).
+
+Thus all *dimensionless* quantities in the table are fixed by the integer seeds and the combinatorial structure; all *masses* follow from those seeds and $m_e$; gravity's structure is fixed while its magnitude $G_\infty$ is the second dimensional input. Deriving $G_\infty$ from geometry, and forcing $n_{\rm top}$ (and $k_0$, $n_H$) from a selection principle, would together make IDWT parameter-free — neither is established in the present construction.
 
 ---
 

@@ -22,10 +22,15 @@ A systematic review of the labelled "open items" against PDG experimental uncert
 **Genuinely open (computation not done):**
 - PMNS mixing angles — spectral geometry formulas derived:
   $\sin^2\theta_{23}=0.5590$ (PDG 2024: 0.553, +1.07%), $\sin^2\theta_{12}=0.3086$ (PDG 0.307, +0.51%),
-  $\sin^2\theta_{13}=0.02211$ (PDG 0.022, +0.51%). From $g_{55}=96/g_{22}$ and mode indices.
+  $\sin^2\theta_{13}=0.02211$ (PDG 0.0219, +0.96%). From $g_{55}=96/g_{22}$ and mode indices.
   CP phase $\delta_{CP} = \pi + 2\theta_{13} = 197.11°$ derived via APS spectral flow (T8 🔶, Part 10); $J = -0.00981$.
   Three technical gaps remain before T8 reaches 🔵 (spectral flow coefficient rigour, sign from T6 matrix, equivalence with coupling-space holonomy integral).
 - $g_1$ comparison offset — IDWT $g_1 = 0.35043$ is +0.25% above the self-consistent PDG value (derived from PDG $\sin^2\theta_W$ and $g_2$ via the Weinberg relation), entirely the $\sin^2\theta_W$ structural gap (+0.37%) propagated. The −1.95% gap to the PDG tabulated value 0.35740 is a scheme/scale offset (MS-bar at $m_Z$ vs $d=2$ sector scale); no loop order or scale translation changes a structural prediction.
+
+**Two major undischarged gaps — stated plainly, not implied-handled.** Beyond the small residuals above, two first-order pieces are genuinely open for a framework that aims at a complete account of nature. Neither is a scheme artefact or a precision residual; both are stated here without hedging:
+
+- **Cosmological constant $\Lambda$ — undischarged.** The vacuum energy that would source $\Lambda_{\rm eff}$ comes from the $V_{\rm kernel}$ expectation over the unoccupied-mode tower (Part 4 §4, Part 8 §13), and the finite-cutoff vacuum sum grows as $N^{d+1}$ with mode number (Part 9 T13d). No suppression mechanism that yields the observed small value has been derived — the smallness is not explained, only located. This is a first-order gap, not a residual. ❓
+- **Dark matter — no candidate.** $\Sigma_{\rm pairs}$ is complete at 15 stable co-fixed-point pairs and admits no new stable fundamental particle, so IDWT offers **no dark-matter candidate at present** and does not account for the astrophysical dark-matter evidence (Part 7 §2.6). The dark-matter corollary below establishes only what dark matter *cannot* be — higher-dimensional gravity leaking into $d=3$ (✅) — not what it is; whether EM-dark hidden resonances could fill the role is undetermined, their abundance, stability, and clustering not derived from the equations of motion (🔶). ❓
 
 ---
 
@@ -82,7 +87,7 @@ The absolute gravitational scale $G_\infty$ (equivalently $G_N = G_\infty/(4\pi)
 
 ## Structural Findings on Blocked Computations
 
-**PMNS angles — now derived from spectral geometry (T6, Part 9).** The charged-current coupling matrix between $d=5$ and $d=6$/10 is rank-1, giving $\mu$–$\tau$ symmetric mixing at the coupling-symmetry level. The physical PMNS is a weighted average of the μ–τ symmetric limit (weight $1-g_{55}$) and the simplex-ratio structure (weight $g_{55}=96/g_{22}=0.1329$), with results: $\sin^2\theta_{23}=0.5590$ (PDG 2024: 0.553, +1.07%), $\sin^2\theta_{12}=0.3086$ (PDG 0.307, +0.51%), $\sin^2\theta_{13}=0.02211$ (PDG 0.022, +0.51%). The CP-violating phase $\delta$ is derived in Part 10 ($\delta_{CP} = \pi + 2\theta_{13} = 197.11°$); see the entry below for status.
+**PMNS angles — now derived from spectral geometry (T6, Part 9).** The charged-current coupling matrix between $d=5$ and $d=6$/10 is rank-1, giving $\mu$–$\tau$ symmetric mixing at the coupling-symmetry level. The physical PMNS is a weighted average of the μ–τ symmetric limit (weight $1-g_{55}$) and the simplex-ratio structure (weight $g_{55}=96/g_{22}=0.1329$), with results: $\sin^2\theta_{23}=0.5590$ (PDG 2024: 0.553, +1.07%), $\sin^2\theta_{12}=0.3086$ (PDG 0.307, +0.51%), $\sin^2\theta_{13}=0.02211$ (PDG 0.0219, +0.96%). The CP-violating phase $\delta$ is derived in Part 10 ($\delta_{CP} = \pi + 2\theta_{13} = 197.11°$); see the entry below for status.
 
 **$\delta_{\rm CP}$ — derived structurally, proof incomplete (T8 🔶).** The leptonic CP phase $\delta_{CP} = \pi + 2\theta_{13} = 197.11°$ is derived via APS spectral flow from the Chern-class step $\Delta c_1 = c_1(\mathbb{CP}^5) - c_1(\mathbb{CP}^3) = 2$ between the two charged-lepton sectors (Part 10 §1–4, T8 🔶). Three technical gaps remain before T8 reaches 🔵; see Part 10 §4 for the gap inventory. *Framework hygiene: the spectral-flow construction must remain anchored to the IDWT Dirac operator $D$ on $M_\infty$ — it is the index theory of IDWT's own operator on the sector (Hopf/$\mathbb{CP}$) geometry, not a gauge-theory Chern–Simons or instanton calculation. Every step must be expressible in sector-geometry terms.*
 
