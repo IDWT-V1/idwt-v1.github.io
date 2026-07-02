@@ -10,7 +10,7 @@ Part 11 develops chemistry from the $d=6$ orbit structure established in Part 8.
 
 Three established results are inherited throughout:
 
-- The electron is the ($n=13$, $d=6$) mode of $\Psi_\infty$, executing a 6D orbit on the $\mathbb{CP}^3$ sector; the s, p, d, f orbital shapes are the $d=3$ projections of its orbit angular-momentum eigenstates (Part 1 §3d; Part 8 §14.3).
+- The electron is the ($n=13$, $d=6$) mode of $\Psi_\infty$, executing a 6D orbit on the $\mathbb{CP}^3$ sector; the s, p, d, f orbital shapes are the $d=3$ projections of its orbit angular-momentum eigenstates (Part 1 §3d; Part 8 §14.3; visualisation *Atomic Orbitals as Resonant $\mathbb{CP}^3$ Orbits*, visualizations/6d-orbit-slice.html).
 - A $d=3$ observer sees an exact $1/R$ Coulomb potential from any sector $d \geq 3$ (Part 3 §0.8a, Coulomb projection theorem); the atomic force law carries no correction from the hidden $\mathbb{CP}^3$ coordinates.
 - Pauli exclusion is a structural consequence of the fermionic anticommutation of $\Psi_\infty$ (Part 1 §7; Part 8 §14.4): co-present electron resonances are distinct modes.
 
