@@ -6,12 +6,12 @@
 
 ## 1. Lorentz Covariance
 
-The mode functions $\chi_{n,\alpha}(\xi)$ spanning mode $(n,d)$ are the monomials $\xi_1^{a_1}\cdots\xi_d^{a_d}$ with total degree $a_1+\ldots+a_d \leq n-1$. Their count is $S(n,d) = C(n+d-1,d)$ — equivalently, $\dim \mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$, the space of degree-$(n-1)$ symmetric tensors on $\mathbb{R}^{d+1}$. This is a theorem of algebraic geometry, not a postulate.
+The mode functions $\chi_{n,\alpha}(\xi)$ spanning mode $(n,d)$ are the monomials $\xi_1^{a_1}\cdots\xi_d^{a_d}$ with total degree $a_1+\ldots+a_d \leq n-1$. Their count is $S(n,d) = C(n+d-1,d)$ — equivalently, $\dim \mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$, the space of degree-$(n-1)$ symmetric tensors on $\mathbb{R}^{d+1}$. This is a theorem of algebraic geometry.
 
 **Established:**
 - $\Box_x \phi + m^2_{\rm eff} \phi = 0$ is Lorentz-covariant
 - $\Psi_\infty(r, \xi^0, t)$ is Lorentz-covariant: evaluation at a fixed sector-space address $\xi^0$ commutes with Lorentz transformations on the 3+1D coordinates
-- $S(n,d) = \dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$: geometric fact, not postulate
+- $S(n,d) = \dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$: geometric fact
 - Fermion spin-½ from the Dirac operator on $M_\infty$ — see §2
 
 The separation ansatz $\Psi_\infty = \varphi(x)\chi(\xi)$ underpins the sector reduction; corrections couple modes.
@@ -88,7 +88,7 @@ The left-right asymmetry of the SM quark sector is therefore a direct consequenc
 
 ### 2.3 Chirality from Kähler $\gamma_5$
 
-The $\mathbb{CP}^n$ sectors carry natural chirality operators from their Kähler forms (full derivation in Part 3 §7). The Kähler $\gamma_5$ splits each sector spinor into holomorphic (LEFT) and anti-holomorphic (RIGHT) components. W bosons couple only to the holomorphic half — the chiral weak interaction is a geometric consequence, not a postulate.
+The $\mathbb{CP}^n$ sectors carry natural chirality operators from their Kähler forms (full derivation in Part 3 §7). The Kähler $\gamma_5$ splits each sector spinor into holomorphic (LEFT) and anti-holomorphic (RIGHT) components. W bosons couple only to the holomorphic half — the chiral weak interaction is a geometric consequence.
 
 $$d{=}4\ (\mathbb{CP}^2):\quad\text{4-spinor} = 2L+2R\ \to\ (u_L,\,d_L)+(u_R,\,d_R)$$
 
@@ -160,7 +160,7 @@ where the last equality is Pascal's rule. $\square$
 | tau | 23 | 10 | 64,512,240 | 64,512,240 | ✓ |
 | W | 76 | 2 | 2,926 | 2,926 | ✓ |
 
-Agreement is exact in all cases — this is a combinatorial identity, not an approximation.
+Agreement is exact in all cases — this is a combinatorial identity.
 
 ### 3.3 Physical Interpretation
 
@@ -503,7 +503,7 @@ where $P_L$ is the small-component probability and $\tfrac{1}{3}$ is the angular
 $$\mu_p = \tfrac{1}{2}\left[5\tfrac{m}{E} + \left(\tfrac{m}{E}\right)^2\right] = \tfrac{3432}{1225} = 2.80163\ \mu_N \quad (\text{PDG } 2.79285,\ +0.31\%)$$
 $$\mu_n = \tfrac{1}{2}\left[\left(\tfrac{m}{E}\right)^2 - 5\tfrac{m}{E}\right] = -\tfrac{2343}{1225} = -1.91265\ \mu_N \quad (\text{PDG } -1.91304,\ -0.02\%)$$
 
-with $\mu_p - \mu_n = 33/7$ ($+0.18\%$) and ratio $-1.46479$ ($+0.34\%$). The physical reading — the isovector $M1$ is a single-quark spin flip (one channel reduction), the isoscalar the coherent sum with orbital compensation (a second factor) — is motivated, not derived: the assignment of powers to isospin channels is data-selected from the declared grid, which is the 🔶 residual. This is not the withdrawn two-parameter version (`files/idwt.py` STEP 94 guard): nothing here is adjustable. The same structure sets $\mu_p$, $\mu_n$ and the $^3S_1$–$^3D_1$ tensor. The derived $g_A = 1.2725$ enters the neutron beta-decay lifetime: with $G_F$ (`files/idwt.py` STEP 5), $V_{ud}$ (CKM, Part 3 §12), and the Fermi integral $f = 1.6887$ (the $n$–$p$ Q-value, not derived natively), the Sargent law gives $\tau_n \approx 918$ s vs PDG $878.4$ s ($+4.5\%$); the residual is carried by $f$ (`files/idwt.py` STEP 109).
+with $\mu_p - \mu_n = 33/7$ ($+0.18\%$) and ratio $-1.46479$ ($+0.34\%$). The physical reading — the isovector $M1$ is a single-quark spin flip (one channel reduction), the isoscalar the coherent sum with orbital compensation (a second factor) — is motivated, not derived: the assignment of powers to isospin channels is data-selected from the declared grid, which is the 🔶 residual. The same structure sets $\mu_p$, $\mu_n$ and the $^3S_1$–$^3D_1$ tensor. The derived $g_A = 1.2725$ enters the neutron beta-decay lifetime: with $G_F$ (`files/idwt.py` STEP 5), $V_{ud}$ (CKM, Part 3 §12), and the Fermi integral $f = 1.6887$ (the $n$–$p$ Q-value, not derived natively), the Sargent law gives $\tau_n \approx 918$ s vs PDG $878.4$ s ($+4.5\%$); the residual is carried by $f$ (`files/idwt.py` STEP 109).
 
 ---
 
@@ -573,7 +573,7 @@ where $r = (\xi_1, \xi_2, \xi_3)$ are the observable coordinates and $\xi = (\xi
 2. $\mathbb{CP}^3$ colour silence: the proton's $d=3$/$d=4$ quark modes create no $\xi$-dependent potential for the $d=6$ electron.
 3. The $\mathbb{CP}^3$ isometry group $SU(4)$ makes $V_6$ spherically symmetric in $\xi$ and independent of $r$.
 
-Because the potential separates exactly, the Schrödinger equation on $\mathbb{CP}^3$ is exactly separable. The electron is the $(n=13, d=6)$ sector mode; its sector eigenvalue is $m_e$ (Part 2). The effective Hamiltonian in the $r$ coordinates is therefore **exact**, not an approximation:
+Because the potential separates exactly, the Schrödinger equation on $\mathbb{CP}^3$ is exactly separable. The electron is the $(n=13, d=6)$ sector mode; its sector eigenvalue is $m_e$ (Part 2). The effective Hamiltonian in the $r$ coordinates is therefore **exact**:
 
 $$H_{\rm eff} = -\frac{\hbar^2}{2m_e}\nabla_r^2 - \frac{\alpha}{|r|} + m_e$$
 
@@ -694,7 +694,7 @@ The $d=6$ sector spinor satisfies fermionic anticommutation (§2). The two-elect
 - Spatial: both electrons in 1s, therefore symmetric under spatial exchange
 - Spin: must be antisymmetric → singlet $(|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle)/\sqrt{2}$
 
-The ground state is $(1s)^2$ spin singlet. This is the Pauli exclusion principle — not an additional postulate but a consequence of the Clifford anticommutation of the $d=6$ sector established in §2. The exclusion principle is a theorem of the sector geometry, not an axiom about electrons.
+The ground state is $(1s)^2$ spin singlet. This is the Pauli exclusion principle — a consequence of the Clifford anticommutation of the $d=6$ sector established in §2. The exclusion principle is a theorem of the sector geometry.
 
 ### 16.3 Ground-State Energy
 
@@ -706,7 +706,7 @@ First-order correction from $V_{12} = \alpha/r_{12}$:
 
 $$\langle V_{12}\rangle = \frac{5Z}{8}\times\frac{\alpha}{a_0} = \frac{5Z}{8}\times\alpha^2m_ec^2 = \frac{5\times2}{8}\times27.2\ \text{eV} = +34.0\ \text{eV}$$
 
-The integral $\langle1s,1s|1/r_{12}|1s,1s\rangle = 5Z/(8a_0)$ is a standard result computed from the 1s hydrogen orbit established in §14; it is a theorem, not an empirical fit.
+The integral $\langle1s,1s|1/r_{12}|1s,1s\rangle = 5Z/(8a_0)$ is a standard result computed from the 1s hydrogen orbit established in §14; it is a theorem.
 
 $$E_0^{(1)} = -108.8 + 34.0 = -74.8\ \text{eV}$$
 
@@ -725,7 +725,7 @@ The orbit filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, ... — the Aufbau principle
 - $n=2$ (2s + 2p): 8 states → Ne fills the second shell
 - $n=3$ (3s + 3p): 8 states (+ 3d shifts to $n=4$ shell due to screening) → Ar fills the third shell
 
-The shell counts 2, 8, 8, 18, 18, 32, ... are not empirical — they are the degeneracy counts $2(2l+1)$ summed over $l$ at each principal quantum number $n$, dictated by the $SO(3)$ angular momentum structure established in §14.4. The periodic table is the filling sequence of Coulomb quantum number levels under Pauli exclusion, which is a theorem of the $d=6$ sector spinor geometry.
+The shell counts 2, 8, 8, 18, 18, 32, ... are the degeneracy counts $2(2l+1)$ summed over $l$ at each principal quantum number $n$, dictated by the $SO(3)$ angular momentum structure established in §14.4. The periodic table is the filling sequence of Coulomb quantum number levels under Pauli exclusion, which is a theorem of the $d=6$ sector spinor geometry.
 
 ---
 
@@ -741,7 +741,7 @@ $$H_{H_2}(R) = H_{e_1}(A,B) + H_{e_2}(A,B) + V_{12} + V_{pp}$$
 
 where $H_{e_i}(A,B) = -\frac{\hbar^2}{2m_e}\nabla_i^2 - \frac{\alpha}{r_{iA}} - \frac{\alpha}{r_{iB}}$ [electron $i$ in field of both protons], $V_{12} = +\alpha/r_{12}$ [electron-electron repulsion], and $V_{pp} = +\alpha/R$ [proton-proton repulsion, constant for fixed $R$].
 
-All terms come from the same Coulomb vertex established in §14 and §16. No additional coupling. The proton charges are $Q=+1$ (from Part 3 §13 anomaly cancellation).
+All terms come from the same Coulomb vertex established in §14 and §16. The proton charges are $Q=+1$ (from Part 3 §13 anomaly cancellation).
 
 ### 17.2 The Bond as a Two-Center 6D Orbit
 
@@ -755,7 +755,7 @@ The antibonding orbit is an orbit whose 3D shadow has a nodal plane between the 
 
 **A covalent bond is a two-center 6D orbit in the combined Coulomb field of two nuclei, whose minimum-energy configuration places the electron density between the nuclei, lowering the total energy relative to two isolated atoms.** The bond forms because the electron's 6D orbit explores a larger region when two nuclei are present — the orbit "finds" both attractors — and the resulting 3D shadow fills the bonding region.
 
-The $H_2$ case generalizes to any homonuclear diatomic bond ($N_2$, $O_2$, $F_2$, ...). All bond types — σ (overlap along the internuclear axis), π (overlap perpendicular to the axis, from $p$ or $d$ orbits), δ (overlap from two $d$ orbits, side-on) — are determined by which $(n,l,m_l)$ orbits are occupied and the geometry of their 3D shadows. No new postulates at any stage.
+The $H_2$ case generalizes to any homonuclear diatomic bond ($N_2$, $O_2$, $F_2$, ...). All bond types — σ (overlap along the internuclear axis), π (overlap perpendicular to the axis, from $p$ or $d$ orbits), δ (overlap from two $d$ orbits, side-on) — are determined by which $(n,l,m_l)$ orbits are occupied and the geometry of their 3D shadows.
 
 ### 17.6 Status and Quantitative Prediction
 
@@ -776,8 +776,8 @@ $$D_e(\text{IDWT}) = 5.131\,\text{eV}$$
 
 The experimental value is $D_e(\text{expt}) = 4.747\,\text{eV}$. The +8.1% error is
 inherited from the IDWT fine-structure constant ($1/\alpha_{\text{IDWT}} = 131.8$ vs
-PDG 137.04) and tracks the same +8.1% offset seen in $H_2^+$ (§15, STEP 69). It is not a
-failure of the bond mechanism — it is the same systematic $\alpha$ error throughout. (STEP 72)
+PDG 137.04) and tracks the same +8.1% offset seen in $H_2^+$ (§15, STEP 69). It is the same
+systematic $\alpha$ error throughout. (STEP 72)
 
 The equilibrium geometry $R_{\text{eq}}$ and full 6D character of the bond orbit are open.
 
