@@ -288,7 +288,7 @@ The following table consolidates the full theorem status after the T8 completion
 
 | Theorem | Content | Status | Accuracy | Physical consequence |
 |---|---|---|---|---|
-| T0 | Spectral triple; physical spectrum | 🔶 | — | All SM masses from one operator; 7 open items (Part 9) |
+| T0 | Physical mass spectrum of operator $D$ | 🔶 | — | All SM masses from one classical operator on $M_\infty$; 7 open items (Part 9) |
 | T0.5 | Co-fixed-point selection condition | 🔶 | Exact outcomes | Selects the 11-mode lattice (photon + hockey-stick fermions); the 2 product-form quarks {16,72} and the EW $g$-chain {76,81,95} are tiers 2–3 (Part 9 T0.5 scope); decoherence mechanism not yet derived from EOM |
 | T1 | $m = S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
@@ -314,7 +314,7 @@ The following table consolidates the full theorem status after the T8 completion
 **Count:**
 - ✅ Proved: 17 items
 - 🔵 Numerically verified (derivation complete): 2 items (T6 and T7)
-- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
+- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open items on the operator $D$ (Part 9); T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
 - □ Open: 0 items
 
 The open 🔶 physics items — the full $d\to\infty$ operator $D$ of T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 ($\delta_{CP}$) is a structural derivation with three technical gaps noted in §4.
@@ -334,7 +334,7 @@ The four identities that close the quadrilateral:
 3. **$n_Z - n_W = q$** — a mode index gap IS a coupling-defining parameter [$q$ needs definition; needs verification]
 4. **$\delta_{CP} = \pi + (N_c - 1)\theta_{13}$** — the CP phase is $\pi$ corrected by the number-of-colors minus one, times the reactor angle (T8, Part 10)
 
-Equation 4 is the cleanest expression of the unified structure: the CP phase is not a free parameter measured empirically. It is determined by $N_c$ (the number of quark colors, which is the Euler characteristic of the $d=4$ sector $\mathbb{CP}^2$) and by $\theta_{13}$ (which is itself determined by the mode indices $n_\tau$ and $n_\mu$ and the sector coupling $g_{55}$). Both $N_c$ and $\theta_{13}$ enter T8 through exactly the same topological/combinatorial machinery that determines every other observable in IDWT.
+Equation 4 is the cleanest expression of the unified structure: the CP phase is determined by $N_c$ (the number of quark colors, which is the Euler characteristic of the $d=4$ sector $\mathbb{CP}^2$) and by $\theta_{13}$ (which is itself determined by the mode indices $n_\tau$ and $n_\mu$ and the sector coupling $g_{55}$). Both $N_c$ and $\theta_{13}$ enter T8 through exactly the same topological/combinatorial machinery that determines every other observable in IDWT.
 
 The CP-violating phase in the lepton sector is $N_c - 1$ reactor angles above $\pi$ — it is the number of "extra colors" above the minimum ($N_c = 1$ gives no CP violation; $N_c = 2$ gives one $\theta_{13}$; $N_c = 3$ gives two $\theta_{13}$s). That the physical world has $N_c = 3$ is fixed by T15 (the geometric seed $n_u = N_c = \chi(\mathbb{CP}^2) = 3$) and T15a (terminal sector $d = 2(N_c + 2) = 10$). The entire chain is determined by this single geometric integer.
 
@@ -383,7 +383,7 @@ $^1$ 0νββ is forbidden at all orders: no charge-conjugation matrix $C$ exists
 - **$G_\infty$ is a second dimensional input:** The single open item is the absolute gravitational scale $G_\infty$ (hence $G_N = G_\infty/(4\pi)$), which is not derived from the sector combinatorics. Fixing it would require an independent geometric determination — a problem analogous to deriving the overall mass unit from the sector structure (currently $m_e$ is the unit input).
 
 **Not open (reclassified):**
-- $\sin^2\theta_W$ (+0.37%): A genuine small structural residual — IDWT produces one geometric value and does not run couplings; not attributed to EW loop corrections the framework does not compute. Not a structural failure.
+- $\sin^2\theta_W$ (+0.37%): A genuine small structural residual — IDWT produces one geometric value and does not run couplings; not attributed to EW loop corrections the framework does not compute.
 - $g_1$ (−1.88%): Traces entirely to $\sin^2\theta_W$ structural gap. 2-loop running computed and closes 0.0014 pp; residual is structural.
 - $m_{\nu_3}$ shortfall: Resolved by $\delta_{\nu_3} = 1/35$ (Part 2 §9d).
 - $\Lambda_{\rm QCD}$ (−9% label): Against ill-defined target. IDWT value 282 MeV matches $3f_\pi$ within +2.1%.
