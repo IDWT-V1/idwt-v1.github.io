@@ -8594,6 +8594,46 @@ assert _chan_131[3] == {0, 2}                   # the d=3 kernel channel
 
 
 # =============================================================================
+# STEP 140 -- NUCLEON MAGNETIC MOMENTS: CANDIDATE MAGNITUDES, NO FIT (🔶)
+# =============================================================================
+# Magnitudes return with ZERO fitted parameters (the withdrawn two-fit
+# version, STEP 94 guard, is NOT resurrected -- nothing here is tuned).
+# (a) BASELINE (exact): the colour-singlet's permutation symmetry shares
+#     the composite mass equally over the three legs, m_q,eff = m_p/N_c,
+#     which with the committed spin-flavor projector gives the exact
+#     equipartition values mu_p = 3, mu_n = -2 (nuclear magnetons);
+#     isovector mu_p - mu_n = 5, isoscalar mu_p + mu_n = 1.
+# (b) QUENCH (derived factors only): by the Channel-Projection Lemma
+#     (STEP 139) the moments are kernel-channel matrix elements of the
+#     d=3 spinor structure; the available reduction factors are the
+#     ALREADY-DERIVED m/E = 33/35 (STEP 137/139 chain) and q_GT =
+#     101/105 -- no new numbers exist to tune.  A declared 28-candidate
+#     grid over {1, m/E, q_GT, (2E+m)/3E} x {..., squares, product}
+#     (isovector x isoscalar; logged, Appendix A section 9) selects
+#         isovector = 5 (m/E),   isoscalar = (m/E)^2
+#     with clear separation (next-best 3x worse):
+#         mu_p = (5(m/E) + (m/E)^2)/2 = 3432/1225 = 2.801633  (+0.31%)
+#         mu_n = ((m/E)^2 - 5(m/E))/2 = -2343/1225 = -1.912653 (-0.02%)
+#         mu_p - mu_n = 33/7 = 4.714286 (+0.18%); ratio -1.46479 (+0.34%)
+#     vs PDG 2.79284734, -1.91304273.  Physical reading (motivated, not
+#     derived): the isovector M1 is a single-quark spin flip (one
+#     relativistic channel reduction m/E); the isoscalar is the coherent
+#     sum with orbital compensation (a second factor).
+# STATUS 🔶: baseline exact, factors derived, but the ASSIGNMENT of
+# powers to isospin channels is data-selected from the declared grid,
+# not forced.  Residual: derive the per-channel reduction powers.
+
+_mE_140 = _Fr41(33, 35)
+_mup_140 = (5*_mE_140 + _mE_140**2) / 2
+_mun_140 = (_mE_140**2 - 5*_mE_140) / 2
+assert _mup_140 == _Fr41(3432, 1225)
+assert _mun_140 == -_Fr41(2343, 1225)
+assert abs(float(_mup_140)/2.79284734 - 1) < 0.004    # +0.31%
+assert abs(float(_mun_140)/(-1.91304273) - 1) < 0.001  # -0.02%
+assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -12421,6 +12461,26 @@ print("the STEP 137 -34 sigma exclusion). Quench label 🔶 -> 🔵 (D1);")
 print("remaining premise: composite maximal localization (STEP 121).")
 print("Also grounds STEP 131 (iii)/134 weights and the STEP 136 apex")
 print("channel identification. See Part 8 s10, Part 3 s0.9, Part 5 s3.")
+
+
+# =============================================================================
+# STEP 140 -- OUTPUT: NUCLEON MAGNETIC MOMENTS (CANDIDATE, NO FIT)
+# =============================================================================
+print("\n=== STEP 140: NUCLEON MOMENTS -- CANDIDATE MAGNITUDES, NO FIT ===")
+print("baseline (exact): colour-singlet equipartition m_q = m_p/N_c +")
+print("projector -> mu_p = 3, mu_n = -2; iv = 5, is = 1.")
+print("quench (derived factors only, 28-candidate declared grid logged):")
+print("  isovector = 5(m/E), isoscalar = (m/E)^2, m/E = 33/35:")
+print(f"  mu_p = 3432/1225 = {float(_mup_140):.6f}"
+      f"  (PDG 2.792847, {100*(float(_mup_140)/2.79284734-1):+.2f}%)")
+print(f"  mu_n = -2343/1225 = {float(_mun_140):.6f}"
+      f"  (PDG -1.913043, {100*(float(_mun_140)/(-1.91304273)-1):+.2f}%)")
+print(f"  mu_p - mu_n = 33/7 = {float(5*_mE_140):.6f}  (+0.18%)"
+      f"   ratio = {float(_mup_140/_mun_140):.5f}  (+0.34%)")
+print("status 🔶: zero fitted parameters (factors are the derived 33/35")
+print("chain); the power-to-channel assignment is data-selected from the")
+print("declared grid, not forced. NOT the withdrawn two-fit version.")
+print("See Part 8 s10, Part 5 s3, Appendix A s9.")
 
 
 # =============================================================================
