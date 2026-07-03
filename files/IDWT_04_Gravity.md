@@ -220,7 +220,7 @@ Numerically the electron ($d=6$/$\mathbb{CP}^3$) is $R_e \approx 1.0\times10^{-2
 
 ## 3.10 Derivation of $\lambda_d$ from the Kernel Self-Consistency Equation
 
-$V_d$ is not postulated. The sector field on $\Xi_d$ carries the action's quartic self-coupling — the $(\xi_d\cdot\xi')^2$ kernel of §3.10.1 — and the sector potential is the **Euler–Lagrange (self-consistent) reduction** of that coupling: the stationary point of the explicit energy functional written in §3.10.5. The subsections below carry out that reduction — the self-coupling integral gives a *global* harmonic potential $V_d(r) = \lambda_d r^2$ (§3.10.2), and self-consistency fixes $\lambda_d = (g_{dd}/2)^{2/3}$ from the seed-built coupling alone (§3.10.3). The harmonic **form** is therefore a derived consequence of the action, not an independent ansatz.
+$V_d$ is not postulated. The sector field on $\Xi_d$ carries the action's quartic self-coupling — the $(\xi_d\cdot\xi')^2$ kernel of §3.10.1 — and the sector potential is the **Euler–Lagrange (self-consistent) reduction** of that coupling: the stationary point of the explicit energy functional written in §3.10.5. The subsections below carry out that reduction — the self-coupling integral gives a *global* harmonic potential $V_d(r) = \lambda_d r^2$ (§3.10.2), and self-consistency fixes $\lambda_d = (g_{dd}/2)^{2/3}$ from the seed-built coupling alone (§3.10.3). The harmonic **form** is therefore a derived consequence of the action.
 
 ### 3.10.1 Structure of the Inter-Sector Kernel
 

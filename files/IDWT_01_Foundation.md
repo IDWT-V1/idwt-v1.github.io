@@ -165,7 +165,7 @@ The lightest stable composite objects in IDWT are colour-singlet baryons: the pr
 
 All chemistry — every atom, every molecule — is built from such nuclei. Every macroscopic measuring device, every observer, every experimental apparatus that can exist within this theory is an assembly of $d=3$ nuclear matter. An observer constructed from $d=3$ objects measures physics at the $d=3$ coordinate level by construction: their instruments have no coordinate support in $d=4$, $d=5$, $d=6$, or $d=10$, so the physics they access is the restriction of $\Psi_\infty$ to $d=3$. No measurement protocol built from $d=3$ matter can return coordinates outside $d=3$.
 
-**The observer location is a theorem, not an input.** The question "why do we experience a three-dimensional world?" has a derivable answer within IDWT: because the stable composites that building-matter selects are $d=3$ objects by colour confinement, and any observer assembled from such matter is constrained to the $d=3$ coordinate level. The $d=3$ status of our observable space is not introduced as a special axiom; it is the coordinate level forced by the lightest bound states the theory admits. ✅
+**The observer location is a theorem, not an input.** The question "why do we experience a three-dimensional world?" has a derivable answer within IDWT: because the stable composites that building-matter selects are $d=3$ objects by colour confinement, and any observer assembled from such matter is constrained to the $d=3$ coordinate level. The $d=3$ status of our observable space is the coordinate level forced by the lightest bound states the theory admits. ✅
 
 ---
 
@@ -313,7 +313,7 @@ The two uniqueness results are parallel:
 
 The spinor type per sector follows from Clifford algebra periodicity (Clifford algebra, mod 8). The $d=10$ sector carries a Majorana-Weyl spinor (16 real components, $d \bmod 8 = 2$); the other sectors carry Weyl, Majorana, or Dirac spinors as determined by their $d \bmod 8$ (Part 8 §2.1).
 
-These sector dimensions are not chosen. They are the unique sequence produced by the complex Hopf fibration chain $S^1\to S^{2n+1}\to\mathbb{CP}^n$:
+These sector dimensions are the unique sequence produced by the complex Hopf fibration chain $S^1\to S^{2n+1}\to\mathbb{CP}^n$:
 
 | Fiber | Total | Base | Type | IDWT sectors |
 |---|---|---|---|---|

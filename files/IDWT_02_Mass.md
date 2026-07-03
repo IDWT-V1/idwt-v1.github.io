@@ -221,7 +221,7 @@ The seeds $n_d = 1$ and $n_u = 3$ are independently forced; $n_s = n_u + n_d = 4
 
 **$n_{\rm strange} = 4$** is confirmed as the unique positive integer satisfying $S(n,4) = 35 = n_{\rm muon}$. The muon occupies mode 35 in $d=6$. Only $n=4$ maps there via the simplex function in $d=4$. Why is 35 the muon's mode? Because $35 = S(4,4) = 1+4+10+20$ — the hockey-stick sum of the $d=4$ simplex through level 3. $n_s = 4$ is the unique value for which the strange quark's hockey-stick image in $d=4$ lands on an occupied lepton mode. No other integer does this.
 
-Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3$. $S(1,d) = 1$ for every $d$ makes $n = 1$ the base case of every hockey-stick sum and the ground state of every sector (⭐). $n_s = 4$ satisfies $S(4,3) = n(n+1) = 20$ — the unique index where the simplex number equals the Casimir number (⭐) — and the coupling $g_{33} = 8\sqrt{7}$ (derived in §9) places the effective coupling per mode $g_{33}/S(4,3) = 8\sqrt{7}/20 \approx 1$ at the confinement threshold (🔶). At level $N = 3$, $n = 4$ carries $l = 1$ and $l = 3$ only, giving it permanent $l$-parity protection from the $l = 0$ vacuum sector (⭐, Part 7 §1.2). These are structural selectors: the value $g_{33} = 8\sqrt{7}$ is fixed by the §9 gap construction from the seed integers (${\rm gap}_{d=3} = n_s^2$, $g_{\rm coeff} = 2/\sqrt{7}$), and $n = 1$ and $n = 4$ are picked out by the three conditions above — not as the minima of an effective energy over the mode index, a reading the documented vocabulary does not support. The seeds are not chosen — they are structurally forced.
+Three independent structural conditions single out $n = 1$ and $n = 4$ in $d = 3$. $S(1,d) = 1$ for every $d$ makes $n = 1$ the base case of every hockey-stick sum and the ground state of every sector (⭐). $n_s = 4$ satisfies $S(4,3) = n(n+1) = 20$ — the unique index where the simplex number equals the Casimir number (⭐) — and the coupling $g_{33} = 8\sqrt{7}$ (derived in §9) places the effective coupling per mode $g_{33}/S(4,3) = 8\sqrt{7}/20 \approx 1$ at the confinement threshold (🔶). At level $N = 3$, $n = 4$ carries $l = 1$ and $l = 3$ only, giving it permanent $l$-parity protection from the $l = 0$ vacuum sector (⭐, Part 7 §1.2). These are structural selectors: the value $g_{33} = 8\sqrt{7}$ is fixed by the §9 gap construction from the seed integers (${\rm gap}_{d=3} = n_s^2$, $g_{\rm coeff} = 2/\sqrt{7}$), and $n = 1$ and $n = 4$ are picked out by the three conditions above — not as the minima of an effective energy over the mode index, a reading the documented vocabulary does not support.
 
 ⭐ **Kummer p-adic characterization of the seed.** Kummer's theorem states that the 2-adic valuation $v_2\!\bigl(\binom{n+d-1}{d}\bigr)$ equals the number of carries when adding $d$ and $n-1$ in binary. Applied to the two seed evaluations:
 
@@ -507,7 +507,7 @@ The second term is the self-feedback: the shifted tau mass feeds further back-re
 
 $$\Delta m = \frac{\varepsilon_{6\to10}\times m_\tau}{1-g_{10,10}}$$
 
-Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $1-g_{10,10} = 3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$, with $n_u=3$ (seed) and $n_s=4$; it is not a free parameter.
+Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $1-g_{10,10} = 3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$, with $n_u=3$ (seed) and $n_s=4$.
 
 **The total correction.** The leading $d{=}6\to d{=}10$ kernel perturbation at the tau level is:
 

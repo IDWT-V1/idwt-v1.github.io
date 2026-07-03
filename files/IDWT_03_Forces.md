@@ -310,7 +310,7 @@ Electromagnetism emerges from the $U(1)$ Hopf fiber connecting the $d=2$ and $d=
 
 The $d=4$ sector geometry is $\mathbb{CP}^2 = \mathrm{SU}(3)/U(2)$. The full isometry group of $\mathbb{CP}^2$ is $\mathrm{SU}(3)$. Therefore quarks in the $d=4$ sector naturally carry $\mathrm{SU}(3)$ quantum numbers — from the manifold's own geometry.
 
-$\chi(\mathbb{CP}^2) = 3$ gives exactly three independent colour modes per quark. The representation is fixed by the sector geometry: the isometry group is $\mathrm{SU}(3)$, so the three modes necessarily transform in the fundamental representation $\mathbf{3}$ — not by postulate, but because $\mathrm{SU}(3)$ is the symmetry group of the space they inhabit. Three colour states per quark is a theorem of the $d=4$ sector geometry.
+$\chi(\mathbb{CP}^2) = 3$ gives exactly three independent colour modes per quark. The representation is fixed by the sector geometry: the isometry group is $\mathrm{SU}(3)$, so the three modes transform in the fundamental representation $\mathbf{3}$: $\mathrm{SU}(3)$ is the symmetry group of the space they inhabit. Three colour states per quark is a theorem of the $d=4$ sector geometry.
 
 **$N_c = \chi(\mathbb{CP}^2) = 3$. ✅** This is the geometric origin of colour charge (Part 1 §3d, Part 9 T15, S3).
 
@@ -330,7 +330,7 @@ Given the three-dimensional colour space identified from $\chi(\mathbb{CP}^2) = 
 
 $$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + i[A_\mu, A_\nu]$$
 
-$\mathrm{SU}(3)$ coupling theory is not postulated. It follows from the $\mathbb{CP}^2$ sector geometry and the requirement that physics not depend on the local orientation of the colour frame.
+The $\mathrm{SU}(3)$ coupling structure follows from the $\mathbb{CP}^2$ sector geometry and the requirement that physics not depend on the local orientation of the colour frame.
 
 ### 3a. Explicit Colour Connection Construction 🔶
 
@@ -633,7 +633,7 @@ $$\boxed{\sin\theta_C = \frac{1 + \chi(\mathbb{CP}^1)/(24\cdot S(n_s,3))}{\sqrt{
 | PDG $\lambda$ (Cabibbo angle) | 0.22450 ± 0.00044 |
 | Tension | +0.09σ |
 
-The correction closes the tension from −2.03σ to +0.09σ with no free parameters. The inputs are: $\chi(\mathbb{CP}^1) = 2$ (topology of the W boson sector), $S(n_s,3) = 20$ (seed structure), and the $\mathbb{CP}^1$ sector curvature correction coefficient $-R/12$ (a theorem of spin geometry).
+The correction closes the tension from −2.03σ to +0.09σ. Its inputs are $\chi(\mathbb{CP}^1) = 2$ (topology of the W boson sector), $S(n_s,3) = 20$ (seed structure), and the $\mathbb{CP}^1$ sector curvature correction coefficient $-R/12$ (a theorem of spin geometry).
 
 **First-row unitarity. ✅** IDWT's CKM matrix is unitary by construction. $V_{ud}$ is not an independent prediction — it is the trigonometric complement of $\sin\theta_C$:
 
@@ -680,7 +680,7 @@ $$S^1 \to S^3 \to S^2 = \mathbb{CP}^1$$
 
 - **$d=2$ ($\mathbb{CP}^1 = S^2$):** The base of the Hopf fibration — bosons parameterize the base
 - **$d=3$ ($S^3$):** The total space — quarks live here and naturally carry $U(1)$ charge from the fiber action
-- **$S^1$ fiber $= U(1)$:** The electromagnetic group, not postulated — it is the Hopf fiber
+- **$S^1$ fiber $= U(1)$:** The electromagnetic group is the Hopf fiber
 
 ### Photon Derivation
 
@@ -696,7 +696,7 @@ is the curvature 2-form of the $U(1)$ connection. The Lorentz force equation fol
 
 $$F = q(E + v\times B)$$
 
-Electromagnetism is not postulated — it emerges from the phase geometry of $\Psi_\infty$ via the Hopf fiber.
+Electromagnetism emerges from the phase geometry of $\Psi_\infty$ via the Hopf fiber.
 
 ### The Second Hopf Fibration: $S^1 \to S^5 \to \mathbb{CP}^2$
 
