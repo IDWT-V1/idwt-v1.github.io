@@ -131,7 +131,7 @@ The bosons sit at depths 1–3, built from the product-form seed via the $g$-rul
 
 ### 2.1 We Are Inside $M_\infty$
 
-There is no projection happening in IDWT. We are not external observers mapping $M_\infty$ onto a separate 3D screen. We are at $d=3$ — inside $M_\infty$, at the coordinate level where the first stable sector constitutes space. Our observable universe is $M_\infty$ at the $d=3$ coordinate level, not a shadow of something else.
+There is no projection happening in IDWT. We are not external observers mapping $M_\infty$ onto a separate 3D screen. We are at $d=3$ — inside $M_\infty$, at the coordinate level where the first stable hadronic sector constitutes space. Our observable universe is $M_\infty$ at the $d=3$ coordinate level, not a shadow of something else.
 
 Particles with $d > 3$ are not separate from us. Their modes include the $d=3$ coordinates we occupy — those coordinates are a literal subset of every higher sector (§3f, §3i). What we cannot access are the additional $d-3$ sector-space coordinates their modes also span. We are not outside those coordinates looking in; we simply do not have coordinates there. The distinction matters: a projection implies an external observer with a screen. IDWT has neither. There is one manifold $M_\infty$, one field $\Psi_\infty$, and we are a feature of it at coordinate level $d=3$.
 
