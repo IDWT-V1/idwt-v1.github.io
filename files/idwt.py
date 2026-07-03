@@ -8286,23 +8286,25 @@ assert abs(_gamma_132 - 67.5) < 1e-12
 # STEP 133 -- MC-2: PRODUCT METRIC AND V_d AS OUTPUTS OF THE ACTION
 # =============================================================================
 # Closes the two MC-2 halves at their stated rigor (Part 1 section 1.1).
-# (a) PRODUCT EXACTNESS AT VACUUM (weak-field rigor).  The IDWT vacuum is
-#     static, spatially uniform, time-reversal invariant, and isotropic on
-#     each sector fiber.  Cross-blocks of the stress tensor and the metric
-#     die by symmetry alone:
-#       - spatial rows T_ia, g_ia (i=1,2,3): a nonzero value is an
-#         invariant spatial vector -- forbidden by spatial isotropy;
-#       - time row T_0a, g_0a: time-reversal odd -- forbidden by
-#         T-invariance of the ground state;
+# (a) PRODUCT EXACTNESS FROM COVARIANT SOURCING.  IDWT gravity is infinite-D
+#     curvature SOURCED BY MASS (P5, Part 4 section 3.1), not a self-
+#     interacting metric field; the sourcing is covariant, so the sourced
+#     geometry inherits every symmetry of its source.  The vacuum is static,
+#     spatially uniform, time-reversal invariant, and isotropic on each
+#     sector fiber, so its mass source has no component mixing the R_t and
+#     observable directions with the sector fibers:
+#       - spatial cross-parts: an invariant spatial vector -- forbidden by
+#         spatial isotropy;
+#       - time cross-parts: time-reversal odd -- forbidden by T-invariance;
 #       - equivalently, any isometry-invariant vector on a sector fiber
 #         vanishes: for CP^k fibers the U(k) isotropy contains the center
-#         e^{i theta} (average over the circle is exactly zero, asserted
-#         below), and for S^m fibers SO(m) acts with no fixed direction.
-#     The sourced metric inherits the vacuum symmetry by the same
-#     small-data uniqueness/pullback argument as Part 4 section 3.8, so
-#     G_mu-a = 0 for the vacuum solution: the product structure P1
-#     postulates is DERIVED at vacuum level, weak-field rigor.
-#     Residual: nonperturbative uniqueness (shared with section 3.8).
+#         e^{i theta} (circle average exactly zero, asserted below); for
+#         S^m fibers SO(m) acts with no fixed direction.
+#     The geometry such a source produces has G_mu-a = 0 exactly.  This is a
+#     COVARIANCE statement, not a metric-uniqueness question: the earlier
+#     general-relativistic "nonperturbative uniqueness / weak-field" framing
+#     imported GR's self-gravitating-metric solution space and does NOT apply
+#     (superseded by STEP 138 / Part 4 section 3.8).
 # (b) V_d FROM THE ACTION AT MEAN FIELD.  The rank-1 kernel gives every
 #     sector the common condensate C(x); the quartic term is quadratic in
 #     each xi_d, so sector d sees the harmonic well
@@ -12328,11 +12330,12 @@ print("adjacent-lock transport. See Part 10 sections 1.3, 4, 4.1.")
 # STEP 133 -- OUTPUT: MC-2 (PRODUCT METRIC + V_d FROM THE ACTION)
 # =============================================================================
 print("\n=== STEP 133: MC-2 -- PRODUCT METRIC AND V_d FROM THE ACTION ===")
-print("(a) product exactness at vacuum (weak-field): cross-blocks killed by")
-print("    symmetry -- spatial rows by isotropy, time row by T-invariance,")
-print("    fiber-invariant vectors by the U(k) center / SO(m) transitivity")
-print("    (center average asserted 0); metric inherits by the section-3.8")
-print("    uniqueness argument. P1's product postulate -> derived at vacuum.")
+print("(a) product exactness from covariant sourcing: gravity is curvature")
+print("    SOURCED BY MASS (not a metric field), so the geometry inherits")
+print("    the source's symmetry -- cross-parts killed by spatial isotropy,")
+print("    T-invariance, fiber-invariant vectors by U(k) center / SO(m)")
+print("    (center average asserted 0). G_mu-a = 0 exactly; P1's product")
+print("    postulate -> a covariance statement, not a uniqueness question.")
 print("(b) V_d from the action at mean field: rank-1 kernel -> common")
 print("    condensate -> harmonic well V_d = v_d^2|xi_d|^2|C|^2 with")
 print("    lam_d = (g_dd/2)^(2/3), asserted vs the committed table:")
@@ -12341,9 +12344,10 @@ print("    " + "  ".join(f"d{d}:{(_g_133[d]/2.0)**(2.0/3.0):.3f}"
 print(f"(c) kernel dominance: G_inf*m_e^2 = {_grav_133:.2e}; grav/kernel <")
 print(f"    {max(_grav_133/_g for _g in _g_133.values()):.1e}"
       " in every sector -> fiber geometry flat to that accuracy.")
-print("residuals: nonperturbative uniqueness (with s3.8); beyond-mean-field")
-print("fluctuations (BdG modes = STEP 36). Sector-set selection is NOT")
-print("MC-2 (Open Theorem A). See Part 1 section 1.1, Part 4 section 3.12.1.")
+print("residual: beyond-mean-field fluctuations (BdG modes = STEP 36).")
+print("(the product-metric half has no uniqueness residual -- covariant")
+print("sourcing, STEP 138.) Sector-set selection is NOT MC-2 (Open Theorem")
+print("A). See Part 1 section 1.1, Part 4 section 3.12.1.")
 
 
 # =============================================================================

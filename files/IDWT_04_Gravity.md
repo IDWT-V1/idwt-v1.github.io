@@ -132,7 +132,7 @@ This holds for all modes with the same $(n,d)$ regardless of $\xi^0$. The sector
 | $G_N = G_\infty/(4\pi)$: the $4\pi$ is the 3D Green's-function constant, sector-independent (§3.12.2); $G_\infty$ is a second dimensional input, absolute scale not derived (open) | ✅/🔶 | §3.12.2 |
 | Bound within, gradient-free without: the gravitational gradient lives only in a source's bound dimensions | ✅ (exact — the curvature sourced by mass inherits the source's symmetries by translation-covariance of the Poisson sourcing, §3.8) | §3.8 |
 
-In the static strong-field regime, the $d=3$-coordinate metric develops an apparent horizon while the full $M_\infty$ geometry stays regular. The apparent singularity becomes a finite-energy high-amplitude region in the sector-space coordinates. Information is preserved globally.
+Where a mass concentration is large enough that the $d=3$ observer's effective description develops an apparent horizon, the full $M_\infty$ geometry — the curvature sourced by that mass — stays regular. What the observer reads as a singularity is a finite-energy high-amplitude region in the sector-space coordinates. Information is preserved globally.
 
 ---
 
