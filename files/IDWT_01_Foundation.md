@@ -620,8 +620,8 @@ $\Sigma_{\rm pairs}$ contains exactly 15 tower-derived stable objects: 14 single
 | strange | 3 | $S^3$ | $SO(4)$ | 4 | 20 | 94.0 MeV |
 | bottom (beat) | 3 | $S^3$ | $SO(4)$ | beat $k_0=16$ | $\sqrt{S(16,3)S(17,3)}$ | 4181 MeV |
 | up | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 3 | 15 | 2.18 MeV |
-| charm | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 20 | 8,855 | 1285 MeV (bare, +0.93% 🔶) |
-| top | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 72 | 1,215,450 | 176.4 GeV (bare, +2.20% 🔶) |
+| charm | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 20 | 8,855 | 1277 MeV (+0.34% 🔶) |
+| top | 4 | $\mathbb{CP}^2$ | $SU(3)$ | 72 | 1,215,450 | 172.5 GeV (−0.04% 🔶) |
 | $\nu_1$ | 5 | $S^5$ | $SO(6)$ | 10 | 2,002 | 1.49 meV |
 | $\nu_2$ | 5 | $S^5$ | $SO(6)$ | 15 | 11,628 | 8.64 meV |
 | $\nu_3$ | 5 | $S^5$ | $SO(6)$ | 22 | 65,780 | 50.3 meV |
