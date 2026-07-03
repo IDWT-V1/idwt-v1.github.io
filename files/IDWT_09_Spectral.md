@@ -46,11 +46,11 @@ $$\sigma_{\rm phys}(|D|) = \bigl\{\,S(n,d)\times m_{\mathrm{scale},d}\;\big|\;(n
 
 The 15 elements of $\sigma_{\rm phys}(|D|)$ are exactly the SM particle masses. Every element is determined by seeds $\{n_d=1,\,n_u=3\}$ and the single mass unit $m_e$. The index set $\Sigma_{\rm pairs}$ decomposes into three tiers (see the T0.5 scope): the eleven-mode lattice that T0.5 selects (photon $+$ hockey-stick fermions), the two product-form quark sites $\{16,72\}$, and the electroweak $g$-chain $\{76,81,95\}$ built additively off the top. The selection condition acts on the lattice; the product-form quark origin is the open piece.
 
-**Spectral action.** The asymptotic expansion of $\operatorname{Tr}(f(D/\Lambda))$ as $\Lambda\to\infty$ is the Seeley-DeWitt series:
+**Spectral action (borrowed bookkeeping).** Read through the NCG formalism, the asymptotic expansion of $\operatorname{Tr}(f(D/\Lambda))$ as $\Lambda\to\infty$ is the Seeley-DeWitt series:
 $$\operatorname{Tr}(f(D/\Lambda)) \sim f_4\Lambda^4\,a_0 + f_2\Lambda^2\,a_2 + f_0\,a_4 + O(\Lambda^{-2}),$$
 where the Seeley-DeWitt coefficients are:
-- $a_0 \propto \operatorname{Vol}(M_\infty)$ — leads to the cosmological constant term
-- $a_2 \propto \int R\,\mathrm{dvol}$ — leads to the Einstein-Hilbert action
+- $a_0 \propto \operatorname{Vol}(M_\infty)$ — the term a $d=3$ observer reads as a cosmological constant
+- $a_2 \propto \int R\,\mathrm{dvol}$ — the term a $d=3$ observer reads as the Einstein-Hilbert action, i.e. the observer's effective reconstruction of the mass-sourced $M_\infty$ curvature (Part 4 §0.2), not a fundamental gravitational action of IDWT
 - $a_4$ — higher-order spectral invariants (in the standard spectral action $a_4$ yields Yang-Mills gauge kinetic terms; IDWT departs here — it carries no gauge kinetic term, its forces being kernel contact terms, not propagating gauge fields)
 
 The IDWT sector heat kernel $K_d(t) = \sum_n e^{-tS(n,d)}$ has been computed exactly (T14), giving Weyl coefficient $a_0^{(d)} = \Gamma(1+1/d)(d!)^{1/d}$ and $\zeta_d(0) = -d/2$. These are the analytic invariants of the sector spectrum. They fix the *structure* of the heat trace, not the absolute gravitational scale: $G_\infty$ (equivalently $G_N=G_\infty/(4\pi)$) is a second dimensional input, not determined by the spectral expansion (Part 4 §3.12.4).
@@ -275,7 +275,7 @@ $$\boxed{\sin^2\theta_{13} = g_{55}\,\delta_{23}\,\ln\frac{S(n_\tau,10)}{S(n_\mu
 | $\sin^2\theta_{12}$ | $0.30856$ | $0.307$ | $+0.51\%$ |
 | $\sin^2\theta_{13}$ | $0.02211$ | $0.0219$ | $+0.96\%$ |
 
-The three PMNS angles depend only on $g_{55}$ and the four mode indices $n_{\nu_i}$, $n_\alpha$; $g_{55}=96/g_{22}$ and the indices are fixed by the seed structure (T9b, T0.5), so no quantity in the three formulas is adjusted to the measured angles.
+The three PMNS angles depend only on $g_{55}$ and the four mode indices $n_{\nu_i}$, $n_\alpha$; $g_{55}=96/g_{22}$ and the indices are fixed by the seed structure (T9b, T0.5).
 
 **Derivation key steps.**
 
@@ -305,7 +305,7 @@ From the 15 IDWT physical masses:
 
 $$\operatorname{Tr}(D^2) = \sum_{i=1}^{15} m_i^2 = 6.165\times10^{10}\ \text{MeV}^2, \qquad \sqrt{\operatorname{Tr}(D^2)} = 248.30\ \text{GeV}.$$
 
-From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3\ \text{GeV}$. The 0.82% gap between $\sqrt{\operatorname{Tr}(D^2)}$ and this scale arises because $\operatorname{Tr}(D^2)$ sums the raw (bare) spectral eigenvalues while $G_F$ is derived from the W mode index and $g_2$ coupling — both are spectral quantities from the same seeds, so agreement is structurally expected and the residual is a spectral normalisation artefact, not a free parameter.
+From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3\ \text{GeV}$. The 0.82% gap between $\sqrt{\operatorname{Tr}(D^2)}$ and this scale arises because $\operatorname{Tr}(D^2)$ sums the raw (bare) spectral eigenvalues while $G_F$ is derived from the W mode index and $g_2$ coupling — both are spectral quantities from the same seeds, so the residual is a spectral normalisation artefact.
 
 This is a self-consistency check: both quantities are derived from the same seed structure, so agreement is structurally expected. It is not an independent prediction. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT — the Higgs is a confinement mode of the $d=2$ sector, and there is no quartic scalar potential (Part 5 §3c).
 
@@ -407,7 +407,7 @@ All six sector self-couplings are derived from $n_s=4$, $n_u=3$:
 
 **T9b** (Hopf universality). $v_3/v_2=v_5/v_4$ exactly, deriving $g_{55}$ from the $d=3,4$ couplings via the Hopf chain condition (T3 Rule B). The rank-1 factorisation of T2 gives $g_{dd'}=v_d v_{d'}$; the specific ratio $v_3/v_2=v_5/v_4$ is the additional Hopf universality constraint.
 
-**T9b Corollary (Hopf Routing Rule). ✅** Since $g_{55}$ is derived entirely from $g_{44}$ via $v_5/v_4 = v_3/v_2$, sector $d=5$ is the unique sector in $D$ whose self-coupling is determined by $g_{44}$. Generation tower modes derived from a $d=4$ seed belong to $d=5$ — because $d=5$ is the only sector in $D$ constructed as the Hopf fiber over $d=4$ (Part 1 §3a Step 2). Assigning those modes to any other sector in $D$ would require a sector whose coupling closes over $d=4$; by T3, no such sector exists besides $d=5$. The routing rule is a direct corollary of T9b and T3, not an independent postulate.
+**T9b Corollary (Hopf Routing Rule). ✅** Since $g_{55}$ is derived entirely from $g_{44}$ via $v_5/v_4 = v_3/v_2$, sector $d=5$ is the unique sector in $D$ whose self-coupling is determined by $g_{44}$. Generation tower modes derived from a $d=4$ seed belong to $d=5$ — because $d=5$ is the only sector in $D$ constructed as the Hopf fiber over $d=4$ (Part 1 §3a Step 2). Assigning those modes to any other sector in $D$ would require a sector whose coupling closes over $d=4$; by T3, no such sector exists besides $d=5$. The routing rule is a direct corollary of T9b and T3.
 
 **T9c** ($\mu$-$\tau$ symmetry). $g_{66}=g_{10,10}=1/n_s$ exactly, giving $v_6=v_{10}=1/2$. This is the $\mu$-$\tau$ interchange symmetry that gives the coupling-symmetry limit of the PMNS (T6 Step 2).
 
@@ -465,7 +465,7 @@ $$K_d(t) = \operatorname{Tr}(e^{-t|D_d|}) = \sum_{n=1}^{\infty} e^{-t\,S(n,d)}, 
 
 The sum converges for all $t>0$ because $S(n,d)\to\infty$. It encodes the full spectral content of the sector in a single analytic function.
 
-**Physical readings.** (a) $K_d(t)$ is the partition function of sector $d$ at inverse temperature $t/m_{\rm scale}_d$. (b) Via the Mellin transform $\Gamma(s)\zeta_d(s) = \int_0^\infty t^{s-1}K_d(t)\,dt$, it is the generating function of all spectral zeta values $\zeta_d(s)$, including the sum rule $\zeta_d(1)=d/(d-1)$ from T13a. (c) The spectral action at cutoff $\Lambda$ with exponential kernel is $\operatorname{Tr}(e^{-|D|/\Lambda})=\sum_d K_d(m_{\rm scale}_d/\Lambda)$.
+**Physical readings.** (a) $K_d(t)$ is the partition function of sector $d$ at inverse temperature $t/m_{{\rm scale},d}$. (b) Via the Mellin transform $\Gamma(s)\zeta_d(s) = \int_0^\infty t^{s-1}K_d(t)\,dt$, it is the generating function of all spectral zeta values $\zeta_d(s)$, including the sum rule $\zeta_d(1)=d/(d-1)$ from T13a. (c) The spectral action at cutoff $\Lambda$ with exponential kernel is $\operatorname{Tr}(e^{-|D|/\Lambda})=\sum_d K_d(m_{{\rm scale},d}/\Lambda)$.
 
 ### T14a. Weyl Term (Leading Small-$t$ Asymptotics)
 
@@ -521,7 +521,7 @@ $$K_d(t) \approx e^{-t}\bigl(1 + e^{-dt} + \cdots\bigr), \qquad t\to\infty.$$
 
 Two exact results follow:
 
-1. **Universal ground state.** $S(1,d)=1$ for every sector; all sectors share the same ground-state energy in units of $m_{\rm scale}_d$. Verified: $K_d(5)\approx e^{-5}=0.006738$ to six figures for all six $d$.
+1. **Universal ground state.** $S(1,d)=1$ for every sector; all sectors share the same ground-state energy in units of $m_{{\rm scale},d}$. Verified: $K_d(5)\approx e^{-5}=0.006738$ to six figures for all six $d$.
 
 2. **First excitation gap equals sector dimension.** $S(2,d)-S(1,d)=(d+1)-1=d$ (equivalently, by the T13b mode-spacing identity, $S(2,d)-S(1,d)=S(2,d-1)=d$). The energy gap to the first excited state is exactly $d$ in dimensionless units.
 
@@ -637,7 +637,7 @@ $$\binom{n+d}{d}-\binom{n+d-1}{d}=\binom{n+d-1}{d-1}=S(n+1,d-1).\quad\square$$
 
 ### T13c. Exact Mass Ratios
 
-Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. For $d=4$ up-type quarks these are the **bare** combinatorial ratios — exact identities, and the confinement-binding correction of §11.9 (an absolute-mass effect) largely cancels in a ratio; they already match PDG to $+0.16\%$ ($m_c/m_u$) and $+1.4\%$ ($m_t/m_u$). For the tau the back-reaction factor (T10b) is algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$, hence also parameter-free.
+Within a single sector, $m_{{\rm scale},d}$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. For $d=4$ up-type quarks these are the **bare** combinatorial ratios — exact identities, and the confinement-binding correction of §11.9 (an absolute-mass effect) largely cancels in a ratio; they already match PDG to $+0.16\%$ ($m_c/m_u$) and $+1.4\%$ ($m_t/m_u$). For the tau the back-reaction factor (T10b) is algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$, hence also parameter-free.
 
 | Ratio | IDWT exact form | IDWT value | PDG | Error |
 |---|---|---|---|---|
@@ -651,7 +651,7 @@ Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios 
 | $m_{\nu_3}/m_{\nu_2}$ | $S(22,5)/S(15,5)=65780/11628$ | 5.657 | — | — |
 | $m_Z/m_W$ | $S(81,2)/S(76,2)=3321/2926$ | 1.1350 | 1.1346 | +0.034% |
 
-$D=1+1/(n_{\rm up}\cdot n_s^2\cdot S(n_s,4))=1+1/1680$ is the back-reaction factor (T10b). Note $m_{\rm scale}_{10}=m_{\rm scale}_6$ so the $\tau/\mu$ and $\tau/e$ ratios are cross-sector only in dimension, not in coupling. Neutrino ratios have no direct PDG comparand because oscillation experiments measure $\Delta m^2$ differences, not absolute ratios; the IDWT predictions are falsifiable once $m_{\nu_1}$ is measured by CMB-S4 or tritium endpoint experiments.
+$D=1+1/(n_{\rm up}\cdot n_s^2\cdot S(n_s,4))=1+1/1680$ is the back-reaction factor (T10b). Note $m_{{\rm scale},10}=m_{{\rm scale},6}$ so the $\tau/\mu$ and $\tau/e$ ratios are cross-sector only in dimension, not in coupling. Neutrino ratios have no direct PDG comparand because oscillation experiments measure $\Delta m^2$ differences, not absolute ratios; the IDWT predictions are falsifiable once $m_{\nu_1}$ is measured by CMB-S4 or tritium endpoint experiments.
 
 ### T13d. Partial Sum Formula ✅
 
@@ -721,7 +721,7 @@ These are the **three analytic anchors** of every IDWT sector zeta function. Tog
 
 - **$\zeta_d(1)=d/(d-1)$** (T13a) — total inverse-spectral-weight. Governs every observable built from inverse-mass sums. Proved by Pascal telescoping.
 
-- **$\zeta_d(0)=-d/2$** (T14b) — zeta-regularised mode count; identical to the Seeley-DeWitt coefficient of a $d$-dimensional Riemannian manifold. Sets the sector functional determinant $\log\det D_d = -\zeta_d'(0)$.
+- **$\zeta_d(0)=-d/2$** (T14b) — zeta-regularised mode count; the IDWT analogue of the Seeley-DeWitt $\zeta(0)$ of a $d$-dimensional manifold (the correspondence itself is an open item, T14 Note). Sets the sector functional determinant $\log\det D_d = -\zeta_d'(0)$.
 
 - **$\operatorname{Res}_{s=1/d}\,\zeta_d(s)=(d!)^{1/d}/d$** (T14d) — the pole at $s=1/d$ is the spectral dimension of sector $d$. The multi-sector function $\zeta_D(s)$ has six poles at $s\in\{1/2,1/3,1/4,1/5,1/6,1/10\}$, one per sector; IDWT has six spectral dimensions, not one.
 
