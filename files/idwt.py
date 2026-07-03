@@ -8461,6 +8461,51 @@ assert abs((_J_136 - 3.18e-5)/0.15e-5) < 1.5    # J pull -0.8 sigma
 
 
 # =============================================================================
+# STEP 137 -- P_L NUMERATOR: THE TWO SMALL-COMPONENT READINGS, DISCRIMINATED
+# =============================================================================
+# Finishes the STEP 95 numerator question ("why is the small component the
+# k=0 multiplet alone?").  The two spliced readings are computed exactly on
+# the S^3 Dirac-oscillator tower at the committed scale (omega/m = 68/3267,
+# ground E_0/m = 35/33 exact) and put to data:
+# (a) SPECTRAL reading -- the per-level Dirac lower component of the
+#     equi-norm k=0..4 tower: (f/g)^2_k = (E_k - m)/(E_k + m) with
+#     E_k^2 = m^2 + 2 m omega (2k+3), averaged with per-sign degeneracies
+#     (k+1)(k+2): small/large^2 = 0.0788 -> g_A = 1.194: EXCLUDED at
+#     -34 sigma (PDG 1.2723(23)).
+# (b) CHANNEL reading -- the kernel-channel k=0 share of the equi-norm
+#     tower: small/large^2 = deg_0/(sum deg - deg_0) = 2/68 = 1/34, i.e.
+#     P_L = 2/70 = 1/S(5,3): g_A = sqrt(7/4)(1 - 4/(3*35)) = 1.27248,
+#     +0.1 sigma.  CONFIRMED.
+# With the previously excluded competing assignments (1/22: -12.9 sigma;
+# 13/35: -263 sigma; STEP 95), the channel reading is the UNIQUE
+# data-consistent identification among the framework-natural candidates.
+# MECHANISM FRAME (same family as STEP 131/134): in IDWT the weak
+# transition operator is a kernel-channel object (chiral EW channel,
+# STEP 107), so the axial response samples the kernel's C_0 (+) C_2
+# angular channel; the spin-scalar C_0 share of the equi-norm tower is
+# deg_0 / (2 S(5,3)) = 1/35 -- exact given the addition theorem.
+# Residual (🔶): prove the channel projection of the axial response.
+# Gap-equation route (NJL-type, o4-mini): recorded UNDER-DETERMINED --
+# the coupling normalization G needs the composite three-quark mean-field
+# reduction, not yet derived; declared-candidate scan logged in Appendix A
+# section 9 (one 0.13% near-hit at G = m/60, status conjecture only).
+
+_wm_137 = _Fr41(68, 3267)                       # committed omega/m
+_E2_137 = lambda k: 1 + (2*k + 3) * 2 * _wm_137
+assert _E2_137(0) == _Fr41(35, 33)**2           # ground exact
+_deg_137 = lambda k: (k + 1) * (k + 2)
+assert sum(_deg_137(k) for k in range(5)) == 2 * S(5, 3)
+_r2_137 = {k: (math.sqrt(float(_E2_137(k))) - 1)
+           / (math.sqrt(float(_E2_137(k))) + 1) for k in range(5)}
+_tow_137 = sum(_deg_137(k) * _r2_137[k] for k in range(5)) / 70.0
+_PLs_137 = _tow_137 / (1 + _tow_137)            # spectral P_L
+_gAs_137 = math.sqrt(7.0/4.0) * (1 - 4.0/3.0 * _PLs_137)
+_gAc_137 = math.sqrt(7.0/4.0) * (1 - 4.0/(3.0 * 35.0))
+assert (_gAs_137 - 1.2723) / 0.0023 < -20.0     # spectral reading excluded
+assert abs((_gAc_137 - 1.2723) / 0.0023) < 0.5  # channel reading confirmed
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -12227,6 +12272,27 @@ print(f"  J (all-IDWT) = {_J_136:.3e} vs 3.18(15)e-5  "
 print("status 🔶: committed counting law + data-selected pairing; the")
 print("source-triplet/seed-level identification is motivated (charge")
 print("selection + chain anchor), not forced. Parents: STEP 131 L1, T8.")
+
+
+# =============================================================================
+# STEP 137 -- OUTPUT: P_L NUMERATOR READINGS DISCRIMINATED BY DATA
+# =============================================================================
+print("\n=== STEP 137: P_L NUMERATOR -- TWO READINGS, DATA-DISCRIMINATED ===")
+print("S^3 Dirac-oscillator tower at omega/m = 68/3267 (E_0/m = 35/33 exact):")
+print(f"  spectral reading (tower lower component): small/large^2 = "
+      f"{_tow_137:.4f}")
+print(f"    -> g_A = {_gAs_137:.5f}  pull "
+      f"{(_gAs_137-1.2723)/0.0023:+.1f} sigma  EXCLUDED")
+print(f"  channel reading (kernel C0 share, 2/70): g_A = {_gAc_137:.5f}")
+print(f"    pull {(_gAc_137-1.2723)/0.0023:+.1f} sigma  CONFIRMED")
+print("with 1/22 (-12.9 s) and 13/35 (-263 s) already excluded (STEP 95),")
+print("the channel reading is the UNIQUE data-consistent identification.")
+print("mechanism frame: the weak vertex is a kernel-channel object (STEP")
+print("107), so the axial response samples the C0(+)C2 channel; the C0")
+print("share of the equi-norm tower = deg_0/(2 S(5,3)) = 1/35 exactly.")
+print("residual 🔶: prove the channel projection of the axial response.")
+print("gap-equation route: under-determined (composite mean-field G not")
+print("derived); candidate scan logged, Appendix A section 9.")
 
 
 # =============================================================================
