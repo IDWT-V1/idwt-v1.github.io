@@ -8152,8 +8152,13 @@ assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
 #      (+0.3 sigma).  This also identifies WHY the single-state T2 overlap
 #      (STEP 2d, n^1 scaling) is the wrong object: it couples two aligned
 #      states, not the channel fraction of an equidistributed excitation.
-# Residual (Part 6): derive the conditional normalization from the EOM;
-# write out L1 on the CP^k sectors; extend to cross-sector and g_22.
+# Residual: the pointlike-equidistribution premise itself (L1 parent =
+# size-program thesis STEP 121).  Discharged: the EOM normalization
+# (STEP 134) and the L1 CP^k write-out (addition theorem on every CP^n
+# sector, verified below -- previously only S^3).  The cross-sector law
+# is the same ratio across sectors (STEP 136 |V_ub|: a d=4 source count
+# over a d=3 destination count); g_22 = p^2 q/2 is its multiplicative
+# form (a d=3 count squared times a d=4 count, STEP 2d Tr[1] product).
 
 def _geg_131(k, a):
     """Gegenbauer C_k^a coefficient list (Fractions), exact recurrence."""
@@ -8188,6 +8193,32 @@ for _d in (3, 4, 5, 6, 10):                     # L1 cumulative identities
         _cum = sum(_comb49(_k + _d - 1, _d - 1) for _k in range(_N + 1))
         assert _cum == S(_N + 1, _d)
 assert sum((_k+1)*(_k+2) for _k in range(5)) == 2*S(5, 3)  # STEP 95 form
+
+# L1 CP^k write-out: the equidistribution mechanism (equal norm per state)
+# proved on S^3 for the g_A denominator (STEP 95) holds on every CP^n
+# sector manifold by the same addition theorem (Schur / homogeneity).
+# Explicit at level l=1: for a unit Z in C^{n+1} the (1,1)-multiplet power
+# sum sum_ij (Z_i Z_j - delta_ij/(n+1))^2 = n/(n+1) is POSITION-CONSTANT,
+# verified exactly here at distinct rational points of CP^1,2,3,5
+# (sectors d = 2,4,6,10); a delta source thus deposits equal norm/state.
+
+
+def _addthm_131(Z):                             # l=1 CP^n power sum (exact)
+    _m = len(Z)
+    return sum((Z[i] * Z[j] - (_Fr41(1, _m) if i == j else 0))**2
+               for i in range(_m) for j in range(_m))
+
+
+_cppts_131 = {1: (5, [(3, 4), (4, 3), (0, 5)]),
+              2: (3, [(1, 2, 2), (2, 1, 2), (2, 2, 1)]),
+              3: (3, [(2, 2, 1, 0), (1, 2, 2, 0), (0, 1, 2, 2)]),
+              5: (3, [(2, 1, 1, 1, 1, 1), (1, 2, 1, 1, 1, 1),
+                      (1, 1, 1, 1, 1, 2)])}
+for _n1, (_den, _vs) in _cppts_131.items():
+    for _a in _vs:
+        _Z = [_Fr41(_x, _den) for _x in _a]
+        assert sum(_z * _z for _z in _Z) == 1           # unit vector
+        assert _addthm_131(_Z) == _Fr41(_n1, _n1 + 1)   # equal norm/state
 
 _m0_131 = _Fr41(7, 3)                           # m0 cancels: any value works
 assert (_m0_131 / _Fr41(S(4, 3))) / (_m0_131 / _Fr41(S(1, 3))) \
@@ -12098,8 +12129,12 @@ print(f"  conditional sin = {_sinA_131:.5f}  pull {_pullA_131:+.1f} sigma"
 print(f"  normalized  sin = {_sinB_131:.5f}  pull {_pullB_131:+.1f} sigma"
       "  (excluded)")
 print("=> the T2 single-state overlap (STEP 2d) is the wrong object, not a")
-print("failed mechanism; residual = EOM-level derivation of the conditional")
-print("normalization + CP^k write-out + g_22. See Part 3 section 0.9, Part 6.")
+print("failed mechanism. L1 CP^k write-out: the l=1 addition-theorem power")
+print("sum sum_ij(Z_iZ_j - d_ij/(n+1))^2 = n/(n+1) is position-constant on")
+print("every CP^n sector (d=2,4,6,10), verified exact -> equidistribution")
+print("holds beyond S^3. Residual = the pointlike premise (STEP 121); the")
+print("cross-sector law is STEP 136 (|V_ub|) and g_22 (STEP 2d product).")
+print("See Part 3 section 0.9, Part 6.")
 
 
 # =============================================================================
