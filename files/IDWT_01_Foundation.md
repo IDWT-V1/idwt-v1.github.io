@@ -234,9 +234,9 @@ where $\{2\}$ is the EM reference sector, the quartet is the matter sector, and 
 
 ---
 
-### 3b. Completeness of the Particle Spectrum
+### 3b. Completeness of the Particle Spectrum 🔶
 
-**Theorem.** The IDWT particle spectrum consists of exactly 15 states: the 14 mode indices in $\Sigma = \{1,3,4,10,13,15,20,22,23,35,72,76,81,95\}$ plus the bottom quark beat at $k_0 = 16$ in $d=3$. No additional stable particles exist.
+**Theorem (conditional on the co-fixed-point selection rule, P7/P8).** Given the generation-tower construction — the hockey-stick, additive, and $g$-rule operators acting on the seeds $\{n_d=1,\,n_u=3,\,n_{\rm top}=72\}$ — the IDWT particle spectrum consists of exactly 15 states: the 14 mode indices in $\Sigma = \{1,3,4,10,13,15,20,22,23,35,72,76,81,95\}$ plus the bottom quark beat at $k_0 = 16$ in $d=3$. No additional mode index is admitted by that construction.
 
 **Proof.** Three steps, each relying only on results already established.
 
@@ -252,7 +252,7 @@ All three give $k_0 = 16$ exactly. Every quantity is determined by $n_s = 4$. Ex
 
 The beat is structurally confined to $d=3$: conditions 2 and 3 are $d=3$ identities — they use $n_e$ (from $d=6$) and $n_u$ (from $d=4$), whose sum closes onto the $d=3$ resonance site. The same $n=16$ appears in other sectors but produces no known particle mass. $\square$
 
-**The observable spectrum is closed.** Given $n_s = 4$ and $m_e$, the list of observable particles, their masses, and their quantum numbers are fully determined. Any additional *observable* stable state would require either a new sector (excluded by §3a) or a new mode index consistent with the eigenmode selection rule (excluded by the Uniqueness Theorem, §5c). Neither exists. There is no room for new observable fundamental particles within the IDWT framework.
+**The observable spectrum is closed under the postulated construction.** Given $n_s = 4$, $m_e$, and the co-fixed-point rules of P7/P8, the list of observable particles, their masses, and their quantum numbers are fully determined, and no new mode index or sector satisfies those rules (excluded by §3a and the Uniqueness Theorem, §5c). Whether that construction is itself the dynamically forced selection mechanism — rather than a postulated one that happens to close and reproduce the observed spectrum — is not settled here: it is the standing-open positive firing-set question (Part 9 T0.5, Part 6 MC-4), the EOM-level derivation of *why* the tower operators are the correct stability rule. Until that is resolved, this is a completeness theorem about the postulated rule, not yet a completeness proof at the level of the underlying dynamics.
 
 ---
 
