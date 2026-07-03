@@ -116,7 +116,7 @@ The phase of sector $d$ accumulates at a rate inversely proportional to the mode
 
 The cross-sector coupling term $(\xi_d\cdot\xi_{d'})^2$ decomposes on the unit sphere $S^{d-1}$ by spherical harmonics. For the $d=3$ sector ($S^2$), where $P_2$ is the standard Legendre polynomial:
 
-$$(\xi_d\cdot\xi_{d'})^2 = \tfrac{1}{3}\;[$l{=}0$,\text{ scalar}] \;+\; \tfrac{2}{3}P_2(\cos\theta)\;[$l{=}2$,\text{ tensor}]$$
+$$(\xi_d\cdot\xi_{d'})^2 = \tfrac{1}{3}\;[l{=}0,\ \text{scalar}] \;+\; \tfrac{2}{3}P_2(\cos\theta)\;[l{=}2,\ \text{tensor}]$$
 
 For general $d$, the $l=0$ coefficient is $1/d$ and the $l=2$ coefficient involves the Gegenbauer polynomial $C_2^{(d-2)/2}$. The $d=3$ formula is given because the $d=3$ quark sector is the primary source of the corrections discussed here.
 
@@ -367,7 +367,7 @@ The step $n_\phi - n_\rho = n_{\rm strange} - n_{\rm up} = 1$ is the algebraic s
 
 The ρ prediction is independently confirmed at +0.069% by the cross-sector filter $\Gamma_{346}$ (§10). The φ prediction at +1.4% uses the same formula; the slightly larger residual (vs the sub-percent light-quark residuals) reflects that composite resonances sit higher in the mode tower where next-order kernel corrections are less constrained. Script: `files/idwt.py` (resonance table output). **Status: 🔵**
 
-⭐ **RSK combinatorial fusion rule.** The Robinson-Schensted-Knuth bijection maps each semistandard Young tableau of shape $(n-1)$ with entries at most $d+1$ to a pair of lattice paths, and $S(n,d)$ counts these tableaux. This gives a deterministic combinatorial fusion rule: inserting the word for mode $S(a,d)$ into the tableau for mode $S(b,d)$ via RSK yields the tableau for $S(a+b,d)$, with the shape of the result identifying the sector the product lands in — no Clebsch-Gordan coefficients. The ρ meson collision $n_\rho = 5+4 = 9$ (in mode-index terms, combining the $n_u=3$ and $n_s=4$ seed words) becomes, under RSK, the concatenation of two 2-row tableaux yielding a 2-row tableau of weight 9. The collision is not an arithmetic accident; it is the Pieri rule for tableaux, forced by the same seed algebra that fixes $n_s=4$.
+⭐ **RSK combinatorial fusion rule.** The Robinson-Schensted-Knuth bijection maps each semistandard Young tableau of shape $(n-1)$ with entries at most $d+1$ to a pair of lattice paths, and $S(n,d)$ counts these tableaux. This gives a deterministic combinatorial fusion rule: inserting the word for mode $S(a,d)$ into the tableau for mode $S(b,d)$ via RSK yields the tableau for $S(a+b,d)$, with the shape of the result identifying the sector the product lands in — no Clebsch-Gordan coefficients. The ρ meson index $n_\rho = 9$ (fixed by the seed algebra above, $n_\rho = n_s + n_u + 2n_d$) is, under RSK, the weight of the tableau obtained by fusing the constituent seed words. The collision is not an arithmetic accident; it is the Pieri rule for tableaux, forced by the same seed algebra that fixes $n_s=4$.
 
 **Baryon octet — $(N_c-1)$ color-bond formula. 🔵** When one quark in a colour-singlet baryon is replaced by a heavier quark, each of the remaining $(N_c-1)$ colour bonds contributes the mass difference. With $N_c - 1 = \chi(\mathbb{CP}^1) = 2$ from T15:
 
@@ -507,7 +507,7 @@ The second term is the self-feedback: the shifted tau mass feeds further back-re
 
 $$\Delta m = \frac{\varepsilon_{6\to10}\times m_\tau}{1-g_{10,10}}$$
 
-Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$. This ratio equals $n_u/n_s = 3/4$, with $n_u=3$ (seed) and $n_s=4$; it is not a free parameter.
+Since $g_{10,10} = 1/n_s = 1/4$, the denominator is $1-g_{10,10} = 3/4 = n_u/n_s$, giving resummation factor $n_s/n_u = 4/3$, with $n_u=3$ (seed) and $n_s=4$; it is not a free parameter.
 
 **The total correction.** The leading $d{=}6\to d{=}10$ kernel perturbation at the tau level is:
 
@@ -682,7 +682,7 @@ Note: $\tau_d = 1/(2\sqrt{k_0+d})$ is a valid description of the inter-sector ph
 | $m_{\rm scale,10}$ | — | = $m_{\rm scale,6}$ | $g_{10,10} = g_{66}$: $d=10$ shares $d=6$ coupling | $2.7526\times10^{-5}$ MeV |
 | $m_{\rm scale,2}$ | — | — | $m_e \times \sqrt{g_{22}/g_{66}}$ [cross-sector; §10b] | 27.47 MeV |
 
-The light-quark predictions are parameter-free outputs of the coupling self-consistency derivation. Against PDG 2024 they sit at d +0.04%, s +0.57%, u +0.77% — all below PDG measurement precision for light quarks (PDG d: ±10%, s: ±9%).
+The light-quark predictions are parameter-free outputs of the coupling self-consistency derivation. The bare counts sit at d +0.04%, s +0.57%, u +0.77% against PDG 2024; the derived confinement-binding correction (§11.9) brings the colour-carrying strange and up to s +0.49% and u +0.70% — all below PDG measurement precision for light quarks (PDG d: ±10%, s: ±9%).
 
 ### All sector scales
 
