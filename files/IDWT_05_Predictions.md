@@ -8,12 +8,6 @@ Within each sector, $S(n,d)/S(m,d)$ is a ratio of binomial coefficients — fixe
 
 The absolute scale for the $d=3$ sector is fixed by the kernel vacuum fixed-point: $m_{\rm scale,3} = m_e \times \sqrt{g_{33}/g_{66}} = 4.702$ MeV, with $g_{33} = 8\sqrt{7}$ and $g_{66} = 1/4$ derived from the seeds $\{n_d=1,\,n_u=3\}$ (via $n_s = n_d+n_u = 4$) and anomaly cancellation respectively. Full derivation in Part 2 §10.
 
-**Strange/down ratio = 20 exactly ⭐**
-
-$$S(4,3)/S(1,3) = 20/1 = 20.000$$
-
-Fixed by the formula before comparing to data. Zero-error prediction.
-
 **Muon/electron ratio 🔵** (both $d=6$ $\mathbb{CP}^3$ sector excitations of $\Psi_\infty$, inhabiting six spatial dimensions; $n=35$ for the muon, $n=13$ for the electron). The ratio is an exact rational — a ⭐ combinatorial identity, $S(35,6)/S(13,6)$ reducing to $3515/17$:
 
 $$\frac{m_\mu}{m_e} = \frac{S(35,6)}{S(13,6)} = \frac{3\,838\,380}{18\,564} = \frac{3515}{17} = 206.7647\ldots \quad (\text{PDG: }206.7683,\ {-}0.002\%)$$
@@ -200,7 +194,7 @@ Two null models make the §2a estimate a defensible joint p-value. Both are comp
 
 **Null A — random target position.** The hypothesis being tested: the measured values are unrelated to the simplex grid, so each sits at a uniformly random position inside its local inter-rung cell. The normalized distance from a measured value to its nearest rung is then uniform on $[0,1]$; with the measurement floor $f = \min(1, 2\sigma/g)$ the per-quantity luck is $L = \max(p, f)$, and the joint statistic is $X = -\sum \ln L_i$. The joint p-value $P(X \geq X_{\rm obs})$ is computed two ways: exactly, as the tail of the convolution of the per-quantity densities, and by Fisher's closed form $P(\chi^2_{2k} \geq 2X_{\rm obs})$, which ignores the floors and is therefore conservative (floors only thin the null tail).
 
-The quantity set is fixed by a rule stated in advance, not by closeness: a quantity enters if it is dimensionless, parameter-free, and its measurement resolves the grid (σ < g/2 — the experiment can distinguish adjacent rungs, so the test can fail). Eight quantities pass: the four ratios of §2a plus $\sin\theta_C$, $m_s/m_d$, $m_t/m_c$, and $\Delta m^2_{31}/\Delta m^2_{21}$. Each is scored on the grid of one free index, the other index being the anchor ($e$ is the global mass unit; $W$ anchors the $d=2$ ratios; $d$ anchors $s/d$; $c$ anchors $t/c$); the grid is the conservative local spacing $\min$ over $n \to n\pm 1$. The "both indices free" objection is exactly what Null B answers.
+The quantity set is fixed by a rule stated in advance, not by closeness: a quantity enters if it is dimensionless, parameter-free, and its measurement resolves the grid (σ < g/2 — the experiment can distinguish adjacent rungs, so the test can fail). Seven quantities pass: the four ratios of §2a plus $\sin\theta_C$, $m_t/m_c$, and $\Delta m^2_{31}/\Delta m^2_{21}$. Each is scored on the grid of one free index, the other index being the anchor ($e$ is the global mass unit; $W$ anchors the $d=2$ ratios; $c$ anchors $t/c$); the grid is the conservative local spacing $\min$ over $n \to n\pm 1$. The "both indices free" objection is exactly what Null B answers.
 
 | Quantity | IDWT | Measured | $\varepsilon_{\rm eff}$ | grid $g$ | $L$ |
 |---|---|---|---|---|---|
@@ -209,17 +203,16 @@ The quantity set is fixed by a rule stated in advance, not by closeness: a quant
 | $m_Z/m_W$ | 1.13500 | $1.13461 \pm 0.00019$ | $3.4\times10^{-4}$ | 0.024 | $2.8\times10^{-2}$ |
 | $m_H/m_W$ | 1.55844 | $1.55781 \pm 0.00139$ | $8.9\times10^{-4}$ | 0.021 | $8.6\times10^{-2}$ |
 | $\sin\theta_C$ | 0.22454 | $0.2245 \pm 0.0008$ | $3.6\times10^{-3}$ | 0.245 | $2.9\times10^{-2}$ |
-| $m_s/m_d$ | 20.000 | $19.81 \pm 0.13$ | $9.6\times10^{-3}$ | 0.500 | $3.8\times10^{-2}$ |
 | $m_t/m_c$ | 137.26 | $135.56 \pm 0.54$ | $1.25\times10^{-2}$ | 0.053 | $4.7\times10^{-1}$ |
 | $\Delta m^2_{31}/\Delta m^2_{21}$ | 34.86 | $33.60 \pm 0.88$ | $3.8\times10^{-2}$ | 0.348 | $2.2\times10^{-1}$ |
 
-Measured inputs: PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV; $m_W = 80369.2 \pm 13.3$ MeV; $m_Z = 91188.0 \pm 2.0$ MeV; $m_H = 125200 \pm 110$ MeV; $V_{us} = 0.2245 \pm 0.0008$; $m_t = 172570 \pm 290$ MeV; $m_c = 1273.0 \pm 4.6$ MeV; $\Delta m^2_{31} = 2.530(28)\times10^{-3}$ eV$^2$; $\Delta m^2_{21} = 7.53(18)\times10^{-5}$ eV$^2$) and FLAG 2024 ($m_s/m_d = 19.81 \pm 0.13$ from $m_s/m_{ud} = 27.23(10)$, $m_u/m_d = 0.455(8)$). $\varepsilon_{\rm eff}$ is $|\text{IDWT} - \text{obs}|/\text{obs}$ floored at the relative measurement error. The $m_s/m_d$ entry is the largest pull in the set (+1.5σ against the lattice ratio); it is scored as found.
+Measured inputs: PDG 2024 ($m_\tau = 1776.93 \pm 0.09$ MeV; $m_W = 80369.2 \pm 13.3$ MeV; $m_Z = 91188.0 \pm 2.0$ MeV; $m_H = 125200 \pm 110$ MeV; $V_{us} = 0.2245 \pm 0.0008$; $m_t = 172570 \pm 290$ MeV; $m_c = 1273.0 \pm 4.6$ MeV; $\Delta m^2_{31} = 2.530(28)\times10^{-3}$ eV$^2$; $\Delta m^2_{21} = 7.53(18)\times10^{-5}$ eV$^2$). $\varepsilon_{\rm eff}$ is $|\text{IDWT} - \text{obs}|/\text{obs}$ floored at the relative measurement error.
 
-The result: $X_{\rm obs} = 31.54$, joint $p = 2.35\times10^{-10}$ (6.2σ) exact; $1.57\times10^{-7}$ (5.1σ) under the conservative Fisher treatment; a $\times100$ look-elsewhere allowance leaves $2.4\times10^{-8}$ (5.5σ). The §2a core set alone gives $3.84\times10^{-7}$ (4.9σ) under the same combination. The exact convolution was validated against Monte Carlo at every tail depth the simulation can resolve.
+The result: $X_{\rm obs} = 28.28$, joint $p = 1.68\times10^{-9}$ (5.9σ) exact; $4.67\times10^{-7}$ (4.9σ) under the conservative Fisher treatment; a $\times100$ look-elsewhere allowance leaves $1.7\times10^{-7}$ (5.1σ). The §2a core set alone gives $3.84\times10^{-7}$ (4.9σ) under the same combination. The exact convolution was validated against Monte Carlo at every tail depth the simulation can resolve.
 
 The three PMNS angles and $m_c/m_u$ fail the resolution rule — their effective grids are finer than current measurement errors, so under Null A they cannot carry evidence either way. As consistency checks they sit at +0.30σ ($\sin^2\theta_{23}$), +0.13σ ($\sin^2\theta_{12}$), +0.30σ ($\sin^2\theta_{13}$), and −0.04σ ($m_c/m_u$).
 
-**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all $n$ placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for $d=5$), recompute all twelve quantities — the eight above plus the PMNS angles and $m_c/m_u$, with $g_{55}$ fixed by the seeds — and score each random theory by $T = \sum \ln \varepsilon_{{\rm eff},i}$ against the same measured set. No random index assignment in $8.4\times10^6$ draws ($6\times10^6$ at the stated windows, the rest at halved and doubled windows) scored as well as IDWT; at the stated windows this gives $p_B < 5\times10^{-7}$ (95% CL). In the reproducible $10^6$-draw in-script run, the best random theory fell short by 40.9 ln-units (a factor $\sim10^{18}$ in joint residual; the margin shrinks toward $\sim10^{15}$ as the draw count grows to $8.4\times10^6$, but no draw ever matches). Per quantity, random draws match the lepton ratios essentially never ($m_\mu/m_e$: $\sim3\times10^{-5}$ per draw; $m_\tau/m_e$: zero in all draws) and the remaining quantities at the $10^{-4}$–$10^{-2}$ level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
+**Null B — random theories.** This is the direct version: draw every mode index independently and uniformly from its allowed window (all $n$ placing the sector mass below 1 TeV at the seed-chain scales; below 1 eV for $d=5$), recompute all eleven quantities — the seven above plus the PMNS angles and $m_c/m_u$, with $g_{55}$ fixed by the seeds — and score each random theory by $T = \sum \ln \varepsilon_{{\rm eff},i}$ against the same measured set. In the reproducible $10^6$-draw in-script run (fixed seed), no random index assignment scored as well as IDWT — the best random theory fell short by 32.3 ln-units — giving $p_B < 3\times10^{-6}$ (95% CL, rule of three). Per quantity, random draws match the lepton ratios essentially never ($m_\mu/m_e$: $\sim3\times10^{-5}$ per draw; $m_\tau/m_e$: zero in all draws) and the remaining quantities at the $10^{-4}$–$10^{-2}$ level, so the joint match is far beyond reach of the family of integer assignments the skeptic's objection invokes.
 
 Both nulls leave the conclusion of §2a in place with the arithmetic now rigorous: the spectrum is not a flexible fit, and the open question that carries the remaining evidential weight is the index-forcing (T0.5, Part 9), not the statistics.
 
@@ -286,7 +279,6 @@ Three active neutrino species from the $d=5$ sector structure (three co-fixed-po
 
 | Ratio | IDWT | PDG | Error |
 |---|---|---|---|
-| $m_s/m_d$ | 20 (exact) | 20 | 0% |
 | $m_c/m_u$ | 590.33 | 589.4 | +0.16% ‡ |
 | $m_c/m_s$ | 13.66 | 13.6 | +0.5% ‡ |
 | $m_t/m_c$ | 137.26 | 135.6 | +1.25% ‡ |
@@ -503,7 +495,6 @@ These predictions have specific numerical values from mode indices and sector ge
 
 | # | Prediction | IDWT value | Basis | Falsified if... |
 |---|---|---|---|---|
-| **F7** | Strange/down mass ratio | 20.000 (zero error) | $S(4,3)/S(1,3) = 20/1$ | Ratio measured outside 19.5–20.5 at a well-controlled renormalization scale |
 | **F8** | Muon/electron mass ratio | 206.7647 | $S(35,6)/S(13,6)$ | Measured outside $206.760 \pm 0.005$ |
 | **F9** | Tau/electron mass ratio | 3475.126 (PDG −0.14σ) | $S(23,10)/S(13,6) \times (1+1/1680)$ | More than 3σ from 3475.13 (PDG 1σ = $\pm 0.24$) |
 | **F10** | Sum of neutrino masses | $\Sigma m_\nu = 60.39$ meV (corrected; $\delta_{\nu_3}=1/35$, Part 2 §9d) | Cross-sector Hopf fixed point; no oscillation data used | Measured < 55 meV or > 65 meV |
@@ -572,10 +563,9 @@ The table below condenses the hardest predictions in order of experimental decis
 | 2 | Normal neutrino mass ordering (F2) | Definitive inverted-ordering measurement |
 | 3 | $\Sigma m_\nu = 60.39$ meV (F10) | Measured < 55 meV or > 65 meV |
 | 4 | No new stable particles (F3) | Any confirmed new fundamental particle |
-| 5 | $m_s/m_d = 20$ exactly (F7) | Ratio outside 19.5–20.5 at controlled scale |
-| 6 | $N_\nu = 3$ exactly (F18) | Fourth neutrino species confirmed |
-| 7 | $\sin^2\theta_{23} = 0.5590$ (F13) | > 3σ departure from 0.5590 |
-| 8 | $\sin^2\theta_{12} = 0.3086$ (F14) | > 3σ departure from 0.3086 |
-| 9 | $\sin^2\theta_{13} = 0.02211$ (F15) | > 3σ departure from 0.02211 |
-| 10 | $\rho = 1$ at tree level (F17) | $\rho \neq 1$ beyond radiative corrections |
-| 11 | No glueballs (C8) | Confirmed glueball state at > 5σ with quantum numbers incompatible with all quark-model assignments |
+| 5 | $N_\nu = 3$ exactly (F18) | Fourth neutrino species confirmed |
+| 6 | $\sin^2\theta_{23} = 0.5590$ (F13) | > 3σ departure from 0.5590 |
+| 7 | $\sin^2\theta_{12} = 0.3086$ (F14) | > 3σ departure from 0.3086 |
+| 8 | $\sin^2\theta_{13} = 0.02211$ (F15) | > 3σ departure from 0.02211 |
+| 9 | $\rho = 1$ at tree level (F17) | $\rho \neq 1$ beyond radiative corrections |
+| 10 | No glueballs (C8) | Confirmed glueball state at > 5σ with quantum numbers incompatible with all quark-model assignments |

@@ -1557,9 +1557,6 @@ _Ss = {
 
 # Mass ratios: within-sector pairs where m_scale_d cancels exactly
 _mass_ratios = [
-    ("m_s / m_d",
-     _Ss["s"]/_Ss["d"], 20.0,
-     f"S(n_s,3)/S(n_d,3) = {_Ss['s']}/{_Ss['d']}"),
     ("m_c / m_u",
      _Ss["c"]/_Ss["u"], 589.4,
      f"S(n_c,4)/S(n_u,4) = {_Ss['c']}/{_Ss['u']} (bare, GTC removed)"),
@@ -2559,28 +2556,26 @@ assert sig_mu_e < 1e-3 and sig_tau_e < 1e-3
 #
 # Headline set -- pre-stated inclusion rule, not closeness: dimensionless,
 # parameter-free, and the measurement RESOLVES the grid (sigma < g/2).
-# The 4 STEP-38 ratios pass, plus sin th_C, m_s/m_d, m_t/m_c, and
+# The 4 STEP-38 ratios pass, plus sin th_C, m_t/m_c, and
 # dm2_31/dm2_21.  The three PMNS angles and m_c/m_u FAIL the resolution
 # test (effective grid finer than current errors): they carry no
 # evidential weight either way under NULL A and are consistency checks.
 # Each ratio is scored on the grid of ONE free index, the other being
-# the anchor/unit (e = global unit; W anchors d=2; d anchors s/d; c
+# the anchor/unit (e = global unit; W anchors d=2; c
 # anchors t/c).  Grid convention: conservative local spacing
 # min over n -> n+-1 (STEP 38 uses the upward gap d/n; both stated).
 #
 # NULL B (random theories): every mode index drawn uniformly from its
 # window (all n with sector mass <= 1 TeV at the seed-chain scales;
-# d=5: <= 1 eV); all 12 quantities recomputed per draw (g55 fixed by the
+# d=5: <= 1 eV); all 11 quantities recomputed per draw (g55 fixed by the
 # seeds); score T = sum ln eps_eff and count draws doing at least as
 # well as IDWT.  Fixed seed (20260609).  10^6 in-script draws: best
-# random T = -24.7 vs IDWT -65.6 (gap 40.9).  Full 8.4x10^6 draws
-# (6e6 stated + halved/doubled): 0 hits, p_B < 5e-7 (95% CL), best
-# random ~ -31 (gap ~35 ln units, factor ~1e15).
+# random T = -28.6 vs IDWT -60.9 (gap 32.3), 0 hits, p_B < 3e-6
+# (95% CL, rule of 3).
 #
 # Measured inputs: PDG 2024 (m_tau 1776.93(9); m_W 80369.2(133);
 # m_Z 91188.0(20); m_H 125200(110); V_us 0.2245(8); m_t 172570(290);
-# m_c 1273.0(46); dm2_31 2.530(28)e-3; dm2_21 7.53(18)e-5) and FLAG 2024
-# m_s/m_d = 19.81(13) from m_s/m_ud = 27.23(10), m_u/m_d = 0.455(8).
+# m_c 1273.0(46); dm2_31 2.530(28)e-3; dm2_21 7.53(18)e-5).
 # (Part 5 sec 2a)
 
 def _s39_cab(n):                         # Cabibbo, free d=3 strange index
@@ -2604,8 +2599,6 @@ _s39_q = [
      math.hypot(110.0 / 125200.0, 13.3 / 80369.2), 95,
      lambda n: S(n, 2) / S(76, 2)),
     ("sin th_C ", 0.2245, 0.0008 / 0.2245, 4, _s39_cab),
-    ("m_s/m_d  ", 19.81, 0.13 / 19.81, 4,
-     lambda n: S(n, 3) / S(1, 3)),
     ("m_t/m_c  ", 172570.0 / 1273.0,
      math.hypot(290.0 / 172570.0, 4.6 / 1273.0), 72,
      lambda n: S(n, 4) / S(20, 4)),
@@ -2708,7 +2701,7 @@ def _s39_T(preds):
 _s39_pidwt = [np.array([float(v)]) for v in (
     S(35, 6) / S(13, 6), S(23, 10) / S(13, 6) * (1 + 1 / 1680.0),
     S(81, 2) / S(76, 2), S(95, 2) / S(76, 2), _s39_cab(4),
-    S(4, 3) / S(1, 3), S(72, 4) / S(20, 4),
+    S(72, 4) / S(20, 4),
     _s39_dm2(22), _s39_s23, _s39_s12, _s39_s13, _s39_cu)]
 s39_T_idwt = float(_s39_T(_s39_pidwt)[0])
 
@@ -2719,7 +2712,7 @@ _ne, _nmu, _nta = (_s39_draw(6, s39_NB), _s39_draw(6, s39_NB),
                    _s39_draw(10, s39_NB))
 _nw, _nz, _nh = (_s39_draw(2, s39_NB), _s39_draw(2, s39_NB),
                  _s39_draw(2, s39_NB))
-_nsq, _ndq = _s39_draw(3, s39_NB), _s39_draw(3, s39_NB)
+_nsq = _s39_draw(3, s39_NB)
 _nc, _nt, _nu_ = (_s39_draw(4, s39_NB), _s39_draw(4, s39_NB),
                   _s39_draw(4, s39_NB))
 _n1, _n2, _n3 = (_s39_draw(5, s39_NB), _s39_draw(5, s39_NB),
@@ -2736,17 +2729,17 @@ with np.errstate(divide="ignore", invalid="ignore"):
 _s39_pr = [_T6[_nmu] / _T6[_ne], _T10[_nta] / _T6[_ne],
            _T2[_nz] / _T2[_nw], _T2[_nh] / _T2[_nw],
            (1 + 1 / (12 * _T3[_nsq])) / np.sqrt(_T3[_nsq]),
-           _T3[_nsq] / _T3[_ndq], _T4[_nt] / _T4[_nc],
+           _T4[_nt] / _T4[_nc],
            np.nan_to_num(_dm2r, nan=1e9), _s23r, _s12r,
            np.abs(_s13r), _T4[_nc] / _T4[_nu_]]
 _s39_Tr = _s39_T(_s39_pr)
 s39_nB_hits = int((_s39_Tr <= s39_T_idwt).sum())
 s39_T_best = float(_s39_Tr.min())
-del (_s39_Tr, _s39_pr, _ne, _nmu, _nta, _nw, _nz, _nh, _nsq, _ndq,
+del (_s39_Tr, _s39_pr, _ne, _nmu, _nta, _nw, _nz, _nh, _nsq,
      _nc, _nt, _nu_, _n1, _n2, _n3, _m2r, _m3r, _s23r, _s12r, _s13r,
      _dm2r)
 
-assert s39_p_exact < 1e-9            # joint coincidence beyond 6 sigma
+assert s39_p_exact < 5e-9            # joint coincidence ~5.9 sigma (7-quantity)
 assert s39_p_fisher < 1e-6           # conservative bound still > 4.8 sig
 assert s39_nB_hits == 0              # no random theory matches as well
 assert s39_T_best > s39_T_idwt + 20  # ... by a margin > e^20
@@ -10113,15 +10106,13 @@ for _nm, _pr, _ob, _sg in _s39_checks:
     print(f"  {_nm}: pred {_pr:9.4f}  obs {_ob:9.4f}"
           f"  pull {(_pr - _ob) / _sg:+.2f}")
 print("NULL B -- random theories (indices uniform in windows, scales")
-print("fixed by seed chain; 12 quantities recomputed per draw):")
+print("fixed by seed chain; 11 quantities recomputed per draw):")
 print("  windows: " + "  ".join(f"d={_d}:1..{_s39_nmx[_d]}"
                                 for _d in sorted(_s39_nmx)))
 print(f"  draws = {s39_NB:.0e} (fixed seed);"
       f" T <= T_IDWT: {s39_nB_hits}  => p_B < {3.0/s39_NB:.0e}")
 print(f"  best random T = {s39_T_best:.1f} vs T_IDWT = {s39_T_idwt:.1f}"
       f"  (gap {s39_T_best - s39_T_idwt:.1f} ln units)")
-print("  8.4e6 draws (stated+halved+doubled): 0 hits, p_B < 5e-7,")
-print("  best random ~ -31 (gap ~35 ln units, factor ~1e15).")
 print("  => no random index assignment reproduces the measured set;")
 print("     the residual question is index-FORCING (T0.5), not fit.")
 

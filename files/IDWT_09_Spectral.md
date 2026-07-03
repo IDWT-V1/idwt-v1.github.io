@@ -641,7 +641,6 @@ Within a single sector, $m_{\rm scale}_d$ cancels, leaving pure rational ratios 
 
 | Ratio | IDWT exact form | IDWT value | PDG | Error |
 |---|---|---|---|---|
-| $m_s/m_d$ | $S(4,3)/S(1,3)=20/1$ | 20.000 | 20.00 | 0.000% |
 | $m_c/m_u$ | $S(20,4)/S(3,4)=8855/15$ (bare) | 590.333 | 589.4 | +0.158% 🔶 |
 | $m_t/m_u$ | $S(72,4)/S(3,4)=1215450/15$ (bare) | 81030 | 79893 | +1.423% 🔶 |
 | $m_\mu/m_e$ | $S(35,6)/S(13,6)=3838380/18564$ | 206.765 | 206.768 | −0.002% |
