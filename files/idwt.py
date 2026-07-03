@@ -7915,6 +7915,8 @@ for _lab126, _d126, _nhi126, _nlo126, _hi126, _lo126 in _pairs_126:
                                  (_ri126 / _rp126 - 1.0) * 100.0)
 # d=6 lepton in-sector probe (anchored at e -> isolates structure)
 _mu_e_idwt_126 = S(35, 6) / S(13, 6)
+_mu_e_exact_126 = _Fr41(S(35, 6), S(13, 6))    # exact rational m_mu/m_e
+assert _mu_e_exact_126 == _Fr41(3515, 17)      # = 206.7647... (Part 5 s1)
 _mu_e_pdg_126 = _pdg_126["muon"] / _pdg_126["electron"]
 _mu_e_resid_126 = (_mu_e_idwt_126 / _mu_e_pdg_126 - 1.0) * 100.0
 # verdict numbers

@@ -14,9 +14,9 @@ $$S(4,3)/S(1,3) = 20/1 = 20.000$$
 
 Fixed by the formula before comparing to data. Zero-error prediction.
 
-**Muon/electron ratio 🔵** (both $d=6$ $\mathbb{CP}^3$ sector excitations of $\Psi_\infty$, inhabiting six spatial dimensions; $n=35$ for the muon, $n=13$ for the electron)
+**Muon/electron ratio 🔵** (both $d=6$ $\mathbb{CP}^3$ sector excitations of $\Psi_\infty$, inhabiting six spatial dimensions; $n=35$ for the muon, $n=13$ for the electron). The ratio is an exact rational — a ⭐ combinatorial identity, $S(35,6)/S(13,6)$ reducing to $3515/17$:
 
-$$S(35,6)/S(13,6) = 3\,838\,380/18\,564 = 206.7647 \quad (\text{PDG: }206.7683,\ {-}0.002\%)$$
+$$\frac{m_\mu}{m_e} = \frac{S(35,6)}{S(13,6)} = \frac{3\,838\,380}{18\,564} = \frac{3515}{17} = 206.7647\ldots \quad (\text{PDG: }206.7683,\ {-}0.002\%)$$
 
 **Tau/electron ratio 🔵**
 
