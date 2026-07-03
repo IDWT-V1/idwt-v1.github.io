@@ -810,22 +810,13 @@ Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sit
 
 So one thing remains genuinely open at the top: the index $72$ is a product rather than a tower output, with no selecting condition yet found. The bare mass overshoot is corrected to within $1\sigma$ in §11.9 ($\textbf{🔶}$); the rule that generates the index itself is the remaining open item.
 
-### 11.8 Scale versus structure: the residual is $n$-dependent and confined to $d=3$ and $d=4$
+### 11.8 The overshoot depends on the mode index, so a scale change cannot fix it
 
-The quark-sector residuals admit two readings: a uniform per-sector scale offset — a single high $m_{\mathrm{scale},d}$ shifting every mode in the sector by one common fraction — or $n$-dependent structure in the count $S(n,d)$. The two are separated by the scale-free **in-sector mass ratio** $S(n_{\mathrm{hi}},d)/S(n_{\mathrm{lo}},d)$, an exact combinatorial identity ($\textbf{⭐}$) in which $m_{\mathrm{scale},d}$ and the unit anchor $m_e$ cancel identically. A uniform scale offset is invisible to this ratio; only structure survives it.
+The bare quark masses run slightly high, and the amount by which they overshoot grows with the mode index. In the $d=4$ up-type sector it is $+0.77\%$ at the up, $+0.93\%$ at the charm, and $+2.20\%$ at the top. An error in the overall sector scale $m_{\mathrm{scale},d}$ cannot produce this: a scale error multiplies every mode in the sector by one common factor, so it would shift all three by the same fraction, not by an amount that climbs with $n$.
 
-| In-sector ratio | $d$ | IDWT | PDG 2024 | Residual |
-|---|---|---|---|---|
-| $Z/W$ | $2$ | $1.1350$ | $1.1346$ | $+0.03\%$ |
-| $H/W$ | $2$ | $1.5584$ | $1.5578$ | $+0.04\%$ |
-| $s/d$ | $3$ | $20.0000$ | $19.894$ | $+0.54\%$ |
-| $c/u$ | $4$ | $590.33$ | $589.35$ | $+0.17\%$ |
-| $t/c$ | $4$ | $137.26$ | $135.56$ | $+1.25\%$ |
-| $\mu/e$ | $6$ | $206.7647$ | $206.7683$ | $-0.002\%$ |
+A scale-free test confirms the effect is real and not an artifact of the scale. A within-sector mass ratio $S(n_{\mathrm{hi}},d)/S(n_{\mathrm{lo}},d)$ cancels $m_{\mathrm{scale},d}$ exactly, so any pure scale error leaves it untouched — only genuine mode-index structure survives. The boson ($d=2$) and charged-lepton ($d=6$) sectors pass this test to a few parts in $10^{4}$ ($Z/W$, $H/W$, and $\mu/e$ all agree with PDG at that level): their scales are right and they carry no index-dependent residual. The coloured quark sectors ($d=3$ and $d=4$) do not — their in-sector residuals grow with the separation between the two levels (`files/idwt.py` STEP 126).
 
-The residual is at most a few parts in $10^{4}$ in the boson ($d=2$) and charged-lepton ($d=6$) sectors, and grows with the level gap inside the quark sectors $d=3$ and $d=4$. That growth is the signature of structure in $S(n,d)$, not of a sector scale error: a uniform offset would be $n$-independent and would leave every in-sector ratio exact. The discrepancy is therefore $n$-dependent and confined to the two quark sectors, while the boson and lepton sectors are reproduced to within $4\times10^{-4}$ by the bare count (`files/idwt.py` STEP 126).
-
-This is reported as measured accuracy, not absorbed as a correction. The in-sector ratios fix how far the bare $S(n,d)$ count departs from the data per sector — at most $+1.25\%$, at the top — and that figure is quoted; converting it into a per-sector multiplicative adjustment would be a fit. The scale-independent ratios remain the clean, scheme-free comparison ($\textbf{🔵}$); the structural origin of the quark-sector growth is identified as colour-confinement binding in §11.9 ($\textbf{🔶}$).
+The overshoot is therefore genuine mode-index structure, confined to the coloured sectors, and no adjustment of $m_{\mathrm{scale},d}$ can remove it. That fixes the shape of the correction §11.9 supplies: a confinement-binding term linear in the mean level $\langle k\rangle$, which subtracts proportionally more from the higher modes. Applying it flattens the growth — the top's $+2.20\%$ falls to $-0.04\%$ and the charm's $+0.93\%$ to $+0.34\%$ — leaving small residuals (up $+0.70\%$, strange $+0.49\%$) that sit within the scheme-and-scale spread of light-quark mass determinations.
 
 ### 11.9 Confinement-binding correction ($d=3$, $d=4$) 🔶
 
