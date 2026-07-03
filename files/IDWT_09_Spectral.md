@@ -16,7 +16,7 @@ No SM inputs are used except $m_e = 0.51099895$ MeV as the single unit of mass.
 
 ---
 
-## T0. The Spectral Triple
+## T0. The Physical Mass Spectrum of $D$
 
 **Note — what this section claims, and what it does not.** IDWT has no Hilbert space. The wave $\Psi_\infty$ is a classical spinor field on $M_\infty$, and everything below is the classical eigenvalue problem of a differential operator $D$ acting on finite-energy field configurations on the manifold. The notation $(\mathcal{A},\mathcal{H},D)$ is borrowed only to organize that problem: $\mathcal{H}=L^2(M_\infty,\mathcal{S}_\infty)$ is the finite-energy norm on classical configurations — a bookkeeping device, not a space of states — and IDWT is not a noncommutative-geometry (NCG) model in the Connes–Marcolli sense. The properties below split into two kinds, and only the first is an IDWT result. **Genuine, and stated directly on $M_\infty$:** the eigenproblem of $D$ is well-posed with real discrete spectrum (item 1), that spectrum has no continuous part in the internal sectors (item 2), and the Dirichlet series of the masses $\sum_{n,d}S(n,d)^{-s}$ has abscissa $1/2$ (items 3, 7) — facts about the classical mass spectrum that need no Hilbert completion to state. **Borrowed NCG bookkeeping, carrying no physical claim about the field:** the Fredholm-module / $K$-homology class (item 4) and the smooth-subalgebra regularity (item 6) hold only once the operator is embedded in the NCG formalism; the framework does not assert them as physics. **Geometric:** item 5's content is the sector-dependent spinor reality structure ($\mathbb{CP}^2$ is spin$^c$, $S^5$ carries no $C$), not a KO-dimension integer. Status is recorded for the physically relevant operator — the finite-active internal triple, equivalently the projected $P_{\xi^0}DP_{\xi^0}$ — as of the 2026-06-13 spectral pass (`files/idwt.py` STEP 80, which computes the mass-spectrum Dirichlet series). The genuine residual is the full infinite-dimensional $M_\infty$ ($d\to\infty$, item 1). T0 remains 🔶.
 
@@ -738,7 +738,7 @@ The heat kernel interpolates between the two anchors: $K_d(t)\sim a_0^{(d)}\,t^{
 
 **UV softening of hidden sectors. ⭐** Since $S(n,d)\sim n^d/d!$, the zeta series $\zeta_d(s)\sim (d!)^s\zeta(ds)$ converges for $s>1/d$. As sector dimension $d$ increases, the convergence threshold $1/d$ decreases — higher-dimensional sectors have spectral sums that converge over a strictly larger range of $s$. This is the opposite of ordinary QFT, where higher-dimensional theories are more UV-divergent. In IDWT the higher-dimensional sectors ($d=5,6,10$) are spectrally softer than the lower-dimensional sectors ($d=2,3,4$): their mode towers suppress themselves automatically through rapid simplex growth, requiring no explicit decoupling mechanism.
 
-**Cross-reference.** T0 (spectral triple) identifies the mathematical object; T1 (Hilbert series) gives the spectrum; T13–T14 show that spectrum is analytically controlled and geometrically consistent. The chain is complete: one operator, one spectral formula, full analytic infrastructure.
+**Cross-reference.** T0 identifies the mathematical object (the classical operator $D$ on $M_\infty$); T1 (Hilbert series) gives the spectrum; T13–T14 show that spectrum is analytically controlled and geometrically consistent. The chain is complete: one operator, one spectral formula, full analytic infrastructure.
 
 ---
 
@@ -863,7 +863,7 @@ evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, 
 
 | Theorem | Content | Status | Accuracy | Physical consequence |
 |---|---|---|---|---|
-| T0 | Spectral triple; physical spectrum | 🔶 | Exact | All SM masses from one operator; spectral triple properties (self-adjointness, compact resolvent, summability, KO-dimension, regularity) open — see Note |
+| T0 | Physical mass spectrum of the operator $D$ | 🔶 | Exact | All SM masses from one classical operator on $M_\infty$ (IDWT has no Hilbert space). The finite-active operator's spectral facts are established directly on $M_\infty$: self-adjointness, discrete internal spectrum, and summability $\tfrac12$ (✅). The Fredholm-module / KO-dimension / regularity items are borrowed NCG bookkeeping, not IDWT claims; the genuine residual is the full $d\to\infty$ operator — see Note |
 | T0.5 | Co-fixed-point selection condition | 🔶 | Exact | Splits at $n_{\rm top}=72$: bottom regime ($n<72$) is the additive simplex tower (10 modes), with $k_0=16$ a derived Gegenbauer-endpoint overlay beat; top regime is the boson chain anchored by $n_{\rm top}=72$ ($W,Z$ by the $g$-rule, $H=95$ the additive closure); $n_{\rm top}=72$ is an Euler-product index $\chi(\mathbb{CP}^2)\chi(\mathbb{CP}^3)\chi(\mathbb{CP}^5)$ (value identity T15b; resonance origin 🔶); the even-level non-member exclusion is now exact (✅, STEP 118: strictly positive irreversible radiative width $\Gamma>0$; odd-level exact by $l$-parity ⭐), so both parity classes of the complement are closed exactly; the residual 🔶 is the dynamical tower-DAG selection (MC-4) and the absolute decay-rate magnitude (🔶, STEP 103) |
 | T1 | $m=S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |

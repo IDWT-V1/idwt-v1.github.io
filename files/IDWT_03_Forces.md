@@ -37,7 +37,7 @@ where $P_d$ is the projector onto sector $\Xi_d$, and $g_{dd'} = v_d \times v_{d
 
 The kernel term is the unique leading interaction invariant under $U(d) \times U(d')$ rotations of each sector (T2). Its quartic-in-$\Psi$ form gives confinement, mass, and inter-sector coupling from a single geometric term.
 
-**Note on $G_N$. 🔶** The Einstein--Hilbert coefficient $G_N$ appearing in the action as written is a second dimensional input — the one additional input beyond the seed pair $\{n_d{=}1,\, n_u{=}3\}$ and $m_e$. The framework fixes the *structure* of gravity (curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent) but not the absolute scale $G_\infty$, which is not derived from the combinatorics (Part 4 §3.12.4). The action above is therefore an effective description with $G_N$ as a measured input. **Particle physics predictions (masses, mixing angles, coupling constants) are independent of $G_N$** — they depend only on the seed pair $\{n_d{=}1,\, n_u{=}3\}$, $m_e$, and the kernel geometry.
+**Note on $G_N$. 🔶** The Einstein--Hilbert coefficient $G_N$ appearing in the action as written is a second dimensional input — the one additional input beyond the seed pair $\{n_d{=}1,\, n_u{=}3\}$ and $m_e$. The framework fixes the *structure* of gravity (curvature of $M_\infty$ sourced by mass, with $G_N = G_\infty/(4\pi)$ sector-independent) but not the absolute scale $G_\infty$, which is not derived from the combinatorics (Part 4 §3.12.4). In the fundamental $M_\infty$ description the gravitational sector is not a separately postulated action but the curvature that $|\Psi_\infty|^2$ sources (Part 4 §3.1–3.4): the Einstein–Hilbert term written above is the $d=3$ observer's effective reconstruction of that mass-sourced curvature, which is why $G_N$ enters it as a measured coefficient rather than a derived one. The action here is therefore the observer's effective description, not a fundamental gravitational action. **Particle physics predictions (masses, mixing angles, coupling constants) are independent of $G_N$** — they depend only on the seed pair $\{n_d{=}1,\, n_u{=}3\}$, $m_e$, and the kernel geometry.
 
 ### 0.3 Equations of Motion
 
@@ -288,7 +288,7 @@ PDG $\cos\theta_W = 0.88108$.
 $$m_\mu/m_e = S(n_\mu,6)/S(n_e,6) = 3{,}838{,}380/18{,}564 = 206.7647 \quad \text{(PDG } 206.7683,\;{-}0.002\text{\%)}$$
 $$m_H/m_Z = S(n_H,2)/S(n_Z,2) = 4560/3321 = 1.37308 \quad \text{(PDG } 1.37299,\;{+}0.007\text{\%)}$$
 
-**The $d=2$ coupling $g_{22} = 722.5$ and what it determines. ✅** The Hopf chain constraint $g_{25} = \sqrt{g_{22}}\times\sqrt{g_{55}} = \sqrt{96} = 4\sqrt{6}$ is automatically satisfied for any $g_{22}$ with $g_{55} = 96/g_{22}$ — $g_{22}$ cancels. Its value is fixed instead by the depth of the $d=2$ sector potential: $\lambda_2 = (g_{22}/2)^{2/3} = 50.72$, localization length $L_2 = 0.14$. The large $\lambda_2$ ensures $W$, $Z$, $H$ are tightly confined and do not propagate as bulk KK modes.
+**The $d=2$ coupling $g_{22} = 722.5$ and what it determines. ✅** The Hopf chain constraint $g_{25} = \sqrt{g_{22}}\times\sqrt{g_{55}} = \sqrt{96} = 4\sqrt{6}$ is automatically satisfied for any $g_{22}$ with $g_{55} = 96/g_{22}$ — $g_{22}$ cancels. Its value is fixed instead by the depth of the $d=2$ sector potential: $\lambda_2 = (g_{22}/2)^{2/3} = 50.72$, localization length $L_2 = \lambda_2^{-1/4} = 0.375$. The large $\lambda_2$ ensures $W$, $Z$, $H$ are tightly confined and do not propagate as bulk KK modes.
 
 **Neutron-proton mass difference, leading order: 🔶**
 

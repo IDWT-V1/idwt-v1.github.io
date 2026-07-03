@@ -317,7 +317,7 @@ The following table consolidates the full theorem status after the T8 completion
 - 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open spectral-triple items (Part 9); T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
 - □ Open: 0 items
 
-The open 🔶 physics items — the spectral triple operator T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 ($\delta_{CP}$) is a structural derivation with three technical gaps noted in §4.
+The open 🔶 physics items — the full $d\to\infty$ operator $D$ of T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 ($\delta_{CP}$) is a structural derivation with three technical gaps noted in §4.
 
 ---
 

@@ -11227,7 +11227,7 @@ print("sector (open continuation).")
 # STEP 80 -- OUTPUT: SPECTRAL-TRIPLE SUMMABILITY (Part 9 T0 items 2, 3, 7)
 # =============================================================================
 print("\n" + "=" * 70)
-print("=== STEP 80: SPECTRAL TRIPLE -- SUMMABILITY & SPECTRAL DIM ===")
+print("=== STEP 80: MASS-OPERATOR SUMMABILITY & SPECTRAL DIM ===")
 print("=" * 70)
 print("internal |D| eigenvalues = masses m_scale_d * S(n,d); S ~ n^d/d!")
 print(f"{'d':>3} {'1/d (abscissa)':>15} {'a0_d=G(1+1/d)(d!)^(1/d)':>26}")
