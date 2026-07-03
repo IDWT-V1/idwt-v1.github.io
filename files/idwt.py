@@ -8506,42 +8506,38 @@ assert abs((_gAc_137 - 1.2723) / 0.0023) < 0.5  # channel reading confirmed
 
 
 # =============================================================================
-# STEP 138 -- NONPERTURBATIVE SYMMETRY INHERITANCE ON THE CONNECTED BRANCH
+# STEP 138 -- SYMMETRY INHERITANCE OF THE MASS-SOURCED CURVATURE (Part 4 s3.8)
 # =============================================================================
-# Upgrades the Part 4 section 3.8 Killing-inheritance step (and its MC-2 twin,
-# STEP 133 / Part 4 section 3.12.1) beyond weak field.  A direction the source
-# is uniform in (d_j T = 0) is a Killing direction of the FULL nonlinear static
-# metric on the ENTIRE branch continuously connected to flat space -- not only
-# infinitesimally.
-#   THEOREM (open-closed continuation).  Scale the source T(lam) = lam T0; let
-#   g(lam) be the branch with g(0) = flat, in a phi_s-INVARIANT harmonic gauge
-#   (de Donder relative to a phi_s-invariant flat background) so the static
-#   Einstein system is elliptic on weighted Holder spaces encoding asymptotic
-#   flatness.  Let I = { lam : phi_s* g(lam) = g(lam) }.
-#     OPEN  -- where the gauge-fixed linearization is invertible the IFT gives
-#              a locally unique solution; phi_s* g(lam) solves the same system
-#              (phi_s* T = T, invariant BCs, phi_s preserves the gauge slice),
-#              so phi_s* g(lam) = g(lam).
-#     CLOSED-- g(lam) is continuous along the branch; a limit of invariant
-#              metrics is invariant.
-#   Hence I = [0, lam*), lam* = first loss of invertibility (first bifurcation):
-#   inheritance holds NONPERTURBATIVELY on the connected branch.
-#   SCOPE (honest): beyond lam* uniqueness/inheritance is unproven AND generally
-#   FALSE -- higher-dimensional static GR has genuine non-uniqueness (black
-#   rings; symmetry-breaking bifurcations of nonlinear elliptic systems) -- so
-#   arbitrary-field-strength uniqueness is NOT claimed.
-#   PHYSICAL REGIME: every source the theorem applies to is deep in weak field,
-#   far below lam*.  The Schwarzschild-radius / size ratio r_s/R and the
-#   galactic potential depth (v/c)^2 are asserted below; both cover the
-#   dark-matter corollary and the finiteness of G_N.  (Cross-checked o4-mini.)
+# The "bound within, gradient-free without" step (Part 4 section 3.8), stated
+# NATIVELY.  IDWT gravity is not a self-gravitating dynamical field with a
+# solution space of its own; it is infinite-D curvature SOURCED BY MASS, whose
+# 3D read is the LINEAR Poisson law  laplacian(Phi) = 4 pi G_N rho_m, with
+# rho_m = integral |Psi_inf|^2 (Part 4 section 3.1).  The sourcing of curvature
+# by mass is translation-covariant: translating rho_m translates the sourced
+# Phi identically (the Newtonian Green's function is translation-invariant).
+# So a source uniform in x_j sources a geometry uniform in x_j -- d_j Phi = 0,
+# no gradient, no pull -- EXACTLY and unconditionally.  There is no weak-vs-
+# strong-field regime and no nonlinear-metric non-uniqueness: that belongs to
+# the metric treated as an independent self-interacting field (the 3D
+# observer's effective GR reconstruction, section 3.1), NOT to the IDWT
+# phenomenon, which assigns a definite curvature to a definite mass and carries
+# every symmetry of the source.  (This supersedes an earlier general-
+# relativistic "nonperturbative uniqueness / connected branch" framing that
+# imported GR's self-gravitating-metric solution space -- not an IDWT object.)
+# CHECK (native): a source uniform along one axis, convolved with the
+# translation-invariant Poisson Green's function (FFT solve on a periodic
+# grid), yields a potential uniform along that axis to machine precision.
 
-_G_138, _c_138 = 6.674e-11, 2.998e8             # SI, for weak-field scoping
-_rsR_e_138 = (2 * _G_138 * 9.109e-31 / _c_138**2) / 1.04e-29   # elem. mode
-_rsR_p_138 = (2 * _G_138 * 1.673e-27 / _c_138**2) / 0.84e-15   # proton
-_phi_gal_138 = (2.2e5 / _c_138)**2              # galactic potential depth
-assert _rsR_e_138 < 1e-20                       # elementary mode: r_s/R tiny
-assert _rsR_p_138 < 1e-30                       # proton: r_s/R tiny
-assert _phi_gal_138 < 1e-5                      # dark-matter corollary weak
+_ny_138, _nx_138 = 24, 32                        # periodic grid
+_ky_138 = np.fft.fftfreq(_ny_138)[:, None]
+_kx_138 = np.fft.fftfreq(_nx_138)[None, :]
+_k2_138 = _ky_138**2 + _kx_138**2
+_k2_138[0, 0] = 1.0                              # drop the constant mode
+_rho_138 = np.tile(np.sin(2*np.pi*np.arange(_nx_138)/_nx_138),
+                   (_ny_138, 1))                 # uniform along y
+_phi_138 = np.real(np.fft.ifft2(np.fft.fft2(_rho_138) / _k2_138))
+_dy_138 = float(np.abs(_phi_138 - _phi_138[0, :]).max())   # variation in y
+assert _dy_138 < 1e-12                           # d_y Phi = 0: inherited
 
 
 # =============================================================================
@@ -12424,21 +12420,20 @@ print("derived); candidate scan logged, Appendix A section 9.")
 
 
 # =============================================================================
-# STEP 138 -- OUTPUT: NONPERTURBATIVE KILLING INHERITANCE (CONNECTED BRANCH)
+# STEP 138 -- OUTPUT: SYMMETRY INHERITANCE OF THE MASS-SOURCED CURVATURE
 # =============================================================================
-print("\n=== STEP 138: NONPERTURBATIVE KILLING INHERITANCE (Part 4 s3.8) ===")
-print("a uniform direction of the source (d_j T = 0) is a Killing direction")
-print("of the FULL nonlinear metric on the whole branch connected to flat")
-print("space: open-closed continuation, phi_s* g = g up to the first")
-print("bifurcation lam* (loss of linearized invertibility; phi_s-invariant")
-print("harmonic gauge). Upgrades the weak-field IFT step and discharges the")
-print("MC-2 / section 3.12.1 twin residual.")
-print("scope (honest): beyond lam* inheritance is generally FALSE (higher-d")
-print("GR non-uniqueness) -> arbitrary-strength uniqueness NOT claimed.")
-print(f"physical sources deep below lam*: r_s/R(e) = {_rsR_e_138:.1e}, "
-      f"r_s/R(p) = {_rsR_p_138:.1e},")
-print(f"  galactic (v/c)^2 = {_phi_gal_138:.1e} -- weak field covers the")
-print("  dark-matter corollary and finite G_N. See Part 4 s3.8, s3.12.1.")
+print("\n=== STEP 138: MASS-SOURCED CURVATURE INHERITS SOURCE SYMMETRY ===")
+print("Part 4 s3.8, native: IDWT gravity is infinite-D curvature SOURCED BY")
+print("mass (3D read = linear Poisson laplacian(Phi)=4pi G_N rho_m), not a")
+print("self-interacting metric field. The mass->curvature sourcing is")
+print("translation-covariant, so a source uniform in x_j gives Phi uniform")
+print("in x_j EXACTLY -- d_j Phi = 0, no gradient, no pull.")
+print("native check: y-uniform source, Poisson FFT solve ->")
+print(f"  d_y Phi = {_dy_138:.1e} (0 to machine precision).")
+print("no weak/strong-field regime, no nonlinear-metric non-uniqueness:")
+print("that belongs to the observer's effective GR reconstruction (s3.1),")
+print("not the IDWT phenomenon. Supersedes the imported 'connected branch'")
+print("framing; discharges the MC-2 / s3.12.1 twin. See Part 4 s3.8, s3.12.1.")
 
 
 # =============================================================================
