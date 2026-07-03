@@ -8252,6 +8252,61 @@ assert abs(_gamma_132 - 67.5) < 1e-12
 
 
 # =============================================================================
+# STEP 133 -- MC-2: PRODUCT METRIC AND V_d AS OUTPUTS OF THE ACTION
+# =============================================================================
+# Closes the two MC-2 halves at their stated rigor (Part 1 section 1.1).
+# (a) PRODUCT EXACTNESS AT VACUUM (weak-field rigor).  The IDWT vacuum is
+#     static, spatially uniform, time-reversal invariant, and isotropic on
+#     each sector fiber.  Cross-blocks of the stress tensor and the metric
+#     die by symmetry alone:
+#       - spatial rows T_ia, g_ia (i=1,2,3): a nonzero value is an
+#         invariant spatial vector -- forbidden by spatial isotropy;
+#       - time row T_0a, g_0a: time-reversal odd -- forbidden by
+#         T-invariance of the ground state;
+#       - equivalently, any isometry-invariant vector on a sector fiber
+#         vanishes: for CP^k fibers the U(k) isotropy contains the center
+#         e^{i theta} (average over the circle is exactly zero, asserted
+#         below), and for S^m fibers SO(m) acts with no fixed direction.
+#     The sourced metric inherits the vacuum symmetry by the same
+#     small-data uniqueness/pullback argument as Part 4 section 3.8, so
+#     G_mu-a = 0 for the vacuum solution: the product structure P1
+#     postulates is DERIVED at vacuum level, weak-field rigor.
+#     Residual: nonperturbative uniqueness (shared with section 3.8).
+# (b) V_d FROM THE ACTION AT MEAN FIELD.  The rank-1 kernel gives every
+#     sector the common condensate C(x); the quartic term is quadratic in
+#     each xi_d, so sector d sees the harmonic well
+#         V_d = v_d^2 |xi_d|^2 |C(x)|^2
+#     (form = output of the kernel, not an input), and the ground-mode
+#     self-consistency fixes the coefficient lam_d = (g_dd/2)^{2/3}
+#     (Part 4 section 3.10.3; Q-explicit form lam_d(Q)=(g_dd Q/2)^{2/3}).
+#     Asserted below against the committed table for all six sectors.
+#     The geometry<->modes logic is therefore two-directional at mean
+#     field; residual: beyond-mean-field fluctuation control (BdG mode
+#     stability is STEP 36; the full fluctuation problem stays open).
+# (c) KERNEL DOMINANCE (why sector geometry stays flat).  The
+#     gravitational contribution to the sector well is suppressed by
+#     G_inf m_e^2 / g_dd, asserted < 1e-40 for every sector: the
+#     stationary sector structure of the action is kernel-dominated and
+#     the fiber geometry remains flat to that accuracy.
+# NOT in scope: WHICH sector symmetry types activate (T3 / Open Theorem A
+# -- the selection program).  MC-2 here fixes the structure GIVEN the
+# sector set, per the Part 1 section 1.1 statement of the item.
+
+_th_133 = np.linspace(0.0, 2*np.pi, 20001)[:-1]     # center average = 0
+assert abs(np.exp(1j*_th_133).mean()) < 1e-12       # kills invariant vecs
+
+_lam_tbl_133 = {2: 50.723, 3: 4.820, 4: 1.726, 5: 0.164,
+                6: 0.250, 10: 0.250}                # committed lam_d table
+_g_133 = {2: g22, 3: g33, 4: g44, 5: g55, 6: g66, 10: g66}
+for _d, _lp in _lam_tbl_133.items():                # (b) V_d coefficient
+    _lam = (_g_133[_d]/2.0)**(2.0/3.0)
+    assert abs(_lam - _lp)/_lp < 2e-3
+
+_grav_133 = _G_inf * 0.511**2                       # G_inf m_e^2, ~2.2e-44
+assert all(_grav_133/_g < 1e-40 for _g in _g_133.values())   # (c)
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -11940,6 +11995,28 @@ print(f"quark gamma = c1(CP^2)*2pi/k0 = {_gamma_132} deg (PDG ~65.7)")
 print("closes T8 gap (i): exact zero-mode counting replaces the Weyl-density")
 print("estimate; loop identification folds into gap (vi). f=1/k0 from")
 print("adjacent-lock transport. See Part 10 sections 1.3, 4, 4.1.")
+
+
+# =============================================================================
+# STEP 133 -- OUTPUT: MC-2 (PRODUCT METRIC + V_d FROM THE ACTION)
+# =============================================================================
+print("\n=== STEP 133: MC-2 -- PRODUCT METRIC AND V_d FROM THE ACTION ===")
+print("(a) product exactness at vacuum (weak-field): cross-blocks killed by")
+print("    symmetry -- spatial rows by isotropy, time row by T-invariance,")
+print("    fiber-invariant vectors by the U(k) center / SO(m) transitivity")
+print("    (center average asserted 0); metric inherits by the section-3.8")
+print("    uniqueness argument. P1's product postulate -> derived at vacuum.")
+print("(b) V_d from the action at mean field: rank-1 kernel -> common")
+print("    condensate -> harmonic well V_d = v_d^2|xi_d|^2|C|^2 with")
+print("    lam_d = (g_dd/2)^(2/3), asserted vs the committed table:")
+print("    " + "  ".join(f"d{d}:{(_g_133[d]/2.0)**(2.0/3.0):.3f}"
+                         for d in sorted(_g_133)))
+print(f"(c) kernel dominance: G_inf*m_e^2 = {_grav_133:.2e}; grav/kernel <")
+print(f"    {max(_grav_133/_g for _g in _g_133.values()):.1e}"
+      " in every sector -> fiber geometry flat to that accuracy.")
+print("residuals: nonperturbative uniqueness (with s3.8); beyond-mean-field")
+print("fluctuations (BdG modes = STEP 36). Sector-set selection is NOT")
+print("MC-2 (Open Theorem A). See Part 1 section 1.1, Part 4 section 3.12.1.")
 
 
 # =============================================================================

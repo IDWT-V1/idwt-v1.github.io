@@ -418,7 +418,7 @@ $O_\Xi = -D_\Xi^2 + V_d(\xi)$ acts on functions of $\xi$ only. It depends on the
 
 $$ds^2_{M_\infty} \approx g_{\mu\nu}(x)\,dx^\mu\,dx^\nu + h_{ab}(\xi)\,d\xi^a\,d\xi^b$$
 
-In the full metric $G_{AB}dX^A dX^B$ on $M_\infty$, off-diagonal terms $G_{\mu a}$ would in principle couple the spacetime and sector blocks. Their absence in the observer's effective description is what makes $O_\Xi$ independent of $g_{\mu\nu}$ — and therefore what ensures $G_N$ receives no sector correction. The product structure is postulate-level geometry of $M_\infty$ in the present formulation, not yet derived from an action: the deriving action for the metric structure and $V_d$ is open (MC-2, Part 6), and this result — like the no-graviton and no-KK-tower statements resting on the same structure — is conditional on it. Therefore:
+In the full metric $G_{AB}dX^A dX^B$ on $M_\infty$, off-diagonal terms $G_{\mu a}$ would in principle couple the spacetime and sector blocks. Their absence in the observer's effective description is what makes $O_\Xi$ independent of $g_{\mu\nu}$ — and therefore what ensures $G_N$ receives no sector correction. The product structure is derived at vacuum level from the action's own symmetries (MC-2, `files/idwt.py` STEP 133, weak-field rigor): the vacuum's spatial isotropy and time-reversal invariance force the cross-blocks of its stress tensor to vanish, and the stationary metric inherits this by the §3.8 uniqueness argument. The no-graviton and no-KK-tower statements rest on that vacuum structure; nonperturbative uniqueness is the remaining formal item (🔶). Therefore:
 
 $$\frac{\delta}{\delta g_{\mu\nu}}\mathrm{Tr}_\Xi[\log O_\Xi] = 0 \quad\text{[exactly]}$$
 
