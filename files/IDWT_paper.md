@@ -76,7 +76,7 @@ $$\boxed{m(n, d) = m_{\mathrm{scale},d} \times S(n, d)}, \qquad S(n,d) = \binom{
 
 $S(n,d)$ is the cumulative count of monomials of degrees $0$ through $n-1$ in $d$ variables. By the hockey-stick identity, $S(n,d) = \sum_{k=0}^{n-1}\binom{k+d-1}{d-1}$, making it also the cumulative count of eigenvalues of the $d$-dimensional sector harmonic oscillator at levels below $n$. The ground state $S(1,d) = 1$ for all $d$ — the unique non-degenerate ground mode in every sector.
 
-**Spectral grounding.** The identification of $S(n,d)$ with a frequency is not a combinatorial postulate; it is a consequence of the Weyl eigenvalue counting law on the sector manifolds (Theorems S1 and S1-General, Section 3).
+**Spectral grounding.** The identification of $S(n,d)$ with a frequency is a consequence of the Weyl eigenvalue counting law on the sector manifolds (Theorems S1 and S1-General, Section 3).
 
 ### 2.3 Uniqueness of $n_s = 4$
 
@@ -111,11 +111,11 @@ $$\mathcal{L} = \bar{\Psi}_\infty(i\gamma^\mu \partial_\mu - \sum_d \sqrt{V_d(\x
 
 where $V_d(\xi) = \lambda_d |\xi|^2/(1+|\xi|^2)$ is the sector potential (harmonic for small $|\xi|$, saturating at $\lambda_d$ for large $|\xi|$) and $g_{dd'} = v_d v_{d'}$ is the rank-1 coupling matrix with $v_d = \sqrt{g_{dd}}$.
 
-The kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the leading quartic term consistent with $U(d) \times U(d')$ symmetry on the sector pair. It decomposes by angular momentum on the sector sphere as $(\xi \cdot \xi')^2 = \frac{1}{d}[\ell=0] + \frac{d-1}{d}\cdot C_2^{(d-2)/2}(\cos\theta)[\ell=2]$, where the $\ell=0$ part generates sector mass scales (Section 5) and the $\ell=2$ part generates the derived scale $\varepsilon$ that enters the $\nu_3$ closure (Section 7.1). The rank-1 structure $g_{dd'}g_{d''d'''} = g_{dd'''}g_{d'd''}$ — equivalently $g_{dd'}^2 = g_{dd}g_{d'd'}$ — is not assumed; it follows from $g_{33}g_{44} = g_{34}^2 = 96$ (verified in Section 5.1). Full derivation in Part 1 §4 [11].
+The kernel $({\xi}_d \cdot {\xi}_{d'})^2$ is the leading quartic term consistent with $U(d) \times U(d')$ symmetry on the sector pair. It decomposes by angular momentum on the sector sphere as $(\xi \cdot \xi')^2 = \frac{1}{d}[\ell=0] + \frac{d-1}{d}\cdot C_2^{(d-2)/2}(\cos\theta)[\ell=2]$, where the $\ell=0$ part generates sector mass scales (Section 5) and the $\ell=2$ part generates the derived scale $\varepsilon$ that enters the $\nu_3$ closure (Section 7.1). The rank-1 structure $g_{dd'}g_{d''d'''} = g_{dd'''}g_{d'd''}$ — equivalently $g_{dd'}^2 = g_{dd}g_{d'd'}$ — follows from $g_{33}g_{44} = g_{34}^2 = 96$ (verified in Section 5.1). Full derivation in Part 1 §4 [11].
 
 ### 2.5 Spectral Infrastructure: Heat Kernel and Zeta Anchors
 
-The combinatorial mass formula is not ad-hoc: it emerges from a spectral geometry with precise analytic control. The **heat kernel** $K_d(t)=\sum_{n=1}^\infty e^{-tS(n,d)}$ of each sector — the trace of the heat semi-group of $D_d$ — has the small-$t$ Weyl expansion
+The combinatorial mass formula emerges from a spectral geometry with precise analytic control. The **heat kernel** $K_d(t)=\sum_{n=1}^\infty e^{-tS(n,d)}$ of each sector — the trace of the heat semi-group of $D_d$ — has the small-$t$ Weyl expansion
 $$K_d(t) = \underbrace{\Gamma\!\bigl(1+\tfrac{1}{d}\bigr)(d!)^{1/d}}_{\text{Weyl coefficient }a_0^{(d)}}\,t^{-1/d} - \frac{d}{2} + O(t^{1/d}),$$
 where the power $t^{-1/d}$ confirms the spectral dimension of sector $d$ equals $d$. Via the Mellin transform $\Gamma(s)\zeta_d(s)=\int_0^\infty t^{s-1}K_d(t)\,dt$, the two terms pin the spectral zeta $\zeta_d(s)=\sum_{n\geq1}S(n,d)^{-s}$ at its two most important arguments:
 
@@ -152,7 +152,7 @@ $$\frac{m_u}{m_d} = \sqrt{\frac{g_{44}}{g_{33}}} = \sqrt{\frac{3}{14}} \approx 0
 
 *Proof.* $m_d = m_{\mathrm{scale},3} \times S(1,3) = m_{\mathrm{scale},3}$. From the sector scale relation (Section 5.1): $m_{\mathrm{scale},4} = m_{\mathrm{scale},3}\sqrt{g_{44}/g_{33}}/S(n_u,4)$, so $m_u = m_{\mathrm{scale},4} \times S(n_u,4) = m_{\mathrm{scale},3}\sqrt{g_{44}/g_{33}}$. The $S(n_u,4)$ factors cancel exactly. Then $g_{44}/g_{33} = [n_s n_u/\sqrt{n_s+n_u}]/[n_s^2\sqrt{n_s+n_u}/2] = 2n_u/(n_s(n_s+n_u)) = 6/28 = 3/14$. $\square$
 
-Numerical check: $m_u/m_d = 2.177/4.702 = 0.46291 = \sqrt{3/14}$ to machine precision. This ratio is exact from seeds — no experimental quark mass data enters.
+Numerical check: $m_u/m_d = 2.177/4.702 = 0.46291 = \sqrt{3/14}$ to machine precision. This ratio is exact from seeds.
 
 ### Theorem S3 — $g_{22}$ from Dirac Multiplicities
 
@@ -162,7 +162,7 @@ $$g_{22} = \frac{\alpha^2 \beta}{2} = \frac{17^2 \times 5}{2} = 722.5.$$
 
 $\alpha = 20 - 3 = 17$ is the Dirac multiplicity at level $\ell = n_s-1 = 3$ on $S^3$ (which is $M_3 = (3+1)(3+2) = 20 = S(n_s,3)$ by Theorem S1) less the $n_u = 3$ states at the up-quark sector boundary. $\beta = S(n_u,4)-S(n_u,3) = 5$ is the $d=4$ Dirac eigenstate increment at the up-quark threshold (hockey-stick: $S(n,d)-S(n,d-1) = S(n-1,d)$ at $n=n_u, d=4$ gives $S(2,4)=5$). The two-body kernel contributes $\alpha^2$ from two $d=3$ current insertions each carrying $\alpha$ Dirac eigenstates, $\beta$ from one $d=4$ insertion, and $\tfrac{1}{2}$ from Bose symmetry of the symmetric kernel.
 
-**$\mathbb{CP}^2$ spin^c index (Hirzebruch-Riemann-Roch proof).** Let $X = \mathbb{CP}^2$ with $\int_X H^2 = 1$. Chern class: $c(TX) = (1+H)^3$, Todd class: $\mathrm{td}(TX) = 1+\tfrac{3}{2}H+H^2$, Chern character of $\mathcal{O}(k)$: $\mathrm{ch}(\mathcal{O}(k)) = 1+kH+\tfrac{k^2}{2}H^2$. HRR gives $\chi(\mathbb{CP}^2,\mathcal{O}(k)) = \tfrac{k^2+3k+2}{2} = \binom{k+2}{2}$. For $k=+1$: $\mathrm{ind}=3=N_c$ (three left-handed colour modes). For $k=-1$: $\mathrm{ind}=0$ (right-handed singlets are vector-like). The left-right asymmetry of the quark sector is a theorem of spin^c geometry on $\mathbb{CP}^2$, not a postulate.
+**$\mathbb{CP}^2$ spin^c index (Hirzebruch-Riemann-Roch proof).** Let $X = \mathbb{CP}^2$ with $\int_X H^2 = 1$. Chern class: $c(TX) = (1+H)^3$, Todd class: $\mathrm{td}(TX) = 1+\tfrac{3}{2}H+H^2$, Chern character of $\mathcal{O}(k)$: $\mathrm{ch}(\mathcal{O}(k)) = 1+kH+\tfrac{k^2}{2}H^2$. HRR gives $\chi(\mathbb{CP}^2,\mathcal{O}(k)) = \tfrac{k^2+3k+2}{2} = \binom{k+2}{2}$. For $k=+1$: $\mathrm{ind}=3=N_c$ (three left-handed colour modes). For $k=-1$: $\mathrm{ind}=0$ (right-handed singlets are vector-like). The left-right asymmetry of the quark sector is a theorem of spin^c geometry on $\mathbb{CP}^2$.
 
 ### Theorem S4 — Sector Set Determined by the Seeds
 
@@ -235,7 +235,7 @@ $$g_{44} = \frac{n_s n_u}{\sqrt{n_s+n_u}} = \frac{12}{\sqrt{7}} \approx 4.536,$$
 
 $$g_{33} \times g_{44} = \frac{n_s^3 n_u}{2} = \frac{4^3 \times 3}{2} = 96.$$
 
-The product identity $g_{33}g_{44} = 96$ implies $g_{34} = \sqrt{g_{33}g_{44}} = 4\sqrt{6}$, confirming the rank-1 factorisation $G_{dd'} = v_d v_{d'}$ as a consequence rather than an assumption.
+The product identity $g_{33}g_{44} = 96$ implies $g_{34} = \sqrt{g_{33}g_{44}} = 4\sqrt{6}$, confirming the rank-1 factorisation $G_{dd'} = v_d v_{d'}$.
 
 From Theorem S4, Step 2: $g_{66} = 1/n_s = 1/4$ (seed ratio for the $\mathbb{CP}^3$ lepton sector). $g_{22} = 722.5$ (Theorem S3). $g_{55} = 96/g_{22} \approx 0.1329$ (Hopf universality: $v_3/v_2 = v_5/v_4$).
 
@@ -299,7 +299,7 @@ PDG: $m_b = 4180 \pm 10$ MeV. Error: $+0.023\%$. The exhaustive search over $n \
 | $t$ | 4 | 72 | 1,215,450 | 172,500 | 172,570(290) | $-0.04\%$ (−0.2$\sigma$) |
 | $e^-$ | 6 | 13 | 18,564 | 0.51100 | 0.51100 | unit ref. |
 | $\mu^-$ | 6 | 35 | 3,838,380 | 105.657 | 105.6584 | $-0.001\%$ |
-| $\tau^-$ | 10 | 23 | 64,512,240 | 1,776.84 | 1,776.93(12) | $-1.0\sigma$ |
+| $\tau^-$ | 10 | 23 | 64,512,240 | 1,776.84 | 1,776.93(9) | $-1.0\sigma$ |
 
 $^\dagger$ The light quarks ($d$, $s$, $u$) carry the universal confinement-binding correction (§7.1; down has $\langle k\rangle = 0$ and is unshifted) and sit within the sizable PDG uncertainties: $d$ $+0.04\%$, $s$ $+0.49\%$, $u$ $+0.70\%$. The scale-free in-sector ratios carry a small $n$-dependent residual that a uniform offset cannot produce (Section 13). The charm and top **bare** counts overshoot by $+0.93\%$ and $+2.20\%$ (their nominal $+2.6\sigma$/$+13\sigma$ are against statistical errors only and are scheme-sensitive); the same correction brings them to $+0.34\%$ and $-0.04\%$, within $\pm1\sigma$ (Table 1, §7.1).
 
@@ -427,7 +427,7 @@ The physical particle spectrum is the co-fixed-point spectrum of the seed-driven
 
 Coordinate containment: whether a force can reach a given particle is fixed by the nesting of their sectors. The sector coordinates form a single chain, $\Xi_2 \subset \Xi_3 \subset \cdots$, so any two sectors share the coordinates of the smaller, and a force couples to a mode on those shared coordinates. The $d=2$ photon's coordinates lie inside every sector, so it reaches every charged mode; a force seated in a larger sector reaches a mode only through whatever coordinates the two share. This fixes which interactions are possible; the coupling structure of those interactions is the subject of Section 12.
 
-Gravity: variation of the master action with respect to $g_{\mu\nu}$ yields the observer's Einstein equations $G_{\mu\nu} = 8\pi G_N T_{\mu\nu}^{\rm eff}$, where $T_{\mu\nu}^{\rm eff} = \int_\Xi T_{\mu\nu}^{\rm Dirac}\,d\mu_\xi$ is the sector-space integral of the matter stress-energy. $G_N$ is a measured constant of spacetime; the sector geometry $\Xi$ is a fixed background and contributes no gravitational degrees of freedom. Full treatment in Part 4 §3.11.2 [11].
+Gravity: the mass density of $\Psi_\infty$ sources the curvature of $M_\infty$, which a $d=3$ observer reads as the effective Einstein equations $G_{\mu\nu} = 8\pi G_N T_{\mu\nu}^{\rm eff}$, where $T_{\mu\nu}^{\rm eff} = \int_\Xi T_{\mu\nu}^{\rm Dirac}\,d\mu_\xi$ is the sector-space integral of the matter stress-energy (Part 4 §0.2). $G_N$ is a measured constant of spacetime; the sector geometry $\Xi$ is a fixed background and contributes no gravitational degrees of freedom — there is no fundamental gravitational action and no graviton. Full treatment in Part 4 §3.11.2 [11].
 
 ---
 
