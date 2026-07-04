@@ -1261,22 +1261,32 @@ _c13 = math.cos(math.asin(_s13))
 # derived from seeds alone (Part 5 §3c); no Higgs VEV concept applies.
 # G_N is the measured coupling constant of 3+1D GR, entered by hand in the
 # Einstein-Hilbert action (Part 4 §3.11). (Part 1 section 0, Part 9 T7)
+# Physical (corrected) masses for the RMS: the coloured d=3,4 quarks carry
+# the confinement-binding correction (STEP 127), the tau its geometric
+# back-reaction (T10b), and nu3 its delta_nu3=1/35 closure. x_e is formed
+# inline here because STEP 127 runs later (Lambda=N_c f_pi=3 m_scale3 S(4,3),
+# N_b=Lambda/(4 m_scale4), x_e=3/(16 N_b)); the lepton/nu shifts are
+# sub-0.1% of Tr(D^2) but are the physical values.
+_Nb_t7 = (3*m_scale3*S(n_strange, 3)) / (4*m_scale4)
+_xe_t7 = 3.0 / (16.0 * _Nb_t7)
+def _cc_t7(_mb, _n, _d):        # confinement-corrected coloured-quark mass
+    return _mb * (1.0 - _xe_t7 * _d*(_n - 1)/(_d + 1))
 all_m_list = [
-    m_scale3,                              # d quark
-    m_scale3*S(n_strange,3),              # s quark
-    m_scale3*S(n_charm,3),               # c quark (d=3 resonance)
-    m_scale3*math.sqrt(S(16,3)*S(17,3)), # b quark (geometric-mean resonance)
-    m_scale4*S(n_up,4),                  # u quark
-    m_scale4*S(n_top,4),                 # t quark (corrected in pred_corrected)
-    m_scale5*S(n_nu1,5),                 # ν₁
-    m_scale5*S(n_nu2,5),                 # ν₂
-    m_scale5*S(n_nu3,5),                 # ν₃
-    m_e,                                  # electron
-    m_scale6*S(n_mu,6),                  # muon
-    m_scale10*S(n_tau,10),               # tau
-    m_scale2*S(n_W,2),                   # W boson
-    m_scale2*S(n_Z,2),                   # Z boson
-    m_scale2*S(n_H,2),                   # Higgs
+    m_scale3,                                        # d quark (<k>=0)
+    _cc_t7(m_scale3*S(n_strange, 3), n_strange, 3),  # s quark
+    _cc_t7(m_scale4*S(n_charm, 4), n_charm, 4),      # c quark (d=4)
+    m_scale3*math.sqrt(S(16, 3)*S(17, 3)),           # b quark (beat)
+    _cc_t7(m_scale4*S(n_up, 4), n_up, 4),            # u quark
+    _cc_t7(m_scale4*S(n_top, 4), n_top, 4),          # t quark
+    m_scale5*S(n_nu1, 5),                            # nu1
+    m_scale5*S(n_nu2, 5),                            # nu2
+    m_scale5*S(n_nu3, 5)*(36.0/35.0),                # nu3 (delta_nu3=1/35)
+    m_e,                                             # electron
+    m_scale6*S(n_mu, 6),                             # muon
+    m_scale10*S(n_tau, 10)*(1.0 + 1.0/1680.0),       # tau (back-reaction)
+    m_scale2*S(n_W, 2),                              # W boson
+    m_scale2*S(n_Z, 2),                              # Z boson
+    m_scale2*S(n_H, 2),                              # Higgs
 ]
 Tr_D2_val = sum(m**2 for m in all_m_list)
 rms_D_val = math.sqrt(Tr_D2_val)

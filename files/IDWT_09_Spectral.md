@@ -299,22 +299,22 @@ The Gegenbauer propagator $G(\Delta n)\propto1/|\Delta n|$ at the $d=10$ critica
 
 ## T7. Spectral Self-Consistency of the EW Scale 🔵
 
-**Theorem T7.** The RMS of the IDWT mass spectrum and the EW scale derived from the IDWT Fermi constant are consistent to within the common spectral normalisation offset.
+**Theorem T7.** The RMS of the IDWT physical mass spectrum and the EW scale derived from the IDWT Fermi constant agree to within a fraction of a percent.
 
-From the 15 IDWT physical masses:
+From the 15 IDWT physical masses (confinement-corrected quarks; `files/idwt.py` STEP 14):
 
-$$\operatorname{Tr}(D^2) = \sum_{i=1}^{15} m_i^2 = 6.165\times10^{10}\ \text{MeV}^2, \qquad \sqrt{\operatorname{Tr}(D^2)} = 248.30\ \text{GeV}.$$
+$$\operatorname{Tr}(D^2) = \sum_{i=1}^{15} m_i^2 = 6.025\times10^{10}\ \text{MeV}^2, \qquad \sqrt{\operatorname{Tr}(D^2)} = 245.47\ \text{GeV}.$$
 
-From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3\ \text{GeV}$. The 0.82% gap between $\sqrt{\operatorname{Tr}(D^2)}$ and this scale arises because $\operatorname{Tr}(D^2)$ sums the raw (bare) spectral eigenvalues while $G_F$ is derived from the W mode index and $g_2$ coupling — both are spectral quantities from the same seeds, so the residual is a spectral normalisation artefact.
+From the IDWT-derived Fermi constant $G_F = g_2^2/(4\sqrt{2}\,m_W^2) = 1.1658\times10^{-5}\ \text{GeV}^{-2}$, the EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.28\ \text{GeV}$. The physical spectrum places $\sqrt{\operatorname{Tr}(D^2)}$ $-0.33\%$ below this scale (and $-0.31\%$ from the SM value $v = 246.22$ GeV); both are spectral quantities built from the same seeds, so the small residual is a self-consistency offset. The confinement-binding correction on the coloured quarks — dominated by the top, $176.4 \to 172.5$ GeV — is what places the RMS at the EW scale; the uncorrected bare count gives $+0.78\%$.
 
 This is a self-consistency check: both quantities are derived from the same seed structure, so agreement is structurally expected. It is not an independent prediction. The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT — the Higgs is a confinement mode of the $d=2$ sector, and there is no quartic scalar potential (Part 5 §3c).
 
 | Particle | $m$ (GeV) | Fraction of $\operatorname{Tr}(D^2)$ |
 |---|---|---|
-| Top $t$ | $176.4$ | $50.5\%$ |
-| Higgs $H$ | $125.3$ | $25.5\%$ |
-| $Z$ | $91.2$ | $13.5\%$ |
-| $W$ | $80.4$ | $10.5\%$ |
+| Top $t$ | $172.5$ | $49.4\%$ |
+| Higgs $H$ | $125.3$ | $26.0\%$ |
+| $Z$ | $91.2$ | $13.8\%$ |
+| $W$ | $80.4$ | $10.7\%$ |
 | All others | — | $<0.1\%$ |
 
 
@@ -870,7 +870,7 @@ evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, 
 | T4 | $n_s=4$ from double degeneracy $4/7$ | ✅ | Exact | Unique $n_s$; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | $b=1/2$ exact | Chain terminates; $\tau$ is critical |
 | T6 | All three PMNS angles | 🔵 | $\leq0.51\%$ | All three angles derived from $S^5$ sector geometry and seed coupling $g_{55}$; the inputs ($g_{55}$, four mode indices) are seed-fixed |
-| T7 | $\sqrt{\operatorname{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | $+0.82\%$ | EW scale self-consistency: spectral RMS vs derived $G_F$; same offset as $\sin^2\theta_W$, $g_1$ |
+| T7 | $\sqrt{\operatorname{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | $-0.33\%$ | EW scale self-consistency: RMS of the physical (confinement-corrected) spectrum vs derived $G_F$ |
 | T8 | $\delta_{CP} = \pi + 2\theta_{13} = 197.11°$; $J = -0.00981$ | 🔶 | $+0.05°$, $+0.1\%$ | APS spectral flow across $\mathbb{CP}^3\to\mathbb{CP}^5$; $\Delta c_1 = -2$; derived in Part 10; three technical gaps before 🔵 |
 | T9a-d | All 6 coupling constants derived | ✅ | Exact | All six $g_{dd}$ from $\chi(\mathbb{CP}^{d/2})$ and seed ratio; §§2–4 |
 | T15 | $N_c=\chi(\mathbb{CP}^2)=n_u$; all couplings and the sector-chain extent from one Euler characteristic (T15a–f); mode-index values are Euler-character identities | ✅ | Exact | Coupling filter and mass scale hierarchy share one geometric root; $g_{dd}$ anti-correlates with isometry group dimension; $n_{\rm top}=72$ is a value identity (top Chern number of $\mathbb{CP}^2\times\mathbb{CP}^3\times\mathbb{CP}^5$), an Euler-product index structurally distinct from the primitive seeds; its resonance origin is 🔶 open (T15d); $m_e$ is the only dimensional input |

@@ -432,7 +432,7 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 - **Electromagnetism:** $U(1)$ Hopf fiber holonomy → connection 1-form $A_\mu$; the photon is that connection.
 - **Weak isospin:** $SU(2)_L$ acts only on holomorphic half of $d=2$ spinor → left-handedness of W coupling.
 - **$\sin^2\theta_W = 1 - (S(76,2)/S(81,2))^2 = 0.2237$** (PDG on-shell: 0.2229, +0.37% — a genuine small structural residual; IDWT gives one geometric value at the $d=2$ sector scale and does not run couplings).
-- **EW scale:** $\sqrt{\mathrm{Tr}(D^2)} \approx 248.3$ GeV is the spectral RMS of $|D|$ across all sectors. IDWT does not use spontaneous symmetry breaking; the Higgs is mode $n=95$, not a condensate. The EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3$ GeV from the IDWT-derived $G_F$ (§0, Part 5 §3c).
+- **EW scale:** $\sqrt{\mathrm{Tr}(D^2)} \approx 245.5$ GeV is the spectral RMS of $|D|$ across all sectors (physical, confinement-corrected). IDWT does not use spontaneous symmetry breaking; the Higgs is mode $n=95$, not a condensate. The EW scale is $(\sqrt{2}\,G_F)^{-1/2} = 246.3$ GeV from the IDWT-derived $G_F$ (§0, Part 5 §3c).
 - **Coupling filter:** Orientation/phase alignment. The photon couples only to currents aligned with its polarization vector $\varepsilon_\mu$; perpendicular currents receive zero coupling, not suppression. This is the $U(1)$ geometry of $\mathbb{CP}^1$ expressing itself as a coupling structure — polarization is not a label on the photon but the geometry's stamp on what the photon can do.
 
 **Spectral.** $\zeta_2(1) = 2$, $\zeta_2(0) = -1$, $a_{02} \approx 1.253$.

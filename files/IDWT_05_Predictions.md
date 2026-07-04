@@ -252,10 +252,10 @@ $$S(72,10)\times m_{\rm scale,10} \approx 51.7\text{ TeV} \quad [\text{beyond LH
 The $\mathrm{SU}(2)_L$ coupling is determined by the $\mathbb{CP}^2\to\mathbb{CP}^1$ sector reduction weighted by the up-quark electric charge $Q_u = 2/3$:
 
 $$g_2 = (2/3)\sqrt{2g_{44}/\pi^2} = 0.65275 \quad (\text{PDG: }0.65270,\ +0.008\%)$$
-$$\sqrt{\mathrm{Tr}(D^2)} = 248.3\text{ GeV} \quad (\text{SM }v\approx 246\text{ GeV},\ +0.93\%)$$
+$$\sqrt{\mathrm{Tr}(D^2)} = 245.5\text{ GeV} \quad (\text{SM }v\approx 246\text{ GeV},\ -0.31\%)$$
 $$1/\alpha\text{ (at }d=2\text{ sector scale }\approx m_W) = 131.8 \quad (\text{PDG }\alpha(m_Z)=1/127.9,\ +3.1\%)$$
 
-$\sqrt{\text{Tr}(D^2)} = 248.3$ GeV is the IDWT-native electroweak scale — the RMS of the mass spectrum — and is a **self-consistency check** (the IDWT RMS mass scale matches the SM Fermi scale), not an independent prediction (Part 9 T7; cf. +0.93% vs SM $v\approx246$ GeV, or +0.82% vs $(\sqrt{2}\,G_F)^{-1/2}=246.3$ GeV). The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the $d=2$ sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
+$\sqrt{\text{Tr}(D^2)} = 245.5$ GeV (physical, confinement-corrected spectrum) is the IDWT-native electroweak scale — the RMS of the mass spectrum — and is a **self-consistency check** (the IDWT RMS mass scale matches the SM Fermi scale), not an independent prediction (Part 9 T7; cf. −0.31% vs SM $v\approx246$ GeV, or −0.33% vs $(\sqrt{2}\,G_F)^{-1/2}=246.3$ GeV). The Higgs VEV concept (from spontaneous symmetry breaking) does not apply in IDWT; the Higgs is a confinement mode of the $d=2$ sector (§3c below). $\lambda_H = m_H^2/(2v^2)$ is therefore not a meaningful IDWT quantity.
 
 ---
 

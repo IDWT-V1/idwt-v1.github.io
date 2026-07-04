@@ -296,7 +296,7 @@ The following table consolidates the full theorem status after the T8 completion
 | T4 | $n_s = 4$ from double degeneracy $4/7$ | ✅ | Exact | Unique $n_s$; all indices follow |
 | T5 | $d=10$ = Gegenbauer critical endpoint | ✅ | $b=1/2$ exact | Chain terminates; τ is critical |
 | T6 | All three PMNS angles | 🔵 | $\leq 0.51\%$ | Determined by $g_{55}$, $m_{\rm scale,5}$, and mode indices |
-| T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | +0.82% | EW scale self-consistency |
+| T7 | $\sqrt{\mathrm{Tr}(D^2)} \approx (\sqrt{2}\,G_F)^{-1/2}$ | 🔵 | −0.33% | EW scale self-consistency (physical spectrum) |
 | **T8** | **$\delta_{CP} = \pi + 2\theta_{13}$; $J = -0.00981$** | **🔶** | **+0.05°, +0.1%** | **Determined by spectral flow $\Delta c_1$ mismatch** |
 | T9a–d | All 6 coupling constants derived | ✅ | Exact | No free coupling parameters |
 | T10a | $\ell=2$ self-energy scale $\varepsilon = 1/(280\sqrt{7})$ | ✅ | Exact | Applied to $\delta_{\nu_3} = \varepsilon\cdot g_{33} = 1/35$ |

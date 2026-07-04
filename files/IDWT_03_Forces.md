@@ -98,7 +98,7 @@ All physical coupling constants follow from $\{g_{dd'}\}$ and the sole unit refe
 | Cabibbo angle | $\sin\theta_C = (1+\chi(\mathbb{CP}^1)/(24S))/\sqrt{S(n_s,3)}$ | 0.22454 |
 | Newton's constant | $G_N = G_\infty/(4\pi)$ (the $4\pi$ is the 3D Green's-function constant; $G_\infty$ one input, Part 4 §3.12.2) | — |
 | **$SU(2)_L$ coupling** | **$g_2 = Q_u\sqrt{g_s} = (2/3)\sqrt{g_s} = (2/3)(2g_{44}/\pi^2)^{1/4}$** | **0.65275** |
-| **EW scale $\sqrt{\mathrm{Tr}(D^2)}$** | **RMS of 15-particle mass spectrum** | **248.3 GeV** |
+| **EW scale $\sqrt{\mathrm{Tr}(D^2)}$** | **RMS of 15-particle mass spectrum** | **245.5 GeV** |
 | **Fermi constant** | **$G_F = g_2^2/(4\sqrt{2}\,m_W^2)$** | **$1.1658\times10^{-5}$ GeV$^{-2}$** |
 
 
