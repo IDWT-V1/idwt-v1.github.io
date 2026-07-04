@@ -166,7 +166,7 @@
   <div class="prose">
     <p>The finite-well argument gives a correction linear in \(\langle k\rangle\). It is worth asking whether a higher-order correction — say, quadratic in \(\langle k\rangle\) — might fit the data equally well or better.</p>
     <p>The answer is no, and the data make this clear. A quadratic correction applies a larger fractional reduction to high-\(\langle k\rangle\) modes. The top quark at \(\langle k\rangle\approx57\) has a much larger mean level than charm at \(\langle k\rangle\approx16\), so a quadratic correction overreaches: it can be calibrated to pull top into margin, but in doing so it over-corrects charm and pushes it to \(+2.1\sigma\). Conversely, calibrating to charm leaves top at \(+2.1\sigma\). There is no value of the quadratic coefficient that brings both charm and top into the statistical margin simultaneously.</p>
-    <p>The linear form threads the needle: calibrating \(x_e\) to the top quark (the deepest-tower datum in \(d=4\)) gives a correction that simultaneously brings charm to \(+0.34\%\) and leaves the light quarks undisturbed. The linear form is selected by the data, and it is also the form predicted by the finite-well / GVD / anharmonic-perturbation argument. Theory and data agree on the functional form.</p>
+    <p>The linear form threads the needle: the derived \(x_e\) brings charm to \(+0.34\%\) and top to \(-0.04\%\) and leaves the light quarks undisturbed. The linear form is selected by the data, and it is also the form predicted by the finite-well / GVD / anharmonic-perturbation argument. Theory and data agree on the functional form.</p>
   </div>
 
 </section>
@@ -186,28 +186,19 @@
 </section>
 <section>
 
-  <h2>Calibrated constants</h2>
+  <h2>The derived coefficient</h2>
   <div class="prose">
-    <p>The per-sector colour deficit \(x_e\) is anchored on the deepest-tower datum in each sector — the particle at the largest mode index for which the PDG mass is well-measured. This is the particle most strongly affected by the finite-well softening, so it gives the most sensitive calibration of \(x_e\).</p>
-    <p>For \(d=3\), the deepest well-measured quark is the strange quark (\(n=4\)). For \(d=4\), it is the top quark (\(n=72\)). Reading \(x_e\) off these anchor points:</p>
+    <p>The per-state colour deficit \(x_e = 3/(16\,N_b)\) carries a single coefficient, fixed once in the \(d=4\) sector — the colour-native sector (\(\mathbb{CP}^2\), \(N_c = \chi = 3\)) and the only one with out-of-margin modes. There the well occupation \(N_b\) is not calibrated but derived, from the hadron-scale colour energy law (Part 2 §11.9):</p>
   </div>
 
   <div class="formula">
-    \[ x_e(d{=}3) = 2.553\times10^{-3}, \quad N_b \approx 73 \]
-    \[ x_e(d{=}4) = 3.871\times10^{-4}, \quad N_b \approx 484 \]
+    \[ N_b(d{=}4) = \frac{\Lambda}{4\,m_{{\rm scale},4}} = 486, \qquad x_e = \frac{3}{16\,N_b} = 3.86\times10^{-4} \]
   </div>
 
   <div class="prose">
-    <p>The ratio of the two deficits is</p>
-  </div>
-
-  <div class="formula">
-    \[ \frac{x_e(d{=}3)}{x_e(d{=}4)} \approx 6.6 \approx 2N_c \]
-  </div>
-
-  <div class="prose">
-    <p>where \(N_c = 3\) is the number of colours. The ratio \(2N_c\) is a colour-structural number — it appears in the leading-order QCD beta function, in the ratio of colour charges, and in the large-\(N_c\) counting of planar diagrams. Its appearance here, in the ratio of the per-sector softening constants calibrated independently from two different quark sectors, is a colour signature: the finite-well softening is not an independent parameter for each sector but is governed by the same colour algebra that controls QCD.</p>
-    <p>The absolute magnitude of \(x_e\) — the actual value of \(N_b\) — is a calibrated input at this stage. The hadron-scale colour energy law in IDWT (Part 2 §11.2) operates at the composite scale \(\sim N_c^2 f_\pi/2\), which is orders of magnitude above the per-state energy deficit that \(x_e\) encodes. Deriving \(N_b\) from first principles requires a per-state colour energy law that does not yet exist. The correction's <em>form</em> is derived; its <em>magnitude</em> is calibrated. This is an open item, marked 🔶 in the Parts.</p>
+    <p>where \(\Lambda = N_c f_\pi\) is the confinement scale. This is \(m_e\)-free, introduces no new input, and reproduces the within-margin calibration to \(0.4\%\).</p>
+    <p>The \(d=3\) quarks (down, strange) carry the <em>same</em> coefficient. Their colour is not native to \(d=3\): it is inherited from \(d=4\) through the Hopf map \(S^1 \to S^5 \to \mathbb{CP}^2\), the binding colour living in \(\mathbb{CP}^2\). The per-state deficit is therefore the one derived \(d=4\) value, applied universally with no per-sector fit — which turns strange (\(\langle k\rangle = 2.25\)) from a calibration anchor into a genuine prediction (\(+0.49\%\)).</p>
+    <p>So the correction's <em>form</em> is derived (finite-well GVD / anharmonic perturbation) and its \(d=4\) <em>magnitude</em> now follows from the colour energy law. What remains open (🔶 in the Parts) is a first-principles account of \(N_b\) at the per-state rather than the hadron scale.</p>
   </div>
 
 </section>
@@ -233,10 +224,10 @@
       </thead>
       <tbody>
         <tr><td>down</td><td>3</td><td>1</td><td>0</td><td>+0.040%</td><td>+0.040%</td><td>+0.03</td></tr>
-        <tr><td>strange</td><td>3</td><td>4</td><td>1.50</td><td>+0.575%</td><td>−0.003%</td><td>0.00</td></tr>
-        <tr><td>up</td><td>4</td><td>3</td><td>0.80</td><td>+0.766%</td><td>+0.703%</td><td>+0.22</td></tr>
-        <tr><td>charm</td><td>4</td><td>20</td><td>15.44</td><td>+0.933%</td><td>+0.339%</td><td>+0.94</td></tr>
-        <tr><td>top</td><td>4</td><td>72</td><td>56.84</td><td>+2.199%</td><td>−0.048%</td><td>−0.29</td></tr>
+        <tr><td>strange</td><td>3</td><td>4</td><td>2.25</td><td>+0.575%</td><td>+0.487%</td><td>+0.57</td></tr>
+        <tr><td>up</td><td>4</td><td>3</td><td>1.60</td><td>+0.766%</td><td>+0.703%</td><td>+0.22</td></tr>
+        <tr><td>charm</td><td>4</td><td>20</td><td>15.20</td><td>+0.933%</td><td>+0.342%</td><td>+0.95</td></tr>
+        <tr><td>top</td><td>4</td><td>72</td><td>56.80</td><td>+2.199%</td><td>−0.040%</td><td>−0.24</td></tr>
       </tbody>
     </table>
   </div>
