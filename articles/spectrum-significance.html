@@ -159,17 +159,17 @@
       {lbl:'ν₂',    d:5,  pred:8.639e-6, pdg:null,       nu:1},
       {lbl:'ν₃',    d:5,  pred:5.027e-5, pdg:null,       nu:1},
       {lbl:'e',     d:6,  pred:0.511,    pdg:0.511},
-      {lbl:'u',     d:4,  pred:2.177,    pdg:2.16},
+      {lbl:'u',     d:4,  pred:2.175,    pdg:2.16},
       {lbl:'d',     d:3,  pred:4.702,    pdg:4.70},
-      {lbl:'s',     d:3,  pred:94.04,    pdg:93.5},
+      {lbl:'s',     d:3,  pred:93.96,    pdg:93.5},
       {lbl:'μ',     d:6,  pred:105.66,   pdg:105.658},
-      {lbl:'c',     d:4,  pred:1284.9,   pdg:1273.0},
+      {lbl:'c',     d:4,  pred:1277.3,   pdg:1273.0},
       {lbl:'τ',     d:10, pred:1776.84,  pdg:1776.93},
       {lbl:'b',     d:3,  pred:4181,     pdg:4183,       beat:1},
       {lbl:'W',     d:2,  pred:80379,    pdg:80369},
       {lbl:'Z',     d:2,  pred:91230,    pdg:91188},
       {lbl:'H',     d:2,  pred:125266,   pdg:125200},
-      {lbl:'t',     d:4,  pred:176365,   pdg:172570},
+      {lbl:'t',     d:4,  pred:172500,   pdg:172570},
     ];
 
     const LOG_MIN=-7, LOG_MAX=5.5;
@@ -257,7 +257,7 @@
 <section>
   <h2>The full test</h2>
   <div class="prose">
-    <p>Multiplying luck factors is an estimate, not a likelihood, so the claim is put through two proper statistical tests (computed in <code>idwt.py</code> STEP 39). The first makes the "luck" idea exact. If the measured values had nothing to do with the simplex grid, each would sit at a random position between two rungs — that is the null hypothesis, and the probability of the whole set sitting as close to the rungs as it does can be computed exactly. The quantity list is also widened by a rule fixed in advance: every dimensionless, parameter-free quantity whose measurement is precise enough to tell neighbouring rungs apart. That brings in the Cabibbo angle, the strange-to-down quark mass ratio, the top-to-charm ratio, and the neutrino mass-splitting ratio, for eight quantities in all. The verdict: a joint probability of \(9\times10^{-11}\) — six sigma — or \(1.5\times10^{-7}\) (five sigma) under the most conservative treatment of the measurement errors. Allowing generously for a hundred quantities that might have been examined instead still leaves about \(10^{-8}\).</p>
+    <p>Multiplying luck factors is an estimate, not a likelihood, so the claim is put through two proper statistical tests (computed in <code>idwt.py</code> STEP 39). The first makes the "luck" idea exact. If the measured values had nothing to do with the simplex grid, each would sit at a random position between two rungs — that is the null hypothesis, and the probability of the whole set sitting as close to the rungs as it does can be computed exactly. The quantity list is also widened by a rule fixed in advance: every dimensionless, parameter-free quantity whose measurement is precise enough to tell neighbouring rungs apart. That brings in the Cabibbo angle, the top-to-charm ratio, and the neutrino mass-splitting ratio, for seven quantities in all. The verdict: a joint probability of \(4\times10^{-10}\) — six sigma — or \(1.9\times10^{-7}\) (five sigma) under the most conservative treatment of the measurement errors. Allowing generously for a hundred quantities that might have been examined instead still leaves about \(4\times10^{-8}\).</p>
     <p>The second test is the direct one: build random rival theories and let them compete. Each rival keeps everything IDWT derives — the sectors, the scales, the coupling structure — but has its mode indices drawn at random from all values that keep the particles below 1 TeV (neutrinos below 1 eV). Every quantity is then recomputed for the rival, including the three neutrino-mixing angles, and the rival's overall agreement with experiment is scored against IDWT's. In 8.4 million random theories, none came close: the best fell short by a factor of about \(10^{15}\) in joint residual, and the result is unchanged when the index windows are halved or doubled. The tau-to-electron ratio alone was never matched in any draw.</p>
   </div>
 </section>

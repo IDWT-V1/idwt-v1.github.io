@@ -452,10 +452,10 @@ Note: $S(n,2) = n(n+1)/2$. The photon zero mode is exactly massless — the mode
 | Particle | $n$ | $S(n,3)$ | Predicted mass | PDG |
 |---|---|---|---|---|
 | d quark | 1 | 1 | 4.702 MeV | ~4.7 MeV ✅ |
-| s quark | 4 | 20 | 94.04 MeV | 93.5 MeV ✅ |
+| s quark | 4 | 20 | 93.96 MeV | 93.5 MeV ✅ |
 | b quark | beat $k_0=16$ | $\sqrt{S(16,3)\cdot S(17,3)}$ | 4181 MeV | 4183 MeV ✅ |
 
-Note: $S(n,3) = n(n+1)(n+2)/6$. The b quark is a beat resonance (§3b) at the unique triple-coincidence site $k_0 = n_s^2 = 16$.
+Note: $S(n,3) = n(n+1)(n+2)/6$; the predicted masses are physical — strange carries the confinement-binding correction (§11.9, so $93.96$ rather than the bare $20\times4.702=94.04$), down is unshifted ($\langle k\rangle=0$). The b quark is a beat resonance (§3b) at the unique triple-coincidence site $k_0 = n_s^2 = 16$.
 
 **Quantum properties.**
 - **$\mathrm{SU}(3)$ color:** Down-type quarks carry color via coordinate containment inside $\Xi_4$; the $\mathrm{SU}(3)$ symmetry arises from the $\mathbb{CP}^2$ ($d=4$) isometry. They transform in the fundamental representation.

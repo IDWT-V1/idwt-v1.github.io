@@ -2580,7 +2580,7 @@ assert sig_mu_e < 1e-3 and sig_tau_e < 1e-3
 # d=5: <= 1 eV); all 11 quantities recomputed per draw (g55 fixed by the
 # seeds); score T = sum ln eps_eff and count draws doing at least as
 # well as IDWT.  Fixed seed (20260609).  10^6 in-script draws: best
-# random T = -28.6 vs IDWT -60.9 (gap 32.3), 0 hits, p_B < 3e-6
+# random T = -28.6 vs IDWT -62.1 (gap 33.4), 0 hits, p_B < 3e-6
 # (95% CL, rule of 3).
 #
 # Measured inputs: PDG 2024 (m_tau 1776.93(9); m_W 80369.2(133);
@@ -2595,6 +2595,13 @@ def _s39_dm2(n):                         # dm2_31/dm2_21, free n_nu3
     _m2 = S(15, 5) / S(10, 5)
     _m3 = S(n, 5) / S(10, 5) * (1 + delta_nu3)
     return (_m3 ** 2 - 1) / (_m2 ** 2 - 1)
+
+# confinement-binding correction (STEP 127) formed inline (STEP 127 runs
+# later): x_e = 3/(16 N_b), N_b = Lambda/(4 m_scale4), Lambda = 3 f_pi --
+# the same dressing the tau ratio already carries via (1 + 1/1680).
+_xe39 = 3.0 / (16.0 * (3*m_scale3*S(4, 3)) / (4*m_scale4))
+def _cc39(_n, _d):              # confinement factor at mode (n,d)
+    return 1.0 - _xe39 * _d*(_n - 1)/(_d + 1)
 
 # (name, obs, sigma_rel, free index n, prediction fn)
 _s39_q = [
@@ -2611,7 +2618,7 @@ _s39_q = [
     ("sin th_C ", 0.2245, 0.0008 / 0.2245, 4, _s39_cab),
     ("m_t/m_c  ", 172570.0 / 1273.0,
      math.hypot(290.0 / 172570.0, 4.6 / 1273.0), 72,
-     lambda n: S(n, 4) / S(20, 4)),
+     lambda n: S(n, 4)*_cc39(n, 4) / (S(20, 4)*_cc39(20, 4))),
     ("dm231/221", 2.530e-3 / 7.53e-5,
      math.hypot(0.028 / 2.530, 0.18 / 7.53), 22, _s39_dm2),
 ]
@@ -2711,7 +2718,7 @@ def _s39_T(preds):
 _s39_pidwt = [np.array([float(v)]) for v in (
     S(35, 6) / S(13, 6), S(23, 10) / S(13, 6) * (1 + 1 / 1680.0),
     S(81, 2) / S(76, 2), S(95, 2) / S(76, 2), _s39_cab(4),
-    S(72, 4) / S(20, 4),
+    S(72, 4)*_cc39(72, 4) / (S(20, 4)*_cc39(20, 4)),
     _s39_dm2(22), _s39_s23, _s39_s12, _s39_s13, _s39_cu)]
 s39_T_idwt = float(_s39_T(_s39_pidwt)[0])
 
@@ -2749,7 +2756,7 @@ del (_s39_Tr, _s39_pr, _ne, _nmu, _nta, _nw, _nz, _nh, _nsq,
      _nc, _nt, _nu_, _n1, _n2, _n3, _m2r, _m3r, _s23r, _s12r, _s13r,
      _dm2r)
 
-assert s39_p_exact < 5e-9            # joint coincidence ~5.9 sigma (7-quantity)
+assert s39_p_exact < 5e-9            # joint coincidence ~6.1 sigma (7-quantity)
 assert s39_p_fisher < 1e-6           # conservative bound still > 4.8 sig
 assert s39_nB_hits == 0              # no random theory matches as well
 assert s39_T_best > s39_T_idwt + 20  # ... by a margin > e^20
