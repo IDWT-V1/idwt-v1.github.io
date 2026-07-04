@@ -104,13 +104,13 @@ This is a restatement of T0.5, not a derivation of it. It shows the tower has le
 
 $$\boxed{m(n,d) = S(n,d)\times m_{\mathrm{scale},d}, \qquad S(n,d) = \binom{n+d-1}{d}}$$
 
-states that $m(n,d)/m_{\mathrm{scale},d}$ is the coefficient of $t^n$ in the Poincaré-Hilbert series of the free commutative algebra $\mathbb{R}[x_1,\ldots,x_d]$:
+states that $m(n,d)/m_{\mathrm{scale},d}$ is the coefficient of $t^{n-1}$ in the Poincaré-Hilbert series of the free commutative algebra $\mathbb{R}[x_1,\ldots,x_{d+1}]$ in $d+1$ variables:
 
-$$P_d(t) = \frac{1}{(1-t)^d} = \sum_{n\geq 1} S(n,d)\,t^n.$$
+$$P_d(t) = \frac{1}{(1-t)^{d+1}} = \sum_{n\geq 1} S(n,d)\,t^{n-1}.$$
 
-**Proof.** $S(n,d)=\binom{n+d-1}{d}$ counts the degree-$(n-1)$ monomials in $d$ variables, equals $\dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$, and equals the IDOS (integrated density of states) of the $d$-dimensional harmonic oscillator at level $n$ — the number of eigenstates with quantum number $\leq n-1$. It is also the Ehrhart polynomial of the standard $d$-simplex evaluated at $n-1$ (the number of lattice points in its $(n-1)$-fold dilation), which is why $S(\cdot,d)$ is a degree-$d$ polynomial in $n$. In laser cavity terms: the cumulative count of transverse modes up to order $n-1$ in a $(d-1)$-transverse-mode cavity. $\square$
+**Proof.** $S(n,d)=\binom{n+d-1}{d}$ counts the degree-$(n-1)$ monomials in $d+1$ variables, equals $\dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})$, and equals the IDOS (integrated density of states) of the $d$-dimensional harmonic oscillator at level $n$ — the number of eigenstates with quantum number $\leq n-1$. It is also the Ehrhart polynomial of the standard $d$-simplex evaluated at $n-1$ (the number of lattice points in its $(n-1)$-fold dilation), which is why $S(\cdot,d)$ is a degree-$d$ polynomial in $n$. In laser cavity terms: the cumulative count of transverse modes up to order $n-1$ in a $(d-1)$-transverse-mode cavity. $\square$
 
-$$\boxed{S(n,d) \;=\; \dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1}) \;=\; \mathrm{IDOS}_d(n) \;=\; [t^n]\frac{1}{(1-t)^d}}$$
+$$\boxed{S(n,d) \;=\; \dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1}) \;=\; \mathrm{IDOS}_d(n) \;=\; [t^{n-1}]\frac{1}{(1-t)^{d+1}}}$$
 
 ⭐ **Schubert calculus interpretation.** $S(n,d) = \binom{n+d-1}{d}$ is the number of Schubert cells in the Grassmannian $\mathrm{Gr}(d,\, n+d-1)$. The hockey-stick recursion $S(n,d) = S(n,d-1) + S(n-1,d)$ is the Pieri rule: multiplying a Schubert class by the class of a hyperplane section in $\mathrm{Gr}(d,n+d-1)$ produces exactly these two terms. The generation tower DAG is therefore the Bruhat order on Schubert cells, which is why the tower has trivial automorphism group — the Bruhat order on a Grassmannian has no non-trivial order-preserving automorphisms. Verified: $S(4,3)=S(4,2)+S(3,3)=10+10=20$; $S(10,5)=S(10,4)+S(9,5)=715+1287=2002$.
 
