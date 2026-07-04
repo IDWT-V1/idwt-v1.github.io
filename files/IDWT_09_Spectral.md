@@ -637,12 +637,10 @@ $$\binom{n+d}{d}-\binom{n+d-1}{d}=\binom{n+d-1}{d-1}=S(n+1,d-1).\quad\square$$
 
 ### T13c. Exact Mass Ratios
 
-Within a single sector, $m_{{\rm scale},d}$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. For $d=4$ up-type quarks these are the **bare** combinatorial ratios — exact identities, and the confinement-binding correction of §11.9 (an absolute-mass effect) largely cancels in a ratio; they already match PDG to $+0.16\%$ ($m_c/m_u$) and $+1.4\%$ ($m_t/m_u$). For the tau the back-reaction factor (T10b) is algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$, hence also parameter-free.
+Within a single sector, $m_{{\rm scale},d}$ cancels, leaving pure rational ratios of simplex numbers $S(n,d)=\binom{n+d-1}{d}$. The charged-lepton ($m_\mu/m_e$), boson ($m_Z/m_W$), and $\nu_2/\nu_1$ ratios are exact rationals; the tau ratios carry the parameter-free back-reaction factor $D=1+1/1680$ (T10b), algebraic in $n_s$ and $\varepsilon=1/(280\sqrt{7})$. The $d=4$ up-type quark ratios instead carry the confinement-binding correction (§11.9, 🔶) and so are not pure rationals; their physical values are given in Part 5 §3b ($m_c/m_u=587.2$, $m_t/m_c=135.0$, $m_t/m_u=79{,}303$, each within $\sim0.4$–$0.7\%$ of PDG).
 
 | Ratio | IDWT exact form | IDWT value | PDG | Error |
 |---|---|---|---|---|
-| $m_c/m_u$ | $S(20,4)/S(3,4)=8855/15$ (bare) | 590.333 | 589.4 | +0.158% 🔶 |
-| $m_t/m_u$ | $S(72,4)/S(3,4)=1215450/15$ (bare) | 81030 | 79893 | +1.423% 🔶 |
 | $m_\mu/m_e$ | $S(35,6)/S(13,6)=3838380/18564$ | 206.765 | 206.768 | −0.002% |
 | $m_\tau/m_\mu$ | $\frac{S(23,10)}{S(35,6)}\times D=\frac{64512240}{3838380}\times D$ | 16.8172 | 16.8177 | −0.003% |
 | $m_\tau/m_e$ | $\frac{S(23,10)}{S(13,6)}\times D=\frac{64512240}{18564}\times D$ | 3477.19 | 3477.37 | −0.005% |
@@ -850,11 +848,11 @@ The coupling decreases as the symmetry group grows. A larger isometry group impo
 
 This is the coupling filter principle operating at the level of the self-coupling: the geometry that specifies what quantum numbers a particle carries also specifies, through the same Euler characteristic $N_c$, how strongly that sector couples and therefore how heavy those particles are. Coupling filter and mass scale are not two separate outputs of the geometry — they are one quantity read in two different units.
 
-**Corollary T15g (The complete mass spectrum from $N_c$). ⭐** Every one of the fifteen Standard-Model masses is $m_e\times f(N_c)$ for an exact closed form $f$ built from $N_c=\chi(\mathbb{CP}^2)=3$ alone. The chain closes through three layers, each already $N_c$-determined above: the mode indices $S(n,d)$ (T15d), the six sector scales $m_{{\rm scale},d}/m_e$ (T9, T11, T15c–e), and the four corrections. The corrections carry no constant outside the $N_c$-chain:
+**Corollary T15g (The complete mass spectrum from $N_c$). ⭐** Every one of the fifteen Standard-Model masses is $m_e\times f(N_c)$ for an exact closed form $f$ built from $N_c=\chi(\mathbb{CP}^2)=3$ alone. The chain closes through three layers, each already $N_c$-determined above: the mode indices $S(n,d)$ (T15d), the six sector scales $m_{{\rm scale},d}/m_e$ (T9, T11, T15c–e), and the exact corrections. These corrections carry no constant outside the $N_c$-chain:
 
 $$\varepsilon = \frac{2/\sqrt{2N_c+1}}{(N_c+1)^2\,S(N_c{+}1,4)}, \qquad \delta_\tau = \frac{1}{N_c(N_c+1)^2\,S(N_c{+}1,4)}, \qquad \delta_{\nu_3} = \frac{1}{S(N_c{+}1,4)},$$
 
-evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, $\delta_{\nu_3} = 1/35$. The electron is the anchor ($f_e\equiv1$); representative closed forms are $f_{\rm up} = \sqrt{N_c}\,(N_c+1)/(2N_c+1)^{1/4}$ and $f_{\rm strange} = \sqrt2\,(N_c+1)^{5/2}(N_c+2)(N_c+3)(2N_c+1)^{1/4}/12$. Substituting $N_c=3$ reproduces the canonical masses to machine precision (maximum relative deviation $5.7\times10^{-16}$ across all fifteen). The single dimensional input is $m_e$; mass *ratios* are fixed by the one integer $N_c$. This is the spectrum-level statement of T15: not only the indices and couplings but the masses themselves trace to $\chi(\mathbb{CP}^2)$. $\square$
+evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, $\delta_{\nu_3} = 1/35$. The electron is the anchor ($f_e\equiv1$); representative closed forms are $f_{\rm up} = \sqrt{N_c}\,(N_c+1)/(2N_c+1)^{1/4}$ and $f_{\rm strange} = \sqrt2\,(N_c+1)^{5/2}(N_c+2)(N_c+3)(2N_c+1)^{1/4}/12$. Substituting $N_c=3$ reproduces the bare mass spectrum to machine precision (maximum relative deviation $5.7\times10^{-16}$ across all fifteen); the physical coloured-quark masses add the confinement-binding dressing (§11.9, 🔶), itself $N_c$-determined through $N_b=\Lambda/(4m_{{\rm scale},4})$ with $\Lambda=N_c f_\pi$. The single dimensional input is $m_e$; mass *ratios* are fixed by the one integer $N_c$. This is the spectrum-level statement of T15: not only the indices and couplings but the masses themselves trace to $\chi(\mathbb{CP}^2)$. $\square$
 
 ---
 
@@ -879,7 +877,7 @@ evaluating at $N_c=3$ to $\varepsilon = 1/(280\sqrt7)$, $\delta_\tau = 1/1680$, 
 | T11a-d | Neutrino masses; Dirac; $\Sigma m_\nu=60.39$ meV ($\delta_{\nu_3}=\varepsilon\cdot g_{33}=1/35$ derived, §9d); uncorrected 59.00 meV | ✅ | $<0.05\%$ | $0\nu\beta\beta=0$ at all orders (no $C$ on $S^5$) |
 | T13a | Spectral sum rule $\zeta_d(1)=d/(d-1)$ | ✅ | Exact | Total inverse-mass weight of sector $d$ is $d/(d-1)$; pure Pascal |
 | T13b | Mode spacing $S(n+1,d)-S(n,d)=S(n+1,d-1)$ | ✅ | Exact | Filling-rate relation; source of all mode-index derivation chains |
-| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm $+0.16\%$, top $+1.42\%$ 🔶 | $m_\mu/m_e$, $m_\tau/m_\mu$, $m_Z/m_W$ etc. exact; $d=4$ up-type bare |
+| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; $m_c/m_u$ $-0.37\%$, $m_t/m_u$ $-0.74\%$ 🔶 | $m_\mu/m_e$, $m_\tau/m_\mu$, $m_Z/m_W$ etc. exact; $d=4$ up-type confinement-corrected (Part 5 §3b) |
 | T13d | Partial sum $\sum_{n=1}^{N}S(n,d)=S(N,d+1)$ | ✅ | Exact | Cumulative sector-$d$ weight = single mode in sector $d+1$; vacuum energy at cutoff $N$ is $m_{{\rm scale},d}\times S(N,d+1)$ |
 | T13e | Iterated difference $\Delta^k_n S(n,d)=S(n+k,d-k)$ | ✅ | Exact | $S(n,d)$ is degree-$d$ polynomial; differences stay within simplex tower; $\Delta^d=1$, $\Delta^{d+1}=0$ |
 | T14a | Heat kernel Weyl term $K_d(t)\sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = $d$; Weyl coefficient $a_0^{(d)}=\Gamma(1+1/d)(d!)^{1/d}$ |

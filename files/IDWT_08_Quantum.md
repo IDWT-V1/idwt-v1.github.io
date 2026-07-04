@@ -124,7 +124,7 @@ The occupied mode indices $\{n_d, n_s, n_u, n_c, n_e, n_\mu, n_\tau, n_{\nu_1}, 
 
 This was verified computationally for all pairwise and triple combinations. The independence theorem rules out redundancy in the spectrum — every assigned mode index carries independent physical content.
 
-**Near-violations note:** $S(n_{\rm top},4)/S(n_c,4) = 137.26\ldots \approx 1/\alpha$ (fine structure constant). This is a 0.16% coincidence — noted but not used as a derivation.
+**Near-violations note:** the bare combinatorial ratio $S(n_{\rm top},4)/S(n_c,4) = 137.26\ldots \approx 1/\alpha$ (fine structure constant), a 0.16% coincidence — noted but not used as a derivation. It concerns the undressed count only; the physical top/charm ratio (confinement-corrected) is $135.0$.
 
 ### 3.2 $S(n,d)$ as the Sector Spectral Counting Function
 

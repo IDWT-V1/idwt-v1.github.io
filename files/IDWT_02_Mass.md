@@ -79,7 +79,7 @@ the exact $q$-lift of the hockey-stick identity $S(n,d)=S(n,d-1)+S(n-1,d)$. Sett
 - **charm** ($n=20$, $d=4$): one hockey-stick extension of the $d=3$ seed column → depth $k=n_u=3$
 - **top** ($n=72$, $d=4$): Hopf depth-2 extension, $k=S(n_u,3)=10$ boxes → depth $k=10$
 
-The sequence $\{0,n_u,S(n_u,3)\}=\{0,3,10\}$ emerges combinatorially from $n_u=3$ alone. The $d=4$ up-type masses are quoted bare, and charm and top overshoot PDG 2024 as open residues. The Ferrers counting identifies the combinatorially natural depth sequence; it is recorded here as a structural observation, not a mass correction.
+The sequence $\{0,n_u,S(n_u,3)\}=\{0,3,10\}$ emerges combinatorially from $n_u=3$ alone. The $d=4$ up-type masses carry the confinement-binding correction of §11.9, which brings charm and top within $\pm1\sigma$ of PDG 2024. The Ferrers counting identifies the combinatorially natural depth sequence; it is recorded here as a structural observation, not a mass correction.
 
 ⭐ **Large-n asymptotic (proved by Stirling's approximation):**
 
@@ -806,7 +806,7 @@ Within the up-type sector the overshoot grows smoothly with generation, but the 
 
 First, its mode index is not a tower output. Every lepton, every neutrino, and the first- and second-generation quarks carry indices generated additively by the hockey-stick tower; the top's index $n=72$ is instead a product, $N_c\times n_s\times N_f = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = 3\times4\times6$. The three factors are the Euler characteristics of the three highest-weight active-sector complex projective spaces — precisely the topological invariants that drive the sector chain — so the product form is structurally natural within the framework. What is not yet explained is the selection principle: why does the top's index equal this Euler product, while the rest of the spectrum is additive? The bottom's product index $n_s^2=16$ has a derivation as the $d=10$ Gegenbauer endpoint (§8); the top's $72$ does not. This is the leading open dynamical question of the framework (🔶).
 
-Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 value ($172{,}570 \pm 290$ MeV). The confinement-binding correction (§11.9) reduces this to $-0.04\%$ ($-0.2\sigma$). The scale-independent ratio $S(72,4)/S(20,4) = 137.26$ matches the conventional top/charm ratio to $\sim$1%.
+Second is the mass. The bare mode $S(72,4)\,m_{\rm scale,4} = 176{,}365$ MeV sits $+2.20\%$ above the PDG 2024 value ($172{,}570 \pm 290$ MeV). The confinement-binding correction (§11.9) reduces this to $-0.04\%$ ($-0.2\sigma$). The physical top/charm ratio $m_t/m_c = 135.0$ matches the conventional ratio to $\sim0.4\%$.
 
 So one thing remains genuinely open at the top: the index $72$ is a product rather than a tower output, with no selecting condition yet found. The bare mass overshoot is corrected to within $1\sigma$ in §11.9 ($\textbf{🔶}$); the rule that generates the index itself is the remaining open item.
 

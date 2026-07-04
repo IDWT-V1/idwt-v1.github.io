@@ -16,13 +16,13 @@ $$\frac{m_\mu}{m_e} = \frac{S(35,6)}{S(13,6)} = \frac{3\,838\,380}{18\,564} = \f
 
 $$S(23,10)/S(13,6) = 64\,512\,240/18\,564 = 3\,475.126 \quad (\text{PDG: }3\,477.23,\ \text{bare }{-}0.060\%;\text{ back-reaction corrected: }{-}0.14\sigma)$$
 
-**Up-type quark mass ratios (bare) 🔵**
+**Up-type quark mass ratios 🔵**
 
-The $d=4$ up-type mass ratios are quoted bare (Part 2 §11). The ratios run high because charm and top overshoot:
+From the confinement-corrected physical masses (§3), the $d=4$ up-type ratios match PDG at the sub-percent level:
 
-$$S(20,4)/S(3,4) = 590.33 \quad (\text{PDG} \approx 589.4,\ +0.16\%)$$
-$$S(72,4)/S(3,4) = 81\,030 \quad (\text{PDG} \approx 79\,893,\ +1.42\%)$$
-$$S(72,4)/S(20,4) = 137.26 \quad (\text{PDG} \approx 135.6,\ +1.25\%)$$
+$$m_c/m_u = 587.2 \quad (\text{PDG} \approx 589.4,\ -0.37\%)$$
+$$m_t/m_u = 79\,303 \quad (\text{PDG} \approx 79\,893,\ -0.74\%)$$
+$$m_t/m_c = 135.0 \quad (\text{PDG} \approx 135.6,\ -0.38\%)$$
 
 **Bottom quark 🔵**
 
@@ -228,7 +228,7 @@ The bare $d=4$ count $S(n,4)\,m_{\rm scale,4}$ — the parameter-free free-quark
 | c | 20 | 1277.3 MeV | $+0.34\%$ ($+0.9\sigma$) |
 | t | 72 | 172,500 MeV | $-0.04\%$ ($-0.2\sigma$) |
 
-The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). The scale-independent ratio $S(72,4)/S(20,4)=137.26$ matches the conventional top/charm ratio to $\sim$1%; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
+The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). The physical top/charm ratio $m_t/m_c=135.0$ matches the conventional top/charm ratio to $\sim0.4\%$; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 
@@ -279,16 +279,16 @@ Three active neutrino species from the $d=5$ sector structure (three co-fixed-po
 
 | Ratio | IDWT | PDG | Error |
 |---|---|---|---|
-| $m_c/m_u$ | 590.33 | 589.4 | +0.16% ‡ |
-| $m_c/m_s$ | 13.66 | 13.6 | +0.5% ‡ |
-| $m_t/m_c$ | 137.26 | 135.6 | +1.25% ‡ |
-| $m_t/m_b$ | 42.18 | 41.3 | +2.1% ‡ |
-| $m_b/m_s$ | 44.461 | 44.8 | −0.76% |
+| $m_c/m_u$ | 587.2 | 589.4 | −0.37% |
+| $m_c/m_s$ | 13.60 | 13.6 | −0.03% |
+| $m_t/m_c$ | 135.0 | 135.6 | −0.38% |
+| $m_t/m_b$ | 41.26 | 41.3 | −0.10% |
+| $m_b/m_s$ | 44.50 | 44.8 | −0.67% |
 | $m_u/m_d$ | 0.463 | 0.474 | −2.3% † |
 
-† $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ exactly (Theorem S2, Part 8 §5). The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates; the ratio is the exact geometric value above.
+Ratios involving the coloured quarks are computed from the confinement-corrected physical masses (§3; `files/idwt.py` STEP 127), and match PDG at the sub-percent level.
 
-‡ The $d=4$ up-type ratios are quoted **bare**, so charm and top overshoot PDG as open residues (§3). These match Part 9 T13c and `files/idwt.py`.
+† $m_u/m_d = \sqrt{g_{44}/g_{33}} = \sqrt{3/14}$ at the coupling-scale level (Theorem S2, Part 8 §5); the confinement dressing on $u$ shifts it by $-0.06\%$, below this precision. The −2.3% from PDG reflects the ±20% spread in PDG light-quark mass estimates.
 
 **Neutrino masses — absolute prediction, no oscillation data used**
 

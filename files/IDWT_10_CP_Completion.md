@@ -306,7 +306,7 @@ The following table consolidates the full theorem status after the T8 completion
 | T14a | Heat kernel Weyl term $K_d(t) \sim a_0^{(d)} t^{-1/d}$ | ✅ | Exact | Spectral dimension = $d$ |
 | T14b | Constant term $-d/2$ and $\zeta_d(0) = -d/2$ | ✅ | Exact | Sector functional determinant anchored |
 | T13b | Mode spacing $S(n+1,d)-S(n,d) = S(n+1,d-1)$ | ✅ | Exact | Source of all mode-index chains |
-| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; charm +0.16%, top +1.42% 🔶 | Non-up-type ratios from integer $S$; $d=4$ up-type bare |
+| T13c | Exact mass ratios | ✅/🔶 | $\leq 0.002\%$ non-up; $m_c/m_u$ −0.37%, $m_t/m_u$ −0.74% 🔶 | Non-up-type ratios from integer $S$; $d=4$ up-type confinement-corrected |
 | T15 | $N_c = \chi(\mathbb{CP}^2) = n_u$; all couplings/indices from one Euler characteristic | ✅ | Exact | Coupling filter and mass hierarchy share one root |
 | $\sin^2\theta_W$ | $1-(S(76,2)/S(81,2))^2 = 0.2237$; +0.37% from PDG on-shell | ✅ | +0.37% | Within EW radiative corrections |
 | $G_N$ | $G_N = G_\infty/(4\pi)$, sector-independent; $G_\infty$ a second dimensional input | 🔶 | — | $4\pi$ exact (3D Green's-function constant); absolute scale $G_\infty$ not derived (one open item) |
