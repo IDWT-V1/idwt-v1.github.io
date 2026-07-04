@@ -126,7 +126,7 @@
 
   <h2>Umbral calculus and generating functions</h2>
   <div class="prose">
-    <p>The ordinary generating function of \(S(n,d)\) is \[P_d(t) = \sum_{n \geq 1} S(n,d)\,t^n = \frac{1}{(1-t)^d}.\] This rational function has a single pole of order \(d\) at \(t=1\). Singularity analysis recovers the large-\(n\) asymptotics \(S(n,d) \sim n^{d-1}/(d-1)!\) with explicit error terms, giving the large-mass expansion of the spectrum without numerics. The shift operator \(E\colon n \mapsto n+1\) reproduces the hockey-stick recursion algebraically, and solving the mass equation for generation index \(n\) reduces to inverting this rational function — no numerical search required.</p>
+    <p>The ordinary generating function of \(S(n,d)\) is \[P_d(t) = \sum_{n \geq 1} S(n,d)\,t^n = \frac{t}{(1-t)^{d+1}},\] a rational function with a single pole of order \(d+1\) at \(t=1\) (equivalently \(S(n,d) = \dim\mathrm{Sym}^{n-1}(\mathbb{R}^{d+1})\), the Hilbert series of \(d+1\) variables). Singularity analysis recovers the large-\(n\) asymptotics \(S(n,d) \sim n^{d}/d!\) with explicit error terms, giving the large-mass expansion of the spectrum without numerics. The shift operator \(E\colon n \mapsto n+1\) reproduces the hockey-stick recursion algebraically, and solving the mass equation for generation index \(n\) reduces to inverting this rational function — no numerical search required.</p>
   </div>
 
 </section>
