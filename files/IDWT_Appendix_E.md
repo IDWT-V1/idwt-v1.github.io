@@ -323,6 +323,34 @@ Inconclusive side observation (❓): fermion/boson shares of the unit total are
 $0.491/0.503$ corrected and $0.505/0.495$ bare — straddling exact equipartition at
 $\pm 1\%$; not clean under either spectrum.
 
+**2026-07-04 — L1$'$ consult + theorem-grade skeleton (fourth pass).** External consult
+(o4-mini; DeepSeek timed out), all claims independently re-derived before use, one
+error found. Verified outcomes: (1) the consult's "exact RPA pole identity
+$\Omega^2 = \kappa\sum v_i^2 m_i$" is NOT exact — it is the large-$\Omega$ limit of the
+separable secular equation, and the pole route is excluded here structurally anyway:
+$m_W = 80.4 < m_t = 172.5$, so the collective pole sits *inside* the constituent
+spectrum, not isolated above it. (2) Honest NO on precedent: no known integrable or
+algebraic model (Richardson–Gaudin, Lipkin, two-level RPA) realizes
+$1/(\sqrt2 G) = \sum m_i^2$ exactly — if IDWT's closure is derivable it is new
+structure; there is nothing to import (and nothing one should). (3) The exact,
+loop-free object of the right shape is the **energy-weighted (TRK/double-commutator)
+sum rule**: the channel's strength moment equals a c-number double commutator —
+state-independent, fixed by the channel's own normalization ("capacity" as a theorem,
+not a metaphor) — while the same moment computed over the deposited spectrum is
+$\sum_i(\text{coupling}\times m_i)^2$ PROVIDED the channel coupling is linear in
+frequency at the amplitude level and the amplitudes are equal (the STEP 131 L1
+equidistribution premise; verified: quanta-normalized channel operator gives
+$m_1 = \sum v_i^2 m_i$, coordinate-normalized gives $\tfrac12\sum v_i^2$ — the
+normalization layer is where the work sits). Closure $=$ (spectral moment) $=$
+(structural capacity). (4) Convergence with STEP 135: the unit normalization is
+*definitionally* the one-quantum import, and by the One-Import Theorem the amplitude
+ray is provably NOT fixable internally — so "capacity $=$ one quantum" is the same
+single irreducible import the rate sector already carries. No new number. **L1$'$
+program, sharpened:** construct the IDWT collective channel operator explicitly from
+the kernel, compute its double commutator with the sector Hamiltonian, and show the
+c-number equals $v^2$ in the one-quantum normalization. That single computation is
+now the entire distance between the closure being a candidate and a derivation.
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
