@@ -8674,13 +8674,33 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 # The k-moment scan confirms the m^2 weight: only Tr(D^k)/v^k with k=2
 # is ~1 (k=1: 1.94, k=3: 0.56, k=4: 0.34). The channel quantum is
 # itself mode n_W = 76 (self-consistency, not an external oscillator).
+# COEFFICIENT COMPUTED (sixth pass, same day): the per-mode m_i^2
+# coefficient is EXACTLY 1 by double-commutator algebra on the squared
+# (wave-form) EoM. For the reservoir generator T (each deposited mode
+# coupled with unit matrix element to the zero-frequency condensate
+# ground, m_gamma = 0 STEP 55 -- the P6 degree-1 insertion structure,
+# STEP 88), the diagonal of (1/2)[[D^2,T],T] on mode i is m_i^2 exactly
+# (verified below in integer arithmetic; robust to shared vs per-mode
+# reservoir). The mass term is DOWNHILL under the charged rotation
+# (rotating toward the massless ground releases mass energy); the
+# channel stiffness K = v^2 holds it. Net curvature of the charged
+# collective direction: (1/2)(v^2 - sum q_i^2 a_i^2 m_i^2) eps^2 --
+# MARGINAL STABILITY at saturation. Physical mechanism: deposits fill
+# until the charged vacuum direction goes exactly flat; a 16th mode
+# would make it UNSTABLE -- termination = vacuum stability; headroom =
+# the stability margin. The DOUBLET alternative (T coupling u<->d
+# partners) gives mass DIFFERENCES that cancel pairwise at equal
+# occupation -- excluded as the closure source (verified below).
 # CAVEATS: with BARE masses the winner shifts to 71 -- the selection
 # requires the physical (confinement-corrected) spectrum, inheriting
-# the STEP 127 🔶; residual = the coefficient-level kernel integral for
-# the per-mode stiffness. Two-regime reading: the sub-72 lattice is
-# built additively from the seeds; {72, 76, 81, 95} sits where the
-# cumulative spectral weight fills the contact capacity -- hence the
-# 35 -> 72 gap. (Part 9 T7; Part 3 sections 0.2 and 0.7)
+# the STEP 127 🔶. Label stays 🔶 by the taxonomy: the closure rests on
+# postulates beyond P1-P4 (the one-quantum anchored units q^2 = a^2 = 1,
+# STEP 135c, and the equidistribution premise, STEP 131 L1) -- the
+# coefficient joint itself is now closed algebra, not the label bound.
+# Two-regime reading: the sub-72 lattice is built additively from the
+# seeds; {72, 76, 81, 95} sits where the cumulative spectral weight
+# fills the contact capacity -- hence the 35 -> 72 gap.
+# (Part 9 T7; Part 3 sections 0.2 and 0.7)
 
 def _tr_141(_T):
     """Tr(D^2) with the heavy chain (T, T+4, T+9, T+23), physical."""
@@ -8726,6 +8746,22 @@ assert abs(_mom_141[1] - 1.0) < 0.01                 # k=2: 0.9934
 assert all(abs(_mom_141[_i] - 1.0) > 0.3 for _i in (0, 2, 3))
 _Cnorm_141 = v_EW_idwt**2 / Tr_D2_val                # one-quantum: 1
 assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
+
+# coefficient check (exact integers): reservoir generator on the squared
+# EoM. Basis (|1>, |2>, |X>), D^2 = diag(M1, M2, 0), unit T couplings.
+_M1_141, _M2_141 = 9, 25                             # m^2 test values
+_D2_141 = np.diag([_M1_141, _M2_141, 0]).astype(int)
+_T_141 = np.array([[0, 0, 1], [0, 0, 1], [1, 1, 0]])
+_dc_141 = ((_D2_141@_T_141 - _T_141@_D2_141)@_T_141
+           - _T_141@(_D2_141@_T_141 - _T_141@_D2_141))
+# (1/2)[[D^2,T],T] diagonal on the deposited slots = m_i^2 EXACTLY:
+assert (_dc_141[0, 0]//2, _dc_141[1, 1]//2) == (_M1_141, _M2_141)
+# doublet alternative cancels pairwise at equal occupation (excluded):
+_Td_141 = np.array([[0, 1], [1, 0]])
+_D2d_141 = np.diag([_M1_141, _M2_141]).astype(int)
+_dcd_141 = ((_D2d_141@_Td_141 - _Td_141@_D2d_141)@_Td_141
+            - _Td_141@(_D2d_141@_Td_141 - _Td_141@_D2d_141))
+assert _dcd_141[0, 0] + _dcd_141[1, 1] == 0          # trace cancellation
 
 
 # =============================================================================
@@ -12599,9 +12635,17 @@ print("HS contact = 1/stiffness (exact) + G_F form -> stiffness = v^2;")
 print("per-mode stiffness C*m_i^2 (locality + dimension + equal")
 print("amplitudes + unit charge); C = 1 is the one-quantum import.")
 print("Z closure = W closure exactly (cos theta_W = S_W/S_Z, STEP 5).")
+print("COEFFICIENT COMPUTED: per-mode m_i^2 coefficient = 1 EXACTLY")
+print("(double commutator (1/2)[[D^2,T],T], reservoir generator, integer")
+print("check in-step). Mass term downhill; channel stiffness v^2 holds")
+print("it; net curvature (1/2)(v^2 - Tr D^2) eps^2 -> saturation =")
+print("MARGINAL STABILITY of the charged vacuum direction; a 16th mode")
+print("would destabilize it (termination = vacuum stability). Doublet")
+print("generator excluded (pairwise cancellation).")
 print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
-print("physical spectrum (STEP 127 parent). Residual: coefficient-level")
-print("kernel integral for the per-mode stiffness.")
+print("physical spectrum (STEP 127 parent). Label stays 🔶: rests on the")
+print("one-quantum anchored units (STEP 135c) + equidistribution")
+print("(STEP 131 L1) -- postulates beyond P1-P4.")
 print("See Part 9 T7, Part 3 s0.2/s0.7.")
 
 

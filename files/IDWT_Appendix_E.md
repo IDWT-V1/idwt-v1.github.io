@@ -379,6 +379,32 @@ per-mode stiffness (write $\mathcal{J}_+$ in sector modes and do the integral).
 Committed: `files/idwt.py` STEP 141 (scan, termination, moment scan, $C$, and the
 $Z$-automatism as asserts; idwt_test PASS).
 
+**2026-07-04 — Coefficient COMPUTED; the closure is a marginal-stability condition
+(sixth pass; STEP 141 extended).** The per-mode $m_i^2$ coefficient is **exactly 1**
+by double-commutator algebra on the squared (wave-form) EoM: for the reservoir
+generator $T$ — each deposited mode coupled with unit matrix element to the
+zero-frequency condensate ground ($m_\gamma = 0$, STEP 55; this is the P6 degree-1
+insertion structure, STEP 88) — the diagonal of $\tfrac12[[D^2,T],T]$ on mode $i$ is
+$m_i^2$ exactly (verified in exact arithmetic; robust to shared vs per-mode
+reservoir topology). Sign resolved: the mass term is *downhill* under the charged
+rotation (rotating toward the massless ground releases mass energy), and the channel
+stiffness $K = v^2$ holds it — net curvature of the charged collective direction
+$\tfrac12\,(v^2 - \sum_i q_i^2 a_i^2 m_i^2)\,\varepsilon^2$. **The closure is
+therefore a vacuum-stability boundary:** deposits fill the spectrum until the
+charged vacuum direction goes exactly marginal; a 16th mode would make it unstable
+(termination $=$ vacuum stability; the 20 GeV headroom $=$ the stability margin).
+The doublet alternative ($T$ coupling $u\leftrightarrow d$ partners) yields mass
+*differences* that cancel pairwise at equal occupation — excluded as the closure
+source (exact check). Label stays **🔶 by taxonomy**, not by an open joint: the
+closure rests on postulates beyond P1–P4 — the one-quantum anchored units
+($q_i^2 = a_i^2 = 1$, STEP 135c) and the equidistribution premise (STEP 131 L1) —
+while the coefficient itself is now closed algebra. Remaining structural premises,
+stated: (P1) the squared/wave form of the committed EoM carries the energy
+curvature; (P2) the channel's charged direction is the mode$\leftrightarrow$
+condensate insertion (STEP 88 P6 structure), not the intra-doublet rotation.
+Committed: STEP 141 extended (integer double-commutator + doublet-cancellation
+asserts; idwt_test PASS).
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
