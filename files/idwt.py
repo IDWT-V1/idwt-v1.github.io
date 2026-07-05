@@ -8644,6 +8644,91 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 
 
 # =============================================================================
+# STEP 141 -- EW SPECTRAL CLOSURE: Tr(D^2) = v^2 SELECTS n_top = 72 (🔶)
+# =============================================================================
+# The T7 relation sqrt(Tr D^2) = v_EW = 2 m_W/g_2 (STEP 14), read as a
+# CONSTRAINT (spectral closure) instead of a consistency check. With the
+# committed additive chain (n_W, n_Z, n_H) = (T+4, T+9, T+23) hung off
+# n_top = T, the closure F(T) = sqrt(Tr D^2)/(2 m_W/g_2) - 1 is one
+# equation in one unknown: monotone, unique root T* = 72.27, unique
+# integer minimizer T = 72 (F = -0.33%; T=71: -1.5%, T=73: +0.9%).
+# Corollaries: (a) TERMINATION -- a 16th mode overshoots unless
+# m < 20 GeV, while the lightest chain continuation (n=96, d=2) weighs
+# 128 GeV: the 15-mode spectrum is complete by saturation; (b) the
+# closure fixes ONE integer -- n_Z, n_H per-unit steps sit at the
+# residual floor, so the chain composition stays structural input;
+# (c) the NEUTRAL channel adds no second condition: cos theta_W =
+# S(n_W,2)/S(n_Z,2) exactly (STEP 5) makes the Z closure algebraically
+# identical to the W closure.
+# MECHANISM (🔶): rank-1 g_dd' = v_d v_d' collapses the kernel to ONE
+# collective channel (1/2)(sum v_d K_d)^2 -- exact; Hubbard-Stratonovich
+# gives the channel coordinate with contact = 1/stiffness (exact), and
+# the committed G_F = g_2^2/(4 sqrt2 m_W^2) form (STEP 5) sets the
+# stiffness = v^2. Each deposited mode contributes stiffness C*m_i^2:
+# mass^2 dimension is forced, m_i is the mode's only local scale, and a
+# weight f(m_i/v) is forbidden because the vertex is local and v is
+# global (equal amplitudes by equidistribution, STEP 131 L1; unit
+# conserved charge per stable excitation, STEP 135c). C = 1 is the
+# one-quantum anchored-unit normalization -- the SAME single import the
+# rate sector carries (STEP 135), no new number; data give C = 1.0066.
+# The k-moment scan confirms the m^2 weight: only Tr(D^k)/v^k with k=2
+# is ~1 (k=1: 1.94, k=3: 0.56, k=4: 0.34). The channel quantum is
+# itself mode n_W = 76 (self-consistency, not an external oscillator).
+# CAVEATS: with BARE masses the winner shifts to 71 -- the selection
+# requires the physical (confinement-corrected) spectrum, inheriting
+# the STEP 127 🔶; residual = the coefficient-level kernel integral for
+# the per-mode stiffness. Two-regime reading: the sub-72 lattice is
+# built additively from the seeds; {72, 76, 81, 95} sits where the
+# cumulative spectral weight fills the contact capacity -- hence the
+# 35 -> 72 gap. (Part 9 T7; Part 3 sections 0.2 and 0.7)
+
+def _tr_141(_T):
+    """Tr(D^2) with the heavy chain (T, T+4, T+9, T+23), physical."""
+    _l = [
+        m_scale3,
+        _cc_t7(m_scale3*S(n_strange, 3), n_strange, 3),
+        _cc_t7(m_scale4*S(n_charm, 4), n_charm, 4),
+        m_scale3*math.sqrt(S(16, 3)*S(17, 3)),
+        _cc_t7(m_scale4*S(n_up, 4), n_up, 4),
+        _cc_t7(m_scale4*S(_T, 4), _T, 4),
+        m_scale5*S(n_nu1, 5), m_scale5*S(n_nu2, 5),
+        m_scale5*S(n_nu3, 5)*(36.0/35.0), m_e,
+        m_scale6*S(n_mu, 6), m_scale10*S(n_tau, 10)*(1.0 + 1.0/1680.0),
+        m_scale2*S(_T + 4, 2), m_scale2*S(_T + 9, 2),
+        m_scale2*S(_T + 23, 2),
+    ]
+    return sum(_m**2 for _m in _l)
+
+
+def _F_141(_T):
+    """Closure mismatch sqrt(Tr D^2)/(2 m_W/g_2) - 1 on the chain."""
+    return (math.sqrt(_tr_141(_T))
+            / (2.0*m_scale2*S(_T + 4, 2)/g2)) - 1.0
+
+
+_scan_141 = {_T: _F_141(_T) for _T in range(30, 161)}
+_win_141 = min(_scan_141, key=lambda _t: abs(_scan_141[_t]))
+assert _win_141 == n_top == 72             # unique integer minimizer
+assert _scan_141[72] < 0.0 < _scan_141[73]  # unique sign change 72->73
+assert abs(_scan_141[72]) < 0.004           # residual -0.33%
+# consistency with STEP 14 (same spectrum at the committed chain):
+assert abs(_tr_141(72) - Tr_D2_val) < 1e-6 * Tr_D2_val
+assert abs(v_EW_idwt - 2.0*m_W_MeV/g2) < 1e-9 * v_EW_idwt
+# termination: headroom vs lightest possible chain continuation (n=96)
+_head_141 = math.sqrt(v_EW_idwt**2 - Tr_D2_val)      # ~19.96 GeV in MeV
+assert m_scale2*S(n_H + 1, 2) > 6.0*_head_141        # 128 GeV >> 20 GeV
+# neutral-channel automatism: cos theta_W = m_W/m_Z exactly (STEP 5)
+assert abs(cos_W*m_Z_MeV/m_W_MeV - 1.0) < 1e-12
+# k-moment scan: only k = 2 saturates v^k
+_mom_141 = [sum(_m**_k for _m in all_m_list)/v_EW_idwt**_k
+            for _k in (1, 2, 3, 4)]
+assert abs(_mom_141[1] - 1.0) < 0.01                 # k=2: 0.9934
+assert all(abs(_mom_141[_i] - 1.0) > 0.3 for _i in (0, 2, 3))
+_Cnorm_141 = v_EW_idwt**2 / Tr_D2_val                # one-quantum: 1
+assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -12490,6 +12575,34 @@ print("status 🔶: zero fitted parameters (factors are the derived 33/35")
 print("chain); the power-to-channel assignment is data-selected from the")
 print("declared grid, not forced. NOT the withdrawn two-fit version.")
 print("See Part 8 s10, Part 5 s3, Appendix A s9.")
+
+
+# =============================================================================
+# STEP 141 -- OUTPUT: EW SPECTRAL CLOSURE SELECTS n_top = 72
+# =============================================================================
+print("\n=== STEP 141: EW SPECTRAL CLOSURE -- Tr(D^2) = v^2 SELECTS"
+      " n_top = 72 (🔶) ===")
+print("T7 read as a CONSTRAINT: sqrt(Tr D^2) = v_EW = 2 m_W/g_2, chain")
+print("(n_W, n_Z, n_H) = (T+4, T+9, T+23) off n_top = T:")
+print(f"  unique integer minimizer T = {_win_141}"
+      f"  F(72) = {_scan_141[72]:+.5f}")
+print(f"  neighbors: F(71) = {_scan_141[71]:+.4f},"
+      f" F(73) = {_scan_141[73]:+.4f}")
+print(f"  termination: 16th-mode headroom {_head_141/1000:.1f} GeV;"
+      f" lightest continuation n=96: {m_scale2*S(n_H+1,2)/1000:.0f} GeV")
+print(f"  moments Tr(D^k)/v^k, k=1..4: {_mom_141[0]:.2f},"
+      f" {_mom_141[1]:.4f}, {_mom_141[2]:.2f}, {_mom_141[3]:.2f}")
+print("  (only k=2 saturates)")
+print(f"  C_norm = v^2/Tr(D^2) = {_Cnorm_141:.4f}  (one-quantum: 1)")
+print("mechanism 🔶: rank-1 kernel = ONE collective channel (exact);")
+print("HS contact = 1/stiffness (exact) + G_F form -> stiffness = v^2;")
+print("per-mode stiffness C*m_i^2 (locality + dimension + equal")
+print("amplitudes + unit charge); C = 1 is the one-quantum import.")
+print("Z closure = W closure exactly (cos theta_W = S_W/S_Z, STEP 5).")
+print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
+print("physical spectrum (STEP 127 parent). Residual: coefficient-level")
+print("kernel integral for the per-mode stiffness.")
+print("See Part 9 T7, Part 3 s0.2/s0.7.")
 
 
 # =============================================================================

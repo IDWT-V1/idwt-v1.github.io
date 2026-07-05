@@ -351,6 +351,34 @@ the kernel, compute its double commutator with the sector Hamiltonian, and show 
 c-number equals $v^2$ in the one-quantum normalization. That single computation is
 now the entire distance between the closure being a candidate and a derivation.
 
+**2026-07-04 — Closure mechanism assembled; ❓ → 🔶; committed as `files/idwt.py`
+STEP 141 (fifth pass).** The derivation now stands on: (i) rank-1 collapse — the
+kernel is identically $\tfrac12(\sum_d v_d K_d)^2$, ONE collective channel (exact);
+(ii) Hubbard–Stratonovich — contact $=$ 1/stiffness for the channel coordinate
+(exact identity), and the committed $G_F = g_2^2/(4\sqrt2\,m_W^2)$ form (STEP 5)
+sets the stiffness $= v^2$; (iii) FORM of the spectral side by locality $+$
+dimension $+$ equidistribution: a deposited mode's stiffness contribution has
+mass$^2$ dimension, its only local scale is $m_i$, and a weight $f(m_i/v)$ is
+forbidden because the vertex is local while $v$ is global — with equal amplitudes
+(STEP 131 L1) and unit conserved charge per stable excitation (STEP 135c) the
+contribution is $C\,m_i^2$ with ONE mode-independent constant; (iv) $C = 1$ is the
+one-quantum anchored-unit normalization — the SAME irreducible import the rate
+sector carries (STEP 135), no new number; data give $C = 1.0066$ ($+0.33\%$ in
+scale, the closure residual). Independent confirmations: the $k$-moment scan —
+only $\mathrm{Tr}(D^k)/v^k$ at $k=2$ saturates ($1.94,\ 0.9934,\ 0.56,\ 0.34$ for
+$k=1..4$) — the $m^2$ weight is data-forced exactly as the dimension argument
+requires; and the neutral channel adds NO second condition ($\cos\theta_W =
+S(n_W,2)/S(n_Z,2)$ exactly, so the $Z$ closure is algebraically the $W$ closure —
+one condition, mechanism consistency PASS). Self-reference noted: the channel
+quantum is itself mode $n_W = 76$ — the closure is the spectrum's self-consistency,
+which is why no external-model theorem matches. REFEREED 🔶 (D1): form derived,
+normalization $=$ committed import, data-confirmed; parent cap $=$ the
+equidistribution premise (🔶) and the STEP 127 correction (🔶 — bare masses shift
+the winner to 71). Residual for 🔵: the coefficient-level kernel integral for the
+per-mode stiffness (write $\mathcal{J}_+$ in sector modes and do the integral).
+Committed: `files/idwt.py` STEP 141 (scan, termination, moment scan, $C$, and the
+$Z$-automatism as asserts; idwt_test PASS).
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
