@@ -295,6 +295,34 @@ with the tier-2 external-site status: the top's level is additively and multipli
 incomposable, while every lattice member's level is reachable. Side hit at control-level
 significance (❓, logged only): $N_Z = 80 = n_s \cdot n_{\rm charm}$ (prod2 control 17\%).
 
+**2026-07-04 — Mechanism reduction for the closure (same session, third pass).** The
+"capacity" concept reduces to state normalization, in three exact pieces plus one open
+lemma. (i) **Rank-1 collapse (exact):** $g_{dd'} = v_d v_{d'}$ makes the kernel term
+identically $\tfrac12\bigl(\sum_d v_d K_d\bigr)^2$ — ONE collective channel, verified
+symbolically. (ii) **Capacity $=$ unit norm:** a single normalized collective state
+$|C\rangle = \sum_i c_i |i\rangle$ with $c_i = m_i/v$ has $\langle C|C\rangle = 1
+\iff \mathrm{Tr}(D^2) = v^2$; "capacity" is nothing beyond one state $=$ one quantum
+(the STEP 135 one-import — no new number). Equivalent unit-total form:
+$\sqrt2\,G_F\,\mathrm{Tr}(D^2) = 0.99343 \approx 1$ — each mode's share
+$\sqrt2\,G_F\,m_i^2$ sums to one, the same rate-conservation normalization pattern
+that derives $\sin^2\theta = r$ (STEP 134). (iii) **Weighting decided:** the raw
+kernel-leg alternative ($c_i \propto v_d\,S(n_i,d)$) is EXCLUDED — it fails the sum
+rule by $\times 134$ (the committed $m_{\rm scale}$ bookkeeping is NOT $\propto v_d$
+in $d=4,5,6,10$); the weights are the physical frequencies $m_i$, consistent with the
+STEP 139 keystone (observables $=$ functions of frequencies and kernel matrix
+elements). (iv) **Open lemma (the entire residual):** the frequency-amplitude law
+$c_i = m_i/v$ — that a mode's amplitude in the collective channel is its frequency in
+units of the channel's own contact scale $v = 2m_W/g_2$, with one sector-independent
+constant. The one-channel-one-scale point is what makes the claim nontrivial and
+non-circular: the rate-sector contact strength ($G_F$, confirmed by the committed
+lifetime predictions) and the spectral saturation scale are the SAME quantity because
+the rank-1 kernel has only one channel. Dimensional echo, flagged with its caveat: the
+committed $|M|^2 \sim G_F^2 m^4$ (STEP 11) makes each mode's charged amplitude
+$\sim c_i^2$, but the $m^4$ there is kinematic, so this is support, not proof.
+Inconclusive side observation (❓): fermion/boson shares of the unit total are
+$0.491/0.503$ corrected and $0.505/0.495$ bare — straddling exact equipartition at
+$\pm 1\%$; not clean under either spectrum.
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
