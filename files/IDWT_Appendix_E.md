@@ -240,15 +240,47 @@ The first-order mean-field shift $\delta m/m=-(g_{44}/8\lambda_4)\big((n-1)/(n+1
 **6. $\mathbb{CP}^2$ mode-function program — rate and node step derived; apex lead logged (2026-07-02, Fable; `files/idwt.py` STEP 132).** (i) **Flow coefficient by exact zero-mode counting (closes the rate rigor of pt 5(iii) and T8 gap (i)).** The charge-$k$ mode tower on $\mathbb{CP}^n$ — the sector's own modes, labelled by the $\mathrm{SU}(n{+}1)$ isometry — has exact spectrum $\lambda_l^2 = l(l+k+n)$ (isometry Casimir; verified by exact arithmetic for $n\in\{1,2,3,5\}$), ground level of dimension $\binom{n+k}{n}$ at $\lambda=0$, gap $\lambda_1^2=k+n+1>0$. Each charge-1 ground mode advances its phase by the base loop once per cycle (unit charge = the mode's grading under the loop $\mathrm{U}(1)$, the overall phase of the sector coordinates), so the combined phase of the $n+1$ gap-protected ground modes advances $n+1$ times the base — the rate is an exact count of the sector's own modes, superseding the Weyl-density estimate; the gapped tower contributes zero net flow. (Bundle dictionary, for reference only: ground level $= H^0(\mathcal{O}(k))$; the $k=1$ count $n+1 = c_1(\mathbb{CP}^n)$.) Reproduces $\mathbb{CP}^3\to4$, $\mathbb{CP}^5\to6$ (lepton, difference 2) and $\mathbb{CP}^2\to3$ (quark). (ii) **$f=1/k_0$ from adjacent-lock transport:** the real-beat theorem (pt 5(ii)) locks $\chi$ at the beat nodes; the beat carries $k_0$ nodes per cycle (§49); the transport is homogeneous (constant-curvature connection, phase $\propto$ arc fraction); so the phase between adjacent locks — the quantity entering $\chi=\pi-\phi_{\rm link}$ — is $1/k_0$ of the loop. (iii) **$|V_{ub}|$ apex — pattern-search lead (❓, logged per the search rule).** Target: $\bar R_u=\sqrt{\bar\rho^2+\bar\eta^2}=0.3826\pm0.0100$ (PDG 2024: $\bar\rho=0.159\pm0.010$, $\bar\eta=0.348\pm0.010$). Four candidates tested: $\sqrt{n_u/S(n_s,3)}=\sqrt{3/20}=0.38730$ ($+0.47\sigma$); $n_u/2n_s=3/8$ ($-0.76\sigma$); $2/5$ ($+1.74\sigma$); $\sqrt{1/S(2,3)}$ ($+11.7\sigma$). The lead $\bar R_u^2 = n_u/S(n_s,3)$ (equivalently $\bar R_u=\sqrt{3}\,\sin\theta_C^{\rm bare}$) is a Born-ratio-form count built from the same objects as the Cabibbo formula; with $\gamma=67.5^\circ$ it gives $\bar\rho=0.1482$ ($-1.1\sigma$), $\bar\eta=0.3578$ ($+1.0\sigma$). Convention caveat: whether the count sits at $\bar R_u$ or the unbarred $R_u$ differs at $O(\lambda^2)$ ($\pm0.5\sigma$ either way — not discriminated). UPGRADED same-day (2026-07-02, `files/idwt.py` STEP 136): the mechanism is the committed conditional-Born counting law (STEP 131/134) applied to the charge-selected hop — $R_{ub}^2 = I_{\rm dest}/I_{\rm src} = n_u/S(n_s,3)$, source = the charge-selected $u$ triplet, destination = the $d=3$ seed level. The pairing is selected UNIQUELY by data among the four natural (source, dest) candidates: $(3\to20)$ $+0.5\sigma$; $(15\to20)$ $+48\sigma$; $(3\to889)$ $-33\sigma$; $(15\to889)$ $-25\sigma$. Downstream: $|V_{ub}| = 3.67\times10^{-3}$ ($-0.6\sigma$), $\bar\rho = 0.1482$ ($-1.1\sigma$), $\bar\eta = 0.3578$ ($+1.0\sigma$), all-IDWT $J = 3.06\times10^{-5}$ ($-0.8\sigma$). Status 🔶 (was ❓): the law is committed and the pairing data-selected; the residual is WHY the source is the charge-triplet and the destination the seed level (motivated by charge selection + the $A\lambda^3$ chain anchor, not forced). Committed: Part 5 §1 box, Part 10 §4.1.
 
 
-### §46. $n_{\rm top} = 72$ origin search — CLOSED (2026-06-18, Fedge)
+### §46. $n_{\rm top} = 72$ origin search — spectral battery closed 2026-06-18; rationale search OPEN (Fedge, 2026-06-29)
 
 Full log not reproduced. All spectral tests (Gegenbauer criticality on $\mathbb{CP}^2$, Kähler
 invariants, sector-mode fixed-point equations, consecutive-pair structures) returned
 first solutions smaller than $72$ or landed on a different $(n,d)$. No first-principles
 criticality condition singling out $n=72$ by minimality was found. The identity
 $72 = \chi(\mathbb{CP}^2)\times\chi(\mathbb{CP}^3)\times\chi(\mathbb{CP}^5) = N_c\cdot n_s\cdot N_f$ is recorded as a value identity (T15b).
-$n_{\rm top} = 72$ is accepted as a seed input — on the same footing as $n_d=1$ and $n_u=3$ —
-and no further derivation of its resonance origin is in progress.
+$n_{\rm top} = 72$ is accepted as a seed input — on the same footing as $n_d=1$ and $n_u=3$.
+The rationale search continues (Fedge, 2026-06-29: keep searching); entries below.
+
+**2026-07-04 — EW spectral-closure selection of $n_{\rm top}=72$ (❓ lead, mechanism underived).**
+A different class from the closed spectral/criticality battery above: read the T7
+spectral relation $\sqrt{\mathrm{Tr}(D^2)} = v_{\rm EW} = 2m_W/g_2$ (`files/idwt.py` STEP 14; both
+sides IDWT-derived, no external input) as a **closure constraint** rather than a
+consistency check. With the committed additive g-chain $(n_W, n_Z, n_H) =
+(T{+}4,\ T{+}9,\ T{+}23)$ hung off $n_{\rm top}=T$ (Part 3 §11 g-rule, tier-3 boson chain),
+the constraint is one equation in the single unknown $T$: $F(T) =
+\sqrt{\mathrm{Tr}(D^2)}\,/\,(2m_W/g_2) - 1$, computed on the physical (confinement-corrected)
+spectrum with the STEP 14 mass list, is monotone in $T$ with a **unique root
+$T^* = 72.27$**; the unique integer minimizer of $|F|$ over $T\in[30,160]$ is $T=72$
+($F=-0.33\%$; neighbors $T=71$: $-1.5\%$, $T=73$: $+0.9\%$; discrimination $\approx1.2\%$
+per chain step and $2.8\%$ per isolated $n_{\rm top}$ step, both well above the $0.33\%$
+residual floor). Corollaries: (i) **termination** — a 16th mode overshoots the capacity
+unless $m < 20.0$ GeV, while the lightest possible g-chain continuation ($n=96$, $d=2$)
+weighs $127.9$ GeV, so the closure terminates the spectrum at the committed 15 modes
+(retro-predicts no new particle above $\sim 20$ GeV); (ii) **scope** — the closure cannot
+pin $n_Z$ or $n_H$ independently (per-unit steps $0.34\%$ and $0.55\%$, comparable to the
+residual floor): the chain composition is structural input (the g-rule); the closure
+fixes the one free integer. Sensitivities: with bare masses the integer winner shifts
+to $71$ ($F=-0.48\%$) — the selection requires the physical spectrum and so inherits the
+🔶 of the STEP 127 correction; a no-Higgs chain $\{T, T{+}4, T{+}9\}$ roots at $T=80$ —
+the closure does not by itself force Higgs membership. Two-regime reading (Fedge,
+2026-07-04): the sub-72 lattice is built additively from the seeds, while the $72{+}$
+set $\{72,76,81,95\}$ sits where the cumulative spectral weight fills the $d=2$ contact
+capacity $2m_W/g_2$ — which is also why the spectrum gaps between $35$ and $72$.
+**Mechanism residual:** *why* the total spectral weight must saturate the contact scale
+is underived; until that is obtained from the EOM this is a candidate selection
+principle, not a derivation. Trial accounting: the T7 relation predates this session
+(committed at $-0.33\%$); this session's content is the uniqueness of the root, its
+location at $72.27$, the termination corollary, and the discrimination/sensitivity
+analysis. Formulas reproduced exactly from `files/idwt.py` STEP 1/2/3/5/14.
 
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
