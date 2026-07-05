@@ -405,6 +405,32 @@ condensate insertion (STEP 88 P6 structure), not the intra-doublet rotation.
 Committed: STEP 141 extended (integer double-commutator + doublet-cancellation
 asserts; idwt_test PASS).
 
+**2026-07-04 — Framework-creep audit of the closure mechanism (Fedge query; seventh
+pass; STEP 141 re-labeled).** Verdict, ingredient by ingredient. CLEAN (algebra on
+committed objects, framework-neutral): the rank-1 collapse; the closure scan and
+unique root $T^*=72.27$; termination headroom; the $k$-moment scan; the
+$Z$-automatism; $C = 1.0066$; the HS rewriting (exact identity, leaning only on the
+committed STEP 5 $G_F$ form); one-quantum and equidistribution (committed
+postulates). CREEP-SUSPECT, now flagged as OPEN MODEL PREMISES in STEP 141: (P1) the
+curvature was computed on the squared operator $D^2$, but the committed kinetic term
+is first-order Dirac (energy linear in frequency) — the $D^2$ form is natively
+motivated (T7 is a $\mathrm{Tr}(D^2)$ object; BdG stability operators are quadratic)
+and the $m^2$ weight is independently data-forced by the moment scan, but the
+curvature has NOT been computed from the committed first-order Hamiltonian; (P2) the
+reservoir generator models the mode$\leftrightarrow$condensate insertion (P6/STEP 88,
+committed structure) with toy matrices — the computation on the actual sector mode
+functions and kernel integral has not been done. Borrowed many-body vocabulary
+("vacuum stability", "stiffness", "capacity") stripped to native second-variation
+language in STEP 141 (per the 2026-07-02 language-strip precedent). NEW CONSISTENCY
+ITEM surfaced by the audit: STEP 74(b) proves charged ($p \neq q$) directions are
+non-marginal (Hopf charge-0 selection), while the closure mechanism has the charged
+insertion direction's curvature $\to 0$ exactly at saturation — the spectrum halting
+precisely at the boundary where charge-0-only marginality would fail is either a
+deep consistency or a tension; verify against the STEP 74 proof before any
+promotion. The "coefficient = 1" claim is downgraded from "closed algebra" to
+"exact within the stated curvature model"; all framework-neutral numerics stand
+unchanged.
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
