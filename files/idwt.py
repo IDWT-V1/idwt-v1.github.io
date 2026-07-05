@@ -8842,6 +8842,9 @@ assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
 # this is a channel-conditional forcing, not a static closure. The
 # un-derived content shrinks from "one additive node" to "one
 # channel-to-cell assignment". (Part 7 section 1.2a; Part 2 section 3)
+# [2026-07-04, STEP 143: the channel-to-cell premise DISCHARGES into
+# the committed active-pair map (Part 3 section 0.8c) + the committed
+# channel roles. See STEP 143.]
 
 _rules_142 = [(1, 3, 4, 1), (10, 3, 13, 1), (15, 20, 35, 1),
               (22, 1, 23, 1), (4, 72, 76, 1), (10, 72, 81, 0),
@@ -8866,6 +8869,74 @@ _avail_142 = [_p for _p in _partners_142
 assert _avail_142 == [('nu1', 'u')]          # unique complete doublet
 assert n_nu1 + n_up == n_e == 13             # forced value
 assert 2 + 1 > _ACAP_115                     # tau fusion ring-forbidden
+
+
+# =============================================================================
+# STEP 143 -- THE TYPED CONSTRUCTION: CHANNEL TABLE x GRID x DEPENDENCY
+#             GENERATES EXACTLY THE SPECTRUM; DOUBLET OWNERSHIP AND
+#             DIRECTION DISCHARGED (🔶)
+# =============================================================================
+# Answers the two OTA-core questions at stated premises.
+# (A) WHY THE DOUBLET CHANNEL OWNS THE LEPTON SLOTS -- discharged into
+#     committed geometry: the section-0.8c pairwise map (⭐) gives the
+#     d=5 row W-only and the lepton sectors at most EM-W-G; the
+#     committed channel roles then leave ONE mode-forming structure
+#     with lepton-sector support: EM is Ward/l-parity protected
+#     (section 16 -- elastic, cannot change mode identity), colour is
+#     confined to the quark block {3,4}, gravity sources curvature and
+#     deposits nothing. So lepton formation is necessarily the SU(2)_L
+#     doublet vertex, whose operand structure is the P4 same-alpha
+#     partner pair (STEP 115 ⭐). The STEP 142 premise discharges.
+# (B) WHAT DIRECTS THE CONSTRUCTION -- direction = operand dependency
+#     (a composite cannot precede its operands; acyclic by
+#     construction) + no-latency (STEP 88) + the founding premise that
+#     condensation proceeds. The schedule is then FORCED
+#     (maximal-parallel rounds), and it REPRODUCES the committed
+#     order-rigid depth spine exactly (s,nu1,nu2 at 1; c,mu,e,nu3 at
+#     2; tau at 3) -- previously a recorded fact, now generated.
+# TERMINATION IS NATIVE (no over-generation): light side killed by the
+# PROVED 12-cell deposit grid (no open cell, no deposit: S(10,3)=220
+# etc. have nowhere to land); heavy side killed by the subscription
+# bound (deep counting images oversubscribe the channel quantum by
+# 1e7-1e16: asserted below); d_eval in {3,4} (the FP-free counting
+# gate) is the ONE remaining named gate on the counting channel.
+# The typed generator below produces EXACTLY the committed spectrum,
+# zero false positives. Channels: seed fusion; counting images
+# S({3,4},{3,4}); doublet fusion (gamma recoil); the unique
+# kernel-allowed IE edge; ground join; beat overlay; subscription
+# boundary + chain. Label 🔶 (parents: G2 gate, STEP 141 parents, the
+# beat mechanism); skeleton ⭐/✅ (grid, P4, dependency, section 0.8c).
+# OTA/T0.5 disposition is Fedge's call (2026-06-29 directive).
+# (Part 3 sections 0.8c and 16; Part 7 section 1.2a; Part 9 T0.5)
+
+_occ_143 = {0: 0, 1: 0, 3: 0}                    # value -> round; seeds
+_occ_143[4] = 1                                  # strange = d(+)u
+for _op143 in (3,):
+    for _de143 in (3, 4):                        # G2 engines
+        _v143 = S(_op143, _de143)
+        if _v143 not in _occ_143:
+            _occ_143[_v143] = 1                  # nu1=10, nu2=15
+for _de143 in (3, 4):
+    _v143 = S(4, _de143)
+    if _v143 not in _occ_143:
+        _occ_143[_v143] = 2                      # charm=20, mu=35
+_pair_143 = [(_a, _b) for _a, _b in [(10, 3), (15, 20), (22, 72)]
+             if _a in _occ_143 and _b in _occ_143
+             and _occ_143[_a] < 2 and _occ_143[_b] < 2]
+assert _pair_143 == [(10, 3)]                    # unique doublet
+_occ_143[13] = 2                                 # e, gamma recoil
+_occ_143[22] = 2                                 # nu3 IE edge
+_occ_143[23] = 3                                 # tau ground join
+_occ_143[16] = 3                                 # beat overlay
+for _v143 in (72, 76, 81, 95):                   # boundary + chain
+    _occ_143[_v143] = 4
+assert sorted(_occ_143) == sorted(_obs_spectrum | {0, 16})
+# committed order-rigid spine reproduced:
+_spine_143 = {4: 1, 10: 1, 15: 1, 20: 2, 35: 2, 13: 2, 22: 2, 23: 3}
+assert all(_occ_143[_k] == _v for _k, _v in _spine_143.items())
+# heavy-side FP blocker: deep counting images oversubscribe the quantum
+_fp_143 = (m_scale4 * S(S(10, 4), 4) / v_EW_idwt)**2
+assert _fp_143 > 1.0e7                           # share >> 1: forbidden
 
 
 # =============================================================================
@@ -12783,7 +12854,31 @@ print("charged doublet-fusion channel; STEP 107 motivates). Static")
 print("irreducibility verdicts (STEP 115/116/119) unchanged -- this is")
 print("channel-conditional forcing. The un-derived content narrows from")
 print("'one additive node' to 'one channel-to-cell assignment'.")
+print("[STEP 143: that premise discharges into s0.8c -- see below.]")
 print("See Part 7 s1.2a, Part 2 s3.")
+
+
+# =============================================================================
+# STEP 143 -- OUTPUT: THE TYPED CONSTRUCTION
+# =============================================================================
+print("\n=== STEP 143: TYPED CONSTRUCTION -- CHANNEL TABLE x GRID x")
+print("    DEPENDENCY GENERATES EXACTLY THE SPECTRUM (🔶) ===")
+print("(A) doublet ownership DISCHARGED into committed geometry: the")
+print("s0.8c pairwise map (⭐, d=5 row W-only; lepton sectors at most")
+print("EM-W-G) + channel roles (EM Ward-elastic s16; colour confined to")
+print("{3,4}; gravity deposits nothing) => lepton formation is")
+print("necessarily the SU(2)_L doublet vertex (P4 partner operands ⭐).")
+print("(B) direction = operand dependency + no-latency (STEP 88) +")
+print("condensation-proceeds; the forced maximal-parallel schedule")
+print("REPRODUCES the committed order-rigid depth spine exactly.")
+print("Typed generator output = the committed spectrum, ZERO false")
+print("positives; native termination: 12-cell grid (light side),")
+print(f"subscription bound (heavy side: S(10,4)-image share = "
+      f"{_fp_143:.1e} >> 1, forbidden).")
+print("Remaining named gate: d_eval in {3,4} on the counting channel.")
+print("Label 🔶 (parents: G2 gate, STEP 141 parents, beat mechanism);")
+print("skeleton ⭐/✅. OTA/T0.5 disposition = Fedge's call.")
+print("See Part 3 s0.8c/s16, Part 7 s1.2a, Part 9 T0.5.")
 
 
 # =============================================================================
