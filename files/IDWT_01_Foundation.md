@@ -175,7 +175,7 @@ The sector space decomposes into sectors with distinct potential well symmetries
 
 | $d$ | Geometry | Symmetry | Spinor type | Spinor dim | Physical content |
 |---|---|---|---|---|---|
-| 2 | $\mathbb{CP}^1$ | $U(1)$ | Majorana-Weyl | 2 | Bosons (γ, W, Z, H) |
+| 2 | $\mathbb{CP}^1$ | $SU(2)$ | Majorana-Weyl | 2 | Bosons (γ, W, Z, H) |
 | 3 | $S^3$ | $SO(4)$ | Majorana | 2 | Down-type quarks (d, s, b) |
 | 4 | $\mathbb{CP}^2$ | $SU(3)$ | Weyl (spin^c) | 4 | Up-type quarks (u, c, t) |
 | 5 | $S^5$ | $SO(6)$ | Dirac only | 4 | Neutrinos (ν_e, ν_μ, ν_τ) |

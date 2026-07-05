@@ -835,7 +835,7 @@ The factor suppressing neutrino masses relative to the charged-lepton and quark 
 
 | $d$ | Isometry group | $\dim$ | $g_{dd}$ |
 |---|---|---|---|
-| 2 | $U(1)$ | 1 | 722.5 |
+| 2 | $SU(2)$ | 3 | 722.5 |
 | 3 | $SO(4)$ | 6 | $8\sqrt{7}\approx21.2$ |
 | 4 | $SU(3)$ | 8 | $12/\sqrt{7}\approx4.5$ |
 | 5 | $SO(6)$ | 15 | $96/722.5\approx0.133$ |
@@ -843,7 +843,7 @@ The factor suppressing neutrino masses relative to the charged-lepton and quark 
 
 The coupling decreases as the symmetry group grows. A larger isometry group imposes more structure on allowed interactions — the coupling filter is more selective, more interactions are geometrically forbidden — and the self-coupling is correspondingly weaker. Consequently:
 
-- The photon sector ($U(1)$, fewest constraints) has the largest self-coupling ($g_{22} = 722.5$) and hosts the heaviest boson spectrum.
+- The photon sector ($SU(2)$, fewest constraints) has the largest self-coupling ($g_{22} = 722.5$) and hosts the heaviest boson spectrum.
 - The neutrino sector ($SO(6)$, most constrained: Majorana-forbidden, color-projected, $B{-}L$ specific) has the weakest self-coupling ($g_{55}\approx0.133$) and the lightest masses.
 
 This is the coupling filter principle operating at the level of the self-coupling: the geometry that specifies what quantum numbers a particle carries also specifies, through the same Euler characteristic $N_c$, how strongly that sector couples and therefore how heavy those particles are. Coupling filter and mass scale are not two separate outputs of the geometry — they are one quantity read in two different units.
