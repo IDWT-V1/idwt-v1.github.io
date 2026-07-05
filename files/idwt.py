@@ -7388,6 +7388,9 @@ assert _gnd_force_114
 # the value ADDITION is not (yet) derived. No blind search is added here
 # (value-pattern searches are exhausted-NULL); this records the
 # positional reframing and pins the residual to one coincidence.
+# [2026-07-04, STEP 142: the coincidence is explained -- (2,2) is
+# Pascal's rule, (1,3) is doublet-fusion index conservation; the value
+# residual narrows to the channel-to-cell premise. See STEP 142.]
 _grid_115 = {(0, 0): 0, (0, 1): 1, (1, 0): 4, (0, 2): 3, (1, 1): 20,
              (2, 0): 72, (0, 3): 10, (1, 2): 15, (2, 1): 22, (1, 3): 13,
              (2, 2): 35, (2, 3): 23}
@@ -8790,6 +8793,79 @@ assert abs(_mom_141[1] - 1.0) < 0.01                 # k=2: 0.9934
 assert all(abs(_mom_141[_i] - 1.0) > 0.3 for _i in (0, 2, 3))
 _Cnorm_141 = v_EW_idwt**2 / Tr_D2_val                # one-quantum: 1
 assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
+
+
+# =============================================================================
+# STEP 142 -- THE ELECTRON NODE: e = THE UNIQUE COMPLETE DOUBLET FUSION AT
+#             ITS DEPTH; THE STEP 115 VALUE COINCIDENCE IS CHANNEL
+#             BOOKKEEPING (🔶)
+# =============================================================================
+# The gen-1 additive node (e = nu1 + n_u = 13), left as "one un-derived
+# additive-node operation" by STEP 115/116 and the closed static routes
+# (tensor, complement, sum-rule, downstream, Pascal-in-bidegree,
+# N_c-grading -- all NULL verdicts STAND), is reduced here by a
+# CHANNEL-CONDITIONAL route none of those closed: availability at the
+# committed depth under the doublet-fusion channel.
+# (1) RECOIL IDENTITY (exact, all 8 committed pair rules): every pair
+#     composition is four-wave index conservation n_a + n_b = n_c +
+#     n_recoil with recoil in {photon n=0, condensate ground n=1}:
+#     J = 1 <=> gamma recoil, J = 0 <=> ground recoil (STEP 85's
+#     photon-assisted channel; the join calculus' "-1" is the ground
+#     recoil). Asserted below.
+# (2) THE STEP 115 "ISOLATED COINCIDENCE" DISSOLVES: the value law
+#     val(a+1,b) = val(a,b) + val(a,b-1) holds at EXACTLY the two
+#     lepton cells because each has its own mechanism -- at (2,2) it
+#     IS Pascal's rule (S(4,4) = S(4,3) + S(3,4), the committed
+#     hockey-stick theorem), at (1,3) it IS index conservation of the
+#     doublet fusion nu1 (+) u -> e + gamma. No other cell is filled
+#     by either mechanism, so the law holds nowhere else. (This is
+#     NOT the closed "Pascal-in-bidegree" route, which tested the
+#     different recursion val(a,b) = val(a-1,b) + val(a,b-1).)
+# (3) e = 13 FORCED given the channel premise: the first d=6 slot
+#     fires at depth 2 (order-rigid spine -- identical in all 28
+#     derivation towers, so only the rigid invariant is used); HS
+#     evaluations are d_eval in {3,4} only (the FP-free gate), so the
+#     d=6 slot cannot fill by simplex; doublet pairs are the P4
+#     partners (nu_i, up-type_i) -- (nu1,u), (nu2,c), (nu3,t); at
+#     depth 2 only (nu1, u) is complete (charm is itself depth 2, the
+#     top is an off-tower product site). Index conservation + gamma
+#     recoil: e = 10 + 3 = 13, UNIQUE.
+# (4) Consistency: mu is doubly determined (simplex S(4,4) at depth 2
+#     AND the fusion identity -- they agree by Pascal, the committed
+#     coincidence theorem); tau's doublet fusion is RING-FORBIDDEN
+#     (nu3 + w2 -> alpha = 3 > cap 2, STEP 115 P3), so it falls to the
+#     ground-quantum join 22 + 1 = 23 (STEP 114) and is expelled to
+#     d=10 -- exactly the committed record.
+# RESIDUAL (🔶, the narrowed node): WHY the d=6 slots fill via the
+# charged doublet-fusion channel (STEP 107 vertex structure motivates,
+# does not prove). The static irreducibility verdicts are unchanged:
+# this is a channel-conditional forcing, not a static closure. The
+# un-derived content shrinks from "one additive node" to "one
+# channel-to-cell assignment". (Part 7 section 1.2a; Part 2 section 3)
+
+_rules_142 = [(1, 3, 4, 1), (10, 3, 13, 1), (15, 20, 35, 1),
+              (22, 1, 23, 1), (4, 72, 76, 1), (10, 72, 81, 0),
+              (23, 72, 95, 1), (15, 81, 95, 0)]
+for _a142, _b142, _c142, _J142 in _rules_142:
+    assert _a142 + _b142 - _c142 == (0 if _J142 == 1 else 1)
+
+_holds_142 = sorted(
+    (al, be) for (al, be), _v in _grid_115.items()
+    if al >= 1 and (al - 1, be) in _grid_115
+    and (al - 1, be - 1) in _grid_115
+    and _grid_115[(al - 1, be)] + _grid_115[(al - 1, be - 1)] == _v)
+assert _holds_142 == [(1, 3), (2, 2)]        # exactly the lepton cells
+assert S(4, 4) == S(4, 3) + S(3, 4)          # (2,2) = Pascal (⭐)
+
+_depth_142 = {'d': 0, 'u': 0, 's': 1, 'nu1': 1, 'nu2': 1,
+              'c': 2, 'nu3': 2, 'e': 2, 'mu': 2}     # order-rigid spine
+_partners_142 = [('nu1', 'u'), ('nu2', 'c'), ('nu3', 't')]  # P4 ⭐
+_avail_142 = [_p for _p in _partners_142
+              if _p[1] in _depth_142 and _depth_142[_p[0]] < 2
+              and _depth_142[_p[1]] < 2]
+assert _avail_142 == [('nu1', 'u')]          # unique complete doublet
+assert n_nu1 + n_up == n_e == 13             # forced value
+assert 2 + 1 > _ACAP_115                     # tau fusion ring-forbidden
 
 
 # =============================================================================
@@ -12685,6 +12761,29 @@ print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
 print("physical spectrum (STEP 127 parent). Label 🔶 (parent cap:")
 print("equidistribution STEP 131 L1 + one-quantum STEP 135c + STEP 127).")
 print("See Part 9 T7, Part 3 s0.2/s0.7.")
+
+
+# =============================================================================
+# STEP 142 -- OUTPUT: THE ELECTRON NODE
+# =============================================================================
+print("\n=== STEP 142: THE ELECTRON NODE -- e = UNIQUE COMPLETE DOUBLET"
+      " FUSION (🔶) ===")
+print("recoil identity (all 8 pair rules): n_a + n_b = n_c + recoil,")
+print("recoil in {gamma 0, ground 1}; J=1 <=> gamma, J=0 <=> ground.")
+print("STEP 115 value 'coincidence' dissolved: the law holds at exactly")
+print("the two lepton cells -- (2,2) is Pascal (S(4,4)=S(4,3)+S(3,4)),")
+print("(1,3) is the doublet fusion nu1(+)u -> e + gamma. Nowhere else,")
+print("because no other cell is filled by either mechanism.")
+print(f"availability: complete doublets at depth<2: {_avail_142};")
+print(f"  -> e = {n_nu1} + {n_up} = {n_e}  (charm is depth 2, top is an")
+print("  off-tower product site). mu doubly determined (Pascal); tau")
+print("  fusion ring-forbidden (alpha cap) -> ground join 22+1, d=10.")
+print("RESIDUAL 🔶: the channel-to-cell premise (why d=6 fills via the")
+print("charged doublet-fusion channel; STEP 107 motivates). Static")
+print("irreducibility verdicts (STEP 115/116/119) unchanged -- this is")
+print("channel-conditional forcing. The un-derived content narrows from")
+print("'one additive node' to 'one channel-to-cell assignment'.")
+print("See Part 7 s1.2a, Part 2 s3.")
 
 
 # =============================================================================
