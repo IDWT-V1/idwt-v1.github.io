@@ -324,6 +324,35 @@ Until then the closure is a data-forced selection principle with a native channe
 structure: 🔶 (parents: one-quantum + equidistribution postulates; STEP 127 via the
 physical spectrum, bare masses shifting the winner to 71).
 
+**2026-07-04 — Native counting mechanism: coherent loading (tenth pass; STEP 141
+updated).** Per the standing counting guard (counting IS the native coupling
+mechanism; kernel overlaps scale $n^1$ and are the wrong object, STEP 2d), the
+closure weighting restated in pure counting terms. The mass law $m_i =
+m_{\mathrm{scale},d}\,S(n_i,d)$ reads the mode as $S_i$ states, each worth one
+sector energy quantum; equidistribution (STEP 131 L1) gives equal norm per state;
+and the mode is ONE wave at ONE frequency, so its loading of the single rank-1
+channel sums **coherently** over its $S_i$ states — amplitude $\propto S_i$,
+intensity $\propto S_i^2$. With per-state coupling equal to the per-state energy
+quantum $m_{\mathrm{scale},d}$ in anchored units, the intensity is $(m_i/v)^2$, and
+rate conservation over the one channel (the STEP 134 pattern) gives
+$\sum_i (m_i/v)^2 = 1$ — the closure. **This reconciles the two powers in the
+committed record:** transitions resolve individual destination state-channels
+(incoherent — per-channel amplitude $\sqrt{m_0/S}$, intensity $\propto 1/S$, the
+committed CKM counting), while loading is the coherent sum ($S^1$ amplitude, $S^2$
+intensity) — different objects, no contradiction; the $k$-moment scan is precisely
+the data discrimination between them (incoherent $S^1$ total $= 1.94$, coherent
+$S^2 = 0.9934$). Consistency check (exact): NO per-sector closure exists — sector
+sums $\sum_{i\in d} m_i^2/v^2$ are $0.5025$ ($d{=}2$), $0.4906$ ($d{=}4$), and
+$\le 3\times10^{-4}$ for $d = 3, 5, 6, 10$; only the global sum saturates the one
+committed contact scale, exactly what the rank-1 single-channel structure requires
+(no neutral bystanders). ❓ side note: the $d{=}2$/$d{=}4$ near-halving is the
+fermion/boson equipartition observation again; deviations ($+0.5\%$/$-1.9\%$)
+exceed the closure residual — not promoted. OPEN (unchanged, now precisely
+located IN the counting machinery): prove the per-state coupling equals the
+per-state energy quantum in anchored units — the one-quantum statement applied per
+state. Same parent wall as the counting theorem's pointlike premise. Label 🔶
+unchanged.
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$

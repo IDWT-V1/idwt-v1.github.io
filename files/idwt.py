@@ -8675,10 +8675,25 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 # WEIGHTING STATUS: the per-mode m_i^2 weighting is DATA-FORCED --
 # only the k = 2 moment saturates (scan below); the raw kernel-leg
 # alternative (weight prop. to v_d * S(n,d)) fails the sum rule by
-# x134 and is excluded. The m^2 weighting is NOT yet derived from the
-# kernel: the open native computation is the charged collective
-# density written in actual sector modes with the kernel integral
-# done inside IDWT.
+# x134 and is excluded. NATIVE MECHANISM CANDIDATE (coherent counting,
+# 2026-07-04): the mass law m_i = m_scale_d * S(n_i,d) reads the mode
+# as S_i states, each worth one sector energy quantum; equal norm per
+# state (STEP 131 L1); the mode is ONE wave at ONE frequency, so its
+# loading of the single rank-1 channel sums COHERENTLY over its S_i
+# states -- amplitude prop. to S_i, intensity prop. to S_i^2. With
+# per-state coupling equal to the per-state energy quantum m_scale_d
+# in anchored units, the intensity is (m_i/v)^2 and rate conservation
+# (STEP 134 pattern) gives the closure. This reconciles the two
+# powers in the committed record: TRANSITIONS resolve individual
+# destination state-channels (incoherent, intensity prop. to 1/S --
+# the committed CKM counting); LOADING is the coherent sum (S^2).
+# The k-moment scan is the data discrimination between them.
+# OPEN (the residual, precisely located): prove the per-state
+# coupling equals the per-state energy quantum in anchored units --
+# the one-quantum statement applied per state. This lives in the
+# counting machinery (per the STEP 2d guard, kernel overlaps scale
+# n^1 and are the wrong object -- the residual is NOT a kernel
+# integral). Same parent wall as the counting theorem.
 # CAVEATS: with BARE masses the winner shifts to 71 -- the selection
 # requires the physical (confinement-corrected) spectrum, inheriting
 # the STEP 127 🔶. Label 🔶 by the taxonomy: the closure rests on
@@ -12607,10 +12622,15 @@ print("closure is the unit-total form sqrt2*G_F*Tr(D^2) = 1 (per-mode")
 print("share sqrt2*G_F*m_i^2; STEP 134 rate-conservation pattern);")
 print("normalization = the one-quantum import (STEP 135c).")
 print("Z closure = W closure exactly (cos theta_W = S_W/S_Z, STEP 5).")
-print("weighting: m_i^2 is DATA-FORCED (k-moment scan; raw kernel-leg")
-print("weight excluded x134); NOT yet derived from the kernel -- open")
-print("native computation: charged collective density in sector modes +")
-print("the kernel integral inside IDWT.")
+print("weighting: m_i^2 DATA-FORCED (k-moment scan; raw kernel-leg")
+print("excluded x134). Native candidate: COHERENT COUNTING -- the mode")
+print("= S_i states at ONE frequency (IDOS mass law), equal norm per")
+print("state, coherent loading of the one channel -> amplitude ~ S_i,")
+print("intensity ~ S_i^2 = (m_i/v)^2 with per-state coupling = the")
+print("sector energy quantum. Transitions stay incoherent (1/S, CKM")
+print("counting) -- different object, no contradiction. OPEN residual:")
+print("prove per-state coupling = per-state energy quantum (anchored")
+print("units; one-quantum applied per state).")
 print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
 print("physical spectrum (STEP 127 parent). Label 🔶: rests on the")
 print("one-quantum anchored units (STEP 135c) + equidistribution")
