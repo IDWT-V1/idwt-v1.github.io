@@ -282,6 +282,19 @@ principle, not a derivation. Trial accounting: the T7 relation predates this ses
 location at $72.27$, the termination corollary, and the discrimination/sensitivity
 analysis. Formulas reproduced exactly from `files/idwt.py` STEP 1/2/3/5/14.
 
+**2026-07-04 — Two-set (index vs level) scan of the top (Fedge rule: test both $n$ and $N=n-1$).**
+The closure test above is shift-invariant (it evaluates $S$ at the committed indices;
+chain differences are unchanged under $n \to n-1$), but closed-form claims are not.
+Declared grammar (fixed before scanning): S-image membership; perfect powers; products
+of 2–3 constants from the framework pool $\{N_c, n_s, N_f, \chi\text{'s}, n_d, n_u, 17, 5,
+10, 15, 20, 35, 2\}$; Pascal-interior; spectrum pair sums/differences. Control hit-rates
+over integers $36$–$130$: 8–24\% per class (54\% for pair sums). Result: index form
+$n_{\rm top} = 72 = N_c\, n_s\, N_f$ is grammar-rich, while the level form $N_{\rm top} = 71$
+is **prime and grammar-empty** (no nontrivial hit in any declared class) — consistent
+with the tier-2 external-site status: the top's level is additively and multiplicatively
+incomposable, while every lattice member's level is reachable. Side hit at control-level
+significance (❓, logged only): $N_Z = 80 = n_s \cdot n_{\rm charm}$ (prod2 control 17\%).
+
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
 Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical endpoint on $S^3$
@@ -291,3 +304,11 @@ $m_b = \sqrt{S(16,3)\cdot S(17,3)}\cdot m_{\rm scale,3} = \sqrt{816\cdot 969}\cd
 $\ell=2$ self-energy loop (idwt.py STEP 75–76), but no integer exponent set $k$ is forced
 (the per-quark exponent was a fit, removed 2026-06-16). Record: idwt.py STEP 44 and
 CLAUDE.md "GTC removed" note.
+
+**2026-07-04 — Two-set scan (Fedge rule: test both $n$ and $N=n-1$).** Level form of the
+beat site: $N_{k_0} = 15 = S(3,4) = S(5,2)$ — an S-image member (declared-grammar control
+rate 13\% over $36$–$130$; note the level range here is smaller, so the control is
+conservative), equivalently $k_0 = S(n_u, 4) + 1$: the beat site sits one level above the
+$d=4$ up-simplex count. Also $15 = n_u \cdot 5$ (prod2). Status ❓ — single hits at
+control-level rates, logged per the two-set rule; the committed derivation ($k_0 = n_s^2$
+as the Gegenbauer $b = 1/2$ endpoint on $S^3$) is unaffected.
