@@ -8660,65 +8660,33 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 # (c) the NEUTRAL channel adds no second condition: cos theta_W =
 # S(n_W,2)/S(n_Z,2) exactly (STEP 5) makes the Z closure algebraically
 # identical to the W closure.
-# MECHANISM (🔶): rank-1 g_dd' = v_d v_d' collapses the kernel to ONE
-# collective channel (1/2)(sum v_d K_d)^2 -- exact; Hubbard-Stratonovich
-# gives the channel coordinate with contact = 1/stiffness (exact), and
-# the committed G_F = g_2^2/(4 sqrt2 m_W^2) form (STEP 5) sets the
-# stiffness = v^2. Each deposited mode contributes stiffness C*m_i^2:
-# mass^2 dimension is forced, m_i is the mode's only local scale, and a
-# weight f(m_i/v) is forbidden because the vertex is local and v is
-# global (equal amplitudes by equidistribution, STEP 131 L1; unit
-# conserved charge per stable excitation, STEP 135c). C = 1 is the
-# one-quantum anchored-unit normalization -- the SAME single import the
-# rate sector carries (STEP 135), no new number; data give C = 1.0066.
-# The k-moment scan confirms the m^2 weight: only Tr(D^k)/v^k with k=2
-# is ~1 (k=1: 1.94, k=3: 0.56, k=4: 0.34). The channel quantum is
-# itself mode n_W = 76 (self-consistency, not an external oscillator).
-# COEFFICIENT (sixth pass; creep-audited seventh pass, same day): the
-# per-mode m_i^2 coefficient is EXACTLY 1 WITHIN THE STATED CURVATURE
-# MODEL -- double-commutator algebra on the squared operator D^2 with
-# the reservoir generator T (each deposited mode coupled with unit
-# matrix element to the zero-frequency condensate ground, m_gamma = 0
-# STEP 55; the mode<->condensate coupling is the P6 degree-1 insertion
-# structure, STEP 88). Diagonal of (1/2)[[D^2,T],T] on mode i = m_i^2
-# exactly (integer arithmetic below; robust to shared vs per-mode
-# reservoir). The mass term DECREASES under the charged rotation
-# (second variation negative along the charged insertion direction);
-# the channel's own curvature v^2 holds it. Net second-variation
-# curvature along that direction: (1/2)(v^2 - sum q_i^2 a_i^2 m_i^2)
-# eps^2 -- zero exactly at saturation. Mechanism: deposits continue
-# while the curvature is positive; halt at marginality; a 16th mode
-# would make the second variation negative. Headroom = the curvature
-# margin. The DOUBLET alternative (T coupling u<->d partners) gives
-# mass DIFFERENCES that cancel pairwise at equal occupation --
-# excluded as the closure source (verified below).
-# MODEL PREMISES -- the open NATIVE computations (creep audit, Fedge
-# query 2026-07-04; do not present these as closed):
-# (P1) the energy curvature is carried by the SQUARED operator D^2.
-#      The committed kinetic term is first-order Dirac (energy linear
-#      in frequency); D^2 is motivated natively (T7 is itself a
-#      Tr(D^2) object; the framework's stability operators are
-#      quadratic, BdG STEP 35/36) and the m^2 weight is independently
-#      DATA-FORCED by the k-moment scan -- but the curvature has not
-#      been computed from the committed first-order Hamiltonian.
-# (P2) the charged direction is the mode<->condensate insertion
-#      (STEP 88), not the intra-doublet rotation; the toy matrices
-#      model this structure -- the computation on the actual sector
-#      mode functions and kernel integral has not been done.
-# CONSISTENCY TO CHECK: STEP 74(b) proves charged (p != q) directions
-# are non-marginal (Hopf charge-0 selection); here the charged
-# insertion direction's curvature -> 0 exactly at saturation. The
-# spectrum halting at the boundary where charge-0-only marginality
-# would fail is either a deep consistency or a tension -- verify
-# against the STEP 74 proof before promoting.
+# NATIVE STRUCTURE: rank-1 g_dd' = v_d v_d' collapses the kernel to
+# ONE collective channel, (1/2)(sum v_d K_d)^2 -- exact algebra of the
+# committed action. The committed G_F = g_2^2/(4 sqrt2 m_W^2) form
+# (STEP 5) fixes the channel's total weight at v^2 = 1/(sqrt2 G_F), so
+# the closure has the unit-total form sqrt2 * G_F * Tr(D^2) = 1: each
+# mode carries share sqrt2*G_F*m_i^2 and the shares sum to one -- the
+# same rate-conservation normalization pattern that derives
+# sin^2(theta) = r (STEP 134). The normalization is the one-quantum
+# anchored-unit statement (STEP 135c) -- the SAME single import the
+# rate sector carries, no new number; data: C = v^2/Tr(D^2) = 1.0066.
+# The channel quantum is itself mode n_W = 76 (self-consistency, not
+# an external oscillator).
+# WEIGHTING STATUS: the per-mode m_i^2 weighting is DATA-FORCED --
+# only the k = 2 moment saturates (scan below); the raw kernel-leg
+# alternative (weight prop. to v_d * S(n,d)) fails the sum rule by
+# x134 and is excluded. The m^2 weighting is NOT yet derived from the
+# kernel: the open native computation is the charged collective
+# density written in actual sector modes with the kernel integral
+# done inside IDWT.
 # CAVEATS: with BARE masses the winner shifts to 71 -- the selection
 # requires the physical (confinement-corrected) spectrum, inheriting
 # the STEP 127 🔶. Label 🔶 by the taxonomy: the closure rests on
-# postulates beyond P1-P4 (one-quantum anchored units q^2 = a^2 = 1,
-# STEP 135c; equidistribution, STEP 131 L1) plus model premises P1/P2
-# above. Two-regime reading: the sub-72 lattice is built additively
-# from the seeds; {72, 76, 81, 95} sits where the cumulative spectral
-# weight fills the contact capacity -- hence the 35 -> 72 gap.
+# postulates beyond P1-P4 (one-quantum anchored units, STEP 135c;
+# equidistribution, STEP 131 L1) and the un-derived m^2 weighting.
+# Two-regime reading: the sub-72 lattice is built additively from the
+# seeds; {72, 76, 81, 95} sits where the cumulative spectral weight
+# fills the contact capacity -- hence the 35 -> 72 gap.
 # (Part 9 T7; Part 3 sections 0.2 and 0.7)
 
 def _tr_141(_T):
@@ -8765,22 +8733,6 @@ assert abs(_mom_141[1] - 1.0) < 0.01                 # k=2: 0.9934
 assert all(abs(_mom_141[_i] - 1.0) > 0.3 for _i in (0, 2, 3))
 _Cnorm_141 = v_EW_idwt**2 / Tr_D2_val                # one-quantum: 1
 assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
-
-# coefficient check (exact integers): reservoir generator on the squared
-# EoM. Basis (|1>, |2>, |X>), D^2 = diag(M1, M2, 0), unit T couplings.
-_M1_141, _M2_141 = 9, 25                             # m^2 test values
-_D2_141 = np.diag([_M1_141, _M2_141, 0]).astype(int)
-_T_141 = np.array([[0, 0, 1], [0, 0, 1], [1, 1, 0]])
-_dc_141 = ((_D2_141@_T_141 - _T_141@_D2_141)@_T_141
-           - _T_141@(_D2_141@_T_141 - _T_141@_D2_141))
-# (1/2)[[D^2,T],T] diagonal on the deposited slots = m_i^2 EXACTLY:
-assert (_dc_141[0, 0]//2, _dc_141[1, 1]//2) == (_M1_141, _M2_141)
-# doublet alternative cancels pairwise at equal occupation (excluded):
-_Td_141 = np.array([[0, 1], [1, 0]])
-_D2d_141 = np.diag([_M1_141, _M2_141]).astype(int)
-_dcd_141 = ((_D2d_141@_Td_141 - _Td_141@_D2d_141)@_Td_141
-            - _Td_141@(_D2d_141@_Td_141 - _Td_141@_D2d_141))
-assert _dcd_141[0, 0] + _dcd_141[1, 1] == 0          # trace cancellation
 
 
 # =============================================================================
@@ -12649,28 +12601,20 @@ print(f"  moments Tr(D^k)/v^k, k=1..4: {_mom_141[0]:.2f},"
       f" {_mom_141[1]:.4f}, {_mom_141[2]:.2f}, {_mom_141[3]:.2f}")
 print("  (only k=2 saturates)")
 print(f"  C_norm = v^2/Tr(D^2) = {_Cnorm_141:.4f}  (one-quantum: 1)")
-print("mechanism 🔶: rank-1 kernel = ONE collective channel (exact);")
-print("HS contact = 1/stiffness (exact) + G_F form -> stiffness = v^2;")
-print("per-mode stiffness C*m_i^2 (locality + dimension + equal")
-print("amplitudes + unit charge); C = 1 is the one-quantum import.")
+print("native structure: rank-1 kernel = ONE collective channel (exact);")
+print("committed G_F form fixes the channel total weight at v^2, so the")
+print("closure is the unit-total form sqrt2*G_F*Tr(D^2) = 1 (per-mode")
+print("share sqrt2*G_F*m_i^2; STEP 134 rate-conservation pattern);")
+print("normalization = the one-quantum import (STEP 135c).")
 print("Z closure = W closure exactly (cos theta_W = S_W/S_Z, STEP 5).")
-print("COEFFICIENT: per-mode m_i^2 coefficient = 1 exactly WITHIN the")
-print("stated curvature model (double commutator (1/2)[[D^2,T],T],")
-print("reservoir generator; integer check in-step). Net second-variation")
-print("curvature along the charged insertion direction:")
-print("(1/2)(v^2 - Tr D^2) eps^2 -> zero at saturation; deposits halt at")
-print("marginality; a 16th mode would turn it negative. Doublet")
-print("generator excluded (pairwise cancellation).")
-print("MODEL PREMISES OPEN (creep audit): (P1) curvature on D^2 vs the")
-print("committed first-order Dirac form -- m^2 weight independently")
-print("data-forced by the moment scan; (P2) reservoir insertion vs")
-print("intra-doublet rotation -- toy matrices, not yet the sector-mode")
-print("kernel integral. STEP 74(b) charged-direction consistency check")
-print("pending.")
+print("weighting: m_i^2 is DATA-FORCED (k-moment scan; raw kernel-leg")
+print("weight excluded x134); NOT yet derived from the kernel -- open")
+print("native computation: charged collective density in sector modes +")
+print("the kernel integral inside IDWT.")
 print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
 print("physical spectrum (STEP 127 parent). Label 🔶: rests on the")
 print("one-quantum anchored units (STEP 135c) + equidistribution")
-print("(STEP 131 L1) + model premises P1/P2.")
+print("(STEP 131 L1) + the un-derived m^2 weighting.")
 print("See Part 9 T7, Part 3 s0.2/s0.7.")
 
 

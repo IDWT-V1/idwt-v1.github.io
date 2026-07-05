@@ -295,141 +295,34 @@ with the tier-2 external-site status: the top's level is additively and multipli
 incomposable, while every lattice member's level is reachable. Side hit at control-level
 significance (❓, logged only): $N_Z = 80 = n_s \cdot n_{\rm charm}$ (prod2 control 17\%).
 
-**2026-07-04 — Mechanism reduction for the closure (same session, third pass).** The
-"capacity" concept reduces to state normalization, in three exact pieces plus one open
-lemma. (i) **Rank-1 collapse (exact):** $g_{dd'} = v_d v_{d'}$ makes the kernel term
-identically $\tfrac12\bigl(\sum_d v_d K_d\bigr)^2$ — ONE collective channel, verified
-symbolically. (ii) **Capacity $=$ unit norm:** a single normalized collective state
-$|C\rangle = \sum_i c_i |i\rangle$ with $c_i = m_i/v$ has $\langle C|C\rangle = 1
-\iff \mathrm{Tr}(D^2) = v^2$; "capacity" is nothing beyond one state $=$ one quantum
-(the STEP 135 one-import — no new number). Equivalent unit-total form:
-$\sqrt2\,G_F\,\mathrm{Tr}(D^2) = 0.99343 \approx 1$ — each mode's share
-$\sqrt2\,G_F\,m_i^2$ sums to one, the same rate-conservation normalization pattern
-that derives $\sin^2\theta = r$ (STEP 134). (iii) **Weighting decided:** the raw
-kernel-leg alternative ($c_i \propto v_d\,S(n_i,d)$) is EXCLUDED — it fails the sum
-rule by $\times 134$ (the committed $m_{\rm scale}$ bookkeeping is NOT $\propto v_d$
-in $d=4,5,6,10$); the weights are the physical frequencies $m_i$, consistent with the
-STEP 139 keystone (observables $=$ functions of frequencies and kernel matrix
-elements). (iv) **Open lemma (the entire residual):** the frequency-amplitude law
-$c_i = m_i/v$ — that a mode's amplitude in the collective channel is its frequency in
-units of the channel's own contact scale $v = 2m_W/g_2$, with one sector-independent
-constant. The one-channel-one-scale point is what makes the claim nontrivial and
-non-circular: the rate-sector contact strength ($G_F$, confirmed by the committed
-lifetime predictions) and the spectral saturation scale are the SAME quantity because
-the rank-1 kernel has only one channel. Dimensional echo, flagged with its caveat: the
-committed $|M|^2 \sim G_F^2 m^4$ (STEP 11) makes each mode's charged amplitude
-$\sim c_i^2$, but the $m^4$ there is kinematic, so this is support, not proof.
-Inconclusive side observation (❓): fermion/boson shares of the unit total are
-$0.491/0.503$ corrected and $0.505/0.495$ bare — straddling exact equipartition at
-$\pm 1\%$; not clean under either spectrum.
-
-**2026-07-04 — L1$'$ consult + theorem-grade skeleton (fourth pass).** External consult
-(o4-mini; DeepSeek timed out), all claims independently re-derived before use, one
-error found. Verified outcomes: (1) the consult's "exact RPA pole identity
-$\Omega^2 = \kappa\sum v_i^2 m_i$" is NOT exact — it is the large-$\Omega$ limit of the
-separable secular equation, and the pole route is excluded here structurally anyway:
-$m_W = 80.4 < m_t = 172.5$, so the collective pole sits *inside* the constituent
-spectrum, not isolated above it. (2) Honest NO on precedent: no known integrable or
-algebraic model (Richardson–Gaudin, Lipkin, two-level RPA) realizes
-$1/(\sqrt2 G) = \sum m_i^2$ exactly — if IDWT's closure is derivable it is new
-structure; there is nothing to import (and nothing one should). (3) The exact,
-loop-free object of the right shape is the **energy-weighted (TRK/double-commutator)
-sum rule**: the channel's strength moment equals a c-number double commutator —
-state-independent, fixed by the channel's own normalization ("capacity" as a theorem,
-not a metaphor) — while the same moment computed over the deposited spectrum is
-$\sum_i(\text{coupling}\times m_i)^2$ PROVIDED the channel coupling is linear in
-frequency at the amplitude level and the amplitudes are equal (the STEP 131 L1
-equidistribution premise; verified: quanta-normalized channel operator gives
-$m_1 = \sum v_i^2 m_i$, coordinate-normalized gives $\tfrac12\sum v_i^2$ — the
-normalization layer is where the work sits). Closure $=$ (spectral moment) $=$
-(structural capacity). (4) Convergence with STEP 135: the unit normalization is
-*definitionally* the one-quantum import, and by the One-Import Theorem the amplitude
-ray is provably NOT fixable internally — so "capacity $=$ one quantum" is the same
-single irreducible import the rate sector already carries. No new number. **L1$'$
-program, sharpened:** construct the IDWT collective channel operator explicitly from
-the kernel, compute its double commutator with the sector Hamiltonian, and show the
-c-number equals $v^2$ in the one-quantum normalization. That single computation is
-now the entire distance between the closure being a candidate and a derivation.
-
-**2026-07-04 — Closure mechanism assembled; ❓ → 🔶; committed as `files/idwt.py`
-STEP 141 (fifth pass).** The derivation now stands on: (i) rank-1 collapse — the
-kernel is identically $\tfrac12(\sum_d v_d K_d)^2$, ONE collective channel (exact);
-(ii) Hubbard–Stratonovich — contact $=$ 1/stiffness for the channel coordinate
-(exact identity), and the committed $G_F = g_2^2/(4\sqrt2\,m_W^2)$ form (STEP 5)
-sets the stiffness $= v^2$; (iii) FORM of the spectral side by locality $+$
-dimension $+$ equidistribution: a deposited mode's stiffness contribution has
-mass$^2$ dimension, its only local scale is $m_i$, and a weight $f(m_i/v)$ is
-forbidden because the vertex is local while $v$ is global — with equal amplitudes
-(STEP 131 L1) and unit conserved charge per stable excitation (STEP 135c) the
-contribution is $C\,m_i^2$ with ONE mode-independent constant; (iv) $C = 1$ is the
-one-quantum anchored-unit normalization — the SAME irreducible import the rate
-sector carries (STEP 135), no new number; data give $C = 1.0066$ ($+0.33\%$ in
-scale, the closure residual). Independent confirmations: the $k$-moment scan —
-only $\mathrm{Tr}(D^k)/v^k$ at $k=2$ saturates ($1.94,\ 0.9934,\ 0.56,\ 0.34$ for
-$k=1..4$) — the $m^2$ weight is data-forced exactly as the dimension argument
-requires; and the neutral channel adds NO second condition ($\cos\theta_W =
-S(n_W,2)/S(n_Z,2)$ exactly, so the $Z$ closure is algebraically the $W$ closure —
-one condition, mechanism consistency PASS). Self-reference noted: the channel
-quantum is itself mode $n_W = 76$ — the closure is the spectrum's self-consistency,
-which is why no external-model theorem matches. REFEREED 🔶 (D1): form derived,
-normalization $=$ committed import, data-confirmed; parent cap $=$ the
-equidistribution premise (🔶) and the STEP 127 correction (🔶 — bare masses shift
-the winner to 71). Residual for 🔵: the coefficient-level kernel integral for the
-per-mode stiffness (write $\mathcal{J}_+$ in sector modes and do the integral).
-Committed: `files/idwt.py` STEP 141 (scan, termination, moment scan, $C$, and the
-$Z$-automatism as asserts; idwt_test PASS).
-
-**2026-07-04 — Coefficient COMPUTED; the closure is a marginal-stability condition
-(sixth pass; STEP 141 extended).** The per-mode $m_i^2$ coefficient is **exactly 1**
-by double-commutator algebra on the squared (wave-form) EoM: for the reservoir
-generator $T$ — each deposited mode coupled with unit matrix element to the
-zero-frequency condensate ground ($m_\gamma = 0$, STEP 55; this is the P6 degree-1
-insertion structure, STEP 88) — the diagonal of $\tfrac12[[D^2,T],T]$ on mode $i$ is
-$m_i^2$ exactly (verified in exact arithmetic; robust to shared vs per-mode
-reservoir topology). Sign resolved: the mass term is *downhill* under the charged
-rotation (rotating toward the massless ground releases mass energy), and the channel
-stiffness $K = v^2$ holds it — net curvature of the charged collective direction
-$\tfrac12\,(v^2 - \sum_i q_i^2 a_i^2 m_i^2)\,\varepsilon^2$. **The closure is
-therefore a vacuum-stability boundary:** deposits fill the spectrum until the
-charged vacuum direction goes exactly marginal; a 16th mode would make it unstable
-(termination $=$ vacuum stability; the 20 GeV headroom $=$ the stability margin).
-The doublet alternative ($T$ coupling $u\leftrightarrow d$ partners) yields mass
-*differences* that cancel pairwise at equal occupation — excluded as the closure
-source (exact check). Label stays **🔶 by taxonomy**, not by an open joint: the
-closure rests on postulates beyond P1–P4 — the one-quantum anchored units
-($q_i^2 = a_i^2 = 1$, STEP 135c) and the equidistribution premise (STEP 131 L1) —
-while the coefficient itself is now closed algebra. Remaining structural premises,
-stated: (P1) the squared/wave form of the committed EoM carries the energy
-curvature; (P2) the channel's charged direction is the mode$\leftrightarrow$
-condensate insertion (STEP 88 P6 structure), not the intra-doublet rotation.
-Committed: STEP 141 extended (integer double-commutator + doublet-cancellation
-asserts; idwt_test PASS).
-
-**2026-07-04 — Framework-creep audit of the closure mechanism (Fedge query; seventh
-pass; STEP 141 re-labeled).** Verdict, ingredient by ingredient. CLEAN (algebra on
-committed objects, framework-neutral): the rank-1 collapse; the closure scan and
-unique root $T^*=72.27$; termination headroom; the $k$-moment scan; the
-$Z$-automatism; $C = 1.0066$; the HS rewriting (exact identity, leaning only on the
-committed STEP 5 $G_F$ form); one-quantum and equidistribution (committed
-postulates). CREEP-SUSPECT, now flagged as OPEN MODEL PREMISES in STEP 141: (P1) the
-curvature was computed on the squared operator $D^2$, but the committed kinetic term
-is first-order Dirac (energy linear in frequency) — the $D^2$ form is natively
-motivated (T7 is a $\mathrm{Tr}(D^2)$ object; BdG stability operators are quadratic)
-and the $m^2$ weight is independently data-forced by the moment scan, but the
-curvature has NOT been computed from the committed first-order Hamiltonian; (P2) the
-reservoir generator models the mode$\leftrightarrow$condensate insertion (P6/STEP 88,
-committed structure) with toy matrices — the computation on the actual sector mode
-functions and kernel integral has not been done. Borrowed many-body vocabulary
-("vacuum stability", "stiffness", "capacity") stripped to native second-variation
-language in STEP 141 (per the 2026-07-02 language-strip precedent). NEW CONSISTENCY
-ITEM surfaced by the audit: STEP 74(b) proves charged ($p \neq q$) directions are
-non-marginal (Hopf charge-0 selection), while the closure mechanism has the charged
-insertion direction's curvature $\to 0$ exactly at saturation — the spectrum halting
-precisely at the boundary where charge-0-only marginality would fail is either a
-deep consistency or a tension; verify against the STEP 74 proof before any
-promotion. The "coefficient = 1" claim is downgraded from "closed algebra" to
-"exact within the stated curvature model"; all framework-neutral numerics stand
-unchanged.
+**2026-07-04 — Mechanism status (consolidated).** Native and committed content:
+(i) the rank-1 coupling $g_{dd'} = v_d v_{d'}$ makes the kernel identically
+$\tfrac12\bigl(\sum_d v_d K_d\bigr)^2$ — ONE collective channel (exact algebra of the
+committed action); (ii) completing the square on the collective density is an exact
+identity, and the committed $G_F = g_2^2/(4\sqrt2\,m_W^2)$ form (STEP 5) fixes the
+channel's total weight at $v^2 = 1/(\sqrt2\,G_F)$; (iii) the unit-total form of the
+closure is $\sqrt2\,G_F\,\mathrm{Tr}(D^2) = 0.99343 \approx 1$ — per-mode share
+$\sqrt2\,G_F\,m_i^2$, the same rate-conservation normalization pattern that derives
+$\sin^2\theta = r$ (STEP 134); (iv) the normalization constant is the one-quantum
+anchored-unit statement (STEP 135c) — the single import the rate sector already
+carries, no new number (data: $C = v^2/\mathrm{Tr}(D^2) = 1.0066$). Weighting facts
+(exact checks): the raw kernel-leg weighting $c_i \propto v_d\,S(n_i,d)$ is
+**EXCLUDED** — it fails the sum rule by $\times 134$ (the committed $m_{\rm scale}$
+bookkeeping is not $\propto v_d$ in $d = 4, 5, 6, 10$); only the $k = 2$ moment
+saturates ($\mathrm{Tr}(D^k)/v^k = 1.94,\ 0.9934,\ 0.56,\ 0.34$ for $k = 1..4$) —
+the $m^2$ weighting is data-forced. Null guards from the consult pass (o4-mini;
+DeepSeek timed out; every claim independently re-derived): the separable-RPA pole
+route is EXCLUDED ($m_W = 80.4 < m_t = 172.5$ — the collective pole sits *inside*
+the constituent spectrum; the claimed pole identity is also only a large-$\Omega$
+limit); NO known integrable or algebraic model realizes $1/(\sqrt2 G) = \sum m_i^2$
+exactly — there is no external structure to import. Side observation (❓):
+fermion/boson shares of the unit total straddle equipartition at $\pm1\%$ under
+both spectra. **OPEN — the native computation that would complete the mechanism:**
+derive the $m^2$ weighting from the kernel itself, with the charged collective
+density written in actual sector modes and the kernel integral done inside IDWT.
+Until then the closure is a data-forced selection principle with a native channel
+structure: 🔶 (parents: one-quantum + equidistribution postulates; STEP 127 via the
+physical spectrum, bare masses shifting the winner to 71).
 
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
