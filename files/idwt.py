@@ -8812,6 +8812,21 @@ assert 1.0 < _Cnorm_141 < 1.01                       # 1.0066
 #     J = 1 <=> gamma recoil, J = 0 <=> ground recoil (STEP 85's
 #     photon-assisted channel; the join calculus' "-1" is the ground
 #     recoil). Asserted below.
+#     RECOIL CHOICE RESOLVED (2026-07-04, closing the last ❓): J is
+#     the condensate-INSERTION count of the production, and its parity
+#     is fixed by the LANDING SECTOR -- the committed even-insertion
+#     rule (Part 3 section 11). Matter landings carry exactly ONE
+#     insertion (the parity-flipping pairing node, STEP 98/114: the
+#     odd-l tree must be sourced); d=2 landings carry EVEN insertions
+#     (0, or 2 for the additive Higgs face) because the d=2 variable
+#     has NO condensate to supply a degree-1 vertex -- the same
+#     structural fact as m_gamma = 0. So gamma-recoil vs ground-recoil
+#     = odd vs even insertion parity = matter vs d=2 landing. The
+#     apparent "W pays J=1" exception was an ARITHMETIC FACE (the
+#     s(+)t pair decomposition); the committed W production is the
+#     zero-insertion g-step landing on d=2 -- even, as the rule
+#     requires. Counterfactual (STEP 55, committed): the odd-insertion
+#     d=2 indices 77, 82, 96 are unoccupied.
 # (2) THE STEP 115 "ISOLATED COINCIDENCE" DISSOLVES: the value law
 #     val(a+1,b) = val(a,b) + val(a,b-1) holds at EXACTLY the two
 #     lepton cells because each has its own mechanism -- at (2,2) it
@@ -12868,6 +12883,13 @@ print("\n=== STEP 142: THE ELECTRON NODE -- e = UNIQUE COMPLETE DOUBLET"
       " FUSION (🔶) ===")
 print("recoil identity (all 8 pair rules): n_a + n_b = n_c + recoil,")
 print("recoil in {gamma 0, ground 1}; J=1 <=> gamma, J=0 <=> ground.")
+print("RECOIL CHOICE RESOLVED: J = condensate-insertion count; parity")
+print("fixed by LANDING SECTOR (even-insertion rule, Part 3 s11):")
+print("matter landings carry ONE insertion (parity-flipping pairing")
+print("node); d=2 landings carry EVEN (no d=2 condensate -- the")
+print("m_gamma = 0 fact). W's J=1 was an arithmetic face (s(+)t); its")
+print("production is the zero-insertion g-step. Counterfactuals 77,")
+print("82, 96 unoccupied (STEP 55).")
 print("STEP 115 value 'coincidence' dissolved: the law holds at exactly")
 print("the two lepton cells -- (2,2) is Pascal (S(4,4)=S(4,3)+S(3,4)),")
 print("(1,3) is the doublet fusion nu1(+)u -> e + gamma. Nowhere else,")
