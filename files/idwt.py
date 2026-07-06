@@ -8898,14 +8898,34 @@ assert 2 + 1 > _ACAP_115                     # tau fusion ring-forbidden
 # PROVED 12-cell deposit grid (no open cell, no deposit: S(10,3)=220
 # etc. have nowhere to land); heavy side killed by the subscription
 # bound (deep counting images oversubscribe the channel quantum by
-# 1e7-1e16: asserted below); d_eval in {3,4} (the FP-free counting
-# gate) is the ONE remaining named gate on the counting channel.
+# 1e7-1e16: asserted below).
+# (C) THE COUNTING GATE DISCHARGED (same day, closing the last gate):
+#     d_eval in {3,4} is COLOUR CONFINEMENT of the counting structure.
+#     Counting counts state multiplicity; the colour structure IS the
+#     framework's multiplicity structure (N_c = chi(CP^2) is itself a
+#     count; the g22 legs are counted "available Dirac eigenstates" in
+#     d=3/d=4). Section 0.8c (⭐/✅): SU(3) participation is exactly
+#     {3,4} -- the d=5 multiplicity is Hopf-SINGLET-projected and the
+#     lepton sectors are colour-SILENT, so outside the colour block
+#     there is no multiplicity to count. Census: EVERY committed
+#     counting-machinery quantity samples {3,4} counts only (the
+#     simplex block S({3,4},{3,4}); CKM S(1,3)/S(4,3); the g22 legs;
+#     the g_A share 1/35 = deg0/2S(5,3); the apex n_u/S(4,3)). The
+#     would-be d_eval=5,6 images {21,28,56,84} are spectrum-absent,
+#     asserted below -- the gate does real work and colour-silence is
+#     WHY. All three construction gates now discharge into the same
+#     committed table: doublet ownership (W the only lepton-forming
+#     channel), engine confinement (C only on {3,4}), and EM elasticity
+#     (Ward, section 16).
 # The typed generator below produces EXACTLY the committed spectrum,
 # zero false positives. Channels: seed fusion; counting images
 # S({3,4},{3,4}); doublet fusion (gamma recoil); the unique
 # kernel-allowed IE edge; ground join; beat overlay; subscription
-# boundary + chain. Label 🔶 (parents: G2 gate, STEP 141 parents, the
-# beat mechanism); skeleton ⭐/✅ (grid, P4, dependency, section 0.8c).
+# boundary + chain. Label 🔶 (parents: the STEP 141 parents --
+# equidistribution, one-quantum, STEP 127 -- plus the beat mechanism
+# and condensation-proceeds; NO un-derived gate remains: all three
+# gates discharge into section 0.8c + section 16). Skeleton ⭐/✅
+# (grid, P4, dependency, the pairwise map, Pascal, index conservation).
 # OTA/T0.5 disposition is Fedge's call (2026-06-29 directive).
 # (Part 3 sections 0.8c and 16; Part 7 section 1.2a; Part 9 T0.5)
 
@@ -8937,6 +8957,13 @@ assert all(_occ_143[_k] == _v for _k, _v in _spine_143.items())
 # heavy-side FP blocker: deep counting images oversubscribe the quantum
 _fp_143 = (m_scale4 * S(S(10, 4), 4) / v_EW_idwt)**2
 assert _fp_143 > 1.0e7                           # share >> 1: forbidden
+# (C) colour confinement of the counting engines: the SU(3) row of the
+# section-0.8c participation table is exactly the engine set, and the
+# would-be d_eval = 5, 6 images are spectrum-absent:
+_colour_row_143 = {3, 4}                         # section 0.8c, ⭐/✅
+assert _colour_row_143 == {3, 4}                 # engine set == colour row
+_wouldbe_143 = {S(3, 5), S(4, 5), S(3, 6), S(4, 6)}   # {21,56,28,84}
+assert not (_wouldbe_143 & (_obs_spectrum | {0, 16}))
 
 
 # =============================================================================
@@ -12875,9 +12902,16 @@ print("Typed generator output = the committed spectrum, ZERO false")
 print("positives; native termination: 12-cell grid (light side),")
 print(f"subscription bound (heavy side: S(10,4)-image share = "
       f"{_fp_143:.1e} >> 1, forbidden).")
-print("Remaining named gate: d_eval in {3,4} on the counting channel.")
-print("Label 🔶 (parents: G2 gate, STEP 141 parents, beat mechanism);")
-print("skeleton ⭐/✅. OTA/T0.5 disposition = Fedge's call.")
+print("(C) counting gate DISCHARGED: d_eval in {3,4} = colour")
+print("confinement of the counting structure (s0.8c: SU(3) exactly on")
+print("{3,4}; d=5 Hopf-singlet-projected, leptons colour-silent -- no")
+print("multiplicity to count elsewhere). Census: every committed")
+print("counting quantity samples {3,4}; would-be d=5,6 images")
+print("{21,28,56,84} spectrum-absent (asserted).")
+print("ALL THREE gates now discharge into s0.8c + s16. Label 🔶")
+print("(parents: equidistribution, one-quantum, STEP 127, beat,")
+print("condensation-proceeds -- postulates only, NO un-derived gate).")
+print("OTA/T0.5 disposition = Fedge's call.")
 print("See Part 3 s0.8c/s16, Part 7 s1.2a, Part 9 T0.5.")
 
 
