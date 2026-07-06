@@ -12812,7 +12812,7 @@ print(f"  mu_p - mu_n = 33/7 = {float(5*_mE_140):.6f}  (+0.18%)"
 print("status 🔶: zero fitted parameters (factors are the derived 33/35")
 print("chain); the power-to-channel assignment is data-selected from the")
 print("declared grid, not forced. NOT the withdrawn two-fit version.")
-print("See Part 8 s10, Part 5 s3, Appendix A s9.")
+print("See Part 8 s10, Part 5 s3.")
 
 
 # =============================================================================

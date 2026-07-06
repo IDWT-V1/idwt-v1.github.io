@@ -392,8 +392,9 @@ Full log not reproduced. $k_0 = n_s^2 = 16$ is the Gegenbauer $b=1/2$ critical e
 $m_b = \sqrt{S(16,3)\cdot S(17,3)}\cdot m_{\rm scale,3} = \sqrt{816\cdot 969}\cdot m_{\rm scale,3}$ is derived (Part 2 §11,
 `files/idwt.py` STEP 44). The GTC correction scale $\varepsilon = 1/(280\sqrt{7})$ is derived from the
 $\ell=2$ self-energy loop (idwt.py STEP 75–76), but no integer exponent set $k$ is forced
-(the per-quark exponent was a fit, removed 2026-06-16). Record: idwt.py STEP 44 and
-CLAUDE.md "GTC removed" note.
+(the per-quark exponent was a fit, removed 2026-06-16). Record: idwt.py STEP 44;
+Part 2 §11 (the up-type masses are bare counts with the confinement-binding
+correction of §11.9 — no per-quark exponent).
 
 **2026-07-04 — Two-set scan (Fedge rule: test both $n$ and $N=n-1$).** Level form of the
 beat site: $N_{k_0} = 15 = S(3,4) = S(5,2)$ — an S-image member (declared-grammar control
