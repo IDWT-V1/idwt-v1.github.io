@@ -329,9 +329,9 @@ The four quantities — mass ($m = S(n,d) \times m_{\rm scale,d}$), quantum numb
 
 The four identities that close the quadrilateral:
 
-1. **$Y_L = -\sqrt{g_{66}}$** — hypercharge is the square root of the sector coupling [needs verification against Part 3 §13 and Part 8 §2]
-2. **$g_2 = Q_u \cdot \sqrt{g_s}$** — weak coupling is the up-quark charge times the strong coupling square root [$Q_u$ and $g_s$ need definition; needs verification against Part 3]
-3. **$n_Z - n_W = q$** — a mode index gap IS a coupling-defining parameter [$q$ needs definition; needs verification]
+1. **$Y_L = -\sqrt{g_{66}} = -1/2$** — the lepton-doublet hypercharge is the square root of the sector coupling $g_{66} = 1/n_s = 1/4$, from $\mathbb{CP}^3$ complex geometry; with $N_c = 3$ it forces the full hypercharge table via anomaly cancellation (Part 3 §13)
+2. **$g_2 = Q_u \cdot \sqrt{g_s} = 0.6528$** — the weak coupling is the up-quark charge $Q_u = 2/3$ (the spin$^c$ index on $\mathbb{CP}^2$, Part 8 §2) times the square root of the strong coupling $g_s = \sqrt{2g_{44}/\pi^2}$ (Part 3 §0.7)
+3. **$n_Z - n_W = 5 = q$** — the boson mode-index gap equals the $d=4$ Dirac eigenvalue count $q = S(n_u{-}1,4) = 5$ that enters $g_{22} = p^2 q/2 = 722.5$ (Theorem S3, Part 8 §5.3), so a mode index gap IS a coupling-defining parameter
 4. **$\delta_{CP} = \pi + (N_c - 1)\theta_{13}$** — the CP phase is $\pi$ corrected by the number-of-colors minus one, times the reactor angle (T8, Part 10)
 
 Equation 4 is the cleanest expression of the unified structure: the CP phase is determined by $N_c$ (the number of quark colors, which is the Euler characteristic of the $d=4$ sector $\mathbb{CP}^2$) and by $\theta_{13}$ (which is itself determined by the mode indices $n_\tau$ and $n_\mu$ and the sector coupling $g_{55}$). Both $N_c$ and $\theta_{13}$ enter T8 through exactly the same topological/combinatorial machinery that determines every other observable in IDWT.
