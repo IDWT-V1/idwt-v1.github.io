@@ -30,7 +30,7 @@ So the particle sector rests on one mass unit ($m_e = 0.511$ MeV), the seed pair
 **P1 — The Master Field**
 $\Psi_\infty$ is a **Dirac spinor field** on the infinite-dimensional manifold $M_\infty = \mathbb{R}_t \times \Xi_\infty$. It is the only fundamental object. Everything observable — particles, fields, forces, quantum numbers — is a derived consequence of its geometry. The mass spectrum follows from the mode counting function $S(n,d) = C(n+d-1, d)$. The coupling structure of each particle — what interactions are available to it and what is geometrically forbidden — follows from the Riemannian and spinor geometry of its sector manifold. Quantum number labels are not inputs; they are outputs of the geometry.
 
-The sector space $\Xi_\infty$ contains all dimensions $d \geq 1$. The active sectors — those whose geometry supports stable bound-state eigenmodes — are $D = \{2,3,4,5,6,10\}$. Sectors $d=7$,8,9 exist as coordinates of $M_\infty$ but their geometry does not support stable eigenmodes (Rule A, §3a); sectors $d \geq 11$ are subcritical and cannot localize modes at all (Rule B, §3a). The label $\Xi_{10}$ used in earlier versions of this document referred to the highest active sector, not to a truncation of $M_\infty$.
+The sector space $\Xi_\infty$ contains all dimensions $d \geq 1$. The active sectors — those whose geometry supports stable bound-state eigenmodes — are $D = \{2,3,4,5,6,10\}$. Sectors $d=7$,8,9 exist as coordinates of $M_\infty$ but their geometry does not support stable eigenmodes (Rule A, §3a); sectors $d \geq 11$ are subcritical and cannot localize modes at all (Rule B, §3a).
 
 **Dependency structure.** In the current formulation, where the sector potential $V_d(r) = \lambda_d r^2$ is fixed by the kernel mean-field self-consistency (Part 4 §3.10) rather than derived directly from the action, the logical chain is one-directional: $M_\infty$ topology determines the active sector set $D$ (via the Gegenbauer criticality condition and Hopf fibration pairing, Part 9 T3), the sector geometries $\{M_d\}_{d\in D}$ determine the projection operators $\Pi_d$, and observables are the projected fields $\Pi_d\Psi_\infty$. Given fixed sector geometry, $S(n,d)$, $m_{\rm scale,d}$, and $g_{dd'}$ are derived quantities; they do not feed back into the determination of which $d$ are active.
 
@@ -159,13 +159,13 @@ The three-dimensional appearance is a corollary of the same coupling, not a sepa
 
 ### 2.4 Why $d=3$ Is the Observer Level — A Theorem ✅
 
-The assertion "we are at $d=3$" has not yet been justified — it has only been named. It is not a postulate. It follows from the sector structure of stable matter.
+The assertion "we are at $d=3$" has so far only been named. It follows from the sector structure of stable matter.
 
 The lightest stable composite objects in IDWT are colour-singlet baryons: the proton and neutron, built from $d=3$ (down-type) and $d=4$ (up-type) quarks. Colour confinement forces any colour-singlet composite to project out its $d=4$ $\mathbb{CP}^2$ index entirely. The Euler characteristic $\chi(\mathbb{CP}^2) = 3$ gives three colour charges ($N_c = 3$); a colour singlet is the unique combination with zero net colour charge — which means the $d=4$ $\mathbb{CP}^2$ index cancels completely from the composite. What remains is a pure $d=3$ object: a baryon is a $d=3$ excitation of $M_\infty$ with no residual $d=4$ coordinate dependence.
 
 All chemistry — every atom, every molecule — is built from such nuclei. Every macroscopic measuring device, every observer, every experimental apparatus that can exist within this theory is an assembly of $d=3$ nuclear matter. An observer constructed from $d=3$ objects measures physics at the $d=3$ coordinate level by construction: their instruments have no coordinate support in $d=4$, $d=5$, $d=6$, or $d=10$, so the physics they access is the restriction of $\Psi_\infty$ to $d=3$. No measurement protocol built from $d=3$ matter can return coordinates outside $d=3$.
 
-**The observer location is a theorem, not an input.** The question "why do we experience a three-dimensional world?" has a derivable answer within IDWT: because the stable composites that building-matter selects are $d=3$ objects by colour confinement, and any observer assembled from such matter is constrained to the $d=3$ coordinate level. The $d=3$ status of our observable space is the coordinate level forced by the lightest bound states the theory admits. ✅
+**The observer location is a theorem.** The question "why do we experience a three-dimensional world?" has a derivable answer within IDWT: because the stable composites that building-matter selects are $d=3$ objects by colour confinement, and any observer assembled from such matter is constrained to the $d=3$ coordinate level. The $d=3$ status of our observable space is the coordinate level forced by the lightest bound states the theory admits. ✅
 
 ---
 
@@ -470,7 +470,7 @@ Note: $S(n,3) = n(n+1)(n+2)/6$; the predicted masses are physical — strange ca
 
 #### $d = 4$ — Up-Type Quark Sector
 
-**Geometry.** $\mathbb{CP}^2$ (complex projective plane); local symmetry $U(2)$. Kähler structure provides $\gamma_5$ for left-handed chirality. The $l=2$ kernel scale $\varepsilon = 1/(280\sqrt{7})$ arises from the $\mathbb{CP}^2$ geometry; it is no longer applied as an up-type quark mass correction (Part 2 §11).
+**Geometry.** $\mathbb{CP}^2$ (complex projective plane); local symmetry $U(2)$. Kähler structure provides $\gamma_5$ for left-handed chirality. The $l=2$ kernel scale $\varepsilon = 1/(280\sqrt{7})$ arises from the $\mathbb{CP}^2$ geometry and enters the $\nu_3$ closure (Part 2 §9d).
 
 | Parameter | Value |
 |---|---|

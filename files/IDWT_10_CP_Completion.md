@@ -148,7 +148,7 @@ The coupling matrix element $W[e, 3]$ involves the $d=6$ (electron sector, $\mat
 
 $$\lim_{\theta_{13}\to 0^+} \frac{\partial}{\partial\theta_{13}} U_{e3}^{(real)}(\theta_{13}) < 0.$$
 
-This relative sign is explicit, not assumed. In the oscillator realization (level $n\leftrightarrow$ Hermite degree $k=n-1$), the additive tower edges $n_c=n_a+n_b$ are degree-1 condensate matrix elements $\langle\chi_{n_c}|\xi|\chi_{n_a}\chi_{n_b}\rangle$ with positive top-of-band coefficient ($+\tfrac12$), whereas $n_{\nu_3}=n_{\nu_1}+n_{\nu_2}-n_u$ is the one edge with a net degree-lowering and so carries the inclusion-exclusion (cumulant) minus sign of the shared seed $n_u$. The electron, being seed-built ($n_e=n_c-n_u-n_s$), overlaps the subtracted leg, so $W[e,3]$ inherits the minus relative to the positive additive edges (`idwt.py` STEP 41). The overall branch ($\delta\to\pi$ rather than $\delta\to 0$) remains fixed by the PDG phase convention as noted in §4.
+This relative sign is explicit. In the oscillator realization (level $n\leftrightarrow$ Hermite degree $k=n-1$), the additive tower edges $n_c=n_a+n_b$ are degree-1 condensate matrix elements $\langle\chi_{n_c}|\xi|\chi_{n_a}\chi_{n_b}\rangle$ with positive top-of-band coefficient ($+\tfrac12$), whereas $n_{\nu_3}=n_{\nu_1}+n_{\nu_2}-n_u$ is the one edge with a net degree-lowering and so carries the inclusion-exclusion (cumulant) minus sign of the shared seed $n_u$. The electron, being seed-built ($n_e=n_c-n_u-n_s$), overlaps the subtracted leg, so $W[e,3]$ inherits the minus relative to the positive additive edges (`idwt.py` STEP 41). The overall branch ($\delta\to\pi$ rather than $\delta\to 0$) remains fixed by the PDG phase convention as noted in §4.
 
 A negative real perturbation to $U_{e3}$, combined with the PDG convention $U_{e3} = \sin\theta_{13}\,e^{-i\delta}$, gives:
 
@@ -270,7 +270,7 @@ This is the structural origin of the tree-level result $\rho = \eta = 0$ (Part 5
 
 The observed quark CP violation, $J_{\mathrm{CKM}} \approx 3\times10^{-5}$, is therefore necessarily a subleading effect, coming from the holomorphic-versus-real mismatch in the kernel overlap between $\mathbb{CP}^2$ up-modes and $S^3$ down-modes. Writing the explicit $\mathbb{CP}^2$ holomorphic $\mathcal{O}(k)$ up-sections and real $S^3$ down-harmonics in shared Hopf coordinates (2026-06-24; `files/idwt.py` STEP 6) yields three derived results:
 
-(i) **Charge selection (derived):** The kernel $(\xi_3\cdot\xi_4)^2$ carries Hopf charge $\in\{-2,0,+2\}$; a chiral $\mathcal{O}(k)$ up-mode overlaps a real $S^3$ down-mode only if $k\le 2$. Only $u$ ($k=2$) couples; $c,t$ ($k=19,71$) give exactly zero. The quark CP phase sits on $V_{ub}$ alone — derived from first principles, confirming a previously asserted localization.
+(i) **Charge selection (derived):** The kernel $(\xi_3\cdot\xi_4)^2$ carries Hopf charge $\in\{-2,0,+2\}$; a chiral $\mathcal{O}(k)$ up-mode overlaps a real $S^3$ down-mode only if $k\le 2$. Only $u$ ($k=2$) couples; $c,t$ ($k=19,71$) give exactly zero. The quark CP phase sits on $V_{ub}$ alone — derived from first principles.
 
 (ii) **Factorization theorem (derived):** All clean holomorphic-versus-real single-frequency overlaps are real ($\arg\in\{0,\pi\}$) and factorize, giving $J=0$ from those alone. The sole non-factorizable source is the $b$-quark beat at $n=16$: $Y_b=Y_{L1}+e^{i\chi}Y_{L2}$ with a continuous internal phase $\chi$.
 

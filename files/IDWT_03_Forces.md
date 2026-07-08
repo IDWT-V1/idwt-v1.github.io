@@ -324,7 +324,7 @@ $$G = \mathrm{SU}(3)\times U(2)$$
 
 Given the three-dimensional colour space identified from $\chi(\mathbb{CP}^2) = 3$ (§2):
 
-1. Physical observables depend on $|\Psi_\infty|^2$ — invariance under local colour rotations $U(x)\in\mathrm{SU}(3)$ is a **consistency requirement**, not a postulate
+1. Physical observables depend on $|\Psi_\infty|^2$ — invariance under local colour rotations $U(x)\in\mathrm{SU}(3)$ is a **consistency requirement**
 2. Local invariance forces a connection: $D_\mu\Theta = \partial_\mu\Theta + i[A_\mu, \Theta]$
 3. The commutator $[D_\mu, D_\nu]\Theta = i[F_{\mu\nu}, \Theta]$ gives the colour connection curvature:
 

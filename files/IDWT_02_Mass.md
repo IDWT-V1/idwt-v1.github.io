@@ -71,7 +71,7 @@ $$\binom{m}{r}_q = q^r\binom{m-1}{r}_q + \binom{m-1}{r-1}_q,$$
 
 the exact $q$-lift of the hockey-stick identity $S(n,d)=S(n,d-1)+S(n-1,d)$. Setting $S_q(n,d) = \binom{n+d-1}{d}_q$, the coefficient of $q^t$ counts mode configurations with $t$ inversions — the area under the lattice path that builds the hockey-stick sum. This gives a one-parameter family of spectra collapsing to the IDWT spectrum at $q\to1$; at $q\neq1$ it tracks the nesting depth of a mode within the sector lattice. Since the generation laws $S(n,d)=S(n,d-1)+S(n-1,d)$ hold identically at the $q$-deformed level (q-Pascal is exact), the tower structure is preserved for all $q$. The $q$-deformation supplies a built-in spectral regularisation without adding free parameters beyond $q$, and the hook-content formula provides a closed product for the $q$-weight of each mode without gamma functions. The inversion count giving the $q$-exponent of each mode equals the braid distance between modes in the permutohedron (vertices of the permutohedron at weak-order distance $n-1$ from the identity number $S(n,d)$), so $q$-weights can be computed by counting shortest paths in the permutohedron rather than evaluating polynomials.
 
-⭐ **Root systems of type $A_d$ — Kostant partition function.** The positive roots of $A_d$ are $e_i - e_j$ for $1 \leq i < j \leq d+1$. The number of ways to write a weight of total height $n-1$ as a nonneg­ative sum of simple roots is $S(n,d)$ — the hockey-stick identity is the Kostant partition function for $A_d$. Each IDWT mode $(n,d)$ is thus a weight in the $A_d$ root lattice, and the Weyl group $S_{d+1}$ acts by permuting the $d+1$ sector coordinates, giving the symmetry of $S(n,d)$ in the sector labels as a consequence of Weyl symmetry rather than an assumption. The Kostant multiplicity formula supplies closed-form expressions for mode degeneracies, and the Weyl character formula gives their generating function — both without new parameters.
+⭐ **Representation theory of type $A_d$ — symmetric powers.** $S(n,d) = \binom{n+d-1}{d} = \dim \mathrm{Sym}^{n-1}(\mathbb{C}^{d+1})$: the mode count at level $n$ is the dimension of the $(n{-}1)$-th symmetric power of the defining representation of $A_d = \mathfrak{su}(d+1)$. Each IDWT mode at level $n$ corresponds to a weight of that representation — a degree-$(n{-}1)$ monomial in the $d+1$ homogeneous sector coordinates — and the Weyl group $S_{d+1}$ acts by permuting the coordinates, giving the permutation symmetry of the count as a consequence of Weyl symmetry. The character of $\mathrm{Sym}^{n-1}$ (Weyl character formula) is $\prod_{i=1}^{d+1}(1-x_i t)^{-1}$ in generating-function form, which at $x_i = 1$ reduces to the sector series $1/(1-t)^{d+1}$ with $[t^{n-1}]$-coefficient $S(n,d)$ (Part 9 T1).
 
 ⭐ **Ferrers diagram depth — structural box-count sequence from $n_u$.** Each IDWT mode $(n,d)$ corresponds to a Ferrers diagram fitting inside a $d\times(n-1)$ rectangle, and $S(n,d)$ counts the number of such diagrams. The minimal box-count from the seed diagram yields a natural depth sequence for the up-type quarks:
 
@@ -743,9 +743,9 @@ $$m_{\rm scale,2} = m_e\times\sqrt{g_{22}/g_{66}} = m_e\times\sqrt{722.5/0.25} =
 
 The raw mass formula $m(n,d) = m_{\rm scale,d} \times S(n,d)$ reproduces the spectrum within most sectors, but in the **$d=4$ up-type quark sector** the bare count overshoots, growing with generation: up +0.77%, charm +0.93%, top +2.20% vs PDG 2024. The overshoot is colour-field binding energy — the energy locked in the confining field that a free-quark count would wrongly assign to the quark's inertial mass. The confinement-binding correction of §11.9 reduces all five quarks to within ±1σ of PDG 2024 statistical errors.
 
-### 11.1 The l=2 self-energy (former candidate, withdrawn)
+### 11.1 The l=2 kernel decomposition
 
-The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part. The l=2 second-order self-energy was once a candidate for the up-type overshoot — correct sign, growing with the mode index — but its $n$-shape did not match the measured up-type masses, so it has been withdrawn. The operative up-type correction is the confinement-binding deficit of §11.9, which brings all five quarks within ±1σ of PDG 2024. (The l=2 scale $\varepsilon = 1/(280\sqrt{7})$ is retained for the separate $\nu_3$ closure, §9d.)
+The cross-sector kernel `(ξ_d · ξ_{d'})²` decomposes into an l=0 scalar part, which sets the sector mass scale, and an l=2 traceless tensor part, whose scale $\varepsilon = 1/(280\sqrt{7})$ is derived in §11.2 and enters the $\nu_3$ closure (§9d). The up-type correction is the confinement-binding deficit of §11.9, which brings all five quarks within ±1σ of PDG 2024.
 
 ### 11.2 Derivation of $\varepsilon$ (used in the $\delta_{\nu_3}$ closure)
 
@@ -769,9 +769,9 @@ $\varepsilon$ is fully derived from kernel geometry and seed combinatorics — n
 
 Cross-check from c/u and t/u mass ratios: $\varepsilon \approx 0.001340$ (inferred from PDG). Derived value: 0.001350. Gap: 0.74% — within PDG light-quark uncertainties.
 
-### 11.4 Open item
+### 11.4 Summary
 
-The confinement-binding correction is derived and applied in §11.9, bringing all five quarks within ±1σ of PDG 2024 statistical errors; the bare combinatorial counts are recorded in §11.5. The $\ell=2$ kernel self-energy (§11.1) was a candidate but is withdrawn (wrong $n$-shape). The residual after the §11.9 correction is recorded there.
+The confinement-binding correction is derived and applied in §11.9, bringing all five quarks within ±1σ of PDG 2024 statistical errors; the bare combinatorial counts are recorded in §11.5. The residual after the §11.9 correction is recorded there.
 
 ### 11.5 Results (bare masses)
 
@@ -836,7 +836,7 @@ $$N_b(d{=}4) = \frac{\lambda_c}{2N_c\,m_{\rm scale,4}} = \frac{\Lambda}{4\,m_{\r
 
 with $\Lambda = N_c f_\pi$ the confinement scale and $\lambda_c = N_c^2 f_\pi/2$ the colour energy coefficient (STEP 63). The coefficient $2N_c$ is the colour count times the $|\Delta N_{\rm vec}|=2$ colour-flip unit; equivalently the colour-well depth is $N_b\,m_{\rm scale,4} = \Lambda/4 = (n_u/n_s)\,f_\pi \approx 70.5$ MeV. This is $m_e$-free, introduces no new input, and reproduces the within-margin value to $0.4\%$.
 
-The $d=3$ quarks (down, strange) carry the **same** coefficient: their colour is inherited from $d=4$ through the $S^1\!\to S^5\!\to\mathbb{CP}^2$ Hopf map — the binding colour lives in $\mathbb{CP}^2$ — so the per-state deficit is the one derived $d=4$ value, applied universally with no per-sector fit. Strange ($\langle k\rangle = 2.25$) is then a genuine prediction, $93.96$ MeV ($+0.49\%$, $+0.6\sigma$); down ($\langle k\rangle = 0$) is unshifted. (An earlier version anchored $x_e(d{=}3)$ on the strange datum; removing that anchor turns strange from a fit into a genuine prediction, at no cost to the other quarks.)
+The $d=3$ quarks (down, strange) carry the **same** coefficient: their colour is inherited from $d=4$ through the $S^1\!\to S^5\!\to\mathbb{CP}^2$ Hopf map — the binding colour lives in $\mathbb{CP}^2$ — so the per-state deficit is the one derived $d=4$ value, applied universally with no per-sector fit. Strange ($\langle k\rangle = 2.25$) is then a genuine prediction, $93.96$ MeV ($+0.49\%$, $+0.6\sigma$); down ($\langle k\rangle = 0$) is unshifted.
 
 **Corrected masses.** (`files/idwt.py` STEP 127; PDG 2024 pole masses)
 
