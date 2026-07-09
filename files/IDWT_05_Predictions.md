@@ -228,7 +228,7 @@ The bare $d=4$ count $S(n,4)\,m_{\rm scale,4}$ — the parameter-free free-quark
 | c | 20 | 1277.3 MeV | $+0.34\%$ ($+0.9\sigma$) |
 | t | 72 | 172,500 MeV | $-0.04\%$ ($-0.2\sigma$) |
 
-The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). The physical top/charm ratio $m_t/m_c=135.0$ matches the conventional top/charm ratio to $\sim0.4\%$; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is itself of open origin (§11.7).
+The parameter-free bare counts ($u$ 2.177, $c$ 1284.9, $t$ 176{,}365 MeV) are recorded in Part 2 §11.5. The correction $M_{\rm phys}=M_{\rm bare}(1-x_e\langle k\rangle)$ is linear in the mean level $\langle k\rangle$ and applies to the coloured $d=3,4$ sectors only, with the $d=4$ occupation $N_b(4)$ derived (Part 2 §11.9, 🔶). The physical top/charm ratio $m_t/m_c=135.0$ matches the conventional top/charm ratio to $\sim0.4\%$; the top index $72$ (a product form $N_c\,n_s\,N_f$, off the additive tower) is selected by the electroweak spectral closure — the unique integer at the EW channel's subscription boundary (`files/idwt.py` STEP 141, 🔶).
 
 🔶 **Nucleon static properties** (Dirac spin-orbit structure of the $d=3$ sector, Part 8 §10)
 
