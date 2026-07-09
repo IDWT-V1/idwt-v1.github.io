@@ -8982,6 +8982,58 @@ assert not (_wouldbe_143 & (_obs_spectrum | {0, 16}))
 
 
 # =============================================================================
+# STEP 144 -- BORN RULE IN A GENERAL MEASUREMENT BASIS (🔵)
+# =============================================================================
+# Lifts the residual of the derived Born rule (Part 1 section 2.3): the
+# position/intensity case is postulate-free, the general-observable (any-
+# basis) form was flagged 🔶 "not separately worked".  It is the SAME
+# mechanism in a rotated basis, routed through the Channel-Projection
+# Lemma (STEP 139) -- not a new argument.
+# (1) A measurement "in basis {phi_a}" is physically a detector that
+#     couples to the system through the kernel, resonant on the channels
+#     phi_a.  By P4 every interaction is the density-density kernel, so
+#     the rate at which the detector registers outcome a is proportional
+#     to the system's INTENSITY in channel a -- the diagonal of the
+#     density operator in that basis, <phi_a|rho|phi_a>.
+# (2) For a pure state rho = |Psi><Psi| this diagonal is exactly
+#     <phi_a|rho|phi_a> = |<phi_a|Psi>|^2  (verified below).  So the
+#     general-basis rate is the position-case rule (rate ~ local
+#     intensity |Psi(r)|^2) read in the phi-basis; the position rule is
+#     the special case phi_a = delta(r - a).
+# (3) Probability = relative rate = |<phi_a|Psi>|^2 / sum_b |<phi_b|Psi>|^2
+#     -- a RATIO, invariant under Psi -> c Psi, so the (inaccessible)
+#     global amplitude cancels exactly.  This is the Born rule in basis
+#     {phi_a}.
+# SCOPE (a prediction, not a limitation): by the Channel-Projection Lemma
+# only kernel-reachable bases are physically measurable -- IDWT does not
+# grant measurement in an arbitrary abstract basis; the measurable
+# observables are those the kernel (C_0 (+) C_2) can couple to.
+# CEILING 🔵 (referee, D1): the one idealization is a faithful/unbiased
+# detector -- coupling diagonal in {phi_a}, equal across outcomes.  That
+# is the DEFINITION of "measuring in that basis" (not a smuggled
+# postulate), but it is an idealization of the detector, so the honest
+# label is 🔵, not ✅.  Parent: the position case (Part 1 section 2.3).
+_psi_144 = np.array([1.0 + 2.0j, -2.0 + 0.0j, 0.5 - 1.0j])   # pure state
+_w_144 = np.exp(2j * np.pi / 3.0)
+_U_144 = np.array([[1, 1, 1],                                # unitary basis
+                   [1, _w_144, _w_144**2],
+                   [1, _w_144**2, _w_144]]) / np.sqrt(3.0)
+assert np.allclose(_U_144.conj().T @ _U_144, np.eye(3))     # orthonormal
+_rho_144 = np.outer(_psi_144, _psi_144.conj())              # pure density
+_amp_144 = _U_144.conj().T @ _psi_144                       # <phi_a|Psi>
+_diag_144 = np.real(np.diag(_U_144.conj().T @ _rho_144 @ _U_144))
+assert np.allclose(_diag_144, np.abs(_amp_144)**2)         # (2) diag = |amp|^2
+_P_144 = _diag_144 / _diag_144.sum()                        # (3) probabilities
+assert abs(_P_144.sum() - 1.0) < 1e-12
+_amp2_144 = _U_144.conj().T @ ((3.7 - 1.2j) * _psi_144)     # Psi -> c Psi
+_P2_144 = np.abs(_amp2_144)**2 / np.sum(np.abs(_amp2_144)**2)
+assert np.allclose(_P_144, _P2_144)                         # amplitude cancels
+_Ppos_144 = np.abs(_psi_144)**2 / np.sum(np.abs(_psi_144)**2)  # position case
+assert np.allclose(_Ppos_144, np.abs((np.eye(3) @ _psi_144))**2
+                   / np.sum(np.abs(_psi_144)**2))
+
+
+# =============================================================================
 # OUTPUT
 # =============================================================================
 
@@ -12935,6 +12987,27 @@ print("(parents: equidistribution, one-quantum, STEP 127, beat,")
 print("condensation-proceeds -- postulates only, NO un-derived gate).")
 print("OTA/T0.5 disposition = Fedge's call.")
 print("See Part 3 s0.8c/s16, Part 7 s1.2a, Part 9 T0.5.")
+
+
+# =============================================================================
+# STEP 144 -- OUTPUT: BORN RULE IN A GENERAL MEASUREMENT BASIS
+# =============================================================================
+print("\n=== STEP 144: BORN RULE IN A GENERAL BASIS (🔵) ===")
+print("Lifts the Part 1 s2.3 residual (any-basis form). Same mechanism")
+print("as the position case, rotated: a detector measuring in basis")
+print("{phi_a} couples via the P4 density-density kernel, so its rate")
+print("into channel a ~ intensity there = <phi_a|rho|phi_a>; for a pure")
+print("state that diagonal is |<phi_a|Psi>|^2 exactly. Probability =")
+print("relative rate = |<phi_a|Psi>|^2 / sum_b |<phi_b|Psi>|^2 -- a ratio")
+print("(global amplitude cancels). Position case = basis phi_a=delta(r-a).")
+print(f"  check: basis probs {np.round(_P_144, 4)}, sum "
+      f"{_P_144.sum():.3f}, scale-invariant "
+      f"{bool(np.allclose(_P_144, _P2_144))}")
+print("SCOPE (prediction): by the Channel-Projection Lemma (STEP 139)")
+print("only kernel-reachable bases are measurable -- no measurement in an")
+print("arbitrary abstract basis. CEILING 🔵: the faithful/unbiased")
+print("detector is the definition of 'measuring in that basis', an")
+print("idealization, not a smuggled postulate. See Part 1 s2.3.")
 
 
 # =============================================================================

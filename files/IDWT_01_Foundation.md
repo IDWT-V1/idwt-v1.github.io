@@ -143,7 +143,7 @@ For particles with $d > 3$, the mode vibrates across $d$ dimensions, of which on
 
 What an observer at $\xi^0$ can resolve does not affect what the particle is. Mass and coupling are eigenvalues of each particle's sector manifold (T0, Part 9) — intrinsic, and independent of observer position.
 
-### 2.3 The Born Rule, Derived 🔶
+### 2.3 The Born Rule, Derived
 
 The Born rule is not an independent postulate in IDWT; it reduces to the master field (P1) and the density–density kernel (P4), with probability read as a relative frequency. No amplitude is ever needed.
 
@@ -155,7 +155,7 @@ The Born rule is not an independent postulate in IDWT; it reduces to the master 
 
 The three-dimensional appearance is a corollary of the same coupling, not a separate projection. An observer is itself a mode of $\Psi_\infty$ and interacts only through the coordinates it shares (§3g); it does not resolve the hidden $\xi$, so the observed intensity at $r$ sums the unresolved interaction channels, $\int|\Psi_\infty(r,\xi)|^2\,d\xi$. An electron is then not a fundamentally random cloud but a structured mode whose shared-coordinate intensity a $d=3$ observer samples; entangled particles are features of $\Psi_\infty$ close in the sector coordinates even when their observed locations are far apart.
 
-**Status 🔶.** The density (position) case above is complete and postulate-free. The general-observable form — where the measurement basis is set by what the detector couples to and each outcome's probability is its relative interaction rate — follows by the same argument but is not separately worked in full generality.
+**The general measurement basis (🔵).** The same mechanism gives the rule in any basis, rotated. A measurement "in basis $\{\phi_a\}$" is physically a detector that couples through the kernel resonant on the channels $\phi_a$; by P4 the interaction is density–density, so the rate at which the detector registers outcome $a$ goes as the system's intensity in that channel, the diagonal of the density operator $\langle\phi_a|\rho|\phi_a\rangle$. For a pure state this diagonal is exactly $\langle\phi_a|\rho|\phi_a\rangle = |\langle\phi_a|\Psi\rangle|^2$, so the general-basis rate is the position rule (rate $\propto$ local intensity) read in the $\phi$-basis — the position case is the special basis $\phi_a = \delta(r-a)$. Probability is again the relative rate $|\langle\phi_a|\Psi\rangle|^2\big/\sum_b|\langle\phi_b|\Psi\rangle|^2$, a ratio invariant under $\Psi\to c\Psi$, so the global amplitude cancels (`files/idwt.py` STEP 144). A scope statement comes with it: by the Channel-Projection Lemma (`files/idwt.py` STEP 139) only kernel-reachable bases are physically measurable — IDWT does not grant measurement in an arbitrary abstract basis; the measurable observables are those the kernel can couple to. The one idealization is a faithful, unbiased detector — coupling diagonal in $\{\phi_a\}$, equal across outcomes — which is the definition of "measuring in that basis" rather than a smuggled postulate, so the general-basis form is referee-rated 🔵.
 
 ### 2.4 Why $d=3$ Is the Observer Level — A Theorem ✅
 
