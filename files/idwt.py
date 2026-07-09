@@ -7975,6 +7975,18 @@ assert _resid_top_charm_126 > 1.0  # d=4 worst (~1.25%)
 # lives in CP^2 (d=4), so d=3 quarks take the SAME derived d=4 deficit x_e. The
 # correction is UNIVERSAL across coloured quarks (one x_e for d=3 and d=4), and
 # strange becomes a genuine prediction (+0.49%, +0.6 sigma), not an anchor.
+# A3 lift attempt (2026-07-08): the COUNT structure is genuine and
+# non-circular -- N_b = (well depth Lambda/4)/(base quantum m_scale4),
+# both ingredients independent of N_b.  But it does NOT cleanly lift:
+# (i) the specific depth Lambda/4 = lambda_c/(2 N_c) rests on the
+# "2 N_c = colour count x colour-flip unit 2" identification (a reading
+# of the colour energy law E=lambda_c|N_vec|, STEP 63), not a cavity-
+# spectrum derivation; (ii) N_b ~ 486 is the depth measured in units of
+# the base quantum m_scale4, NOT a literal count of the sector levels
+# (whose energies are m_scale4*S(n,4), growing ~n^4, so only ~9 sit
+# below Lambda/4).  Stays 🔶; the softening x_e=3/(16 N_b) is separately
+# derived two ways (Part 2 sec 11.9).  Residual: derive the per-quark
+# well depth lambda_c/(2 N_c) as the unique cavity depth.
 # (Fedge 2026-06-29: same correction for all quarks; strange-anchor removed.)
 # Colour-silent sectors (d=2,6,10) get no correction. (STEP 126; STEP 123;
 # STEP 63; has_SU3; Part 2 sec 11.9.)
@@ -8647,6 +8659,16 @@ assert _chan_131[3] == {0, 2}                   # the d=3 kernel channel
 # STATUS 🔶: baseline exact, factors derived, but the ASSIGNMENT of
 # powers to isospin channels is data-selected from the declared grid,
 # not forced.  Residual: derive the per-channel reduction powers.
+# SHARPENED (2026-07-08, B3 lift attempt): the ISOVECTOR one-power IS
+# forced -- the isovector M1 is a single-quark spin flip, the leading
+# Dirac moment ~ Q/2E, exactly one relativistic reduction m/E.  The
+# ISOSCALAR two-power is NOT forced: the SU(6) baseline isoscalar
+# (mu_p + mu_n = 1) is nonzero, so it carries a spin-magnetic part that
+# power-counting assigns ONE factor; a pure (m/E)^2 needs the
+# spin-isoscalar to cancel, which SU(6) does not make exact.  The
+# competing uniform-one-power reading gives mu_p +1.28%, mu_n -1.43%
+# (data prefers the winner), but the isoscalar second power stays
+# data-selected.  Residual narrowed to the ISOSCALAR power alone.
 
 _mE_140 = _Fr41(33, 35)
 _mup_140 = (5*_mE_140 + _mE_140**2) / 2

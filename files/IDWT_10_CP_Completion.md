@@ -288,7 +288,7 @@ The following table consolidates the full theorem status after the T8 completion
 
 | Theorem | Content | Status | Accuracy | Physical consequence |
 |---|---|---|---|---|
-| T0 | Physical mass spectrum of operator $D$ | 🔶 | — | All SM masses from one classical operator on $M_\infty$; 7 open items (Part 9) |
+| T0 | Physical mass spectrum of operator $D$ | 🔶 | — | All SM masses from one classical operator on $M_\infty$; genuine residual = the full $d\to\infty$ operator. Finite-active facts established (self-adjoint, discrete internal spectrum, summability $\tfrac12$; the sector spinor-reality structure is Part 8 §2); the Fredholm/regularity items are borrowed NCG bookkeeping, not IDWT claims (Part 9 T0 Note) |
 | T0.5 | Co-fixed-point selection condition | 🔶 | Exact outcomes | Selects the 11-mode lattice (photon + hockey-stick fermions); the 2 product-form quarks {16,72} and the EW $g$-chain {76,81,95} are tiers 2–3 (Part 9 T0.5 scope); decoherence mechanism not yet derived from EOM |
 | T1 | $m = S(n,d)\cdot m_{\rm scale}$ = Hilbert series | ✅ | Exact | Mass = IDOS; inflation rule |
 | T2 | $(\xi\cdot\xi')^2$ = unique kernel | ✅ | Exact | Forces rank-1 couplings and the $\ell=2$ self-energy scale $\varepsilon$ |
@@ -314,7 +314,7 @@ The following table consolidates the full theorem status after the T8 completion
 **Count:**
 - ✅ Proved: 17 items
 - 🔵 Numerically verified (derivation complete): 2 items (T6 and T7)
-- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: 7 open items on the operator $D$ (Part 9); T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
+- 🔶 Structural derivation complete, technical gaps open: 3 items (T0: the full $d\to\infty$ operator $D$ — the finite-active operator's spectral facts are established, Part 9 T0 Note; T8: $\delta_{CP}$ formula with three derivation gaps; $G_N$: $G_\infty$ absolute scale a second dimensional input, not derived)
 - □ Open: 0 items
 
 The open 🔶 physics items — the full $d\to\infty$ operator $D$ of T0 and the absolute gravitational scale $G_\infty$ (a second dimensional input, hence $G_N = G_\infty/(4\pi)$) — do not affect the derived particle masses, coupling constants, or mixing angles, which follow from the algebraic sector structure. T8 ($\delta_{CP}$) is a structural derivation with three technical gaps noted in §4.
