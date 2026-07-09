@@ -311,7 +311,7 @@ All three hold exactly from seeds; no other site in any sector satisfies all thr
 
 $$m_b = \sqrt{S(16,3)\times S(17,3)}\times m_{\rm scale,3} = \sqrt{816\times969}\times 4.7019\ \text{MeV} = 4{,}181\ \text{MeV} \quad(-0.05\%\text{ vs PDG }4{,}183\pm7\ \text{MeV})$$
 
-🔶 This dimensional argument fixes the geometric mean; a closed derivation from the quartic kernel eigenvalue problem remains open.
+🔶 This dimensional argument fixes the geometric mean; a closed derivation from the quartic kernel eigenvalue problem remains open. The *site* $k_0=16$ is fixed by the three exact seed-algebra coincidences above, not by a dynamical resonance: a parametric-resonance (Floquet) scan of the $d=3$ tower shows the mode dynamics — the Jacobi coupling $b_n=\sqrt{n(n+2)}/(2n+1)\to\tfrac12$ and the nearest-neighbour beat coupling — vary smoothly and monotonically through $n=16$ with no peak or threshold crossing there (and the Gegenbauer-critical role of $16$, via $4k_0=(d-2)^2$, belongs to $d=10$, a distinct role). So the open part is purely the dynamical mechanism — why a two-mode beat forms and why the geometric-mean combination — which is the same condensation-dynamics (EOM) question as the selection program, not a Floquet resonance the tower singles out.
 
 ### 8a. Composite Hadron Masses from the Beat Structure
 
