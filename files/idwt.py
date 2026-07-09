@@ -8174,6 +8174,18 @@ assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
 # is the same ratio across sectors (STEP 136 |V_ub|: a d=4 source count
 # over a d=3 destination count); g_22 = p^2 q/2 is its multiplicative
 # form (a d=3 count squared times a d=4 count, STEP 2d Tr[1] product).
+# SHARPENED RESIDUAL (2026-07-08): the premise is precisely that the mode
+# presents to the kernel as an ANGULAR-DELTA (equivalently Haar-flat)
+# source on the sector manifold -- only then is the norm equal per state
+# (the addition theorem is exact ONLY in the delta limit; a finite
+# angular width makes the per-state weight decay in the harmonic degree).
+# This is NOT supplied by STEP 121, which bounds the RADIAL/physical size,
+# a distinct property: the two proposed lift routes both fail -- the
+# harmonic-well ground state is isotropic (pure l=0, the OPPOSITE of a
+# delta), and a CLOSED (commensurate) orbit is a measure-zero curve, not
+# Haar-equidistributed (Haar would need incommensurate frequencies,
+# contradicting the committed closed-orbit ontology).  Stays 🔶; a lift
+# needs a genuinely new mechanism delivering angular-delta presentation.
 
 def _geg_131(k, a):
     """Gegenbauer C_k^a coefficient list (Fractions), exact recurrence."""
