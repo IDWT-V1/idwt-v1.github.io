@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The hockey-stick number S(n,d) lives in even deeper mathematical structures: order complexes, RSK correspondence, A_d root systems, and the binomial Hopf algebra. Each provides powerful theorems for the IDWT generation tower.">
-<meta name="keywords" content="IDWT, order complex, RSK, root systems, binomial Hopf algebra, combinatorial geometry">
+<meta name="description" content="The hockey-stick number S(n,d) lives in even deeper mathematical structures: Ehrhart lattice polytopes, RSK correspondence, A_d root systems, and the binomial Hopf algebra. Each provides powerful theorems for the IDWT generation tower.">
+<meta name="keywords" content="IDWT, Ehrhart polynomial, RSK, root systems, binomial Hopf algebra, combinatorial geometry">
 <meta name="author" content="Fedge No">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fedgeno.github.io/articles/deeper-floors.html">
 <meta property="og:title" content="Deeper Floors of the Binomial Lattice">
-<meta property="og:description" content="S(n,d) lives in order complexes, RSK tableaux, A_d root systems, and the binomial Hopf algebra.">
+<meta property="og:description" content="S(n,d) lives in Ehrhart lattice polytopes, RSK tableaux, A_d root systems, and the binomial Hopf algebra.">
 <meta property="og:image" content="https://fedgeno.github.io/styles/idwt_logo_concentric_waves.png">
 <meta property="og:image:width" content="2000">
 <meta property="og:image:height" content="2000">
@@ -31,7 +31,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "name": "Deeper Floors of the Binomial Lattice",
-  "description": "The hockey-stick number S(n,d) lives in even deeper mathematical structures: order complexes, RSK correspondence, A_d root systems, and the binomial Hopf algebra. Each provides powerful theorems for the IDWT generation tower.",
+  "description": "The hockey-stick number S(n,d) lives in even deeper mathematical structures: Ehrhart lattice polytopes, RSK correspondence, A_d root systems, and the binomial Hopf algebra. Each provides powerful theorems for the IDWT generation tower.",
   "url": "https://fedgeno.github.io/articles/deeper-floors.html",
   "author": {
     "@type": "Person",
@@ -53,7 +53,7 @@
     "width": 2000,
     "height": 2000
   },
-  "keywords": "IDWT, order complex, RSK, root systems, binomial Hopf algebra, combinatorial geometry",
+  "keywords": "IDWT, Ehrhart polynomial, RSK, root systems, binomial Hopf algebra, combinatorial geometry",
   "isPartOf": {
     "@type": "WebSite",
     "name": "IDWT — Infinite-Dimensional Wave Theory",
@@ -82,16 +82,16 @@
 <header class="page-hero">
   <div class="eyebrow">Article · Foundations</div>
   <h1>Deeper Floors of the Binomial Lattice</h1>
-  <p class="sub">We have pressed the hockey-stick number \(S(n,d)\) through many floors of combinatorics. Below them lie still richer structures — topological order complexes, RSK tableaux, \(A_d\) root systems, and the binomial Hopf algebra — each supplying clean theorems for the generation tower and mass spectrum.</p>
+  <p class="sub">We have pressed the hockey-stick number \(S(n,d)\) through many floors of combinatorics. Below them lie still richer structures — Ehrhart lattice polytopes, RSK tableaux, \(A_d\) root systems, and the binomial Hopf algebra — each supplying clean theorems for the generation tower and mass spectrum.</p>
 </header>
 
 <main>
 <section>
 
-  <h2>Order complexes — spherical topology</h2>
+  <h2>Lattice polytopes — the Ehrhart floor</h2>
   <div class="prose">
-    <p>The poset of weak compositions has an order complex homeomorphic to a \((d-1)\)-sphere, with \(S(n,d)\) facets. The generation tower therefore triangulates a sphere.</p>
-    <p>This explains the trivial automorphism group (spheres have highly constrained symmetries) and the absence of loops in decay chains via vanishing higher Betti numbers.</p>
+    <p>\(S(n,d) = \binom{n+d-1}{d}\) is the Ehrhart polynomial of the standard \(d\)-simplex: it counts the lattice points in the \((n-1)\)-fold dilation. The simplex's \(h^*\)-vector is \((1,0,\dots,0)\) — the cleanest possible — which is exactly why the mass formula is so rigid: any deformation of \(S(n,d)\) that drives \(h^*\) negative exits the world of lattice polytopes, and the hockey-stick identity, the Pieri rule, and the integrality of mode counts all break at once.</p>
+    <p>The trivial automorphism group of the tower has a geometric home too: the tower DAG is the Bruhat order on Schubert cells of a Grassmannian, and that order admits no non-trivial order-preserving automorphisms.</p>
   </div>
 
 </section>
@@ -101,7 +101,7 @@
   <h2>RSK correspondence and fusion rules</h2>
   <div class="prose">
     <p>\(S(n,d)\) counts semistandard Young tableaux of shape \((n-1)\) with entries \(\le d+1\). The Robinson–Schensted–Knuth algorithm gives a deterministic combinatorial fusion rule for combining modes.</p>
-    <p>The \(5+6=11\) collision is revealed as the natural Pieri rule acting on tableaux — geometrically expected rather than accidental.</p>
+    <p>Inserting the word for one mode into another mode's tableau via RSK yields the fused mode's tableau, with the resulting shape identifying the landing sector — no Clebsch–Gordan coefficients. The \(\rho\)-meson index \(n_\rho = n_s + n_u + 2n_d = 9\) is the weight of the tableau obtained by fusing the constituent seed words: the Pieri rule for tableaux, forced by the same seed algebra that fixes \(n_s = 4\).</p>
   </div>
 
 </section>
@@ -110,8 +110,8 @@
 
   <h2>Root systems of type \(A_d\)</h2>
   <div class="prose">
-    <p>Each mode corresponds to a weight in the \(A_d\) root lattice. The hockey-stick recursion is the Kostant partition function. The Weyl group \(S_{d+1}\) explains the observed symmetry across sectors.</p>
-    <p>The full Lie-theoretic toolkit (Weyl character formula, Kostant multiplicity) now becomes available for degeneracies and generating functions.</p>
+    <p>\(S(n,d) = \dim \mathrm{Sym}^{n-1}(\mathbb{C}^{d+1})\): the mode count at level \(n\) is the dimension of the \((n-1)\)-th symmetric power of the defining representation of \(A_d = \mathfrak{su}(d+1)\). Each mode corresponds to a weight of that representation — a degree-\((n-1)\) monomial in the \(d+1\) sector coordinates — and the Weyl group \(S_{d+1}\), permuting the coordinates, supplies the observed symmetry of the count.</p>
+    <p>The Weyl character formula gives the generating function \(\prod_i (1-x_i t)^{-1}\), which at \(x_i = 1\) reduces to the sector series \(1/(1-t)^{d+1}\) whose \(t^{n-1}\) coefficient is \(S(n,d)\).</p>
   </div>
 
 </section>
@@ -121,7 +121,7 @@
   <h2>The binomial Hopf algebra</h2>
   <div class="prose">
     <p>The divided-power Hopf algebra with basis \(x_{n,d}\) has structure constants given by the hockey-stick numbers. Its antipode yields the algebraic inverse of the mass law via signed Möbius inversion.</p>
-    <p>This gives a closed-form, search-free inverse and explains the lack of preferred direction in the generation graph via cocommutativity.</p>
+    <p>This gives a closed-form, search-free inverse: cocommutativity makes forward and backward traversal of the hockey-stick lattice algebraically equivalent. The tower's own direction is dynamical — operand dependency in the condensation order — not algebraic.</p>
   </div>
 
 </section>

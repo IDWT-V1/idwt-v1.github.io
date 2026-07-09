@@ -209,7 +209,7 @@ Verification ($N=32$): $\sum_{k=0}^{32} C(k+2,2) \times C(32-k+2,2) = 435{,}897 
 
 $$n = 1 + \sum_{k=1}^{d}(-1)^{k+1}\binom{n+k-2}{k-1}\bigl[M - S(n-1,d)\bigr] \quad\text{(antipode recursion)},$$
 
-which terminates in $d$ steps for any integer $M = S(n,d)$. The Hopf algebra is cocommutative, which is the algebraic reason the generation graph has no preferred direction: forward and backward traversal through the hockey-stick lattice are algebraically equivalent.
+which terminates in $d$ steps for any integer $M = S(n,d)$. The Hopf algebra is cocommutative: forward and backward traversal through the hockey-stick *lattice* are algebraically equivalent, which is why the mass map inverts in closed form. The generation tower itself is nonetheless directed — its direction is dynamical (operand dependency and no-latency, Part 7 §1.2a), supplied by the condensation order, not by the index algebra.
 
 ---
 
