@@ -8198,6 +8198,28 @@ assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
 # Haar-equidistributed (Haar would need incommensurate frequencies,
 # contradicting the committed closed-orbit ontology).  Stays 🔶; a lift
 # needs a genuinely new mechanism delivering angular-delta presentation.
+# THIRD ROUTE TESTED AND ALSO FAILS (2026-07-11): swap which side needs
+# the delta -- read the kernel VERTEX (not the mode's own profile) as
+# position-local, so Schur's diagonal Tr P_k(x,x)=deg_k/Vol, being exact
+# POINTWISE (no averaging), gives flat weight at the mode's instantaneous
+# location regardless of orbit shape.  Numerically FALSIFIED: the
+# relevant object is not a single shell's diagonal but the CUMULATIVE sum
+# Sum_{k=0}^{n-1} P_k(x,x) at fixed x, which is NOT flat across the
+# classically allowed region of an actual confining well -- computed
+# exactly for the 2D isotropic HO up to level n=30 (Hermite functions):
+# centre-to-edge spread/mean ~1.3-1.6, NOT shrinking with n. This
+# pinpoints WHY: the addition theorem (Tr P_k(x,x)=const) is exact on a
+# genuinely COMPACT homogeneous space (S^3, CP^k, the STEP-95 g_A local
+# model) but the actual dynamical mode lives in the NONCOMPACT sector
+# space Xi_d with an exponentially-localized bound state (Part 4:
+# "Theorem (Physical mode <-> L^2)": physical modes are L^2(R^d) bound
+# states of a confining well, not literally on a compact manifold) --
+# a genuinely different setting where the identity does not transfer.
+# Consulted Fable on a fresh mechanism (2026-07-11); this was its lead,
+# tested and refuted by direct computation, not assumed. Do not re-try
+# the vertex-delta or cumulative-WKB-flattening routes without a new
+# argument for why the noncompact well's cumulative density should
+# flatten (it does not, numerically, up to n=30 in the tractable model).
 
 def _geg_131(k, a):
     """Gegenbauer C_k^a coefficient list (Fractions), exact recurrence."""
