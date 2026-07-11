@@ -8691,8 +8691,49 @@ assert _chan_131[3] == {0, 2}                   # the d=3 kernel channel
 # competing uniform-one-power reading gives mu_p +1.28%, mu_n -1.43%
 # (data prefers the winner), but the isoscalar second power stays
 # data-selected.  Residual narrowed to the ISOSCALAR power alone.
+# CANDIDATE STRUCTURE (2026-07-11, Fable-consulted, checked -- NOT yet a
+# derivation; one gap remains, flagged honestly). The pairwise kernel
+# (xi.xi')^2 is symmetric under leg exchange. Decompose any one-body
+# current sum_i O_i over a quark pair into a leg-SYMMETRIC piece
+# (O_i+O_j)/2 and a leg-ANTISYMMETRIC piece (O_i-O_j)/2. The isovector M1
+# current is odd under u<->d exchange: contracted against the
+# leg-symmetric kernel, its two-leg (coherent) piece cancels identically,
+# leaving a ONE-LEG readout -- one C0 spin-scalar reduction, matching the
+# established isovector = one power of m/E. The isoscalar current
+# sum_i sigma_i^z is fully leg-symmetric, so it survives precisely in the
+# COHERENT two-leg channel: both legs of the C0 matrix element carry the
+# large/small reduction independently, giving m/E on EACH of two
+# independent legs of the 3-quark singlet -- (m/E)^2, the SAME P_L=1/35
+# addition-theorem count entering twice, not a new number.
+# DATA DISCRIMINATES SHARPLY IN ITS FAVOUR (checked below): the isoscalar
+# ratio (data/SU(6)) matches (m/E)^2 to -1.0%, matches plain m/E only to
+# -6.7%, and matches the STANDARD relativistic-quark-model alternative
+# (single-quark orbital compensation, (1+m/E)/2) only to -9.4% -- i.e.
+# data reject the textbook mechanism in favour of the coherent two-leg
+# reading.
+# THE ONE REMAINING GAP: nothing derived here forces the isoscalar's
+# SECOND leg to couple through the spin-scalar C0 bilinear (which carries
+# the m/E reduction) rather than through the unreduced number/charge
+# density (which carries none) -- i.e. a selection rule excluding the
+# mixed spin-scalar x density cross term in the leg-symmetric channel is
+# needed and NOT yet shown; without it the generic symmetric-channel
+# result would be a MIXTURE a(m/E)+b(m/E)^2, not the pure square. This is
+# the same kind of Gegenbauer/addition-theorem computation that produced
+# P_L=1/35 (STEP 137/139), not yet carried out for this pairwise object.
+# STATUS: a strong structural candidate for WHY the powers differ
+# (previously purely data-selected with no story), verified numerically,
+# but not a derivation; stays 🔶.
 
 _mE_140 = _Fr41(33, 35)
+_iv_data_140 = _Fr41(279284734, 100000000) - _Fr41(-191304273, 100000000)
+_is_data_140 = _Fr41(279284734, 100000000) + _Fr41(-191304273, 100000000)
+_iv_ratio_140 = float(_iv_data_140 / 5)
+_is_ratio_140 = float(_is_data_140 / 1)
+_orbcomp_140 = float((1 + _mE_140) / 2)
+assert abs(_iv_ratio_140 / float(_mE_140) - 1) < 0.002        # -0.18%
+assert abs(_is_ratio_140 / float(_mE_140**2) - 1) < 0.011     # -1.0%
+assert abs(_is_ratio_140 / float(_mE_140) - 1) > 0.06         # -6.7%, excl
+assert abs(_is_ratio_140 / _orbcomp_140 - 1) > 0.09           # -9.4%, excl
 _mup_140 = (5*_mE_140 + _mE_140**2) / 2
 _mun_140 = (_mE_140**2 - 5*_mE_140) / 2
 assert _mup_140 == _Fr41(3432, 1225)
