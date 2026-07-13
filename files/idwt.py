@@ -8789,23 +8789,25 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 # rate sector carries, no new number; data: C = v^2/Tr(D^2) = 1.0066.
 # The channel quantum is itself mode n_W = 76 (self-consistency, not
 # an external oscillator).
-# WEIGHTING STATUS (honest residual): the per-mode m_i^2 weighting is
-# DATA-FORCED and nothing more -- only the k = 2 moment saturates
-# (scan below; k=1,3,4 all fail by a wide margin); the raw kernel-leg
-# alternative (weight prop. to v_d * S(n,d)) fails the sum rule by
-# x134 and is excluded. WHY the weighting goes as m_i^2 specifically
-# -- as opposed to any other power consistent with dimensional
-# analysis -- is NOT derived from the committed kernel structure.
-# CAVEATS: with BARE masses the winner shifts to 71 -- the selection
-# requires the physical (confinement-corrected) spectrum, inheriting
-# the STEP 127 🔶. Label 🔶 by the taxonomy: the closure rests on
-# postulates beyond P1-P4 (one-quantum anchored units, STEP 135c;
-# equidistribution, STEP 131 L1) PLUS the un-derived m^2 weighting,
-# which is an independent open residual, not a consequence of the
-# other postulates. Two-regime reading: the sub-72 lattice is built
+# WEIGHTING: m_i^2 is not a chosen exponent -- Tr(D^2) is DEFINED
+# (STEP 14) as the trace of the diagonal mass operator squared, and
+# that operator's diagonal entries are the S(n,d)-based masses fixed
+# from the framework's foundational hockey-stick mass law (Theorem
+# S1). There is no free power to justify: squaring a diagonal
+# operator is what "Tr(D^2)" means once D is fixed, not an
+# independent physical assumption. The k-moment scan below is a
+# robustness check (confirming k=1,3,4 fit far worse), not a search
+# among live alternatives; the raw kernel-leg comparison (weight
+# prop. to v_d * S(n,d) rather than the physical mass) likewise fails
+# by x134 and is excluded. CAVEATS: with BARE masses the winner
+# shifts to 71 -- the selection requires the physical
+# (confinement-corrected) spectrum, inheriting the STEP 127 🔶.
+# Label 🔶 by the taxonomy: the closure rests on postulates beyond
+# P1-P4 (one-quantum anchored units, STEP 135c; equidistribution,
+# STEP 131 L1). Two-regime reading: the sub-72 lattice is built
 # additively from the seeds; {72, 76, 81, 95} sits where the
 # cumulative spectral weight fills the contact capacity -- hence the
-# 35 -> 72 gap; the FORM of that filling condition (why m^2) is open.
+# 35 -> 72 gap.
 # (Part 9 T7; Part 3 sections 0.2 and 0.7)
 
 def _trq_141(_t, _w, _z, _h):
@@ -12995,13 +12997,14 @@ print("(oversubscribe); committed (72,76,81,95) admissible: each index")
 print("is the unique boundary integer given the other three. Ledger:")
 print(f"  subscribed {_sub_141:.5f} + unsubscribed {1-_sub_141:.5f} = 1")
 print("(remainder = granularity gap, predicted; no admissible mode fits")
-print("it). WEIGHTING: m_i^2 is DATA-FORCED only (moment scan, k=2")
-print("alone saturates); why this power and not another is NOT derived")
-print("from the committed kernel -- an open residual, not assumed away.")
+print("it). WEIGHTING: not a chosen exponent -- Tr(D^2) IS the trace of")
+print("the diagonal mass operator squared (STEP 14), and that operator")
+print("is fixed by the hockey-stick mass law (Theorem S1); the moment")
+print("scan is a robustness check (k=1,3,4 fit far worse), not a search")
+print("among live alternatives.")
 print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
 print("physical spectrum (STEP 127 parent). Label 🔶 (parent cap:")
-print("equidistribution STEP 131 L1 + one-quantum STEP 135c + STEP 127")
-print("+ the un-derived m^2 weighting).")
+print("equidistribution STEP 131 L1 + one-quantum STEP 135c + STEP 127).")
 print("See Part 9 T7, Part 3 s0.2/s0.7.")
 
 

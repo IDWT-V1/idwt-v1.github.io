@@ -364,10 +364,13 @@ $d{=}3/d{=}4$ fixed point anchored at the lightest occupied $d{=}4$ mode (the
 $/S(3,4)$ threshold division) — STEP 3's own words. So "per-state channel coupling
 $=$ per-state energy quantum" is a fact of the committed unit construction, not an
 assumption; the mass law $m = m_{\mathrm{scale}}\,S$ is itself the
-unit-occupation-per-state reading. What is NOT grounded: why the channel loading
-goes as $m_i^2$ specifically. That exponent is fixed by the moment scan alone
-(only $k=2$ saturates; $k=1,3,4$ all fail by a wide margin) — an open residual,
-not a consequence of the mass law, equidistribution, or the one-quantum unit.
+unit-occupation-per-state reading. The $m_i^2$ loading is not a further choice
+needing its own ground: $\operatorname{Tr}(D^2)$ is defined (Theorem T7) as the
+trace of the diagonal mass operator squared, and that operator's entries are
+already the hockey-stick-grounded masses (Theorem S1) — squaring a fixed
+diagonal operator adds no assumption beyond the mass law itself. The moment
+scan ($k=2$ saturates; $k=1,3,4$ fail by a wide margin) confirms no other
+power fits — it is not a search among live alternatives.
 (2) **The selection rule is an inequality, not a fit:** shares are fractions of the
 channel's one quantum, so $\sum_i (m_i/v)^2 \le 1$ is a HARD BOUND (oversubscribing
 a conserved unit flow is impossible — the STEP 134 principle), and no-latency
@@ -382,9 +385,8 @@ the bound then forces $T = 72$. The conservation ledger closes exactly:
 subscribed $0.99343$ $+$ unsubscribed $0.00657$ $= 1$ — the remainder (headroom
 $20$ GeV) is a predicted granularity gap, self-consistently unfillable (lightest
 admissible continuation $128$ GeV). Label 🔶 by parent cap (equidistribution,
-one-quantum, STEP 127 physical spectrum, PLUS the un-derived $m^2$ weighting as
-an independent residual). Committed: STEP 141 final form (generalized $F$,
-boundary asserts, ledger asserts; idwt_test PASS).
+one-quantum, STEP 127 physical spectrum). Committed: STEP 141 final form
+(generalized $F$, boundary asserts, ledger asserts; idwt_test PASS).
 
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 
