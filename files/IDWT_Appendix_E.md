@@ -353,20 +353,21 @@ per-state energy quantum in anchored units — the one-quantum statement applied
 state. Same parent wall as the counting theorem's pointlike premise. Label 🔶
 unchanged.
 
-**2026-07-04 — FINISHED FORM: subscription bound + boundary selection; per-state
-coupling discharged (eleventh pass; STEP 141 final).** Two closures in one pass.
-(1) **The per-state coupling residual is DISCHARGED into the committed unit
-system:** the sector scales are, by their own committed construction, the
-cross-sector kernel fixed-point units — $m_{\mathrm{scale},3}/m_e = \sqrt{g_{33}/g_{66}}$
+**2026-07-04 — FINISHED FORM: subscription bound + boundary selection (eleventh
+pass; STEP 141 final; weighting residual corrected 2026-07-13, App A §9).** Two
+results, of different strength, in one pass.
+(1) **The per-state coupling identification is grounded, not assumed:** the
+sector scales are, by their own committed construction, the cross-sector kernel
+fixed-point units — $m_{\mathrm{scale},3}/m_e = \sqrt{g_{33}/g_{66}}$
 is the $l{=}0$ kernel vacuum fixed-point equation, and $m_{\mathrm{scale},4}$ is the
 $d{=}3/d{=}4$ fixed point anchored at the lightest occupied $d{=}4$ mode (the
 $/S(3,4)$ threshold division) — STEP 3's own words. So "per-state channel coupling
 $=$ per-state energy quantum" is a fact of the committed unit construction, not an
 assumption; the mass law $m = m_{\mathrm{scale}}\,S$ is itself the
-unit-occupation-per-state reading. The mechanism is COMPLETE at committed premises:
-mass law (IDOS) $+$ equidistribution $+$ one-quantum anchored units $+$ rank-1
-single channel $+$ $G_F$ $+$ rate conservation $+$ no-latency $+$ coherence (one
-mode, one frequency) $+$ kernel bilinearity (strictly quadratic shares).
+unit-occupation-per-state reading. What is NOT grounded: why the channel loading
+goes as $m_i^2$ specifically. That exponent is fixed by the moment scan alone
+(only $k=2$ saturates; $k=1,3,4$ all fail by a wide margin) — an open residual,
+not a consequence of the mass law, equidistribution, or the one-quantum unit.
 (2) **The selection rule is an inequality, not a fit:** shares are fractions of the
 channel's one quantum, so $\sum_i (m_i/v)^2 \le 1$ is a HARD BOUND (oversubscribing
 a conserved unit flow is impossible — the STEP 134 principle), and no-latency
@@ -381,9 +382,9 @@ the bound then forces $T = 72$. The conservation ledger closes exactly:
 subscribed $0.99343$ $+$ unsubscribed $0.00657$ $= 1$ — the remainder (headroom
 $20$ GeV) is a predicted granularity gap, self-consistently unfillable (lightest
 admissible continuation $128$ GeV). Label 🔶 by parent cap (equidistribution,
-one-quantum, STEP 127 physical spectrum); the mechanism carries no unlocated
-joint. Committed: STEP 141 final form (generalized $F$, boundary asserts, ledger
-asserts; idwt_test PASS).
+one-quantum, STEP 127 physical spectrum, PLUS the un-derived $m^2$ weighting as
+an independent residual). Committed: STEP 141 final form (generalized $F$,
+boundary asserts, ledger asserts; idwt_test PASS).
 
 ### §49. Bottom beat $k_0 = n_s^2 = 16$ — CLOSED (2026-06-18)
 

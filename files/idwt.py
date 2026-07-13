@@ -8789,47 +8789,23 @@ assert 5*_mE_140 == _Fr41(33, 7)                      # isovector exact
 # rate sector carries, no new number; data: C = v^2/Tr(D^2) = 1.0066.
 # The channel quantum is itself mode n_W = 76 (self-consistency, not
 # an external oscillator).
-# WEIGHTING STATUS: the per-mode m_i^2 weighting is DATA-FORCED --
-# only the k = 2 moment saturates (scan below); the raw kernel-leg
+# WEIGHTING STATUS (honest residual): the per-mode m_i^2 weighting is
+# DATA-FORCED and nothing more -- only the k = 2 moment saturates
+# (scan below; k=1,3,4 all fail by a wide margin); the raw kernel-leg
 # alternative (weight prop. to v_d * S(n,d)) fails the sum rule by
-# x134 and is excluded. NATIVE MECHANISM CANDIDATE (coherent counting,
-# 2026-07-04): the mass law m_i = m_scale_d * S(n_i,d) reads the mode
-# as S_i states, each worth one sector energy quantum; equal norm per
-# state (STEP 131 L1); the mode is ONE wave at ONE frequency, so its
-# loading of the single rank-1 channel sums COHERENTLY over its S_i
-# states -- amplitude prop. to S_i, intensity prop. to S_i^2. With
-# per-state coupling equal to the per-state energy quantum m_scale_d
-# in anchored units, the intensity is (m_i/v)^2 and rate conservation
-# (STEP 134 pattern) gives the closure. This reconciles the two
-# powers in the committed record: TRANSITIONS resolve individual
-# destination state-channels (incoherent, intensity prop. to 1/S --
-# the committed CKM counting); LOADING is the coherent sum (S^2).
-# The k-moment scan is the data discrimination between them.
-# PER-STATE COUPLING: DISCHARGED into the committed unit system.
-# The sector scales are BY COMMITTED CONSTRUCTION the cross-sector
-# kernel fixed-point units: m_scale3/m_e = sqrt(g33/g66) is the l=0
-# kernel vacuum fixed-point equation (STEP 3's own words), and
-# m_scale4 is the d=3/d=4 fixed point anchored at the lightest
-# OCCUPIED d=4 mode (the /S(3,4) threshold division, STEP 3). So
-# "per-state channel coupling = per-state energy quantum" is a fact
-# of the committed unit construction, not a new physical assumption:
-# the mass law m = m_scale*S is itself the unit-occupation-per-state
-# reading of the mode, and the channel loading uses the same units.
-# The mechanism is COMPLETE at these committed premises: mass law
-# (IDOS) + equidistribution (STEP 131 L1) + one-quantum anchored
-# units (STEP 135c) + rank-1 single channel + G_F (STEP 5) + rate
-# conservation (STEP 134) + no-latency (STEP 88) + coherence (one
-# mode = one frequency; cross-frequency terms average out -- the
-# native beat fact) + kernel bilinearity (each density leg linear in
-# the mode => strictly quadratic shares).
+# x134 and is excluded. WHY the weighting goes as m_i^2 specifically
+# -- as opposed to any other power consistent with dimensional
+# analysis -- is NOT derived from the committed kernel structure.
 # CAVEATS: with BARE masses the winner shifts to 71 -- the selection
 # requires the physical (confinement-corrected) spectrum, inheriting
 # the STEP 127 🔶. Label 🔶 by the taxonomy: the closure rests on
 # postulates beyond P1-P4 (one-quantum anchored units, STEP 135c;
-# equidistribution, STEP 131 L1) and the un-derived m^2 weighting.
-# Two-regime reading: the sub-72 lattice is built additively from the
-# seeds; {72, 76, 81, 95} sits where the cumulative spectral weight
-# fills the contact capacity -- hence the 35 -> 72 gap.
+# equidistribution, STEP 131 L1) PLUS the un-derived m^2 weighting,
+# which is an independent open residual, not a consequence of the
+# other postulates. Two-regime reading: the sub-72 lattice is built
+# additively from the seeds; {72, 76, 81, 95} sits where the
+# cumulative spectral weight fills the contact capacity -- hence the
+# 35 -> 72 gap; the FORM of that filling condition (why m^2) is open.
 # (Part 9 T7; Part 3 sections 0.2 and 0.7)
 
 def _trq_141(_t, _w, _z, _h):
@@ -8989,16 +8965,22 @@ assert 2 + 1 > _ACAP_115                     # tau fusion ring-forbidden
 #             DIRECTION DISCHARGED (🔶)
 # =============================================================================
 # Answers the two OTA-core questions at stated premises.
-# (A) WHY THE DOUBLET CHANNEL OWNS THE LEPTON SLOTS -- discharged into
-#     committed geometry: the section-0.8c pairwise map (⭐) gives the
-#     d=5 row W-only and the lepton sectors at most EM-W-G; the
-#     committed channel roles then leave ONE mode-forming structure
-#     with lepton-sector support: EM is Ward/l-parity protected
-#     (section 16 -- elastic, cannot change mode identity), colour is
-#     confined to the quark block {3,4}, gravity sources curvature and
-#     deposits nothing. So lepton formation is necessarily the SU(2)_L
-#     doublet vertex, whose operand structure is the P4 same-alpha
-#     partner pair (STEP 115 ⭐). The STEP 142 premise discharges.
+# (A) WHY THE DOUBLET CHANNEL OWNS THE LEPTON SLOTS -- NARROWED (not
+#     discharged) by elimination over committed geometry: the
+#     section-0.8c pairwise map (⭐) gives the d=5 row W-only and the
+#     lepton sectors at most EM-W-G; the committed channel roles then
+#     leave ONE mode-forming structure with lepton-sector support: EM
+#     is Ward/l-parity protected (section 16 -- elastic, cannot change
+#     mode identity), colour is confined to the quark block {3,4},
+#     gravity sources curvature and deposits nothing. So among the
+#     four native channels, only the W/same-alpha partner-pair vertex
+#     (STEP 115 ⭐) has lepton-sector support. This elimination rules
+#     out the other three channels; it does not independently prove
+#     the remaining one forces e = 13 at the observed depth -- STEP
+#     142's own hedge ("motivates, does not prove") stands. The
+#     elimination narrows STEP 142's residual (one channel survives),
+#     resting on the order-rigid depth-spine premise in (B) below;
+#     it is not a discharge of that residual.
 # (B) WHAT DIRECTS THE CONSTRUCTION -- direction = operand dependency
 #     (a composite cannot precede its operands; acyclic by
 #     construction) + no-latency (STEP 88) + the founding premise that
@@ -13013,15 +12995,13 @@ print("(oversubscribe); committed (72,76,81,95) admissible: each index")
 print("is the unique boundary integer given the other three. Ledger:")
 print(f"  subscribed {_sub_141:.5f} + unsubscribed {1-_sub_141:.5f} = 1")
 print("(remainder = granularity gap, predicted; no admissible mode fits")
-print("it). MECHANISM: coherent counting -- mode = S_i states at ONE")
-print("frequency (IDOS), equal norm per state, coherent loading ->")
-print("intensity (m_i/v)^2; per-state coupling = sector energy quantum")
-print("= the committed cross-sector kernel fixed-point unit (STEP 3),")
-print("DISCHARGED, not assumed. Transitions stay incoherent (1/S, CKM")
-print("counting) -- different object.")
+print("it). WEIGHTING: m_i^2 is DATA-FORCED only (moment scan, k=2")
+print("alone saturates); why this power and not another is NOT derived")
+print("from the committed kernel -- an open residual, not assumed away.")
 print("CAVEAT: bare masses shift the winner to 71 -- selection needs the")
 print("physical spectrum (STEP 127 parent). Label 🔶 (parent cap:")
-print("equidistribution STEP 131 L1 + one-quantum STEP 135c + STEP 127).")
+print("equidistribution STEP 131 L1 + one-quantum STEP 135c + STEP 127")
+print("+ the un-derived m^2 weighting).")
 print("See Part 9 T7, Part 3 s0.2/s0.7.")
 
 
@@ -13052,7 +13032,7 @@ print("charged doublet-fusion channel; STEP 107 motivates). Static")
 print("irreducibility verdicts (STEP 115/116/119) unchanged -- this is")
 print("channel-conditional forcing. The un-derived content narrows from")
 print("'one additive node' to 'one channel-to-cell assignment'.")
-print("[STEP 143: that premise discharges into s0.8c -- see below.]")
+print("[STEP 143: that premise is narrowed, not discharged -- below.]")
 print("See Part 7 s1.2a, Part 2 s3.")
 
 
@@ -13061,11 +13041,14 @@ print("See Part 7 s1.2a, Part 2 s3.")
 # =============================================================================
 print("\n=== STEP 143: TYPED CONSTRUCTION -- CHANNEL TABLE x GRID x")
 print("    DEPENDENCY GENERATES EXACTLY THE SPECTRUM (🔶) ===")
-print("(A) doublet ownership DISCHARGED into committed geometry: the")
-print("s0.8c pairwise map (⭐, d=5 row W-only; lepton sectors at most")
-print("EM-W-G) + channel roles (EM Ward-elastic s16; colour confined to")
-print("{3,4}; gravity deposits nothing) => lepton formation is")
-print("necessarily the SU(2)_L doublet vertex (P4 partner operands ⭐).")
+print("(A) doublet ownership NARROWED by elimination over committed")
+print("geometry: the s0.8c pairwise map (⭐, d=5 row W-only; lepton")
+print("sectors at most EM-W-G) + channel roles (EM Ward-elastic s16;")
+print("colour confined to {3,4}; gravity deposits nothing) => of the")
+print("four native channels, only the SU(2)_L doublet vertex (P4")
+print("partner operands ⭐) has lepton-sector support. This rules out")
+print("the other three; it does not independently force e=13 -- STEP")
+print("142's hedge (motivates, does not prove) stands.")
 print("(B) direction = operand dependency + no-latency (STEP 88) +")
 print("condensation-proceeds; the forced maximal-parallel schedule")
 print("REPRODUCES the committed order-rigid depth spine exactly.")
