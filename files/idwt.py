@@ -237,6 +237,15 @@ n_tau = n_nu3 + n_down    # = 23
 # d mod 8 in {0,1,2,3,4} applied to n would flag most of the spectrum).
 # (2026-06-15.)
 n_top = 3 * n_strange * 6          # = N_c * n_s * N_f = 72
+# Cross-check: n_top = 2*S(2*n_strange,2) = 2*S(8,2) = 2*36 = 72 (a
+# triangular-number ladder in d=2, n_s alone). The SAME one-parameter
+# family gives n_charm = 2*S(n_strange,2) = 2*S(4,2) = 2*10 = 20 at
+# k=1. A second value identity, not a selection mechanism: a check
+# against neighbouring integers (69-75) via additive combinations of
+# known indices shows 72 is not uniquely reachable this way (70 and 71
+# each have MORE such representations) -- same status as the Euler
+# product above, holds numerically, not itself a derivation. (Backup
+# archaeology, 2026-07-13.)
 
 # --- Boson mode indices (g-rule) ------------------------------------
 # The g-rule (sector-coupling rule): sectors d and d' couple when d+d' is itself
@@ -3737,6 +3746,21 @@ _set56 = set(_svals56)
 _collisions56 = [(a, b, a + b) for i, a in enumerate(_svals56)
                  for b in _svals56[i:] if (a + b) in _set56]
 _sumfree56 = not _collisions56
+
+# Structural margins (why sum-free, not just that it is; 2026-07-13,
+# Backup archaeology): tau's S-value dominates the sum of all others;
+# the d=4 sector (past the up quark, which sits close to strange) is
+# separated from d=3 by two orders of magnitude; and the tightest
+# surviving margin anywhere in the spectrum is the neutrino pair
+# against the electron. None of this is a new mechanism -- it explains
+# where the already-verified sum-free property is tight and where it
+# is not.
+_tau_dom56 = S(n_tau, 10) / (sum(_svals56) - S(n_tau, 10))
+_gap56 = S(n_charm, 4) / S(n_strange, 3)
+_margin56 = S(n_e, 6) - (S(n_nu1, 5) + S(n_nu2, 5))
+assert abs(_tau_dom56 - 12.475) < 0.001
+assert abs(_gap56 - 442.75) < 0.001
+assert _margin56 == 4934 > 0
 
 
 # =============================================================================
@@ -11028,6 +11052,9 @@ print(f"  14 non-zero S-values; pairwise a+b=c collisions:"
 print(f"  sum-free: {_sumfree56}  (Part 1 sec 5 additive rigidity)")
 print("  (the mode indices are not sum-free -- 1+3=4; the property")
 print("  holds at the S-value / eigenvalue level)")
+print(f"  tau/(sum of rest) = {_tau_dom56:.3f}; d=4/d=3 gap (charm/")
+print(f"  strange) = {_gap56:.2f}; tightest margin (nu1+nu2 vs e) ="
+      f" {_margin56}")
 
 
 # =============================================================================
