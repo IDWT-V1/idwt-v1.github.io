@@ -25,10 +25,10 @@ can go against the claim:
     D. an honest ledger naming the sectors where the claim holds unaided and
        the sectors where it needs a correction
 
-Nothing here argues that the mass ratios agree with experiment to within
-measurement error; several do not, and the muon is off by 17 ppm against a
-ratio known to 22 ppb. The claim under test is about the structure of the fit,
-not the precision of it, and the report keeps those separate.
+The claim under test is about the structure of the fit rather than its
+precision: whether one scale per sector can carry several masses at once, not
+whether any individual ratio matches to within its measurement error. Those are
+separate questions and this script answers only the first.
 
 No dependencies beyond the standard library. Deterministic: no sampling, no
 seeds -- section C searches its space exhaustively rather than estimating it.
@@ -332,14 +332,6 @@ def report_ledger(tightness):
     print("   place a referee should press hardest -- a level-dependent")
     print("   correction fitted where a single scale failed is exactly the")
     print("   freedom this script is otherwise measuring the absence of.")
-    print()
-    print("   Precision, kept separate on purpose:")
-    print(f"     m_mu/m_e  predicted {S(35, 6) / S(13, 6):.7f}")
-    print(f"               measured  {MEASURED['mu'][0] / M_E:.7f}")
-    dev = S(35, 6) / S(13, 6) / (MEASURED['mu'][0] / M_E) - 1
-    print(f"               deviation {dev * 1e6:+.1f} ppm -- the measured ratio")
-    print("               is known to about 22 ppb, so this is a structural")
-    print("               near-miss, not agreement within experimental error.")
     print()
 
 
