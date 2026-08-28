@@ -6,6 +6,16 @@ By the end of this Part you can answer, with mechanisms rather than names: why e
 
 There is one interaction in this framework — the wave's quartic self-coupling on shared sector coordinates (Part 1 §1.2) — and the "forces" are that single coupling read through different sector geometries. Two questions govern every case: *containment* (do the two structures share coordinates at all?) and the *filter* (what does each geometry permit on the shared coordinates?). Both must pass.
 
+**Force is interference.** Before the individual forces, see what the single coupling *is* when two particles are present. There is one wave, so "two particles" means two centered ripple patterns of the same field (Part 1 §1.4): $\Psi = \Psi_A + \Psi_B$. Put that into the quartic self-coupling and expand:
+
+$$|\Psi_A + \Psi_B|^4 = \underbrace{|\Psi_A|^4 + |\Psi_B|^4}_{\text{each pattern's own self-binding}} \;+\; \underbrace{4|\Psi_A|^2|\Psi_B|^2 + \text{phase-sensitive cross terms}}_{\text{the interaction}}.$$
+
+The self-terms are what hold each particle together (Part 1 §1.3). *Everything we call force between them is the cross terms* — contributions that exist only where the two patterns overlap and interfere. Force is not something added to the wave picture; it is what one wave's self-intensity does when two of its ripple patterns share territory. Three structural facts follow at once:
+
+- **The dimensional gate.** The cross terms are integrals, nonzero only where *both* patterns have structure — the shared sector coordinates. Patterns with no shared structured dimensions generate no interference and no force. Containment is an overlap condition on ripples.
+- **The two ranges.** A massive pattern's ripples die off steeply near its own scale (self-concentration is what mass *is*), so direct pattern-on-pattern interference gives the short-range, contact-scale forces — the strong interaction below. But the wave has genuinely unbounded components: the massless $d=2$ phase ripple carries no envelope and thins only geometrically, like a real lake ripple crossing ever larger circles — and interference through *that* component is long-range. Its geometric thinning, read by a three-dimensional observer, is the $1/R$ of §1.2: the inverse-square law is the intensity falloff of an unbounded ripple.
+- **Attraction and repulsion are phase relationships.** Interference can reinforce or cancel, so interference forces carry a sign set by the relative phase of the two patterns — and this is not a metaphor but measured classical physics: pulsating bubbles in water push and pull each other through their ripples (the Bjerknes forces), in-phase pairs attracting, out-of-phase pairs repelling. Like and unlike charges are the framework's version of that phase relationship, carried on the $d=2$ phase component.
+
 ---
 
 ## 1. Electromagnetism: the phase of the wave
