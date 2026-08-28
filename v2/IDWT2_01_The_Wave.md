@@ -42,7 +42,7 @@ The first term is free Dirac propagation over all of $M_\infty$. The second — 
 
 *The coupling matrix is rank-1.* The coupling strengths factorize, $g_{dd'} = v_d\,v_{d'}$, an outer product of one coupling vector. The physical reason: if the matrix had rank two or more, the mean field would carry two or more independent condensates, entangling the sectors and destroying the sector-by-sector separability that the mass law (§2) requires. Rank-1 is the unique structure for which one common condensate $C(x) = \sum_{d'} v_{d'}\langle\xi_{d'}\rangle$ serves every sector, letting each sector see a clean local well. Two corollaries come free: the coupling matrix has exactly one nonzero eigenvalue — the wave has a *single* collective interaction channel, and every cross-sector coupling is a projection of that one channel (this returns with force in Parts 2 and 6); and the kernel energy is a sum of squares, hence non-negative — self-interaction only ever costs energy, so it penalizes configurations and never destabilizes a mode from below.
 
-The six sector self-couplings $g_{dd}$ are not free parameters; they are fixed by two integer seeds through the sector geometry, and Part 2 derives them. For orientation, the values that will be built there:
+The six sector self-couplings $g_{dd}$ are not free parameters; they are closed-form expressions in two small integers of the sector geometry — the colour count $3$ and the lepton class count $4$ — and Part 2 derives them. For orientation, the values that will be built there:
 
 | $d$ | 2 | 3 | 4 | 5 | 6 | 10 |
 |---|---|---|---|---|---|---|
@@ -115,11 +115,11 @@ with one frequency unit $m_{{\rm scale},d}$ per sector. A worked example, to fix
 
 The photon is the cleanest entry: it is the $d=2$ sector's ground mode with zero excitation, $S(0,2) = 0$, so $m_\gamma = 0$ *exactly* — a wave with nothing excited has nothing to weigh. (Part 3 adds two independent protections that keep it exactly zero at all orders.)
 
-One identity ties the whole ladder together. Pascal's rule for binomial coefficients reads, in the count's variables,
+One identity is worth knowing from the start. Pascal's rule for binomial coefficients reads, in the count's variables,
 
 $$S(n,d) = S(n,d-1) + S(n-1,d):$$
 
-a state count in $d$ dimensions splits exactly into the count one dimension down plus the count one level down. Because the sectors are physically nested (§4.4), this arithmetic becomes machinery relating counts *between* sectors — and Part 2 will show the particle spectrum is threaded on it, with, for instance, the muon's index sitting at a Pascal node: $S(4,4) = S(4,3) + S(3,4)$, i.e. $35 = 20 + 15$, the muon as charm plus second neutrino by combinatorial necessity.
+a state count in $d$ dimensions splits exactly into the count one dimension down plus the count one level down. Because the sectors are physically nested (§4.4), this arithmetic relates counts *between* sectors — and Part 2 reports a striking empirical fact: the occupied particle indices satisfy a web of such relations, the muon's site for instance sitting exactly at a Pascal node, $S(4,4) = S(4,3) + S(3,4)$, i.e. $35 = 20 + 15$. We report these relationships as found; what selects the occupied levels in the first place is one of the framework's open mysteries, and this edition treats it as such.
 
 ---
 
@@ -147,11 +147,11 @@ Concretely: $S^3$ is a circle's worth of phase over every point of $S^2 = \mathb
 
 The chain starts at $d=2$: $\mathbb{CP}^1$, the $U(1)$ fiber's own base, the electromagnetic reference plane contained in everything. The odd spheres ride on their bases through the shared circle fiber — this is why, in Part 3, the coupling of $d=5$ is not an independent constant but is *forced* by the couplings below it through fiber universality ($v_3/v_2 = v_5/v_4$), and why the weak vertex always couples neutrinos to up-type quarks: the neutrino's coordinate space is literally circles fibred over the quark sector.
 
-Where does the chain get its integers? From the Euler characteristics of the bases. $\mathbb{CP}^k$ is built from one cell in each even dimension $0, 2, \ldots, 2k$, so
+The chain also carries its own integers. $\mathbb{CP}^k$ is built from one cell in each even dimension $0, 2, \ldots, 2k$, so
 
 $$\chi(\mathbb{CP}^k) = k+1.$$
 
-These class counts are physical multiplicities: $\chi(\mathbb{CP}^2) = 3$ is the number of colour classes the $d=4$ geometry offers (three colours, and the up quark's seed index $n_u = 3$ — Part 2); $\chi(\mathbb{CP}^3) = 4$ is the lepton geometry's class count ($n_s = 4$, and — with the vacuum class removed — three generations, Part 3); $\chi(\mathbb{CP}^5) = 6$ counts six flavours. The chain and its class counts lock together: the same integers that name the sectors seed the mass spectrum.
+These class counts are physical multiplicities: $\chi(\mathbb{CP}^2) = 3$ is the number of colour classes the $d=4$ geometry offers — three colours; $\chi(\mathbb{CP}^3) = 4$ is the lepton geometry's class count (with the vacuum class removed, three generations — Part 3); $\chi(\mathbb{CP}^5) = 6$ counts six flavours. Part 2 will note, among the observed index relationships, that the up quark's level equals the colour count — a fact we report without pretending to derive.
 
 ### 3.2 First termination: the coupling chain ends at $d=6$
 
@@ -171,7 +171,7 @@ When the wave's modes couple along a sector's radial ladder, the strength of the
 
 $$b_{k_0}(d) = \frac{\sqrt{k_0(k_0+d-1)}}{2k_0+d-2},$$
 
-and $b = 1/2$ is the classical threshold between a ladder that supports propagating (bindable) structure and one whose excitations are evanescent — the same $1/2$ that separates propagation from decay in any nearest-neighbour chain. The relevant rung is the resonance site $k_0 = n_s^2 = 16$ (the site, fixed by seed algebra, that also produces the bottom quark — Part 2). Solve for criticality:
+and $b = 1/2$ is the classical threshold between a ladder that supports propagating (bindable) structure and one whose excitations are evanescent — the same $1/2$ that separates propagation from decay in any nearest-neighbour chain. The relevant rung is the resonance site $k_0 = 16$ — the same site at which, in Part 2, the bottom quark forms as a beat. Solve for criticality:
 
 $$b_{k_0}(d) = \tfrac12 \;\Longleftrightarrow\; 4k_0(k_0+d-1) = (2k_0+d-2)^2 \;\Longleftrightarrow\; 4k_0 = (d-2)^2,$$
 
@@ -193,7 +193,7 @@ So the sector set assembles as
 
 $$D = \underbrace{\{2,3\}}_{\text{first Hopf pair}} \cup \underbrace{\{4,5\}}_{\text{second Hopf pair}} \cup \underbrace{\{6\}}_{\text{chain terminus}} \cup \underbrace{\{10\}}_{\text{critical endpoint}},$$
 
-and the matter quartet $\{3,4,5,6\}$ closes a self-consistency loop: the chain runs from $d=3$ to $d = 2(n_s-1)$, a span of $2n_s - 4$ sectors, and $2n_s - 4 = n_s$ exactly at $n_s = 4$ — the seed equals the number of matter sectors it generates.
+with two Hopf pairs inside it: $(3,4)$ — the two quark families — and $(5,6)$ — neutrinos and charged leptons. Two quark multiplets and two lepton multiplets are a structural consequence of the chain's pairing, not an input.
 
 ### 3.4 What each sector's geometry stamps on its tenants
 
@@ -218,7 +218,7 @@ Assembling §§3.1–3.4 with the mode indices Part 2 derives:
 
 | $d$ | geometry | particles | why these |
 |---|---|---|---|
-| 2 | $\mathbb{CP}^1$ | photon, W, Z, Higgs | the reference plane; bosons land here by the join rule (Part 2) |
+| 2 | $\mathbb{CP}^1$ | photon, W, Z, Higgs | the reference plane every sector contains |
 | 3 | $S^3$ | down, strange, bottom | the seed sector: observable space, first Hopf total space |
 | 4 | $\mathbb{CP}^2$ | up, charm, top | the colour sector: $\chi = 3 = N_c$ |
 | 5 | $S^5$ | three neutrinos | Hopf partner of $d=4$; Dirac-only spinors |
@@ -346,7 +346,7 @@ Gravity is not a force in this sense at all and gets Part 4 to itself; the shape
 
 This edition states openness in prose, in place; Part 6 collects the full ledger. The items native to this Part:
 
-**Mode selection is the central open problem of the framework.** The sector list of §3 is derived; the mass law of §2, given the occupied modes, performs at the fraction-of-a-percent level (Part 2); the exclusion of the unoccupied modes is derived (odd levels by an exact parity zero; even non-members by a strictly positive radiative decay width). What is not yet derived from the equation of motion is the positive selection — why the particular fifteen modes that fire are the ones that fire. A closed generative rule reproduces them exactly, with no false positives, and the spectrum's *termination* has a candidate mechanism (the electroweak channel as a fixed capacity that the four heaviest modes exactly saturate — Part 6); but rule-that-closes is not yet dynamics-that-forces. The reader should weigh the framework knowing this is where its remaining evidential weight funnels.
+**Which levels are occupied is a mystery, and this edition lets it be one.** The sector list of §3 is derived; the mass law of §2, given the occupied levels, performs at the fraction-of-a-percent level (Part 2); and the *emptiness* of the unoccupied levels has real mechanics behind it (odd levels are cut off from the vacuum by an exact parity zero; even non-members radiate away with a strictly positive decay width — nothing between the observed particles can persist). But why the particular fifteen occupied levels are the ones nature chose is not derived. The indices display striking arithmetic relationships — Part 2 reports them as findings — and the framework declines to promote those patterns into a derivation. The occupied levels are, in this edition, measured facts on the same footing as the electron mass.
 
 **The rank-1 coupling is argued, not proved.** The physical argument of §1.2 (higher rank entangles the sectors and breaks mass-law separability) runs at sketch rigor in one step; making the entanglement step rigorous would close it.
 
