@@ -2,7 +2,7 @@
 
 ## 0. What this Part teaches
 
-By the end of this Part you can answer: what gravity is when there is no gravitational field; why a universe with infinitely many macroscopic dimensions shows a perfect inverse-square law with one universal constant — including the actual integral that proves it; why every test of extra dimensions comes up empty here and must; why hidden-dimensional matter would pull on us at full strength while remaining invisible; why gravity sets the *size* of elementary particles; and where the honest edges of the gravitational story lie.
+By the end of this Part you can answer: what gravity is when there is no gravitational field; why a universe with infinitely many macroscopic dimensions shows a perfect inverse-square law with one universal constant — including the actual integral that proves it; why every test of extra dimensions comes up empty here and must; **what matter is actually doing along the axes we don't occupy** — why charged matter is forced to stay evenly spread there while only the neutral sectors could ever gather; why hidden-dimensional matter would pull on us at full strength while remaining invisible; why gravity sets the *size* of elementary particles; and where the honest edges of the gravitational story lie.
 
 ## 1. Gravity is what mass does to the manifold
 
@@ -60,7 +60,27 @@ Three consequences, in ascending order of reach:
 
 **The dark-matter constraint — what dark matter cannot be, and could be.** The same theorem cuts in the other direction: a three-dimensionally bound detector is *uniform* in the hidden coordinates, so it feels exactly zero gradient from anything gravitating only in those dimensions, however massive. Dark matter therefore cannot be "gravity leaking from higher dimensions" — that channel is closed by theorem. What the geometry *does* naturally permit is mass that pulls on us at full strength through the shared three dimensions while staying electromagnetically dark. The framework owns the gap plainly: its fifteen-particle spectrum contains no dark-matter candidate, and it does not currently account for the astrophysical evidence — the structure makes gravitationally-honest, optically-dark matter natural, and has not produced the object.
 
-## 5. Gravity sizes the particles
+## 5. Matter along the unseen axes
+
+The extra coordinates are not a different kind of place. They are ordinary space — the same forces act along them, at the same strength, by the same laws. That single statement, taken seriously, answers a question the previous sections raise: *what is matter actually doing out there?* Work it out with a picture.
+
+Take one of the three extra directions the electron lives in — call it axis 4 — and imagine plotting, on that single line, the position of every particle in a lump of iron.
+
+**The protons plot as an even fog.** A proton is a colour-singlet composite, purely three-dimensionally bound (Part 1 §5.1). It has no structure along axis 4 — it is not *at* any point of the line but uniformly spread along all of it (§4's "bound within, free without"). The iron's entire positive charge, viewed along this axis, is a featureless smear: every point of the line carries the same amount of it.
+
+**The electrons plot as dots.** An electron is a six-dimensional object; it genuinely has a position along axis 4. So the question with physical content is: what arrangement do those dots settle into?
+
+In our three axes, the answer is "they clump" — into atoms, and atoms into planets. But look at *why* clumping is possible in our axes: each electron sits beside a proton, positive cancels negative locally, the neutral pair no longer repels anything, and neutral matter is then free to gather under gravity. **Along axis 4 that trick is impossible.** A proton has no position on the line, so an electron cannot pair with one there; no neutral lump can be built along that axis at all. Any cluster of electrons that began to form at some point of the line would be a bare ball of negative charge — every member pushing every other apart along the axis with the full Coulomb strength (the same forces act there), against gravity's pull at $10^{-42}$ of that strength. The cluster never forms. The equilibrium is the opposite: the electrons spread themselves as evenly as possible along the line, a charged gas filling a room it can never condense in, held flat by its own repulsion against a background of proton-fog it can never lock onto.
+
+So along the unseen axes, the charged matter of the universe has no lumps, no structure, and no events — an enforced, permanent evenness. Three consequences:
+
+- **Why you cannot make two electrons truly meet.** Genuine contact between two electrons means overlap in all six of their coordinates. But their mutual repulsion is holding them apart along the unseen axes at all times, exactly as strongly as along the seen ones — and no apparatus we can build (being made of proton-fog matter with no structure there) can push against it. The collision experiments of our accelerators are Coulomb deflections through the shared coordinates; six-coordinate contact is not hard to arrange, it is *actively prevented* by the same force that prevents it in plain sight.
+- **Why the unseen axes look empty.** Not because nothing is there — every electron in the universe extends through them — but because evenness is invisible. A uniform spread sources no gradients (§4), scatters nothing, and shadows nothing. Structure is what can be seen, and structure is exactly what charge forbids there.
+- **The one exception: the neutral sectors.** A neutrino has positions along its extra axes and *no charge* — nothing pushes neutrino from neutrino apart out there. For neutrino positions along the unseen axes, gravity is the only force acting, and gravity gathers. If anything in the universe forms lumps along the axes we do not occupy, it is the neutrino background: falling together in the coordinated, all-axes-at-once way gravity moves everything (a body attracted along several axes moves along all of them in one geodesic motion, not axis by axis). Whether that clustering actually proceeds at cosmological timescales, and whether it bears on the dark-sector questions of §4, is a computation the framework has posed and not completed — a lead, recorded as such, not a result.
+
+The moral of the section is your own three axes read backwards: matter clumps *here* because neutrality is possible here. Where neutrality cannot be built, matter is condemned to smoothness — and smoothness is why the rest of the manifold, though as real and as inhabited as our slice, has nothing in it to see.
+
+## 6. Gravity sizes the particles
 
 An unexpected division of labor between the framework's two dimensional inputs: the electron mass prices the spectrum (Part 2), and gravity sizes the particles. A particle is a stiffness-bound standing wave, and the stiffness of the space it stands in is $1/G_\infty$; balancing the mode's inertia against the well curvature (linear in the mode's mass $M$, with the in-sector gravitational coupling $G_d = G_\infty/[(d-2)S_{d-1}]$ — at $d=3$ exactly $G_N$, anchoring the scale) gives the physical radius
 
@@ -68,7 +88,7 @@ $$R_{n,d} = \sqrt{N + d/2}\;M^{-1/4}\,G_d^{3/8}, \qquad N = n-1.$$
 
 Evaluated for the electron: $R_e \approx 1.0\times10^{-29}$ m. Every elementary mode lands at $10^{-29}$–$10^{-30}$ m — sixteen orders below its Compton wavelength, eleven below the tightest compositeness bounds, with heavier particles *smaller* (the $M^{-1/4}$). Every elementary particle is pointlike far below any resolved scale, clearing all electron-substructure and $g-2$ constraints wholesale. The femtometre sizes of nuclear physics are *composite* extents — three confined quark modes and their colour field — not single-particle widths; a proton is big the way a molecule is big, not the way its constituents are.
 
-## 6. The honest edges
+## 7. The honest edges
 
 **The strength of gravity is an input.** The framework derives gravity's structure — sourced curvature, the universal $1/r$, sector-independence, $G_N = G_\infty/4\pi$, equivalence as a theorem — but not the magnitude of $G_\infty$. It is the second and last dimensional input, alongside $m_e$. And there is no hierarchy problem lurking between the two, because they are not two entries on one scale: the kernel couplings are the wave's self-interaction, $G_\infty$ is the manifold's stiffness, and the famous "why is gravity so weak" ratio compares quantities of different kind that never meet in a formula. The framework declines to be embarrassed by a ratio it never forms. (The Higgs-mass fine-tuning problem also does not arise: masses are integer state counts, and an integer cannot receive a small continuous correction.)
 
