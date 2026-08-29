@@ -83,4 +83,4 @@ The framework's wager is explicit and testable: that the physics presented here 
 
 ---
 
-*Second edition, 2026. Full falsifier catalogue, statistical protocols, and the complete open-item record: first-edition Parts 5, 6, 9, 10 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*
+*Second edition, 2026. Full falsifier catalogue, statistical protocols, and the complete open-item record: first-edition Parts 5, 6, 9, 10 at https://fedgeno.github.io/; the computation record `idwt-v2.py` is distributed with these documents.*

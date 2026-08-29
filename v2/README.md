@@ -11,7 +11,7 @@ The second edition carries no status symbols and builds nothing on unexplained
 numerical patterns; observed relationships among the particle levels are
 reported as findings, not used as foundations. Full rigor, status accounting,
 and machine verification live in the first-edition
-Parts 1–11. The bare computation record `idwt.py` is distributed with
+Parts 1–11. The bare computation record `idwt-v2.py` is distributed with
 these documents and reproduces every number in them.
 
 | Part | Title | What it teaches |

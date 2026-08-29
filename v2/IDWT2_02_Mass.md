@@ -9,7 +9,7 @@ By the end of this Part you can compute every fundamental particle mass yourself
 3. **The sector mass units** $m_{{\rm scale},d}$ — all fixed by the couplings and one reference mass, the electron's (§3).
 4. **The occupied levels** $n$ — fifteen measured integers, the framework's quantum-number assignments (§4).
 
-That is the whole recipe: this edition computes everything **bare** — counting function times unit, nothing else — and lets every deviation from measurement stand in plain sight (§5). Two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve — and the same discipline applies to the deviations: where the first edition carried correction terms for them, this edition notes those as candidate explanations found *after* the fact, and keeps the raw numbers primary. The complete bare computation is the runnable record `idwt.py`, distributed with these documents.
+That is the whole recipe: this edition computes everything **bare** — counting function times unit, nothing else — and lets every deviation from measurement stand in plain sight (§5). Two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve — and the same discipline applies to the deviations: where the first edition carried correction terms for them, this edition notes those as candidate explanations found *after* the fact, and keeps the raw numbers primary. The complete bare computation is the runnable record `idwt-v2.py`, distributed with these documents.
 
 ---
 
@@ -160,7 +160,7 @@ Worked examples across the range:
 - **$\nu_2$:** $m_{\nu_2} = 7.43\times10^{-13}\times 11\,628 = 8.64$ meV.
 - **Top:** $m_t = 0.1451\times S(72,4) = 176.4$ GeV. Measured: $172.6$ GeV — a $+2.2\%$ overshoot, *left standing* (§5).
 
-The complete bare table — the accompanying `idwt.py` reproduces every line:
+The complete bare table — the accompanying `idwt-v2.py` reproduces every line:
 
 | particle | computation | bare prediction | measured (PDG 2024) | deviation |
 |---|---|---|---|---|
@@ -275,4 +275,4 @@ Stated as mysteries, without scaffolding. *Why these fifteen levels* — the cen
 
 ---
 
-*Second edition, 2026. Full derivations and machine verification: first-edition Parts 2, 5, 8 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*
+*Second edition, 2026. Full derivations and machine verification: first-edition Parts 2, 5, 8 at https://fedgeno.github.io/; the computation record `idwt-v2.py` is distributed with these documents.*

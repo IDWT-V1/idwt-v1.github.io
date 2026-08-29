@@ -366,4 +366,4 @@ Everything else this Part used — the harmonic well, the counting identity, the
 
 ---
 
-*Second edition, 2026. Full derivations, status accounting, and numerical verification: first-edition Parts 1–11 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*
+*Second edition, 2026. Full derivations, status accounting, and numerical verification: first-edition Parts 1–11 at https://fedgeno.github.io/; the computation record `idwt-v2.py` is distributed with these documents.*

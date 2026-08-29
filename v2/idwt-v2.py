@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""idwt.py — Infinite Dimensional Wave Theory, Second Edition: computation record.
+"""idwt-v2.py — Infinite Dimensional Wave Theory, Second Edition: computation record.
 
 Written from scratch for the second edition (v2/). Bare framework only:
 NO correction factors anywhere. Every number is the raw output of
@@ -15,7 +15,7 @@ Inputs: m_e = 0.511 MeV (unit reference); geometry integers N_c = 3 (colour
 classes of CP^2) and n_s-class count 4 (classes of CP^3). PDG 2024 values
 appear only as comparisons, never as inputs.
 
-Run: python3 idwt.py   (self-contained, stdlib only)
+Run: python3 idwt-v2.py   (self-contained, stdlib only)
 """
 
 from fractions import Fraction as Fr

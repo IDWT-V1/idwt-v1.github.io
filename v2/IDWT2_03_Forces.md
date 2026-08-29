@@ -250,4 +250,4 @@ The linearity of the confinement energy at mechanism level (§2.2 — the invari
 
 ---
 
-*Second edition, 2026. Full derivations and machine verification: first-edition Parts 3, 8, 10 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*
+*Second edition, 2026. Full derivations and machine verification: first-edition Parts 3, 8, 10 at https://fedgeno.github.io/; the computation record `idwt-v2.py` is distributed with these documents.*
