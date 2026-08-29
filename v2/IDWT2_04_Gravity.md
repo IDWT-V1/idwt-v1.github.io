@@ -102,4 +102,4 @@ What is not open: everywhere gravity is actually measured — laboratory to sola
 
 ---
 
-*Second edition, 2026. Full derivations and machine verification: first-edition Part 4 and `files/idwt.py` at https://fedgeno.github.io/.*
+*Second edition, 2026. Full derivations and machine verification: first-edition Part 4 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*

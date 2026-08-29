@@ -2,7 +2,7 @@
 
 ## 0. What this edition is
 
-This is a restatement of Infinite Dimensional Wave Theory organized around a single question asked of every claim: *is this a physical phenomenon that could actually be happening?* Everything in these pages passed that test, and everything is developed far enough to follow on the page — the mechanisms, the formulas, and the key derivations are carried in the text, so that no prior document is required. The first-edition Parts 1–11 and the master computation record `files/idwt.py` remain the archive of full rigor, complete status accounting, and numerical verification; where a derivation here is a sketch, the archive holds the whole proof.
+This is a restatement of Infinite Dimensional Wave Theory organized around a single question asked of every claim: *is this a physical phenomenon that could actually be happening?* Everything in these pages passed that test, and everything is developed far enough to follow on the page — the mechanisms, the formulas, and the key derivations are carried in the text, so that no prior document is required. The first-edition Parts 1–11 remain the archive of full rigor, complete status accounting, and numerical verification; where a derivation here is a sketch, the archive holds the whole proof.
 
 The second edition carries no status symbols. What is included is included because the physics is sound enough to state; where a result rests on an open premise, the prose says so, in place.
 
@@ -366,4 +366,4 @@ Everything else this Part used — the harmonic well, the counting identity, the
 
 ---
 
-*Second edition, 2026. Full derivations, status accounting, and numerical verification: first-edition Parts 1–11 and `files/idwt.py` at https://fedgeno.github.io/.*
+*Second edition, 2026. Full derivations, status accounting, and numerical verification: first-edition Parts 1–11 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*

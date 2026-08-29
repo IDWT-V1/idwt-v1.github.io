@@ -9,7 +9,7 @@ By the end of this Part you can compute every fundamental particle mass yourself
 3. **The sector mass units** $m_{{\rm scale},d}$ — all fixed by the couplings and one reference mass, the electron's (§3).
 4. **The occupied levels** $n$ — fifteen measured integers, the framework's quantum-number assignments (§4).
 
-That is the whole recipe: this edition computes everything **bare** — counting function times unit, nothing else — and lets every deviation from measurement stand in plain sight (§5). Two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve — and the same discipline applies to the deviations: where the first edition carried correction terms for them, this edition notes those as candidate explanations found *after* the fact, and keeps the raw numbers primary. The complete bare computation is the runnable record `v2/idwt2.py`.
+That is the whole recipe: this edition computes everything **bare** — counting function times unit, nothing else — and lets every deviation from measurement stand in plain sight (§5). Two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve — and the same discipline applies to the deviations: where the first edition carried correction terms for them, this edition notes those as candidate explanations found *after* the fact, and keeps the raw numbers primary. The complete bare computation is the runnable record `idwt.py`, distributed with these documents.
 
 ---
 
@@ -89,7 +89,7 @@ The $d=6$ coupling is read off the lepton geometry two independent ways, both gi
 
 $$g_{66} = \tfrac14.$$
 
-The $d=10$ sector shares it: $g_{10,10} = g_{66} = 1/4$. Both are complex-projective geometries whose coupling is set by the same class-count structure, and the kernel *cannot distinguish them* — a genuine degeneracy with two consequences we will use: the muon–tau mass difference is pure geometry (different $S(n,d)$, identical coupling), and the tau's mass correction (§5.1) resums through its own coupling.
+The $d=10$ sector shares it: $g_{10,10} = g_{66} = 1/4$. Both are complex-projective geometries whose coupling is set by the same class-count structure, and the kernel *cannot distinguish them* — a genuine degeneracy with a direct consequence: the muon–tau mass difference is pure geometry — different counts $S(n,d)$, identical coupling.
 
 ### 2.3 The electroweak coupling
 
@@ -160,7 +160,7 @@ Worked examples across the range:
 - **$\nu_2$:** $m_{\nu_2} = 7.43\times10^{-13}\times 11\,628 = 8.64$ meV.
 - **Top:** $m_t = 0.1451\times S(72,4) = 176.4$ GeV. Measured: $172.6$ GeV — a $+2.2\%$ overshoot, *left standing* (§5).
 
-The complete bare table (the runnable record `v2/idwt2.py` reproduces every line):
+The complete bare table — the accompanying `idwt.py` reproduces every line:
 
 | particle | computation | bare prediction | measured (PDG 2024) | deviation |
 |---|---|---|---|---|
@@ -263,7 +263,7 @@ A mass formula built from integers invites the objection that integers are flexi
 
 First, the structure has no continuous dial: the sector units are chained to $m_e$ (§3), so predicting a mass means choosing an integer on a *fixed* ladder whose rungs are far apart — adjacent levels differ by $\sim17\%$ at the muon and $\sim43\%$ at the tau. Landing within $2\times10^{-5}$ of a measured ratio on a $17\%$ grid is not generic; it is one chance in several thousand, per quantity.
 
-Second, the joint test. Take the seven dimensionless, parameter-free ratios whose measurements resolve the grid (a selection rule fixed in advance, not by closeness): $m_\mu/m_e$, $m_\tau/m_e$, $m_Z/m_W$, $m_H/m_W$, $\sin\theta_C$, $m_t/m_c$, and the neutrino splitting ratio. Score each by how lucky a random placement would need to be, and combine. The joint probability that random level assignments do this well: $4\times10^{-10}$ — six standard deviations — by exact computation, $2\times10^{-7}$ under the most conservative treatment. (The protocol is the first edition's, and two of its seven entries used that edition's corrected values; the dominant evidence — the lepton and boson ratios, sub-$10^{-4}$ hits on $17$–$43\%$ grids — is correction-free and carries the significance on its own.) Third, the brute-force version: draw entire random spectra (every level random in its allowed window) a million times and score them against the same data. None matches; the best random spectrum falls short of the actual one by more than thirty log-likelihood units. The complete protocol is in the archive and reruns from a fixed seed in `files/idwt.py`.
+Second, the joint test. Take the seven dimensionless, parameter-free ratios whose measurements resolve the grid (a selection rule fixed in advance, not by closeness): $m_\mu/m_e$, $m_\tau/m_e$, $m_Z/m_W$, $m_H/m_W$, $\sin\theta_C$, $m_t/m_c$, and the neutrino splitting ratio. Score each by how lucky a random placement would need to be, and combine. The joint probability that random level assignments do this well: $4\times10^{-10}$ — six standard deviations — by exact computation, $2\times10^{-7}$ under the most conservative treatment. (The protocol is the first edition's, and two of its seven entries used that edition's corrected values; the dominant evidence — the lepton and boson ratios, sub-$10^{-4}$ hits on $17$–$43\%$ grids — is correction-free and carries the significance on its own.) Third, the brute-force version: draw entire random spectra (every level random in its allowed window) a million times and score them against the same data. None matches; the best random spectrum falls short of the actual one by more than thirty log-likelihood units. The complete protocol is in the archive and reruns from a fixed seed in the first edition's records.
 
 Whatever the fifteen integers mean, the masses hanging on them are not the kind of agreement random integers produce.
 
@@ -275,4 +275,4 @@ Stated as mysteries, without scaffolding. *Why these fifteen levels* — the cen
 
 ---
 
-*Second edition, 2026. Full derivations and machine verification: first-edition Parts 2, 5, 8 and `files/idwt.py` at https://fedgeno.github.io/.*
+*Second edition, 2026. Full derivations and machine verification: first-edition Parts 2, 5, 8 at https://fedgeno.github.io/; the computation record `idwt.py` is distributed with these documents.*

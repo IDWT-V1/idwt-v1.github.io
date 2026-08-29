@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""idwt2.py — Infinite Dimensional Wave Theory, Second Edition: computation record.
+"""idwt.py — Infinite Dimensional Wave Theory, Second Edition: computation record.
 
 Written from scratch for the second edition (v2/). Bare framework only:
 NO correction factors anywhere. Every number is the raw output of
   counting function x sector unit,
 with the couplings and units derived from the sector geometry and one
 reference mass (the electron's). Deviations from measurement are printed
-as they stand. The first-edition master record (files/idwt.py) carries the
-full corrected framework and its verification history; this file is the
+as they stand. The first-edition master record (first-edition archive,
+https://fedgeno.github.io/) carries the corrected framework and its
+verification history; this file is the
 second edition's engine, matching v2/IDWT2_01..06.
 
 Inputs: m_e = 0.511 MeV (unit reference); geometry integers N_c = 3 (colour
 classes of CP^2) and n_s-class count 4 (classes of CP^3). PDG 2024 values
 appear only as comparisons, never as inputs.
 
-Run: python3 idwt2.py   (self-contained, stdlib only)
+Run: python3 idwt.py   (self-contained, stdlib only)
 """
 
 from fractions import Fraction as Fr
@@ -241,5 +242,5 @@ print(f"rho meson = level 9 = {m_rho:.1f} MeV (PDG 775.3, {dev(m_rho,775.3)})")
 
 print("\n" + "=" * W)
 print("Bare record complete. Deviations stand as measured. The corrected")
-print("framework and full verification history: files/idwt.py (first edition).")
+print("framework and full verification history: the first edition (fedgeno.github.io).")
 print("=" * W)
