@@ -232,7 +232,23 @@ The lepton-side mixing (the PMNS matrix) rests on a genuine symmetry worth stati
 
 ---
 
-## 8. What this Part leaves open
+## 8. Putting it together: interference × dimensionality = the forces
+
+Assemble the pieces of this Part and of Part 1, and the coverage closes. The interference of §0 supplies exactly **two faces** of one interaction — the phase-blind push (positive, always on, alive wherever intensities overlap) and the coherent face (sign set by relative phase, alive wherever a definite phase relationship is held) — riding on **three kinds of carrier**: overlapping cores (fading on the contact scale), constrained channels that may not disperse (constant force, by the fringe law), and unbounded massless components (thinning only geometrically, hence long-range). Dimensionality then does the distribution: *which* particles feel *which* face through *which* carrier is fixed by which coordinates their sectors share (containment), what each sector's geometry permits on them (the filter), and what a three-dimensional observer's projection turns the law into (§1.2). Every force phenomenon in physics is a cell of that small product:
+
+| phenomenon | interference face | carrier | dimensional gate | resulting law |
+|---|---|---|---|---|
+| electromagnetism | coherent (sign = phase) | unbounded massless phase component | $d=2$ plane inside every charged sector | $1/R^2$, attracts or repels |
+| weak interaction | coherent, handed | gapped channel of the complex geometry | left-handed components, every fermion sector | short range $\sim 1/m_W$ |
+| strong, short-range | *both*: blind push + colour-locked pull | overlapping quark cores | quark block $\{3,4\}$ only | contact range, weak net (Cornell short-range) |
+| confinement | coherent, constrained | strung colour channel (admissibility forbids dispersal) | colour only | linear, $\sigma = \lambda_c^2$ |
+| nuclear hard core | phase-blind push | overlapping singlet composites | shared $d=3$ | fading repulsion at the contact scale |
+| collective-channel attraction | phase-blind, through the condensate | screened condensate response | all sectors, coupling $\propto m_1m_2$ | short range $\sim1/m_H$ |
+| **gravity** | **not interference** — the one exception, proved (Part 4) | the manifold itself | all axes, no sector boundary | $1/R^2$, $\propto m_1m_2$, unscreenable |
+
+Read the table's logic: the *faces* explain sign (why electromagnetism both attracts and repels while the blind push only pushes); the *carriers* explain range (contact, linear, infinite — nothing else is available to a wave); the *dimensional gates* explain reach (why electromagnetism is universal among the charged, colour never leaves the quark block, the weak coupling touches every fermion but only half of it, neutrinos feel almost nothing, the tau feels everything); and the projection theorem explains why every long-range entry lands on the same $1/R^2$ for us regardless of the source's dimensionality. The exhaustiveness is not an accident of listing: the rank-1 theorem (Part 1 §1.2) says the wave possesses exactly *one* interaction channel, so the faces and carriers above are the complete repertoire of what that single self-coupling can do — and the manifold's response to energy density (gravity) is the one interaction that is not the wave talking to itself, established by the framework's own failed attempt to make it one. One wave, one self-coupling, one geometry: full coverage of force.
+
+## 9. What this Part leaves open
 
 The linearity of the confinement energy at mechanism level (§2.2 — the invariant form and the scale are in hand). The counting law's underlying premise — that a localized mode loads its configurations with equal weight — proved as a geometric identity on every sector shape, with its physical applicability resting on the particle-size result of Part 4. The $+0.37\%$ Weinberg residual. The closed form of charge quantization — why the fiber topology's integers yield exactly thirds — stated as open. And the cross-sector CP structure, held at candidate status. None of these is a place where a measurement disagrees with a computed number; across this Part, everything measured sits within a fraction of a percent of a value computed from the geometry and two integers.
 
