@@ -212,11 +212,7 @@ Down $\to$ strange, both in $d=3$:
 
 $$\sin^2\theta_C = \frac{S(1,3)}{S(4,3)} = \frac{1}{20} \;\Longrightarrow\; \sin\theta_C = 0.22361 \quad\text{(bare)}.$$
 
-The bare value sits $2\sigma$ low, and the correction that closes the gap is derived geometry, not adjustment. The mixing is mediated through the $d=2$ sector, whose local geometry is a sphere with curvature $R = 2$; curvature corrects the effective density of states by the standard heat-kernel factor $(1 - R\,t/12)$ evaluated at the strange quark's timescale $t = 1/S(4,3) = 1/20$:
-
-$$S_{\rm eff} = 20\times\Bigl(1 - \frac{2}{12\times20}\Bigr) = 20\times\Bigl(1-\frac{1}{120}\Bigr) \;\Longrightarrow\; \sin\theta_C = \frac{1 + 1/240}{\sqrt{20}} = 0.22454,$$
-
-(the square root halves the correction). Measured: $0.22450\pm0.00044$ — agreement at $+0.09\sigma$. Every ingredient of the $1/240$ is fixed: the sphere's curvature, the count $20$, the universal $-R/12$ of heat-kernel geometry. The $d=3$ sector itself contributes no such correction — an odd-dimensional geometry has zero Euler class and its correction vanishes — which is *why* the mediating sector's curvature is the whole story.
+Measured: $0.22450\pm0.00044$. The bare count sits $-0.4\%$ ($2\sigma$) low, and — in keeping with this edition's discipline (Part 2 §5) — it is *left standing*: one integer ratio, one square root, no adjustment. For the record, the first edition carries a found-after-the-fact candidate for exactly this gap (a curvature correction from the mediating sector's sphere, the heat-kernel factor $(1-Rt/12)$ giving $\sin\theta_C = (1+1/240)/\sqrt{20} = 0.22454$, $+0.09\sigma$) — geometric in every ingredient, and discovered, like the mass corrections, by hunting the residual. The reader can weigh it with that provenance known.
 
 ### 7.3 The rest of the matrix
 

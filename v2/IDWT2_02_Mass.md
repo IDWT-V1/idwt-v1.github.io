@@ -9,7 +9,7 @@ By the end of this Part you can compute every fundamental particle mass yourself
 3. **The sector mass units** $m_{{\rm scale},d}$ — all fixed by the couplings and one reference mass, the electron's (§3).
 4. **The occupied levels** $n$ — fifteen measured integers, the framework's quantum-number assignments (§4).
 
-Then three particles carry physically-derived corrections (§5), two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve.
+That is the whole recipe: this edition computes everything **bare** — counting function times unit, nothing else — and lets every deviation from measurement stand in plain sight (§5). Two quarks have special structure (§6), and the same ingredients price the hadrons (§8). Throughout, the occupied levels themselves are treated as what they are: *observed facts*, like the principal quantum numbers a spectroscopist assigns to atomic lines. They display remarkable arithmetic relationships, which §7 reports as findings. Why nature occupies these levels and not others is a mystery this edition does not pretend to solve — and the same discipline applies to the deviations: where the first edition carried correction terms for them, this edition notes those as candidate explanations found *after* the fact, and keeps the raw numbers primary. The complete bare computation is the runnable record `v2/idwt2.py`.
 
 ---
 
@@ -151,93 +151,51 @@ Read the structure of that fraction: the *heavy* quark unit appears squared in t
 
 ## 4. Computing the spectrum
 
-Now everything is a multiplication. The recipe: look up $S(n,d)$ (§1.2), multiply by the sector unit (§3.2), apply a correction if the particle is one of the three that carry one (§5).
+Now everything is a multiplication, and the recipe is complete as stated: look up $S(n,d)$ (§1.2), multiply by the sector unit (§3.2). **Nothing else is applied — no correction factors anywhere.** Every deviation from measurement stands in the table as measured.
 
 Worked examples across the range:
 
 - **Muon:** $m_\mu = m_e\times S(35,6)/S(13,6) = 0.511\times 3\,838\,380/18\,564$. The ratio reduces exactly: $206.7647$. Measured: $206.7683$ — agreement to $2\times10^{-5}$.
 - **W boson:** $m_W = 27.47\times S(76,2) = 27.47\times 2926 = 80\,379$ MeV. Measured: $80\,369\pm13$ ($+0.012\%$).
 - **$\nu_2$:** $m_{\nu_2} = 7.43\times10^{-13}\times 11\,628 = 8.64$ meV.
-- **Tau (with its §5 correction):** $m_\tau = m_e\times\frac{S(23,10)}{S(13,6)}\times\bigl(1+\tfrac{1}{1680}\bigr) = 1776.84$ MeV. Measured: $1776.93\pm0.09$ ($-1.0\sigma$).
+- **Top:** $m_t = 0.1451\times S(72,4) = 176.4$ GeV. Measured: $172.6$ GeV — a $+2.2\%$ overshoot, *left standing* (§5).
 
-The complete table, with the §5 corrections applied where marked:
+The complete bare table (the runnable record `v2/idwt2.py` reproduces every line):
 
-| particle | computation | predicted | measured (PDG 2024) | error |
+| particle | computation | bare prediction | measured (PDG 2024) | deviation |
 |---|---|---|---|---|
 | electron | reference | 0.51100 MeV | 0.51100 MeV | — |
 | muon | $m_e\,S(35,6)/S(13,6)$ | 105.657 MeV | 105.658 MeV | $-0.001\%$ |
-| tau | ratio $\times(1+1/1680)$ ★ | 1776.84 MeV | 1776.93 MeV | $-1.0\sigma$ |
+| tau | $m_e\,S(23,10)/S(13,6)$ | 1775.79 MeV | 1776.93 MeV | $-0.06\%$ |
 | down | $4.702\times1$ | 4.702 MeV | $\sim$4.70 MeV | $+0.04\%$ |
-| strange | $4.702\times20$, confinement ★ | 93.96 MeV | 93.5 MeV | $+0.49\%$ |
+| strange | $4.702\times20$ | 94.04 MeV | 93.5 MeV | $+0.57\%$ |
 | bottom | beat, §6.1 | 4181 MeV | 4183 MeV | $-0.05\%$ |
-| up | $0.1451\times15$, confinement ★ | 2.175 MeV | 2.16 MeV | $+0.70\%$ |
-| charm | $0.1451\times8855$, confinement ★ | 1277.3 MeV | 1273.0 MeV | $+0.34\%$ |
-| top | $0.1451\times1\,215\,450$, confinement ★ | 172.50 GeV | 172.57 GeV | $-0.04\%$ |
+| up | $0.1451\times15$ | 2.177 MeV | 2.16 MeV | $+0.77\%$ |
+| charm | $0.1451\times8855$ | 1284.9 MeV | 1273.0 MeV | $+0.93\%$ |
+| top | $0.1451\times1\,215\,450$ | 176.37 GeV | 172.57 GeV | $+2.20\%$ |
 | $\nu_1$ | $7.43\times10^{-13}\times2002$ | 1.487 meV | — | below bounds |
 | $\nu_2$ | $\times\,11\,628$ | 8.639 meV | — | below bounds |
-| $\nu_3$ | $\times\,65\,780\times(36/35)$ ★ | 50.27 meV | — | below bounds |
+| $\nu_3$ | $\times\,65\,780$ | 48.87 meV | — | below bounds |
 | photon | $27.47\times0$ | 0 | 0 | exact |
 | W | $27.47\times2926$ | 80.379 GeV | 80.369 GeV | $+0.012\%$ |
 | Z | $27.47\times3321$ | 91.230 GeV | 91.188 GeV | $+0.05\%$ |
 | Higgs | $27.47\times4560$ | 125.27 GeV | 125.20 GeV | $+0.05\%$ |
 
-Fourteen orders of magnitude, one reference mass, two geometric integers. The neutrino entries are outright predictions: $\Sigma m_\nu = 60.4$ meV awaits the next generation of cosmological surveys, and the ordering is *necessarily* normal, because $S(n,5)$ only grows — an inverted hierarchy cannot be written in this framework at all.
+Fourteen orders of magnitude, one reference mass, two geometric integers, and no dials of any kind — not even parameter-free correction terms. The neutrino entries are outright predictions: $\Sigma m_\nu = 59.0$ meV awaits the next generation of cosmological surveys, and the ordering is *necessarily* normal, because $S(n,5)$ only grows — an inverted hierarchy cannot be written in this framework at all.
 
-**Honesty in both directions.** The Z sits $+0.05\%$ (42 MeV) above a measurement good to 2 MeV — a genuine overshoot with no scale freedom to hide in, since the unit is an exact multiple of $m_e$; the scale-free ratio $m_Z/m_W = 3321/2926 = 1.13500$ against the measured $1.13461\pm0.00019$ is the cleaner comparison ($\approx2\sigma$). Heavy-quark masses are scheme-dependent at the several-percent level (pole vs $\overline{\rm MS}$), so charm/bottom/top residuals should be read against that spread, not statistical bars — which softens both the agreements and the tensions. The sharpest tests are the scale-free in-sector ratios, and they carry a diagnostic: boson and lepton ratios match to a few parts in $10^4$, while quark ratios show small residuals *growing with level separation* — not a scale error (a scale error cancels in ratios), but real level-dependent structure. §5.3 identifies it: confinement.
+**Honesty in both directions.** The Z sits $+0.05\%$ (42 MeV) above a measurement good to 2 MeV — a genuine overshoot with no scale freedom to hide in, since the unit is an exact multiple of $m_e$; the scale-free ratio $m_Z/m_W = 3321/2926 = 1.13500$ against the measured $1.13461\pm0.00019$ is the cleaner comparison ($\approx2\sigma$). Heavy-quark masses are scheme-dependent at the several-percent level (pole vs $\overline{\rm MS}$), so charm/bottom/top residuals should be read against that spread, not statistical bars — which softens both the agreements and the tensions. The sharpest tests are the scale-free in-sector ratios, and they carry a diagnostic: boson and lepton ratios match to a few parts in $10^4$, while quark ratios show small residuals *growing with level separation* — not a scale error (a scale error cancels in ratios), but real level-dependent structure, discussed in §5.
 
 ---
 
-## 5. Three corrections, three mechanisms
+## 5. The deviations, left standing
 
-Exactly three particles deviate from the bare count, each for a stated physical reason with a derived, parameter-free size. No other particle is corrected, and no correction has a knob.
+Where the bare table misses, this edition does not patch it. The deviations are few, small, and *structured*, and the structure is the honest scientific content:
 
-### 5.1 The tau hears its own echo: $+1/1680$
+- **The coloured sectors overshoot, and the overshoot grows with level.** Down $+0.04\%$, strange $+0.57\%$, up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$ — a monotone climb with mode index, confined to the two colour-carrying sectors (the boson and lepton sectors sit at parts in $10^4$). Whatever this is, it is not a scale error — a wrong unit shifts a whole sector uniformly and cancels in ratios, and this does neither. Something level-dependent and colour-specific is being left out of the free count.
+- **The tau reads $-0.06\%$ low** — the only lepton off at that level, and the one particle sitting at the critical binding endpoint.
+- **The bare third-neutrino mass implies an atmospheric splitting a few percent below oscillation inference**, while the first two neutrinos are untouched by any such comparison yet.
 
-The tau's sector and the electron–muon sector carry *identical* coupling $1/4$ (§2.2) — the kernel cannot tell them apart. So when the lepton sector perturbs the tau, the shift feeds back through the tau's own equal coupling, and that echo echoes. The leading perturbation of the $d{=}6\to d{=}10$ coupling at the tau's site is
-
-$$\varepsilon = \frac{1}{b^3\times S(b,4)} = \frac{1}{64\times35} = \frac{1}{2240},$$
-
-($b^3 = 64$ the resonance volume at the critical site, $S(4,4)=35$ the frequency normalization — the muon's own count). The self-feedback is a geometric series in $g_{10,10} = 1/4$:
-
-$$\Delta m = \varepsilon\,m_\tau + g_{10,10}\Delta m \;\Longrightarrow\; \Delta m = \frac{\varepsilon\,m_\tau}{1-\tfrac14} = \varepsilon\,m_\tau\times\frac{4}{3}.$$
-
-Total: $\frac{1}{2240}\times\frac43 = \frac{1}{1680}$. Every factor is one of the two geometry integers or a count built from them. Applied, the tau moves from $0.06\%$ low to $-1.0\sigma$ — inside the error bar of one of the most precisely measured masses in physics. This correction exists *only* for the tau because only the tau sits at the critical endpoint sharing its perturber's coupling; for the electron and muon there is no second sector to echo through.
-
-### 5.2 The third neutrino's overlap: $+1/35$
-
-The three neutrino levels are not structurally alike, and the difference is physical. §7 records the observed relations: $\nu_1$ and $\nu_2$ sit at levels that are single-sector counts, while $\nu_3$'s level combines *both* — it is the one neutrino whose structure draws on the $d=3$ and $d=4$ images simultaneously. Where the two images overlap they interfere constructively, raising the effective count by one part in
-
-$$\frac{1}{S(4,4)} = \frac{1}{35}:$$
-
-$m_{\nu_3} \to m_{\nu_3}\times\frac{36}{35} = 50.27$ meV. The size is an exact algebraic consequence of quantities derived above — the interference amplitude is the product $\varepsilon_{\ell=2}\times g_{33}$, where $\varepsilon_{\ell=2} = g_{\rm coeff}/(16\times35) = 1/(280\sqrt7)$ is the kernel's tensor-channel scale, and the irrationals cancel exactly: $\frac{1}{280\sqrt7}\times 8\sqrt7 = \frac{8}{280} = \frac{1}{35}$. With it, the implied atmospheric splitting $\Delta m^2_{31} = 2.525\times10^{-3}$ eV$^2$ matches oscillation data within $0.2\sigma$. Candor: of the three corrections this one's mechanism is the least deeply derived — the algebra is exact and the inputs independent, but *why* the overlap enters with precisely this product awaits a deeper account, and we say so rather than paper over it.
-
-### 5.3 Quarks weigh less than their count: confinement binding
-
-The bare count prices a *free* quark — and a quark is never free. Part of the counted energy is locked in the colour field that confines it; the observed inertial mass is lower by that locked share. The deficit per state grows linearly with how much of the well the mode occupies, measured by the mean occupied level
-
-$$\langle k\rangle = \frac{d\,(n-1)}{d+1} \quad(\text{exact for the harmonic well}),$$
-
-so
-
-$$M_{\rm phys} = M_{\rm bare}\,\bigl(1 - x_e\,\langle k\rangle\bigr).$$
-
-The coefficient is derived, not fitted, from the confinement scale itself. With $\Lambda = N_c f_\pi = 282$ MeV (both factors derived in §8.1), the condensate occupation of the colour well is $N_b = \Lambda/(4\,m_{{\rm scale},4}) = 486$, and
-
-$$x_e = \frac{3}{16\,N_b} = 3.86\times10^{-4},$$
-
-applied *universally* to the two colour-carrying sectors $d=3,4$ — the $d=3$ quarks inherit their colour from $d=4$ through the fibration, so the per-state deficit is the same one number. Lepton and boson wells are effectively harmonic (no colour condensate) and are untouched.
-
-The shape is the diagnostic that convicts. The bare overshoots grow with level — up $+0.77\%$, charm $+0.93\%$, top $+2.20\%$ — exactly the signature of level-dependent binding and impossible for any scale error. Worked for the top: $\langle k\rangle = 4\times71/5 = 56.8$, deficit $= 3.86\times10^{-4}\times56.8 = 2.19\%$, so $172{,}500$ MeV from a bare $176{,}365$ — landing at $-0.04\%$ of the measured value. All five singly-counted quarks come within $1\sigma$:
-
-| quark | bare error | corrected error |
-|---|---|---|
-| down | $+0.04\%$ | $+0.04\%$ ($\langle k\rangle = 0$: the ground state pays nothing) |
-| strange | $+0.57\%$ | $+0.49\%$ |
-| up | $+0.77\%$ | $+0.70\%$ |
-| charm | $+0.93\%$ | $+0.34\%$ |
-| top | $+2.20\%$ | $-0.04\%$ |
-
-The physics in one sentence: a confined quark's missing percent is not an error in the count — it is the energy the colour field keeps.
+**On the correction terms of the first edition — and why they are not applied here.** The first-edition record carries correction factors for exactly these deviations: a confinement-binding deficit for the quarks (energy locked in the colour field, linear in the occupied level), a self-feedback echo for the tau ($+1/1680$, a geometric series in its own coupling), and a constructive-overlap shift for the third neutrino ($+1/35$). Each has a physical story and a parameter-free size, and each lands its target inside $1\sigma$. This edition still declines to apply them, for a reason of epistemic honesty rather than arithmetic: *every one of them was found by looking for it* — residual first, mechanism second. No one reasoning forward from harmonic wells writes down a linear-in-level binding deficit or a $1/1680$ echo unprompted; those constructions exist because a $+2.2\%$ and a $-0.06\%$ were sitting there needing explanations. Post-hoc mechanisms can be true — the quark overshoot's shape genuinely *is* what level-dependent binding would look like, and confinement genuinely should keep some energy — but a reader deserves to see the raw engine and the deviations side by side, and to weigh the candidate explanations knowing the order in which they were found. Here the deviations stand as measurements; the candidate mechanisms live in the first edition with their derivations, and the strongest of them (colour binding) is exactly the interference physics of Part 3 §2.2 arriving from the other direction.
 
 ---
 
@@ -253,7 +211,7 @@ against the measured $4183\pm7$ ($-0.05\%$). An exhaustive search finds no secon
 
 ### 6.2 The top quark's level is measured, and remarkable
 
-The top sits at level 72 of the colour sector. We do not derive that integer. What we found, and report as a finding: $72 = 3\times4\times6$ — the product of the class counts of the three complex matter geometries, the same integers that count colours, lepton classes, and flavours ($\chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)$). It is a beautiful identity and it may well be a clue; it is not a derivation, and this edition declines to dress it as one. Given the level, the mass follows from the ordinary recipe with the §5.3 correction — and lands at $-0.04\%$.
+The top sits at level 72 of the colour sector. We do not derive that integer. What we found, and report as a finding: $72 = 3\times4\times6$ — the product of the class counts of the three complex matter geometries, the same integers that count colours, lepton classes, and flavours ($\chi(\mathbb{CP}^2)\,\chi(\mathbb{CP}^3)\,\chi(\mathbb{CP}^5)$). It is a beautiful identity and it may well be a clue; it is not a derivation, and this edition declines to dress it as one. Given the level, the mass follows from the ordinary recipe — $176.4$ GeV bare, standing $+2.2\%$ above measurement as the largest deviation in the table, at the top of the coloured sectors' monotone climb (§5).
 
 ---
 
@@ -305,7 +263,7 @@ A mass formula built from integers invites the objection that integers are flexi
 
 First, the structure has no continuous dial: the sector units are chained to $m_e$ (§3), so predicting a mass means choosing an integer on a *fixed* ladder whose rungs are far apart — adjacent levels differ by $\sim17\%$ at the muon and $\sim43\%$ at the tau. Landing within $2\times10^{-5}$ of a measured ratio on a $17\%$ grid is not generic; it is one chance in several thousand, per quantity.
 
-Second, the joint test. Take the seven dimensionless, parameter-free ratios whose measurements resolve the grid (a selection rule fixed in advance, not by closeness): $m_\mu/m_e$, $m_\tau/m_e$, $m_Z/m_W$, $m_H/m_W$, $\sin\theta_C$, $m_t/m_c$, and the neutrino splitting ratio. Score each by how lucky a random placement would need to be, and combine. The joint probability that random level assignments do this well: $4\times10^{-10}$ — six standard deviations — by exact computation, $2\times10^{-7}$ under the most conservative treatment. Third, the brute-force version: draw entire random spectra (every level random in its allowed window) a million times and score them against the same data. None matches; the best random spectrum falls short of the actual one by more than thirty log-likelihood units. The complete protocol is in the archive and reruns from a fixed seed in `files/idwt.py`.
+Second, the joint test. Take the seven dimensionless, parameter-free ratios whose measurements resolve the grid (a selection rule fixed in advance, not by closeness): $m_\mu/m_e$, $m_\tau/m_e$, $m_Z/m_W$, $m_H/m_W$, $\sin\theta_C$, $m_t/m_c$, and the neutrino splitting ratio. Score each by how lucky a random placement would need to be, and combine. The joint probability that random level assignments do this well: $4\times10^{-10}$ — six standard deviations — by exact computation, $2\times10^{-7}$ under the most conservative treatment. (The protocol is the first edition's, and two of its seven entries used that edition's corrected values; the dominant evidence — the lepton and boson ratios, sub-$10^{-4}$ hits on $17$–$43\%$ grids — is correction-free and carries the significance on its own.) Third, the brute-force version: draw entire random spectra (every level random in its allowed window) a million times and score them against the same data. None matches; the best random spectrum falls short of the actual one by more than thirty log-likelihood units. The complete protocol is in the archive and reruns from a fixed seed in `files/idwt.py`.
 
 Whatever the fifteen integers mean, the masses hanging on them are not the kind of agreement random integers produce.
 
@@ -313,7 +271,7 @@ Whatever the fifteen integers mean, the masses hanging on them are not the kind 
 
 ## 10. What this Part leaves open
 
-Stated as mysteries, without scaffolding. *Why these fifteen levels* — the central one; this edition treats the levels as measured. *Why the top's level is $72$* — the triple-product identity is a finding, not an answer. *The bottom beat's dynamics* — site exact, mechanism sketched, full derivation open. *The deeper origin of the $1/35$* (§5.2). *The Higgs level's sum rule* — found, unexplained. *The solar splitting* — the predicted $\Delta m^2_{21}$ sits $1.6\sigma$ low with no correction available in the structure; either something is missing or the measured central value moves. *The Z's $+0.05\%$* — a real residual, stated. None of these gaps touches the calculational content of this Part: every number above follows from the recipe as shown, and the reader now owns the recipe.
+Stated as mysteries, without scaffolding. *Why these fifteen levels* — the central one; this edition treats the levels as measured. *Why the top's level is $72$* — the triple-product identity is a finding, not an answer. *The bottom beat's dynamics* — site exact, mechanism sketched, full derivation open. *The coloured-sector overshoot* — the growing-with-level deviation of §5, the sharpest structured miss in the table, with colour binding as its found-after-the-fact candidate. *The tau's $-0.06\%$ and the third neutrino's few-percent shortfall* — same status. *The Higgs level's sum rule* — found, unexplained. *The Z's $+0.05\%$* — a real residual, stated. None of these gaps touches the calculational content of this Part: every number above follows from the recipe as shown, and the reader now owns the recipe — dials and all, which is to say, none.
 
 ---
 

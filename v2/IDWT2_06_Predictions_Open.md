@@ -36,7 +36,7 @@ Each entry states the prediction *and the mechanism that makes it rigid* — the
 
 | quantity | predicted | current status | who decides |
 |---|---|---|---|
-| $\Sigma m_\nu$ | $60.4$ meV | bound $<120$ meV | CMB-S4-class surveys, 2030s |
+| $\Sigma m_\nu$ | $59.0$ meV (bare) | bound $<120$ meV | CMB-S4-class surveys, 2030s |
 | $m_\beta$ (beta-decay effective) | $8.8$ meV | KATRIN $<450$ meV | Project 8 ($\to\sim40$ meV) |
 | neutrino mass ratios | $5.81$ and $32.9$, exact | consistent | any absolute-mass pair |
 | $\sin^2\theta_{23}$ | $0.5590$ | $0.553$ | T2K/NOvA/DUNE precision era |
@@ -69,7 +69,7 @@ In decreasing order of weight, mysteries stated as mysteries.
 
 **5. The strength of gravity.** $G_\infty$ is the second and last dimensional input. Deriving it — reducing the framework to one scale — is a program with no current result. (And no hierarchy problem waits inside it: the kernel couplings and the manifold stiffness are different kinds of quantity that never form the infamous ratio.)
 
-**6. Named smaller items.** The equidistribution premise beneath the counting law (mechanism proved as geometry; physical applicability resting on the particle-size result). The bottom beat's dynamics (site exact, geometric mean argued dimensionally, full mechanism open). The deeper origin of the third neutrino's $1/35$. The lone-pair share $\delta$ in bent molecules (fitted, not derived). The solar-splitting prediction sitting $1.6\sigma$ low with no correction available — either something is missing or the measurement's central value moves; the framework does not get to choose. The Z's $+0.05\%$ and the Weinberg angle's $+0.37\%$ — real structural residuals, unexcused. Confinement's linear law at mechanism level. Absolute rates beyond the one-quantum import.
+**6. Named smaller items.** The bare-spectrum deviations of Part 2 §5 — the coloured sectors' growing-with-level overshoot (topping at $+2.2\%$ on the top quark), the tau's $-0.06\%$, the third neutrino's few-percent shortfall against oscillation inference — all *left standing*, with the first edition's correction terms noted as found-after-the-fact candidates rather than applied. The Cabibbo angle's bare $-0.4\%$ (same status; the curvature-correction candidate lives in the first edition). The equidistribution premise beneath the counting law (mechanism proved as geometry; physical applicability resting on the particle-size result). The bottom beat's dynamics (site exact, geometric mean argued dimensionally, full mechanism open). The lone-pair share $\delta$ in bent molecules (fitted, not derived). The Z's $+0.05\%$ and the Weinberg angle's $+0.37\%$ — real structural residuals, unexcused. Confinement's fringe-amplitude coefficient. Absolute rates beyond the one-quantum import.
 
 Nothing in this ledger is load-bearing for the calculations of Parts 1–5: every number taught there follows as shown, with the open items entering only where the text said so.
 
