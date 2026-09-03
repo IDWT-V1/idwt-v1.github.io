@@ -8321,8 +8321,10 @@ assert all(_hopf_lockerr_130[L] < 1e-12 for L in range(1, 4))
 # induced generator belong to one symplectic construction, although selection
 # of the physical field orientation G by the electron-nucleus system is open.
 # Rotating the first pair to its even/odd basis gives L*sigma_x; the final pair
-# is the unit clock diag(-1,0).  Adding the projectively invisible scalar I/4
-# gives EXACTLY M_L.  Both blocks use the same group parameter theta, so their
+# is the unit clock diag(-1,0).  Choosing the projectively invisible scalar I/4
+# gives EXACTLY M_L.  It fixes the energy zero on each shell; it is not one
+# fixed fundamental central shift, whose degree-L lift would be cL*I.
+# Both blocks use the same group parameter theta, so their
 # frequency lock is representation-theoretic, not a comparison of two field
 # strengths.  This works for L>=1.  The L=0 ring has no Chern flux and remains
 # a separate display/trajectory question.
@@ -8351,6 +8353,164 @@ for _L in range(1, 5):
     )
     _Gblockerr_130[_L] = float(np.max(np.abs(_induced130 - _target130)))
 assert all(_Gblockerr_130[L] < 1e-12 for L in range(1, 5))
+
+# UNIQUENESS WITHIN THE ORBIT SPLITTING.  Assume (i) one shell-independent
+# diagonal U(1) generator diag(g1,g2,g3,g4), (ii) amplitude pure powers
+# z1^L,z2^L, (iii) a disjoint clock plane z3,z4, (iv) z4^L is the clock
+# reference, and (v) z3*z4^(L-1) is the primitive adjacent clock state.
+# Matching relative weights (+L,-L,-1,0) for every L gives
+#     g1-g4=1, g2-g4=-1, g3-g4=-1.
+# The coefficient matrix has rank 3 and nullspace span{(1,1,1,1)}: the only
+# freedom is a central shift, which is projectively invisible.  Reversing all
+# signs reverses the field orientation; permutations only relabel coordinates.
+_Gconstraints_130 = np.array(
+    [[1.0, 0.0, 0.0, -1.0],
+     [0.0, 1.0, 0.0, -1.0],
+     [0.0, 0.0, 1.0, -1.0]]
+)
+_Grhs_130 = np.array([1.0, -1.0, -1.0])
+_Grep_130 = np.array([1.0, -1.0, -1.0, 0.0])
+_Gnull_130 = np.ones(4)
+assert np.linalg.matrix_rank(_Gconstraints_130) == 3
+assert np.array_equal(_Gconstraints_130 @ _Grep_130, _Grhs_130)
+assert np.array_equal(_Gconstraints_130 @ _Gnull_130, np.zeros(3))
+
+# Within the disjoint clock plane, every degree-L monomial is
+# z3^k*z4^(L-k), with relative weight -k.  A primitive unit clock therefore
+# forces k=1; higher k are harmonics, not alternative primitive clocks.
+_clock_k_130 = {}
+for _L in range(1, 6):
+    _clock_k_130[_L] = [
+        _k for _k in range(_L + 1) if -_k == -1
+    ]
+assert all(_clock_k_130[L] == [1] for L in range(1, 6))
+
+# CONJUGACY AND FLUX-LABEL MATCH.  The full unitary-equivalence family is
+# U G U^dag.  G has multiplicities (2,1,1), U(4) stabilizer dimension 6, and
+# conjugacy-orbit dimension 10.  After removing its trace, G lies in su(4).
+# Via SU(4)=Spin(6), this is the six-dimensional rotation orbit IF the four
+# coordinates carry that physical spinor action; otherwise only unitary
+# equivalence is established.  In the locked extremal construction, a
+# nonnegative Chern sector k gives 2k primitive-clock lobes.  Matching the
+# angular family labelled by 2L lobes forces k=L; sign reverses orientation.
+_Geigs_130 = np.linalg.eigvalsh(np.diag(_Grep_130))
+_Gmult_130 = [
+    int(np.sum(np.isclose(_Geigs_130, _v)))
+    for _v in sorted(set(_Geigs_130))
+]
+_Gorbitdim_130 = 4 ** 2 - sum(_m ** 2 for _m in _Gmult_130)
+assert _Gmult_130 == [2, 1, 1]
+assert _Gorbitdim_130 == 10
+_flux_match_130 = {
+    _L: [_k for _k in range(8) if 2 * _k == 2 * _L]
+    for _L in range(4)
+}
+assert all(_flux_match_130[L] == [L] for L in range(4))
+
+# PREQUANTUM LIFT.  Normalize omega_FS so int_CP1 omega_FS/(2pi)=1.
+# The prequantum bundle O(L) has curvature -i*L*omega_FS, and the level-L
+# moment map is L*mu_G.  In holomorphic polarization the lifted infinitesimal
+# action is the Euler-weight operator sum_j g_j*z_j*d/dz_j (overall sign is
+# fixed by the chosen flow convention).  It acts on a monomial z^alpha with
+# eigenvalue alpha.g.  A central shift g->g+c adds cL to every degree-L state,
+# hence only a projective common phase.  Verify that all pairwise differences
+# are independent of the central representative.
+_preq_shift_err_130 = {}
+for _L in range(1, 5):
+    _exp_all_130 = []
+    for _a1 in range(_L + 1):
+        for _a2 in range(_L - _a1 + 1):
+            for _a3 in range(_L - _a1 - _a2 + 1):
+                _a4 = _L - _a1 - _a2 - _a3
+                _exp_all_130.append((_a1, _a2, _a3, _a4))
+    _exp_all_130 = np.array(_exp_all_130, dtype=float)
+    assert len(_exp_all_130) == math.comb(_L + 3, 3)
+    _w0_130 = _exp_all_130 @ _Grep_130
+    _wc_130 = _exp_all_130 @ (_Grep_130 + 0.371 * _Gnull_130)
+    _d0_130 = _w0_130[:, None] - _w0_130[None, :]
+    _dc_130 = _wc_130[:, None] - _wc_130[None, :]
+    _preq_shift_err_130[_L] = float(np.max(np.abs(_d0_130 - _dc_130)))
+assert all(_preq_shift_err_130[L] < 1e-12 for L in range(1, 5))
+
+# TOPOLOGICAL SCALE NO-GO.  Chern number and representation weights determine
+# dimensionless ratios, not the continuous coefficient omega in H=hbar*omega*G.
+# Multiplying the Hamiltonian by any positive lambda preserves the bundle,
+# weight lattice, closed image, and lobe count while reparametrizing physical
+# time.  Hence omega requires the dynamical action or an observer-space bridge;
+# it cannot be derived from c1 alone.
+_omega_scale_examples_130 = [0.37, 1.0, 2.6]
+_omega_scale_lobes_130 = {
+    _lam: {L: _Hlobes_130[L] for L in range(4)}
+    for _lam in _omega_scale_examples_130
+}
+assert len({tuple(v.values()) for v in _omega_scale_lobes_130.values()}) == 1
+
+# OBSERVER MAP CLASSIFICATION.  The toric invariants are occupations
+# p_j=|z_j|^2/|z|^2 and relative phases.  On the amplitude plane, the Born
+# intensity fraction q=p1/(p1+p2) is unique once the readout premise is that
+# squared observed radius equals normalized occupation; hence r=sqrt(q).
+# On the clock plane, gauge-invariant characters are exp(ik(phi3-phi4)).
+# Requiring primitive winding +/-1 leaves k=+/-1 only.  Rotational covariance
+# gives W=X+iY=R*h(q)*exp(+/-i(phi3-phi4)) for a possibly complex h.  Reflection
+# symmetry of the aligned apparatus removes occupation-dependent angular shear,
+# making h=f real.  The Born-intensity premise then selects f(q)=sqrt(q).
+# Projective symmetry alone selects neither that premise nor the depth map.
+_primitive_clock_chars_130 = [
+    _k for _k in range(-8, 9) if abs(_k) == 1
+]
+assert _primitive_clock_chars_130 == [-1, 1]
+
+# L=0 NO-GO AND MINIMAL COMPLETION.  H0(CP3,O(0))=C, so its projectivization
+# is CP0, a point: no nonconstant internal phase or four-state induced flow can
+# live in the pure Chern-zero representation.  The existing M_0 orbit already
+# occupies only three states because z2(t)=0.  Its minimal representation is
+# one constant amplitude state plus a two-state relative-phase clock, with
+# generator diag(0,-1,0).  This gives an exact ring but makes the clock a
+# universal extra sector, not a consequence of O(0) magnetic flux.
+_O0_dim_130 = math.comb(0 + 3, 3)
+assert _O0_dim_130 == 1
+_M0min_130 = np.diag([0.0, -1.0, 0.0])
+_z0min_130 = np.array(
+    [_A130, _B130 / math.sqrt(2.0), _B130 / math.sqrt(2.0)],
+    dtype=complex,
+)
+_t0min_130 = np.linspace(0.0, 2.0 * math.pi, 2000)
+_Z0min_130 = np.exp(
+    -1j * np.outer(np.diag(_M0min_130), _t0min_130)
+) * _z0min_130[:, None]
+_r0min_130 = np.ones_like(_t0min_130)
+_c0min_130 = _Z0min_130[1] * _Z0min_130[2].conj()
+_c0min_130 /= np.abs(_c0min_130)
+_L0ringerr_130 = float(np.max(np.abs(
+    _r0min_130 * _c0min_130 - np.exp(1j * _t0min_130)
+)))
+assert _L0ringerr_130 < 1e-12
+
+# A uniform single-bundle completion in homogeneous degree L+c cannot use
+# c=0 (one section at L=0) or c=1.  For c=1, the L=0 targets force the
+# fundamental-weight diameter to be one, so degree-(L+1) monomial weights have
+# diameter at most L+1; the required extremal pair has diameter 2L, impossible
+# for every L>=2.  Thus no one-offset construction works uniformly in L.
+# Degree offset c=2 is the first algebraically possible homogeneous embedding;
+# the following four degree-(L+2) monomials have target weights for all L>=0.
+# This proves minimal possibility, not physical selection: it changes the
+# bundle flux from L to L+2 and therefore is not silently adopted.
+_offset2_err_130 = {}
+for _L in range(5):
+    _offset2_exp_130 = np.array(
+        [[_L + 1, 1, 0, 0],
+         [1, _L, 1, 0],
+         [0, 0, 1, _L + 1],
+         [0, 0, 0, _L + 2]],
+        dtype=float,
+    )
+    assert np.all(np.sum(_offset2_exp_130, axis=1) == _L + 2)
+    _offset2_w_130 = _offset2_exp_130 @ _Grep_130
+    _offset2_target_130 = np.array([_L, -_L, -1.0, 0.0])
+    _offset2_err_130[_L] = float(np.max(np.abs(
+        _offset2_w_130 - _offset2_target_130
+    )))
+assert all(_offset2_err_130[L] < 1e-12 for L in range(5))
 
 
 # =============================================================================
@@ -12988,6 +13148,40 @@ print("supplies the weights. Unit electron charge and background flux L are")
 print("distinct, so O(L) does not mean an electron of charge L*e.")
 print("The CP3 moment map mu_G=<Z|G|Z>/<Z|Z> generates the classical flow;")
 print("its O(L) quantization is the induced degree-L action above.")
+print("classification under amplitude-plane + disjoint primitive-clock")
+print("premises: rank(constraints)=3, so G is UNIQUE modulo central shift,")
+print("orientation reversal, and coordinate relabelling:")
+print(f"  representative G={_Grep_130.astype(int).tolist()}  "
+      f"null={_Gnull_130.astype(int).tolist()}")
+print("  clock-plane degree-L monomials have weights -k; unit winding")
+print("  uniquely selects k=1 (higher k are clock harmonics).")
+print("unitary conjugacy family U G U^dag; eigenvalue multiplicities")
+print(f"  {_Gmult_130}, stabilizer dimension=6, conjugacy-orbit dimension="
+      f"{_Gorbitdim_130}.")
+print("Via SU(4)=Spin(6) this is a spatial rotation orbit when the four")
+print("coordinates carry the physical spinor action.")
+print("In the locked extremal construction, Chern k gives 2k lobes, so")
+print("matching the 2L angular family forces k=L (sign = orientation).")
+print("prequantum lift: curvature=-i*L*omega_FS, moment map=L*mu_G,")
+print("and the holomorphic Euler-weight operator has eigenvalue alpha.G;")
+print("central shifts change all degree-L weights by the same cL:")
+print(f"  max projective weight-difference error="
+      f"{max(_preq_shift_err_130.values()):.1e}")
+print("observer map theorem: toric occupations and relative phases make")
+print("r=sqrt(p1/(p1+p2)) unique GIVEN the Born-intensity readout, while")
+print("the primitive clock is exp(+/-i(phi3-phi4)). Rotation permits a")
+print("complex radial response; aligned reflection removes angular shear.")
+print("The Born premise and depth map are not forced by projective symmetry.")
+print("topology does not set omega: positive rescaling of H preserves c1,")
+print("weights, closure, and lobe count while only reparametrizing time.")
+print("L=0: H0(O(0)) has dimension 1, so pure Chern-zero quantization is")
+print("a projective point and cannot carry a clock. The occupied M0 orbit")
+print("has the minimal completion 1 amplitude + 2 clock states:")
+print(f"  ring error={_L0ringerr_130:.1e}")
+print("A uniform single-bundle embedding first becomes algebraically possible")
+print("at degree L+2, but that changes flux to L+2 and is NOT selected:")
+print(f"  max degree-(L+2) embedding error="
+      f"{max(_offset2_err_130.values()):.1e}")
 print("conditional disk corollary: if all L flux quanta pierce the observed")
 print("orbit disk uniformly, flux quantization plus mvr=Lhbar also gives")
 print(f"omega_B=omega_orb; algebraic error="

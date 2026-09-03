@@ -202,7 +202,13 @@ MathJax = {
     \mu_G([Z])=\frac{Z^\dagger GZ}{Z^\dagger Z},\qquad
     [Z]\longmapsto[e^{-i\theta G}Z].
     \]
-    <p>Geometric quantization with prequantum bundle \(\mathcal O(L)\) lifts that same flow to the degree-\(L\) representation. The curvature level and the matrix action are therefore two parts of one symplectic construction.</p>
+    <p>With \((2\pi)^{-1}\int_{\mathbb{CP}^1}\omega_{\rm FS}=1\), the prequantum curvature is \(-iL\omega_{\rm FS}\), the level-\(L\) moment map is \(L\mu_G\), and the holomorphic lift is</p>
+    \[
+    \widehat G_L=\sum_{j=1}^4g_jz_j\frac{\partial}{\partial z_j},
+    \qquad
+    \widehat G_Lz^a=(a\cdot g)z^a.
+    \]
+    <p>The curvature level and matrix action are therefore two parts of one symplectic construction. A central shift \(G\mapsto G+cI\) adds the same \(cL\) to every degree-\(L\) state and only changes the common projective phase.</p>
     <p>For every \(L\geq1\), four degree-\(L\) monomials have the following induced weights:</p>
     <table class="data-table">
       <thead><tr><th>State</th><th>\(z_1^L\)</th><th>\(z_2^L\)</th><th>\(z_3z_4^{L-1}\)</th><th>\(z_4^L\)</th></tr></thead>
@@ -214,7 +220,15 @@ MathJax = {
     =L\sigma_x\oplus\operatorname{diag}(-1,0),\qquad
     M_L=\omega\left(G_L\big|_{\mathcal V_L}+\tfrac14I\right).
     \]
-    <p>This reproduces the entire projective generator exactly for every \(L\geq1\). The amplitude exchange and clock are two blocks of one group action with one parameter \(\theta=\omega t\); their frequency lock is automatic. No separate frequency matching and no shell-by-shell fitted coefficient is involved.</p>
+    <p>This reproduces the entire projective generator exactly for every \(L\geq1\). The scalar \(I/4\) is an energy-zero choice on each displayed four-state subspace, not one fixed fundamental central shift (which would lift as \(cLI\)). The amplitude exchange and clock are two blocks of one group action with one parameter \(\theta=\omega t\); their frequency lock is automatic. No separate frequency matching and no shell-by-shell fitted coefficient is involved.</p>
+
+    <h3>The generator is unique at these premises</h3>
+    <p>Let a shell-independent diagonal action have weights \((g_1,g_2,g_3,g_4)\). Requiring the two amplitude pure powers, the disjoint clock plane, and its primitive adjacent clock state gives</p>
+    \[
+    g_1-g_4=1,\qquad g_2-g_4=-1,\qquad g_3-g_4=-1.
+    \]
+    <p>The constraint matrix has rank three; its only null direction is \((1,1,1,1)\), the invisible central phase. Therefore \(G=cI+\operatorname{diag}(1,-1,-1,0)\) is unique up to that shift, orientation reversal and coordinate relabelling. In the clock plane, \(z_3^kz_4^{L-k}\) has relative weight \(-k\), so primitive unit winding uniquely gives \(k=1\).</p>
+    <p>The full unitary-equivalence family is the conjugacy orbit \(UGU^\dagger\). After subtracting its trace, the generator lies in \(\mathfrak{su}(4)\); the equivalence \(SU(4)\simeq\operatorname{Spin}(6)\) makes this the six-dimensional rotation orbit when the four coordinates carry that spinor action. An isotropic atom may then preserve the family while preparation or apparatus alignment selects a representative. In the locked extremal construction, a Chern sector \(k\) produces \(2|k|\) lobes, so matching the angular family labelled by \(2L\) forces \(|k|=L\).</p>
 
     <h3>Why an ordinary 3D field is not the source</h3>
     <p>The nucleus's leading Coulomb field is electrostatic, so \(\mathbf B=0\) in the nuclear rest frame. There is therefore no Zeeman generator at the gross-orbital scale. The unavoidable relativistic magnetic field seen in the electron's moving frame is approximately \(B_{\rm mot}=vE/c^2\). Using the Coulomb circular-orbit identities \(|e|E=m_ev^2/r\), \(\omega_{\rm orb}=v/r\), and \(v/c=\alpha/n\), its most favorable precession ratio is</p>
@@ -242,7 +256,32 @@ MathJax = {
       </tbody>
     </table>
     <p>That scale test rules out only the ordinary three-dimensional Zeeman route. The construction above instead uses integral Hopf/Kähler flux and a noncentral isometry in the electron's full projective orientation space. If all \(L\) flux quanta are additionally identified with uniform flux through an observed orbit disk, then flux quantization together with \(mvr=L\hbar\) also yields \(\omega_B=\omega_{\rm orb}\). That disk map is a consistent corollary, not an assumption needed for the exact representation lock.</p>
-    <p class="status-box"><strong>Status: exact representation construction; physical selection law open.</strong> Higher-dimensional \(U(1)\) magnetism can generate \(M_L\) and lock its two blocks for every \(L\geq1\). The remaining physics is to derive why the electron–nucleus system selects Chern sector \(L\), the particular orientation \(G\), and an electromagnetic rather than merely Berry interpretation of this curvature. The \(L=0\) bundle has one constant section and zero flux, so the displayed s-ring clock remains separate.</p>
+    <p class="status-box"><strong>Status: exact representation construction; dynamical occupation law open.</strong> Higher-dimensional \(U(1)\) magnetism generates \(M_L\), locks its blocks, fixes its generator class, and forces \(|k|=L\) once the magnetic and angular representations are identified. The remaining physics is why the bound state occupies a particular \(L\), how the Hopf curvature pulls back to the physical electromagnetic connection, and what sets \(\omega\). Topology alone cannot set that continuous rate.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How much of the observer map is forced?</h2>
+  <div class="prose">
+    <p>Write the amplitude occupation and primitive clock as</p>
+    \[
+    q=\frac{|z_1|^2}{|z_1|^2+|z_2|^2},\qquad
+    e^{i\phi}=\frac{z_3\bar z_4}{|z_3z_4|}.
+    \]
+    <p>Projective invariance and rotational covariance first give \(X+iY=Rh(q)e^{\pm i\phi}\), where a complex phase in \(h(q)\) would shear different radii through different angles. Reflection symmetry across the aligned apparatus axis removes that shear, giving</p>
+    \[
+    X+iY=Rf(q)e^{\pm i\phi}.
+    \]
+    <p>If \(f(0)=0\) and \(f\) is strictly increasing, it preserves the maxima and zeros of \(q=\cos^2(L\theta)\), so every such detector response has exactly \(2L\) lobes. The displayed choice \(f(q)=\sqrt q\) follows from the additional intensity rule \((X^2+Y^2)/R^2=q\). Thus the lobe count is more robust than the particular radial shape.</p>
+    <p>Uniform Hamiltonian time gives the invariant occupation measure \(d\theta/(2\pi)\). Its amplitude fraction has density \([\pi\sqrt{q(1-q)}]^{-1}\), and the displayed radius has density \(2/[\pi\sqrt{R^2-r^2}]\). A finite observed cloud is the convolution of this curve measure with the apparatus response; its width still requires detector physics.</p>
+
+    <h3>The s-ring obstruction</h3>
+    <p>At \(L=0\), \(H^0(\mathbb{CP}^3,\mathcal O(0))=\mathbb C\), whose projectivization is a point. Zero Hopf flux cannot produce a relative-phase clock. The displayed orbit already has one unused coordinate and reduces exactly to</p>
+    \[
+    M_0^{\rm min}=\omega\operatorname{diag}(0,-1,0),\qquad
+    z_0^{\rm min}(0)=\left(A,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
+    \]
+    <p>one constant amplitude state plus the minimum two-state clock. This gives the ring exactly, but proves that its clock is universal extra structure rather than a consequence of Chern-zero magnetism. Its hidden-motion or ordinary-angular-momentum cancellation remains physical work.</p>
   </div>
 </section>
 
@@ -288,8 +327,8 @@ MathJax = {
 <section>
   <h2>What is established—and what is not</h2>
   <div class="prose">
-    <p class="status-box"><strong>Status: exact mathematics inside a conditional physical identification.</strong> For every \(L\geq1\), Hopf flux level \(L\), the degree-\(L\) representation, and the stated \(U(1)\) isometry derive \(M_L\) exactly. Hamiltonian conservation, projective invariance, the internal frequency lock, and the \(2L\) lobe count then follow. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
-    <p>The larger physical claim is not finished. A first-principles account must still derive why the electron–nucleus system selects Chern sector \(L\) and orientation \(G\), identify the curvature as the physical full-manifold electromagnetic connection, derive the complete three-dimensional detector map rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
+    <p class="status-box"><strong>Status: exact mathematics inside a conditional physical identification.</strong> For every \(L\geq1\), the degree-\(L\) representation and its unique generator class derive \(M_L\) exactly. Representation matching forces \(|k|=L\); Hamiltonian conservation, projective invariance, the internal frequency lock, and the detector-response-robust \(2L\) lobe count then follow. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
+    <p>The larger physical claim is not finished. A first-principles account must still derive why the bound system occupies a particular angular/flux sector, identify the curvature as the pullback of the physical full-manifold electromagnetic connection, determine \(\omega\), derive the complete three-dimensional detector embedding rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
     <div class="math-scroll">
       \[
       \rho_{\rm obs}(x)=\frac1T\int_0^T G_\sigma\!\left(x-\Gamma_L(t)\right)dt,
