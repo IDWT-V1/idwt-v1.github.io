@@ -8106,17 +8106,17 @@ assert max(_scale_pow_128[q] for q in _geom_128) \
 # STEP 129 -- 6D-ORBIT ORBITAL SHAPES: ANGULAR + RADIAL RESONANCE LAWS
 # =============================================================================
 # Motivated classical illustration (illustrative status, NOT a first-principles
-# derivation).  The electron as ONE deterministic trajectory on CP^3 (degree-L
-# monomial z1^a z2^b z3^c z4^d), projected to three observed coordinates and
-# read as a depth map (brightness = nearness to the viewer), reproduces the
-# atomic-orbital shapes through two integer resonances.  Two laws are
-# kinematically derived; the absolute precession value is observed only.
+# derivation).  The original visualization applies sequential real rotations
+# to a four-component amplitude and then projects three display coordinates.
+# Its aligned view visibly has the s/p/d/f macro-lobe counts, but the random
+# rotation phases and higher harmonics make that code an illustration, not a
+# proof of a CP^3 lobe theorem.  STEP 130 gives the clean projective theorem.
 # (Part 8 section 14; visualization 6d-orbit-slice.)
 #
-# (1) ANGULAR LOBE LAW (derived).  For z1^L the displayed amplitude a0 = |v0| is
-#     the modulus of an SO(4) precession of v0 at rate L*kappa, so a0 modulates
-#     at 2*L*kappa; with orbital carrier omega1 the rose petal count is
-#     2*L*kappa/omega1 = 2L at the angular lock kappa = omega1.
+# (1) ANGULAR DISPLAY (observed in the original code).  At its frequency lock,
+#     the strongest aligned-plane envelope has 2L macro-lobes.  Products of
+#     several rotations also generate smaller higher-harmonic petals, so the
+#     original animation must not be cited as an exact 2L derivation.
 # (2) RADIAL RING LAW (verified).  On the spherically symmetric s-orbit the
 #     radius is swept by the breathing; locking the depth oscillation at
 #     omega2 = N*omega_breath gives N-1 concentric depth rings (projection
@@ -8124,21 +8124,10 @@ assert max(_scale_pow_128[q] for q in _geom_128) \
 #     analogue of n_r+1); only the INTEGER RATIO N = omega2/omega_breath sets
 #     the count -- the breathing value (sqrt 11 in demo) is irrelevant (verified
 #     for several values; a non-integer ratio gives no clean rings).
-# (3) THE NUMBER (normalization, not a geometric invariant).  The invariant
-#     content is the RESONANCE RATIO kappa/omega1 = 1: in toric moment/phase
-#     coordinates the Fubini-Study symplectic form is sum d(nu_j) ^ d(phi_j), so
-#     each phase frequency equals its moment-map Hamiltonian coefficient; the
-#     integer lobe counts follow from the moment polytope being INTEGRAL (the
-#     I_k = exponent+1 are the moment weights).  The absolute value
-#     kappa = omega1 = 3/sqrt(2) = sqrt(9/2) = n_C/sqrt(d/n_C), n_C=3, d=6, is
-#     the chosen FS time scale, NOT a CP^3 invariant (cross-checked by two
-#     independent reasoning models, 2026-06-24).
+# (3) TIME SCALE.  Only a dimensionless frequency ratio can affect the shape.
+#     The old value 3/sqrt(2) is a display-unit choice, not a CP^3 invariant;
+#     rewriting it with d=6 and n_C=3 supplies no physical derivation.
 
-_nC_129 = 3                       # complex dimension of CP^3 (d = 2*n_C = 6)
-_d_129 = 6
-_kappa_129 = 3.0 / math.sqrt(2.0)                 # 3/sqrt(2) = 2.121320...
-assert abs(_kappa_129 - math.sqrt(9.0 / 2.0)) < 1e-12
-assert abs(_kappa_129 - _nC_129 / math.sqrt(_d_129 / _nC_129)) < 1e-12
 _lobes_129 = {L: (2 * L if L > 0 else 1) for L in range(4)}   # s1 p2 d4 f6 = 2L
 _rings_129 = {N: N - 1 for N in range(1, 5)}      # n_s 1..4 -> 0,1,2,3 rings
 
@@ -8146,37 +8135,83 @@ _rings_129 = {N: N - 1 for N in range(1, 5)}      # n_s 1..4 -> 0,1,2,3 rings
 # =============================================================================
 # STEP 130 -- GENERATING HAMILTONIAN OF THE 6D ORBIT (Bloch/coadjoint flow)
 # =============================================================================
-# The 6D orbit of STEP 129 is the Hamiltonian flow on (CP^3, omega_FS) of the
-# linear-in-generators ("Bloch"/coadjoint) Hamiltonian
-#     H(z) = <z|M|z> / <z|z>,  M Hermitian 4x4 (an su(4)+scalar generator),
-# whose flow is z(t) = exp(-i M t) z(0), along which H is conserved.  This
-# upgrades the construction from kinematics to a closed conserved Hamiltonian
-# system.  Angular block: M = omega(-I + L*sigma_x) on (z1,z2); for z(0)=(1,0),
-#     z1(t) = e^{i omega t} cos(L omega t)   (exact),
-# a rose with 2L petals.  The lobe law is now the eigenvalue GAP of M:
-# eigenvalues -(L+1)omega and (L-1)omega -> gap 2L*omega = petal frequency.
-# The radial rings are a second commuting 2-block.  Verified below to machine
-# precision (gap = 2L, H drift ~ 1e-15, |z1 - e^{iwt}cos Lwt| ~ 1e-15).
+# A Hermitian 4x4 matrix generates a Hamiltonian flow on (CP^3, omega_FS):
+#     H([z]) = <z|M|z>/<z|z>,   [z(t)] = [exp(-i M t)z(0)].
+# A scalar part of M is projectively invisible.  The old two-level expression
+# used just such a common phase as the polar angle, so it did NOT define the
+# claimed rose on CP^3.  Here M is traceless and the display uses only
+# projectively invariant quantities.  For theta=omega*t, A^2+B^2=1,
+#
+#            [ 1/4   L     0     0  ]
+#     M/w =  [  L   1/4    0     0  ],
+#            [  0    0   -3/4    0  ]
+#            [  0    0     0    1/4]
+#
+# z(0)=(A,0,B/sqrt(2),B/sqrt(2)) gives
+# z1=A exp(-i theta/4)cos(L theta),
+# z2=-iA exp(-i theta/4)sin(L theta),
+# z3=B exp(3i theta/4)/sqrt(2), z4=B exp(-i theta/4)/sqrt(2).
+# Therefore r=|z1|/sqrt(|z1|^2+|z2|^2) and
+# exp(i phi)=z3*conj(z4)/|z3*z4| are invariant under z -> c z.  The
+# observer-aligned map X+iY=R*r*exp(i phi) is exactly
+# R|cos(L theta)|exp(i theta): 2L radial maxima for L>0, and a ring for L=0.
+# This is a conditional theorem for the displayed generator and observer map.
+# What selects M_L dynamically, and the full physical 3D readout, remain open.
 
 _om_130 = 1.0
-_Hgap_130 = {}                      # L -> eigenvalue gap of M (predict 2L*om)
 _Hdrift_130 = {}                    # L -> max H drift on the flow (predict ~0)
-_Hzerr_130 = {}                     # L -> max|z1 - e^{iwt}cos(Lwt)| (predict 0)
-for _L in range(1, 5):
-    _M130 = _om_130 * np.array([[-1.0, _L], [_L, -1.0]], dtype=complex)
+_Hmaperr_130 = {}                   # L -> max error in invariant plane map
+_Hgaugeerr_130 = {}                 # L -> max error after common phase
+_Hcloseerr_130 = {}                 # L -> projective closure error at 2*pi
+_Hlobes_130 = {L: (2 * L if L else 1) for L in range(4)}
+_A130 = 1.0 / math.sqrt(2.0)
+_B130 = 1.0 / math.sqrt(2.0)
+_zinit130 = np.array(
+    [_A130, 0.0, _B130 / math.sqrt(2.0), _B130 / math.sqrt(2.0)],
+    dtype=complex,
+)
+for _L in range(4):
+    _M130 = _om_130 * np.array(
+        [[0.25, _L, 0.0, 0.0],
+         [_L, 0.25, 0.0, 0.0],
+         [0.0, 0.0, -0.75, 0.0],
+         [0.0, 0.0, 0.0, 0.25]],
+        dtype=complex,
+    )
+    assert abs(np.trace(_M130)) < 1e-12
     _w130, _V130 = np.linalg.eigh(_M130)
-    _Hgap_130[_L] = float(_w130.max() - _w130.min())
     _tt130 = np.linspace(0.0, 2 * np.pi, 4000)
-    _c130 = _V130.conj().T @ np.array([1.0, 0.0], dtype=complex)
+    _c130 = _V130.conj().T @ _zinit130
     _Z130 = _V130 @ (np.exp(-1j * np.outer(_w130, _tt130)) * _c130[:, None])
     _n2_130 = np.sum(np.abs(_Z130) ** 2, axis=0)
     _H130 = np.einsum('it,ij,jt->t', _Z130.conj(), _M130, _Z130).real / _n2_130
     _Hdrift_130[_L] = float(_H130.max() - _H130.min())
-    _ex130 = np.exp(1j * _om_130 * _tt130) * np.cos(_L * _om_130 * _tt130)
-    _Hzerr_130[_L] = float(np.max(np.abs(_Z130[0] - _ex130)))
-assert all(abs(_Hgap_130[L] - 2 * L * _om_130) < 1e-9 for L in range(1, 5))
-assert all(_Hdrift_130[L] < 1e-9 for L in range(1, 5))     # H conserved
-assert all(_Hzerr_130[L] < 1e-9 for L in range(1, 5))      # exact cos envelope
+    _pairnorm130 = np.sqrt(np.abs(_Z130[0]) ** 2
+                           + np.abs(_Z130[1]) ** 2)
+    _rad130 = np.abs(_Z130[0]) / _pairnorm130
+    _clock130 = _Z130[2] * _Z130[3].conj()
+    _clock130 /= np.abs(_clock130)
+    _map130 = _rad130 * _clock130
+    _exact130 = np.abs(np.cos(_L * _tt130)) * np.exp(1j * _tt130)
+    _Hmaperr_130[_L] = float(np.max(np.abs(_map130 - _exact130)))
+    _overlap130 = abs(np.vdot(_Z130[:, 0], _Z130[:, -1])) ** 2
+    _overlap130 /= _n2_130[0] * _n2_130[-1]
+    _Hcloseerr_130[_L] = float(abs(1.0 - _overlap130))
+    _scale130 = (0.8 + 0.15 * np.cos(0.41 * _tt130)) \
+        * np.exp(1j * (0.37 + 0.19 * _tt130))
+    _Zg130 = _Z130 * _scale130[None, :]
+    _pairnormg130 = np.sqrt(np.abs(_Zg130[0]) ** 2
+                            + np.abs(_Zg130[1]) ** 2)
+    _radg130 = np.abs(_Zg130[0]) / _pairnormg130
+    _clockg130 = _Zg130[2] * _Zg130[3].conj()
+    _clockg130 /= np.abs(_clockg130)
+    _Hgaugeerr_130[_L] = float(
+        np.max(np.abs(_radg130 * _clockg130 - _map130))
+    )
+assert all(_Hdrift_130[L] < 1e-9 for L in range(4))
+assert all(_Hmaperr_130[L] < 1e-9 for L in range(4))
+assert all(_Hgaugeerr_130[L] < 1e-9 for L in range(4))
+assert all(_Hcloseerr_130[L] < 1e-9 for L in range(4))
 
 
 # =============================================================================
@@ -12757,19 +12792,15 @@ print("verdict: four scale walls collapse to ONE -- the quantum of action.")
 # STEP 129 -- OUTPUT: 6D-ORBIT ORBITAL SHAPES (angular + radial resonance laws)
 # =============================================================================
 print("\n=== STEP 129: 6D-ORBIT ORBITAL SHAPES (illustration) ===")
-print("electron = one deterministic CP^3 orbit, projected to 3D, read as a")
-print("depth map; orbital shapes arise from two integer resonances.")
-print("  resonance lock (invariant): kappa/omega1 = 1")
-print(f"  abs. value 3/sqrt2 = {_kappa_129:.6f} = n_C/sqrt(d/n_C),"
-      f" n_C={_nC_129}, d={_d_129}:")
-print("    FS time-scale normalization, NOT a CP^3 invariant")
-print("  angular lobe law (derived): petals = 2L   "
+print("original sequential-rotation visualization: aligned-view macro-lobes")
+print("are observed, but higher harmonics add smaller petals; it is not the")
+print("exact proof. The gauge-invariant theorem is STEP 130.")
+print("  strongest-envelope count: 2L   "
       + " ".join(f"L{k}:{v}" for k, v in _lobes_129.items()))
 print("  radial ring law (verified): n_s=N -> N-1 rings   "
       + " ".join(f"{k}:{v}" for k, v in _rings_129.items()))
-print("status: motivated classical illustration; lobe (2L) and ring (N-1)")
-print("laws derived/verified, kappa=3/sqrt2 observed; see Part 8 section 14")
-print("and visualization 6d-orbit-slice.")
+print("status: motivated classical illustration; the absolute frequency")
+print("3/sqrt2 was only a display-unit choice and carries no derivation.")
 
 
 # =============================================================================
@@ -12777,15 +12808,17 @@ print("and visualization 6d-orbit-slice.")
 # =============================================================================
 print("\n=== STEP 130: GENERATING HAMILTONIAN OF THE 6D ORBIT ===")
 print("orbit = Hamiltonian flow on (CP^3, omega_FS) of H(z)=<z|M|z>/<z|z>,")
-print("M Hermitian 4x4 (su(4)+scalar); flow z(t)=exp(-iMt)z0, H conserved.")
-print("angular block M=omega(-I+L*sigma_x): z1(t)=e^{iwt}cos(Lwt) exact =")
-print("2L-petal rose; the lobe law is the eigenvalue GAP of M:")
-for _L in range(1, 5):
-    print(f"  L={_L}: gap={_Hgap_130[_L]:.3f} (=2L)  H-drift="
-          f"{_Hdrift_130[_L]:.1e}  |z1-exact|={_Hzerr_130[_L]:.1e}")
-print("=> a conserved Hamiltonian system; radial rings = 2nd commuting block.")
-print("now derived dynamics (the M entries still encode the same choices);")
-print("see STEP 129 and Part 8 section 14.")
+print("M_L traceless Hermitian 4x4; flow [z(t)]=[exp(-iMt)z0], H conserved.")
+print("invariant map: r=|z1|/sqrt(|z1|^2+|z2|^2),")
+print("exp(i phi)=z3*conj(z4)/|z3*z4|")
+print("X+iY = r exp(i phi) = |cos(Lt)|exp(it): ring, then 2L lobes.")
+for _L in range(4):
+    print(f"  L={_L}: lobes={_Hlobes_130[_L]}  H-drift="
+          f"{_Hdrift_130[_L]:.1e}  map-error={_Hmaperr_130[_L]:.1e}")
+    print(f"       gauge-error={_Hgaugeerr_130[_L]:.1e}  "
+          f"close-error={_Hcloseerr_130[_L]:.1e}")
+print("=> exact conditional theorem for this generator and aligned map.")
+print("open: dynamical selection of M_L and the full physical 3D readout.")
 
 
 # =============================================================================

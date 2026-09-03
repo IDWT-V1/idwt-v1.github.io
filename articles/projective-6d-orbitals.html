@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A gauge-invariant projective construction of the s, p, d and f lobe counts from a conserved Hamiltonian flow, with an interactive aligned-view visualization and an explicit account of what remains open.">
+<meta name="keywords" content="IDWT, CP3, projective geometry, Hamiltonian flow, atomic orbital lobes, s p d f, six-dimensional electron">
+<meta name="author" content="Fedge No">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fedgeno.github.io/articles/projective-6d-orbitals">
+<meta property="og:title" content="Orbital Lobes from a Projective 6D Orbit — IDWT">
+<meta property="og:description" content="The corrected projective mathematics behind the 1, 2, 4 and 6 aligned lobe counts, with the exact visualization embedded.">
+<meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Orbital Lobes from a Projective 6D Orbit — IDWT">
+<meta name="twitter:description" content="A gauge-invariant Hamiltonian construction and interactive s/p/d/f visualization.">
+<title>Orbital Lobes from a Projective 6D Orbit — IDWT</title>
+<link rel="stylesheet" href="/styles/main.css">
+<script>
+MathJax = {
+  tex: {inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+  .orbit-lab {
+    margin: 28px 0; overflow: hidden; border-radius: 14px;
+    border: 1px solid rgba(139,156,255,.24);
+    background: radial-gradient(circle at 50% 44%, #131a38 0, #070a17 62%, #03040a 100%);
+  }
+  .orbit-stage { position: relative; height: min(66vw, 620px); min-height: 390px; }
+  #orbitCanvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #orbitCanvas:active { cursor: grabbing; }
+  .lab-note {
+    position: absolute; top: 14px; left: 16px; right: 16px; pointer-events: none;
+    display: flex; justify-content: space-between; gap: 12px; color: #aeb7d8;
+    font-size: .78rem; text-shadow: 0 1px 5px #000;
+  }
+  .lab-note span:last-child { text-align: right; }
+  .lab-controls {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 9px; padding: 13px; border-top: 1px solid rgba(139,156,255,.16);
+    background: rgba(5,8,18,.86);
+  }
+  .shell-button, .reset-button {
+    color: #d8ddf1; background: #11162c; border: 1px solid #39436c;
+    border-radius: 8px; padding: 7px 13px; cursor: pointer; font: inherit;
+  }
+  .shell-button[aria-pressed="true"] { color: #070a13; background: var(--shell); border-color: var(--shell); }
+  .shell-button:focus-visible, .reset-button:focus-visible, #depth:focus-visible {
+    outline: 2px solid #b9c2ff; outline-offset: 2px;
+  }
+  .depth-label { display: flex; align-items: center; gap: 8px; color: #aeb7d8; font-size: .82rem; }
+  #depth { width: 110px; accent-color: #8b9cff; }
+  .orbit-caption { padding: 0 18px 16px; color: #9da7c7; font-size: .82rem; line-height: 1.55; }
+  .proof-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin: 20px 0; }
+  .proof-card { border: 1px solid rgba(139,156,255,.16); border-radius: 10px; padding: 16px; background: rgba(139,156,255,.045); }
+  .proof-card h3 { margin-top: 0; font-size: 1rem; }
+  .proof-card p:last-child { margin-bottom: 0; }
+  .status-box { border-left: 3px solid #f3ba63; padding: 12px 16px; background: rgba(243,186,99,.07); }
+  .math-scroll { overflow-x: auto; overflow-y: hidden; }
+  @media (max-width: 700px) {
+    .proof-grid { grid-template-columns: 1fr; }
+    .orbit-stage { min-height: 360px; }
+    .lab-note { font-size: .69rem; }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/">IDWT</a>
+  <div class="nav-links">
+    <a href="/articles/" aria-current="page">Articles</a>
+    <a href="/visualizations/">Visualizations</a>
+    <a href="/notebook/">Notebook</a>
+    <a href="/notes/">Notes</a>
+    <a href="/published/">Published</a>
+  </div>
+</nav>
+
+<div class="corner-orb left"><canvas id="orbL"></canvas></div>
+<div class="corner-orb right"><canvas id="orbR"></canvas></div>
+
+<header class="page-hero">
+  <div class="eyebrow">Article · Corrected construction</div>
+  <h1>Orbital Lobes from a Projective 6D Orbit</h1>
+  <p class="sub">A conserved Hamiltonian flow can produce the aligned \(s/p/d/f\) pattern exactly—provided every displayed quantity survives the projective quotient. Here is the construction, its proof, the live geometry, and the line between established mathematics and unfinished physics.</p>
+</header>
+
+<main>
+<section>
+  <h2>What has to be respected</h2>
+  <div class="prose">
+    <p>A six-real-dimensional particle does not imply that all of reality has six dimensions. In IDWT, \(d=6\) identifies the electron sector: the particle has structure across six directions, while an interaction reads the coordinates shared with the other participant. The local angular geometry can be represented by \(\mathbb{CP}^3\), because four complex homogeneous coordinates contain eight real components and the complex rescaling \(z\sim cz\) removes two real degrees of freedom:</p>
+    <div class="math-scroll">
+      \[
+      \dim_{\mathbb R}\mathbb{CP}^3=2(4)-2=6.
+      \]
+    </div>
+    <p>This is a local projective model of the sector's orientation data, not a claim that the electron's entire global space is the compact manifold \(\mathbb{CP}^3\). More importantly, a formula on homogeneous coordinates is physical only if it is unchanged by \(z\mapsto cz\). A common phase is gauge; it cannot supply the angle seen by an observer.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The conserved projective flow</h2>
+  <div class="prose">
+    <p>For a Hermitian \(4\times4\) matrix \(M\), the expectation value</p>
+    \[
+    H([z])=\frac{z^\dagger Mz}{z^\dagger z}
+    \]
+    <p>is well defined on projective space and generates the Hamiltonian flow</p>
+    \[
+    [z(t)]=[e^{-iMt}z(0)].
+    \]
+    <p>The evolution is norm preserving, and \(H\) is constant because \(M\) commutes with its own exponential. For the angular family, choose the traceless generator and initial point</p>
+    <div class="math-scroll">
+      \[
+      M_L=\omega
+      \begin{pmatrix}
+      \tfrac14&L&0&0\\ L&\tfrac14&0&0\\
+      0&0&-\tfrac34&0\\ 0&0&0&\tfrac14
+      \end{pmatrix},\qquad
+      z(0)=\left(A,0,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
+      \qquad A,B>0,\quad A^2+B^2=1.
+      \]
+    </div>
+    <p>With \(\theta=\omega t\), exponentiation is elementary:</p>
+    <div class="math-scroll">
+      \[
+      z_1=Ae^{-i\theta/4}\cos(L\theta),\quad
+      z_2=-iAe^{-i\theta/4}\sin(L\theta),\quad
+      z_3=\frac{B}{\sqrt2}e^{3i\theta/4},\quad
+      z_4=\frac{B}{\sqrt2}e^{-i\theta/4}.
+      \]
+    </div>
+    <p>The \(z_1,z_2\) block supplies an \(L\)-fold amplitude exchange. The \(z_3,z_4\) pair supplies a clock through a <em>relative</em> phase. Neither relies on the discarded common phase. At \(\theta=2\pi\), all four components differ from their initial values by the same factor \(-i\), so the full projective orbit—not merely its picture—is closed after one turn.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The aligned-projection theorem</h2>
+  <div class="prose">
+    <p>Define a nonnegative radius and an angular clock by</p>
+    <div class="math-scroll">
+      \[
+      r([z])=\frac{|z_1|}{\sqrt{|z_1|^2+|z_2|^2}},\qquad
+      e^{i\phi([z])}=\frac{z_3\bar z_4}{|z_3z_4|}.
+      \]
+    </div>
+    <p>Under \(z\mapsto cz\), each numerator and denominator acquires the same magnitude factor; both quantities are unchanged. Along the flow, \(r=|\cos(L\theta)|\) and \(e^{i\phi}=e^{i\theta}\). The observer-aligned plane map is therefore</p>
+    \[
+    X+iY=Rr([z])e^{i\phi([z])}
+    =R|\cos(L\theta)|e^{i\theta}.
+    \]
+    <div class="proof-grid">
+      <div class="proof-card">
+        <h3>Exact count</h3>
+        <p>For \(L>0\), the radius is maximal at \(\theta=k\pi/L\) and zero at \(\theta=(k+\tfrac12)\pi/L\). One full turn therefore contains exactly \(2L\) separated radial maxima.</p>
+      </div>
+      <div class="proof-card">
+        <h3>The four families</h3>
+        <p>\(L=0\) gives a ring. Then \(L=1,2,3\) give two, four and six lobes: the familiar macro-shapes labelled \(s,p,d,f\). This count is an exact property of the stated map.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>See the projection</h2>
+  <div class="prose">
+    <p>The default view looks straight down the chosen depth axis and therefore displays the theorem exactly. Dragging rotates the same curve, which is why the silhouette changes so strongly away from the aligned angle. The depth term is a transparent display choice,</p>
+    \[
+    Z=\eta R\frac{|z_2|}{\sqrt{|z_1|^2+|z_2|^2}}\cos(3\phi)
+    =\eta R|\sin(L\theta)|\cos(3\theta),
+    \]
+    <p>built from the same projectively invariant amplitude and clock. It gives the curve visible three-dimensional depth without changing the exact \(X,Y\) lobe count. It is not presented as a derived electron–detector coupling.</p>
+  </div>
+
+  <figure class="orbit-lab">
+    <div class="orbit-stage" id="orbitStage">
+      <canvas id="orbitCanvas" aria-label="Interactive projective orbit curve"></canvas>
+      <div class="lab-note"><span id="shapeLabel">s · ring · L = 0</span><span>Aligned theorem view<br>drag to rotate</span></div>
+    </div>
+    <div class="lab-controls" aria-label="Visualization controls">
+      <button class="shell-button" style="--shell:#ffd27a" data-l="0" aria-pressed="true">s · 1</button>
+      <button class="shell-button" style="--shell:#5a9bff" data-l="1" aria-pressed="false">p · 2</button>
+      <button class="shell-button" style="--shell:#46d39a" data-l="2" aria-pressed="false">d · 4</button>
+      <button class="shell-button" style="--shell:#e06ad0" data-l="3" aria-pressed="false">f · 6</button>
+      <label class="depth-label" for="depth">depth <input id="depth" type="range" min="0" max="0.65" value="0.32" step="0.01"></label>
+      <button class="reset-button" id="resetView">⟲ align</button>
+    </div>
+    <figcaption class="orbit-caption">One closed curve, rendered with a moving point and fading recent path. Shape radii are normalized here so the angular structures can be compared. The hydrogenic \(1:4:9:16\) circular-state sizes are a separate standard result, not an output of this theorem.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Where combinatorics enters</h2>
+  <div class="prose">
+    <p>The lobe proof above uses the integer \(L\), but it does not invent that integer. Degree-\(L\) monomials in the four homogeneous coordinates have exponents \(a,b,c,d\geq0\) with \(a+b+c+d=L\). Stars-and-bars gives</p>
+    \[
+    N_L=\binom{L+3}{3}=1,4,10,20,\ldots\quad(L=0,1,2,3,\ldots).
+    \]
+    <p>That is genuine combinatorial and representation-theoretic structure. It counts the full degree-\(L\) projective multiplet; it should not be confused with the \(1,2,4,6\) visible lobes of one aligned curve. The two sequences answer different questions.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What is established—and what is not</h2>
+  <div class="prose">
+    <p class="status-box"><strong>Status: 🔶 conditional construction.</strong> Given \(M_L\), the stated initial point, and the aligned observer map, Hamiltonian conservation, projective invariance and the \(2L\) lobe count are exact. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
+    <p>The larger physical claim is not finished. A first-principles account must still derive why the electron–nucleus system selects \(M_L\) (or an equivalent flow), derive the complete three-dimensional detector map rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
+    <div class="math-scroll">
+      \[
+      \rho_{\rm obs}(x)=\frac1T\int_0^T G_\sigma\!\left(x-\Gamma_L(t)\right)dt,
+      \]
+    </div>
+    <p>where \(G_\sigma\) is a normalized finite-width field profile, but the physical value of \(\sigma\) and the detector coupling must come from the theory. Until those steps are supplied, the result is a clean existence proof for the geometry—not a derivation of atomic spectroscopy or of every textbook orbital surface.</p>
+  </div>
+</section>
+</main>
+
+<footer>IDWT v2026 · CC BY 4.0 · <a href="mailto:fedge-no@hotmail.com">contact for discussion or full notes</a></footer>
+<script type="module" src="/scripts/orbs.js"></script>
+<script>
+(() => {
+  const stage = document.getElementById('orbitStage');
+  const canvas = document.getElementById('orbitCanvas');
+  const ctx = canvas.getContext('2d');
+  const depth = document.getElementById('depth');
+  const label = document.getElementById('shapeLabel');
+  const buttons = [...document.querySelectorAll('.shell-button')];
+  const palette = ['#ffd27a', '#5a9bff', '#46d39a', '#e06ad0'];
+  const names = ['s · ring', 'p · 2 lobes', 'd · 4 lobes', 'f · 6 lobes'];
+  const samples = 1400;
+  let shell = 0;
+  let yaw = 0;
+  let pitch = 0;
+  let pointer = null;
+  let lastX = 0;
+  let lastY = 0;
+  let start = performance.now();
+
+  function resize() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = stage.getBoundingClientRect();
+    canvas.width = Math.round(rect.width * ratio);
+    canvas.height = Math.round(rect.height * ratio);
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  }
+
+  function point(theta) {
+    const radial = shell === 0 ? 1 : Math.abs(Math.cos(shell * theta));
+    const hidden = shell === 0 ? 0 : Math.abs(Math.sin(shell * theta));
+    const x = radial * Math.cos(theta);
+    const y = radial * Math.sin(theta);
+    const z = Number(depth.value) * hidden * Math.cos(3 * theta);
+    const cy = Math.cos(yaw);
+    const sy = Math.sin(yaw);
+    const cp = Math.cos(pitch);
+    const sp = Math.sin(pitch);
+    const xr = cy * x + sy * z;
+    const z1 = -sy * x + cy * z;
+    const yr = cp * y - sp * z1;
+    const zr = sp * y + cp * z1;
+    return {x: xr, y: yr, z: zr};
+  }
+
+  function screen(p, width, height) {
+    const scale = Math.min(width, height) * 0.37;
+    return {
+      x: width / 2 + p.x * scale,
+      y: height / 2 - p.y * scale,
+      z: p.z
+    };
+  }
+
+  function draw(now) {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const width = canvas.width / ratio;
+    const height = canvas.height / ratio;
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.strokeStyle = 'rgba(139,156,255,.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(width / 2, height * .12);
+    ctx.lineTo(width / 2, height * .88);
+    ctx.moveTo(width * .12, height / 2);
+    ctx.lineTo(width * .88, height / 2);
+    ctx.stroke();
+
+    const segments = [];
+    let previous = screen(point(0), width, height);
+    for (let i = 1; i <= samples; i += 1) {
+      const theta = i * 2 * Math.PI / samples;
+      const current = screen(point(theta), width, height);
+      segments.push({a: previous, b: current, z: (previous.z + current.z) / 2});
+      previous = current;
+    }
+    segments.sort((a, b) => a.z - b.z);
+    for (const segment of segments) {
+      const light = Math.max(0, Math.min(1, (segment.z + .7) / 1.4));
+      ctx.globalAlpha = .32 + .63 * light;
+      ctx.strokeStyle = palette[shell];
+      ctx.lineWidth = 1.4 + 1.8 * light;
+      ctx.beginPath();
+      ctx.moveTo(segment.a.x, segment.a.y);
+      ctx.lineTo(segment.b.x, segment.b.y);
+      ctx.stroke();
+    }
+
+    const cycle = ((now - start) / 8500) % 1;
+    const head = screen(point(cycle * 2 * Math.PI), width, height);
+    for (let k = 34; k >= 1; k -= 1) {
+      const t = (cycle - k / 520 + 1) % 1;
+      const tail = screen(point(t * 2 * Math.PI), width, height);
+      ctx.globalAlpha = .22 * (1 - k / 35);
+      ctx.fillStyle = palette[shell];
+      ctx.beginPath();
+      ctx.arc(tail.x, tail.y, 2.3, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.shadowColor = palette[shell];
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(head.x, head.y, 5.3, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(draw);
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      shell = Number(button.dataset.l);
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      label.textContent = `${names[shell]} · L = ${shell}`;
+      start = performance.now();
+    });
+  });
+
+  canvas.addEventListener('pointerdown', event => {
+    pointer = event.pointerId;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    canvas.setPointerCapture(pointer);
+  });
+  canvas.addEventListener('pointermove', event => {
+    if (event.pointerId !== pointer) return;
+    yaw += (event.clientX - lastX) * .008;
+    pitch += (event.clientY - lastY) * .008;
+    pitch = Math.max(-1.35, Math.min(1.35, pitch));
+    lastX = event.clientX;
+    lastY = event.clientY;
+  });
+  canvas.addEventListener('pointerup', event => {
+    if (event.pointerId === pointer) pointer = null;
+  });
+  canvas.addEventListener('pointercancel', () => { pointer = null; });
+  document.getElementById('resetView').addEventListener('click', () => {
+    yaw = 0;
+    pitch = 0;
+  });
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
