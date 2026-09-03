@@ -169,39 +169,68 @@ MathJax = {
 </section>
 
 <section>
-  <h2>Could polarity select the generator?</h2>
+  <h2>Could magnetism select the generator?</h2>
   <div class="prose">
-    <p>It can account for the previously unexplained factor \(L\). Let a single shell-independent internal orientation generator \(P\) have two polar eigenstates, \(P|+\rangle=|+\rangle\) and \(P|-\rangle=-|-\rangle\). On a degree-\(L\) symmetric mode, the corresponding representation generator acts additively:</p>
-    <div class="math-scroll">
-      \[
-      P^{(L)}=\sum_{a=1}^{L}
-      \mathbb{1}^{\odot(a-1)}\odot P\odot
-      \mathbb{1}^{\odot(L-a)}.
-      \]
-    </div>
-    <p>The two fully aligned configurations \(|+\rangle^{\odot L}\) and \(|-\rangle^{\odot L}\) therefore carry weights \(+L\) and \(-L\). Define their even and odd combinations</p>
+    <p>Magnetism derives the matrix's \(L\)-dependence cleanly. In the ordinary angular-momentum representation, the two extremal states obey</p>
     \[
-    |u\rangle=\frac{|+\rangle^{\odot L}+|-\rangle^{\odot L}}{\sqrt2},
-    \qquad
-    |v\rangle=\frac{|+\rangle^{\odot L}-|-\rangle^{\odot L}}{\sqrt2}.
+    \frac{L_z}{\hbar}|L,\pm L\rangle=\pm L|L,\pm L\rangle.
     \]
-    <p>In this readout basis, the induced polar generator is exactly</p>
+    <p>Define their real even and odd combinations</p>
     \[
-    \left.P^{(L)}\right|_{\{u,v\}}
+    |u\rangle=\frac{|L,L\rangle+|L,-L\rangle}{\sqrt2},
+    \qquad
+    |v\rangle=\frac{|L,L\rangle-|L,-L\rangle}{\sqrt2}.
+    \]
+    <p>In this basis the same angular-momentum generator is</p>
+    \[
+    \left.\frac{L_z}{\hbar}\right|_{\{u,v\}}
     =\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.
     \]
-    <p>This is the amplitude block in \(M_L\). Its \(L\) is therefore not an independently fitted strength for each shell: it is the extremal weight of one fundamental polar action lifted to the degree-\(L\) representation. The degree factors here are factors of a symmetric representation, not \(L\) little particles inside the electron.</p>
-    <p>Projectively irrelevant scalar terms may be removed, leaving the transparent decomposition</p>
+    <p>The orbital Zeeman interaction consequently produces exactly the required amplitude block:</p>
+    \[
+    H_Z=-\boldsymbol{\mu}_L\cdot\mathbf B,
+    \qquad
+    \left.H_Z\right|_{\{u,v\}}
+    =\hbar\omega_B L\sigma_x,
+    \qquad
+    \omega_B=\frac{|e|B}{2m_e},
+    \]
+    <p>up to the sign set by the field direction. Thus \(L\) is a representation weight, not a shell-by-shell fitted coupling. Removing a projectively irrelevant scalar from the displayed generator leaves</p>
     \[
     M_L\sim\omega\left(
     L\sigma_x\oplus
     \begin{pmatrix}-1&0\\0&0\end{pmatrix}
     \right).
     \]
-    <p>The first block can thus have a polar origin; the second is the one-unit relative-phase clock. If “repelled at the poles” means equal repulsion from both poles, depending only on \(P^2\), it cannot work: it assigns the same energy to \(+\) and \(-\). The coupling must distinguish orientation or exert a torque, as a term such as \(H_{\rm pol}=-\mu_{\rm int}\mathcal E_{\rm int}P^{(L)}\) would.</p>
-    <p>For a circular atomic path, the nucleus-to-electron direction turns once per revolution and therefore supplies a natural one-unit geometric clock. If the internal polar axis synchronizes with that radial direction, the same angle can drive the clock and the polar exchange. Symmetry identifies this possible lock, but does not determine the response rate \(\mu_{\rm int}\mathcal E_{\rm int}/\hbar\); equality with the orbital frequency remains a dynamical condition.</p>
-    <p>This does not require an ordinary permanent electric dipole in three-dimensional space. Such a dipole would be a separate, strongly constrained claim. The polarity may belong to the electron's higher-dimensional field structure while its 3D electric-dipole marginal vanishes.</p>
-    <p class="status-box"><strong>Status: 🔶 conditional derivation.</strong> Once an additive internal polar coupling and the extremal doublet are present, the \(L\sigma_x\) block follows exactly. Still open are the microscopic origin of that polarity, why the extremal doublet is selected, the origin of the one-unit clock, and why its frequency equals the polar precession frequency.</p>
+    <p>That is the successful part. The physical source and frequency do not survive the next test.</p>
+
+    <h3>Giving ordinary magnetism a quantitative try</h3>
+    <p>The nucleus's leading Coulomb field is electrostatic, so \(\mathbf B=0\) in the nuclear rest frame. There is therefore no Zeeman generator at the gross-orbital scale. The unavoidable relativistic magnetic field seen in the electron's moving frame is approximately \(B_{\rm mot}=vE/c^2\). Using the Coulomb circular-orbit identities \(|e|E=m_ev^2/r\), \(\omega_{\rm orb}=v/r\), and \(v/c=\alpha/n\), its most favorable precession ratio is</p>
+    <div class="math-scroll">
+      \[
+      \frac{\omega_{\rm mot}}{\omega_{\rm orb}}
+      =\frac{|e|B_{\rm mot}/(2m_e)}{v/r}
+      =\frac12\frac{v^2}{c^2}
+      =\frac{\alpha^2}{2n^2}.
+      \]
+    </div>
+    <p>With the IDWT value of \(\alpha\), this is only \(2.88\times10^{-5}\) for \(n=1\), and it falls as \(n^{-2}\). It is the fine-structure/spin-orbit scale, not the unit-frequency lock required by the visualization. Equivalently, forcing \(\omega_B=\omega_{\rm orb}\) would require</p>
+    \[
+    B_{\rm lock}(n)=
+    \frac{2m_e\omega_{\rm orb}}{|e|}
+    =\frac{2\alpha^2m_e^2c^2}{|e|\hbar n^3}.
+    \]
+    <table class="data-table">
+      <thead><tr><th>\(n\)</th><th>\(B_{\rm lock}\)</th><th>\(\omega_{\rm mot}/\omega_{\rm orb}\)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>\(5.08\times10^5\ {\rm T}\)</td><td>\(2.88\times10^{-5}\)</td></tr>
+        <tr><td>2</td><td>\(6.35\times10^4\ {\rm T}\)</td><td>\(7.19\times10^{-6}\)</td></tr>
+        <tr><td>3</td><td>\(1.88\times10^4\ {\rm T}\)</td><td>\(3.20\times10^{-6}\)</td></tr>
+        <tr><td>4</td><td>\(7.94\times10^3\ {\rm T}\)</td><td>\(1.80\times10^{-6}\)</td></tr>
+      </tbody>
+    </table>
+    <p>The native IDWT electromagnetic connection does not rescue the proposal. Its \(U(1)\) charge generator acts as a common phase on the electron sector; it is not a nontrivial internal \(\mathbb{CP}^3\) orientation matrix. A three-dimensional vector potential can produce the ordinary orbital Zeeman operator above, but a static Coulomb atom supplies no field remotely near \(B_{\rm lock}\).</p>
+    <p class="status-box"><strong>Verdict: algebraically successful, dynamically excluded for ordinary magnetism.</strong> Magnetism explains why an \(L\sigma_x\) block is natural, but the ordinary Zeeman source is absent and the unavoidable motional/spin-orbit field cannot provide the gross-orbital frequency. A new sector-internal magnetic torque could be postulated, but it is not present in the current IDWT \(U(1)\) equations and would need an independent derivation and experimental consistency checks.</p>
   </div>
 </section>
 

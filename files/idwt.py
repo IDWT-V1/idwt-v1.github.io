@@ -8239,6 +8239,39 @@ for _L in range(1, 5):
     _Pblockerr_130[_L] = float(np.max(np.abs(_Pread130 - _Ptarget130)))
 assert all(_Pblockerr_130[L] < 1e-12 for L in range(1, 5))
 
+# MAGNETIC IDENTIFICATION AND SCALE TEST.  P can be the dimensionless orbital
+# generator L_z/hbar.  The ordinary Zeeman interaction
+#     H_Z = (|e| B / 2m_e) L_z
+# therefore gives hbar*omega_B*L*sigma_x on the extremal even/odd doublet,
+# omega_B=|e|B/(2m_e).  This derives the algebraic block from magnetism.
+#
+# It does NOT derive the field or the lock.  A static Coulomb source has B=0.
+# The most favorable unavoidable magnetic scale comes from the Coulomb field
+# transformed to the electron rest frame, B_mot ~ vE/c^2.  With
+# |e|E=m_ev^2/r and omega_orb=v/r,
+#     omega_mot/omega_orb = (v/c)^2/2 = alpha^2/(2n^2).
+# This is the spin-orbit/fine-structure scale, not a unit lock.  The required
+# external-equivalent field is B_lock=2m_e*omega_orb/|e|, with
+# omega_orb=alpha^2*m_e*c^2/(hbar*n^3) for a circular Coulomb state.  The
+# calculation below uses the IDWT fiber alpha.  It is deliberately favorable:
+# Thomas precession or geometric factors cannot repair a 10^4--10^5 deficit.
+_me_kg_mag130 = 9.1093837015e-31
+_c_mag130 = 299792458.0
+_hbar_mag130 = 1.054571817e-34
+_qe_mag130 = 1.602176634e-19
+_Bneed_mag130 = {}
+_Bmot_mag130 = {}
+_motlock_mag130 = {}
+for _n in range(1, 5):
+    _worb_mag130 = (alpha_em ** 2 * _me_kg_mag130 * _c_mag130 ** 2
+                    / (_hbar_mag130 * _n ** 3))
+    _Bneed_mag130[_n] = (2.0 * _me_kg_mag130 * _worb_mag130
+                         / _qe_mag130)
+    _motlock_mag130[_n] = alpha_em ** 2 / (2.0 * _n ** 2)
+    _Bmot_mag130[_n] = _Bneed_mag130[_n] * _motlock_mag130[_n]
+assert max(_motlock_mag130.values()) < 3.0e-5
+assert all(_Bneed_mag130[n] > 1.0e3 for n in range(1, 5))
+
 
 # =============================================================================
 # STEP 131 -- COUNTING-THEOREM SKELETON: |V|^2 = S_lo/S_hi FROM CHANNEL RATIOS
@@ -12845,14 +12878,20 @@ for _L in range(4):
           f"close-error={_Hcloseerr_130[_L]:.1e}")
 print("=> exact conditional theorem for this generator and aligned map.")
 print("open: dynamical selection of M_L and the full physical 3D readout.")
-print("polarity candidate: one fundamental P with weights +/-1, lifted")
-print("additively to Sym^L, has extremal weights +/-L; in the even/odd")
-print("readout basis its block is exactly L*sigma_x:")
+print("magnetic identification: P=L_z/hbar has extremal weights +/-L;")
+print("in the even/odd readout basis its Zeeman block is L*sigma_x:")
 for _L in range(1, 5):
     print(f"  L={_L}: symmetric-sector block error="
           f"{_Pblockerr_130[_L]:.1e}")
-print("=> L scaling derived conditionally from representation weight.")
-print("open: physical polar coupling, extremal-doublet selection, and lock.")
+print("=> magnetic representation derives the FORM and L scaling.")
+print("native scale test for circular Coulomb states:")
+for _n in range(1, 5):
+    print(f"  n={_n}: B_lock={_Bneed_mag130[_n]:.3e} T  "
+          f"B_motional={_Bmot_mag130[_n]:.3e} T  "
+          f"omega_mot/omega_orb={_motlock_mag130[_n]:.3e}")
+print("=> ordinary magnetism FAILS as the gross-orbit lock: static Coulomb")
+print("B=0; the unavoidable motional/spin-orbit scale is >=3.5e4 too slow.")
+print("A new sector-internal magnetic torque is not in the present U(1) EOM.")
 
 
 # =============================================================================

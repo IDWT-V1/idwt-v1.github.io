@@ -647,15 +647,21 @@ $$X+iY=Rr([z])e^{i\phi([z])}=R|\cos(L\theta)|e^{i\theta}.$$
 
 For $L>0$ it has radial maxima at $\theta=k\pi/L$ and zeros at $\theta=(k+\tfrac12)\pi/L$, hence exactly $2L$ aligned lobes per turn; $L=0$ gives a ring. This proves the displayed $s/p/d/f$ count $1,2,4,6$ for this generator and this observer map. It does **not** derive the generator from electron-nucleus dynamics or prove that the resulting curve equals a complete spectroscopic orbital. The standard hydrogenic circular-state radii $a_0,4a_0,9a_0,16a_0$ may be supplied as display scales, but they do not follow from the lobe theorem. (`files/idwt.py` STEP 130.) 🔶
 
-**A polarity origin for the $L$ block.** The factor $L$ need not be a separately chosen shell coupling. Let one shell-independent internal orientation generator have eigenvectors $|+\rangle,|-\rangle$ with weights $+1,-1$. Its induced action on a degree-$L$ symmetric mode is the additive representation generator
+**Magnetic interpretation and its scale test.** Magnetism derives the amplitude block's form without a shell-by-shell coupling. The ordinary angular-momentum generator obeys $(L_z/\hbar)|L,\pm L\rangle=\pm L|L,\pm L\rangle$. In the even/odd extremal basis $|u\rangle=(|L,L\rangle+|L,-L\rangle)/\sqrt2$, $|v\rangle=(|L,L\rangle-|L,-L\rangle)/\sqrt2$,
 
-$$P^{(L)}=\sum_{a=1}^{L}\mathbb{1}^{\odot(a-1)}\odot P\odot\mathbb{1}^{\odot(L-a)}.$$
+$$\left.\frac{L_z}{\hbar}\right|_{\{u,v\}}=\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.$$
 
-The fully aligned states $|+\rangle^{\odot L}$ and $|-\rangle^{\odot L}$ consequently have weights $+L$ and $-L$. In their even/odd basis $|u\rangle=(|+\rangle^{\odot L}+|-\rangle^{\odot L})/\sqrt2$, $|v\rangle=(|+\rangle^{\odot L}-|-\rangle^{\odot L})/\sqrt2$,
+Consequently the orbital Zeeman interaction $H_Z=-\boldsymbol{\mu}_L\cdot\mathbf B$ gives $\left.H_Z\right|_{\{u,v\}}=\hbar\omega_B L\sigma_x$, where $\omega_B=|e|B/(2m_e)$ up to the field-direction sign. This exactly derives the $L$ scaling as an angular-momentum representation weight. Projectively, $M_L\sim\omega[L\sigma_x\oplus\operatorname{diag}(-1,0)]$, so the first block has the Zeeman form.
 
-$$\left.P^{(L)}\right|_{\{u,v\}}=\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.$$
+The physical frequency fails. A static proton's leading Coulomb field has $\mathbf B=0$. Giving the unavoidable relativistic field the most favorable estimate $B_{\rm mot}\simeq vE/c^2$, and using $|e|E=m_ev^2/r$, $\omega_{\rm orb}=v/r$, and $v/c=\alpha/n$ for a circular Coulomb state, gives
 
-This derives the amplitude block's $L$ scaling from representation weight, conditional on a physical polarity coupling acting additively and on dynamics selecting the extremal doublet; the degree factors are representation factors, not $L$ constituent particles. Projectively, $M_L$ is equivalent to $L\sigma_x\oplus\operatorname{diag}(-1,0)$, so a separate one-unit relative-phase clock completes the displayed generator. For a circular path, the nucleus-to-electron direction turns once per revolution and is a natural candidate for that clock; synchronisation of an internal polar axis with the radial direction could make the same geometric angle drive both blocks. Symmetry does not fix the polar response rate, however, so equality with the orbital frequency remains a dynamical lock. A symmetric repulsion from both poles, depending only on $P^2$, would not distinguish $+$ from $-$ and would not produce the amplitude block; the interaction must be orientation-sensitive. Nor is an ordinary permanent three-dimensional electric dipole required: the candidate may be sector-internal and have a vanishing 3D dipole marginal. (`files/idwt.py` STEP 130.) 🔶
+$$\frac{\omega_{\rm mot}}{\omega_{\rm orb}}=\frac{|e|B_{\rm mot}/(2m_e)}{v/r}=\frac{\alpha^2}{2n^2}.$$
+
+With the IDWT value of $\alpha$, the ratio is only $2.88\times10^{-5}$ at $n=1$ and decreases as $n^{-2}$. Enforcing the required lock would instead need
+
+$$B_{\rm lock}(n)=\frac{2m_e\omega_{\rm orb}}{|e|}=\frac{2\alpha^2m_e^2c^2}{|e|\hbar n^3},$$
+
+namely $5.08\times10^5$, $6.35\times10^4$, $1.88\times10^4$, and $7.94\times10^3$ tesla for $n=1,2,3,4$. The native $U(1)$ charge generator is also a common phase on the electron sector, not a nontrivial internal $\mathbb{CP}^3$ orientation matrix. Therefore the ordinary Zeeman source is absent and the unavoidable motional/spin-orbit scale fails the gross-orbital lock. A new sector-internal magnetic torque could be postulated, but it is not in the present IDWT electromagnetic equations. (`files/idwt.py` STEP 130.) 🔶
 
 **What is structural and what remains open.** Degree-$L$ monomials in four homogeneous coordinates number $\binom{L+3}{3}$; that combinatorics is genuine representation content, independent of the display. The earlier sequential-rotation visualization also shows the same strongest-envelope macro-lobe counts in its default view, but contains additional higher harmonics and therefore is not the proof (`files/idwt.py` STEP 129). A full physical observable map into three-dimensional apparatus coordinates, the finite transverse profile of the trajectory, the dynamical selection of $M_L$, and actual-path representatives of the complete $SU(4)$ multiplets remain open. 🔶
 
