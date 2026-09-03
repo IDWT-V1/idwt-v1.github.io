@@ -169,6 +169,43 @@ MathJax = {
 </section>
 
 <section>
+  <h2>Could polarity select the generator?</h2>
+  <div class="prose">
+    <p>It can account for the previously unexplained factor \(L\). Let a single shell-independent internal orientation generator \(P\) have two polar eigenstates, \(P|+\rangle=|+\rangle\) and \(P|-\rangle=-|-\rangle\). On a degree-\(L\) symmetric mode, the corresponding representation generator acts additively:</p>
+    <div class="math-scroll">
+      \[
+      P^{(L)}=\sum_{a=1}^{L}
+      \mathbb{1}^{\odot(a-1)}\odot P\odot
+      \mathbb{1}^{\odot(L-a)}.
+      \]
+    </div>
+    <p>The two fully aligned configurations \(|+\rangle^{\odot L}\) and \(|-\rangle^{\odot L}\) therefore carry weights \(+L\) and \(-L\). Define their even and odd combinations</p>
+    \[
+    |u\rangle=\frac{|+\rangle^{\odot L}+|-\rangle^{\odot L}}{\sqrt2},
+    \qquad
+    |v\rangle=\frac{|+\rangle^{\odot L}-|-\rangle^{\odot L}}{\sqrt2}.
+    \]
+    <p>In this readout basis, the induced polar generator is exactly</p>
+    \[
+    \left.P^{(L)}\right|_{\{u,v\}}
+    =\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.
+    \]
+    <p>This is the amplitude block in \(M_L\). Its \(L\) is therefore not an independently fitted strength for each shell: it is the extremal weight of one fundamental polar action lifted to the degree-\(L\) representation. The degree factors here are factors of a symmetric representation, not \(L\) little particles inside the electron.</p>
+    <p>Projectively irrelevant scalar terms may be removed, leaving the transparent decomposition</p>
+    \[
+    M_L\sim\omega\left(
+    L\sigma_x\oplus
+    \begin{pmatrix}-1&0\\0&0\end{pmatrix}
+    \right).
+    \]
+    <p>The first block can thus have a polar origin; the second is the one-unit relative-phase clock. If “repelled at the poles” means equal repulsion from both poles, depending only on \(P^2\), it cannot work: it assigns the same energy to \(+\) and \(-\). The coupling must distinguish orientation or exert a torque, as a term such as \(H_{\rm pol}=-\mu_{\rm int}\mathcal E_{\rm int}P^{(L)}\) would.</p>
+    <p>For a circular atomic path, the nucleus-to-electron direction turns once per revolution and therefore supplies a natural one-unit geometric clock. If the internal polar axis synchronizes with that radial direction, the same angle can drive the clock and the polar exchange. Symmetry identifies this possible lock, but does not determine the response rate \(\mu_{\rm int}\mathcal E_{\rm int}/\hbar\); equality with the orbital frequency remains a dynamical condition.</p>
+    <p>This does not require an ordinary permanent electric dipole in three-dimensional space. Such a dipole would be a separate, strongly constrained claim. The polarity may belong to the electron's higher-dimensional field structure while its 3D electric-dipole marginal vanishes.</p>
+    <p class="status-box"><strong>Status: 🔶 conditional derivation.</strong> Once an additive internal polar coupling and the extremal doublet are present, the \(L\sigma_x\) block follows exactly. Still open are the microscopic origin of that polarity, why the extremal doublet is selected, the origin of the one-unit clock, and why its frequency equals the polar precession frequency.</p>
+  </div>
+</section>
+
+<section>
   <h2>See the projection</h2>
   <div class="prose">
     <p>The default view looks straight down the chosen depth axis and therefore displays the theorem exactly. Dragging rotates the same curve, which is why the silhouette changes so strongly away from the aligned angle. The depth term is a transparent display choice,</p>

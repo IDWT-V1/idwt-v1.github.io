@@ -8213,6 +8213,32 @@ assert all(_Hmaperr_130[L] < 1e-9 for L in range(4))
 assert all(_Hgaugeerr_130[L] < 1e-9 for L in range(4))
 assert all(_Hcloseerr_130[L] < 1e-9 for L in range(4))
 
+# POLARITY ORIGIN OF THE L BLOCK.  Let P have eigenvalues +/-1 on a single
+# internal two-state orientation.  Its induced action on the degree-L
+# symmetric representation is additive:
+#     d rho_L(P)(v1 o ... o vL)
+#       = sum_a v1 o ... o (P va) o ... o vL.
+# In the occupation basis it has weights L,L-2,...,-L.  The two extremal
+# vectors are the fully aligned polar configurations.  In their even/odd
+# readout basis, the SAME shell-independent fundamental P compresses exactly
+# to L*sigma_x.  Thus the L in M_L is a representation weight, not a separately
+# fitted coupling for each shell.  A polar interaction can therefore supply
+# the amplitude block if (i) the sector has such an internal orientation,
+# (ii) its interaction is additive on Sym^L, and (iii) dynamics selects the
+# extremal doublet.  This does not derive the unit relative-phase clock or its
+# frequency lock.  A literal permanent 3D electric dipole is neither required
+# nor asserted; the polarity may be sector-internal with zero 3D dipole.
+_Pblockerr_130 = {}
+for _L in range(1, 5):
+    _Pocc130 = np.diag(np.arange(_L, -_L - 1, -2, dtype=float))
+    _E130 = np.zeros((_L + 1, 2), dtype=float)
+    _E130[0] = (1.0 / math.sqrt(2.0), 1.0 / math.sqrt(2.0))
+    _E130[-1] = (1.0 / math.sqrt(2.0), -1.0 / math.sqrt(2.0))
+    _Pread130 = _E130.T @ _Pocc130 @ _E130
+    _Ptarget130 = np.array([[0.0, _L], [_L, 0.0]])
+    _Pblockerr_130[_L] = float(np.max(np.abs(_Pread130 - _Ptarget130)))
+assert all(_Pblockerr_130[L] < 1e-12 for L in range(1, 5))
+
 
 # =============================================================================
 # STEP 131 -- COUNTING-THEOREM SKELETON: |V|^2 = S_lo/S_hi FROM CHANNEL RATIOS
@@ -12819,6 +12845,14 @@ for _L in range(4):
           f"close-error={_Hcloseerr_130[_L]:.1e}")
 print("=> exact conditional theorem for this generator and aligned map.")
 print("open: dynamical selection of M_L and the full physical 3D readout.")
+print("polarity candidate: one fundamental P with weights +/-1, lifted")
+print("additively to Sym^L, has extremal weights +/-L; in the even/odd")
+print("readout basis its block is exactly L*sigma_x:")
+for _L in range(1, 5):
+    print(f"  L={_L}: symmetric-sector block error="
+          f"{_Pblockerr_130[_L]:.1e}")
+print("=> L scaling derived conditionally from representation weight.")
+print("open: physical polar coupling, extremal-doublet selection, and lock.")
 
 
 # =============================================================================
