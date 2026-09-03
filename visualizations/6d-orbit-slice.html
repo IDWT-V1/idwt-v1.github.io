@@ -169,42 +169,54 @@ MathJax = {
 </section>
 
 <section>
-  <h2>Could magnetism select the generator?</h2>
+  <h2>How higher-dimensional magnetism generates the lock</h2>
   <div class="prose">
-    <p>Magnetism derives the matrix's \(L\)-dependence cleanly. In the ordinary angular-momentum representation, the two extremal states obey</p>
+    <p>A magnetic field is fundamentally a curvature two-form, not a three-dimensional arrow. On the full manifold its components are \(F_{AB}\), and minimal coupling contains</p>
     \[
-    \frac{L_z}{\hbar}|L,\pm L\rangle=\pm L|L,\pm L\rangle.
+    H_{\rm mag}=-\frac{q}{2m_e}\sum_{A&lt;B}F_{AB}L^{AB}.
     \]
-    <p>Define their real even and odd combinations</p>
-    \[
-    |u\rangle=\frac{|L,L\rangle+|L,-L\rangle}{\sqrt2},
-    \qquad
-    |v\rangle=\frac{|L,L\rangle-|L,-L\rangle}{\sqrt2}.
-    \]
-    <p>In this basis the same angular-momentum generator is</p>
-    \[
-    \left.\frac{L_z}{\hbar}\right|_{\{u,v\}}
-    =\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.
-    \]
-    <p>The orbital Zeeman interaction consequently produces exactly the required amplitude block:</p>
-    \[
-    H_Z=-\boldsymbol{\mu}_L\cdot\mathbf B,
-    \qquad
-    \left.H_Z\right|_{\{u,v\}}
-    =\hbar\omega_B L\sigma_x,
-    \qquad
-    \omega_B=\frac{|e|B}{2m_e},
-    \]
-    <p>up to the sign set by the field direction. Thus \(L\) is a representation weight, not a shell-by-shell fitted coupling. Removing a projectively irrelevant scalar from the displayed generator leaves</p>
-    \[
-    M_L\sim\omega\left(
-    L\sigma_x\oplus
-    \begin{pmatrix}-1&0\\0&0\end{pmatrix}
-    \right).
-    \]
-    <p>That is the successful part. The physical source and frequency do not survive the next test.</p>
+    <p>Scalar electric charge therefore does not force the field to act as a common phase. Spatially varying connection components can rotate the electron's orientation in any supported coordinate two-plane. The photon's own two-dimensionality fixes its transverse mode; it does not confine electromagnetic contact to only two dimensions of a higher-dimensional particle.</p>
 
-    <h3>Giving ordinary magnetism a quantitative try</h3>
+    <h3>Hopf flux supplies the integer level</h3>
+    <p>For normalized \(Z\in S^7\) over \(\mathbb{CP}^3\), the canonical connection and curvature are</p>
+    \[
+    \mathcal A=-iZ^\dagger dZ,\qquad
+    \mathcal F=d\mathcal A,\qquad
+    \frac{1}{2\pi}\int_{\mathbb{CP}^1}\mathcal F=1.
+    \]
+    <p>The degree-\(L\) bundle consequently has \(c_1(\mathcal O(L))=L\). Its state space is not numerology: homogeneous polynomial combinatorics gives the exact representation</p>
+    \[
+    H^0(\mathbb{CP}^3,\mathcal O(L))
+    \cong\operatorname{Sym}^L(\mathbb C^4)^*,\qquad
+    \dim=\binom{L+3}{3}.
+    \]
+    <p>The central Hopf \(U(1)\) supplies this integral flux level. The electron still has charge \(-e\): \(L\) labels the background bundle and its state representation, not a charge \(-Le\).</p>
+
+    <h3>One isometry supplies the whole matrix</h3>
+    <p>Now act within that representation using one shell-independent \(U(1)\) isometry of the four fundamental coordinates,</p>
+    \[
+    G=\operatorname{diag}(1,-1,-1,0).
+    \]
+    <p>This is a Hamiltonian isometry of \(\mathbb{CP}^3\). Its moment map and classical flow are</p>
+    \[
+    \mu_G([Z])=\frac{Z^\dagger GZ}{Z^\dagger Z},\qquad
+    [Z]\longmapsto[e^{-i\theta G}Z].
+    \]
+    <p>Geometric quantization with prequantum bundle \(\mathcal O(L)\) lifts that same flow to the degree-\(L\) representation. The curvature level and the matrix action are therefore two parts of one symplectic construction.</p>
+    <p>For every \(L\geq1\), four degree-\(L\) monomials have the following induced weights:</p>
+    <table class="data-table">
+      <thead><tr><th>State</th><th>\(z_1^L\)</th><th>\(z_2^L\)</th><th>\(z_3z_4^{L-1}\)</th><th>\(z_4^L\)</th></tr></thead>
+      <tbody><tr><th>Weight</th><td>\(+L\)</td><td>\(-L\)</td><td>\(-1\)</td><td>\(0\)</td></tr></tbody>
+    </table>
+    <p>Taking the even and odd combinations of the first pair rotates \(\operatorname{diag}(L,-L)\) into \(L\sigma_x\). Therefore, on this four-state subspace,</p>
+    \[
+    G_L\big|_{\mathcal V_L}
+    =L\sigma_x\oplus\operatorname{diag}(-1,0),\qquad
+    M_L=\omega\left(G_L\big|_{\mathcal V_L}+\tfrac14I\right).
+    \]
+    <p>This reproduces the entire projective generator exactly for every \(L\geq1\). The amplitude exchange and clock are two blocks of one group action with one parameter \(\theta=\omega t\); their frequency lock is automatic. No separate frequency matching and no shell-by-shell fitted coefficient is involved.</p>
+
+    <h3>Why an ordinary 3D field is not the source</h3>
     <p>The nucleus's leading Coulomb field is electrostatic, so \(\mathbf B=0\) in the nuclear rest frame. There is therefore no Zeeman generator at the gross-orbital scale. The unavoidable relativistic magnetic field seen in the electron's moving frame is approximately \(B_{\rm mot}=vE/c^2\). Using the Coulomb circular-orbit identities \(|e|E=m_ev^2/r\), \(\omega_{\rm orb}=v/r\), and \(v/c=\alpha/n\), its most favorable precession ratio is</p>
     <div class="math-scroll">
       \[
@@ -229,8 +241,8 @@ MathJax = {
         <tr><td>4</td><td>\(7.94\times10^3\ {\rm T}\)</td><td>\(1.80\times10^{-6}\)</td></tr>
       </tbody>
     </table>
-    <p>The native IDWT electromagnetic connection does not rescue the proposal. Its \(U(1)\) charge generator acts as a common phase on the electron sector; it is not a nontrivial internal \(\mathbb{CP}^3\) orientation matrix. A three-dimensional vector potential can produce the ordinary orbital Zeeman operator above, but a static Coulomb atom supplies no field remotely near \(B_{\rm lock}\).</p>
-    <p class="status-box"><strong>Verdict: algebraically successful, dynamically excluded for ordinary magnetism.</strong> Magnetism explains why an \(L\sigma_x\) block is natural, but the ordinary Zeeman source is absent and the unavoidable motional/spin-orbit field cannot provide the gross-orbital frequency. A new sector-internal magnetic torque could be postulated, but it is not present in the current IDWT \(U(1)\) equations and would need an independent derivation and experimental consistency checks.</p>
+    <p>That scale test rules out only the ordinary three-dimensional Zeeman route. The construction above instead uses integral Hopf/Kähler flux and a noncentral isometry in the electron's full projective orientation space. If all \(L\) flux quanta are additionally identified with uniform flux through an observed orbit disk, then flux quantization together with \(mvr=L\hbar\) also yields \(\omega_B=\omega_{\rm orb}\). That disk map is a consistent corollary, not an assumption needed for the exact representation lock.</p>
+    <p class="status-box"><strong>Status: exact representation construction; physical selection law open.</strong> Higher-dimensional \(U(1)\) magnetism can generate \(M_L\) and lock its two blocks for every \(L\geq1\). The remaining physics is to derive why the electron–nucleus system selects Chern sector \(L\), the particular orientation \(G\), and an electromagnetic rather than merely Berry interpretation of this curvature. The \(L=0\) bundle has one constant section and zero flux, so the displayed s-ring clock remains separate.</p>
   </div>
 </section>
 
@@ -276,14 +288,14 @@ MathJax = {
 <section>
   <h2>What is established—and what is not</h2>
   <div class="prose">
-    <p class="status-box"><strong>Status: 🔶 conditional construction.</strong> Given \(M_L\), the stated initial point, and the aligned observer map, Hamiltonian conservation, projective invariance and the \(2L\) lobe count are exact. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
-    <p>The larger physical claim is not finished. A first-principles account must still derive why the electron–nucleus system selects \(M_L\) (or an equivalent flow), derive the complete three-dimensional detector map rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
+    <p class="status-box"><strong>Status: exact mathematics inside a conditional physical identification.</strong> For every \(L\geq1\), Hopf flux level \(L\), the degree-\(L\) representation, and the stated \(U(1)\) isometry derive \(M_L\) exactly. Hamiltonian conservation, projective invariance, the internal frequency lock, and the \(2L\) lobe count then follow. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
+    <p>The larger physical claim is not finished. A first-principles account must still derive why the electron–nucleus system selects Chern sector \(L\) and orientation \(G\), identify the curvature as the physical full-manifold electromagnetic connection, derive the complete three-dimensional detector map rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
     <div class="math-scroll">
       \[
       \rho_{\rm obs}(x)=\frac1T\int_0^T G_\sigma\!\left(x-\Gamma_L(t)\right)dt,
       \]
     </div>
-    <p>where \(G_\sigma\) is a normalized finite-width field profile, but the physical value of \(\sigma\) and the detector coupling must come from the theory. Until those steps are supplied, the result is a clean existence proof for the geometry—not a derivation of atomic spectroscopy or of every textbook orbital surface.</p>
+    <p>where \(G_\sigma\) is a normalized finite-width field profile, but the physical value of \(\sigma\) and the detector coupling must come from the theory. Until those steps are supplied, the result is an exact geometric and representation-theoretic construction—not yet a complete derivation of atomic spectroscopy or of every textbook orbital surface.</p>
   </div>
 </section>
 </main>

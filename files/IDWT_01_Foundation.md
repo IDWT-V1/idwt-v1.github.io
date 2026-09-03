@@ -409,7 +409,7 @@ Every particle is a bound eigenmode of $V_d(r) = \lambda_d r^2$ with mass $m(n,d
 
 #### $d = 2$ — Electroweak Sector
 
-**Geometry.** $\mathbb{CP}^1 = S^2$ (globally); $S^3$ Hopf fibration over $S^2$ with $U(1)$ fiber. Hopf fiber phase → electromagnetic potential $A_\mu = \partial_\mu\theta$, curvature $\to F_{\mu\nu}$. $SU(2)_L$ acts on the base $\mathbb{CP}^1$.
+**Geometry.** $\mathbb{CP}^1 = S^2$ (globally); $S^3$ Hopf fibration over $S^2$ with $U(1)$ fiber. For normalized homogeneous $Z$, the Hopf connection is $\mathcal A=-iZ^\dagger dZ$ and its curvature is $\mathcal F=d\mathcal A$; a local phase change supplies only the gauge shift $d\theta$. $SU(2)_L$ acts on the base $\mathbb{CP}^1$.
 
 | Parameter | Value |
 |---|---|
@@ -894,7 +894,7 @@ All below KATRIN bound (450 meV). The mass scale $m_{\rm scale,5}$ is fully deri
 | Special relativity | $\square_x$ component of $\square_{M_\infty}$; inherited Lorentz covariance from product structure | ✅ |
 | Fermi statistics | Spinor $\Psi_\infty$ anticommutes: $\{\Psi_\infty(\xi),\Psi^\dagger_\infty(\xi')\}=\delta(\xi-\xi')$ — Pauli exclusion derived | ✅ |
 | Particle/antiparticle | Conjugate spinor $\bar\Psi_\infty$ is distinct; antiparticles are automatic | ✅ |
-| Electromagnetism | $U(1)$ Hopf fiber phase: $A_\mu = \partial_\mu\theta$, $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ | ✅ |
+| Electromagnetism | $U(1)$ Hopf connection $\mathcal A=-iZ^\dagger dZ$; curvature $\mathcal F=d\mathcal A$, whose observer pullback is $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ | ✅ |
 | General relativity | Effective Einstein equations from $|\Psi_\infty|^2$ back-reaction on the observer's 3D spacetime geometry. No gravitons — gravity is purely geometric curvature. Macroscopic sector spaces are consistent because graviton propagation exclusions do not apply (Part 4 §1b). Bianchi identity and spectral theorem proved; $G_N$ from sector localization geometry is the remaining open item (Part 4 §3.12) | 🔶 |
 | Standard Model quarks | $d=3$ (down-type), $d=4$ (up-type) — masses from simplex formula | ✅ |
 | Standard Model leptons | $d=6$ (e,μ), $d=10$ (τ) — masses from simplex formula | ✅ |

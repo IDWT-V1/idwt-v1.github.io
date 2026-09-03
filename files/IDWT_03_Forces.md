@@ -302,7 +302,7 @@ PDG: $1.293$ MeV (factor $\sim 2$; uncomputed QED + isospin corrections). The co
 
 ## 1. Electromagnetism
 
-Electromagnetism emerges from the $U(1)$ Hopf fiber connecting the $d=2$ and $d=3$ sectors. Writing $\Psi_\infty = A\cdot e^{i\theta}$, the phase gradient $A_\mu = \partial_\mu\theta$ is the photon field; its curvature $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ gives Maxwell's equations. The photon is massless because its mode index is $n=0$: $S(0,2) = 0$. Full derivation in §14.
+Electromagnetism is represented by the $U(1)$ connection of the Hopf geometry connecting the $d=2$ and $d=3$ sectors. For a normalized homogeneous state $Z$, the canonical local connection is $\mathcal A=-iZ^\dagger dZ$ and its curvature is $\mathcal F=d\mathcal A$. A local phase change adds $d\chi$ to $\mathcal A$ but leaves $\mathcal F$ unchanged. The photon is massless because its mode index is $n=0$: $S(0,2)=0$. Full construction in §14.
 
 ---
 
@@ -686,19 +686,23 @@ $$S^1 \to S^3 \to S^2 = \mathbb{CP}^1$$
 
 ### Photon Derivation
 
-Write $\Psi_\infty = A\cdot e^{i\theta}$. The phase gradient defines the photon: ✅
+Let $Z$ be a normalized homogeneous representative of a Hopf fibre. Its canonical dimensionless connection and curvature are
 
-$$A_\mu = \partial_\mu\theta$$
+$$\mathcal A=-iZ^\dagger dZ,\qquad \mathcal F=d\mathcal A.$$
 
-This is the $n=0$ zero mode of the $U(1)$ Hopf fiber. The field tensor:
+Under $Z\mapsto e^{i\chi}Z$,
 
-$$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$$
+$$\mathcal A\mapsto\mathcal A+d\chi,\qquad \mathcal F\mapsto\mathcal F.$$
 
-is the curvature 2-form of the $U(1)$ connection. The Lorentz force equation follows from the geodesic equation in $\mathbb{R}^3\times S^1$:
+This is the correct distinction between phase and field. The exact one-form $d\theta$ is the gauge part of a local connection and has $d(d\theta)=0$ wherever $\theta$ is smooth; it cannot by itself be a nonzero electromagnetic field. In physical units one may write $A^{\rm phys}=(\hbar/e)\mathcal A$ and $F^{\rm phys}=(\hbar/e)\mathcal F$. Pulling this connection back to the coordinates resolved by an observer gives the familiar components $A_\mu$ and
 
-$$F = q(E + v\times B)$$
+$$F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu.$$
 
-Electromagnetism emerges from the phase geometry of $\Psi_\infty$ via the Hopf fiber.
+On the full manifold the same object is not restricted to three spatial directions:
+
+$$D_A=\partial_A-i\frac{q}{\hbar}A_A^{\rm phys},\qquad F_{AB}=\partial_AA_B-\partial_BA_A.$$
+
+Thus magnetism may occupy any coordinate two-plane supported by the connection. Minimal coupling to a slowly varying two-form contains the orbital action $-(q/2m)\sum_{A<B}F_{AB}L^{AB}$. The photon's $d=2$ describes its own transverse mode; it does not restrict the dimensions through which its connection can contact a higher-dimensional particle. This is the electromagnetic instance of bound-within/free-without and coordinate containment.
 
 ### The Second Hopf Fibration: $S^1 \to S^5 \to \mathbb{CP}^2$
 
@@ -733,7 +737,7 @@ Both gravity and electromagnetism are curvature 2-forms in IDWT:
 
 | Force | Bundle | Curvature object |
 |-------|--------|-----------------|
-| Electromagnetism | $U(1)$ Hopf fiber | $F_{\mu\nu} = \partial_{[\mu}\partial_{\nu]}\theta$ |
+| Electromagnetism | $U(1)$ Hopf fiber | $\mathcal F=d\mathcal A$, observed as $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ |
 | Gravity | Metric $g_{\mu\nu}$ | Riemann tensor $R^\rho{}_{\sigma\mu\nu}$ |
 
 The statement from P4 — all physics follows from the geometry of $M_\infty$ — is concrete for both forces.
@@ -844,4 +848,3 @@ The Ward identity establishes:
 4. The measured scale dependence of $\alpha(q^2)$ is reproduced at 1-loop in the cross-framework comparison (SM formula with IDWT fermion content, §16.3)
 
 The $d=2$-sector-scale $\alpha$ from $g_1$ and $g_2$: $1/\alpha = 131.8$ at ${\approx}m_W$. In the SM translation, the hadronic vacuum polarisation between $m_W$ and $m_Z$ contributes ${\approx}3.8$ units of $1/\alpha$ and the leptonic loops add 0.1 units, giving $1/\alpha(m_Z) \approx 127.9$ (PDG: 127.9). $\alpha$ is not an independent unit reference — it follows from $g_2 = (2/3)\sqrt{g_s}$ and $\sin^2\theta_W$ from mode indices. See Part 3 §0.7 for the derivation of $g_2$.
-

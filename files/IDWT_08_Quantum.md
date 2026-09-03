@@ -647,13 +647,17 @@ $$X+iY=Rr([z])e^{i\phi([z])}=R|\cos(L\theta)|e^{i\theta}.$$
 
 For $L>0$ it has radial maxima at $\theta=k\pi/L$ and zeros at $\theta=(k+\tfrac12)\pi/L$, hence exactly $2L$ aligned lobes per turn; $L=0$ gives a ring. This proves the displayed $s/p/d/f$ count $1,2,4,6$ for this generator and this observer map. It does **not** derive the generator from electron-nucleus dynamics or prove that the resulting curve equals a complete spectroscopic orbital. The standard hydrogenic circular-state radii $a_0,4a_0,9a_0,16a_0$ may be supplied as display scales, but they do not follow from the lobe theorem. (`files/idwt.py` STEP 130.) 🔶
 
-**Magnetic interpretation and its scale test.** Magnetism derives the amplitude block's form without a shell-by-shell coupling. The ordinary angular-momentum generator obeys $(L_z/\hbar)|L,\pm L\rangle=\pm L|L,\pm L\rangle$. In the even/odd extremal basis $|u\rangle=(|L,L\rangle+|L,-L\rangle)/\sqrt2$, $|v\rangle=(|L,L\rangle-|L,-L\rangle)/\sqrt2$,
+**Magnetic interpretation.** Magnetism derives the amplitude block's form without a shell-by-shell coupling. The ordinary angular-momentum generator obeys $(L_z/\hbar)|L,\pm L\rangle=\pm L|L,\pm L\rangle$. In the even/odd extremal basis $|u\rangle=(|L,L\rangle+|L,-L\rangle)/\sqrt2$, $|v\rangle=(|L,L\rangle-|L,-L\rangle)/\sqrt2$,
 
 $$\left.\frac{L_z}{\hbar}\right|_{\{u,v\}}=\begin{pmatrix}0&L\\L&0\end{pmatrix}=L\sigma_x.$$
 
-Consequently the orbital Zeeman interaction $H_Z=-\boldsymbol{\mu}_L\cdot\mathbf B$ gives $\left.H_Z\right|_{\{u,v\}}=\hbar\omega_B L\sigma_x$, where $\omega_B=|e|B/(2m_e)$ up to the field-direction sign. This exactly derives the $L$ scaling as an angular-momentum representation weight. Projectively, $M_L\sim\omega[L\sigma_x\oplus\operatorname{diag}(-1,0)]$, so the first block has the Zeeman form.
+Consequently the orbital Zeeman interaction $H_Z=-\boldsymbol{\mu}_L\cdot\mathbf B$ gives $\left.H_Z\right|_{\{u,v\}}=\hbar\omega_B L\sigma_x$, where $\omega_B=|e|B/(2m_e)$ up to the field-direction sign. This exactly derives the $L$ scaling as an angular-momentum representation weight. More generally, a higher-dimensional $U(1)$ curvature is an antisymmetric two-form. In symmetric gauge its minimal coupling contains
 
-The physical frequency fails. A static proton's leading Coulomb field has $\mathbf B=0$. Giving the unavoidable relativistic field the most favorable estimate $B_{\rm mot}\simeq vE/c^2$, and using $|e|E=m_ev^2/r$, $\omega_{\rm orb}=v/r$, and $v/c=\alpha/n$ for a circular Coulomb state, gives
+$$H_{\rm mag}=-\frac{q}{2m_e}\sum_{A<B}F_{AB}L^{AB}.$$
+
+Scalar electric charge therefore does not restrict the connection to a common phase or prevent a torque on internal orbital orientation. The field may have components in any coordinate two-plane through which the electron sector and electromagnetic sector make contact.
+
+**Why ordinary three-dimensional magnetism is insufficient.** A static proton's leading Coulomb field has $\mathbf B=0$. Giving the unavoidable relativistic field the most favorable estimate $B_{\rm mot}\simeq vE/c^2$, and using $|e|E=m_ev^2/r$, $\omega_{\rm orb}=v/r$, and $v/c=\alpha/n$ for a circular Coulomb state, gives
 
 $$\frac{\omega_{\rm mot}}{\omega_{\rm orb}}=\frac{|e|B_{\rm mot}/(2m_e)}{v/r}=\frac{\alpha^2}{2n^2}.$$
 
@@ -661,9 +665,39 @@ With the IDWT value of $\alpha$, the ratio is only $2.88\times10^{-5}$ at $n=1$ 
 
 $$B_{\rm lock}(n)=\frac{2m_e\omega_{\rm orb}}{|e|}=\frac{2\alpha^2m_e^2c^2}{|e|\hbar n^3},$$
 
-namely $5.08\times10^5$, $6.35\times10^4$, $1.88\times10^4$, and $7.94\times10^3$ tesla for $n=1,2,3,4$. The native $U(1)$ charge generator is also a common phase on the electron sector, not a nontrivial internal $\mathbb{CP}^3$ orientation matrix. Therefore the ordinary Zeeman source is absent and the unavoidable motional/spin-orbit scale fails the gross-orbital lock. A new sector-internal magnetic torque could be postulated, but it is not in the present IDWT electromagnetic equations. (`files/idwt.py` STEP 130.) 🔶
+namely $5.08\times10^5$, $6.35\times10^4$, $1.88\times10^4$, and $7.94\times10^3$ tesla for $n=1,2,3,4$. This excludes the ordinary three-dimensional Zeeman field as the gross-orbit clock. It does not exclude curvature in the electron's other supported coordinate planes.
 
-**What is structural and what remains open.** Degree-$L$ monomials in four homogeneous coordinates number $\binom{L+3}{3}$; that combinatorics is genuine representation content, independent of the display. The earlier sequential-rotation visualization also shows the same strongest-envelope macro-lobe counts in its default view, but contains additional higher harmonics and therefore is not the proof (`files/idwt.py` STEP 129). A full physical observable map into three-dimensional apparatus coordinates, the finite transverse profile of the trajectory, the dynamical selection of $M_L$, and actual-path representatives of the complete $SU(4)$ multiplets remain open. 🔶
+**Hopf flux and the exact induced generator.** For normalized $Z\in S^7$ over $\mathbb{CP}^3$, the central Hopf connection is
+
+$$\mathcal A=-iZ^\dagger dZ,\qquad \mathcal F=d\mathcal A,\qquad \frac{1}{2\pi}\int_{\mathbb{CP}^1}\mathcal F=1.$$
+
+Its degree-$L$ line bundle has $c_1(\mathcal O(L))=L$ and
+
+$$H^0(\mathbb{CP}^3,\mathcal O(L))\cong\operatorname{Sym}^L(\mathbb C^4)^*,\qquad \dim H^0(\mathbb{CP}^3,\mathcal O(L))=\binom{L+3}{3}.$$
+
+The central Hopf $U(1)$ supplies this integral flux level; it is not itself the orientation generator. Inside the resulting degree-$L$ representation, take the single noncentral $U(1)$ isometry whose fundamental-coordinate weights are
+
+$$G=\operatorname{diag}(1,-1,-1,0).$$
+
+This is a Hamiltonian isometry of $\mathbb{CP}^3$ with moment map
+
+$$\mu_G([Z])=\frac{Z^\dagger GZ}{Z^\dagger Z}.$$
+
+Its Hamiltonian flow is $[Z]\mapsto[e^{-i\theta G}Z]$. Geometric quantization with prequantum bundle $\mathcal O(L)$ lifts that same flow to the induced degree-$L$ action on $H^0(\mathbb{CP}^3,\mathcal O(L))$.
+
+For every $L\geq1$, the four monomials
+
+$$z_1^L,\qquad z_2^L,\qquad z_3z_4^{L-1},\qquad z_4^L$$
+
+have weights $L,-L,-1,0$. Rotating the first two to their even/odd combinations gives the exact restricted action
+
+$$G_L\big|_{\mathcal V_L}=L\sigma_x\oplus\operatorname{diag}(-1,0),\qquad M_L=\omega\left(G_L\big|_{\mathcal V_L}+\tfrac14 I\right).$$
+
+This is the full displayed matrix, not only its amplitude block. The amplitude exchange and relative-phase clock use the same group parameter $\theta=\omega t$, so their frequency lock is representation-theoretic. No shell-dependent interaction strength is fitted. The electron's coupling charge remains $q=-e$; $L$ is the first Chern number of the magnetic background and the degree of its state space, not an electron charge $Le$. (`files/idwt.py` STEP 130.)
+
+**Physical status.** The construction proves that higher-dimensional $U(1)$ magnetism and projective combinatorics can generate the required locked flow for every $L\geq1$. What remains is a selection law showing why the electron-nucleus system occupies Chern sector $L$ and selects the particular orientation $G$, plus the complete detector map and transverse profile. Equivalently, the new-IDWT dynamical action must identify the electromagnetic curvature with this Hopf/Kähler flux rather than merely borrowing an internal Berry curvature. If its full $L$ flux is also mapped uniformly through an observed orbit disk, flux quantization and $mvr=L\hbar$ give $\omega_B=\omega_{\rm orb}$; that disk identification is a consistent corollary, not needed for the exact representation lock and not yet derived. The $L=0$ bundle has one constant section and zero flux, so the displayed $s$-ring clock requires a separate construction. 🔶
+
+**What is structural and what remains open.** Degree-$L$ monomials in four homogeneous coordinates number $\binom{L+3}{3}$; that combinatorics is now part of the generator derivation, not decorative counting. The earlier sequential-rotation visualization also shows the same strongest-envelope macro-lobe counts in its default view, but contains additional higher harmonics and therefore is not the proof (`files/idwt.py` STEP 129). A full physical observable map into three-dimensional apparatus coordinates, the finite transverse profile, the dynamical selection of the flux sector and $G$, and actual-path representatives of the complete $SU(4)$ multiplets remain open. 🔶
 
 **Multi-electron atoms.** The second electron adds electron-electron Coulomb repulsion — the $U(1)$ self-coupling of the wave on the $d=2$ coordinates the two $d=6$ electron resonances share. Both electrons carry the same vertex ($Q=-1$, same coupling). The two-electron Hamiltonian, helium ground state, and Aufbau principle are worked out in §16; the hydrogen molecule and covalent bond follow in §17.
 

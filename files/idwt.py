@@ -8255,6 +8255,9 @@ assert all(_Pblockerr_130[L] < 1e-12 for L in range(1, 5))
 # omega_orb=alpha^2*m_e*c^2/(hbar*n^3) for a circular Coulomb state.  The
 # calculation below uses the IDWT fiber alpha.  It is deliberately favorable:
 # Thomas precession or geometric factors cannot repair a 10^4--10^5 deficit.
+# A higher-dimensional U(1) connection can still act nontrivially through its
+# spatial dependence: its curvature F_AB couples to L_AB even though charge is
+# scalar.  The remaining question is whether its flux is fixed by atomic L.
 _me_kg_mag130 = 9.1093837015e-31
 _c_mag130 = 299792458.0
 _hbar_mag130 = 1.054571817e-34
@@ -8271,6 +8274,83 @@ for _n in range(1, 5):
     _Bmot_mag130[_n] = _Bneed_mag130[_n] * _motlock_mag130[_n]
 assert max(_motlock_mag130.values()) < 3.0e-5
 assert all(_Bneed_mag130[n] > 1.0e3 for n in range(1, 5))
+
+# HOPF-FLUX TEST.  On normalized Z in S^7 -> CP^3, the canonical connection
+# a=-i Z^dagger dZ has curvature f=da and integral (1/2pi) int_CP1 f=1.
+# A degree-L homogeneous monomial transforms as exp(i L chi), hence is a
+# section of O(L) (up to the sign convention O(+/-L)); its induced connection
+# is L*a, its Chern magnitude is L, and h^0(CP3,O(L))=C(L+3,3).  These are
+# exact topology/representation facts, reusing the STEP 78 Chern integral.
+_hopf_c1_130 = {L: _chern78(L) for L in range(4)}
+_hopf_dim_130 = {L: math.comb(L + 3, 3) for L in range(4)}
+_hopf_err_130 = max(abs(_hopf_c1_130[L] - L) for L in range(4))
+assert _hopf_err_130 < 1e-6
+assert _hopf_dim_130 == {0: 1, 1: 4, 2: 10, 3: 20}
+
+# CONDITIONAL flux-lock identity.  If -- an additional physical bridge -- the
+# FULL L-flux is uniform through the observed orbit disk, then
+#     e B pi r^2/(2pi hbar)=L  ->  omega_B=eB/(2m)=L hbar/(m r^2).
+# The last expression equals omega_orb only after imposing m v r=L hbar.
+# Verify the implication, while NOT treating its premise as derived.
+_r_try_130 = 2.7
+_m_try_130 = 1.9
+_hbar_try_130 = 0.83
+_e_try_130 = 1.2
+_hopf_lockerr_130 = {}
+for _L in range(1, 4):
+    _B_try_130 = 2.0 * _L * _hbar_try_130 / (
+        _e_try_130 * _r_try_130 ** 2
+    )
+    _wB_try_130 = _e_try_130 * _B_try_130 / (2.0 * _m_try_130)
+    _wo_try_130 = _L * _hbar_try_130 / (
+        _m_try_130 * _r_try_130 ** 2
+    )
+    _hopf_lockerr_130[_L] = abs(_wB_try_130 - _wo_try_130)
+assert all(_hopf_lockerr_130[L] < 1e-12 for L in range(1, 4))
+
+# NEW-IDWT CONSTRUCTION: distinguish electric charge from background flux.
+# The electron keeps unit charge e while the connection may occupy the Chern-L
+# flux sector; a unit-charge field in that background has sections of O(L).
+# One shell-independent U(1) isometry with fundamental weights (1,-1,-1,0)
+# acts on four degree-L monomials with weights
+#     z1^L: +L, z2^L: -L, z3*z4^(L-1): -1, z4^L: 0.
+# This isometry is Hamiltonian on CP3: its moment map is
+#     mu_G([Z])=(Z^dagger G Z)/(Z^dagger Z).
+# Geometric quantization with prequantum bundle O(L) lifts that same classical
+# flow to the degree-L action computed below.  Thus the curvature level and the
+# induced generator belong to one symplectic construction, although selection
+# of the physical field orientation G by the electron-nucleus system is open.
+# Rotating the first pair to its even/odd basis gives L*sigma_x; the final pair
+# is the unit clock diag(-1,0).  Adding the projectively invisible scalar I/4
+# gives EXACTLY M_L.  Both blocks use the same group parameter theta, so their
+# frequency lock is representation-theoretic, not a comparison of two field
+# strengths.  This works for L>=1.  The L=0 ring has no Chern flux and remains
+# a separate display/trajectory question.
+_Gweights_130 = np.array([1.0, -1.0, -1.0, 0.0])
+_Gblockerr_130 = {}
+for _L in range(1, 5):
+    _exponents130 = np.array(
+        [[_L, 0, 0, 0],
+         [0, _L, 0, 0],
+         [0, 0, 1, _L - 1],
+         [0, 0, 0, _L]],
+        dtype=float,
+    )
+    _weights130 = _exponents130 @ _Gweights_130
+    assert np.array_equal(_weights130, [_L, -_L, -1.0, 0.0])
+    _basis130 = np.eye(4)
+    _basis130[:, 0] = np.array([1.0, 1.0, 0.0, 0.0]) / math.sqrt(2.0)
+    _basis130[:, 1] = np.array([1.0, -1.0, 0.0, 0.0]) / math.sqrt(2.0)
+    _induced130 = (_basis130.T @ np.diag(_weights130) @ _basis130
+                   + 0.25 * np.eye(4))
+    _target130 = np.array(
+        [[0.25, _L, 0.0, 0.0],
+         [_L, 0.25, 0.0, 0.0],
+         [0.0, 0.0, -0.75, 0.0],
+         [0.0, 0.0, 0.0, 0.25]]
+    )
+    _Gblockerr_130[_L] = float(np.max(np.abs(_induced130 - _target130)))
+assert all(_Gblockerr_130[L] < 1e-12 for L in range(1, 5))
 
 
 # =============================================================================
@@ -12891,7 +12971,29 @@ for _n in range(1, 5):
           f"omega_mot/omega_orb={_motlock_mag130[_n]:.3e}")
 print("=> ordinary magnetism FAILS as the gross-orbit lock: static Coulomb")
 print("B=0; the unavoidable motional/spin-orbit scale is >=3.5e4 too slow.")
-print("A new sector-internal magnetic torque is not in the present U(1) EOM.")
+print("Higher-dimensional F_AB can act through L_AB; scalar charge does not")
+print("forbid an internal orbital torque. Hopf-flux test:")
+for _L in range(4):
+    print(f"  L={_L}: c1(O(L))={_hopf_c1_130[_L]:.6f}  "
+          f"dim H0(CP3,O(L))={_hopf_dim_130[_L]}")
+print("new-IDWT induced action: fundamental U(1) weights (1,-1,-1,0)")
+print("on {z1^L,z2^L,z3*z4^(L-1),z4^L}; even/odd first pair gives")
+print("L*sigma_x plus clock diag(-1,0), hence exactly M_L up to I/4:")
+for _L in range(1, 5):
+    print(f"  L={_L}: induced-generator error={_Gblockerr_130[_L]:.1e}")
+print("=> for L>=1 the amplitude and clock blocks are one U(1) action;")
+print("their exact frequency lock is representation-theoretic.")
+print("The central Hopf U(1) supplies c1=L; the noncentral U(1) isometry")
+print("supplies the weights. Unit electron charge and background flux L are")
+print("distinct, so O(L) does not mean an electron of charge L*e.")
+print("The CP3 moment map mu_G=<Z|G|Z>/<Z|Z> generates the classical flow;")
+print("its O(L) quantization is the induced degree-L action above.")
+print("conditional disk corollary: if all L flux quanta pierce the observed")
+print("orbit disk uniformly, flux quantization plus mvr=Lhbar also gives")
+print(f"omega_B=omega_orb; algebraic error="
+      f"{max(_hopf_lockerr_130.values()):.1e}.")
+print("OPEN: what source/selection law chooses this isometry and flux sector,")
+print("and the full observer map. L=0 has no induced four-state construction.")
 
 
 # =============================================================================
