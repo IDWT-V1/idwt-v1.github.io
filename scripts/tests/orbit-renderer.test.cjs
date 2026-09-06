@@ -17,7 +17,7 @@ const ctx = {
 function element(value) {
   return { value, events: {}, addEventListener(kind, callback) { this.events[kind] = callback; }, setAttribute() {} };
 }
-const elements = Object.fromEntries(['depth','imbalance','phaseOffset','imbalanceValue','orbitCondition','stateReturn','phaseReadout','orbitLabel','resetOrbit','resetView'].map(id => [id, element()]));
+const elements = Object.fromEntries(['depth','imbalance','phaseOffset','imbalanceValue','orbitCondition','stateReturn','phaseReadout','orbitLabel','resetOrbit','resetView','alignExtraOne','alignExtraTwo'].map(id => [id, element()]));
 elements.depth.value = '.32'; elements.imbalance.value = '0'; elements.phaseOffset.value = '0';
 elements.orbitStage = {getBoundingClientRect: () => stageSize};
 elements.orbitCanvas = {...element(), style: {}, getContext: () => ctx, setPointerCapture() {}};
@@ -64,10 +64,33 @@ frame(1000); assert.ok(Math.min(...radii()) > .999);
 elements.resetOrbit.events.click(); select(3); frame(1000);
 assert.equal(elements.imbalance.value, '0'); assert.equal(elements.phaseOffset.value, '0');
 assert.ok(Math.min(...radii()) < .01);
+for (const l of [1,2,3]) {
+  select(l); elements.resetOrbit.events.click();
+  elements.alignExtraOne.events.click();
+  assert.ok(Math.abs(Number(elements.imbalance.value)-Math.sqrt(l+.25)) < 1e-12);
+  assert.match(elements.stateReturn.textContent, /7.84%/);
+  assert.match(elements.stateReturn.textContent, /recurs after two turns/);
+  assert.ok(elements.orbitCondition.textContent.includes(`${2*l+1} radial maxima`));
+  frame(17000); assert.match(elements.phaseReadout.textContent, /current state return: 100.0%/);
+  change('phaseOffset', '.5', 'change');
+  assert.match(elements.stateReturn.textContent, /100.00% \(full state recurs\)/);
+  change('phaseOffset', '0', 'change'); elements.alignExtraTwo.events.click();
+  assert.ok(Number(elements.imbalance.value) <= 3);
+  assert.ok(Math.abs(Number(elements.imbalance.value)-Math.sqrt(2*l+1)) < 1e-12);
+  assert.match(elements.stateReturn.textContent, /100.00% \(full state recurs\)/);
+  assert.ok(elements.orbitCondition.textContent.includes(`${2*l+2} radial maxima`));
+  frame(1000); assert.ok(Math.min(...radii()) > .1);
+}
+select(0); assert.ok(elements.alignExtraOne.disabled && elements.alignExtraTwo.disabled);
+elements.resetOrbit.events.click(); select(3);
 assert.ok(html.indexOf('<figure class="orbit-lab">') < html.indexOf('<article class="orbit-prose">'));
 assert.match(html, /grid-template-areas: "prose visual"/);
 assert.match(html, /grid-template-areas: "visual" "prose"/);
 assert.match(html, /aspect-ratio: 1 \/ 1/);
+assert.match(html, /<details class="lab-details">/);
+assert.match(html, /max-height: 35%/);
+assert.match(html, /max-height: 40%/);
+assert.match(html, /id="imbalance"[^>]*max="3"[^>]*step="any"/);
 for (const size of [{width: 360, height: 175}, {width: 680, height: 410}]) {
   stageSize = size; resizeCallback(); frame(1000);
   assert.equal(elements.orbitCanvas.width, size.width);
@@ -77,3 +100,4 @@ for (const size of [{width: 360, height: 175}, {width: 680, height: 410}]) {
 }
 console.log('PASS: ideal ring/petals, imbalance floor, continuous clock crossing, invisible phase, ray recurrence, ring guard, and reset.');
 console.log('PASS: responsive DOM order and layout declarations; canvas follows panel resizes without losing the trajectory.');
+console.log('PASS: exact extra-maximum alignments beyond the old range, one/two-turn recurrence, and phase-offset interaction.');

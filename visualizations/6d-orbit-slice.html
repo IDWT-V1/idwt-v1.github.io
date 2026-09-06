@@ -43,7 +43,7 @@ MathJax = {
     background: radial-gradient(circle at 50% 44%, #131a38 0, #070a17 62%, #03040a 100%);
   }
   .orbit-stage { position: relative; flex: 1 1 0; min-height: 0; overflow: hidden; }
-  .lab-tools { flex: 0 1 auto; min-height: 0; max-height: 55%; overflow-y: auto; overscroll-behavior-y: contain; }
+  .lab-tools { flex: 0 1 auto; min-height: 0; max-height: 35%; overflow-y: auto; overscroll-behavior-y: contain; }
   .lab-tools:focus-visible { outline: 2px solid #b9c2ff; outline-offset: -3px; }
   #orbitCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
   #orbitCanvas:active { cursor: grabbing; }
@@ -55,21 +55,25 @@ MathJax = {
   .lab-note span:last-child { text-align: right; }
   .lab-controls {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 9px; padding: 13px; border-top: 1px solid rgba(139,156,255,.16);
+    gap: 5px; padding: 6px 8px; border-top: 1px solid rgba(139,156,255,.16);
     background: rgba(5,8,18,.86);
   }
   .orbit-button, .reset-button {
     color: #d8ddf1; background: #11162c; border: 1px solid #39436c;
-    border-radius: 8px; padding: 7px 13px; cursor: pointer; font: inherit;
+    border-radius: 6px; padding: 4px 7px; min-height: 28px; cursor: pointer; font: inherit; font-size: .74rem;
   }
   .orbit-button[aria-pressed="true"] { color: #070a13; background: var(--orbit); border-color: var(--orbit); }
   .orbit-button:focus-visible, .reset-button:focus-visible, .lab-controls input:focus-visible, .lab-controls select:focus-visible {
     outline: 2px solid #b9c2ff; outline-offset: 2px;
   }
-  .depth-label { display: flex; align-items: center; gap: 8px; color: #aeb7d8; font-size: .82rem; }
-  #depth { width: 110px; accent-color: #8b9cff; }
-  #imbalance { width: 110px; accent-color: #8b9cff; }
-  .lab-controls select { background: #11162c; color: #d8ddf1; padding: 6px; border: 1px solid #39436c; border-radius: 6px; }
+  .depth-label { display: flex; align-items: center; gap: 4px; color: #aeb7d8; font-size: .72rem; }
+  #depth { width: 64px; accent-color: #8b9cff; }
+  #imbalance { width: 80px; accent-color: #8b9cff; }
+  #imbalanceValue { font-variant-numeric: tabular-nums; min-width: 3.3em; }
+  .lab-controls select { max-width: 145px; min-height: 28px; background: #11162c; color: #d8ddf1; padding: 3px; border: 1px solid #39436c; border-radius: 6px; font: inherit; }
+  .lab-details { border-top: 1px solid rgba(139,156,255,.16); }
+  .lab-details summary { cursor: pointer; padding: 5px 10px; min-height: 28px; color: #aeb7d8; font-size: .74rem; }
+  .lab-details summary:focus-visible { outline: 2px solid #b9c2ff; outline-offset: -2px; }
   .lab-controls :disabled { opacity: .45; }
   .orbit-status { padding: 12px 18px; color: #c1cae8; font-size: .85rem; line-height: 1.6; }
   .orbit-status p { margin: 3px 0; }
@@ -87,9 +91,9 @@ MathJax = {
       width: min(100%, calc(100svh - var(--nav-h) - 24px));
       height: auto; aspect-ratio: 1 / 1;
     }
-    .lab-tools { max-height: 50%; }
-    .lab-controls { gap: 6px; padding: 8px; }
-    .orbit-button, .reset-button { padding: 6px 8px; font-size: .78rem; }
+    .lab-tools { max-height: 40%; }
+    .lab-controls { gap: 4px; padding: 5px; }
+    .orbit-button, .reset-button { padding: 4px 6px; font-size: .72rem; }
     .orbit-status { padding: 8px 12px; font-size: .78rem; }
     .orbit-caption { padding: 0 12px 12px; font-size: .75rem; }
     .proof-grid { grid-template-columns: 1fr; }
@@ -130,18 +134,23 @@ MathJax = {
       <button class="reset-button" id="resetView">⟲ align</button>
     </div>
     <div class="lab-controls" aria-label="Orbit perturbations">
-      <label class="depth-label" for="imbalance">imbalance δ/ν <input id="imbalance" type="range" min="0" max="1" value="0" step="0.01" disabled><output id="imbalanceValue" for="imbalance">0.00</output></label>
-      <label class="depth-label" for="phaseOffset">relative offset ε/ν
+      <label class="depth-label" for="imbalance" title="Amplitude imbalance relative to the clock rate">δ/ν <input id="imbalance" aria-label="Imbalance relative to clock rate" type="range" min="0" max="3" value="0" step="any" disabled><output id="imbalanceValue" for="imbalance">0.0000</output></label>
+      <button class="reset-button" id="alignExtraOne" disabled aria-label="Align one extra radial maximum" title="Align one extra radial maximum: exchange/clock rate L + ½">Align +1</button>
+      <button class="reset-button" id="alignExtraTwo" disabled aria-label="Align two extra radial maxima" title="Align two extra radial maxima: exchange/clock rate L + 1">Align +2</button>
+      <label class="depth-label" for="phaseOffset" title="Amplitude-block offset relative to the clock rate">ε/ν
         <select id="phaseOffset" disabled><option value="0">0 · ideal</option><option value="0.5">½ · two-turn phase</option><option value="sqrt2">√2 · incommensurate phase</option></select>
       </label>
-      <button class="reset-button" id="resetOrbit">Restore ideal orbit</button>
+      <button class="reset-button" id="resetOrbit" aria-label="Restore ideal orbit">Ideal</button>
     </div>
+    <details class="lab-details">
+    <summary>State &amp; orbit details</summary>
     <div class="orbit-status">
       <p id="orbitCondition" role="status">Ring completion · perturbation controls apply to L ≥ 1.</p>
       <p id="stateReturn"></p>
       <p id="phaseReadout"></p>
     </div>
     <p class="orbit-caption">The default settings retain the ideal ring and petals. Imbalance changes the actual trajectory and can open its center crossings. Relative offset changes the state phase, not the displayed coordinates. The curve shows one clock-turn window without forcing its endpoints together; the moving point follows continuous Hamiltonian time. The state-return indicator compares projective rays, not just positions. Radius is normalized; physical width and scale still require the observer response.</p>
+    </details>
     </div>
   </figure>
 <article class="orbit-prose">
@@ -386,6 +395,7 @@ MathJax = {
     <p>The demo's initial pair \((1,0)\) satisfies \(s_x=0\), allowing full exchange. Unitary evolution conserves \(s_x\); it does not by itself attract arbitrary preparations to that orbit.</p>
     <h3>A closed image is not necessarily a closed state orbit</h3>
     <p>For \(\epsilon=0\), full recurrence of the stated coefficient ray requires both \(\Omega T\) and \(\nu T\) to be integer multiples of \(2\pi\). A rational ratio \(\Omega/\nu=p/q\), in lowest terms, gives \(T=2\pi q/\nu\). An irrational ratio does not close exactly. The plane readout loses the sign of the amplitude pair: \(g/\nu=3/2\) with zero imbalance gives a closed three-maximum image after one clock turn, but the state itself needs two turns.</p>
+    <p>The alignment buttons retain \(g/\nu=L\) and set \(\delta/\nu=\sqrt{L+1/4}\) for one extra radial maximum, or \(\delta/\nu=\sqrt{2L+1}\) for two. The resulting exchange rates are \(L+1/2\) and \(L+1\). For \(L=1\), the first value is about 1.118, beyond the previous slider limit of 1. These aligned curves still have nonzero minimum radius: alignment does not restore their center crossings. With zero relative offset, the first returns the full state after two turns and the second after one.</p>
     <p>The offset \(\epsilon\) is also invisible to the displayed coordinates, including the depth readout. Nevertheless, full recurrence requires</p>
     <div class="math-scroll">
       \[
@@ -450,6 +460,8 @@ MathJax = {
   const imbalance = document.getElementById('imbalance');
   const phaseOffset = document.getElementById('phaseOffset');
   const imbalanceValue = document.getElementById('imbalanceValue');
+  const alignExtraOne = document.getElementById('alignExtraOne');
+  const alignExtraTwo = document.getElementById('alignExtraTwo');
   const orbitCondition = document.getElementById('orbitCondition');
   const stateReturn = document.getElementById('stateReturn');
   const phaseReadout = document.getElementById('phaseReadout');
@@ -489,17 +501,20 @@ MathJax = {
 
   function updateOrbit() {
     const ring = angularLevel === 0;
-    imbalance.disabled = phaseOffset.disabled = ring;
+    imbalance.disabled = phaseOffset.disabled = alignExtraOne.disabled = alignExtraTwo.disabled = ring;
     const {delta, epsilon, omega} = parameters();
-    imbalanceValue.value = delta.toFixed(2);
+    imbalanceValue.value = delta.toFixed(4);
     label.textContent = `L = ${angularLevel} · ${ring ? 'ring' : delta === 0 ? names[angularLevel] : 'perturbed orbit'}`;
     orbitCondition.textContent = ring ? 'Ring completion · perturbation controls apply to L ≥ 1.' :
       `Minimum aligned radius: ${(delta / omega).toFixed(3)} R · exchange/clock rate: ${omega.toFixed(4)}.`;
     const fidelity = returnFidelity(2 * Math.PI);
-    const closed = ring || (delta === 0 && epsilon === 0);
+    const nearInteger = value => Math.abs(value - Math.round(value)) < 1e-10;
+    const imageClosed = ring || nearInteger(2 * omega);
+    const closed = ring || (nearInteger(epsilon + omega) && nearInteger(epsilon - omega));
+    if (!ring && imageClosed) orbitCondition.textContent += ` Image aligns each clock turn: ${Math.round(2 * omega)} radial maxima${delta > 0 ? ', without center crossings' : ''}.`;
     stateReturn.textContent = `After one clock turn: state return ${(100 * fidelity).toFixed(2)}% (${closed ? 'full state recurs' : 'not a full state recurrence'}).`;
-    if (!ring && delta === 0 && epsilon === .5) stateReturn.textContent += ' The state recurs after two turns; the visible petals repeat each turn.';
-    if (!ring && delta === 0 && phaseOffset.value === 'sqrt2') stateReturn.textContent += ' The petals repeat, but the irrational relative phase prevents exact state recurrence.';
+    if (!ring && imageClosed && !closed && phaseOffset.value !== 'sqrt2') stateReturn.textContent += ' The state recurs after two turns; the visible pattern repeats each turn.';
+    if (!ring && imageClosed && phaseOffset.value === 'sqrt2') stateReturn.textContent += ' The image repeats, but the irrational relative phase prevents exact state recurrence.';
     start = performance.now();
   }
 
@@ -613,6 +628,13 @@ MathJax = {
 
   imbalance.addEventListener('input', updateOrbit);
   phaseOffset.addEventListener('change', updateOrbit);
+  function alignRate(extra) {
+    if (angularLevel === 0) return;
+    imbalance.value = String(Math.sqrt((angularLevel + extra) ** 2 - angularLevel ** 2));
+    updateOrbit();
+  }
+  alignExtraOne.addEventListener('click', () => alignRate(.5));
+  alignExtraTwo.addEventListener('click', () => alignRate(1));
   document.getElementById('resetOrbit').addEventListener('click', () => {
     imbalance.value = '0';
     phaseOffset.value = '0';
