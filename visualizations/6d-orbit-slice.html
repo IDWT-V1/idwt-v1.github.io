@@ -54,25 +54,28 @@ MathJax = {
   }
   .lab-note span:last-child { text-align: right; }
   .lab-controls {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 5px; padding: 6px 8px; border-top: 1px solid rgba(139,156,255,.16);
+    display: flex; flex-wrap: nowrap; align-items: center; justify-content: safe center;
+    gap: 4px; padding: 3px 5px; min-height: 32px; overflow-x: auto;
+    border-top: 1px solid rgba(139,156,255,.16);
     background: rgba(5,8,18,.86);
   }
   .orbit-button, .reset-button {
     color: #d8ddf1; background: #11162c; border: 1px solid #39436c;
-    border-radius: 6px; padding: 4px 7px; min-height: 28px; cursor: pointer; font: inherit; font-size: .74rem;
+    flex: 0 0 auto; border-radius: 4px; padding: 0 6px;
+    height: 26px; min-height: 26px; cursor: pointer;
+    font-family: inherit; font-size: 11px; line-height: 1; white-space: nowrap;
   }
   .orbit-button[aria-pressed="true"] { color: #070a13; background: var(--orbit); border-color: var(--orbit); }
   .orbit-button:focus-visible, .reset-button:focus-visible, .lab-controls input:focus-visible, .lab-controls select:focus-visible {
     outline: 2px solid #b9c2ff; outline-offset: 2px;
   }
-  .depth-label { display: flex; align-items: center; gap: 4px; color: #aeb7d8; font-size: .72rem; }
-  #depth { width: 64px; accent-color: #8b9cff; }
-  #imbalance { width: 80px; accent-color: #8b9cff; }
+  .depth-label { display: flex; flex: 0 0 auto; align-items: center; gap: 3px; margin: 0; color: #aeb7d8; font-size: 11px; line-height: 1; white-space: nowrap; }
+  #depth { width: 55px; height: 20px; margin: 0; accent-color: #8b9cff; }
+  #imbalance { width: 64px; height: 20px; margin: 0; accent-color: #8b9cff; }
   #imbalanceValue { font-variant-numeric: tabular-nums; min-width: 3.3em; }
-  .lab-controls select { max-width: 145px; min-height: 28px; background: #11162c; color: #d8ddf1; padding: 3px; border: 1px solid #39436c; border-radius: 6px; font: inherit; }
+  .lab-controls select { width: 48px; height: 26px; min-height: 26px; background: #11162c; color: #d8ddf1; padding: 0 2px; border: 1px solid #39436c; border-radius: 4px; font: inherit; }
   .lab-details { border-top: 1px solid rgba(139,156,255,.16); }
-  .lab-details summary { cursor: pointer; padding: 5px 10px; min-height: 28px; color: #aeb7d8; font-size: .74rem; }
+  .lab-details summary { cursor: pointer; padding: 3px 8px; min-height: 24px; color: #aeb7d8; font-size: 11px; line-height: 18px; }
   .lab-details summary:focus-visible { outline: 2px solid #b9c2ff; outline-offset: -2px; }
   .lab-controls :disabled { opacity: .45; }
   .orbit-status { padding: 12px 18px; color: #c1cae8; font-size: .85rem; line-height: 1.6; }
@@ -92,8 +95,7 @@ MathJax = {
       height: auto; aspect-ratio: 1 / 1;
     }
     .lab-tools { max-height: 40%; }
-    .lab-controls { gap: 4px; padding: 5px; }
-    .orbit-button, .reset-button { padding: 4px 6px; font-size: .72rem; }
+    .lab-controls { justify-content: safe center; }
     .orbit-status { padding: 8px 12px; font-size: .78rem; }
     .orbit-caption { padding: 0 12px 12px; font-size: .75rem; }
     .proof-grid { grid-template-columns: 1fr; }
@@ -126,21 +128,21 @@ MathJax = {
     </div>
     <div class="lab-tools" tabindex="0" role="group" aria-label="Orbit controls and readouts">
     <div class="lab-controls" aria-label="Visualization controls">
-      <button class="orbit-button" style="--orbit:#ffd27a" data-l="0" aria-pressed="true">L = 0 · ring</button>
-      <button class="orbit-button" style="--orbit:#5a9bff" data-l="1" aria-pressed="false">L = 1 · 2 lobes</button>
-      <button class="orbit-button" style="--orbit:#46d39a" data-l="2" aria-pressed="false">L = 2 · 4 lobes</button>
-      <button class="orbit-button" style="--orbit:#e06ad0" data-l="3" aria-pressed="false">L = 3 · 6 lobes</button>
+      <button class="orbit-button" style="--orbit:#ffd27a" data-l="0" aria-label="L = 0, ring" title="L = 0 · ring" aria-pressed="true">L0</button>
+      <button class="orbit-button" style="--orbit:#5a9bff" data-l="1" aria-label="L = 1, two lobes" title="L = 1 · 2 lobes" aria-pressed="false">L1</button>
+      <button class="orbit-button" style="--orbit:#46d39a" data-l="2" aria-label="L = 2, four lobes" title="L = 2 · 4 lobes" aria-pressed="false">L2</button>
+      <button class="orbit-button" style="--orbit:#e06ad0" data-l="3" aria-label="L = 3, six lobes" title="L = 3 · 6 lobes" aria-pressed="false">L3</button>
       <label class="depth-label" for="depth">depth <input id="depth" type="range" min="0" max="0.65" value="0.32" step="0.01"></label>
-      <button class="reset-button" id="resetView">⟲ align</button>
+      <button class="reset-button" id="resetView" aria-label="Align view" title="Align view">⟲</button>
+      <button class="reset-button" id="resetOrbit" aria-label="Restore ideal orbit" title="Restore ideal orbit">Ideal</button>
     </div>
     <div class="lab-controls" aria-label="Orbit perturbations">
       <label class="depth-label" for="imbalance" title="Amplitude imbalance relative to the clock rate">δ/ν <input id="imbalance" aria-label="Imbalance relative to clock rate" type="range" min="0" max="3" value="0" step="any" disabled><output id="imbalanceValue" for="imbalance">0.0000</output></label>
-      <button class="reset-button" id="alignExtraOne" disabled aria-label="Align one extra radial maximum" title="Align one extra radial maximum: exchange/clock rate L + ½">Align +1</button>
-      <button class="reset-button" id="alignExtraTwo" disabled aria-label="Align two extra radial maxima" title="Align two extra radial maxima: exchange/clock rate L + 1">Align +2</button>
+      <button class="reset-button" id="alignExtraOne" disabled aria-label="Align one extra radial maximum" title="Align one extra radial maximum: exchange/clock rate L + ½">+1</button>
+      <button class="reset-button" id="alignExtraTwo" disabled aria-label="Align two extra radial maxima" title="Align two extra radial maxima: exchange/clock rate L + 1">+2</button>
       <label class="depth-label" for="phaseOffset" title="Amplitude-block offset relative to the clock rate">ε/ν
-        <select id="phaseOffset" disabled><option value="0">0 · ideal</option><option value="0.5">½ · two-turn phase</option><option value="sqrt2">√2 · incommensurate phase</option></select>
+        <select id="phaseOffset" aria-label="Relative phase offset" disabled><option value="0">0</option><option value="0.5">½</option><option value="sqrt2">√2</option></select>
       </label>
-      <button class="reset-button" id="resetOrbit" aria-label="Restore ideal orbit">Ideal</button>
     </div>
     <details class="lab-details">
     <summary>State &amp; orbit details</summary>
