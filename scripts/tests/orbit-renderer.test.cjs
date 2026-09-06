@@ -6,7 +6,8 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const html = fs.readFileSync(path.join(__dirname, '../../visualizations/6d-orbit-slice.html'), 'utf8');
 const source = html.slice(html.indexOf('(() => {'), html.lastIndexOf('</script>'));
-let frame, lines = [], arcs = [], current;
+let frame, lines = [], arcs = [], current, resizeCallback;
+let stageSize = {width: 800, height: 620};
 const ctx = {
   setTransform() {}, clearRect() { lines = []; arcs = []; },
   beginPath() { current = []; }, moveTo(x,y) { current.push([x,y]); },
@@ -18,13 +19,17 @@ function element(value) {
 }
 const elements = Object.fromEntries(['depth','imbalance','phaseOffset','imbalanceValue','orbitCondition','stateReturn','phaseReadout','orbitLabel','resetOrbit','resetView'].map(id => [id, element()]));
 elements.depth.value = '.32'; elements.imbalance.value = '0'; elements.phaseOffset.value = '0';
-elements.orbitStage = {getBoundingClientRect: () => ({width: 800, height: 620})};
+elements.orbitStage = {getBoundingClientRect: () => stageSize};
 elements.orbitCanvas = {...element(), style: {}, getContext: () => ctx, setPointerCapture() {}};
 const buttons = [0,1,2,3].map(l => ({...element(), dataset: {l: String(l)}}));
 vm.runInNewContext(source, {
   document: {getElementById: id => { assert.ok(elements[id], id); return elements[id]; }, querySelectorAll: () => buttons},
   window: {devicePixelRatio: 1, addEventListener() {}},
-  performance: {now: () => 0}, requestAnimationFrame: callback => { frame = callback; }, Math, Number
+  performance: {now: () => 0}, requestAnimationFrame: callback => { frame = callback; }, Math, Number,
+  ResizeObserver: class {
+    constructor(callback) { resizeCallback = callback; }
+    observe(target) { assert.equal(target, elements.orbitStage); }
+  }
 });
 function select(l) { buttons[l].events.click(); }
 function change(id, value, event) { elements[id].value = value; elements[id].events[event](); }
@@ -59,4 +64,16 @@ frame(1000); assert.ok(Math.min(...radii()) > .999);
 elements.resetOrbit.events.click(); select(3); frame(1000);
 assert.equal(elements.imbalance.value, '0'); assert.equal(elements.phaseOffset.value, '0');
 assert.ok(Math.min(...radii()) < .01);
+assert.ok(html.indexOf('<figure class="orbit-lab">') < html.indexOf('<article class="orbit-prose">'));
+assert.match(html, /grid-template-areas: "prose visual"/);
+assert.match(html, /grid-template-areas: "visual" "prose"/);
+assert.match(html, /aspect-ratio: 1 \/ 1/);
+for (const size of [{width: 360, height: 175}, {width: 680, height: 410}]) {
+  stageSize = size; resizeCallback(); frame(1000);
+  assert.equal(elements.orbitCanvas.width, size.width);
+  assert.equal(elements.orbitCanvas.height, size.height);
+  assert.equal(lines.length, 1401);
+  assert.ok(arcs.every(([x,y]) => Number.isFinite(x+y)));
+}
 console.log('PASS: ideal ring/petals, imbalance floor, continuous clock crossing, invisible phase, ray recurrence, ring guard, and reset.');
+console.log('PASS: responsive DOM order and layout declarations; canvas follows panel resizes without losing the trajectory.');
