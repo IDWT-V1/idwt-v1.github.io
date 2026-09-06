@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A gauge-invariant projective construction of the s, p, d and f lobe counts from a conserved Hamiltonian flow, with an interactive aligned-view visualization and an explicit account of what remains open.">
-<meta name="keywords" content="IDWT, CP3, projective geometry, Hamiltonian flow, atomic orbital lobes, s p d f, six-dimensional electron">
+<meta name="description" content="A gauge-invariant construction of projected electron orbit families from Hamiltonian flow in the proposed six-dimensional electron sector, with an interactive aligned view and explicit closure equations.">
+<meta name="keywords" content="IDWT, CP3, projective geometry, Hamiltonian flow, projected electron orbits, angular momentum, six-dimensional electron">
 <meta name="author" content="Fedge No">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://fedgeno.github.io/visualizations/6d-orbit-slice">
-<meta property="og:title" content="Orbital Lobes from a Projective 6D Orbit — IDWT">
-<meta property="og:description" content="The corrected projective mathematics behind the 1, 2, 4 and 6 aligned lobe counts, with the exact visualization embedded.">
+<meta property="og:title" content="Projected Electron Orbits in the 6D Sector — IDWT">
+<meta property="og:description" content="The projective mathematics behind the ring and the 2, 4 and 6-lobed aligned electron orbit families, with the exact visualization embedded.">
 <meta property="og:site_name" content="IDWT — Infinite-Dimensional Wave Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Orbital Lobes from a Projective 6D Orbit — IDWT">
-<meta name="twitter:description" content="A gauge-invariant Hamiltonian construction and interactive s/p/d/f visualization.">
-<title>Orbital Lobes from a Projective 6D Orbit — IDWT</title>
+<meta name="twitter:title" content="Projected Electron Orbits in the 6D Sector — IDWT">
+<meta name="twitter:description" content="A gauge-invariant Hamiltonian construction and interactive visualization of projected electron orbit families.">
+<title>Projected Electron Orbits in the 6D Sector — IDWT</title>
 <link rel="stylesheet" href="/styles/main.css">
 <script>
 MathJax = {
@@ -43,12 +43,12 @@ MathJax = {
     gap: 9px; padding: 13px; border-top: 1px solid rgba(139,156,255,.16);
     background: rgba(5,8,18,.86);
   }
-  .shell-button, .reset-button {
+  .orbit-button, .reset-button {
     color: #d8ddf1; background: #11162c; border: 1px solid #39436c;
     border-radius: 8px; padding: 7px 13px; cursor: pointer; font: inherit;
   }
-  .shell-button[aria-pressed="true"] { color: #070a13; background: var(--shell); border-color: var(--shell); }
-  .shell-button:focus-visible, .reset-button:focus-visible, #depth:focus-visible {
+  .orbit-button[aria-pressed="true"] { color: #070a13; background: var(--orbit); border-color: var(--orbit); }
+  .orbit-button:focus-visible, .reset-button:focus-visible, #depth:focus-visible {
     outline: 2px solid #b9c2ff; outline-offset: 2px;
   }
   .depth-label { display: flex; align-items: center; gap: 8px; color: #aeb7d8; font-size: .82rem; }
@@ -73,8 +73,8 @@ MathJax = {
 <nav class="site-nav">
   <a class="nav-logo" href="/">IDWT</a>
   <div class="nav-links">
-    <a href="/articles/" aria-current="page">Articles</a>
-    <a href="/visualizations/">Visualizations</a>
+    <a href="/articles/">Articles</a>
+    <a href="/visualizations/" aria-current="page">Visualizations</a>
     <a href="/notebook/">Notebook</a>
     <a href="/notes/">Notes</a>
     <a href="/published/">Published</a>
@@ -85,35 +85,39 @@ MathJax = {
 <div class="corner-orb right"><canvas id="orbR"></canvas></div>
 
 <header class="page-hero">
-  <div class="eyebrow">Article · Corrected construction</div>
-  <h1>Orbital Lobes from a Projective 6D Orbit</h1>
-  <p class="sub">A conserved Hamiltonian flow can produce the aligned \(s/p/d/f\) pattern exactly—provided every displayed quantity survives the projective quotient. Here is the construction, its proof, the live geometry, and the line between established mathematics and unfinished physics.</p>
+  <div class="eyebrow">Interactive derivation · Electron sector</div>
+  <h1>Projected Electron Orbits in the 6D Sector</h1>
+  <p class="sub">A conserved Hamiltonian flow produces a ring and the aligned two-, four-, and six-lobed electron orbit families. The construction separates the exact projective trajectory from the observer response that displays it.</p>
 </header>
 
 <main>
 <section>
-  <h2>What has to be respected</h2>
+  <h2>The electron sector and the displayed object</h2>
   <div class="prose">
-    <p>A six-real-dimensional particle does not imply that all of reality has six dimensions. In IDWT, \(d=6\) identifies the electron sector: the particle has structure across six directions, while an interaction reads the coordinates shared with the other participant. The local angular geometry can be represented by \(\mathbb{CP}^3\), because four complex homogeneous coordinates contain eight real components and the complex rescaling \(z\sim cz\) removes two real degrees of freedom:</p>
+    <p>IDWT proposes that the electron lives on the six-real-dimensional sector manifold</p>
     <div class="math-scroll">
       \[
-      \dim_{\mathbb R}\mathbb{CP}^3=2(4)-2=6.
+      Q_6=\mathbb{CP}^3,
+      \qquad
+      \dim_{\mathbb R}Q_6=2(4)-2=6.
       \]
     </div>
-    <p>This is a local projective model of the sector's orientation data, not a claim that the electron's entire global space is the compact manifold \(\mathbb{CP}^3\). More importantly, a formula on homogeneous coordinates is physical only if it is unchanged by \(z\mapsto cz\). A common phase is gauge; it cannot supply the angle seen by an observer.</p>
+    <p>A sector position is a ray \(q=[Z]\), with \(Z\in\mathbb C^4\setminus\{0\}\) and \(Z\sim\lambda Z\). The homogeneous lift \(Z\), the point \([Z]\), and the electron's intrinsic Dirac field \(\psi_e(q)\) are distinct objects. The projected master action must supply the intertwiner connecting the coordinate and field descriptions.</p>
+    <p>An <strong>orbit</strong> is the Hamiltonian trajectory followed by the electron state. An <strong>orbital</strong> is a stationary spatial field or density assigned additional quantum numbers and a radial profile. The canvas below renders one projected orbit curve \(\Gamma_L\). Its ring and lobe counts are associated with the conventional angular labels \(L=0,1,2,3\); they are the skeletons from which a finite observed distribution is built by the observer response.</p>
   </div>
 </section>
 
 <section>
   <h2>The conserved projective flow</h2>
   <div class="prose">
-    <p>For a Hermitian \(4\times4\) matrix \(M\), the expectation value</p>
+    <p>At degree \(L\geq1\), the magnetic line bundle has section space \(H^0(\mathbb{CP}^3,\mathcal O(L))\). The orbit construction selects a four-state subspace \(\mathcal V_L\) and writes a coefficient ray \([c]\in\mathbb P(\mathcal V_L)\). This coefficient ray is the orbit-state variable; \([Z]\in Q_6\) remains the electron-sector coordinate.</p>
+    <p>For a Hermitian \(4\times4\) matrix \(M\) acting on \(\mathcal V_L\), the expectation value</p>
     \[
-    H([z])=\frac{z^\dagger Mz}{z^\dagger z}
+    H([c])=\frac{c^\dagger Mc}{c^\dagger c}
     \]
     <p>is well defined on projective space and generates the Hamiltonian flow</p>
     \[
-    [z(t)]=[e^{-iMt}z(0)].
+    [c(t)]=[e^{-iMt}c(0)].
     \]
     <p>The evolution is norm preserving, and \(H\) is constant because \(M\) commutes with its own exponential. For the angular family, choose the traceless generator and initial point</p>
     <div class="math-scroll">
@@ -123,20 +127,20 @@ MathJax = {
       \tfrac14&L&0&0\\ L&\tfrac14&0&0\\
       0&0&-\tfrac34&0\\ 0&0&0&\tfrac14
       \end{pmatrix},\qquad
-      z(0)=\left(A,0,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
+      c(0)=\left(A,0,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
       \qquad A,B>0,\quad A^2+B^2=1.
       \]
     </div>
     <p>With \(\theta=\omega t\), exponentiation is elementary:</p>
     <div class="math-scroll">
       \[
-      z_1=Ae^{-i\theta/4}\cos(L\theta),\quad
-      z_2=-iAe^{-i\theta/4}\sin(L\theta),\quad
-      z_3=\frac{B}{\sqrt2}e^{3i\theta/4},\quad
-      z_4=\frac{B}{\sqrt2}e^{-i\theta/4}.
+      c_1=Ae^{-i\theta/4}\cos(L\theta),\quad
+      c_2=-iAe^{-i\theta/4}\sin(L\theta),\quad
+      c_3=\frac{B}{\sqrt2}e^{3i\theta/4},\quad
+      c_4=\frac{B}{\sqrt2}e^{-i\theta/4}.
       \]
     </div>
-    <p>The \(z_1,z_2\) block supplies an \(L\)-fold amplitude exchange. The \(z_3,z_4\) pair supplies a clock through a <em>relative</em> phase. Neither relies on the discarded common phase. At \(\theta=2\pi\), all four components differ from their initial values by the same factor \(-i\), so the full projective orbit—not merely its picture—is closed after one turn.</p>
+    <p>The \(c_1,c_2\) block supplies an \(L\)-fold amplitude exchange. The \(c_3,c_4\) pair supplies the primitive clock through a relative phase. At \(\theta=2\pi\), all four components differ from their initial values by the common factor \(-i\), so the projective trajectory closes after one turn.</p>
   </div>
 </section>
 
@@ -146,13 +150,13 @@ MathJax = {
     <p>Define a nonnegative radius and an angular clock by</p>
     <div class="math-scroll">
       \[
-      r([z])=\frac{|z_1|}{\sqrt{|z_1|^2+|z_2|^2}},\qquad
-      e^{i\phi([z])}=\frac{z_3\bar z_4}{|z_3z_4|}.
+      r([c])=\frac{|c_1|}{\sqrt{|c_1|^2+|c_2|^2}},\qquad
+      e^{i\phi([c])}=\frac{c_3\bar c_4}{|c_3c_4|}.
       \]
     </div>
-    <p>Under \(z\mapsto cz\), each numerator and denominator acquires the same magnitude factor; both quantities are unchanged. Along the flow, \(r=|\cos(L\theta)|\) and \(e^{i\phi}=e^{i\theta}\). The observer-aligned plane map is therefore</p>
+    <p>Under \(c\mapsto\lambda c\), each numerator and denominator acquires the same magnitude factor; both quantities are unchanged. Along the flow, \(r=|\cos(L\theta)|\) and \(e^{i\phi}=e^{i\theta}\). The observer-aligned plane map is therefore</p>
     \[
-    X+iY=Rr([z])e^{i\phi([z])}
+    X+iY=Rr([c])e^{i\phi([c])}
     =R|\cos(L\theta)|e^{i\theta}.
     \]
     <div class="proof-grid">
@@ -161,8 +165,8 @@ MathJax = {
         <p>For \(L>0\), the radius is maximal at \(\theta=k\pi/L\) and zero at \(\theta=(k+\tfrac12)\pi/L\). One full turn therefore contains exactly \(2L\) separated radial maxima.</p>
       </div>
       <div class="proof-card">
-        <h3>The four families</h3>
-        <p>\(L=0\) gives a ring. Then \(L=1,2,3\) give two, four and six lobes: the familiar macro-shapes labelled \(s,p,d,f\). This count is an exact property of the stated map.</p>
+        <h3>The four orbit families</h3>
+        <p>\(L=0\) gives a ring. Then \(L=1,2,3\) give two, four and six lobes. These orbit families carry the angular labels conventionally associated with \(s,p,d,f\); the count is an exact property of the stated map.</p>
       </div>
     </div>
   </div>
@@ -171,11 +175,11 @@ MathJax = {
 <section>
   <h2>How higher-dimensional magnetism generates the lock</h2>
   <div class="prose">
-    <p>A magnetic field is fundamentally a curvature two-form, not a three-dimensional arrow. On the full manifold its components are \(F_{AB}\), and minimal coupling contains</p>
+    <p>Electromagnetism is a \(U(1)\) connection on the full manifold, with curvature components \(F_{AB}\). Its magnetic coupling to the electron sector contains</p>
     \[
     H_{\rm mag}=-\frac{q}{2m_e}\sum_{A&lt;B}F_{AB}L^{AB}.
     \]
-    <p>Scalar electric charge therefore does not force the field to act as a common phase. Spatially varying connection components can rotate the electron's orientation in any supported coordinate two-plane. The photon's own two-dimensionality fixes its transverse mode; it does not confine electromagnetic contact to only two dimensions of a higher-dimensional particle.</p>
+    <p>Spatially varying connection components act through the rotation generators \(L^{AB}\), rotating the electron's orientation in each supported coordinate two-plane. A depth-two photon spans the additional directions in which it has no localized motion, so its connection makes full contact with the depth-six electron while retaining two intrinsic directions.</p>
 
     <h3>Hopf flux supplies the integer level</h3>
     <p>For normalized \(Z\in S^7\) over \(\mathbb{CP}^3\), the canonical connection and curvature are</p>
@@ -184,16 +188,16 @@ MathJax = {
     \mathcal F=d\mathcal A,\qquad
     \frac{1}{2\pi}\int_{\mathbb{CP}^1}\mathcal F=1.
     \]
-    <p>The degree-\(L\) bundle consequently has \(c_1(\mathcal O(L))=L\). Its state space is not numerology: homogeneous polynomial combinatorics gives the exact representation</p>
+    <p>The degree-\(L\) bundle consequently has \(c_1(\mathcal O(L))=L\). Homogeneous polynomial combinatorics gives its exact representation</p>
     \[
     H^0(\mathbb{CP}^3,\mathcal O(L))
     \cong\operatorname{Sym}^L(\mathbb C^4)^*,\qquad
     \dim=\binom{L+3}{3}.
     \]
-    <p>The central Hopf \(U(1)\) supplies this integral flux level. The electron still has charge \(-e\): \(L\) labels the background bundle and its state representation, not a charge \(-Le\).</p>
+    <p>The central Hopf \(U(1)\) supplies this integral flux level. The electron has charge \(-e\), while the independent integer \(L\) labels the background bundle and its state representation.</p>
 
     <h3>One isometry supplies the whole matrix</h3>
-    <p>Now act within that representation using one shell-independent \(U(1)\) isometry of the four fundamental coordinates,</p>
+    <p>Now act within that representation using one level-independent \(U(1)\) isometry of the four fundamental coordinates,</p>
     \[
     G=\operatorname{diag}(1,-1,-1,0).
     \]
@@ -204,14 +208,14 @@ MathJax = {
     \]
     <p>With \((2\pi)^{-1}\int_{\mathbb{CP}^1}\omega_{\rm FS}=1\), the prequantum curvature is \(-iL\omega_{\rm FS}\), the level-\(L\) moment map is \(L\mu_G\), and the holomorphic lift is</p>
     \[
-    \widehat G_L=\sum_{j=1}^4g_jz_j\frac{\partial}{\partial z_j},
+    \widehat G_L=\sum_{j=1}^4g_jZ_j\frac{\partial}{\partial Z_j},
     \qquad
-    \widehat G_Lz^a=(a\cdot g)z^a.
+    \widehat G_LZ^a=(a\cdot g)Z^a.
     \]
     <p>The curvature level and matrix action are therefore two parts of one symplectic construction. A central shift \(G\mapsto G+cI\) adds the same \(cL\) to every degree-\(L\) state and only changes the common projective phase.</p>
     <p>For every \(L\geq1\), four degree-\(L\) monomials have the following induced weights:</p>
     <table class="data-table">
-      <thead><tr><th>State</th><th>\(z_1^L\)</th><th>\(z_2^L\)</th><th>\(z_3z_4^{L-1}\)</th><th>\(z_4^L\)</th></tr></thead>
+      <thead><tr><th>State</th><th>\(Z_1^L\)</th><th>\(Z_2^L\)</th><th>\(Z_3Z_4^{L-1}\)</th><th>\(Z_4^L\)</th></tr></thead>
       <tbody><tr><th>Weight</th><td>\(+L\)</td><td>\(-L\)</td><td>\(-1\)</td><td>\(0\)</td></tr></tbody>
     </table>
     <p>Taking the even and odd combinations of the first pair rotates \(\operatorname{diag}(L,-L)\) into \(L\sigma_x\). Therefore, on this four-state subspace,</p>
@@ -220,18 +224,29 @@ MathJax = {
     =L\sigma_x\oplus\operatorname{diag}(-1,0),\qquad
     M_L=\omega\left(G_L\big|_{\mathcal V_L}+\tfrac14I\right).
     \]
-    <p>This reproduces the entire projective generator exactly for every \(L\geq1\). The scalar \(I/4\) is an energy-zero choice on each displayed four-state subspace, not one fixed fundamental central shift (which would lift as \(cLI\)). The amplitude exchange and clock are two blocks of one group action with one parameter \(\theta=\omega t\); their frequency lock is automatic. No separate frequency matching and no shell-by-shell fitted coefficient is involved.</p>
+    <p>This reproduces the projective generator exactly for every \(L\geq1\). The scalar \(I/4\) fixes the displayed energy zero on each four-state subspace. The amplitude exchange and clock are weights of one group action with the shared parameter \(\theta=\omega t\), which gives the frequency lock.</p>
 
     <h3>The generator is unique at these premises</h3>
-    <p>Let a shell-independent diagonal action have weights \((g_1,g_2,g_3,g_4)\). Requiring the two amplitude pure powers, the disjoint clock plane, and its primitive adjacent clock state gives</p>
+    <p>Let a level-independent diagonal action have weights \((g_1,g_2,g_3,g_4)\). Requiring the two amplitude pure powers, the disjoint clock plane, and its primitive adjacent clock state gives</p>
     \[
     g_1-g_4=1,\qquad g_2-g_4=-1,\qquad g_3-g_4=-1.
     \]
-    <p>The constraint matrix has rank three; its only null direction is \((1,1,1,1)\), the invisible central phase. Therefore \(G=cI+\operatorname{diag}(1,-1,-1,0)\) is unique up to that shift, orientation reversal and coordinate relabelling. In the clock plane, \(z_3^kz_4^{L-k}\) has relative weight \(-k\), so primitive unit winding uniquely gives \(k=1\).</p>
+    <p>The constraint matrix has rank three; its null direction is \((1,1,1,1)\), the invisible central phase. Therefore \(G=cI+\operatorname{diag}(1,-1,-1,0)\) is unique up to that shift, orientation reversal and coordinate relabelling. In the clock plane, \(Z_3^kZ_4^{L-k}\) has relative weight \(-k\), so primitive unit winding uniquely gives \(k=1\).</p>
     <p>The full unitary-equivalence family is the conjugacy orbit \(UGU^\dagger\). After subtracting its trace, the generator lies in \(\mathfrak{su}(4)\); the equivalence \(SU(4)\simeq\operatorname{Spin}(6)\) makes this the six-dimensional rotation orbit when the four coordinates carry that spinor action. An isotropic atom may then preserve the family while preparation or apparatus alignment selects a representative. In the locked extremal construction, a Chern sector \(k\) produces \(2|k|\) lobes, so matching the angular family labelled by \(2L\) forces \(|k|=L\).</p>
 
-    <h3>Why an ordinary 3D field is not the source</h3>
-    <p>The nucleus's leading Coulomb field is electrostatic, so \(\mathbf B=0\) in the nuclear rest frame. There is therefore no Zeeman generator at the gross-orbital scale. The unavoidable relativistic magnetic field seen in the electron's moving frame is approximately \(B_{\rm mot}=vE/c^2\). Using the Coulomb circular-orbit identities \(|e|E=m_ev^2/r\), \(\omega_{\rm orb}=v/r\), and \(v/c=\alpha/n\), its most favorable precession ratio is</p>
+    <h3>The nucleus supplies the candidate frame lock</h3>
+    <p>At electron–nucleus contact, the nuclear depth-three structure selects a split \(V_6=O\oplus H\cong\mathbb R^3\oplus\mathbb R^3\). The electron-sector point \([Z]\) determines an orthogonal complex structure \(J([Z])\), written relative to that split as</p>
+    \[
+    J=\begin{pmatrix}A&Q\\-Q^T&C\end{pmatrix}.
+    \]
+    <p>The invariant</p>
+    \[
+    s([Z];P)=\frac12\|A\|_F^2=\frac12\|C\|_F^2
+    \]
+    <p>measures departure from the exchanging lock. At \(s=0\), \(Q\in O(3)\) identifies the two three-frames and leaves the diagonal \(SO(3)\). The projected electron–nucleus kernel determines the coefficient \(\kappa=(dV_N/ds)_{s=0}\); \(\kappa>0\) dynamically selects the exchanging frame-lock family. Selection of the particular generator orientation remains part of the bound-state dynamics.</p>
+
+    <h3>Observer-space magnetic scale</h3>
+    <p>In the nuclear rest frame, the leading observer-space magnetic contribution begins at the motional scale \(B_{\rm mot}=vE/c^2\). Using the Coulomb circular-orbit identities \(|e|E=m_ev^2/r\), \(\omega_{\rm orb}=v/r\), and \(v/c=\alpha/n\), its precession ratio is</p>
     <div class="math-scroll">
       \[
       \frac{\omega_{\rm mot}}{\omega_{\rm orb}}
@@ -240,101 +255,140 @@ MathJax = {
       =\frac{\alpha^2}{2n^2}.
       \]
     </div>
-    <p>With the IDWT value of \(\alpha\), this is only \(2.88\times10^{-5}\) for \(n=1\), and it falls as \(n^{-2}\). It is the fine-structure/spin-orbit scale, not the unit-frequency lock required by the visualization. Equivalently, forcing \(\omega_B=\omega_{\rm orb}\) would require</p>
-    \[
-    B_{\rm lock}(n)=
-    \frac{2m_e\omega_{\rm orb}}{|e|}
-    =\frac{2\alpha^2m_e^2c^2}{|e|\hbar n^3}.
-    \]
-    <table class="data-table">
-      <thead><tr><th>\(n\)</th><th>\(B_{\rm lock}\)</th><th>\(\omega_{\rm mot}/\omega_{\rm orb}\)</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td>\(5.08\times10^5\ {\rm T}\)</td><td>\(2.88\times10^{-5}\)</td></tr>
-        <tr><td>2</td><td>\(6.35\times10^4\ {\rm T}\)</td><td>\(7.19\times10^{-6}\)</td></tr>
-        <tr><td>3</td><td>\(1.88\times10^4\ {\rm T}\)</td><td>\(3.20\times10^{-6}\)</td></tr>
-        <tr><td>4</td><td>\(7.94\times10^3\ {\rm T}\)</td><td>\(1.80\times10^{-6}\)</td></tr>
-      </tbody>
-    </table>
-    <p>That scale test rules out only the ordinary three-dimensional Zeeman route. The construction above instead uses integral Hopf/Kähler flux and a noncentral isometry in the electron's full projective orientation space. If all \(L\) flux quanta are additionally identified with uniform flux through an observed orbit disk, then flux quantization together with \(mvr=L\hbar\) also yields \(\omega_B=\omega_{\rm orb}\). That disk map is a consistent corollary, not an assumption needed for the exact representation lock.</p>
-    <p class="status-box"><strong>Status: exact representation construction; dynamical occupation law open.</strong> Higher-dimensional \(U(1)\) magnetism generates \(M_L\), locks its blocks, fixes its generator class, and forces \(|k|=L\) once the magnetic and angular representations are identified. The remaining physics is why the bound state occupies a particular \(L\), how the Hopf curvature pulls back to the physical electromagnetic connection, and what sets \(\omega\). Topology alone cannot set that continuous rate.</p>
+    <p>With the IDWT value of \(\alpha\), the ratio is \(2.88\times10^{-5}\) for \(n=1\) and falls as \(n^{-2}\), placing this observer-space contribution at the fine-structure scale. The gross orbit lock therefore resides in the additional curvature planes of the depth-six electron sector.</p>
+    <p>If the \(L\) flux quanta uniformly thread the observer-space orbit disk, flux quantization together with \(mvr=L\hbar\) gives \(\omega_B=\omega_{\rm orb}\). The bound-state action must derive this disk identification.</p>
+    <p class="status-box"><strong>Status: exact representation construction; dynamical occupation law open.</strong> Higher-dimensional \(U(1)\) magnetism generates \(M_L\), locks its blocks, fixes its generator class, and gives \(|k|=L\) when the magnetic and angular representations are identified. The closure equations are the bound-state selection of \(L\), the electromagnetic identification of the Hopf curvature, and the dimensional coefficient \(\omega\).</p>
   </div>
 </section>
 
 <section>
-  <h2>How much of the observer map is forced?</h2>
+  <h2>The observer map</h2>
   <div class="prose">
     <p>Write the amplitude occupation and primitive clock as</p>
     \[
-    q=\frac{|z_1|^2}{|z_1|^2+|z_2|^2},\qquad
-    e^{i\phi}=\frac{z_3\bar z_4}{|z_3z_4|}.
+    q=\frac{|c_1|^2}{|c_1|^2+|c_2|^2},\qquad
+    e^{i\phi}=\frac{c_3\bar c_4}{|c_3c_4|}.
     \]
-    <p>Projective invariance and rotational covariance first give \(X+iY=Rh(q)e^{\pm i\phi}\), where a complex phase in \(h(q)\) would shear different radii through different angles. Reflection symmetry across the aligned apparatus axis removes that shear, giving</p>
+    <p>Projective invariance and rotational covariance give \(X+iY=Rh(q)e^{\pm i\phi}\). Reflection symmetry across the aligned apparatus axis makes the radial response real, giving</p>
     \[
     X+iY=Rf(q)e^{\pm i\phi}.
     \]
     <p>If \(f(0)=0\) and \(f\) is strictly increasing, it preserves the maxima and zeros of \(q=\cos^2(L\theta)\), so every such detector response has exactly \(2L\) lobes. The displayed choice \(f(q)=\sqrt q\) follows from the additional intensity rule \((X^2+Y^2)/R^2=q\). Thus the lobe count is more robust than the particular radial shape.</p>
-    <p>Uniform Hamiltonian time gives the invariant occupation measure \(d\theta/(2\pi)\). Its amplitude fraction has density \([\pi\sqrt{q(1-q)}]^{-1}\), and the displayed radius has density \(2/[\pi\sqrt{R^2-r^2}]\). A finite observed cloud is the convolution of this curve measure with the apparatus response; its width still requires detector physics.</p>
+    <p>Uniform Hamiltonian time gives the invariant occupation measure \(d\theta/(2\pi)\). For \(L\geq1\), its amplitude fraction has density \([\pi\sqrt{q(1-q)}]^{-1}\), and the displayed radius has density \(2/[\pi\sqrt{R^2-r^2}]\). The ring instead has constant radius \(R\), so its radial measure is concentrated there. A finite observed cloud is the convolution of this actual orbit's time measure with the apparatus response; its width still requires detector physics.</p>
 
-    <h3>The s-ring obstruction</h3>
-    <p>At \(L=0\), \(H^0(\mathbb{CP}^3,\mathcal O(0))=\mathbb C\), whose projectivization is a point. Zero Hopf flux cannot produce a relative-phase clock. The displayed orbit already has one unused coordinate and reduces exactly to</p>
+    <h3>The \(L=0\) dimension theorem and minimal ring</h3>
+    <p>At \(L=0\), \(H^0(\mathbb{CP}^3,\mathcal O(0))=\mathbb C\), whose projectivization is a point and whose relative-phase dimension is zero. The minimal ring completion is</p>
     \[
     M_0^{\rm min}=\omega\operatorname{diag}(0,-1,0),\qquad
-    z_0^{\rm min}(0)=\left(A,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
+    c_0^{\rm min}(0)=\left(A,\frac{B}{\sqrt2},\frac{B}{\sqrt2}\right),
     \]
-    <p>one constant amplitude state plus the minimum two-state clock. This gives the ring exactly, but proves that its clock is universal extra structure rather than a consequence of Chern-zero magnetism. Its hidden-motion or ordinary-angular-momentum cancellation remains physical work.</p>
+    <p>one constant amplitude state plus the minimum two-state clock. This gives the ring exactly. The physical origin of the universal clock doublet and its zero ordinary-angular-momentum expectation are closure conditions for the bound-state and observer couplings.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What preserves the petals?</h2>
+  <div class="prose">
+    <p>The displayed orbit below is unchanged. The following calculation tests what the projected interaction must preserve for that actual trajectory to retain its center-crossing petals. It is not a stationary-orbital construction.</p>
+    <p>After removing the common phase, the ideal generator is \(L\omega\sigma_x\oplus\operatorname{diag}(-\omega,0)\). Keep the same observer axes and initial state, but test the Hermitian perturbation family</p>
+    <div class="math-scroll">
+      \[
+      H=(\epsilon I_2+g\sigma_x+\delta\sigma_z)
+      \oplus\operatorname{diag}(-\nu,0),\qquad
+      \Omega=\sqrt{g^2+\delta^2},\quad g,\nu>0.
+      \]
+    </div>
+    <p>Here all four parameters have frequency units, with \(\hbar=1\). The term \(\delta\) is the imbalance between the amplitude states, and \(\epsilon\) is their common offset relative to the clock pair. No mixing between the two blocks or leakage from \(\mathcal V_L\) is included. Direct exponentiation gives</p>
+    <div class="math-scroll">
+      \[
+      c_1=Ae^{-i\epsilon t}\left(\cos\Omega t-i\frac{\delta}{\Omega}\sin\Omega t\right),\qquad
+      c_2=-iAe^{-i\epsilon t}\frac g\Omega\sin\Omega t,
+      \]
+      \[
+      c_3=\frac B{\sqrt2}e^{i\nu t},\qquad c_4=\frac B{\sqrt2}.
+      \]
+    </div>
+    <h3>Complete exchange gives the center crossings</h3>
+    <div class="math-scroll">
+      \[
+      q(t)=1-\frac{g^2}{\Omega^2}\sin^2\Omega t,\qquad
+      X+iY=R\sqrt{q(t)}e^{i\nu t},\qquad
+      r_{\min}=R\frac{|\delta|}{\Omega}.
+      \]
+    </div>
+    <p>For the stated preparation, exact center crossings require \(\delta=0\). A nonzero imbalance leaves radial modulation but opens a central hole in the plane curve. Robustness under a monotone observer response is therefore different from robustness under a changed Hamiltonian. Rotating away the imbalance also rotates the physical readout axes and cannot be treated as the same observation.</p>
+    <p>Preparation matters separately. At \(\delta=0\), a general pure amplitude pair with Bloch vector \((s_x,s_y,s_z)\) has</p>
+    <div class="math-scroll">
+      \[
+      q(t)=\frac{1+s_z\cos(2gt)+s_y\sin(2gt)}2,\qquad
+      q_{\min}=\frac{1-\sqrt{1-s_x^2}}2.
+      \]
+    </div>
+    <p>The demo's initial pair \((1,0)\) satisfies \(s_x=0\), allowing full exchange. Unitary evolution conserves \(s_x\); it does not by itself attract arbitrary preparations to that orbit.</p>
+    <h3>A closed image is not necessarily a closed state orbit</h3>
+    <p>For \(\epsilon=0\), full recurrence of the stated coefficient ray requires both \(\Omega T\) and \(\nu T\) to be integer multiples of \(2\pi\). A rational ratio \(\Omega/\nu=p/q\), in lowest terms, gives \(T=2\pi q/\nu\). An irrational ratio does not close exactly. The plane readout loses the sign of the amplitude pair: \(g/\nu=3/2\) with zero imbalance gives a closed three-maximum image after one clock turn, but the state itself needs two turns.</p>
+    <p>The offset \(\epsilon\) is also invisible to the displayed coordinates, including the depth readout. Nevertheless, full recurrence requires</p>
+    <div class="math-scroll">
+      \[
+      (\epsilon+\Omega)T,\quad(\epsilon-\Omega)T,\quad\nu T
+      \ \in\ 2\pi\mathbb Z.
+      \]
+    </div>
+    <p>For example, \(g/\nu=L\), \(\delta=0\), and irrational \(\epsilon/\nu\) preserve the displayed petals while preventing exact state recurrence. This block-relative phase is not a removable common phase.</p>
+    <p class="status-box"><strong>Sharper dynamical target.</strong> The ideal orbit has \(\delta=\epsilon=0\), \(g/\nu=L\), and \(s_x=0\). The selected representation supplies those generator weights; the projected action must select and preserve that representation and orbit, including relative phases that the observer map does not resolve. These conditions sharpen the existing orbit construction rather than replace it with orbitals.</p>
   </div>
 </section>
 
 <section>
   <h2>See the projection</h2>
   <div class="prose">
-    <p>The default view looks straight down the chosen depth axis and therefore displays the theorem exactly. Dragging rotates the same curve, which is why the silhouette changes so strongly away from the aligned angle. The depth term is a transparent display choice,</p>
+    <p>The default view looks along the apparatus-selected depth axis and displays the plane theorem exactly. Dragging rotates the same curve and exposes its three-dimensional observer embedding. The depth coordinate is</p>
     \[
-    Z=\eta R\frac{|z_2|}{\sqrt{|z_1|^2+|z_2|^2}}\cos(3\phi)
+    Z_{\rm obs}=\eta R\frac{|c_2|}{\sqrt{|c_1|^2+|c_2|^2}}\cos(3\phi)
     =\eta R|\sin(L\theta)|\cos(3\theta),
     \]
-    <p>built from the same projectively invariant amplitude and clock. It gives the curve visible three-dimensional depth without changing the exact \(X,Y\) lobe count. It is not presented as a derived electron–detector coupling.</p>
+    <p>The six-vector representation of the orbit generator has plane rates \(1{:}1{:}3\), so an antipode-even quadratic readout supplies the \(\cos(3\phi)\) harmonic. The apparatus coupling selects the three resolved axes, the slow and fast readout planes, and the scale \(\eta\). The formula preserves the exact \(X,Y\) lobe count.</p>
   </div>
 
   <figure class="orbit-lab">
     <div class="orbit-stage" id="orbitStage">
       <canvas id="orbitCanvas" aria-label="Interactive projective orbit curve"></canvas>
-      <div class="lab-note"><span id="shapeLabel">s · ring · L = 0</span><span>Aligned theorem view<br>drag to rotate</span></div>
+      <div class="lab-note"><span id="orbitLabel">L = 0 · ring</span><span>Aligned projection<br>drag to rotate</span></div>
     </div>
     <div class="lab-controls" aria-label="Visualization controls">
-      <button class="shell-button" style="--shell:#ffd27a" data-l="0" aria-pressed="true">s · 1</button>
-      <button class="shell-button" style="--shell:#5a9bff" data-l="1" aria-pressed="false">p · 2</button>
-      <button class="shell-button" style="--shell:#46d39a" data-l="2" aria-pressed="false">d · 4</button>
-      <button class="shell-button" style="--shell:#e06ad0" data-l="3" aria-pressed="false">f · 6</button>
+      <button class="orbit-button" style="--orbit:#ffd27a" data-l="0" aria-pressed="true">L = 0 · ring</button>
+      <button class="orbit-button" style="--orbit:#5a9bff" data-l="1" aria-pressed="false">L = 1 · 2 lobes</button>
+      <button class="orbit-button" style="--orbit:#46d39a" data-l="2" aria-pressed="false">L = 2 · 4 lobes</button>
+      <button class="orbit-button" style="--orbit:#e06ad0" data-l="3" aria-pressed="false">L = 3 · 6 lobes</button>
       <label class="depth-label" for="depth">depth <input id="depth" type="range" min="0" max="0.65" value="0.32" step="0.01"></label>
       <button class="reset-button" id="resetView">⟲ align</button>
     </div>
-    <figcaption class="orbit-caption">One closed curve, rendered with a moving point and fading recent path. Shape radii are normalized here so the angular structures can be compared. The hydrogenic \(1:4:9:16\) circular-state sizes are a separate standard result, not an output of this theorem.</figcaption>
+    <figcaption class="orbit-caption">One closed projected electron orbit, rendered with a moving point and fading recent path. The radius is normalized so the four angular families can be compared; the observer kernel supplies physical width and scale.</figcaption>
   </figure>
 </section>
 
 <section>
   <h2>Where combinatorics enters</h2>
   <div class="prose">
-    <p>The lobe proof above uses the integer \(L\), but it does not invent that integer. Degree-\(L\) monomials in the four homogeneous coordinates have exponents \(a,b,c,d\geq0\) with \(a+b+c+d=L\). Stars-and-bars gives</p>
+    <p>The integer \(L\) is the Chern degree of the magnetic line bundle. Degree-\(L\) monomials in the four homogeneous coordinates have exponents \(a,b,c,d\geq0\) with \(a+b+c+d=L\). Stars-and-bars gives</p>
     \[
     N_L=\binom{L+3}{3}=1,4,10,20,\ldots\quad(L=0,1,2,3,\ldots).
     \]
-    <p>That is genuine combinatorial and representation-theoretic structure. It counts the full degree-\(L\) projective multiplet; it should not be confused with the \(1,2,4,6\) visible lobes of one aligned curve. The two sequences answer different questions.</p>
+    <p>This counts the full degree-\(L\) projective multiplet. The visible lobe sequence \(1,2,4,6\) counts radial maxima of one aligned observer projection. The two sequences are distinct consequences of the same integer degree.</p>
   </div>
 </section>
 
 <section>
-  <h2>What is established—and what is not</h2>
+  <h2>Established result and closure equations</h2>
   <div class="prose">
-    <p class="status-box"><strong>Status: exact mathematics inside a conditional physical identification.</strong> For every \(L\geq1\), the degree-\(L\) representation and its unique generator class derive \(M_L\) exactly. Representation matching forces \(|k|=L\); Hamiltonian conservation, projective invariance, the internal frequency lock, and the detector-response-robust \(2L\) lobe count then follow. The visualization implements those equations directly and contains no random phases or fitted lobe shapes.</p>
-    <p>The larger physical claim is not finished. A first-principles account must still derive why the bound system occupies a particular angular/flux sector, identify the curvature as the pullback of the physical full-manifold electromagnetic connection, determine \(\omega\), derive the complete three-dimensional detector embedding rather than choose a depth coordinate, and derive the finite transverse profile that turns a mathematical curve into an observed intensity distribution. A defensible smeared readout can be written</p>
+    <p class="status-box"><strong>Status: exact mathematics inside a conditional physical identification.</strong> For every \(L\geq1\), the degree-\(L\) representation and its unique generator class derive \(M_L\) exactly. Representation matching gives \(|k|=L\); Hamiltonian conservation, projective invariance, the internal frequency lock, and the detector-response-robust \(2L\) lobe count follow. The visualization evaluates this fixed orbit and observer map directly.</p>
+    <p>Physical completion requires the projected master action to supply the occupied angular/flux sector, the electromagnetic normalization of the Hopf curvature, the rate \(\omega\), the electron–nucleus frame-lock coefficient \(\kappa\), the generator orientation within the locked family, the three-axis apparatus embedding, and the transverse response profile. The resulting observed density has the form</p>
     <div class="math-scroll">
       \[
       \rho_{\rm obs}(x)=\frac1T\int_0^T G_\sigma\!\left(x-\Gamma_L(t)\right)dt,
       \]
     </div>
-    <p>where \(G_\sigma\) is a normalized finite-width field profile, but the physical value of \(\sigma\) and the detector coupling must come from the theory. Until those steps are supplied, the result is an exact geometric and representation-theoretic construction—not yet a complete derivation of atomic spectroscopy or of every textbook orbital surface.</p>
+    <p>where \(G_\sigma\) is a normalized finite-width response kernel. The projected interaction determines its physical shape and width \(\sigma\). This equation turns the exact orbit measure into the finite registration density tested by an apparatus.</p>
   </div>
 </section>
 </main>
@@ -347,12 +401,12 @@ MathJax = {
   const canvas = document.getElementById('orbitCanvas');
   const ctx = canvas.getContext('2d');
   const depth = document.getElementById('depth');
-  const label = document.getElementById('shapeLabel');
-  const buttons = [...document.querySelectorAll('.shell-button')];
+  const label = document.getElementById('orbitLabel');
+  const buttons = [...document.querySelectorAll('.orbit-button')];
   const palette = ['#ffd27a', '#5a9bff', '#46d39a', '#e06ad0'];
-  const names = ['s · ring', 'p · 2 lobes', 'd · 4 lobes', 'f · 6 lobes'];
+  const names = ['ring', '2 lobes', '4 lobes', '6 lobes'];
   const samples = 1400;
-  let shell = 0;
+  let angularLevel = 0;
   let yaw = 0;
   let pitch = 0;
   let pointer = null;
@@ -371,8 +425,8 @@ MathJax = {
   }
 
   function point(theta) {
-    const radial = shell === 0 ? 1 : Math.abs(Math.cos(shell * theta));
-    const hidden = shell === 0 ? 0 : Math.abs(Math.sin(shell * theta));
+    const radial = angularLevel === 0 ? 1 : Math.abs(Math.cos(angularLevel * theta));
+    const hidden = angularLevel === 0 ? 0 : Math.abs(Math.sin(angularLevel * theta));
     const x = radial * Math.cos(theta);
     const y = radial * Math.sin(theta);
     const z = Number(depth.value) * hidden * Math.cos(3 * theta);
@@ -423,7 +477,7 @@ MathJax = {
     for (const segment of segments) {
       const light = Math.max(0, Math.min(1, (segment.z + .7) / 1.4));
       ctx.globalAlpha = .32 + .63 * light;
-      ctx.strokeStyle = palette[shell];
+      ctx.strokeStyle = palette[angularLevel];
       ctx.lineWidth = 1.4 + 1.8 * light;
       ctx.beginPath();
       ctx.moveTo(segment.a.x, segment.a.y);
@@ -437,13 +491,13 @@ MathJax = {
       const t = (cycle - k / 520 + 1) % 1;
       const tail = screen(point(t * 2 * Math.PI), width, height);
       ctx.globalAlpha = .22 * (1 - k / 35);
-      ctx.fillStyle = palette[shell];
+      ctx.fillStyle = palette[angularLevel];
       ctx.beginPath();
       ctx.arc(tail.x, tail.y, 2.3, 0, 2 * Math.PI);
       ctx.fill();
     }
     ctx.globalAlpha = 1;
-    ctx.shadowColor = palette[shell];
+    ctx.shadowColor = palette[angularLevel];
     ctx.shadowBlur = 18;
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
@@ -455,9 +509,9 @@ MathJax = {
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-      shell = Number(button.dataset.l);
+      angularLevel = Number(button.dataset.l);
       buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      label.textContent = `${names[shell]} · L = ${shell}`;
+      label.textContent = `L = ${angularLevel} · ${names[angularLevel]}`;
       start = performance.now();
     });
   });
