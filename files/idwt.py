@@ -13524,4 +13524,4 @@ print("idealization, not a smuggled postulate. See Part 1 s2.3.")
 
 # =============================================================================
 print("\nDocs:  https://doi.org/10.5281/zenodo.19767493")
-print("https://fedgeno.github.io/")
+print("https://idwt-v1.github.io/")
